@@ -4,10 +4,9 @@ import { StudyLink } from './StudyLink'
 import { persistPreference, preference, resolvedTheme, savedTheme, SIDEBAR_KEY, THEME_KEY, themeChoices } from '../preferences'
 import type { ThemeChoice } from '../preferences'
 
-export function Sidebar({ children, onHome, onReset }: { children: ReactNode; onHome: () => void; onReset: () => void }) {
+export function Sidebar({ children, onHome, onReset, menuOpen, setMenuOpen, barTitle }: { children: ReactNode; onHome: () => void; onReset: () => void; menuOpen: boolean; setMenuOpen: (open: boolean) => void; barTitle: string }) {
   const [theme, setTheme] = useState(savedTheme)
   const [collapsed, setCollapsed] = useState(() => preference(SIDEBAR_KEY) === 'true')
-  const [menuOpen, setMenuOpen] = useState(false)
   const menuToggle = useRef<HTMLButtonElement>(null)
   const collapseToggle = useRef<HTMLButtonElement>(null)
   useEffect(() => {
@@ -28,16 +27,22 @@ export function Sidebar({ children, onHome, onReset }: { children: ReactNode; on
     }
     media.addEventListener('change', close)
     return () => media.removeEventListener('change', close)
-  }, [])
+  }, [setMenuOpen])
+  // The phone menu is a full-height sheet: stop the page behind it from scrolling.
+  useEffect(() => {
+    document.documentElement.classList.toggle('menu-locked', menuOpen)
+    return () => document.documentElement.classList.remove('menu-locked')
+  }, [menuOpen])
   return <aside className={`sidebar${collapsed ? ' is-collapsed' : ''}${menuOpen ? ' menu-open' : ''}`} onKeyDown={event => {
     if (event.key === 'Escape' && menuOpen) { setMenuOpen(false); menuToggle.current?.focus() }
   }}>
     <div className="sidebar-header">
       <StudyLink view="home" className="brand" title="Examdesk overview" onNavigate={() => { setMenuOpen(false); onHome() }}><span className="brand-mark" aria-hidden="true">{'{ }'}</span><span className="brand-copy">exam<span className="brand-light">desk</span><small>C programming practice</small></span><span className="sr-only"> overview</span></StudyLink>
+      <span className="bar-title" aria-hidden="true">{barTitle}</span>
       <button type="button" ref={collapseToggle} className="sidebar-toggle collapse-toggle" aria-expanded={!collapsed} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-controls="sidebar-menu" title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} onClick={() => {
         setCollapsed(!collapsed); persistPreference(SIDEBAR_KEY, String(!collapsed))
       }}><span aria-hidden="true">{collapsed ? '»' : '«'}</span></button>
-      <button type="button" ref={menuToggle} className="sidebar-toggle menu-toggle" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-controls="sidebar-menu" onClick={() => setMenuOpen(!menuOpen)}><span aria-hidden="true">{menuOpen ? '×' : '☰'}</span><span>Menu</span></button>
+      <button type="button" ref={menuToggle} className="sidebar-toggle menu-toggle" aria-expanded={menuOpen} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-controls="sidebar-menu" onClick={() => setMenuOpen(!menuOpen)}><span aria-hidden="true">{menuOpen ? '×' : '☰'}</span><span>{menuOpen ? 'Close' : 'Menu'}</span></button>
     </div>
     <div id="sidebar-menu" className="sidebar-menu">
       <div className="sidebar-content" onClick={event => {
@@ -48,8 +53,10 @@ export function Sidebar({ children, onHome, onReset }: { children: ReactNode; on
         }
       }}>{children}</div>
       <div className="sidebar-bottom">
-        <div className="offline-note"><strong>Saved in this browser</strong><p>Progress stays on this computer when browser storage is available.</p></div>
+        <div className="sidebar-section-label mobile-section">Saved progress</div>
+        <div className="offline-note"><strong>Saved in this browser</strong><p>Progress stays in this browser when storage is available.</p></div>
         <button type="button" className="reset-button" title="Reset saved progress" onClick={onReset}><span className="rail-symbol" aria-hidden="true">↺</span><span className="reset-copy">Reset saved progress</span></button>
+        <div className="sidebar-section-label mobile-section">Appearance</div>
         <div className="theme-control"><label htmlFor="theme-choice"><span className="theme-swatch" aria-hidden="true"/>Theme</label><select id="theme-choice" title={`Theme: ${theme[0].toUpperCase() + theme.slice(1)}`} value={theme} onChange={event => {
           const choice = event.target.value as ThemeChoice
           // Update immediately, before React's effect and next paint.

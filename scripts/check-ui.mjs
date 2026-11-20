@@ -139,6 +139,16 @@ try {
   const practice = app('practice')
   assert(practice.indexOf('What this program does') < practice.indexOf('class="code-editor'), 'Practice brief precedes code')
   assert(practice.includes('0 fully correct in a row'))
+  // Phone navigation: four labelled primary tabs with the current one marked, a position bar,
+  // a Review-concept link and a sticky action dock; the top bar and safe areas are in the CSS.
+  const learnHtml = app("learn"), tabs = learnHtml.slice(learnHtml.indexOf("<nav class=\"tab-bar\""), learnHtml.indexOf("</nav>", learnHtml.indexOf("<nav class=\"tab-bar\"")))
+  for (const label of ['Home', 'Learn', 'Practice', 'Mock']) assert(tabs.includes('>' + label + '</span>'), 'Tab: ' + label)
+  assert(/class="tab active"[^>]*aria-current="page"/.test(tabs) && (tabs.match(/aria-current/g) || []).length === 1, 'Exactly one current tab')
+  assert(practice.includes('Question 1 of') && practice.includes('aria-label="Previous question"') && practice.includes('Review concept') && practice.includes('sticky-dock'))
+  const phoneCss = css.slice(css.indexOf("--bar-h:calc("))
+  assert(phoneCss.includes(".sidebar { position:sticky; top:0"), "Phone top bar is sticky")
+  assert(css.includes("env(safe-area-inset-bottom)") && css.includes("html[data-kbd] .sticky-dock") && css.includes("--tab-h:3.5rem"))
+  assert(!phoneCss.includes("is-collapsed"), "Desktop collapse state must not touch phone navigation")
   assert(app('practice', { [STREAK_KEY]: '7' }).includes('7 fully correct in a row'))
   for (const stored of ['-1', '1.5', 'null', '"7"', '{}', '{corrupt', '9007199254740992']) {
     globalThis.localStorage = { getItem: () => stored }

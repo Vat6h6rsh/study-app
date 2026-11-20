@@ -2,6 +2,9 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { ConfirmDialog } from './components/ConfirmDialog'
 import { StudyLink } from './components/StudyLink'
 import { Sidebar } from './components/Sidebar'
+import { TabBar } from './components/TabBar'
+import { Sheet } from './components/Sheet'
+import { readScroll, scrollToY, useIsMobile } from './lib/viewport'
 import { QuestionBrief } from './components/QuestionBrief'
 import { Confetti, ExamScoreRing } from './components/Delight'
 import { loadStreak, storeStreak, STREAK_KEY } from './streak'
@@ -49,21 +52,59 @@ function App() {
   const [practiceOpened, setPracticeOpened] = useState(() => locationState().page === 'practice')
   const main = useRef<HTMLElement>(null)
   const previousPage = useRef(page)
+  const pageRef = useRef(page)
+  pageRef.current = page
   const [announcement, setAnnouncement] = useState('')
-  function setPage(next: Page, topic?: string) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [fromPractice, setFromPractice] = useState(false)
+  // Scroll memory per history entry, plus the last Practice position (its answers stay mounted).
+  const scrollMemo = useRef<Record<string, number>>({})
+  const historyKey = useRef<string>((typeof window !== 'undefined' && (window.history?.state as { k?: string } | null)?.k) || 'start')
+  const restoreScroll = (y: number) => {
+    if (y === 0) scrollToY(0)
+    requestAnimationFrame(() => requestAnimationFrame(() => scrollToY(y)))
+  }
+  function rememberScroll() {
+    const y = readScroll()
+    scrollMemo.current[historyKey.current] = y
+    if (pageRef.current === 'practice') scrollMemo.current.practice = y
+  }
+  // `resume` returns to a view that kept its state (Practice) at the position where it was left.
+  function setPage(next: Page, topic?: string, resume = false) {
+    setMenuOpen(false)
     const url = new URL(window.location.href)
     url.search = new URLSearchParams({ view: next, ...(topic ? { topic } : {}) }).toString()
     url.hash = ''
-    if (url.href !== window.location.href) window.history.pushState(null, '', url)
+    if (url.href !== window.location.href) {
+      rememberScroll()
+      historyKey.current = newId()
+      window.history.pushState({ k: historyKey.current }, '', url)
+    }
+    if (next !== pageRef.current) {
+      if (next !== 'learn') setFromPractice(false)
+      restoreScroll(resume && next === 'practice' ? scrollMemo.current.practice ?? 0 : 0)
+    }
     setPageState(next)
   }
   useEffect(() => {
     document.title = `${({ home: 'Overview', learn: 'Learn', practice: 'Practice', exam: 'Mock exams', scratch: 'C scratchpad' })[page]} · Examdesk`
     if (previousPage.current === page) return
     previousPage.current = page
-    main.current?.focus()
-    main.current?.scrollIntoView({ block: 'start' })
+    main.current?.focus({ preventScroll: true })
   }, [page])
+  useEffect(() => {
+    // Scroll position is restored by hand (below); the browser must not guess for the SPA.
+    if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual'
+    // While a text field is focused the on-screen keyboard is up: docked bars step aside (CSS [data-kbd]).
+    const sync = () => {
+      const active = document.activeElement
+      document.documentElement.toggleAttribute('data-kbd', !!active?.matches('textarea:not([readonly]), input:not([readonly]):not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="range"])'))
+    }
+    const settle = () => window.setTimeout(sync, 60)
+    document.addEventListener('focusin', sync)
+    document.addEventListener('focusout', settle)
+    return () => { document.removeEventListener('focusin', sync); document.removeEventListener('focusout', settle); document.documentElement.removeAttribute('data-kbd') }
+  }, [])
   const [subjectId, setSubjectId] = useState(() => { const saved = readSaved<string>(SUBJECT_KEY); return subjects.some(s => s.id === saved && s.active) ? saved! : 'itp' })
   const subject = subjects.find(s => s.id === subjectId)!
   const [progress, setProgress] = useState(loadProgress)
@@ -78,10 +119,15 @@ function App() {
   const submittedExams = useRef(new Set<number>())
   useEffect(() => {
     const back = () => {
+      rememberScroll()
+      historyKey.current = (window.history.state as { k?: string } | null)?.k || 'start'
       const next = locationState()
       if (next.page === 'practice') { setPracticeOpened(true); setFilter(next.topic || 'all') }
       if (next.page === 'learn' && next.topic) setLesson(next.topic)
+      if (next.page !== 'learn') setFromPractice(false)
+      setMenuOpen(false)
       setPageState(next.page)
+      restoreScroll(scrollMemo.current[historyKey.current] ?? 0)
     }
     window.addEventListener('popstate', back)
     return () => window.removeEventListener('popstate', back)
@@ -92,7 +138,9 @@ function App() {
   const attempts = progress.attempts.filter(a => a.subject === subjectId)
   const mistakes = latestMistakes(attempts)
   function openPractice(topic = 'all') { setFilter(topic); setPracticeOpened(true); setPage('practice', topic) }
-  function openLearn(topic = 'strategy') { setLesson(topic); setPage('learn', topic) }
+  function openLearn(topic = 'strategy', fromQuestion = false) { setLesson(topic); setFromPractice(fromQuestion); setPage('learn', topic) }
+  const backToPractice = () => setPage('practice', undefined, true)
+  const barTitle = `${subject.code} · ${({ home: 'Overview', learn: 'Learn', practice: 'Practice', exam: 'Mock exam', scratch: 'Scratchpad' })[page]}`
   function record(attempt: Attempt) { setProgress(p => ({ ...p, attempts: p.attempts.some(a => a.id === attempt.id) ? p.attempts.map(a => a.id === attempt.id ? attempt : a) : [...p.attempts, attempt] })) }
   function override(attemptId: string, blankId: string) {
     setProgress(p => ({ ...p, attempts: p.attempts.map(a => a.id === attemptId ? { ...a, results: { ...a.results, [blankId]: true }, overrides: [...new Set([...a.overrides, blankId])] } : a) }))
@@ -124,11 +172,12 @@ function App() {
   return <div className="app-shell">
     {examFeedback?.celebrate && <Confetti key={examFeedback.id} burst={String(examFeedback.id)}/>}
     <a className="skip-link" href="#main">Skip to content</a>
-    <Sidebar onHome={() => setPage('home')} onReset={() => setResetPrompt(true)}>
+    <Sidebar onHome={() => setPage('home')} onReset={() => setResetPrompt(true)} menuOpen={menuOpen} setMenuOpen={setMenuOpen} barTitle={barTitle}>
       <div className="sidebar-section-label">Workspace</div>
-      <nav aria-label="Main navigation">{([['home', 'Overview'], ['learn', 'Learn'], ['practice', 'Practice'], ['exam', 'Mock exams'], ['scratch', 'C scratchpad']] as [Page, string][]).filter(([id]) => id !== 'scratch' || subjectId === 'itp').map(([id, title]) => <StudyLink key={id} view={id} title={`${title}${id === 'exam' && exam && !exam.submitted ? ' — In progress' : ''}`} className={`nav-item ${page === id ? 'active' : ''}`} current={page === id} onNavigate={() => { if (id === 'practice') setPracticeOpened(true); setPage(id) }}><span className="rail-symbol nav-symbol" data-nav={id} aria-hidden="true">{({ home: '\u25c8', learn: '\u25a4', practice: '\u270e', exam: '\u25f7', scratch: '\u2318' })[id]}</span><span className="nav-copy">{title}{id === 'exam' && exam && !exam.submitted && <span className="exam-live-label">In progress</span>}</span></StudyLink>)}</nav>
-      <div className="sidebar-section-label subject-label">Subjects</div>
+      <nav className="desktop-nav" aria-label="Main navigation">{([['home', 'Overview'], ['learn', 'Learn'], ['practice', 'Practice'], ['exam', 'Mock exams'], ['scratch', 'C scratchpad']] as [Page, string][]).filter(([id]) => id !== 'scratch' || subjectId === 'itp').map(([id, title]) => <StudyLink key={id} view={id} title={`${title}${id === 'exam' && exam && !exam.submitted ? ' — In progress' : ''}`} className={`nav-item ${page === id ? 'active' : ''}`} current={page === id} onNavigate={() => { if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}><span className="rail-symbol nav-symbol" data-nav={id} aria-hidden="true">{({ home: '\u25c8', learn: '\u25a4', practice: '\u270e', exam: '\u25f7', scratch: '\u2318' })[id]}</span><span className="nav-copy">{title}{id === 'exam' && exam && !exam.submitted && <span className="exam-live-label">In progress</span>}</span></StudyLink>)}</nav>
+      <div className="sidebar-section-label subject-label">Subject</div>
       <div className="subject-menu">{subjects.map(s => <button type="button" key={s.id} disabled={!s.active} aria-pressed={subjectId === s.id} className={`subject-option ${s.id === subjectId ? 'selected' : ''}`} onClick={() => { setSubjectId(s.id); setLesson('strategy'); setFilter('all'); setPage('home') }}><span className="subject-initial">{s.shortName}</span><span>{s.shortName === 'ITP' ? 'C Programming' : s.name}<small>{s.active ? 'Your active subject' : 'Coming soon'}</small></span>{s.active && <span className="subject-check">✓</span>}</button>)}</div>
+      {subjectId === 'itp' && <div className="mobile-tools"><div className="sidebar-section-label">More tools</div><nav aria-label="More tools"><StudyLink view="scratch" title="C scratchpad" className={`nav-item ${page === 'scratch' ? 'active' : ''}`} current={page === 'scratch'} onNavigate={() => setPage('scratch')}><span className="rail-symbol nav-symbol" data-nav="scratch" aria-hidden="true">{'⌘'}</span><span className="nav-copy">C scratchpad<span className="exam-live-label">Write, compile and run C</span></span></StudyLink></nav></div>}
     </Sidebar>
     {resetPrompt && <ConfirmDialog title="Clear saved progress?" action="Clear progress" onConfirm={resetProgress} onClose={() => setResetPrompt(false)}><p>This clears all attempts and the saved exam in this browser. This cannot be undone.</p></ConfirmDialog>}
     <div className="workspace"><header className="topbar"><span>{subject.code} <span className="topbar-divider">/</span> <strong>{subject.name}</strong></span><span className="local-badge"><span/> Local workspace</span></header>
@@ -137,13 +186,14 @@ function App() {
       {exam?.submitted && page !== 'exam' && announcement.includes('exam') && <div className="notice">{announcement} <StudyLink view="exam" onNavigate={() => setPage('exam')}>View report</StudyLink></div>}
       {storageFailed && <div className="notice error" role="status">Browser storage is unavailable or full. You can keep practising, but changes may not survive a reload.</div>}
       {page === 'home' && <Home subject={subject} attempts={attempts} onPractice={openPractice} onExam={() => setPage('exam')} onLearn={() => openLearn()} />}
-      {page === 'learn' && <LessonBoundary><Suspense fallback={<div className="notes-loading" aria-busy="true"><p role="status">Opening your study notes…</p></div>}><Learn key={subjectId} subject={subjectId} selected={lesson} onSelect={id => { setLesson(id); setPage('learn', id) }} onPractice={openPractice} onRun={(code, title) => { setDraft({ code, stdin: '', title }); setPage('scratch') }} /></Suspense></LessonBoundary>}
-      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={openLearn}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakes.map(a => a.questionId)} record={record} override={override} runAnswers={runAnswers} onLearn={openLearn} />}</div>}
+      {page === 'learn' && <LessonBoundary><Suspense fallback={<div className="notes-loading" aria-busy="true"><p role="status">Opening your study notes…</p></div>}><Learn key={subjectId} subject={subjectId} selected={lesson} fromPractice={fromPractice} onBackToPractice={backToPractice} onSelect={id => { setLesson(id); setPage('learn', id) }} onPractice={openPractice} onRun={(code, title) => { setDraft({ code, stdin: '', title }); setPage('scratch') }} /></Suspense></LessonBoundary>}
+      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={topic => openLearn(topic, true)}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakes.map(a => a.questionId)} record={record} override={override} runAnswers={runAnswers} onLearn={topic => openLearn(topic, true)} />}</div>}
       {page === 'exam' && subjectId === 'itp' && <Exams freshResult={examFeedback?.id === exam?.startedAt && !!examFeedback} subject={subject} session={exam} update={setExam} finish={finishExam} attempts={attempts} override={override} onLearn={openLearn} />}
       <WPExams visible={page === 'exam' && subjectId === 'wp'} record={record} onLearn={openLearn} resetKey={practiceKey}/>
       <div hidden={page !== 'scratch' || subjectId !== 'itp'}><Scratchpad draft={draft} onChange={setDraft} /></div>
       <footer className="page-footer"><span>{subjectId === 'wp' ? 'One clear sentence at a time.' : 'One blank at a time.'}</span><span>BITS · Exam practice</span></footer>
     </main></div>
+    <TabBar page={page} examLive={!!exam && !exam.submitted} onNavigate={id => { if (id === page) { scrollToY(0); setMenuOpen(false); return } if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}/>
   </div>
 }
 
@@ -172,6 +222,9 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
   const [type, setType] = useState('all')
   const [source, setSource] = useState('all')
   const [selected, setSelected] = useState('')
+  const [pickerOpen, setPickerOpen] = useState(false)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const mobile = useIsMobile()
   const [drafts, setDrafts] = useState<Record<string, { answers: Record<string, string>; attemptId: string | null }>>({})
   useEffect(() => { setTopic(initialFilter); setSelected('') }, [initialFilter])
   // Submitted mock questions can be reviewed, with their mock source clearly labelled.
@@ -197,6 +250,8 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
   const currentIndex = pool.findIndex(q => q.id === question?.id)
   function choose(id: string) { setSelected(id); setNotice(''); focusQuestion() }
   function changeFilter(setter: (value: string) => void, value: string) { setter(value); setSelected(''); setNotice('') }
+  const topicName = subject.topics.find(t => t.id === question?.topic)?.name
+  const questionRows = (close: boolean) => pool.map((q, i) => <button type="button" key={q.id} className={q.id === question?.id ? 'selected' : ''} onClick={() => { if (close) setPickerOpen(false); choose(q.id) }} aria-current={q.id === question?.id ? 'true' : undefined}><span>{String(i + 1).padStart(2, '0')}</span><span className="question-list-copy">{q.title}<small>{q.source} · {q.type === 'blanks' ? `${q.blanks.length} blanks` : 'Output'}</small></span>{mistakes.includes(q.id) ? <span className="mistake-label">Revisit</span> : attempts.some(a => a.questionId === q.id) && <span className="done-label"><span aria-hidden="true">✓ </span>Done</span>}</button>)
   function submit() { if (!question || attempt) return; const result = makeAttempt(question, answers, 'practice'); record(result);
     const values = Object.values(result.results)
     const correct = values.filter(Boolean).length
@@ -206,22 +261,31 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
     setSelected(question.id); setDrafts(d => ({ ...d, [question.id]: { answers: { ...answers }, attemptId: result.id } })); setNotice(`${complete ? `All ${values.length} correct! ${nextStreak} fully correct in a row.` : `${correct}/${values.length} correct. Fix the red ones.`} Review each answer below.`) }
   return <>
     <div className="page-heading"><div><h1>Practice</h1><p className="muted">Try the code, check each blank, and learn from the trace.</p></div><div className="practice-meta"><span className="streak-badge"><span aria-hidden="true">&#10022; </span>{streak} fully correct in a row</span><span className="tag" role="status">{pool.length} matching questions</span></div></div>
-    <div className="filter-bar"><label>Topic<select value={topic} onChange={e => changeFilter(setTopic, e.target.value)}><option value="all">All topics</option><option value="mistakes">Only my mistakes</option>{subject.topics.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></label><label>Question type<select value={type} onChange={e => changeFilter(setType, e.target.value)}><option value="all">All question types</option><option value="blanks">Fill in the blanks</option><option value="output">Predict the output</option></select></label><label>Question bank<select value={source} onChange={e => changeFilter(setSource, e.target.value)}><option value="all">All available questions</option><option value="past">Past papers</option><option value="original">Original practice</option><option value="mock">Submitted mock review</option></select></label></div>
-    {!question ? <section className="panel empty-state"><h2>{topic === 'mistakes' ? 'A clean slate.' : 'No matching questions.'}</h2><p>{topic === 'mistakes' ? 'Questions with mistakes on your latest attempt appear here. Start practising to build your review list.' : 'Try a different topic or question type.'}</p><button type="button" className="button primary" onClick={() => { setTopic('all'); setType('all'); setSource('all'); choose('') }}>Browse all questions</button></section> : <div className="practice-layout"><aside className="question-nav panel"><details className="question-picker"><summary>Choose a question · {pool.length} available</summary><div className="section-heading"><h3>Question bank</h3><span className="small muted">{pool.length}</span></div><div className="question-list">{pool.map((q, i) => <button type="button" key={q.id} className={q.id === question.id ? 'selected' : ''} onClick={() => choose(q.id)} aria-current={q.id === question.id ? 'true' : undefined}><span>{String(i + 1).padStart(2, '0')}</span><span className="question-list-copy">{q.title}<small>{q.source} · {q.type === 'blanks' ? `${q.blanks.length} blanks` : 'Output'}</small></span>{mistakes.includes(q.id) && <span className="mistake-label">Revisit</span>}</button>)}</div></details></aside><section className="question-workspace" data-tone={topicTone(question.topic)}>
-      <div className="question-heading" tabIndex={-1}><div className="question-tags"><span className="tag topic-chip">{subject.topics.find(t => t.id === question.topic)?.name}</span><span className="tag">{question.difficulty}</span><span className="tag">{question.source}</span>{question.verified && <span className="tag verified">GCC checked</span>}</div><h2>{question.title}</h2>{!attempt && <a className="text-button" href="#practice-submit">Go to check answers</a>}</div>
+    <details className="filter-details" open={!mobile || filtersOpen} onToggle={e => { if (mobile) setFiltersOpen(e.currentTarget.open) }}><summary onClick={e => { if (!mobile) e.preventDefault() }}>Filters · {topic === 'all' ? 'All topics' : topic === 'mistakes' ? 'My mistakes' : subject.topics.find(t => t.id === topic)?.name}{type !== 'all' || source !== 'all' ? ' + more' : ''}</summary><div className="filter-bar"><label>Topic<select value={topic} onChange={e => changeFilter(setTopic, e.target.value)}><option value="all">All topics</option><option value="mistakes">Only my mistakes</option>{subject.topics.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></label><label>Question type<select value={type} onChange={e => changeFilter(setType, e.target.value)}><option value="all">All question types</option><option value="blanks">Fill in the blanks</option><option value="output">Predict the output</option></select></label><label>Question bank<select value={source} onChange={e => changeFilter(setSource, e.target.value)}><option value="all">All available questions</option><option value="past">Past papers</option><option value="original">Original practice</option><option value="mock">Submitted mock review</option></select></label></div></details>
+    {!question ? <section className="panel empty-state"><h2>{topic === 'mistakes' ? 'A clean slate.' : 'No matching questions.'}</h2><p>{topic === 'mistakes' ? 'Questions with mistakes on your latest attempt appear here. Start practising to build your review list.' : 'Try a different topic or question type.'}</p><button type="button" className="button primary" onClick={() => { setTopic('all'); setType('all'); setSource('all'); choose('') }}>Browse all questions</button></section> : <div className="practice-layout"><aside className="question-nav panel"><details className="question-picker"><summary>Choose a question · {pool.length} available</summary><div className="section-heading"><h3>Question bank</h3><span className="small muted">{pool.length}</span></div><div className="question-list">{questionRows(false)}</div></details></aside><section className="question-workspace" data-tone={topicTone(question.topic)}>
+      <div className="question-bar">
+        <button type="button" className="question-bar-step" aria-label="Previous question" disabled={currentIndex <= 0} onClick={() => choose(pool[currentIndex - 1].id)}><span aria-hidden="true">‹</span></button>
+        <button type="button" className="question-bar-position" aria-haspopup="dialog" onClick={() => setPickerOpen(true)}><strong>{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${pool.length}` : 'Marked question'}</strong><span className="small muted">All questions <span aria-hidden="true">▾</span></span></button>
+        <button type="button" className="question-bar-step" aria-label="Next question" disabled={currentIndex < 0 || currentIndex >= pool.length - 1} onClick={() => choose(pool[currentIndex + 1].id)}><span aria-hidden="true">›</span></button>
+        <span className="question-bar-progress" aria-hidden="true"><span style={{ width: `${currentIndex >= 0 ? (currentIndex + 1) / pool.length * 100 : 0}%` }}/></span>
+      </div>
+      <Sheet title="Choose a question" open={pickerOpen} onClose={() => setPickerOpen(false)}><div className="question-list sheet-list">{questionRows(true)}</div></Sheet>
+      <div className="question-heading" tabIndex={-1}><div className="question-tags"><span className="tag topic-chip">{subject.topics.find(t => t.id === question.topic)?.name}</span><span className="tag">{question.difficulty}</span><span className="tag">{question.source}</span>{question.verified && <span className="tag verified">GCC checked</span>}</div><h2>{question.title}</h2>{!attempt && <a className="text-button desk-only" href="#practice-submit" onClick={jumpTo('practice-submit')}>Go to check answers</a>}</div>
       <QuestionBrief question={question}/>
-      <p className="question-lesson"><StudyLink view="learn" topic={question.topic} className="text-button" onNavigate={() => onLearn(question.topic)}>Learn this topic: concepts, clues and common traps</StudyLink><span className="small muted">Your answers stay here while you read. Return using Practice.</span></p>
+      <div className="concept-link"><div><strong>{topicName}</strong><span className="small muted">Concepts, clues and common traps. Your answers are kept; use “Back to question” in the note to return here.</span></div><StudyLink view="learn" topic={question.topic} className="button secondary" onNavigate={() => onLearn(question.topic)}>Review concept</StudyLink></div>
       {question.stdin && <details className="sample-input"><summary>Sample standard input</summary><pre>{question.stdin}</pre></details>}
       {question.fixtures && <details className="sample-input"><summary>Input files (included when running)</summary>{Object.entries(question.fixtures).map(([name, contents]) => <div key={name}><h4>{name}</h4><pre>{contents}</pre></div>)}</details>}
       <CodeQuestion question={question} answers={answers} locked={!!attempt} results={attempt?.results} feedback={!!attempt && freshAttempt?.id === attempt.id} onChange={(id, value) => setAnswers({ ...answers, [id]: value })}/>
       {question.type === 'output' && <label className="output-answer">Your predicted output<textarea aria-describedby="output-help" autoCapitalize="off" autoComplete="off" rows={5} spellCheck={false} readOnly={!!attempt} value={answers.output || ''} onChange={e => setAnswers({ output: e.target.value })} placeholder="Type exactly what the program prints…"/><span id="output-help" className="small muted">Trailing spaces on each line are ignored. Leading spaces and final newlines matter.</span></label>}
-      <div className="question-actions"><div>{!attempt ? <button type="button" id="practice-submit" className="button primary" onClick={submit}>Check {question.type === 'blanks' ? 'answers' : 'output'}</button> : <button type="button" className="button secondary" onClick={() => { setDrafts(d => ({ ...d, [question.id]: { answers: {}, attemptId: null } })); setNotice('New attempt ready.'); requestAnimationFrame(() => document.querySelector<HTMLInputElement>('#main .inline-blank input, #main .output-answer textarea')?.focus()) }}>Try again</button>}{question.runnable && <button type="button" className="button secondary" onClick={() => runAnswers(question, answers)}>Run with my answers</button>}</div><span className="question-step"><span className="small muted">{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${pool.length}` : 'Marked question'}</span>{currentIndex < pool.length - 1 && <button type="button" className="text-button" onClick={() => choose(pool[currentIndex + 1].id)}>Next question</button>}{currentIndex === pool.length - 1 && <span className="small muted">Last matching question</span>}</span></div>
+      {question.runnable && <div className="question-tools"><button type="button" className="button secondary" onClick={() => runAnswers(question, answers)}>Run with my answers</button></div>}
       {!attempt && <p className="small muted marking-note">One mark per blank · Whitespace and trailing semicolons ignored · Equivalent answers can be self-marked after submission.</p>}
       <p className="sr-only" role="status">{notice}</p><div ref={report} tabIndex={-1} role="group" aria-label="Marked answers and score">{attempt && <Report question={question} attempt={attempt} onOverride={override} onLearn={onLearn} celebrate={freshAttempt?.id === attempt.id && freshAttempt.complete} animate={freshAttempt?.id === attempt.id}/>}</div>
+      <div className="question-actions sticky-dock"><div className="dock-main">{!attempt ? <button type="button" id="practice-submit" className="button primary" onClick={submit}>Check {question.type === 'blanks' ? 'answers' : 'output'}</button> : <button type="button" className="button secondary" onClick={() => { setDrafts(d => ({ ...d, [question.id]: { answers: {}, attemptId: null } })); setNotice('New attempt ready.'); requestAnimationFrame(() => document.querySelector<HTMLInputElement>('#main .inline-blank input, #main .output-answer textarea')?.focus()) }}>Try again</button>}{question.runnable && <button type="button" className="button secondary desk-only" onClick={() => runAnswers(question, answers)}>Run with my answers</button>}</div><span className="question-step"><span className="small muted desk-only">{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${pool.length}` : 'Marked question'}</span>{currentIndex >= 0 && currentIndex < pool.length - 1 && <button type="button" className={`button ${attempt ? 'primary' : 'secondary'}`} onClick={() => choose(pool[currentIndex + 1].id)}>Next question</button>}{currentIndex === pool.length - 1 && <><span className="small muted desk-only">Last matching question</span><button type="button" className="button secondary mobile-only" onClick={() => setPickerOpen(true)}>All questions</button></>}</span></div>
     </section></div>}
   </>
 }
 
+const jumpTo = (id: string) => (event: { preventDefault: () => void }) => { event.preventDefault(); document.getElementById(id)?.focus() }
 const clockText = (seconds: number) => { const n = Math.max(0, Math.floor(seconds)); return `${String(Math.floor(n / 3600)).padStart(2,'0')}:${String(Math.floor(n % 3600 / 60)).padStart(2,'0')}:${String(n % 60).padStart(2,'0')}` }
 function Exams({ subject, session, update, finish, attempts, override, onLearn, freshResult = false }: { freshResult?: boolean; subject: Subject; session: ExamSession | null; update: (s: ExamSession | null) => void; finish: (s: ExamSession) => void; attempts: Attempt[]; override: (a: string, b: string) => void; onLearn: (topic: string) => void }) {
   const [now, setNow] = useState(() => Date.now())
@@ -251,11 +315,11 @@ function Exams({ subject, session, update, finish, attempts, override, onLearn, 
   const filledCount = paperQuestions.reduce((sum, question) => sum + question.blanks.filter(b => session.answers[question.id]?.[b.id]?.trim()).length, 0)
   return <>
     <div className="page-heading"><div><p className="eyebrow">{paper.title}</p><h1>Mock exam in progress</h1><p className="muted">No feedback until submission. Each blank is worth one mark.</p></div><div className={`timer ${remaining < 900 ? 'time-low' : ''}`} role="timer" aria-label={`${remaining} seconds remaining`}><span>{remaining < 900 ? 'Less than 15 minutes remaining' : 'Time remaining'}</span><strong>{clockText(remaining)}</strong></div></div>
-    <div className="exam-toolbar"><nav className="exam-tabs" aria-label="Exam questions">{paperQuestions.map((question, i) => <button type="button" key={question.id} className={session.index === i ? 'selected' : ''} aria-current={session.index === i ? 'step' : undefined} onClick={() => { update({ ...session, index: i }); setConfirmSubmit(false) }} aria-label={`Question ${i+1}, ${question.blanks.filter(b => session.answers[question.id]?.[b.id]?.trim()).length} of 10 filled`}><span>{i+1}</span><small>{question.blanks.filter(b => session.answers[question.id]?.[b.id]?.trim()).length}/10</small></button>)}</nav><span className="small muted">{filledCount}/50 blanks filled</span></div>
+    <div className="exam-toolbar"><nav className="exam-tabs" aria-label="Exam questions">{paperQuestions.map((question, i) => <button type="button" key={question.id} className={session.index === i ? 'selected' : ''} aria-current={session.index === i ? 'step' : undefined} onClick={() => { update({ ...session, index: i }); setConfirmSubmit(false) }} aria-label={`Question ${i+1}, ${question.blanks.filter(b => session.answers[question.id]?.[b.id]?.trim()).length} of 10 filled`}><span>{i+1}</span><small>{question.blanks.filter(b => session.answers[question.id]?.[b.id]?.trim()).length}/10</small></button>)}</nav><span className="exam-clock" aria-hidden="true"><span>Left</span><strong>{clockText(remaining)}</strong></span><span className="small muted exam-filled">{filledCount}/50 blanks filled</span></div>
     <div className="pace-note"><span>30-minute pace · Suggested question: <strong>{suggested} of 5</strong></span><span>{paceRemaining > 0 ? `${clockText(paceRemaining)} until Q${session.index+1}’s pace checkpoint` : `Q${session.index+1}’s pace checkpoint has passed`}</span></div>
-    <p className="sr-only" role="status">{remaining <= 60 ? 'One minute or less remains. Your exam will submit automatically.' : remaining <= 300 ? 'Five minutes or less remain.' : remaining <= 900 ? 'Fifteen minutes or less remain.' : ''}</p><section className="exam-active" data-tone={topicTone(q.topic)}><div className="question-heading" tabIndex={-1}><span className="tag topic-chip">Question {session.index+1} / 5 · {q.blanks.length} blanks</span><h2>{q.title}</h2><a className="text-button" href="#exam-submit">Go to submit exam</a></div><QuestionBrief question={q}/>{q.stdin && <details className="sample-input"><summary>Sample standard input</summary><pre>{q.stdin}</pre></details>}{q.fixtures && <details className="sample-input"><summary>Input file contents</summary>{Object.entries(q.fixtures).map(([name, contents]) => <div key={name}><h4>{name}</h4><pre>{contents}</pre></div>)}</details>}
+    <p className="sr-only" role="status">{remaining <= 60 ? 'One minute or less remains. Your exam will submit automatically.' : remaining <= 300 ? 'Five minutes or less remain.' : remaining <= 900 ? 'Fifteen minutes or less remain.' : ''}</p><section className="exam-active" data-tone={topicTone(q.topic)}><div className="question-heading" tabIndex={-1}><span className="tag topic-chip">Question {session.index+1} / 5 · {q.blanks.length} blanks</span><h2>{q.title}</h2><a className="text-button desk-only" href="#exam-submit" onClick={jumpTo('exam-submit')}>Go to submit exam</a></div><QuestionBrief question={q}/>{q.stdin && <details className="sample-input"><summary>Sample standard input</summary><pre>{q.stdin}</pre></details>}{q.fixtures && <details className="sample-input"><summary>Input file contents</summary>{Object.entries(q.fixtures).map(([name, contents]) => <div key={name}><h4>{name}</h4><pre>{contents}</pre></div>)}</details>}
     <CodeQuestion question={q} answers={answers} submitId="exam-submit" onChange={(id, value) => { if (Date.now() >= session.deadline) { finish(session); return } update({ ...session, answers: { ...session.answers, [q.id]: { ...answers, [id]: value } } }) }}/></section>
-    <div className="question-actions"><div><button type="button" className="button secondary" aria-disabled={session.index === 0} onClick={() => { if (session.index > 0) update({ ...session, index: session.index - 1 }) }}>Previous question</button><button type="button" className="button secondary" aria-disabled={session.index === 4} onClick={() => { if (session.index < 4) update({ ...session, index: session.index + 1 }) }}>Next question</button></div><button type="button" className="button primary" id="exam-submit" onClick={() => setConfirmSubmit(true)}>Submit exam</button></div>
+    <div className="question-actions sticky-dock exam-dock"><div><button type="button" className="button secondary" aria-label="Previous question" aria-disabled={session.index === 0} onClick={() => { if (session.index > 0) update({ ...session, index: session.index - 1 }) }}>Previous<span className="desk-only"> question</span></button><button type="button" className="button secondary" aria-label="Next question" aria-disabled={session.index === 4} onClick={() => { if (session.index < 4) update({ ...session, index: session.index + 1 }) }}>Next<span className="desk-only"> question</span></button></div><button type="button" className="button primary" id="exam-submit" onClick={() => setConfirmSubmit(true)}>Submit exam</button></div>
     {confirmSubmit && <ConfirmDialog title="Submit this exam?" action="Submit and see report" onConfirm={() => { setConfirmSubmit(false); finish(session) }} onClose={() => setConfirmSubmit(false)}><p>{50 - filledCount} unanswered blanks. Submission locks your answers and opens the marked report.</p></ConfirmDialog>}
   </>
 }

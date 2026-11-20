@@ -1,9 +1,11 @@
-import { useRef, useState } from 'react'
-import type { ReactNode } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 import { concepts as itpConcepts, wpConcepts } from '../data/concepts'
 import { conceptExamples } from '../lib/concepts'
 import { StudyLink } from './StudyLink'
 import { topicTone } from '../topicColors'
+import { Sheet } from './Sheet'
+import { prefersReducedMotion, useIsMobile } from '../lib/viewport'
 
 // A deliberately small Markdown subset for these locally authored notes. React escapes
 // all text; no HTML injection, network assets, or third-party Markdown runtime is used.
@@ -80,16 +82,26 @@ export function Markdown({ text }: { text: string }) {
   return <>{blocks}</>
 }
 
+
 interface Props {
   subject?: string
   selected: string
   onSelect: (id: string) => void
   onPractice: (topic?: string) => void
   onRun: (code: string, title: string) => void
+  /** True when the reader arrived from a practice question's "Review concept" link. */
+  fromPractice?: boolean
+  onBackToPractice?: () => void
 }
 
-export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun }: Props) {
+const generalNotes = ['strategy', 'idioms', 'phrases', 'cheatsheet']
+
+export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun, fromPractice = false, onBackToPractice }: Props) {
   const [query, setQuery] = useState('')
+  const [pickerOpen, setPickerOpen] = useState(false)
+  const [jumpOpen, setJumpOpen] = useState(false)
+  const [showTop, setShowTop] = useState(false)
+  const mobile = useIsMobile()
   const article = useRef<HTMLElement>(null)
   const concepts = subject === 'wp' ? wpConcepts : itpConcepts
   const note = concepts.find(c => c.id === selected) || concepts[0]
@@ -97,26 +109,74 @@ export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun }
   const matches = concepts.filter(c => `${c.title}\n${c.markdown}`.toLowerCase().includes(query.trim().toLowerCase()))
   const sections = [...note.markdown.matchAll(/^## (.+)$/gm)].map(m => m[1])
   const examples = conceptExamples(note.markdown)
+  const practiseTopic = generalNotes.includes(note.id) ? 'all' : note.id
+  const practiseLabel = generalNotes.includes(note.id) ? 'Practise all topics' : 'Practise this topic'
+  const previous = index > 0 ? concepts[index - 1] : null
+  const next = index < concepts.length - 1 ? concepts[index + 1] : null
+  useEffect(() => {
+    const update = () => setShowTop(window.scrollY > 900)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [])
+  useEffect(() => { setJumpOpen(false) }, [note.id])
   function choose(id: string) {
     onSelect(id)
-    requestAnimationFrame(() => { article.current?.focus(); article.current?.scrollIntoView({ block: 'start' }) })
+    requestAnimationFrame(() => { article.current?.focus({ preventScroll: true }); article.current?.scrollIntoView({ block: 'start' }) })
   }
+  // Jump links scroll without writing #hash history entries, so Back still leaves the note.
+  function jump(event: MouseEvent<HTMLAnchorElement>, id: string) {
+    event.preventDefault()
+    setJumpOpen(false)
+    requestAnimationFrame(() => {
+      const target = document.getElementById(id)
+      if (!target) return
+      target.scrollIntoView({ block: 'start', behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+      target.focus({ preventScroll: true })
+    })
+  }
+  const noteLinks = (close: boolean) => matches.map(c => <StudyLink key={c.id} view="learn" topic={c.id} data-tone={topicTone(c.id)} current={note.id === c.id} className={note.id === c.id ? 'selected' : ''} onNavigate={() => { if (close) setPickerOpen(false); choose(c.id) }}><i className="topic-dot" aria-hidden="true"/><span>{c.fileName.slice(0, 2)}</span>{c.title}</StudyLink>)
   return <>
     <div className="page-heading"><div><h1>Learn</h1><p className="muted">Read a note, try the examples, then practise the same pattern.</p></div><span className="tag">{subject === 'wp' ? 'Exam-order study route' : '2-day study route'}</span></div>
+    <div className="learn-bar" data-tone={topicTone(note.id)}>
+      <button type="button" className="button secondary learn-bar-notes" aria-haspopup="dialog" onClick={() => setPickerOpen(true)}><span aria-hidden="true">☰</span> Notes</button>
+      <div className="learn-bar-title"><span className="small muted">Study {index + 1} of {concepts.length}</span><strong>{note.title}</strong></div>
+      {fromPractice && onBackToPractice && <button type="button" className="button primary learn-bar-back" aria-label="Back to your practice question" onClick={onBackToPractice}><span aria-hidden="true">←</span> Question</button>}
+    </div>
+    <Sheet title="Choose a note" open={pickerOpen} onClose={() => setPickerOpen(false)}>
+      <label htmlFor="learn-search-sheet">Find a concept</label><input id="learn-search-sheet" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Try scanf, transpose, heap…"/>
+      <p className="small muted" role="status">{query ? `${matches.length} matching notes` : `${concepts.length} notes · read in this order`}</p>
+      <nav className="sheet-list" aria-label="Notes, in study order">{noteLinks(true)}</nav>
+      {!matches.length && <p className="small">No notes found. Try a shorter term or <button type="button" className="text-button" onClick={() => setQuery('')}>clear search</button>.</p>}
+    </Sheet>
     <div className="learn-layout">
       <aside className="panel learn-nav">
         <label htmlFor="learn-search">Find a concept</label><input id="learn-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Try scanf, transpose, heap…"/>
         <p className="small muted" role="status">{query ? `${matches.length} matching notes` : `${concepts.length} notes · read in this order`}</p>
-        <details className="learn-picker"><summary>Choose a note · study {index + 1}</summary><nav aria-label="Concept study order">{matches.map(c => <StudyLink key={c.id} view="learn" topic={c.id} data-tone={topicTone(c.id)} current={note.id === c.id} className={note.id === c.id ? 'selected' : ''} onNavigate={() => choose(c.id)}><i className="topic-dot" aria-hidden="true"/><span>{c.fileName.slice(0, 2)}</span>{c.title}</StudyLink>)}</nav></details>
+        <details className="learn-picker"><summary>Choose a note · study {index + 1}</summary><nav aria-label="Concept study order">{noteLinks(false)}</nav></details>
         {!matches.length && <p className="small">No notes found. Try a shorter term or <button type="button" className="text-button" onClick={() => setQuery('')}>clear search</button>.</p>}
       </aside>
       <article ref={article} tabIndex={-1} className="panel learn-article" data-tone={topicTone(note.id)} aria-label={note.title}>
-        <div className="learn-toolbar"><span className="eyebrow">Study {index + 1} / {concepts.length}</span><StudyLink view="practice" topic={['strategy','idioms','phrases','cheatsheet'].includes(note.id) ? 'all' : note.id} className="button secondary" onNavigate={() => onPractice(['strategy','idioms','phrases','cheatsheet'].includes(note.id) ? 'all' : note.id)}>Practise {['strategy','idioms','phrases','cheatsheet'].includes(note.id) ? 'all topics' : 'this topic'}</StudyLink></div>
-        <nav className="learn-sections" aria-label="On this page">{sections.map(title => <a href={`#${headingId(title)}`} key={title}>{title}</a>)}</nav>
+        <div className="learn-toolbar"><span className="eyebrow">Study {index + 1} / {concepts.length}</span><StudyLink view="practice" topic={practiseTopic} className="button secondary" onNavigate={() => onPractice(practiseTopic)}>{practiseLabel}</StudyLink></div>
+        {sections.length > 0 && <details className="learn-jump" open={!mobile || jumpOpen} onToggle={event => { if (mobile) setJumpOpen(event.currentTarget.open) }}>
+          <summary onClick={event => { if (!mobile) event.preventDefault() }}>On this page · {sections.length} {sections.length === 1 ? 'section' : 'sections'}</summary>
+          <nav className="learn-sections" aria-label="On this page">{sections.map(title => <a href={`#${headingId(title)}`} key={title} onClick={event => jump(event, headingId(title))}>{title}</a>)}</nav>
+        </details>}
         <div className="learn-prose" key={note.id}><Markdown text={note.markdown}/></div>
         {examples.length > 0 && <section className="learn-experiments"><h3>Try a small change</h3><p>Open a completed example in the scratchpad. Predict what changes when you alter an input or operator, then run it with local GCC.</p><div>{examples.map((example, i) => <button type="button" key={i} className="button secondary" onClick={() => onRun(example.code, `${note.title} · example ${i + 1}`)}>Experiment with example {i + 1}</button>)}</div></section>}
-        <div className="learn-pagination">{index > 0 ? <StudyLink view="learn" topic={concepts[index - 1].id} className="text-button" onNavigate={() => choose(concepts[index - 1].id)}>Previous note</StudyLink> : <span className="small muted">First note</span>}<span className="small muted">Continue in study order</span>{index < concepts.length - 1 ? <StudyLink view="learn" topic={concepts[index + 1].id} className="text-button" onNavigate={() => choose(concepts[index + 1].id)}>Next note</StudyLink> : <span className="small muted">Last note</span>}</div>
+        <div className="learn-end">
+          <p className="learn-end-label small muted">End of note · {index + 1} of {concepts.length}</p>
+          <div className="learn-end-actions">
+            {fromPractice && onBackToPractice && <button type="button" className="button primary" onClick={onBackToPractice}>Back to your question</button>}
+            <StudyLink view="practice" topic={practiseTopic} className={`button ${fromPractice && onBackToPractice ? 'secondary' : 'primary'}`} onNavigate={() => onPractice(practiseTopic)}>{practiseLabel}</StudyLink>
+          </div>
+          <div className="learn-pagination">
+            {previous ? <StudyLink view="learn" topic={previous.id} className="button secondary pager pager-prev" onNavigate={() => choose(previous.id)}><span className="pager-label"><span aria-hidden="true">←</span> Previous note</span><span className="pager-title">{previous.title}</span></StudyLink> : <span className="pager-empty small muted">First note</span>}
+            {next ? <StudyLink view="learn" topic={next.id} className="button secondary pager pager-next" onNavigate={() => choose(next.id)}><span className="pager-label">Next note <span aria-hidden="true">→</span></span><span className="pager-title">{next.title}</span></StudyLink> : <span className="pager-empty small muted">Last note</span>}
+          </div>
+        </div>
       </article>
     </div>
+    {showTop && <button type="button" className="button secondary to-top" aria-label="Back to top of this note" onClick={() => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })}><span aria-hidden="true">↑</span> Top</button>}
   </>
 }
