@@ -573,7 +573,7 @@
     "runnable": true,
     "stdin": "2\n101 Ada 91.5\n102 Lin 88\n",
     "expectedOutput": "Enter the number of students: Enter the details of student 1:\nEnter roll number: Enter name: Enter marks: Enter the details of student 2:\nEnter roll number: Enter name: Enter marks: The details of the students are:\nDetails of student 1:\nRoll number: 101\nName: Ada\nMarks: 91.50\nDetails of student 2:\nRoll number: 102\nName: Lin\nMarks: 88.00\n",
-    "verified": false,
+    "verified": true,
     "brief": {
       "goal": "Dynamically allocate student records, read their details, and display them.",
       "rules": [
@@ -717,7 +717,7 @@
     "runnable": true,
     "stdin": "3\n",
     "expectedOutput": "Enter the number of employees: ",
-    "verified": false,
+    "verified": true,
     "brief": {
       "goal": "Allocate space for the requested number of employee records and release it after use.",
       "rules": [

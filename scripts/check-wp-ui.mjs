@@ -19,7 +19,7 @@ export async function checkWPUI(server,app,themes,contrast){
  assert(app('home',{[SUBJECT_KEY]:'"dm"'}).includes('Practise C programming'),'Inactive subject cannot be restored')
  assert(app('home',{[SUBJECT_KEY]:'{broken'}).includes('Practise C programming'))
  for(const topic of subjects.find(s=>s.id==='wp').topics){assert(topicTones[topic.id]);assert(wpConcepts.some(c=>c.id===topic.id))}
- assert.equal(wpConcepts.length,12)
+ assert.equal(wpConcepts.length,13)
  for(const note of wpConcepts){const html=render(Learn,{subject:'wp',selected:note.id,onSelect(){},onPractice(){},onRun(){}});assert(html.includes('Exam-order study route'));assert(html.includes(note.title.replaceAll('&','&amp;')));assert(!html.includes('Experiment with example'));if(note.id==='summary')assert(html.includes('<mark>'))}
  const practice=app('practice',savedSubject)
  assert(practice.includes('Submit answer')&&practice.includes('Save for grading')&&practice.includes('wp-editor')&&!practice.includes('code-editor'))
@@ -57,5 +57,5 @@ export async function checkWPUI(server,app,themes,contrast){
   for(const [fg,bg] of [['text','blank-highlight'],['accent','surface'],['correct','surface'],['wrong','surface']])assert(contrast(values['--'+fg],values['--'+bg])>=4.5)
   for(const hue of ['indigo','teal','amber','pink','sky'])assert(contrast(values['--surface'],values['--hue-'+hue])>=4.5,'Pie labels need contrast on every series')
  }
- console.log(`WP UI checks passed: subject persistence and isolation, all ${wp.length} editors/reports, 12 lessons, source charts/data tables, draft restoration, escaped highlights, 9 mock steps/reports and 4-theme token contrast.`)
+ console.log(`WP UI checks passed: subject persistence and isolation, all ${wp.length} editors/reports, 13 lessons (incl. cheatsheet), source charts/data tables, draft restoration, escaped highlights, 9 mock steps/reports and 4-theme token contrast.`)
 }

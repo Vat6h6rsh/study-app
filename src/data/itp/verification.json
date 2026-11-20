@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-20T06:29:34.211Z",
+  "checkedAt": "2026-11-20T18:02:32.659Z",
   "compiler": "C:\\Users\\hashj\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\\mingw64\\bin\\gcc.exe",
   "structuralQuestions": 121,
   "runnableQuestions": 120,
-  "verified": 118,
+  "verified": 120,
   "samplesVerified": 81,
   "unrunSamples": [],
   "skipped": [
@@ -12,22 +12,7 @@
       "reason": "Source signed-int loop has no defined infinite execution."
     }
   ],
-  "failures": [
-    {
-      "id": "past-2.1",
-      "failures": [
-        "Exit code null: \nStopped after 15 seconds. ",
-        "stdout expected \"Enter the number of students: Enter the details of student 1:\\nEnter roll number: Enter name: Enter marks: Enter the details of student 2:\\nEnter roll number: Enter name: Enter marks: The details of the students are:\\nDetails of student 1:\\nRoll number: 101\\nName: Ada\\nMarks: 91.50\\nDetails of student 2:\\nRoll number: 102\\nName: Lin\\nMarks: 88.00\\n\", received \"\""
-      ]
-    },
-    {
-      "id": "past-2.3",
-      "failures": [
-        "Exit code null: \nStopped after 15 seconds. ",
-        "stdout expected \"Enter the number of employees: \", received \"\""
-      ]
-    }
-  ],
+  "failures": [],
   "results": [
     {
       "id": "past-1.1",
@@ -94,10 +79,11 @@
     },
     {
       "id": "past-2.1",
-      "stdout": "",
-      "compileOutput": "\nStopped after 15 seconds.",
+      "stdout": "Enter the number of students: Enter the details of student 1:\r\nEnter roll number: Enter name: Enter marks: Enter the details of student 2:\r\nEnter roll number: Enter name: Enter marks: The details of the students are:\r\nDetails of student 1:\r\nRoll number: 101\r\nName: Ada\r\nMarks: 91.50\r\nDetails of student 2:\r\nRoll number: 102\r\nName: Lin\r\nMarks: 88.00\r\n",
+      "compileOutput": "",
       "stderr": "",
-      "exitCode": null,
+      "exitCode": 0,
+      "files": {},
       "outputCompared": true
     },
     {
@@ -111,10 +97,11 @@
     },
     {
       "id": "past-2.3",
-      "stdout": "",
-      "compileOutput": "\nStopped after 15 seconds.",
+      "stdout": "Enter the number of employees: ",
+      "compileOutput": "",
       "stderr": "",
-      "exitCode": null,
+      "exitCode": 0,
+      "files": {},
       "outputCompared": true
     },
     {

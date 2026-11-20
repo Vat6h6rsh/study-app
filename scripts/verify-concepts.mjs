@@ -3,7 +3,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises'
 import { conceptExamples } from '../src/lib/concepts.ts'
 import { findGcc, runC } from '../server/run-c.mjs'
 
-const directory = new URL('../../docs/itp/concepts/', import.meta.url)
+const directory = new URL('../content/itp/concepts/', import.meta.url)
 const files = (await readdir(directory)).filter(name => name.endsWith('.md')).sort()
 const expectedTopics = ['strategy', 'operators', 'loops', 'arrays', 'matrices', 'strings', 'functions', 'pointers', 'structs', 'memory', 'files', 'scope', 'idioms']
 const gcc = await findGcc()

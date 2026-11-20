@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
 export class SubmissionError extends Error { constructor(message, status=400) { super(message); this.status=status } }
-const directory = fileURLToPath(new URL('../../docs/wp/submissions/',import.meta.url))
+const directory = fileURLToPath(new URL('../content/wp/submissions/',import.meta.url))
 const words = text => text.replace(/==/g,'').trim().split(/\s+/u).filter(Boolean).length
 const fence = text => { const longest=Math.max(2,...[...text.matchAll(/`+/g)].map(m=>m[0].length));const ticks='`'.repeat(longest+1);return `${ticks}text\n${text}\n${ticks}` }
 export async function submissionMarkdown(data, now = new Date()) {
@@ -44,7 +44,7 @@ export async function saveSubmission(data) {
  await mkdir(directory,{recursive:true})
  // Same-minute saves append a new dated version; no existing answer is overwritten.
  await appendFile(target,`\n---\n\n${markdown}`,'utf8')
- return {file:`../docs/wp/submissions/${filename}`}
+ return {file:`content/wp/submissions/${filename}`}
 }
 export function writingSaver(){return {name:'local-writing-submissions',configureServer(server){server.middlewares.use('/api/save-writing',async(req,res)=>{
  res.setHeader('Content-Type','application/json')

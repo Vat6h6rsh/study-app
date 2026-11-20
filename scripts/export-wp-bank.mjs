@@ -1,4 +1,4 @@
-// Generates ../docs/wp/question-bank.md from the WP question data (past papers + original practice).
+// Generates content/wp/question-bank.md from the WP question data (past papers + original practice).
 // Usage: node scripts/export-wp-bank.mjs
 import { readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -40,7 +40,7 @@ function render(q) {
   if (q.passage) out += quote(q.passage) + '\n\n'
   if (q.abstract) out += quote(q.abstract) + '\n\n'
   if (q.original) out += quote(q.original) + '\n\n'
-  if (q.image) out += `![chart](../../study-app/public${q.image.startsWith('/') ? '' : '/'}${q.image})\n\n`
+  if (q.image) out += `![chart](../../public${q.image.startsWith('/') ? '' : '/'}${q.image})\n\n`
   if (q.chart) out += chartTable(q.chart) + '\n\n'
   if (q.type === 'match') out += q.items.map((i) => `- ${i.text}`).join('\n') + `\n\nCategories: ${q.categories.join(' · ')}\n\n`
 
@@ -70,6 +70,6 @@ for (const [k, title] of ORDER) {
   if (p.length || extra.length) md += `### From past papers (${p.length + extra.length})\n\n` + [...p, ...extra].map(render).join('')
   if (o.length) md += `### Practice (${o.length})\n\n` + o.map(render).join('')
 }
-const out = join(root, '../docs/wp/question-bank.md')
+const out = join(root, 'content/wp/question-bank.md')
 writeFileSync(out, md)
 console.log('Wrote', out, Math.round(md.length / 1024) + ' KB')

@@ -48,6 +48,6 @@ export default defineConfig({
   plugins: [react(), cRunner(), writingSaver()],
   server: {
     host: '127.0.0.1',
-    fs: { allow: [searchForWorkspaceRoot(process.cwd()), fileURLToPath(new URL('../docs/itp/concepts', import.meta.url)), fileURLToPath(new URL('../docs/wp/concepts', import.meta.url))] },
+    fs: { allow: [searchForWorkspaceRoot(process.cwd()), fileURLToPath(new URL('./content/itp/concepts', import.meta.url)), fileURLToPath(new URL('./content/wp/concepts', import.meta.url))] },
   },
 })

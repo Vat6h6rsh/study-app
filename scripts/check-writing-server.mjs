@@ -3,7 +3,7 @@ import { createServer } from 'vite'
 import { readFile, readdir, unlink } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-const directory=fileURLToPath(new URL('../../docs/wp/submissions/',import.meta.url))
+const directory=fileURLToPath(new URL('../content/wp/submissions/',import.meta.url))
 const existing=new Set(await readdir(directory).catch(e=>{if(e.code==='ENOENT')return [];throw e}))
 const original=JSON.parse(await readFile(new URL('../src/data/wp/original.json',import.meta.url),'utf8'))
 const now=new Date(),prefix=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}_`,time=String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0')

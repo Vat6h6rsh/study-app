@@ -6,7 +6,7 @@ export interface Concept {
 }
 
 // The sibling Markdown files are the single source, bundled by Vite for offline use.
-const notes = import.meta.glob('../../../docs/itp/concepts/*.md', {
+const notes = import.meta.glob('../../content/itp/concepts/*.md', {
   query: '?raw', import: 'default', eager: true,
 }) as Record<string, string>
 
@@ -19,7 +19,7 @@ export const concepts: Concept[] = Object.entries(notes).sort(([a], [b]) => a.lo
 
 export const conceptByTopic = new Map(concepts.map(note => [note.id, note]))
 
-const wpNotes = import.meta.glob('../../../docs/wp/concepts/*.md', {
+const wpNotes = import.meta.glob('../../content/wp/concepts/*.md', {
   query: '?raw', import: 'default', eager: true,
 }) as Record<string, string>
 export const wpConcepts: Concept[] = Object.entries(wpNotes).sort(([a],[b]) => a.localeCompare(b)).map(([path,markdown]) => {
