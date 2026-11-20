@@ -1,0 +1,2434 @@
+[
+  {
+    "id": "wp-p1-q1",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Paper 1: Rumours and social media",
+    "source": "Past paper 1 Q1",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write an argumentative paragraph in 150-200 on rumours and social media in contemporary times.",
+    "modelAnswer": "Social media users and platforms should share responsibility for limiting rumours without suppressing legitimate disagreement. Rapid communication is valuable, but the ease of forwarding information can give unsupported claims an appearance of authority.\n\nFirst, a rumour may reach many people before anyone checks its origin. Users can reduce this risk by pausing before sharing, checking the date and consulting the original source. A dramatic screenshot is not sufficient evidence simply because a trusted friend has forwarded it. Small acts of verification can interrupt careless repetition.\n\nSecond, platforms should make reliable context and correction easier to find. Clear reporting tools and visible explanations for moderation decisions can help users understand why a claim is disputed. Corrections should reach people who encountered the original post where practical.\n\nCritics may fear that these measures will restrict expression. That concern supports transparent rules and an appeal process, rather than allowing every accusation to circulate without scrutiny. Disagreement should remain possible, while fabricated claims should not gain protection merely by being popular. Responsible sharing and accountable platform design can preserve useful communication while reducing the harm caused by unexamined rumours.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: paper 1: rumours and social media",
+        "marks": 3.75
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.25
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.25
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses paper 1: rumours and social media directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 200
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write an argumentative paragraph in 150-200 on rumours and social media in contemporary times. [7.5 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. For upcoming Q1A, practise a 250-word essay. Historical contextual statements are reproduced from the question, not presented as current legal or medical advice."
+  },
+  {
+    "id": "wp-p2-q1",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Paper 2: Social media and cybercrime",
+    "source": "Past paper 2 Q1",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write an argumentative paragraph in 150-200 words on social media and cybercrime.",
+    "modelAnswer": "Social media services should combine user education with effective security measures to reduce cybercrime. These platforms support useful communication, but criminals can exploit trust, personal information and rapid sharing to deceive users.\n\nFirst, ordinary precautions can reduce avoidable exposure. Users should verify unexpected requests through an independent channel and avoid sharing passwords or one-time codes. A message appearing to come from a familiar account may still be fraudulent. Teaching people to pause and check a request is more practical than assuming that they can recognise every technical trick.\n\nSecond, platforms must take responsibility for the systems they operate. Accessible reporting, account protection and clear warnings about suspicious activity can make abuse easier to detect and contain. A victim should have a usable route for seeking assistance.\n\nSome argue that individuals alone should bear the consequences of careless online behaviour. Personal responsibility matters, but it cannot replace responsible service design. Criminals deliberately exploit predictable mistakes, and platforms are better placed to detect repeated patterns. A balanced approach therefore combines informed users with accountable providers. Social media can remain useful while its participants work together to make deception harder and recovery easier.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: paper 2: social media and cybercrime",
+        "marks": 3.75
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.25
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.25
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses paper 2: social media and cybercrime directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 200
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write an argumentative paragraph in 150-200 words on social media and cybercrime. [7.5 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. For upcoming Q1A, practise a 250-word essay. Historical contextual statements are reproduced from the question, not presented as current legal or medical advice."
+  },
+  {
+    "id": "wp-p3-q1",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Paper 3: E-learning achievement",
+    "source": "Past paper 3 Q1",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write an argumentative paragraph in 150-200 words on the impact of e-learning on students' academic achievement.",
+    "modelAnswer": "E-learning can improve academic achievement when it is combined with suitable teaching and reliable access. Its value depends on how it supports learning rather than on the mere presence of a digital platform.\n\nFirst, recorded explanations and downloadable material allow learners to revisit difficult concepts. A student can pause an example, attempt the steps independently and return to the explanation where understanding breaks down. This flexibility can make revision more purposeful than repeatedly reading incomplete classroom notes.\n\nSecond, online tools can provide frequent practice and timely feedback. Short quizzes or draft reviews can reveal misunderstandings before a final assessment. Teachers can then respond to the difficulties actually shown by their students.\n\nHowever, critics rightly point to unreliable connectivity, distraction and reduced personal contact. These problems can undermine achievement, particularly when institutions assume that every student has the same equipment. Downloadable resources, clear schedules and opportunities for discussion can reduce some of these barriers. E-learning should therefore complement thoughtful teaching rather than be treated as an automatic improvement. With equitable access and active engagement, it can strengthen understanding; without them, it may simply transfer existing difficulties onto a screen.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: paper 3: e-learning achievement",
+        "marks": 3.75
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.25
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.25
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses paper 3: e-learning achievement directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 200
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write an argumentative paragraph in 150-200 words on the impact of e-learning on students' academic achievement. [7. 5 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. For upcoming Q1A, practise a 250-word essay. Historical contextual statements are reproduced from the question, not presented as current legal or medical advice."
+  },
+  {
+    "id": "wp-p4-q1",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Paper 4: Supportive care debate",
+    "source": "Past paper 4 Q1",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Euthanasia, also known as assisted suicide is defined as the hastening of the death of a patient to prevent further suffering. Passive euthanasia is the practice of intentionally letting a patient die by withholding artificial life support such as a ventilator or feeding tube. Passive euthanasia was made legal in India in March 2018. Should the government fund the supportive care of terminally ill and vegetative patients or is euthanasia the way to go? Write a short argumentative essay in not less than 200 words presenting your opinion.",
+    "modelAnswer": "Governments should fund supportive care for terminally ill patients while respecting carefully established decisions about treatment. Financial pressure should not determine whether a person receives comfort, dignity and appropriate assistance. The question should therefore be approached through patient welfare rather than a simple choice between expenditure and death.\n\nFirst, funded care can reduce the burden on families. A household facing prolonged illness may struggle to obtain nursing support, pain relief and clear advice. Public provision can make these services more accessible and prevent lack of money from becoming the decisive consideration. Support should address both the patient's needs and the practical demands placed on caregivers.\n\nSecond, humane care requires attention to individual wishes and clinical circumstances. Terminal illness and a vegetative state are not interchangeable descriptions. Decisions about treatment should involve appropriate expertise, careful communication and respect for the patient's expressed preferences. An essay should not assume that every case has the same prognosis or desired outcome.\n\nCritics may argue that limited public resources should be directed only towards curable conditions. Resource allocation is a real challenge, but relief of suffering remains a legitimate purpose of healthcare. Proportionate supportive services can protect dignity without assuming that every possible intervention must continue indefinitely.\n\nGovernment funding should therefore make meaningful care available while allowing difficult decisions to follow the relevant safeguards. Compassion is better served by informed choices and accessible support than by presenting vulnerable patients or their families with a financially forced alternative.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: paper 4: supportive care debate",
+        "marks": 3.5
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.1666666666666667
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses paper 4: supportive care debate directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 200,
+      "max": 250
+    },
+    "originalMarks": 7.0,
+    "originalPrompt": "Euthanasia, also known as assisted suicide is defined as the hastening of the death of a patient to prevent further suffering. Passive euthanasia is the practice of intentionally letting a patient die by withholding artificial life support such as a ventilator or feeding tube. Passive euthanasia was made legal in India in March 2018. Should the government fund the supportive care of terminally ill and vegetative patients or is euthanasia the way to go? Write a short argumentative essay in not less than 200 words presenting your opinion. [7 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. For upcoming Q1A, practise a 250-word essay. Historical contextual statements are reproduced from the question, not presented as current legal or medical advice."
+  },
+  {
+    "id": "wp-p5-q1",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Paper 5: Offline exams after online classes",
+    "source": "Past paper 5 Q1",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Write a short argumentative essay in not less than 200 words expressing your opinion on whether it was fair for educational institutions to conduct exams in the offline mode while the classes were conducted online during the Lockdown.",
+    "modelAnswer": "Conducting compulsory offline examinations after entirely online classes during lockdown was unfair where institutions failed to address students’ unequal circumstances. An assessment may be academically demanding, but it should also provide a reasonable opportunity for students to demonstrate learning.\n\nFirst, online teaching did not guarantee equal preparation. Some students had quiet rooms, dependable devices and reliable connections; others struggled to join classes consistently. A common examination could therefore reflect differences in access as well as differences in understanding. Institutions needed to identify and respond to these barriers before deciding on an assessment format.\n\nSecond, travelling to an examination centre could create additional difficulty during a disrupted period. Students living far away or facing family responsibilities required clear notice and workable arrangements. A sudden change of mode could place burdens on those least able to absorb them. Fairness required consultation, accessible information and appropriate alternatives.\n\nSupporters of offline examinations may argue that supervision improves confidence in independent work. That concern is reasonable. However, academic integrity can be addressed through suitable assessment design, oral follow-up or carefully organised alternatives. It does not justify ignoring access and travel difficulties.\n\nOffline assessment was therefore defensible only when practical safeguards and adequate preparation accompanied it. Institutions should have matched their expectations with the learning conditions students actually experienced. The fairest response would preserve academic standards while ensuring that the method of assessment did not create avoidable disadvantages unrelated to the knowledge being tested.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: paper 5: offline exams after online classes",
+        "marks": 3.5
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.1666666666666667
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses paper 5: offline exams after online classes directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 200,
+      "max": 250
+    },
+    "originalMarks": 7.0,
+    "originalPrompt": "Write a short argumentative essay in not less than 200 words expressing your opinion on whether it was fair for educational institutions to conduct exams in the offline mode while the classes were conducted online during the Lockdown. [7 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. For upcoming Q1A, practise a 250-word essay. Historical contextual statements are reproduced from the question, not presented as current legal or medical advice."
+  },
+  {
+    "id": "wp-p1-q2",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 1: Paraphrase 2",
+    "source": "Past paper 1 Q2",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan, Sri Lanka and Tibet are included in the source’s account of South Asia. The label is frequently employed to construct a geographical or strategic political grouping, expressing alliances within Asia and among communities abroad. It may also shape social classifications without directly referring to nationality. Rather than simply identifying a conventional area-studies object, the term frames an interconnected region whose economies, political relationships and histories can be examined together. Its role is nevertheless uncertain and potentially contradictory, so the category should not be accepted as having a single straightforward meaning.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 1: paraphrase 2",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 1: paraphrase 2 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "South Asia refers to the nation-states of Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan, Sri Lanka, and Tibet. \"South Asia\" as a constructed category is often used as a strategic geopolitical or geographical term indicating political alliances, both in Asia and the diasporas, and the term is one that can configure social identities and categories without necessarily alluding to national identities. It is not to be taken as a term designating an object of study, as does area studies, but rather as designating a constructed geopolitical region with interlinked political economies and histories, a subject of study. Nevertheless, it is important to recognize the ambivalent function of the term. (Adapted from Desai, 2003, p. 5)",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] South Asia refers to the nation-states of Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan, Sri Lanka, and Tibet. \"South Asia\" as a constructed category is often used as a strategic geopolitical or geographical term indicating political alliances, both in Asia and the diasporas, and the term is one that can configure social identities and categories without necessarily alluding to national identities. It is not to be taken as a term designating an object of study, as does area studies, but rather as designating a constructed geopolitical region with interlinked political economies and histories, a subject of study. Nevertheless, it is important to recognize the ambivalent function of the term. (Adapted from Desai, 2003, p. 5)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 98,
+      "max": 120
+    }
+  },
+  {
+    "id": "wp-p1-q3",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 1: Paraphrase 3",
+    "source": "Past paper 1 Q3",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "During the 1930s, quantum entanglement became central to a heated disagreement involving Einstein, Bohr and Schrödinger over the basic character of the universe. For Einstein, reality had to exist in a definite form that could, in principle, be completely understood. Whether considering the moon or a light particle, he expected objects to possess specific characteristics discoverable by observation. By contrast, the emerging quantum account supported by Bohr, Schrödinger and others suggested unavoidable uncertainty. In that view, some features of a particle become determinate only when it is measured, rather than existing as fixed properties beforehand.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 1: paraphrase 3",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 1: paraphrase 3 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "Entanglement lay at the heart of a fiery clash in the 1930s between physics titans Albert Einstein on the one hand and Niels Bohr and Erwin Schrödinger on the other about how the universe operates at a fundamental level. Einstein believed all aspects of reality should have a concrete and fully knowable existence. All objects -- from the moon to a photon of light -- should have precisely defined properties that can be discovered through measurement. Bohr, Schrödinger and other proponents of the nascent quantum mechanics, however, were finding that reality appeared to be fundamentally uncertain; a particle does not possess certain properties until the moment of measurement. (Wood, 2022)",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] Entanglement lay at the heart of a fiery clash in the 1930s between physics titans Albert Einstein on the one hand and Niels Bohr and Erwin Schrödinger on the other about how the universe operates at a fundamental level. Einstein believed all aspects of reality should have a concrete and fully knowable existence. All objects -- from the moon to a photon of light -- should have precisely defined properties that can be discovered through measurement. Bohr, Schrödinger and other proponents of the nascent quantum mechanics, however, were finding that reality appeared to be fundamentally uncertain; a particle does not possess certain properties until the moment of measurement. (Wood, 2022)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 97,
+      "max": 119
+    }
+  },
+  {
+    "id": "wp-p2-q2",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 2: Paraphrase 2",
+    "source": "Past paper 2 Q2",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Printing without ink has recently drawn considerable interest as a less environmentally damaging technology and represents a major development in printing methods. The same environmental argument applies to writing. Conventional writing fluids include substances that can endanger people and the natural world. Moreover, marks made with ink usually remain on the page and cannot readily be removed. This permanence contributes to discarded paper and creates difficulties for protecting forests. An environmentally responsible substitute for ink is consequently worth investigating, so that the effects of writing, as well as those of printing, can be reduced.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 2: paraphrase 2",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 2: paraphrase 2 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "Recently, inkless printing has attracted much attention because of the lower environmental impact. Inkless technology is a new revolutionary step in the history of printing technologies. Similar to inkless printing, inkless writing is also important in terms of environmental pollution. The inks used for writing contain toxic and harmful chemicals; they are not safe for human health and the environment. The information written by ink on paper is permanent, and most of the time it cannot be erased; this creates vast problems of paper waste and forest conservation. Therefore, it is important to search for a green solution for the replacement of ink.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] Recently, inkless printing has attracted much attention because of the lower environmental impact. Inkless technology is a new revolutionary step in the history of printing technologies. Similar to inkless printing, inkless writing is also important in terms of environmental pollution. The inks used for writing contain toxic and harmful chemicals; they are not safe for human health and the environment. The information written by ink on paper is permanent, and most of the time it cannot be erased; this creates vast problems of paper waste and forest conservation. Therefore, it is important to search for a green solution for the replacement of ink.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 93,
+      "max": 113
+    }
+  },
+  {
+    "id": "wp-p2-q3",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 2: Paraphrase 3",
+    "source": "Past paper 2 Q3",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "An article that Frank Sinatra published in Time years ago taught me a useful lesson about singing. He suggested treating the microphone as though it were a loved one in order to regulate the voice precisely. A gentle, affectionate phrase calls for bringing it nearer, whereas a forceful passage requires moving it farther away. Learning to manage these adjustments depends on practical experience rather than merely knowing the advice. The skilled singer develops control by discovering when closeness or distance best serves the expression of the performance.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 2: paraphrase 3",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 2: paraphrase 3 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "I learnt something from that fantastic singer, Frank Sinatra, who wrote a little article many years ago in Time magazine, where he said that if you use your microphone as your lover, you will know exactly how to control your voice. Because, if you've got to say something loving, you just bring it closer. Every time you've got to say something powerful, you just take it far away. All these things only come through experience.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] I learnt something from that fantastic singer, Frank Sinatra, who wrote a little article many years ago in Time magazine, where he said that if you use your microphone as your lover, you will know exactly how to control your voice. Because, if you've got to say something loving, you just bring it closer. Every time you've got to say something powerful, you just take it far away. All these things only come through experience.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 68,
+      "max": 82
+    }
+  },
+  {
+    "id": "wp-p3-q2",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 3: Paraphrase 2",
+    "source": "Past paper 3 Q2",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Research into pollution in rivers and other surface sources, underground supplies and rainfall has repeatedly identified substantial metal concentrations. This review examines cadmium, lead, mercury and arsenic in sub-Saharan African waters because these substances are poisonous and affect both human health and ecosystems. Exposure is associated with serious illnesses, including lead poisoning, mercury poisoning and Itai Itai disease. The article considers whether communities can obtain enough safe drinking water, where metal pollution originates and how extensive it is. It also examines techniques for detecting these contaminants and the effects of consuming affected water, bringing together questions of supply, measurement and harm.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 3: paraphrase 2",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 3: paraphrase 2 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "Several research studies on metal contamination of surface water, groundwater and rainwater have reported high levels of metals. This review article focuses on the contamination of waters in sub- Saharan Africa by cadmium, lead, mercury and arsenic, because of their toxicity and the health and ecotoxicological consequences linked to their presence in water. These are heavy metals at the origin of several dangerous diseases such as lead poisoning, hydrarygysmus, Itai Itai disease, etc. This article reviews the problems of accessibility to drinking water in communities in terms of quantity and quality, the origins and levels of water contamination by metals as well as analytical methods for metals and the consequences related to the consumption of these waters. (Adapted from Abdou et al., 2023, p. 1)",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] Several research studies on metal contamination of surface water, groundwater and rainwater have reported high levels of metals. This review article focuses on the contamination of waters in sub- Saharan Africa by cadmium, lead, mercury and arsenic, because of their toxicity and the health and ecotoxicological consequences linked to their presence in water. These are heavy metals at the origin of several dangerous diseases such as lead poisoning, hydrarygysmus, Itai Itai disease, etc. This article reviews the problems of accessibility to drinking water in communities in terms of quantity and quality, the origins and levels of water contamination by metals as well as analytical methods for metals and the consequences related to the consumption of these waters. (Adapted from Abdou et al., 2023, p. 1)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 105,
+      "max": 129
+    }
+  },
+  {
+    "id": "wp-p3-q3",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 3: Paraphrase 3",
+    "source": "Past paper 3 Q3",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "ChatGPT introduced a broad public to the abilities of large language models. Such systems can produce readable academic essays, condense scientific articles, generate useful programs and answer questions at a level sufficient for medical examinations. Their research summaries have even made it difficult for scientists to recognise computer authorship. The report also warned that these capabilities could simplify the creation of unwanted messages, ransomware and other harmful material. Although the developer had introduced restrictions, users were already discovering ways to evade them. Nature therefore outlined principles for using these tools. The report stressed that scientific progress depends on honest authorship, accurate claims and openness about research procedures. These foundations must remain central even when automated writing becomes convincing and widely available.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 3: paraphrase 3",
+        "marks": 2.5
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.25
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.625
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.625
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 3: paraphrase 3 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "The AI chatbot ChatGPT has brought the capabilities of such tools, known as LLMs, to a mass audience. ChatGPT can write presentable student essays, summarize research papers, answer questions well enough to pass medical exams and generate helpful computer code. It has produced research abstracts good enough that scientists found it hard to spot that a computer had written them. \"Worryingly for society, it could also make spam, ransomware and other malicious outputs easier to produce. Although OpenAI has tried to put guard rails on what the chatbot will do, users are already finding ways around them,\" said the report. That is why Nature is setting out these principles. \"Ultimately, research must have transparency in methods, and integrity and truth from authors. This is, after all, the foundation that science relies on to advance,\" the report mentioned. (Published in The Economic Times, 27th January, 2023)",
+    "originalMarks": 5.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [5 Marks] The AI chatbot ChatGPT has brought the capabilities of such tools, known as LLMs, to a mass audience. ChatGPT can write presentable student essays, summarize research papers, answer questions well enough to pass medical exams and generate helpful computer code. It has produced research abstracts good enough that scientists found it hard to spot that a computer had written them. \"Worryingly for society, it could also make spam, ransomware and other malicious outputs easier to produce. Although OpenAI has tried to put guard rails on what the chatbot will do, users are already finding ways around them,\" said the report. That is why Nature is setting out these principles. \"Ultimately, research must have transparency in methods, and integrity and truth from authors. This is, after all, the foundation that science relies on to advance,\" the report mentioned. (Published in The Economic Times, 27th January, 2023)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 123,
+      "max": 151
+    }
+  },
+  {
+    "id": "wp-p4-q2",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 4: Paraphrase 2",
+    "source": "Past paper 4 Q2",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 6.0,
+    "suggestedMinutes": 18.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Evening begins as the sun descends and daylight gives way to night. At this moment, the natural world takes on a renewed brilliance. The sun resembles a golden circle, while a striking range of colours spreads across the western heavens. The sky and land appear washed in many shades. Light from the sinking sun touches rivers, ponds and treetops, making the distant western edge especially attractive. A reddish glow fills the sky and changes the appearance of surrounding objects. Beneath that light, the river’s small waves seem purple. As the sun finally passes out of view, the red colouring gradually fades. Darkness then extends over the landscape. People tending cattle lead their animals home, and birds make their way towards their nests. Eventually, only a few stars remain visible in the western sky. Watching this transition from vivid evening light to darkness offers a pleasing experience, bringing together changing colours, movement and the quiet return of living creatures to shelter.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 4: paraphrase 2",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.5
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.75
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.75
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 4: paraphrase 2 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "Sunset is the time when the sun goes down and night begins. During the sunset, nature assumes fresh, bright, and charming. The sun seems to be a disc of gold. We discover an excellent show of colors within the western sky. Seven colors make the western sky look charming. The full earth and also the sky seem to be painted with colors. The golden rays of the setting sun fall on the water of ponds, rivers, on top of trees. The western horizon appears exquisitely beautiful. The sky is then covered with the red glow of the setting sun, and all the objects of nature put on an alarming appearance. The ripples of the rivers look purple within the red glow of the departing sun. Gradually, the sun sinks below the horizon, and also the red tinge of the sky begins to turn. Darkness then covers the entire earth. The cowboys return home with their cattle. Birds are seen flying back to their nests. Nothing but some stars are seen within the western sky. A sunset scene is basically enjoyable.",
+    "originalMarks": 6.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [6 Marks] Sunset is the time when the sun goes down and night begins. During the sunset, nature assumes fresh, bright, and charming. The sun seems to be a disc of gold. We discover an excellent show of colors within the western sky. Seven colors make the western sky look charming. The full earth and also the sky seem to be painted with colors. The golden rays of the setting sun fall on the water of ponds, rivers, on top of trees. The western horizon appears exquisitely beautiful. The sky is then covered with the red glow of the setting sun, and all the objects of nature put on an alarming appearance. The ripples of the rivers look purple within the red glow of the departing sun. Gradually, the sun sinks below the horizon, and also the red tinge of the sky begins to turn. Darkness then covers the entire earth. The cowboys return home with their cattle. Birds are seen flying back to their nests. Nothing but some stars are seen within the western sky. A sunset scene is basically enjoyable.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 162,
+      "max": 198
+    }
+  },
+  {
+    "id": "wp-p5-q2",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Paper 5: Paraphrase 2",
+    "source": "Past paper 5 Q2",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 6.0,
+    "suggestedMinutes": 18.0,
+    "prompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "The natural world makes life possible through the connections among its living and non-living elements. People, animals and plants depend on this system for air, light, land, water and other essentials. Clearing forests has contributed greatly to rising global temperatures and damage to the environment. Industrial activity adds further pressure by consuming too many resources and releasing dangerous chemicals and gases. Reducing harm now requires using fewer materials, putting existing items to further use and turning discarded products into new ones. Cooperation across countries is needed to ease these pressures and recover ecological stability. Protecting the environment carefully has therefore become an urgent shared responsibility if its essential systems are to survive continuing threats.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: paper 5: paraphrase 2",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.5
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.75
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.75
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses paper 5: paraphrase 2 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "passage": "Nature is the ultimate source of our living. Both living and non-living things include nature, and everyone is interdependent, which helps maintain the ecosystem. Plants, animals, and humans all depend on nature for their survival. It supplies oxygen, sunlight, soil, water, and other necessary components. But deforestation has been the primary cause of global warming, destroying nature. In addition to exploiting excessive natural resources, other industries pollute the environment with toxic gases and chemicals. It is now essential to reduce biological damage, reuse things, and recycle existing materials to create new ones. People from all over the world should join forces to relieve pressure on the environment and restore its balance. It is now the essential aim to serve nature with utmost care to save our nature from hazards and threats.",
+    "originalMarks": 6.0,
+    "originalPrompt": "Paraphrase the following paragraph. Avoid using words and phrases from the original text as far as possible. [6 Marks] Nature is the ultimate source of our living. Both living and non-living things include nature, and everyone is interdependent, which helps maintain the ecosystem. Plants, animals, and humans all depend on nature for their survival. It supplies oxygen, sunlight, soil, water, and other necessary components. But deforestation has been the primary cause of global warming, destroying nature. In addition to exploiting excessive natural resources, other industries pollute the environment with toxic gases and chemicals. It is now essential to reduce biological damage, reuse things, and recycle existing materials to create new ones. People from all over the world should join forces to relieve pressure on the environment and restore its balance. It is now the essential aim to serve nature with utmost care to save our nature from hazards and threats.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. ",
+    "wordTarget": {
+      "min": 118,
+      "max": 144
+    }
+  },
+  {
+    "id": "wp-p1-q5",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 1: Summary 5",
+    "source": "Past paper 1 Q5",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Understanding Over Memorisation\n\nEducation should prioritise ==understanding and creativity== over temporary memorisation, helping children develop knowledge without excessive examination pressure.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 1: summary 5",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 1: summary 5 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "We have bartered away understanding for memory-based, short-term information accumulation. This must be reversed, particularly now that the mass of what could be memorised has begun to explode. We need to give our children some taste of understanding, following which they would be able to learn and create their own versions of knowledge as they go out to meet the world of bits, images and transactions of life. Such a taste would make the present of our children wholesome, creative and enjoyable; they would not be traumatised by the excessive burden of information that is required merely for a short time before the hurdle race we call examination. The document suggests some ways of getting out of this self-imposed adversity. Achieving some degree of success in this area would also signify that we have learnt to appreciate the capacity for learning and the futility of filling up children's memory banks with information that is best kept as ink marks on paper or bits on a computer disc.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] We have bartered away understanding for memory-based, short-term information accumulation. This must be reversed, particularly now that the mass of what could be memorised has begun to explode. We need to give our children some taste of understanding, following which they would be able to learn and create their own versions of knowledge as they go out to meet the world of bits, images and transactions of life. Such a taste would make the present of our children wholesome, creative and enjoyable; they would not be traumatised by the excessive burden of information that is required merely for a short time before the hurdle race we call examination. The document suggests some ways of getting out of this self-imposed adversity. Achieving some degree of success in this area would also signify that we have learnt to appreciate the capacity for learning and the futility of filling up children's memory banks with information that is best kept as ink marks on paper or bits on a computer disc. (NCERT, 2005)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p1-q6",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 1: Summary 6",
+    "source": "Past paper 1 Q6",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Flexible Inclusive Schooling\n\nSchools need ==flexible schedules, regional resources and interactive learning==, and subject choices that avoid restricting disadvantaged pupils.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 1: summary 6",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 1: summary 6 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "The school ethos is discussed as a dimension of the curriculum as it predisposes the child towards the aims of education and strategies of learning necessary for success at school. As a resource, school time needs to be planned in a flexible manner. Locally planned and flexible school calendars and time tables which permit time slots of different lengths required for different kinds of activities, such as project work and outdoor excursions to natural and heritage sites, are recommended. Efforts are required for preparing more learning resources for children, especially books and reference materials in regional languages, for school and teacher reference libraries, and for access to interactive rather than disseminative technologies. The NCF emphasises the importance of multiplicity and fluidity of options at the senior secondary level, discouraging the entrenched tendency to place children in fixed streams, and limiting opportunities of children, especially from the rural areas.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] The school ethos is discussed as a dimension of the curriculum as it predisposes the child towards the aims of education and strategies of learning necessary for success at school. As a resource, school time needs to be planned in a flexible manner. Locally planned and flexible school calendars and time tables which permit time slots of different lengths required for different kinds of activities, such as project work and outdoor excursions to natural and heritage sites, are recommended. Efforts are required for preparing more learning resources for children, especially books and reference materials in regional languages, for school and teacher reference libraries, and for access to interactive rather than disseminative technologies. The NCF emphasises the importance of multiplicity and fluidity of options at the senior secondary level, discouraging the entrenched tendency to place children in fixed streams, and limiting opportunities of children, especially from the rural areas. (NCERT, 2005)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p2-q5",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 2: Summary 5",
+    "source": "Past paper 2 Q5",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Education for Citizenship\n\nThe policy seeks ==equitable education== rooted in Indian values while developing responsible citizens committed to ==global well-being==.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 2: summary 5",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 2: summary 5 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "This National Education Policy envisions an education system rooted in Indian ethos that contributes directly to transforming India, that is Bharat, sustainably into an equitable and vibrant knowledge society, by providing high-quality education to all, and thereby making India a global knowledge superpower. The Policy envisages that the curriculum and pedagogy of our institutions must develop among the students a deep sense of respect towards the Fundamental Duties and Constitutional values, bonding with one's country, and a conscious awareness of one's roles and responsibilities in a changing world. The vision of the Policy is to instill among the learners a deep-rooted pride in being Indian, not only in thought, but also in spirit, intellect, and deeds, as well as to develop knowledge, skills, values, and dispositions that support responsible commitment to human rights, sustainable development and living, and global well-being, thereby reflecting a truly global citizen.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] This National Education Policy envisions an education system rooted in Indian ethos that contributes directly to transforming India, that is Bharat, sustainably into an equitable and vibrant knowledge society, by providing high-quality education to all, and thereby making India a global knowledge superpower. The Policy envisages that the curriculum and pedagogy of our institutions must develop among the students a deep sense of respect towards the Fundamental Duties and Constitutional values, bonding with one's country, and a conscious awareness of one's roles and responsibilities in a changing world. The vision of the Policy is to instill among the learners a deep-rooted pride in being Indian, not only in thought, but also in spirit, intellect, and deeds, as well as to develop knowledge, skills, values, and dispositions that support responsible commitment to human rights, sustainable development and living, and global well-being, thereby reflecting a truly global citizen.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p2-q6",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 2: Summary 6",
+    "source": "Past paper 2 Q6",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Community Learning Support\n\n==Supervised peer tutoring and trained volunteers== can strengthen foundational literacy and numeracy through safe, voluntary community participation.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 2: summary 6",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 2: summary 6 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "Due to the scale of the current learning crisis, all viable methods will be explored to support teachers in the mission of attaining universal foundational literacy and numeracy. Studies around the world show one-on-one peer tutoring to be extremely effective for learning not just for the learner, but also for the tutor. Thus, peer tutoring can be taken up as a voluntary and joyful activity for fellow students under the supervision of trained teachers and by taking due care of safety aspects. Additionally, it will also be made far easier for trained volunteers - from both the local community and beyond - to participate in this large-scale mission. Every literate member of the community could commit to teaching one student/person how to read, it would change the country's landscape very quickly. States may consider establishing innovative models to foster such peer-tutoring and volunteer activities, as well as launch other programmes to support learners, in this nationwide mission to promote foundational literacy and numeracy.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] Due to the scale of the current learning crisis, all viable methods will be explored to support teachers in the mission of attaining universal foundational literacy and numeracy. Studies around the world show one-on-one peer tutoring to be extremely effective for learning not just for the learner, but also for the tutor. Thus, peer tutoring can be taken up as a voluntary and joyful activity for fellow students under the supervision of trained teachers and by taking due care of safety aspects. Additionally, it will also be made far easier for trained volunteers - from both the local community and beyond - to participate in this large-scale mission. Every literate member of the community could commit to teaching one student/person how to read, it would change the country's landscape very quickly. States may consider establishing innovative models to foster such peer-tutoring and volunteer activities, as well as launch other programmes to support learners, in this nationwide mission to promote foundational literacy and numeracy.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p3-q5",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 3: Summary 5",
+    "source": "Past paper 3 Q5",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Learning Beyond Content\n\nEducation should develop ==adaptable thinking, capabilities and ethical character== through multidisciplinary learning that prepares students for employment.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 3: summary 5",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 3: summary 5 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "Indeed, with the quickly changing employment landscape and global ecosystem, it is becoming increasingly critical that children not only learn, but more importantly learn how to learn. Education thus, must move towards less content, and more towards learning about how to think critically and solve problems, how to be creative and multidisciplinary, and how to innovate, adapt, and absorb new material in novel and changing fields. Pedagogy must evolve to make education more experiential, holistic, integrated, inquiry-driven, discovery-oriented, learner-centred, discussion- based, flexible, and, of course, enjoyable. The curriculum must include basic arts, crafts, humanities, games, sports and fitness, languages, literature, culture, and values, in addition to science and mathematics, to develop all aspects and capabilities of learners; and make education more well-rounded, useful, and fulfilling to the learner. Education must build character, enable learners to be ethical, rational, compassionate, and caring, while at the same time prepare them for gainful, fulfilling employment.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] Indeed, with the quickly changing employment landscape and global ecosystem, it is becoming increasingly critical that children not only learn, but more importantly learn how to learn. Education thus, must move towards less content, and more towards learning about how to think critically and solve problems, how to be creative and multidisciplinary, and how to innovate, adapt, and absorb new material in novel and changing fields. Pedagogy must evolve to make education more experiential, holistic, integrated, inquiry-driven, discovery-oriented, learner-centred, discussion- based, flexible, and, of course, enjoyable. The curriculum must include basic arts, crafts, humanities, games, sports and fitness, languages, literature, culture, and values, in addition to science and mathematics, to develop all aspects and capabilities of learners; and make education more well-rounded, useful, and fulfilling to the learner. Education must build character, enable learners to be ethical, rational, compassionate, and caring, while at the same time prepare them for gainful, fulfilling employment. (GOI, 2020)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p3-q6",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 3: Summary 6",
+    "source": "Past paper 3 Q6",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5.0,
+    "suggestedMinutes": 15.0,
+    "prompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Skills for Change\n\n==Technological, environmental and health changes== demand skilled, multidisciplinary workers, collaborative research and attention to humanities and arts.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 3: summary 6",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 3: summary 6 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 15,
+      "max": 20
+    },
+    "passage": "The world is undergoing rapid changes in the knowledge landscape. With various dramatic scientific and technological advances, such as the rise of big data, machine learning, and artificial intelligence, many unskilled jobs worldwide may be taken over by machines, while the need for a skilled workforce, particularly involving mathematics, computer science, and data science, in conjunction with multidisciplinary abilities across the sciences, social sciences, and humanities, will be increasingly in greater demand. With climate change, increasing pollution, and depleting natural resources, there will be a sizeable shift in how we meet the world's energy, water, food, and sanitation needs, again resulting in the need for new skilled labour, particularly in biology, chemistry, physics, agriculture, climate science, and social science. The growing emergence of epidemics and pandemics will also call for collaborative research in infectious disease management and development of vaccines and the resultant social issues heighten the need for multidisciplinary learning. There will be a growing demand for humanities and art, as India moves towards becoming a developed country as well as among the three largest economies in the world.",
+    "originalMarks": 5.0,
+    "originalPrompt": "Summarize the following passage in 15-20 words. Avoid using words and phrases from the original text as far as possible. [5 Marks] The world is undergoing rapid changes in the knowledge landscape. With various dramatic scientific and technological advances, such as the rise of big data, machine learning, and artificial intelligence, many unskilled jobs worldwide may be taken over by machines, while the need for a skilled workforce, particularly involving mathematics, computer science, and data science, in conjunction with multidisciplinary abilities across the sciences, social sciences, and humanities, will be increasingly in greater demand. With climate change, increasing pollution, and depleting natural resources, there will be a sizeable shift in how we meet the world's energy, water, food, and sanitation needs, again resulting in the need for new skilled labour, particularly in biology, chemistry, physics, agriculture, climate science, and social science. The growing emergence of epidemics and pandemics will also call for collaborative research in infectious disease management and development of vaccines and the resultant social issues heighten the need for multidisciplinary learning. There will be a growing demand for humanities and art, as India moves towards becoming a developed country as well as among the three largest economies in the world. (GOI, 2020)",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p4-q5",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 4: Summary 5",
+    "source": "Past paper 4 Q5",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Summarize the following paragraph by condensing it to almost half its size. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "The Buzzer’s Unexplained Broadcasts\n\nA site near ==St. Petersburg== is believed to house ==MDZhB==, an unclaimed radio station associated with a mystery dating to the Cold War. For roughly three and a half decades, it has transmitted a repetitive tone continuously, interrupted by another sound every few seconds. Occasionally, a voice reads isolated Russian words. The station can be heard worldwide at ==4625 kHz==. Known online as ==the Buzzer==, it has attracted tens of thousands of followers and is grouped with two other mysterious stations, the Pip and the Squeaky Wheel. Despite their interest, listeners acknowledge that they do not understand the broadcasts. Neither an operator nor an established explanation is identified in the passage.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 4: summary 5",
+        "marks": 2.8
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.4
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.4
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.4
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 4: summary 5 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 101,
+      "max": 123
+    },
+    "passage": "In the middle of a Russian swampland, not far from the city of St. Petersburg, is a rectangular iron gate. Beyond its rusted bars are a collection of radio towers, abandoned buildings, and power lines bordered by a dry-stone wall. This sinister location is the focus of a mystery that stretches back to the height of the Cold War. It is thought to be the headquarters of a radio station, \"MDZhB\", that no one has ever claimed to run. Twenty-four hours a day, seven days a week, for the last three-and-a-half decades, it's been broadcasting a dull, monotonous tone. Every few seconds it's joined by a second sound, like some ghostly ship sounding its foghorn. Then the drone continues. Once or twice a week, a man or woman will read out some words in Russian, such as \"dinghy\" or \"farming specialist\". And that's it. Anyone, anywhere in the world can listen in, simply by tuning a radio to the frequency 4625 kHz. It's so enigmatic; it's as if it was designed with conspiracy theorists in mind. Today the station has an online following numbering in the tens of thousands, who know it affectionately as \"the Buzzer\". It joins two similar mystery stations, \"the Pip\" and the \"Squeaky Wheel\". As their fans readily admit themselves, they have absolutely no idea what they are listening to.",
+    "originalMarks": 7.0,
+    "originalPrompt": "Summarize the following paragraph by condensing it to almost half its size. Avoid using words and phrases from the original text as far as possible. [7 Marks] Directions: Create a title for the paragraph related to the main idea Summarize the text accurately without leaving any vital information Do NOT include any personal opinions in the summary Do highlight or underline the keywords in the passage In the middle of a Russian swampland, not far from the city of St. Petersburg, is a rectangular iron gate. Beyond its rusted bars are a collection of radio towers, abandoned buildings, and power lines bordered by a dry-stone wall. This sinister location is the focus of a mystery that stretches back to the height of the Cold War. It is thought to be the headquarters of a radio station, \"MDZhB\", that no one has ever claimed to run. Twenty-four hours a day, seven days a week, for the last three-and-a-half decades, it's been broadcasting a dull, monotonous tone. Every few seconds it's joined by a second sound, like some ghostly ship sounding its foghorn. Then the drone continues. Once or twice a week, a man or woman will read out some words in Russian, such as \"dinghy\" or \"farming specialist\". And that's it. Anyone, anywhere in the world can listen in, simply by tuning a radio to the frequency 4625 kHz. It's so enigmatic; it's as if it was designed with conspiracy theorists in mind. Today the station has an online following numbering in the tens of thousands, who know it affectionately as \"the Buzzer\". It joins two similar mystery stations, \"the Pip\" and the \"Squeaky Wheel\". As their fans readily admit themselves, they have absolutely no idea what they are listening to.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p5-q5",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Paper 5: Summary 5",
+    "source": "Past paper 5 Q5",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Summarize the following paragraph by condensing it to almost half its size. Avoid using words and phrases from the original text as far as possible.",
+    "modelAnswer": "Commercial Holidays and Their Origins\n\nA ==Hallmark holiday== is commonly regarded as a celebration driven mainly by commerce rather than traditional significance. Critics see such occasions as opportunities for businesses to profit, while supporters value the emphasis on ==family, friendship and enjoyment==. Valentine’s Day is a familiar example, generating extensive purchases of cards, gifts and meals. Its commercial development was encouraged by nineteenth-century printing methods that made greeting cards cheap to produce. However, the celebration has ==older origins== associated with the mid-February Roman festival Lupercalia, which marked the renewal of life in spring. Around the third century A.D., it became linked to ==Saint Valentine==, although the nature of that connection remains uncertain.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: paper 5: summary 5",
+        "marks": 2.8
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.4
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.4
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.4
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses paper 5: summary 5 directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 94,
+      "max": 115
+    },
+    "passage": "A Hallmark holiday refers to a holiday that is perceived to exist mainly for commercial reasons, rather than to celebrate a traditionally significant religious or secular event. Although many people view these celebrations in a negative way, others have positive views. On the negative side, hallmark holidays don't really celebrate an important event, and only exist for companies to make a lot of money. On the positive side, the term describes the perfect holiday in which family, friends, and fun come first. Everyday problems, worries, and stress can be put aside. Valentine's Day, which is celebrated on February 14, is usually considered to be one of the hallmark holidays. On Valentine's Day, billions of cards are sent. It is also an opportunity for customers to buy chocolates, flowers, engagement rings, romantic dinners, and so on. This commercial aspect can be traced back to the 19th century when printing technology improved to cheaply mass-produce greeting cards. But the origin of the celebration is much more ancient and can be traced back to a Roman festival called \"Lupercalia\" which was held in mid-February every year. The celebration purified new life in the spring. Around the third century A.D., the holiday became associated with Saint Valentine, although it isn't exactly clear how.",
+    "originalMarks": 7.0,
+    "originalPrompt": "Summarize the following paragraph by condensing it to almost half its size. Avoid using words and phrases from the original text as far as possible. [7 Marks] Directions: Create a title for the paragraph related to the main idea Summarize the text accurately without leaving any vital information Do NOT include any personal opinions in the summary Do highlight or underline the keywords in the passage A Hallmark holiday refers to a holiday that is perceived to exist mainly for commercial reasons, rather than to celebrate a traditionally significant religious or secular event. Although many people view these celebrations in a negative way, others have positive views. On the negative side, hallmark holidays don't really celebrate an important event, and only exist for companies to make a lot of money. On the positive side, the term describes the perfect holiday in which family, friends, and fun come first. Everyday problems, worries, and stress can be put aside. Valentine's Day, which is celebrated on February 14, is usually considered to be one of the hallmark holidays. On Valentine's Day, billions of cards are sent. It is also an opportunity for customers to buy chocolates, flowers, engagement rings, romantic dinners, and so on. This commercial aspect can be traced back to the 19th century when printing technology improved to cheaply mass-produce greeting cards. But the origin of the celebration is much more ancient and can be traced back to a Roman festival called \"Lupercalia\" which was held in mid-February every year. The celebration purified new life in the spring. Around the third century A.D., the holiday became associated with Saint Valentine, although it isn't exactly clear how.",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format.  Title and highlighted keywords are included to rehearse upcoming Q3B; the first three papers originally requested only 15–20 words. The live count includes the title."
+  },
+  {
+    "id": "wp-p1-q4",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Paper 1: Change in Consumption Pattern",
+    "source": "Past paper 1 Q4",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write a paragraph in 150 words describing the results of a study reported by the Reserve Bank of India, presented in the following figure.",
+    "modelAnswer": "The figure shows a shift from food towards non-food consumption in both rural and urban areas between 2004–05 and 2011–12. Rural food consumption fell from 55% to 53.6% and then 48.6%, a total decline of 6.4 percentage points. Its non-food share rose correspondingly from 45% to 51.4%, overtaking food by the final year. Urban households devoted a smaller share to food throughout: 42.5%, 40.7% and 38.5% in the three periods. Their non-food share increased from 57.5% to 61.5%. The urban food decline was therefore 4 percentage points, smaller than the rural decline. The rural–urban gap in food shares narrowed from 12.5 to 10.1 percentage points. Overall, non-food consumption gained importance in both areas, while food continued to occupy a larger share in rural areas. The percentages describe consumption composition and do not establish changes in absolute spending or the causes of the shift. Both areas retained distinct consumption profiles throughout.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: paper 1: change in consumption pattern",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.5
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.5
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.5
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The original image is retained alongside the accessible redraw and data table.",
+      "Numbers and units come from the chart, with estimates explicitly identified.",
+      "Only the traffic prompt asks for possible reasons; its model separates speculation from observed values."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 150
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Change in Consumption Pattern",
+      "xLabel": "Area and year",
+      "yLabel": "Percent of consumption",
+      "labels": [
+        "Rural 2004–05",
+        "Rural 2009–10",
+        "Rural 2011–12",
+        "Urban 2004–05",
+        "Urban 2009–10",
+        "Urban 2011–12"
+      ],
+      "series": [
+        {
+          "name": "Food total",
+          "values": [
+            55,
+            53.6,
+            48.6,
+            42.5,
+            40.7,
+            38.5
+          ]
+        },
+        {
+          "name": "Non-food total",
+          "values": [
+            45,
+            46.4,
+            51.4,
+            57.5,
+            59.3,
+            61.5
+          ]
+        }
+      ],
+      "note": "Exact printed values. The source uses stacked bars; this grouped redraw preserves all shares."
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write a paragraph in 150 words describing the results of a study reported by the Reserve Bank of India, presented in the following figure. [7.5 Marks]",
+    "image": "/wp/chart-1.png",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p2-q4",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Paper 2: Regional distribution of rural poverty, 1983–84 to 1999–2000",
+    "source": "Past paper 2 Q4",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write a paragraph in 150 words describing the results of a survey conducted by the Government of India, presented in the following figure.",
+    "modelAnswer": "The chart indicates a broad decline in rural poverty across five regions between 1983–84 and 1999–2000, with East remaining highest at each observation. Approximate values for East fell from 49% to 46% and then 40%. South recorded a larger reduction, from about 43% through 28% to 16%. Central declined from roughly 41% to 34% and 25%. West differed from the general early pattern: its rate rose from around 26% to 29% before dropping to 14%. North stayed near 22% in the first two periods and then fell to approximately 9%, the lowest final rate. By 1999–2000, the gap between East and North was about 31 percentage points. Overall, every region ended below its initial level, although the size and timing of the decline varied. These values are estimates from the image; small differences between nearly equal bars should not be overstated. Regional differences therefore persisted despite the widespread longer-term decline.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: paper 2: regional distribution of rural poverty, 1983–84 to 1999–2000",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.5
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.5
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.5
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The original image is retained alongside the accessible redraw and data table.",
+      "Numbers and units come from the chart, with estimates explicitly identified.",
+      "Only the traffic prompt asks for possible reasons; its model separates speculation from observed values."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 150
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Regional distribution of rural poverty, 1983–84 to 1999–2000",
+      "xLabel": "Region",
+      "yLabel": "Rural population below poverty line (%)",
+      "labels": [
+        "South",
+        "West",
+        "East",
+        "North",
+        "Central"
+      ],
+      "series": [
+        {
+          "name": "1983–84",
+          "values": [
+            43,
+            26,
+            49,
+            22,
+            41
+          ]
+        },
+        {
+          "name": "1993–94",
+          "values": [
+            28,
+            29,
+            46,
+            22,
+            34
+          ]
+        },
+        {
+          "name": "1999–2000",
+          "values": [
+            16,
+            14,
+            40,
+            9,
+            25
+          ]
+        }
+      ],
+      "note": "Approximate readings from an unlabelled mixed bar/line chart, rounded to whole percentage points. North’s first two values are both approximately 22%; tiny differences cannot be read reliably."
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write a paragraph in 150 words describing the results of a survey conducted by the Government of India, presented in the following figure. [7.5 Marks]",
+    "image": "/wp/chart-2.png",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p3-q4",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Paper 3: Individuals with internet access",
+    "source": "Past paper 3 Q4",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 7.5,
+    "suggestedMinutes": 22.5,
+    "prompt": "Write a paragraph in 150-200 words describing the results of a study presented in the following figure.",
+    "modelAnswer": "Internet access differed substantially across all four pairs of categories in the figure. Urban residents had the highest approximate access rate shown, at 23%, while the bottom 40% of households had the lowest, at about 4%. Within the income comparison, the upper 60% recorded approximately 11%, a gap of 7 percentage points. Young people aged 15–24 had an access rate near 20%, compared with 8% among mature individuals aged 45 and above. Urban access exceeded rural access, about 10%, by approximately 13 percentage points. Men recorded roughly 18%, compared with 12% for women, a gap of 6 percentage points. Thus, the location comparison showed the widest absolute gap among the paired categories, followed closely by age. These are separate comparisons, not shares of a single total. The chart supports statements about differences in access but gives no direct evidence of their causes or of changes over time. Values remain approximate.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: paper 3: individuals with internet access",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.5
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.5
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.5
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The original image is retained alongside the accessible redraw and data table.",
+      "Numbers and units come from the chart, with estimates explicitly identified.",
+      "Only the traffic prompt asks for possible reasons; its model separates speculation from observed values."
+    ],
+    "wordTarget": {
+      "min": 150,
+      "max": 200
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Individuals with internet access",
+      "xLabel": "Category / period",
+      "yLabel": "Individuals with internet access (%)",
+      "labels": [
+        "Bottom 40%",
+        "Upper 60%",
+        "Mature 45+",
+        "Young 15–24",
+        "Rural",
+        "Urban",
+        "Women",
+        "Men"
+      ],
+      "series": [
+        {
+          "name": "Recorded value",
+          "values": [
+            4,
+            11,
+            8,
+            20,
+            10,
+            23,
+            12,
+            18
+          ]
+        }
+      ],
+      "note": "Approximate bar-height readings, to the nearest percentage point. The categories are paired comparisons, not a distribution summing to 100%."
+    },
+    "originalMarks": 7.5,
+    "originalPrompt": "Write a paragraph in 150-200 words describing the results of a study presented in the following figure. [7.5 Marks] (Santos, 2016)",
+    "image": "/wp/chart-3.png",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p4-q4",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Paper 4: Deaths in Never land 1992 (in millions)",
+    "source": "Past paper 4 Q4",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Write a paragraph in 200 words using the information given in the bar chart on `Deaths in Never Land 1992'.",
+    "modelAnswer": "The bar chart compares deaths from six diseases in Never Land during 1992, with values expressed in millions. Tuberculosis was by far the largest category, at approximately 1.8 million deaths. Diarrhoea followed at about 0.5 million, while malaria accounted for roughly 0.4 million. Tropical diseases contributed approximately 0.3 million, AIDS about 0.2 million and leprosy around 0.1 million. The largest category was therefore eighteen times the smallest. Tuberculosis also exceeded the other five categories combined, whose approximate total was 1.5 million. Taken together, all six categories amounted to roughly 3.3 million deaths. Tuberculosis represented just over half of this total, or about 55%. Diarrhoea and malaria together accounted for 0.9 million, half the tuberculosis figure. Among the remaining categories, tropical diseases exceeded AIDS by approximately 0.1 million, the same gap separating AIDS and leprosy. Overall, the chart was strongly dominated by tuberculosis, with the five smaller categories distributed between 0.1 and 0.5 million. These estimates describe the chart only; it supplies neither population sizes nor explanations, so it cannot establish disease risks or reasons for the differences. These are estimates read from bar lengths. The graphic does not indicate whether the six categories account for every death in the country.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: paper 4: deaths in never land 1992 (in millions)",
+        "marks": 2.8
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.4
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.4
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.4
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The original image is retained alongside the accessible redraw and data table.",
+      "Numbers and units come from the chart, with estimates explicitly identified.",
+      "Only the traffic prompt asks for possible reasons; its model separates speculation from observed values."
+    ],
+    "wordTarget": {
+      "min": 200,
+      "max": 200
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Deaths in Never land 1992 (in millions)",
+      "xLabel": "Category / period",
+      "yLabel": "Deaths (millions)",
+      "labels": [
+        "AIDS",
+        "Leprosy",
+        "Tropical Diseases",
+        "Diarrhoea",
+        "Malaria",
+        "TB"
+      ],
+      "series": [
+        {
+          "name": "Recorded value",
+          "values": [
+            0.2,
+            0.1,
+            0.3,
+            0.5,
+            0.4,
+            1.8
+          ]
+        }
+      ],
+      "note": "Approximate bar-height readings at 0.1-million precision. This fictional chart is not current health data."
+    },
+    "originalMarks": 7.0,
+    "originalPrompt": "Write a paragraph in 200 words using the information given in the bar chart on `Deaths in Never Land 1992'. [7 Marks]",
+    "image": "/wp/chart-4.png",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p5-q4",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Paper 5: Vehicular traffic, 6 a.m. to 2 p.m.",
+    "source": "Past paper 5 Q4",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "Study the following bar graph that depicts the vehicular traffic at a busy road crossing in a particular place that was recorded on a particular day from 6 a.m. to 2 p.m. and the data rounded off to the nearest tens. Write a paragraph of not less than 200 words describing the chart and also give your reasons for these fluctuations.",
+    "modelAnswer": "Traffic increased rapidly after the first interval, reached a morning peak and then declined towards early afternoon. The handwritten upper y-axis labels are inconsistent, so these estimates follow the evenly spaced grid upward from the baseline. Approximately 100 vehicles crossed between 6 and 7 a.m., rising to about 450 between 7 and 8. The highest bar, between 8 and 9, represents roughly 1,150 on that grid; the next interval is near 1,050. Reading the printed upper labels instead would place these two bars around 100 vehicles higher. The following intervals show approximately 750 vehicles from 10 to 11, 600 from 11 to noon, 550 from noon to 1 and 200 from 1 to 2 p.m. Thus, the largest rise occurred before the morning peak, followed by a sustained decline. Since the question requests reasons, travel to work or school is a plausible explanation for the morning increase. Fewer scheduled journeys after the rush may explain the later reduction. However, these are possible interpretations, not facts established by the chart. The figure contains no direct information about travellers’ purposes. Overall, activity was concentrated in the morning, while the earliest and final intervals were much quieter. No later afternoon observations are provided.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: paper 5: vehicular traffic, 6 a.m. to 2 p.m.",
+        "marks": 2.8
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.4
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.4
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.4
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The original image is retained alongside the accessible redraw and data table.",
+      "Numbers and units come from the chart, with estimates explicitly identified.",
+      "Only the traffic prompt asks for possible reasons; its model separates speculation from observed values."
+    ],
+    "wordTarget": {
+      "min": 200,
+      "max": 200
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Vehicular traffic, 6 a.m. to 2 p.m.",
+      "xLabel": "Category / period",
+      "yLabel": "Vehicles (approx.)",
+      "labels": [
+        "6–7",
+        "7–8",
+        "8–9",
+        "9–10",
+        "10–11",
+        "11–12",
+        "12–1",
+        "1–2"
+      ],
+      "series": [
+        {
+          "name": "Recorded value",
+          "values": [
+            100,
+            450,
+            1150,
+            1050,
+            750,
+            600,
+            550,
+            200
+          ]
+        }
+      ],
+      "note": "The handwritten y-axis skips 1100 between 1000 and 1200. Values here follow the regular grid measured upward from the baseline: approximately 100, 450, 1150, 1050, 750, 600, 550, 200. Reading the inconsistent upper labels instead gives about 1250 and 1150 for the two tallest bars. Treat those values as uncertain, retain the original image, and state your reading. Source says data rounded to nearest tens; the image supports only estimates."
+    },
+    "originalMarks": 7.0,
+    "originalPrompt": "Study the following bar graph that depicts the vehicular traffic at a busy road crossing in a particular place that was recorded on a particular day from 6 a.m. to 2 p.m. and the data rounded off to the nearest tens. Write a paragraph of not less than 200 words describing the chart and also give your reasons for these fluctuations. [7 Marks]",
+    "image": "/wp/chart-5.png",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p4-q3",
+    "subject": "wp",
+    "topic": "email",
+    "title": "Paper 4: HCL vacancy enquiry",
+    "source": "Past paper 4 Q3",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "email",
+    "partLabel": "Q2A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "You met a stranger at a job fair who works for HCL and exchanged contact information during the conversation. Later, through a common friend, you got to know that HCL has vacancies for a good position from your stream. Write an email asking for further details about the opening and seek help if he\\she can refer you for the same.",
+    "modelAnswer": "Subject: Enquiry about HCL openings and referral process\n\nDear Alex Kumar,\n\nWe met at the recent job fair and exchanged contact details while discussing opportunities in software development. I am writing because our mutual friend mentioned that HCL may have openings relevant to my Computer Science background.\n\nCould you please share the job description, eligibility requirements and application procedure for any suitable position? Information about the location and selection stages would also help me assess the opportunity. I would be happy to send my CV and project details for your review.\n\nIf you consider my profile suitable and the company permits employee referrals, I would be grateful for your guidance or a referral. I understand that this depends on your assessment and the organisation’s process.\n\nThank you for your time and assistance. I appreciate the advice you shared at the fair and look forward to hearing from you.\n\nKind regards,\nRiya Sen",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Task fulfilled with details and explicit action: paper 4: hcl vacancy enquiry",
+        "marks": 2.3333333333333335
+      },
+      {
+        "id": "r2",
+        "label": "Purpose first and logical paragraphs",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r3",
+        "label": "Specific subject, salutation, close and sign-off",
+        "marks": 2.3333333333333335
+      },
+      {
+        "id": "r4",
+        "label": "Polite professional register and accurate mechanics",
+        "marks": 1.1666666666666667
+      }
+    ],
+    "checklist": [
+      "Use a specific subject and appropriate salutation",
+      "Put the purpose in the first paragraph",
+      "Include relevant facts and evidence",
+      "Make a specific, polite request",
+      "Close courteously and sign your full name"
+    ],
+    "annotations": [
+      "The answer addresses paper 4: hcl vacancy enquiry directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "originalMarks": 7.0,
+    "originalPrompt": "You met a stranger at a job fair who works for HCL and exchanged contact information during the conversation. Later, through a common friend, you got to know that HCL has vacancies for a good position from your stream. Write an email asking for further details about the opening and seek help if he\\she can refer you for the same. [7 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p5-q3",
+    "subject": "wp",
+    "topic": "email",
+    "title": "Paper 5: Wrongly delivered iPhone order",
+    "source": "Past paper 5 Q3",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "email",
+    "partLabel": "Q2A",
+    "marks": 7.0,
+    "suggestedMinutes": 21.0,
+    "prompt": "You ordered an iPhone 13 from wish.com and have already paid for it with money you have been saving for months. It arrives one day early but you are aghast to find two stones inside on opening the Wish packaging. Write an email to the e-commerce store's customer care service explaining the situation and requesting the replacement of the wrongly sent order.",
+    "modelAnswer": "Subject: Replacement request for incorrect delivery, order W-1842\n\nDear Wish Customer Care Team,\n\nI am writing to request a replacement for my prepaid iPhone 13 order, reference W-1842. The parcel arrived one day before the expected date, but it contained two stones instead of the phone.\n\nI discovered the incorrect contents when opening the Wish packaging. The packaging, delivery label and contents have been retained. Photographs and the order confirmation are available for your investigation.\n\nCould you please arrange collection of the incorrectly delivered parcel and send the iPhone 13 that I ordered? Please confirm the expected replacement date and whether any further evidence is required. As payment has already been completed, I would also appreciate confirmation that the replacement will involve no additional charge.\n\nThank you for investigating this matter. I look forward to your acknowledgement and a clear plan for resolving the incorrect delivery.\n\nYours sincerely,\nAman Das",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Task fulfilled with details and explicit action: paper 5: wrongly delivered iphone order",
+        "marks": 2.3333333333333335
+      },
+      {
+        "id": "r2",
+        "label": "Purpose first and logical paragraphs",
+        "marks": 1.1666666666666667
+      },
+      {
+        "id": "r3",
+        "label": "Specific subject, salutation, close and sign-off",
+        "marks": 2.3333333333333335
+      },
+      {
+        "id": "r4",
+        "label": "Polite professional register and accurate mechanics",
+        "marks": 1.1666666666666667
+      }
+    ],
+    "checklist": [
+      "Use a specific subject and appropriate salutation",
+      "Put the purpose in the first paragraph",
+      "Include relevant facts and evidence",
+      "Make a specific, polite request",
+      "Close courteously and sign your full name"
+    ],
+    "annotations": [
+      "The answer addresses paper 5: wrongly delivered iphone order directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "originalMarks": 7.0,
+    "originalPrompt": "You ordered an iPhone 13 from wish.com and have already paid for it with money you have been saving for months. It arrives one day early but you are aghast to find two stones inside on opening the Wish packaging. Write an email to the e-commerce store's customer care service explaining the situation and requesting the replacement of the wrongly sent order. [7 Marks]",
+    "notes": "Original past-paper wording and marks are retained. The upcoming exam uses the instructor’s new 50-mark format. "
+  },
+  {
+    "id": "wp-p4-q6",
+    "subject": "wp",
+    "topic": "questionnaire",
+    "title": "Employee monitoring",
+    "source": "Past paper 4 Q6",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "questionnaire",
+    "partLabel": "Q2B",
+    "marks": 8.0,
+    "suggestedMinutes": 24,
+    "prompt": "The management in your organization has installed a new employee monitoring software to keep track of its employees. As part of the installation team, your task is to take a survey on the effectiveness of the software. Prepare a questionnaire with a minimum of 8 questions of which 4 ought to be close-ended and 4 open-ended.",
+    "modelAnswer": "This voluntary survey seeks feedback on the effectiveness of the new employee monitoring software. Please answer from your experience; you may skip any item.\n\nOpen-ended questions\n1. How has the software affected your daily workflow?\n2. What difficulties, if any, have you experienced when using it?\n3. What changes would make its feedback more useful?\n4. What concerns, if any, do you have about the information collected?\n\nClosed-ended questions\n5. Have you used the software this week? Yes / No.\n6. How accurate is its activity record? Very accurate / Accurate / Neutral / Inaccurate / Very inaccurate / Not used.\n7. How many technical faults did you encounter last week? 0 / 1 / 2–3 / 4 or more / Not used.\n8. How clear is the explanation of data use? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.",
+    "rubric": [
+      {
+        "id": "o1",
+        "label": "Open question 1: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o2",
+        "label": "Open question 2: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o3",
+        "label": "Open question 3: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o4",
+        "label": "Open question 4: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "c1",
+        "label": "Closed question 1: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c2",
+        "label": "Closed question 2: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c3",
+        "label": "Closed question 3: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c4",
+        "label": "Closed question 4: relevant, neutral, with clear options",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Write one short neutral introduction",
+      "Include exactly four open questions",
+      "Include exactly four closed questions with answer options",
+      "Ask only one thing per question",
+      "Use neutral wording and a clear time frame"
+    ],
+    "annotations": [
+      "The answer addresses the effectiveness of the new employee monitoring software directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "questionnaire": {
+      "intro": "This voluntary survey seeks feedback on the effectiveness of the new employee monitoring software. Please answer from your experience; you may skip any item.",
+      "open": [
+        "How has the software affected your daily workflow?",
+        "What difficulties, if any, have you experienced when using it?",
+        "What changes would make its feedback more useful?",
+        "What concerns, if any, do you have about the information collected?"
+      ],
+      "closed": [
+        "Have you used the software this week? Yes / No.",
+        "How accurate is its activity record? Very accurate / Accurate / Neutral / Inaccurate / Very inaccurate / Not used.",
+        "How many technical faults did you encounter last week? 0 / 1 / 2–3 / 4 or more / Not used.",
+        "How clear is the explanation of data use? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen."
+      ]
+    },
+    "originalMarks": 8.0,
+    "originalPrompt": "The management in your organization has installed a new employee monitoring software to keep track of its employees. As part of the installation team, your task is to take a survey on the effectiveness of the software. Prepare a questionnaire with a minimum of 8 questions of which 4 ought to be close-ended and 4 open-ended. [8 Marks]",
+    "notes": "Old prompt says minimum eight; this model deliberately uses exactly four open and four closed questions to rehearse the upcoming 4-mark Q2B."
+  },
+  {
+    "id": "wp-p5-q6",
+    "subject": "wp",
+    "topic": "questionnaire",
+    "title": "Playschool choices",
+    "source": "Past paper 5 Q6",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "writing",
+    "task": "questionnaire",
+    "partLabel": "Q2B",
+    "marks": 8.0,
+    "suggestedMinutes": 24,
+    "prompt": "Imagine that you are the head researcher assigned with the task of conducting a study to know the opinion of the parents, whether they would like to send their children less than three years of age to playschools or rather spend the precious moments of their childhood together. Prepare a questionnaire with a minimum of 8 questions of which 4 need to be close-ended and 4 open-ended.",
+    "modelAnswer": "This voluntary survey seeks feedback on parents’ views on playschool for children younger than three. Please answer from your experience; you may skip any item.\n\nOpen-ended questions\n1. What factors would influence your decision about playschool?\n2. What benefits, if any, would you expect from a playschool?\n3. What concerns, if any, would you have about sending your child?\n4. What arrangement would best suit your family’s needs?\n\nClosed-ended questions\n5. Would you consider playschool before age three? Yes / No / Unsure.\n6. Does your child currently attend playschool? Yes / No / Not applicable.\n7. Which schedule would you prefer? Half day / Full day / Occasional sessions / No attendance / Unsure.\n8. How important is proximity when choosing a playschool? Very important / Important / Neutral / Unimportant / Very unimportant / Not applicable.",
+    "rubric": [
+      {
+        "id": "o1",
+        "label": "Open question 1: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o2",
+        "label": "Open question 2: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o3",
+        "label": "Open question 3: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "o4",
+        "label": "Open question 4: relevant, neutral and genuinely open",
+        "marks": 1.0
+      },
+      {
+        "id": "c1",
+        "label": "Closed question 1: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c2",
+        "label": "Closed question 2: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c3",
+        "label": "Closed question 3: relevant, neutral, with clear options",
+        "marks": 1.0
+      },
+      {
+        "id": "c4",
+        "label": "Closed question 4: relevant, neutral, with clear options",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Write one short neutral introduction",
+      "Include exactly four open questions",
+      "Include exactly four closed questions with answer options",
+      "Ask only one thing per question",
+      "Use neutral wording and a clear time frame"
+    ],
+    "annotations": [
+      "The answer addresses parents’ views on playschool for children younger than three directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "questionnaire": {
+      "intro": "This voluntary survey seeks feedback on parents’ views on playschool for children younger than three. Please answer from your experience; you may skip any item.",
+      "open": [
+        "What factors would influence your decision about playschool?",
+        "What benefits, if any, would you expect from a playschool?",
+        "What concerns, if any, would you have about sending your child?",
+        "What arrangement would best suit your family’s needs?"
+      ],
+      "closed": [
+        "Would you consider playschool before age three? Yes / No / Unsure.",
+        "Does your child currently attend playschool? Yes / No / Not applicable.",
+        "Which schedule would you prefer? Half day / Full day / Occasional sessions / No attendance / Unsure.",
+        "How important is proximity when choosing a playschool? Very important / Important / Neutral / Unimportant / Very unimportant / Not applicable."
+      ]
+    },
+    "originalMarks": 8.0,
+    "originalPrompt": "Imagine that you are the head researcher assigned with the task of conducting a study to know the opinion of the parents, whether they would like to send their children less than three years of age to playschools or rather spend the precious moments of their childhood together. Prepare a questionnaire with a minimum of 8 questions of which 4 need to be close-ended and 4 open-ended. [8 Marks]",
+    "notes": "Old prompt says minimum eight; this model deliberately uses exactly four open and four closed questions to rehearse the upcoming 4-mark Q2B."
+  },
+  {
+    "id": "wp-p1-q7",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Paper 1: abstract components",
+    "source": "Past paper 1 Q7",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "originalMarks": 8.0,
+    "suggestedMinutes": 12,
+    "prompt": "Adapted to upcoming Q5A: write out the exact sentence(s) for the four named parts. Omit source letters. Some source sentences have overlapping functions.",
+    "originalPrompt": "Match each of the sections (a-h) of the given abstract with one of the components (I-V) listed below. [8 Marks] Components I.Result II.Outline III.Background IV.Methodology a) This study deals with an active balanced cuber-circuit. b) This circuit can be used as IM3 generator in analogue predistortion systems for mean power amplifiers. c) Such a circuit exploits the odd non-linear characteristic of a B-class push-pull amplifier. d) When compared to conventional diode designs, it shows an improved third-order generation. e) A laboratory prototype of the cuber was created. f) Then, it was inserted into a pre-distortion system. g) As a next step, a pre-industrialized pre-distorter prototype was realized using the active-cuber block: the whole system seemed to be flexible enough to be used for the IM3 linearization of PAs. h) From experimental results obtained from a target 6 W power amplifier, we found that more than 8 dB of correction can be achieved in a fractional bandwidth of about 10%. (Adapted from Roselli, 2003)",
+    "abstract": "A. This study deals with an active balanced cuber-circuit. B. This circuit can be used as IM3 generator in analogue predistortion systems for mean power amplifiers. C. Such a circuit exploits the odd non-linear characteristic of a B-class push-pull amplifier. D. When compared to conventional diode designs, it shows an improved third-order generation. E. A laboratory prototype of the cuber was created. F. Then, it was inserted into a pre-distortion system. G. As a next step, a pre-industrialized pre-distorter prototype was realized using the active-cuber block: the whole system seemed to be flexible enough to be used for the IM3 linearization of PAs. H. From experimental results obtained from a target 6 W power amplifier, we found that more than 8 dB of correction can be achieved in a fractional bandwidth of about 10%.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Outline / topic",
+        "accepted": [
+          "This study deals with an active balanced cuber-circuit."
+        ],
+        "explanation": "Sentence a introduces what the study deals with. It is an outline rather than an explicit statement of purpose."
+      },
+      {
+        "id": "p2",
+        "name": "Background / application",
+        "accepted": [
+          "This circuit can be used as IM3 generator in analogue predistortion systems for mean power amplifiers.",
+          "Such a circuit exploits the odd non-linear characteristic of a B-class push-pull amplifier."
+        ],
+        "explanation": "Sentence b explains the circuit’s application; c describes its operating principle, also background."
+      },
+      {
+        "id": "p3",
+        "name": "Methodology",
+        "accepted": [
+          "A laboratory prototype of the cuber was created. Then, it was inserted into a pre-distortion system.",
+          "A laboratory prototype of the cuber was created. Then, it was inserted into a pre-distortion system. As a next step, a pre-industrialized pre-distorter prototype was realized using the active-cuber block: the whole system seemed to be flexible enough to be used for the IM3 linearization of PAs."
+        ],
+        "explanation": "Creating the prototype and inserting it into the system are procedures. Sentence g extends that procedure and includes an observed judgement."
+      },
+      {
+        "id": "p4",
+        "name": "Quantified result",
+        "accepted": [
+          "From experimental results obtained from a target 6 W power amplifier, we found that more than 8 dB of correction can be achieved in a fractional bandwidth of about 10%."
+        ],
+        "explanation": "Sentence h reports the measured correction and bandwidth. Sentence d is also a comparative result, but does not give the quantified outcome asked here."
+      }
+    ],
+    "notes": "The historical task was matching; this adaptation uses four typed components worth one mark each. The complete original task and original marks are retained. In paper 5 the original “Purpose”/“Methodology” categories are not cleanly represented; requested parts use defensible functions actually present in the text."
+  },
+  {
+    "id": "wp-p2-q7",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Paper 2: abstract components",
+    "source": "Past paper 2 Q7",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "originalMarks": 7.0,
+    "suggestedMinutes": 12,
+    "prompt": "Adapted to upcoming Q5A: write out the exact sentence(s) for the four named parts. Omit source letters. Some source sentences have overlapping functions.",
+    "originalPrompt": "Match each of the sentences (A-G) of the given abstract with one of the components (I-V) listed below. [7 Marks] A. Nuclear image has emerged as a promising research work in medical field. Images from different modality meet its own challenge. B. Positron Emission Tomography (PET) image may help to precisely localize disease to assist in planning the right treatment for each case and saving valuable time. C. In this paper, a novel approach of Spatial Fuzzy C-Means (PET- SFCM) clustering algorithm was introduced on PET scan image datasets. D. The proposed algorithm incorporated the spatial neighborhood information with traditional FCM, updating the objective function of each cluster, and was implemented and tested on huge data collection of patients with brain neuro degenerative disorder such as Alzheimer's disease. E. It demonstrated its effectiveness when tested for real world patient data sets. F. Experimental results were compared with conventional FCM and K-Means clustering algorithm. G. The performance of the PET-SFCM provided satisfactory results when compared with other two algorithms. (Meena & Raja, 2013, p. 50) Components I. Background to the study II. Aim of the study III. Methodology IV. Results",
+    "abstract": "A. Nuclear image has emerged as a promising research work in medical field. Images from different modality meet its own challenge. B. Positron Emission Tomography (PET) image may help to precisely localize disease to assist in planning the right treatment for each case and saving valuable time. C. In this paper, a novel approach of Spatial Fuzzy C-Means (PET- SFCM) clustering algorithm was introduced on PET scan image datasets. D. The proposed algorithm incorporated the spatial neighborhood information with traditional FCM, updating the objective function of each cluster, and was implemented and tested on huge data collection of patients with brain neuro degenerative disorder such as Alzheimer's disease. E. It demonstrated its effectiveness when tested for real world patient data sets. F. Experimental results were compared with conventional FCM and K-Means clustering algorithm. G. The performance of the PET-SFCM provided satisfactory results when compared with other two algorithms.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Background",
+        "accepted": [
+          "Nuclear image has emerged as a promising research work in medical field. Images from different modality meet its own challenge. Positron Emission Tomography (PET) image may help to precisely localize disease to assist in planning the right treatment for each case and saving valuable time."
+        ],
+        "explanation": "A and B establish the imaging context and the potential value of PET."
+      },
+      {
+        "id": "p2",
+        "name": "Purpose / proposed approach",
+        "accepted": [
+          "In this paper, a novel approach of Spatial Fuzzy C-Means (PET- SFCM) clustering algorithm was introduced on PET scan image datasets."
+        ],
+        "explanation": "C introduces the new approach. The abstract does not contain a separate “aims to” sentence; do not invent one."
+      },
+      {
+        "id": "p3",
+        "name": "Methodology",
+        "accepted": [
+          "The proposed algorithm incorporated the spatial neighborhood information with traditional FCM, updating the objective function of each cluster, and was implemented and tested on huge data collection of patients with brain neuro degenerative disorder such as Alzheimer's disease. Experimental results were compared with conventional FCM and K-Means clustering algorithm.",
+          "The proposed algorithm incorporated the spatial neighborhood information with traditional FCM, updating the objective function of each cluster, and was implemented and tested on huge data collection of patients with brain neuro degenerative disorder such as Alzheimer's disease."
+        ],
+        "explanation": "D explains the algorithm and testing dataset. F adds the comparison procedure, so the combined answer is more complete."
+      },
+      {
+        "id": "p4",
+        "name": "Results",
+        "accepted": [
+          "It demonstrated its effectiveness when tested for real world patient data sets. The performance of the PET-SFCM provided satisfactory results when compared with other two algorithms.",
+          "The performance of the PET-SFCM provided satisfactory results when compared with other two algorithms."
+        ],
+        "explanation": "E states effectiveness and G gives the comparative outcome. G alone captures the specific comparison; neither gives numeric performance."
+      }
+    ],
+    "notes": "The historical task was matching; this adaptation uses four typed components worth one mark each. The complete original task and original marks are retained. In paper 5 the original “Purpose”/“Methodology” categories are not cleanly represented; requested parts use defensible functions actually present in the text."
+  },
+  {
+    "id": "wp-p3-q7",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Paper 3: abstract components",
+    "source": "Past paper 3 Q7",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "originalMarks": 8.0,
+    "suggestedMinutes": 12,
+    "prompt": "Adapted to upcoming Q5A: write out the exact sentence(s) for the four named parts. Omit source letters. Some source sentences have overlapping functions.",
+    "originalPrompt": "Match each of the sentences (A-H) of the given abstract with one of the components (I-V) listed below. [8 Marks] A. According to Mircea and Andreesu (2015), cloud computing is a next-generation platform that allows institutions and organizations with a dynamic pool of resources to reduce costs through improved utilization. B. Educational institutions these days are facing many problems with the increasing need for IT and IT-related infrastructure. C. In such a scenario, cloud computing can be a reliable solution for fulfilling the need for software, storage services, and infrastructure of such institutions as it is based on existing IT technologies such as the internet, grid computing, virtualization etc. D. In light of the background mentioned above, this paper explored the role of cloud computing in Indian educational institutions, i.e. how cloud computing, through its various deployment and service models, can help improve the pedagogy of an institution. E. Further, this paper critically evaluated the crucial risks and challenges that institutions face in taking advantage of this emerging cost-effective technology which has the potential to bring a revolution in the education sector. F. This paper used live case studies of various Indian and international educational institutions utilising this technology to meet the ever-increasing pressure to deliver more for less as the data for discussion. G. Very few papers have discussed live cases of educational institutes where cloud computing plays a crucial role and even fewer studies have examined the risks and challenges associated with this technology. H. Hence, this study on cloud computing adds to the knowledge base by presenting a better understanding of the application of this technology in the field of education and its implications. (Adapted from Dhaliwal, 2017) Components I.Background to the study II.Importance of the study III.Aim of the study IV.Methodology V.Gaps in the existing research",
+    "abstract": "A. According to Mircea and Andreesu (2015), cloud computing is a next-generation platform that allows institutions and organizations with a dynamic pool of resources to reduce costs through improved utilization. B. Educational institutions these days are facing many problems with the increasing need for IT and IT-related infrastructure. C. In such a scenario, cloud computing can be a reliable solution for fulfilling the need for software, storage services, and infrastructure of such institutions as it is based on existing IT technologies such as the internet, grid computing, virtualization etc. D. In light of the background mentioned above, this paper explored the role of cloud computing in Indian educational institutions, i.e. how cloud computing, through its various deployment and service models, can help improve the pedagogy of an institution. E. Further, this paper critically evaluated the crucial risks and challenges that institutions face in taking advantage of this emerging cost-effective technology which has the potential to bring a revolution in the education sector. F. This paper used live case studies of various Indian and international educational institutions utilising this technology to meet the ever-increasing pressure to deliver more for less as the data for discussion. G. Very few papers have discussed live cases of educational institutes where cloud computing plays a crucial role and even fewer studies have examined the risks and challenges associated with this technology. H. Hence, this study on cloud computing adds to the knowledge base by presenting a better understanding of the application of this technology in the field of education and its implications.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Aim",
+        "accepted": [
+          "In light of the background mentioned above, this paper explored the role of cloud computing in Indian educational institutions, i.e. how cloud computing, through its various deployment and service models, can help improve the pedagogy of an institution. Further, this paper critically evaluated the crucial risks and challenges that institutions face in taking advantage of this emerging cost-effective technology which has the potential to bring a revolution in the education sector.",
+          "In light of the background mentioned above, this paper explored the role of cloud computing in Indian educational institutions, i.e. how cloud computing, through its various deployment and service models, can help improve the pedagogy of an institution."
+        ],
+        "explanation": "D states the investigation’s focus; E extends it to risks and challenges. D alone identifies the main aim."
+      },
+      {
+        "id": "p2",
+        "name": "Methodology",
+        "accepted": [
+          "This paper used live case studies of various Indian and international educational institutions utilising this technology to meet the ever-increasing pressure to deliver more for less as the data for discussion."
+        ],
+        "explanation": "F names the live case-study evidence used for discussion."
+      },
+      {
+        "id": "p3",
+        "name": "Research gap",
+        "accepted": [
+          "Very few papers have discussed live cases of educational institutes where cloud computing plays a crucial role and even fewer studies have examined the risks and challenges associated with this technology."
+        ],
+        "explanation": "G explicitly identifies what earlier papers have rarely covered."
+      },
+      {
+        "id": "p4",
+        "name": "Significance / implications",
+        "accepted": [
+          "Hence, this study on cloud computing adds to the knowledge base by presenting a better understanding of the application of this technology in the field of education and its implications."
+        ],
+        "explanation": "H describes how the study adds to understanding. It does not report a numerical result."
+      }
+    ],
+    "notes": "The historical task was matching; this adaptation uses four typed components worth one mark each. The complete original task and original marks are retained. In paper 5 the original “Purpose”/“Methodology” categories are not cleanly represented; requested parts use defensible functions actually present in the text."
+  },
+  {
+    "id": "wp-p4-q7",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Paper 4: abstract components",
+    "source": "Past paper 4 Q7",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "originalMarks": 8.0,
+    "suggestedMinutes": 12,
+    "prompt": "Adapted to upcoming Q5A: write out the exact sentence(s) for the four named parts. Omit source letters. Some source sentences have overlapping functions.",
+    "originalPrompt": "Match each of the sentences (A-G) of the given abstract with one of the components (I-V) listed below. [8 Marks] Components I. Background to the study II. Aim of the study III. Methodology IV. Results A. Despite the vast research by Americans on the Vietnam War, little is known about the perspective of the South Vietnamese military, officially called the Republic of Vietnam Armed Forces (RVNAF). B. The overall image that emerges from the literature is negative: lazy, corrupt, unpatriotic, apathetic soldiers with poor fighting spirits. C. This study recovers some of the South Vietnamese military perspectives for an American audience through qualitative interviews with 40 RVNAF veterans now living in San José, Sacramento, and Seattle, home to three of the top five largest Vietnamese-American communities in the nation. D. An analysis of these interviews yields the veterans' own explanations that complicate and sometimes even challenge three widely held assumptions about the South Vietnamese military: 1) the RVNAF was rife with corruption at the top ranks, hurting the morale of the lower ranks; 2) racial relations between the South Vietnamese military and the Americans were tense and hostile; and 3) the RVNAF was apathetic in defending South Vietnam from communism. E. The stories add nuance to our understanding of who the South Vietnamese were in the Vietnam War. F. This study is part of a growing body of research on non-American perspectives of the war. G. In using a largely untapped source of Vietnamese history; oral histories of Vietnamese immigrants; this project will contribute to future research on similar topics. Julie Pham (2001) \"Their War: The Perspective of the South Vietnamese Military in Their Own Words\"",
+    "abstract": "A. Despite the vast research by Americans on the Vietnam War, little is known about the perspective of the South Vietnamese military, officially called the Republic of Vietnam Armed Forces (RVNAF). B. The overall image that emerges from the literature is negative: lazy, corrupt, unpatriotic, apathetic soldiers with poor fighting spirits. C. This study recovers some of the South Vietnamese military perspectives for an American audience through qualitative interviews with 40 RVNAF veterans now living in San José, Sacramento, and Seattle, home to three of the top five largest Vietnamese-American communities in the nation. D. An analysis of these interviews yields the veterans' own explanations that complicate and sometimes even challenge three widely held assumptions about the South Vietnamese military: 1) the RVNAF was rife with corruption at the top ranks, hurting the morale of the lower ranks; 2) racial relations between the South Vietnamese military and the Americans were tense and hostile; and 3) the RVNAF was apathetic in defending South Vietnam from communism. E. The stories add nuance to our understanding of who the South Vietnamese were in the Vietnam War. F. This study is part of a growing body of research on non-American perspectives of the war. G. In using a largely untapped source of Vietnamese history; oral histories of Vietnamese immigrants; this project will contribute to future research on similar topics.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Background",
+        "accepted": [
+          "Despite the vast research by Americans on the Vietnam War, little is known about the perspective of the South Vietnamese military, officially called the Republic of Vietnam Armed Forces (RVNAF). The overall image that emerges from the literature is negative: lazy, corrupt, unpatriotic, apathetic soldiers with poor fighting spirits.",
+          "Despite the vast research by Americans on the Vietnam War, little is known about the perspective of the South Vietnamese military, officially called the Republic of Vietnam Armed Forces (RVNAF)."
+        ],
+        "explanation": "A identifies the gap and B describes the prevailing negative image."
+      },
+      {
+        "id": "p2",
+        "name": "Purpose",
+        "accepted": [
+          "This study recovers some of the South Vietnamese military perspectives for an American audience through qualitative interviews with 40 RVNAF veterans now living in San José, Sacramento, and Seattle, home to three of the top five largest Vietnamese-American communities in the nation."
+        ],
+        "explanation": "C states the aim of recovering veterans’ perspectives. The same sentence also includes the interviews used."
+      },
+      {
+        "id": "p3",
+        "name": "Methodology",
+        "accepted": [
+          "This study recovers some of the South Vietnamese military perspectives for an American audience through qualitative interviews with 40 RVNAF veterans now living in San José, Sacramento, and Seattle, home to three of the top five largest Vietnamese-American communities in the nation."
+        ],
+        "explanation": "C identifies qualitative interviews, 40 veterans and three cities. Purpose and method share a sentence here."
+      },
+      {
+        "id": "p4",
+        "name": "Results",
+        "accepted": [
+          "An analysis of these interviews yields the veterans' own explanations that complicate and sometimes even challenge three widely held assumptions about the South Vietnamese military: 1) the RVNAF was rife with corruption at the top ranks, hurting the morale of the lower ranks; 2) racial relations between the South Vietnamese military and the Americans were tense and hostile; and 3) the RVNAF was apathetic in defending South Vietnam from communism."
+        ],
+        "explanation": "D reports what analysing the interviews revealed. E interprets that contribution more broadly."
+      }
+    ],
+    "notes": "The historical task was matching; this adaptation uses four typed components worth one mark each. The complete original task and original marks are retained. In paper 5 the original “Purpose”/“Methodology” categories are not cleanly represented; requested parts use defensible functions actually present in the text."
+  },
+  {
+    "id": "wp-p5-q7",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Paper 5: abstract components",
+    "source": "Past paper 5 Q7",
+    "difficulty": "Exam",
+    "pool": "past",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "originalMarks": 8.0,
+    "suggestedMinutes": 12,
+    "prompt": "Adapted to upcoming Q5A: write out the exact sentence(s) for the four named parts. Omit source letters. Some source sentences have overlapping functions.",
+    "originalPrompt": "Match each of the sentences (A-G) of the given abstract with one of the components (I-V) listed below. [8 Marks] Components I. Purpose II. Results III. Introduction IV. Methodology A. Neural plasticity, the ability of neurons to change their properties in response to experiences, underpins the nervous system's capacity to form memories and actuate behaviors. B. How different plasticity mechanisms act together in vivo and at a cellular level to transform sensory information into behavior is not well understood. C. We show that in Caenorhabditis elegans two plasticity mechanisms-sensory adaptation and presynaptic plasticity-act within a single cell to encode thermosensory information and actuate a temperature preference memory. D. Sensory adaptation adjusts the temperature range of the sensory neuron (called AFD) to optimize the detection of temperature fluctuations associated with migration. E. Presynaptic plasticity in AFD is regulated by the conserved kinase nPKC and transforms thermosensory information into a behavioral preference. F. Bypassing AFD presynaptic plasticity predictably changes learned behavioral preferences without affecting sensory responses. G. Our findings indicate that two distinct neuroplasticity mechanisms function together through a single-cell logic system to enact thermotactic behavior. Hawk et al, \"Integration of Plasticity Mechanisms within a Single Sensory Neuron of C. elegans Actuates a Memory,\" Neuron, 97(2), 2018.",
+    "abstract": "A. Neural plasticity, the ability of neurons to change their properties in response to experiences, underpins the nervous system's capacity to form memories and actuate behaviors. B. How different plasticity mechanisms act together in vivo and at a cellular level to transform sensory information into behavior is not well understood. C. We show that in Caenorhabditis elegans two plasticity mechanisms-sensory adaptation and presynaptic plasticity-act within a single cell to encode thermosensory information and actuate a temperature preference memory. D. Sensory adaptation adjusts the temperature range of the sensory neuron (called AFD) to optimize the detection of temperature fluctuations associated with migration. E. Presynaptic plasticity in AFD is regulated by the conserved kinase nPKC and transforms thermosensory information into a behavioral preference. F. Bypassing AFD presynaptic plasticity predictably changes learned behavioral preferences without affecting sensory responses. G. Our findings indicate that two distinct neuroplasticity mechanisms function together through a single-cell logic system to enact thermotactic behavior.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Background / gap",
+        "accepted": [
+          "Neural plasticity, the ability of neurons to change their properties in response to experiences, underpins the nervous system's capacity to form memories and actuate behaviors. How different plasticity mechanisms act together in vivo and at a cellular level to transform sensory information into behavior is not well understood.",
+          "How different plasticity mechanisms act together in vivo and at a cellular level to transform sensory information into behavior is not well understood."
+        ],
+        "explanation": "A explains neural plasticity; B identifies the unresolved coordination problem."
+      },
+      {
+        "id": "p2",
+        "name": "Central finding",
+        "accepted": [
+          "We show that in Caenorhabditis elegans two plasticity mechanisms-sensory adaptation and presynaptic plasticity-act within a single cell to encode thermosensory information and actuate a temperature preference memory."
+        ],
+        "explanation": "“We show” presents the central finding, not an explicit purpose or a data-collection method."
+      },
+      {
+        "id": "p3",
+        "name": "Experimental result",
+        "accepted": [
+          "Bypassing AFD presynaptic plasticity predictably changes learned behavioral preferences without affecting sensory responses."
+        ],
+        "explanation": "F reports the effect of bypassing presynaptic plasticity. No detailed methods sentence is supplied; do not fabricate one."
+      },
+      {
+        "id": "p4",
+        "name": "Conclusion / implications",
+        "accepted": [
+          "Our findings indicate that two distinct neuroplasticity mechanisms function together through a single-cell logic system to enact thermotactic behavior."
+        ],
+        "explanation": "G integrates the two mechanisms into the abstract’s overall interpretation."
+      }
+    ],
+    "notes": "The historical task was matching; this adaptation uses four typed components worth one mark each. The complete original task and original marks are retained. In paper 5 the original “Purpose”/“Methodology” categories are not cleanly represented; requested parts use defensible functions actually present in the text."
+  },
+  {
+    "id": "wp-p1-q8",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Paper 1: functions in a report conclusion",
+    "source": "Past paper 1 Q8",
+    "difficulty": "Challenge",
+    "pool": "past",
+    "type": "match",
+    "partLabel": "Report drill",
+    "marks": 7.0,
+    "originalMarks": 7.0,
+    "suggestedMinutes": 10,
+    "prompt": "Match each of the sentences (a-g) of the given conclusion section of a research paper with one of the functions (I-IV) listed below.",
+    "originalPrompt": "Match each of the sentences (a-g) of the given conclusion section of a research paper with one of the functions (I-IV) listed below. [7 Marks] Functions I.Suggesting a future research path II.Stating the limitation of the existing research III.Summarising the main idea IV.Providing the background a) The development of semi behaviour is a topic that is now being studied. b) It traditionally has its roots in the renowned Turing test. c) The possibilities created by incorporating science into videogames are endless, including the incorporation of emotions in artificial players and the option to create a direct connection between them and the player's emotive perception through the use of what is known as Active Computing. d) It has been shown that procedural content generation is a hot field in academia with lots of articles related to it. e) Additionally, the videogame industry successfully applies many of the technological improvements made in academia, despite the fact that there are still many problems that have not been solved. f) We conclude our study by pointing out that there are many applications of computational and artificial intelligence that haven't been specifically covered here and where future research may find more difficulties, such as player modelling, computational narrative, and AI-assisted game design, among other things. g) Not only do we face interesting difficulties in the near future, but also in the present. (Adapted from Tank, 2023)",
+    "categories": [
+      "Background",
+      "Summary",
+      "Limitation",
+      "Future direction"
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "text": "The development of semi behaviour is a topic that is now being studied.",
+        "answer": "Background",
+        "explanation": "Introduces the area being studied."
+      },
+      {
+        "id": "i2",
+        "text": "It traditionally has its roots in the renowned Turing test.",
+        "answer": "Background",
+        "explanation": "Names its earlier foundation."
+      },
+      {
+        "id": "i3",
+        "text": "The possibilities created by incorporating science into videogames are endless, including the incorporation of emotions in artificial players and the option to create a direct connection between them and the player's emotive perception through the use of what is known as Active Computing.",
+        "answer": "Future direction",
+        "explanation": "Describes possible future applications."
+      },
+      {
+        "id": "i4",
+        "text": "It has been shown that procedural content generation is a hot field in academia with lots of articles related to it.",
+        "answer": "Summary",
+        "explanation": "Summarises the active field of research."
+      },
+      {
+        "id": "i5",
+        "text": "Additionally, the videogame industry successfully applies many of the technological improvements made in academia, despite the fact that there are still many problems that have not been solved.",
+        "answer": "Limitation",
+        "explanation": "Acknowledges unresolved problems."
+      },
+      {
+        "id": "i6",
+        "text": "We conclude our study by pointing out that there are many applications of computational and artificial intelligence that haven't been specifically covered here and where future research may find more difficulties, such as player modelling, computational narrative, and AI-assisted game design, among other things.",
+        "answer": "Future direction",
+        "explanation": "Names areas not covered and future research opportunities."
+      },
+      {
+        "id": "i7",
+        "text": "Not only do we face interesting difficulties in the near future, but also in the present.",
+        "answer": "Future direction",
+        "explanation": "Points to continuing challenges."
+      }
+    ],
+    "notes": "Supplementary report-function drill adapted from an old conclusion-matching task. Some functions overlap; choose the strongest function of the whole labelled portion. It is not an additional question in the upcoming mock format."
+  },
+  {
+    "id": "wp-p2-q8",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Paper 2: functions in a report conclusion",
+    "source": "Past paper 2 Q8",
+    "difficulty": "Challenge",
+    "pool": "past",
+    "type": "match",
+    "partLabel": "Report drill",
+    "marks": 8.0,
+    "originalMarks": 8.0,
+    "suggestedMinutes": 10,
+    "prompt": "Match each of the following components (I-IV) with one or more sentences (A-H) from the given conclusion section of an academic report.",
+    "originalPrompt": "Match each of the following components (I-IV) with one or more sentences (A-H) from the given conclusion section of an academic report. [8 Marks] Components I. Restating research objectives II. Suggesting a future research path III. Summarising the main ideas or arguments IV. Signficance of the study A. In summary, we have reported the use of off-the-shelf commercial dyes 1 and 2 for the detection of trace amounts of water in the organic solvents. B. Protonation of 1.F and 2.F using moisture (water) is the main working principle behind the colorimetric detection. C. Both sensors have high sensitivity for moisture in THF, acetone, and acetonitrile. D. Test papers incorporated with 1.F are fast, reversible, reusable, and portable moisture sensors that could measure moisture without the help of any instrument. E. In addition to the sensitivity and reversibility, these two probes have other advantages such as low cost, no chemical synthesis, easy availability, naked-eye detection, and fast response time. F. The test paper- based portable analytical device is well-explored for the rapid detection of moisture in organic solvents. G. Importantly, the inkless writings on the paper with write-and-erase properties are significant applications. H. We expect that a similar type of moisture detection mechanism has immense potential for the advance of water sensors and inkless writing.",
+    "categories": [
+      "Restated objective",
+      "Summary / principle",
+      "Significance",
+      "Future direction"
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "text": "In summary, we have reported the use of off-the-shelf commercial dyes 1 and 2 for the detection of trace amounts of water in the organic solvents.",
+        "answer": "Restated objective",
+        "explanation": "Restates the reported detection work."
+      },
+      {
+        "id": "i2",
+        "text": "Protonation of 1.F and 2.F using moisture (water) is the main working principle behind the colorimetric detection.",
+        "answer": "Summary / principle",
+        "explanation": "Explains the operating principle."
+      },
+      {
+        "id": "i3",
+        "text": "Both sensors have high sensitivity for moisture in THF, acetone, and acetonitrile.",
+        "answer": "Significance",
+        "explanation": "States useful sensitivity properties."
+      },
+      {
+        "id": "i4",
+        "text": "Test papers incorporated with 1.F are fast, reversible, reusable, and portable moisture sensors that could measure moisture without the help of any instrument.",
+        "answer": "Significance",
+        "explanation": "Highlights practical portability and reuse."
+      },
+      {
+        "id": "i5",
+        "text": "In addition to the sensitivity and reversibility, these two probes have other advantages such as low cost, no chemical synthesis, easy availability, naked-eye detection, and fast response time.",
+        "answer": "Significance",
+        "explanation": "Lists practical advantages."
+      },
+      {
+        "id": "i6",
+        "text": "The test paper- based portable analytical device is well-explored for the rapid detection of moisture in organic solvents.",
+        "answer": "Summary / principle",
+        "explanation": "Summarises the tested device application."
+      },
+      {
+        "id": "i7",
+        "text": "Importantly, the inkless writings on the paper with write-and-erase properties are significant applications.",
+        "answer": "Significance",
+        "explanation": "Identifies the importance of inkless writing."
+      },
+      {
+        "id": "i8",
+        "text": "We expect that a similar type of moisture detection mechanism has immense potential for the advance of water sensors and inkless writing.",
+        "answer": "Future direction",
+        "explanation": "Looks ahead to further sensor and writing developments."
+      }
+    ],
+    "notes": "Supplementary report-function drill adapted from an old conclusion-matching task. Some functions overlap; choose the strongest function of the whole labelled portion. It is not an additional question in the upcoming mock format."
+  },
+  {
+    "id": "wp-p3-q8",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Paper 3: functions in a report conclusion",
+    "source": "Past paper 3 Q8",
+    "difficulty": "Challenge",
+    "pool": "past",
+    "type": "match",
+    "partLabel": "Report drill",
+    "marks": 7.0,
+    "originalMarks": 7.0,
+    "suggestedMinutes": 10,
+    "prompt": "Match each of the following components (I-VI) with each portion (A-F) of the given conclusion section of an academic report.",
+    "originalPrompt": "Match each of the following components (I-VI) with each portion (A-F) of the given conclusion section of an academic report. [7 Marks] Components I. Suggesting a future research path II.Stating the limitation of the research III.Summarising the main ideas or arguments IV.Analyzing the result V.Stating the method used VI.Relating the research result with the hypothesis A. In this research work, a novel detection and discrimination mechanism is introduced to detect the abnormal traffic and discriminate DDoS attacks from FC. Both types of traffic have common features in general; however, some key characteristics are different, and can be used to distinguish them from each other. B. In this mechanism, various steps are followed to obtain the target objective. The traffic is analyzed, and the analysis data is further processed. The key parameters considered are the number of packets, size of the payload, and interpacket arrival time variances. Ultimately, a naïve Bayesian model is used to detect FC traffic and separate it from the DDoS attacks. Various simulations are made to verify the performance of the system and are also compared with some existing techniques. C. Our experimental and simulation results show that the proposed detection system can differentiate DDoS attack traffic from FC with more than 93% accuracy, with 5.2 FPR and 6.3 FNR based on the two real datasets (1998 FIFA World-Cup and CAIDA DDoS attack 2007). In the initial tests with the low level of attack intensity, the proposed work does not perform well. With 10% attack intensity, it gives 14.12% FPR and 14.9%3 FNR, which are not good among the competitors. This is because it operates on the naïve-based probabilistic model with multilevel probabilities. Such types of models require an adequate amount of data so that optimal and more accurate results are achieved. However, for attack intensities of 40% to 90%, the proposed mechanism outperforms all the mechanisms. For the highest attack intensity, DDoDF gives around 93% detection rate, 5% FPR, and 6% FNR, which are the most optimal values in the experiments. D. The results are encouraging and prove that the proposed mechanism performs well in the target domain. E. In the future, the detection accuracy can be enhanced by combining some additional parameters, such as payload patterns and hop count information, with the existing parameters to build a strong detection system. The proposed system can also be simulated on multiple datasets, i.e., HTTP logs, NLANR, and MIT Lincoln, with additional parameters for evaluation. This work can be implemented on other ad hoc networks with some alterations. F. This work only detects and discriminates DDoS attack traffic from FC, and it does not prevent the network from DDoS attacks. The prevention module can also be added to the detection module to prevent all the attacker nodes in the network.",
+    "categories": [
+      "Summary",
+      "Methodology",
+      "Analysis of results",
+      "Relation to objective",
+      "Future direction",
+      "Limitation"
+    ],
+    "items": [
+      {
+        "id": "i1",
+        "text": "In this research work, a novel detection and discrimination mechanism is introduced to detect the abnormal traffic and discriminate DDoS attacks from FC. Both types of traffic have common features in general; however, some key characteristics are different, and can be used to distinguish them from each other.",
+        "answer": "Summary",
+        "explanation": "Summarises the proposed detection mechanism."
+      },
+      {
+        "id": "i2",
+        "text": "In this mechanism, various steps are followed to obtain the target objective. The traffic is analyzed, and the analysis data is further processed. The key parameters considered are the number of packets, size of the payload, and interpacket arrival time variances. Ultimately, a naïve Bayesian model is used to detect FC traffic and separate it from the DDoS attacks. Various simulations are made to verify the performance of the system and are also compared with some existing techniques.",
+        "answer": "Methodology",
+        "explanation": "Describes processing, model and simulations."
+      },
+      {
+        "id": "i3",
+        "text": "Our experimental and simulation results show that the proposed detection system can differentiate DDoS attack traffic from FC with more than 93% accuracy, with 5.2 FPR and 6.3 FNR based on the two real datasets (1998 FIFA World-Cup and CAIDA DDoS attack 2007). In the initial tests with the low level of attack intensity, the proposed work does not perform well. With 10% attack intensity, it gives 14.12% FPR and 14.9%3 FNR, which are not good among the competitors. This is because it operates on the naïve-based probabilistic model with multilevel probabilities. Such types of models require an adequate amount of data so that optimal and more accurate results are achieved. However, for attack intensities of 40% to 90%, the proposed mechanism outperforms all the mechanisms. For the highest attack intensity, DDoDF gives around 93% detection rate, 5% FPR, and 6% FNR, which are the most optimal values in the experiments.",
+        "answer": "Analysis of results",
+        "explanation": "Evaluates performance with quantitative comparisons and an explanation."
+      },
+      {
+        "id": "i4",
+        "text": "The results are encouraging and prove that the proposed mechanism performs well in the target domain.",
+        "answer": "Relation to objective",
+        "explanation": "States that performance supports the intended objective; it does not establish a separately stated hypothesis."
+      },
+      {
+        "id": "i5",
+        "text": "In the future, the detection accuracy can be enhanced by combining some additional parameters, such as payload patterns and hop count information, with the existing parameters to build a strong detection system. The proposed system can also be simulated on multiple datasets, i.e., HTTP logs, NLANR, and MIT Lincoln, with additional parameters for evaluation. This work can be implemented on other ad hoc networks with some alterations.",
+        "answer": "Future direction",
+        "explanation": "Proposes additional parameters, datasets and applications."
+      },
+      {
+        "id": "i6",
+        "text": "This work only detects and discriminates DDoS attack traffic from FC, and it does not prevent the network from DDoS attacks. The prevention module can also be added to the detection module to prevent all the attacker nodes in the network.",
+        "answer": "Limitation",
+        "explanation": "Identifies the absence of attack prevention."
+      }
+    ],
+    "notes": "Supplementary report-function drill adapted from an old conclusion-matching task. Some functions overlap; choose the strongest function of the whole labelled portion. It is not an additional question in the upcoming mock format."
+  }
+]

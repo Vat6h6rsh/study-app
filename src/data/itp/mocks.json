@@ -1,0 +1,1721 @@
+[
+  {
+    "id": "mock-a1",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Department payroll",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Allocate employee records, apply a percentage rise through a pointer, and select the highest revised salary. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct { int id; int salary; } Employee;\nvoid raise_pay(__A__,int percent) {\n    p->salary += __B__;\n}\nint main(void) {\n    int n=3, best=0;\n    Employee *e=__C__;\n    if(__D__) return 1;\n    int pay[]={2000,3000,2500};\n    for(int i=0;i<n;++i) { e[i].id=100+i; e[i].salary=pay[i]; }\n    for(int i=0;i<n;++i) {\n        raise_pay(__E__,10);\n        if(__F__) best=__G__;\n    }\n    Employee *winner=__H__;\n    printf(\"%d %d\\n\",winner->id,__I__);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Employee *p"
+        ],
+        "explanation": "A pointer lets the helper modify the original employee."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "p->salary*percent/100"
+        ],
+        "explanation": "Compute the integer percentage of the current salary."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "malloc(n*sizeof *e)"
+        ],
+        "explanation": "Allocate space for all three records."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "e==NULL"
+        ],
+        "explanation": "Check the allocation before writing records."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "e+i"
+        ],
+        "explanation": "Pass a pointer to the current record."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "e[i].salary>e[best].salary"
+        ],
+        "explanation": "Compare revised salaries to select the maximum."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "i"
+        ],
+        "explanation": "Retain the winning index."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "&e[best]"
+        ],
+        "explanation": "Obtain the address of the chosen record."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "winner->salary"
+        ],
+        "explanation": "Access the salary through the struct pointer."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(e)"
+        ],
+        "explanation": "Release the original allocation once."
+      }
+    ],
+    "expectedOutput": "101 3300\n",
+    "trace": [
+      "A pointer lets the helper modify the original employee.",
+      "Compute the integer percentage of the current salary.",
+      "Allocate space for all three records.",
+      "Check the allocation before writing records.",
+      "Pass a pointer to the current record.",
+      "Compare revised salaries to select the maximum.",
+      "Retain the winning index.",
+      "Obtain the address of the chosen record.",
+      "Access the salary through the struct pointer.",
+      "Release the original allocation once."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Apply a percentage pay rise and print the employee with the highest revised salary.",
+      "rules": [
+        "Employee has integer id and salary; allocate three records with IDs 100 through 102 and the supplied salaries.",
+        "Add 10% of the current salary to each employee through its address using integer arithmetic.",
+        "Retain the first on equal revised salaries; print the selected ID and salary, then free the array.",
+        "Return failure if allocation fails."
+      ],
+      "sample": {
+        "input": "",
+        "output": "101 3300\n"
+      }
+    }
+  },
+  {
+    "id": "mock-a2",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Compare triangular totals",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Compute the totals strictly above and strictly below a square matrix diagonal. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nvoid totals(int a[][3],int n,__A__,int *lower) {\n    *upper=__B__; *lower=__C__;\n    for(int i=0;i<__D__;++i)\n        for(int j=0;j<n;++j) {\n            if(__E__) *upper+=__F__;\n            else if(__G__) *lower+=__H__;\n        }\n}\nint main(void) {\n    int a[3][3]={{1,2,3},{4,5,6},{7,8,9}},u,l;\n    totals(a,3,__I__,__J__);\n    printf(\"%d %d\\n\",u,l);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "int *upper"
+        ],
+        "explanation": "The upper result is returned through an address."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Initialise the caller's upper total."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Initialise the caller's lower total."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Visit all rows."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "j>i"
+        ],
+        "explanation": "Columns to the right of the diagonal form the upper triangle."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i][j]"
+        ],
+        "explanation": "Add the current upper-triangle cell."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "i>j"
+        ],
+        "explanation": "Rows below the diagonal form the lower triangle."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[i][j]"
+        ],
+        "explanation": "Add the current lower-triangle cell."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "&u"
+        ],
+        "explanation": "Pass the upper output variable's address."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "&l"
+        ],
+        "explanation": "Pass the lower output variable's address."
+      }
+    ],
+    "expectedOutput": "11 19\n",
+    "trace": [
+      "The upper result is returned through an address.",
+      "Initialise the caller's upper total.",
+      "Initialise the caller's lower total.",
+      "Visit all rows.",
+      "Columns to the right of the diagonal form the upper triangle.",
+      "Add the current upper-triangle cell.",
+      "Rows below the diagonal form the lower triangle.",
+      "Add the current lower-triangle cell.",
+      "Pass the upper output variable's address.",
+      "Pass the lower output variable's address."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Compute the totals strictly above and strictly below a square matrix's main diagonal.",
+      "rules": [
+        "The supplied matrix is 3 by 3; visit all cells with zero-based row and column indices.",
+        "A cell is above the diagonal when its column exceeds its row and below when its row exceeds its column.",
+        "Exclude diagonal cells, start both totals at zero, and return them through integer pointers.",
+        "Print the upper total followed by the lower total, separated by a space and followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "11 19\n"
+      }
+    }
+  },
+  {
+    "id": "mock-a3",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Select passing records",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Read roll and mark pairs until conversion fails; write records with marks at least 50. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\ntypedef struct { int roll,mark; } Result;\nint main(void) {\n    FILE *in=__A__;\n    FILE *out=__B__;\n    if(!in || !out) { if(in) fclose(in); if(out) fclose(out); return 1; }\n    Result r; int count=0,total=0;\n    while(fscanf(in,\"%d%d\",__C__,__D__)==__E__) {\n        if(r.mark __F__ 50) {\n            __G__;\n            total+=r.mark; __H__;\n        }\n    }\n    __I__; __J__;\n    printf(\"%d %d\\n\",count,total);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"results.txt\",\"r\")"
+        ],
+        "explanation": "Open the existing records for reading."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "fopen(\"passed.txt\",\"w\")"
+        ],
+        "explanation": "Create a fresh pass list."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "&r.roll"
+        ],
+        "explanation": "The first integer is written into the roll member."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "&r.mark"
+        ],
+        "explanation": "The second integer is written into the mark member."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Both integer fields must be converted successfully."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          ">="
+        ],
+        "explanation": "The pass threshold includes exactly 50."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "fprintf(out,\"%d %d\\n\",r.roll,r.mark)"
+        ],
+        "explanation": "Write one selected record and a newline."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "++count"
+        ],
+        "explanation": "Count only passing records."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "fclose(in)"
+        ],
+        "explanation": "Close the consumed input stream."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Flush and close the pass list."
+      }
+    ],
+    "expectedOutput": "2 125\n",
+    "trace": [
+      "Open the existing records for reading.",
+      "Create a fresh pass list.",
+      "The first integer is written into the roll member.",
+      "The second integer is written into the mark member.",
+      "Both integer fields must be converted successfully.",
+      "The pass threshold includes exactly 50.",
+      "Write one selected record and a newline.",
+      "Count only passing records.",
+      "Close the consumed input stream.",
+      "Flush and close the pass list."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "results.txt": "1 49\n2 50\n3 75\n"
+    },
+    "expectedFiles": {
+      "passed.txt": "2 50\n3 75\n"
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Select passing results from a file and report their count and total marks.",
+      "rules": [
+        "Result has integer roll and mark fields; open results.txt for reading and passed.txt for writing that replaces existing contents.",
+        "Read roll/mark pairs only while both integer conversions succeed; passing marks are at least 50.",
+        "Write each passing pair as roll, space, mark, newline; count those records and sum only their marks.",
+        "Close both files and print the passing count followed by the mark total.",
+        "For the sample, results.txt contains \"1 49\\n2 50\\n3 75\\n\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "2 125\n"
+      }
+    }
+  },
+  {
+    "id": "mock-a4",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Reduce a fraction recursively",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Use Euclid’s algorithm and modify a numerator and denominator through addresses. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint gcd(int a,int b) {\n    if(__A__) return __B__;\n    return gcd(__C__,__D__);\n}\nvoid reduce(__E__,__F__) {\n    int g=gcd(__G__,*den);\n    *num __H__ g;\n    *den /= g;\n}\nint main(void) {\n    int n=42,d=56;\n    reduce(__I__,__J__);\n    printf(\"%d/%d\\n\",n,d);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "b==0"
+        ],
+        "explanation": "A zero remainder ends Euclid's recursion."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "a"
+        ],
+        "explanation": "The remaining value is the greatest common divisor."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "b"
+        ],
+        "explanation": "The old divisor becomes the next dividend."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a%b"
+        ],
+        "explanation": "The remainder becomes the next divisor."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "int *num"
+        ],
+        "explanation": "Receive the numerator's address."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "int *den"
+        ],
+        "explanation": "Receive the denominator's address."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "*num"
+        ],
+        "explanation": "Read the original numerator through its pointer."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "/="
+        ],
+        "explanation": "Divide the numerator by the common divisor."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "&n"
+        ],
+        "explanation": "Pass the numerator by address."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "&d"
+        ],
+        "explanation": "Pass the denominator by address."
+      }
+    ],
+    "expectedOutput": "3/4\n",
+    "trace": [
+      "A zero remainder ends Euclid's recursion.",
+      "The remaining value is the greatest common divisor.",
+      "The old divisor becomes the next dividend.",
+      "The remainder becomes the next divisor.",
+      "Receive the numerator's address.",
+      "Receive the denominator's address.",
+      "Read the original numerator through its pointer.",
+      "Divide the numerator by the common divisor.",
+      "Pass the numerator by address.",
+      "Pass the denominator by address."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Reduce a positive fraction to lowest terms using recursive Euclid's algorithm.",
+      "rules": [
+        "Start with integer numerator 42 and denominator 56.",
+        "The greatest common divisor of a and zero is a; otherwise recurse on b and the remainder of a divided by b.",
+        "Divide both parts by the common divisor, changing the caller's integers through pointers.",
+        "Print numerator and denominator separated by a slash and followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "3/4\n"
+      }
+    }
+  },
+  {
+    "id": "mock-a5",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Filter letters and uppercase",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Create a new string containing only alphabetic characters, in uppercase. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <ctype.h>\n#include <string.h>\nint main(void) {\n    char in[]=\"C-Exam 2026!\",out[30];\n    int k=__A__;\n    for(int i=__B__;in[i]__C____D__;__E__) {\n        unsigned char c=__F__;\n        if(__G__) out[k++]=__H__;\n    }\n    out[k]=__I__;\n    printf(\"%s %zu\\n\",out,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "No output characters have been accepted yet."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Begin at the first input character."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "!="
+        ],
+        "explanation": "Stop at the input terminator."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "'\\0'"
+        ],
+        "explanation": "This null character terminates a C string."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "++i"
+        ],
+        "explanation": "Visit each input character once."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "(unsigned char)in[i]"
+        ],
+        "explanation": "ctype expects EOF or a value representable as unsigned char."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "isalpha(c)"
+        ],
+        "explanation": "Only alphabetic characters are retained."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "toupper(c)"
+        ],
+        "explanation": "Store the uppercase value in the next free output slot."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "'\\0'"
+        ],
+        "explanation": "Terminate the compacted output string."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "strlen(out)"
+        ],
+        "explanation": "Report the visible length of the finished string."
+      }
+    ],
+    "expectedOutput": "CEXAM 5\n",
+    "trace": [
+      "No output characters have been accepted yet.",
+      "Begin at the first input character.",
+      "Stop at the input terminator.",
+      "This null character terminates a C string.",
+      "Visit each input character once.",
+      "ctype expects EOF or a value representable as unsigned char.",
+      "Only alphabetic characters are retained.",
+      "Store the uppercase value in the next free output slot.",
+      "Terminate the compacted output string.",
+      "Report the visible length of the finished string."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Keep alphabetic characters, convert them to uppercase, and print the resulting string and length.",
+      "rules": [
+        "The source is C-Exam 2026! and the destination has capacity 30.",
+        "Visit each source character before the null terminator; discard spaces, digits and punctuation.",
+        "Append retained letters contiguously in order after uppercase conversion, then add a null terminator.",
+        "Use unsigned-character values for character functions; count only destination characters before the terminator."
+      ],
+      "sample": {
+        "input": "",
+        "output": "CEXAM 5\n"
+      }
+    }
+  },
+  {
+    "id": "mock-b1",
+    "subject": "itp",
+    "topic": "memory",
+    "title": "Pick the largest row average",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Allocate unequal row arrays and compare their arithmetic means. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct { int n; int *v; } Vector;\nint main(void) {\n    Vector *p=__A__;\n    if(!p) return 1;\n    int data[2][3]={{2,4,0},{5,6,7}},best=-1; double highest=0;\n    for(int i=0;i<2;++i) {\n        p[i].n=__B__;\n        p[i].v=__C__;\n        if(!p[i].v) { for(int j=0;j<i;++j) free(p[j].v); free(p); return 1; }\n        int sum=0;\n        for(int j=0;j<__D__;++j) {\n            p[i].v[j]=data[i][j]; sum+=__E__;\n        }\n        double mean=__F__;\n        if(__G__) { best=i; highest=mean; }\n    }\n    printf(\"%d %.1f\\n\",best,__H__);\n    for(int i=0;i<2;++i) __I__;\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "calloc(2,sizeof *p)"
+        ],
+        "explanation": "Allocate two zero-initialised Vector records."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "i+2"
+        ],
+        "explanation": "The two vector lengths are two and three."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "malloc(p[i].n*sizeof *p[i].v)"
+        ],
+        "explanation": "Allocate the current vector's own integer array."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "p[i].n"
+        ],
+        "explanation": "Traverse only this vector's valid entries."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "p[i].v[j]"
+        ],
+        "explanation": "Accumulate the current vector's entries."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "(double)sum/p[i].n"
+        ],
+        "explanation": "Convert before division to retain fractional means."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "best==-1 || mean>highest"
+        ],
+        "explanation": "Establish a baseline with the first vector and replace it only with a larger mean."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "highest"
+        ],
+        "explanation": "Print the chosen average, 6.0."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "free(p[i].v)"
+        ],
+        "explanation": "Free every nested array before its owner."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(p)"
+        ],
+        "explanation": "Release the outer Vector array last."
+      }
+    ],
+    "expectedOutput": "1 6.0\n",
+    "trace": [
+      "Allocate two zero-initialised Vector records.",
+      "The two vector lengths are two and three.",
+      "Allocate the current vector's own integer array.",
+      "Traverse only this vector's valid entries.",
+      "Accumulate the current vector's entries.",
+      "Convert before division to retain fractional means.",
+      "Establish a baseline with the first vector and replace it only with a larger mean.",
+      "Print the chosen average, 6.0.",
+      "Free every nested array before its owner.",
+      "Release the outer Vector array last."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Allocate unequal vectors and print the index and mean of the vector with the largest arithmetic mean.",
+      "rules": [
+        "Vector has integer length n and integer-array pointer v; allocate two records.",
+        "Zero-based vector i has length i plus 2; fill from the corresponding supplied data row, ignoring unused trailing cells.",
+        "Mean is the element sum divided by length using floating-point division; the first vector establishes a candidate and ties retain the first.",
+        "Print zero-based index and mean to one decimal place, then free inner arrays before the outer array."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 6.0\n"
+      }
+    }
+  },
+  {
+    "id": "mock-b2",
+    "subject": "itp",
+    "topic": "arrays",
+    "title": "Insert into a sorted array",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Insert key 6 into an ascending array with one spare slot, shifting the suffix. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint insert(int a[],int n,int key) {\n    int pos=__A__;\n    while(pos<__B__ && a[pos]__C__key) __D__;\n    for(int j=__E__;j__F__pos;__G__)\n        a[j]=__H__;\n    a[pos]=__I__;\n    return __J__;\n}\nint main(void) {\n    int a[6]={1,3,5,7,9};\n    int n=insert(a,5,6);\n    for(int i=0;i<n;++i) printf(\"%d \",a[i]);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Search from the first element."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Do not read past the populated prefix."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "<"
+        ],
+        "explanation": "Stop before the first value at least as large as key."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "++pos"
+        ],
+        "explanation": "Advance over smaller elements."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "The first free slot is at index n."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          ">"
+        ],
+        "explanation": "Continue until the insertion slot is free."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "--j"
+        ],
+        "explanation": "Shift from the end to avoid overwriting values still needed."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[j-1]"
+        ],
+        "explanation": "Copy each preceding value one slot to the right."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "key"
+        ],
+        "explanation": "Place the new value into the freed slot."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "n+1"
+        ],
+        "explanation": "The logical length grows by exactly one."
+      }
+    ],
+    "expectedOutput": "1 3 5 6 7 9 ",
+    "trace": [
+      "Search from the first element.",
+      "Do not read past the populated prefix.",
+      "Stop before the first value at least as large as key.",
+      "Advance over smaller elements.",
+      "The first free slot is at index n.",
+      "Continue until the insertion slot is free.",
+      "Shift from the end to avoid overwriting values still needed.",
+      "Copy each preceding value one slot to the right.",
+      "Place the new value into the freed slot.",
+      "The logical length grows by exactly one."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Insert a value into an ascending array while keeping it sorted.",
+      "rules": [
+        "The array has capacity six and initially five integers; insert key 6.",
+        "From index 0, find the first position whose value is at least the key, or use the end if all are smaller.",
+        "Shift the suffix right by one, working backward from the end to avoid overwriting values.",
+        "Store the key in the gap, return the old length plus one and print all values with trailing spaces."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 3 5 6 7 9 "
+      }
+    }
+  },
+  {
+    "id": "mock-b3",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Merge two sorted integer files",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Maintain one lookahead value from each file and write the ascending merge. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    FILE *a=fopen(\"a.txt\",__A__), *b=fopen(\"b.txt\",__B__);\n    FILE *out=fopen(\"merged.txt\",__C__);\n    if(!a||!b||!out) { if(a) fclose(a); if(b) fclose(b); if(out) fclose(out); return 1; }\n    int x,y;\n    int hasA=__D__;\n    int hasB=__E__;\n    while(__F__) {\n        if(__G__) { fprintf(out,\"%d \",x); hasA=fscanf(a,\"%d\",&x)==1; }\n        else { fprintf(out,\"%d \",y); hasB=__H__; }\n    }\n    while(hasA) { fprintf(out,\"%d \",x); hasA=fscanf(a,\"%d\",&x)==1; }\n    while(__I__) { fprintf(out,\"%d \",y); hasB=fscanf(b,\"%d\",&y)==1; }\n    fclose(a); fclose(b); __J__;\n    puts(\"merged\");\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "\"r\""
+        ],
+        "explanation": "Open the first sorted input for reading."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "\"r\""
+        ],
+        "explanation": "Open the second sorted input for reading."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "\"w\""
+        ],
+        "explanation": "Create or truncate the merged output."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "fscanf(a,\"%d\",&x)==1"
+        ],
+        "explanation": "Record whether the first lookahead was read successfully."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "fscanf(b,\"%d\",&y)==1"
+        ],
+        "explanation": "Record whether the second lookahead exists."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "hasA && hasB"
+        ],
+        "explanation": "Compare only while both lookahead values are valid."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "x<=y"
+        ],
+        "explanation": "Choose the smaller value, taking a first on equality."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "fscanf(b,\"%d\",&y)==1"
+        ],
+        "explanation": "Advance only the input whose value was emitted."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "hasB"
+        ],
+        "explanation": "Drain any remaining valid second-input values."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Flush all merged values before closing."
+      }
+    ],
+    "expectedOutput": "merged\n",
+    "trace": [
+      "Open the first sorted input for reading.",
+      "Open the second sorted input for reading.",
+      "Create or truncate the merged output.",
+      "Record whether the first lookahead was read successfully.",
+      "Record whether the second lookahead exists.",
+      "Compare only while both lookahead values are valid.",
+      "Choose the smaller value, taking a first on equality.",
+      "Advance only the input whose value was emitted.",
+      "Drain any remaining valid second-input values.",
+      "Flush all merged values before closing."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "a.txt": "1 4 9",
+      "b.txt": "2 3 10"
+    },
+    "expectedFiles": {
+      "merged.txt": "1 2 3 4 9 10 "
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Merge two sorted integer files into a third file in ascending order.",
+      "rules": [
+        "Open a.txt and b.txt for reading and merged.txt for writing that replaces existing contents.",
+        "Keep one current integer from each input; a scan succeeds only when it converts one integer.",
+        "While both have values, write the smaller, taking from a.txt on equality, then advance only that file.",
+        "Once one ends, copy every leftover from the other; retain duplicates and put a space after each integer.",
+        "Close all files and print merged followed by a newline.",
+        "For the sample, a.txt contains \"1 4 9\"; b.txt contains \"2 3 10\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "merged\n"
+      }
+    }
+  },
+  {
+    "id": "mock-b4",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursive array maximum",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Solve the maximum of a nonempty array using a size-decreasing recursion. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint maximum(const int a[],__A__) {\n    if(n==__B__) return __C__;\n    int earlier=__D__;\n    int last=__E__;\n    return earlier__F__last ? __G__ : __H__;\n}\nint main(void) {\n    int a[]={-7,-2,-9,-4};\n    int n=__I__;\n    printf(\"%d\\n\",__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "int n"
+        ],
+        "explanation": "The count identifies the nonempty prefix to inspect."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "One element is the base case."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "a[0]"
+        ],
+        "explanation": "The sole element is its own maximum."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "maximum(a,n-1)"
+        ],
+        "explanation": "Recursively find the maximum of the shorter prefix."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "a[n-1]"
+        ],
+        "explanation": "The final valid index of a prefix of length n is n-1."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          ">"
+        ],
+        "explanation": "Choose the greater of the prefix maximum and last element."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "earlier"
+        ],
+        "explanation": "Keep the prefix maximum when it is larger."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "last"
+        ],
+        "explanation": "Otherwise choose the last element."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "sizeof a/sizeof a[0]"
+        ],
+        "explanation": "Compute the count where a is a complete array."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "maximum(a,n)"
+        ],
+        "explanation": "Pass all four elements to the recursive helper."
+      }
+    ],
+    "expectedOutput": "-2\n",
+    "trace": [
+      "The count identifies the nonempty prefix to inspect.",
+      "One element is the base case.",
+      "The sole element is its own maximum.",
+      "Recursively find the maximum of the shorter prefix.",
+      "The final valid index of a prefix of length n is n-1.",
+      "Choose the greater of the prefix maximum and last element.",
+      "Keep the prefix maximum when it is larger.",
+      "Otherwise choose the last element.",
+      "Compute the count where a is a complete array.",
+      "Pass all four elements to the recursive helper."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Find and print the maximum integer of a nonempty array recursively.",
+      "rules": [
+        "The driver supplies four negative integers; the function takes the array and its integer length.",
+        "A one-element array's maximum is its sole element.",
+        "Otherwise find the maximum of the prefix one element shorter, compare it with the last element and return the larger.",
+        "Derive the element count from the array size and print the maximum with a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "-2\n"
+      }
+    }
+  },
+  {
+    "id": "mock-b5",
+    "subject": "itp",
+    "topic": "pointers",
+    "title": "Transfer between bank accounts",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Transfer only when the source has sufficient funds. Modify balances through pointers. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\ntypedef struct { int id,balance; } Account;\nint transfer(__A__,__B__,int amount) {\n    if(amount__C__0 || from->balance__D__amount) return __E__;\n    from->balance __F__ amount;\n    to->balance __G__ amount;\n    return __H__;\n}\nint main(void) {\n    Account a={1,900}, b={2,100};\n    int ok=transfer(__I__,__J__,250);\n    printf(\"%d %d %d\\n\",ok,a.balance,b.balance);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Account *from"
+        ],
+        "explanation": "Receive a pointer to the source record."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "Account *to"
+        ],
+        "explanation": "Receive a pointer to the destination record."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "<="
+        ],
+        "explanation": "Reject zero and negative transfers."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "<"
+        ],
+        "explanation": "Reject a transfer larger than the source balance."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Failure leaves both balances unchanged."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "-="
+        ],
+        "explanation": "Subtract the transferred amount from the source."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "+="
+        ],
+        "explanation": "Credit the destination with the same amount."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "Report success only after both updates."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "&a"
+        ],
+        "explanation": "Pass a's address so its actual balance can change."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "&b"
+        ],
+        "explanation": "Pass b's address for the destination update."
+      }
+    ],
+    "expectedOutput": "1 650 350\n",
+    "trace": [
+      "Receive a pointer to the source record.",
+      "Receive a pointer to the destination record.",
+      "Reject zero and negative transfers.",
+      "Reject a transfer larger than the source balance.",
+      "Failure leaves both balances unchanged.",
+      "Subtract the transferred amount from the source.",
+      "Credit the destination with the same amount.",
+      "Report success only after both updates.",
+      "Pass a's address so its actual balance can change.",
+      "Pass b's address for the destination update."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Transfer funds between accounts when the amount is valid and sufficient funds are available.",
+      "rules": [
+        "Account has integer id and balance; the source starts at 900 and destination at 100.",
+        "Request a transfer of 250 using pointers to the two accounts.",
+        "Reject a zero or negative amount, or one exceeding the source balance, returning 0 without changing balances.",
+        "Otherwise subtract from the source, add to the destination and return 1; print status, source balance and destination balance separated by spaces."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 650 350\n"
+      }
+    }
+  },
+  {
+    "id": "mock-c1",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Select the best sales record",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Compute quantity times price for each dynamically allocated record and retain the first maximum. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\ntypedef struct { char name[12]; int qty,price; } Sale;\nint main(void) {\n    Sale *s=__A__;\n    if(s==__B__) return 1;\n    __C__;\n    strcpy(s[1].name,\"Book\"); strcpy(s[2].name,\"Bag\");\n    int q[]={10,4,2},p[]={5,30,50},best=-1,revenue=0;\n    for(int i=0;i<__D__;++i) {\n        s[i].qty=q[i]; s[i].price=p[i];\n        int current=__E__;\n        if(__F__) {\n            best=__G__; revenue=__H__;\n        }\n    }\n    Sale *winner=s+best;\n    printf(\"%s %d\\n\",__I__,revenue);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "malloc(3*sizeof *s)"
+        ],
+        "explanation": "Reserve storage for three complete Sale objects."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Check allocation before initialisation."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "strcpy(s[0].name,\"Pen\")"
+        ],
+        "explanation": "Copy the first product name into its character array."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "Visit each of the three records."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "s[i].qty*s[i].price"
+        ],
+        "explanation": "Revenue is quantity multiplied by unit price."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "best==-1 || current>revenue"
+        ],
+        "explanation": "Use the first record as a baseline and preserve the first tied winner."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "i"
+        ],
+        "explanation": "Save the index of the winning record."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "current"
+        ],
+        "explanation": "Save its computed revenue."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "winner->name"
+        ],
+        "explanation": "Select the character array through a pointer."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(s)"
+        ],
+        "explanation": "Free the base pointer rather than the interior winner pointer."
+      }
+    ],
+    "expectedOutput": "Book 120\n",
+    "trace": [
+      "Reserve storage for three complete Sale objects.",
+      "Check allocation before initialisation.",
+      "Copy the first product name into its character array.",
+      "Visit each of the three records.",
+      "Revenue is quantity multiplied by unit price.",
+      "Use the first record as a baseline and preserve the first tied winner.",
+      "Save the index of the winning record.",
+      "Save its computed revenue.",
+      "Select the character array through a pointer.",
+      "Free the base pointer rather than the interior winner pointer."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Select the sales record with the highest revenue and print its name and revenue.",
+      "rules": [
+        "Sale has a 12-character name buffer and integer qty and price; allocate three records named Pen, Book and Bag in that order.",
+        "Populate all records from the supplied quantity and price arrays; revenue equals quantity multiplied by unit price.",
+        "The first record establishes a candidate; replace only for strictly greater revenue so ties retain the first.",
+        "Print the selected name and revenue and free the array; stop with failure if allocation fails."
+      ],
+      "sample": {
+        "input": "",
+        "output": "Book 120\n"
+      }
+    }
+  },
+  {
+    "id": "mock-c2",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Multiply two small matrices",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Compute C = A times B using the row-column dot product. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nvoid multiply(int a[2][3],int b[3][2],int c[2][2]) {\n    for(int i=__A__;i<__B__;++i)\n        for(int j=0;j<__C__;++j) {\n            c[i][j]=__D__;\n            for(int k=0;k<__E__;++k)\n                c[i][j]+=__F__*__G__;\n        }\n}\nint main(void) {\n    int a[2][3]={{1,2,3},{4,5,6}},b[3][2]={{1,0},{0,1},{1,1}},c[2][2];\n    multiply(a,b,__H__);\n    for(int i=0;i<2;++i) {\n        for(int j=0;j<2;++j) printf(\"%d \",__I__);\n        __J__;\n    }\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start at the first output row."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "A has two rows, so C does too."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "B has two columns, so C does too."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Reset the current dot-product accumulator."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "The shared inner dimension is three."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i][k]"
+        ],
+        "explanation": "Select the kth entry from A's current row."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "b[k][j]"
+        ],
+        "explanation": "Select the kth entry from B's current column."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "c"
+        ],
+        "explanation": "The function writes into the caller's result array."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "c[i][j]"
+        ],
+        "explanation": "Print the product matrix in row-major order."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "puts(\"\")"
+        ],
+        "explanation": "Print one newline after each product row."
+      }
+    ],
+    "expectedOutput": "4 5 \n10 11 \n",
+    "trace": [
+      "Start at the first output row.",
+      "A has two rows, so C does too.",
+      "B has two columns, so C does too.",
+      "Reset the current dot-product accumulator.",
+      "The shared inner dimension is three.",
+      "Select the kth entry from A's current row.",
+      "Select the kth entry from B's current column.",
+      "The function writes into the caller's result array.",
+      "Print the product matrix in row-major order.",
+      "Print one newline after each product row."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Multiply the supplied matrices and print the result.",
+      "rules": [
+        "The first matrix is 2 by 3, the second 3 by 2 and the result 2 by 2.",
+        "Start each result cell at zero and sum three products, pairing the first matrix's row entries with the second matrix's column entries.",
+        "Use zero-based row, column and shared-dimension indices and fill all four result cells.",
+        "Print a space after each integer and a newline after each result row."
+      ],
+      "sample": {
+        "input": "",
+        "output": "4 5 \n10 11 \n"
+      }
+    }
+  },
+  {
+    "id": "mock-c3",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Append uppercase log lines",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Read complete chunks of a source file, uppercase them, and append to an existing log. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <ctype.h>\nint main(void) {\n    FILE *in=__A__;\n    FILE *out=__B__;\n    if(in==__C__ || out==NULL) { if(in) fclose(in); if(out) fclose(out); return 1; }\n    char line[50]; int count=0;\n    while(__D__ != __E__) {\n        for(int i=0;line[i];++i) line[i]=__F__;\n        __G__;\n        __H__;\n    }\n    __I__; __J__;\n    printf(\"%d\\n\",count);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"incoming.txt\",\"r\")"
+        ],
+        "explanation": "Read the existing incoming file."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "fopen(\"log.txt\",\"a\")"
+        ],
+        "explanation": "Append mode preserves existing log entries."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Check whether the input failed to open."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "fgets(line,sizeof line,in)"
+        ],
+        "explanation": "Read a terminated chunk, retaining its newline."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Stop when no further chunk can be read."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "toupper((unsigned char)line[i])"
+        ],
+        "explanation": "Store each converted character safely."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "fputs(line,out)"
+        ],
+        "explanation": "Append the converted chunk exactly as stored."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "++count"
+        ],
+        "explanation": "Count the chunks; the fixture's lines both fit the buffer."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "fclose(in)"
+        ],
+        "explanation": "Close the read stream."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Flush and close the append stream."
+      }
+    ],
+    "expectedOutput": "2\n",
+    "trace": [
+      "Read the existing incoming file.",
+      "Append mode preserves existing log entries.",
+      "Check whether the input failed to open.",
+      "Read a terminated chunk, retaining its newline.",
+      "Stop when no further chunk can be read.",
+      "Store each converted character safely.",
+      "Append the converted chunk exactly as stored.",
+      "Count the chunks; the fixture's lines both fit the buffer.",
+      "Close the read stream.",
+      "Flush and close the append stream."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "incoming.txt": "exam\nready\n",
+      "log.txt": "START\n"
+    },
+    "expectedFiles": {
+      "log.txt": "START\nEXAM\nREADY\n"
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Convert source text to uppercase and append it to an existing log.",
+      "rules": [
+        "Open incoming.txt for reading and log.txt in append mode, preserving existing contents; check both opens.",
+        "Read chunks into the 50-character buffer until no more can be read; uppercase characters before each terminator while preserving whitespace.",
+        "Append each chunk and count one per successful read; lines longer than the buffer may count as multiple chunks.",
+        "Close both files and print the count followed by a newline.",
+        "For the sample, incoming.txt contains \"exam\\nready\\n\"; log.txt contains \"START\\n\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "2\n"
+      }
+    }
+  },
+  {
+    "id": "mock-c4",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Count words with state",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Count words separated by spaces, including repeated spaces and leading or trailing spaces. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char s[]=\"  learn C  every day \";\n    int words=__A__, inside=__B__;\n    for(size_t i=__C__;i<__D__;__E__) {\n        if(s[i]__F____G__) inside=__H__;\n        else if(__I__) {\n            ++words; inside=__J__;\n        }\n    }\n    printf(\"%d\\n\",words);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "No word starts have been seen yet."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Initially the scan is outside a word."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Begin with the first character."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "strlen(s)"
+        ],
+        "explanation": "Stop before the null terminator."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "++i"
+        ],
+        "explanation": "Advance one character per iteration."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "=="
+        ],
+        "explanation": "A literal space separates words in this exercise."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "' '"
+        ],
+        "explanation": "Use a character literal for one space."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Any space returns the scanner to the outside state."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "!inside"
+        ],
+        "explanation": "Count only a transition from outside to inside."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "Remember that following non-space characters belong to this word."
+      }
+    ],
+    "expectedOutput": "4\n",
+    "trace": [
+      "No word starts have been seen yet.",
+      "Initially the scan is outside a word.",
+      "Begin with the first character.",
+      "Stop before the null terminator.",
+      "Advance one character per iteration.",
+      "A literal space separates words in this exercise.",
+      "Use a character literal for one space.",
+      "Any space returns the scanner to the outside state.",
+      "Count only a transition from outside to inside.",
+      "Remember that following non-space characters belong to this word."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Count words in a string containing repeated, leading and trailing spaces.",
+      "rules": [
+        "Use the supplied string; a word is a maximal nonempty run of characters other than the literal space character.",
+        "Visit every character before the terminator with word count and inside-word flag initially zero.",
+        "A space clears the flag; a non-space starts a word only when the flag is clear, then sets it.",
+        "Print the word count followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "4\n"
+      }
+    }
+  },
+  {
+    "id": "mock-c5",
+    "subject": "itp",
+    "topic": "loops",
+    "title": "Classify three-digit cube numbers",
+    "source": "Original • mock paper",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "prompt": "Print three-digit numbers equal to the sum of the cubes of their digits and count them. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint cube_sum(int n) {\n    int sum=__A__;\n    while(__B__) {\n        int d=__C__;\n        sum+=__D__;\n        n=__E__;\n    }\n    return __F__;\n}\nint main(void) {\n    int count=0;\n    for(int n=__G__;n<=__H__;++n)\n        if(__I__) { printf(\"%d \",n); __J__; }\n    printf(\"\\ncount=%d\\n\",count);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start the sum of digit cubes at zero."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "n>0"
+        ],
+        "explanation": "Continue while digits remain."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n%10"
+        ],
+        "explanation": "Extract the final decimal digit."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "d*d*d"
+        ],
+        "explanation": "C uses multiplication, not XOR, to form a cube."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n/10"
+        ],
+        "explanation": "Discard the processed digit."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "sum"
+        ],
+        "explanation": "Return the sum, not the consumed number."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "100"
+        ],
+        "explanation": "The smallest three-digit integer is 100."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "999"
+        ],
+        "explanation": "Include the largest three-digit integer."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "cube_sum(n)==n"
+        ],
+        "explanation": "A qualifying number equals its digit-cube sum."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "++count"
+        ],
+        "explanation": "Count each accepted number once."
+      }
+    ],
+    "expectedOutput": "153 370 371 407 \ncount=4\n",
+    "trace": [
+      "Start the sum of digit cubes at zero.",
+      "Continue while digits remain.",
+      "Extract the final decimal digit.",
+      "C uses multiplication, not XOR, to form a cube.",
+      "Discard the processed digit.",
+      "Return the sum, not the consumed number.",
+      "The smallest three-digit integer is 100.",
+      "Include the largest three-digit integer.",
+      "A qualifying number equals its digit-cube sum.",
+      "Count each accepted number once."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Print all three-digit numbers equal to the sum of the cubes of their digits and count them.",
+      "rules": [
+        "Test all decimal integers from 100 through 999 inclusive.",
+        "Start each digit sum at zero; repeatedly extract the last digit, add its cube and remove it by integer division by 10.",
+        "A number qualifies when its digit-cube sum equals the original; print it followed by a space and increase the count.",
+        "After all numbers print a newline, then count= followed by the count and a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "153 370 371 407 \ncount=4\n"
+      }
+    }
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "paper-a",
+    "subject": "itp",
+    "title": "Paper 01 · Core patterns",
+    "description": "Records, matrices, file records, recursion and strings.",
+    "questionIds": [
+      "mock-a1",
+      "mock-a2",
+      "mock-a3",
+      "mock-a4",
+      "mock-a5"
+    ]
+  },
+  {
+    "id": "paper-b",
+    "subject": "itp",
+    "title": "Paper 02 · Work with data",
+    "description": "Nested allocation, insertion, file merging, recursion and pointers.",
+    "questionIds": [
+      "mock-b1",
+      "mock-b2",
+      "mock-b3",
+      "mock-b4",
+      "mock-b5"
+    ]
+  },
+  {
+    "id": "paper-c",
+    "subject": "itp",
+    "title": "Paper 03 · Put it together",
+    "description": "Sales records, matrix products, log files, strings and digit algorithms.",
+    "questionIds": [
+      "mock-c1",
+      "mock-c2",
+      "mock-c3",
+      "mock-c4",
+      "mock-c5"
+    ]
+  }
+]

@@ -1,0 +1,1130 @@
+{
+  "checkedAt": "2026-11-20T06:29:34.211Z",
+  "compiler": "C:\\Users\\hashj\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\\mingw64\\bin\\gcc.exe",
+  "structuralQuestions": 121,
+  "runnableQuestions": 120,
+  "verified": 118,
+  "samplesVerified": 81,
+  "unrunSamples": [],
+  "skipped": [
+    {
+      "id": "past-8.11",
+      "reason": "Source signed-int loop has no defined infinite execution."
+    }
+  ],
+  "failures": [
+    {
+      "id": "past-2.1",
+      "failures": [
+        "Exit code null: \nStopped after 15 seconds. ",
+        "stdout expected \"Enter the number of students: Enter the details of student 1:\\nEnter roll number: Enter name: Enter marks: Enter the details of student 2:\\nEnter roll number: Enter name: Enter marks: The details of the students are:\\nDetails of student 1:\\nRoll number: 101\\nName: Ada\\nMarks: 91.50\\nDetails of student 2:\\nRoll number: 102\\nName: Lin\\nMarks: 88.00\\n\", received \"\""
+      ]
+    },
+    {
+      "id": "past-2.3",
+      "failures": [
+        "Exit code null: \nStopped after 15 seconds. ",
+        "stdout expected \"Enter the number of employees: \", received \"\""
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "past-1.1",
+      "stdout": "Total deducted salary = 4300\r\n",
+      "compileOutput": "main.c: In function 'deducted_salary':\nmain.c:14:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]\n   14 |     if (e.vacation_days_used > MAX_VACATION_DAYS) return e.salary / 10; return 0;\n      |     ^~\nmain.c:14:73: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'\n   14 |     if (e.vacation_days_used > MAX_VACATION_DAYS) return e.salary / 10; return 0;\n      |                                                                         ^~~~~~\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.2",
+      "stdout": "The student younger than 20 years with the maximum height is Bob with height.185\r\nNo student found younger than 19 years.\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.3",
+      "stdout": "\r\nSum of distances = 6 feet,3 inches",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.4",
+      "stdout": "10:05:10\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.5",
+      "stdout": "ID: 1, Name: Jack Hobbes\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.6",
+      "stdout": "73 72\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-1.7",
+      "stdout": "5th point: x = 13\r\n3rd point: y = 8\r\n1st point: z = 3\r\n5th point: x = 13\r\n3rd point: y = 8\r\n1st point: z = 3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-2.1",
+      "stdout": "",
+      "compileOutput": "\nStopped after 15 seconds.",
+      "stderr": "",
+      "exitCode": null,
+      "outputCompared": true
+    },
+    {
+      "id": "past-2.2",
+      "stdout": "The cricketer with the highest score is Lin from Japan with a score of 540\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-2.3",
+      "stdout": "",
+      "compileOutput": "\nStopped after 15 seconds.",
+      "stderr": "",
+      "exitCode": null,
+      "outputCompared": true
+    },
+    {
+      "id": "past-2.4",
+      "stdout": "The vector with the largest sum is 1 with sum = -2.\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.1",
+      "stdout": "0 4 32 192 1024 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.1b",
+      "stdout": "0",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.2",
+      "stdout": "The array with duplicates removed is: 1 2 3 4 5 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.3",
+      "stdout": "Sorted array: a b c d e \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.4",
+      "stdout": "1 2 3 4 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.5",
+      "stdout": "Element found at index 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.6",
+      "stdout": "1 2 3 4 5 6 7 8 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-3.7",
+      "stdout": "4 3 6 7 10 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.1",
+      "stdout": "Column 0 has minimum sum = 5.\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.2",
+      "stdout": "Enter the number of rows: Enter the number of columns: Enter the elements of the matrix:\r\nThe transpose of the matrix is:\r\n1 4 \r\n2 5 \r\n3 6 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.3",
+      "stdout": "1 3 \r\n2 4 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.4",
+      "stdout": "1 5 \r\n9 9 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.5",
+      "stdout": "*#*#*\r\n*#*#*\r\n*#*#*\r\n*#*#*\r\n*#*#*\r\n  |  \r\n  |  \r\n  |  \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-4.6",
+      "stdout": "atla\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.1",
+      "stdout": "Same",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.2",
+      "stdout": "Kwisatz Haderach",
+      "compileOutput": "main.c: In function 'main':\nmain.c:5:5: warning: statement with no effect [-Wunused-value]\n    5 |     toupper(str[5]);\n      |     ^~~~~~~~~~~~~~~\nmain.c:6:5: warning: statement with no effect [-Wunused-value]\n    6 |     toupper(str[12]);\n      |     ^~~~~~~~~~~~~~~~\nmain.c:7:5: warning: statement with no effect [-Wunused-value]\n    7 |     toupper(str[7]);\n      |     ^~~~~~~~~~~~~~~\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.3",
+      "stdout": "Enter a string: \r\nOriginal Name: Police\r\nAlternate Toggled Name: PoLiCe\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.4",
+      "stdout": "Enter a String: \r\n\r\nOriginal Name: Police Exam\r\nToggled Name: pOLICE eXAM\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.5",
+      "stdout": "baKemOnoGatAri\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.6",
+      "stdout": "bakemonogatari\r\nnisemonogatari\r\nnekomonogatari\r\nhanamonogatari\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-5.7",
+      "stdout": "Enter a secret word: Welcome to the word guessing game!\r\nThe secret word has 3 letters. You have 6 guesses to guess the word.\r\n\r\nCurrent guess: ___\r\nGuess a letter: Correct guess!\r\n\r\nCurrent guess: c__\r\nGuess a letter: Correct guess!\r\n\r\nCurrent guess: ca_\r\nGuess a letter: Correct guess!\r\n\r\nCongratulations! You guessed the word cat in 3 guesses.\r\n",
+      "compileOutput": "main.c: In function 'main':\nmain.c:7:26: warning: variable 'num_incorrect_guesses' set but not used [-Wunused-but-set-variable=]\n    7 |     int num_guesses = 0, num_incorrect_guesses = 0;\n      |                          ^~~~~~~~~~~~~~~~~~~~~\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-6.1",
+      "stdout": "",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "dataW.txt": "ada\r\nada@x.test\r\nlin\r\nlin@x.test\r\nsam\r\nsam@x.test\r\nraj\r\nraj@x.test\r\nlee\r\nlee@x.test\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "past-6.2",
+      "stdout": "",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "maxElement.txt": "50",
+        "minElement.txt": "-9"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "past-6.3",
+      "stdout": "",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "dataW.txt": "How are you?\r\nHello World"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "past-6.4",
+      "stdout": "",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "result.txt": "11\r\n11\r\n11\r\n11\r\n11\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.1",
+      "stdout": "A :10\r\nB : 10\r\nC : 8\r\nD : 3\r\nE : 6\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.2",
+      "stdout": "A : 4\r\nB : 6\r\nC : 8\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.3",
+      "stdout": "A: 10\r\nB: 30\r\nC: 50\r\nD: 40\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.4",
+      "stdout": "A : Before swap by reference: a = 5, b = 10\r\nB : After swap by reference: a = 10, b = 5\r\nC : Before swap by value: a = 10, b = 5\r\nD : After swap by value: a = 10, b = 5\r\n\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.5",
+      "stdout": "A : Array elements before modification by value:\r\n1 2 3 4 5 \r\nB : Array elements after modification by reference:\r\n2 4 6 8 10 \r\nC: Array elements after modification by value:\r\n4 8 12 16 20 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-7.6",
+      "stdout": "9\r\n1",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.1",
+      "stdout": "1\r\n153\r\n370\r\n371\r\n407\r\n\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.2",
+      "stdout": "Please enter a number: Number is Armstrong ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.3",
+      "stdout": "Enter a Number : \r\nThe sum of digits is 14",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.4",
+      "stdout": "2\r\n3\r\n5\r\n7\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.5",
+      "stdout": "Enter the limit : 0 1 1 2 3 5 8 13",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.6",
+      "stdout": "Base of the number is: Exponent of the number is: 2 5 32",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.7",
+      "stdout": "     1 \r\n    1 1 \r\n   1 2 1 \r\n  1 3 3 1 \r\n 1 4 6 4 1 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.8",
+      "stdout": "1\r\n+\r\n2\r\n---\r\n3\r\n+++++\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.9",
+      "stdout": "1     \r\n2 3    \r\n4 5 6   \r\n7 8 9 10  \r\n11 12 13 14 15 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-8.10",
+      "stdout": "11111\r\n00000\r\n11111\r\n00000\r\n11111\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-9.1",
+      "stdout": "The func(5, 3) is: 10\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-9.2",
+      "stdout": "9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-9.3",
+      "stdout": "Yes",
+      "compileOutput": "main.c: In function 'main':\nmain.c:7:9: warning: unused variable 'i' [-Wunused-variable]\n    7 |     int i, n = 2020;\n      |         ^\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-9.4",
+      "stdout": "1 2 4 8 16 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.1",
+      "stdout": "a = 10\r\nb = 0\r\nc = 1\r\nd = f\r\n",
+      "compileOutput": "main.c: In function 'main':\nmain.c:7:21: warning: comparisons like 'X<=Y<=Z' do not have their mathematical meaning [-Wparentheses]\n    7 |     int b = (10 > 5 > 2);\n      |                     ^\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.2",
+      "stdout": "Value of p % s + q * r / s is : 30\r\nValue of p++ + q * r / s is : 50\r\nValue of p-- + --q - q * r / s is : 2\r\nValue of (++p / (q-3))* s - r is : 0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.3",
+      "stdout": "Value of (p + q) * r / s is : 200\r\nValue of (p++) + (-q) * (r--) + s is : -370\r\nValue of p ^ q * r / s is : 60\r\nValue of p + (q * r) / s is : 60\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.4",
+      "stdout": "Value of A : 94\r\nValue of B is: 70.351288\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.5",
+      "stdout": "A = 2.000000\r\nB = 33.333333\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.6",
+      "stdout": "A: 13 B: 16 C: 10 D: 10 E: 6 7 8 3",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.7",
+      "stdout": "\r\n\r\n Temperature is: 75.199997",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.8",
+      "stdout": "10 20After swapping the values of a and b are :20 and 10",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.9",
+      "stdout": "11.81\r\n0.98\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.10",
+      "stdout": "8 0 9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.11",
+      "stdout": "2nd Floor\r\n80 44\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.12",
+      "stdout": "3rd Floor\r\nInvalid Floor\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-10.12b",
+      "stdout": "2nd Floor\r\n3rd Floor\r\nInvalid Floor\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "past-11.1",
+      "stdout": "A : Local variable in main: 1\r\nB : Global variable in main: 20\r\nC : Local variable in func1: 10\r\nD : Static variable in func1: 30\r\nE : Local variable in func2: 100\r\nF : Static variable in func2: 300\r\nG : Local variable in main: 2\r\nH : Global variable in main: 21\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-01",
+      "stdout": "Lin 95\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-02",
+      "stdout": "7 17\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-03",
+      "stdout": "4:16:15\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-04",
+      "stdout": "4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-05",
+      "stdout": "102 103 101 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-06",
+      "stdout": "5 4 3 2 1 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-07",
+      "stdout": "0:2 2:2 4:1 6:1 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-08",
+      "stdout": "7\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-09",
+      "stdout": "1 4 \r\n2 5 \r\n3 6 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-10",
+      "stdout": "1 -3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-11",
+      "stdout": "25\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-12",
+      "stdout": "C EXAM 6\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-13",
+      "stdout": "pointer 6\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-14",
+      "stdout": "yes\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-15",
+      "stdout": "exam-ready\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-16",
+      "stdout": "4 30\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "summary.txt": "4 30\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "new-17",
+      "stdout": "copied\r\n",
+      "compileOutput": "main.c: In function 'main':\nmain.c:6:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]\n    6 |         if(in) fclose(in); if(out) fclose(out); return 1;\n      |         ^~\nmain.c:6:28: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'\n    6 |         if(in) fclose(in); if(out) fclose(out); return 1;\n      |                            ^~\n",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "copy.txt": "one\r\ntwo\r\nEND\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "new-18",
+      "stdout": "5 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-19",
+      "stdout": "-3 9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-20",
+      "stdout": "13\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-21",
+      "stdout": "3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-22",
+      "stdout": "12321 5 yes\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-23",
+      "stdout": "2 3 5 7 11 13 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-24",
+      "stdout": "1 2 3 4 9 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "new-25",
+      "stdout": "3 1 2 4 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-01",
+      "stdout": "4 6 6\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-02",
+      "stdout": "3 3.0 3.5\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-03",
+      "stdout": "-3 -2 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-04",
+      "stdout": "6 9 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-05",
+      "stdout": "9 2 8\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-06",
+      "stdout": "6 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-07",
+      "stdout": "1:1 1:2 1:3 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-08",
+      "stdout": "0 1 3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-09",
+      "stdout": "2 1 0 |-1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "out-10",
+      "stdout": "2 1 1 2 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-a1",
+      "stdout": "101 3300\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-a2",
+      "stdout": "11 19\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-a3",
+      "stdout": "2 125\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "passed.txt": "2 50\r\n3 75\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "mock-a4",
+      "stdout": "3/4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-a5",
+      "stdout": "CEXAM 5\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-b1",
+      "stdout": "1 6.0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-b2",
+      "stdout": "1 3 5 6 7 9 ",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-b3",
+      "stdout": "merged\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "merged.txt": "1 2 3 4 9 10 "
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "mock-b4",
+      "stdout": "-2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-b5",
+      "stdout": "1 650 350\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-c1",
+      "stdout": "Book 120\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-c2",
+      "stdout": "4 5 \r\n10 11 \r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-c3",
+      "stdout": "2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "log.txt": "START\nEXAM\r\nREADY\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "mock-c4",
+      "stdout": "4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-c5",
+      "stdout": "153 370 371 407 \r\ncount=4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    }
+  ]
+}

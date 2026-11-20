@@ -1,0 +1,1658 @@
+[
+  {
+    "id": "wp-mock-1-q1a",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Accessible materials",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Should accessibility checks be compulsory before course material is published? Write a 250-word argumentative essay.",
+    "modelAnswer": "Universities should require an accessibility check before course materials are published. Learning resources cannot fulfil their purpose when some students are unable to read or navigate them. A check would make inclusion part of preparation rather than an response after complaints.\n\nFirst, accessible documents allow students to study independently. A structured text file can support searching, adjustable display settings and screen-reading software. By contrast, an image-only scan may contain the correct information while preventing effective use. Checking these features before distribution reduces avoidable barriers without changing the academic standard of the course.\n\nSecond, an organised process can save repeated remedial work. If every teacher receives a short checklist and an document template, problems can be identified early. The library or support team can then focus on difficult cases. This is more efficient than asking individual students to repeatedly explain the same obstacle after each upload.\n\nCritics may argue that compulsory checking adds to an already demanding workload. That concern supports proportionate procedures and staff training, rather than leaving access to chance. A brief initial check can cover searchable text, useful headings and readable alternatives for essential images. Specialist help should remain available where a simple check is insufficient.\n\nA requirement alone will not guarantee perfect access. Universities must collect feedback and correct problems that appear in use. Nevertheless, publication checks establish clear responsibility and reduce predictable failures. They recognise that a resource is ready only when students can use it to engage with the ideas it contains effectively and independently.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: accessible materials",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses accessible materials directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 250,
+      "max": 250
+    }
+  },
+  {
+    "id": "wp-mock-1-q1b",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Equipment loan",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Paraphrase the paragraph without changing its meaning or approximate length.",
+    "modelAnswer": "Students temporarily without a computer because of repairs could borrow one from a new library service. A written guide set out when equipment had to be returned and the borrower’s obligations if it was damaged. Employees inspected devices on collection and return. After a term, feedback and waiting lists informed a review. The initiative addressed short interruptions in access while acknowledging that broader equipment support was still necessary.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: equipment loan",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.5
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses equipment loan directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 59.0,
+      "max": 72.0
+    },
+    "passage": "The library introduced a short-term laptop loan scheme for students whose own devices were being repaired. Borrowers received a checklist explaining return dates and responsibility for damage. Staff checked each laptop before and after use. The scheme was reviewed after one term using waiting-list records and student feedback. The library intended to address temporary access problems rather than replace the need for a wider equipment-support policy."
+  },
+  {
+    "id": "wp-mock-1-q2a",
+    "subject": "wp",
+    "topic": "email",
+    "title": "Request a room",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "email",
+    "partLabel": "Q2A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Write to the library manager requesting a room for six students to discuss a group project next Tuesday, 3–4 p.m. Mention noise control and ask for booking confirmation.",
+    "modelAnswer": "Subject: Group study room request for Tuesday, 3–4 p.m.\n\nDear Library Manager,\n\nI am writing to request a group study room for six students next Tuesday from 3 to 4 p.m. We need to discuss the findings of our course project before preparing a joint presentation.\n\nWe will bring our own laptops and require only seating and a working power point. We understand that discussion should take place in a designated room rather than in the quiet reading area. We will keep the door closed, avoid amplified sound and leave the space ready for the next users.\n\nCould you please confirm whether a suitable room is available and explain the booking procedure? If that time is unavailable, an alternative between 2 and 5 p.m. would also be helpful.\n\nThank you for considering our request.\n\nKind regards,\nAditi Bose\nStudent Project Coordinator",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Task fulfilled with details and explicit action: request a room",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Purpose first and logical paragraphs",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Specific subject, salutation, close and sign-off",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Polite professional register and accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Use a specific subject and appropriate salutation",
+      "Put the purpose in the first paragraph",
+      "Include relevant facts and evidence",
+      "Make a specific, polite request",
+      "Close courteously and sign your full name"
+    ],
+    "annotations": [
+      "The answer addresses request a room directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 130,
+      "max": 170
+    }
+  },
+  {
+    "id": "wp-mock-1-q2b",
+    "subject": "wp",
+    "topic": "questionnaire",
+    "title": "the laptop loan service",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "questionnaire",
+    "partLabel": "Q2B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Prepare a questionnaire on the laptop loan service. Include a short introduction and exactly 4 open-ended and 4 closed-ended questions.",
+    "modelAnswer": "This voluntary survey seeks feedback on the laptop loan service. Please answer from your experience; you may skip any item.\n\nOpen-ended questions\n1. What would improve the laptop loan service?\n2. Describe a difficulty you have experienced with this activity.\n3. What support would make participation easier for you?\n4. How would you prefer to receive information about changes?\n\nClosed-ended questions\n5. Have you participated this term? Yes / No.\n6. How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.\n7. How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.\n8. Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference.",
+    "rubric": [
+      {
+        "id": "o1",
+        "label": "Open question 1: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o2",
+        "label": "Open question 2: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o3",
+        "label": "Open question 3: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o4",
+        "label": "Open question 4: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "c1",
+        "label": "Closed question 1: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c2",
+        "label": "Closed question 2: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c3",
+        "label": "Closed question 3: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c4",
+        "label": "Closed question 4: relevant, neutral, with clear options",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Write one short neutral introduction",
+      "Include exactly four open questions",
+      "Include exactly four closed questions with answer options",
+      "Ask only one thing per question",
+      "Use neutral wording and a clear time frame"
+    ],
+    "annotations": [
+      "The answer addresses the laptop loan service directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "questionnaire": {
+      "intro": "This voluntary survey seeks feedback on the laptop loan service. Please answer from your experience; you may skip any item.",
+      "open": [
+        "What would improve the laptop loan service?",
+        "Describe a difficulty you have experienced with this activity.",
+        "What support would make participation easier for you?",
+        "How would you prefer to receive information about changes?"
+      ],
+      "closed": [
+        "Have you participated this term? Yes / No.",
+        "How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.",
+        "How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.",
+        "Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference."
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-1-q3a",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Laptop loan requests",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Describe the monthly pattern, peak and net change. Do not give causes.",
+    "modelAnswer": "Laptop loan requests rose overall between August and November, although the final month recorded a decline. Requests increased from 30 in August to 50 in November, a net gain of 20, or approximately 66.7%. They rose to 45 in September and reached a peak of 60 in October. Each of these first two monthly increases was 15 requests. November then recorded 10 fewer requests than October. August had the lowest total, while the difference between the highest and lowest monthly values was 30. The November figure remained above both the August and September figures despite the final decline. These are counts of requests rather than unique borrowers or completed loans. The chart therefore establishes demand recorded by month without showing whether every request resulted in a loan.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: laptop loan requests",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The answer addresses laptop loan requests directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 120,
+      "max": 150
+    },
+    "chart": {
+      "kind": "line",
+      "title": "Laptop loan requests",
+      "xLabel": "Category / period",
+      "yLabel": "Requests",
+      "labels": [
+        "August",
+        "September",
+        "October",
+        "November"
+      ],
+      "series": [
+        {
+          "name": "Recorded value",
+          "values": [
+            30,
+            45,
+            60,
+            50
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-1-q3b",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Summary: laptop returns",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Summarise to about half the passage length. Give a title and highlight keywords. Include no personal opinions.",
+    "modelAnswer": "Clearer Laptop Returns\n\nThe library proposed ==standard return deadlines and reminders== after unclear confirmations contributed to late laptop returns and pressure on the waiting list. A month-long review would combine overdue-device records with ==borrower feedback==, recognising that procedural confusion could affect responsible users.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: summary: laptop returns",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses summary: laptop returns directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 40,
+      "max": 50
+    },
+    "passage": "A library began a temporary laptop loan scheme for students awaiting repairs to their own devices. Borrowers received information about safe use, but return deadlines were missing from some confirmation messages. Staff found that late returns made it harder to serve the waiting list. They therefore proposed a standard confirmation containing the due date and a reminder before return. The library planned to review late returns after a month. It would consider borrower feedback as well as the number of overdue devices, since an unclear procedure could affect otherwise responsible users."
+  },
+  {
+    "id": "wp-mock-1-q4",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Loan delays",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "report",
+    "partLabel": "Q4",
+    "marks": 10,
+    "suggestedMinutes": 30,
+    "prompt": "Investigate delayed returns in a laptop loan scheme and write a report for the library manager. For this simulated investigation, use these supplied notes: interviews with 18 borrowers and two library staff; observations during ten working days; six of 20 loans were returned late; 11 borrowers said they could not locate the return deadline; The confirmation message omitted the deadline. Include title, abstract/executive summary, introduction, methodology, findings, conclusion and recommendations. You may propose feasible actions. Do not invent additional results.",
+    "modelAnswer": "Investigation into Delayed Returns In A Laptop Loan Scheme\n\nExecutive Summary\nThis report examines delayed returns in a laptop loan scheme. Interviews and observations identified a service problem and a weakness in the arrangements supporting it. Clearer procedures and a short monitored trial are recommended. The evidence describes the investigation period and should not be treated as a permanent measure of performance.\n\nIntroduction\nThe investigation was requested by the library manager following concerns about delayed returns in a laptop loan scheme. Its purpose was to establish the main difficulties and propose practical improvements. The review covered routine use during ten working days; it did not attempt to assess every possible condition.\n\nMethodology\nThe investigation combined interviews with 18 borrowers and two library staff and direct observations during ten working days. Interview responses were grouped by recurring concern. Observation notes were checked against these themes to distinguish reported experiences from events directly recorded. Participation was voluntary, and individual respondents were not identified. The limited sample restricts generalisation.\n\nFindings\nSix of 20 loans were returned late; 11 borrowers said they could not locate the return deadline. The confirmation message omitted the deadline. These observations identify both the immediate difficulty and a process requiring attention. They do not establish that every user had the same experience.\n\nConclusion\nThe evidence indicates that the current arrangements do not consistently meet users’ needs. The procedural weakness may contribute to the difficulty, although this brief investigation cannot establish its full effect. Improvement requires clear responsibility and follow-up rather than a single announcement.\n\nRecommendations\nThe library manager should include a clear return date in every confirmation within two weeks. The same office should send a reminder one day before return is due during a four-week trial. At the end of the trial, the original observation procedure should be repeated and users invited to comment. Results should determine whether to retain or revise the changes.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Investigation and evidence address the situation: delayed returns in a laptop loan scheme",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Clear methods, scope and limitations",
+        "marks": 2.0
+      },
+      {
+        "id": "r3",
+        "label": "All seven headings and impersonal, accurate language",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Evidence-based conclusions and feasible specific recommendations",
+        "marks": 3.0
+      }
+    ],
+    "checklist": [
+      "Use all seven required headings",
+      "State scope and purpose in the introduction",
+      "Describe a plausible investigation with methods and sample",
+      "Separate observed findings from conclusions",
+      "Link specific, feasible recommendations to findings"
+    ],
+    "annotations": [
+      "The executive summary previews the issue, evidence and recommended direction.",
+      "Methods state participants, period, procedure and a limitation. Findings use only the supplied evidence.",
+      "The conclusion interprets cautiously. Recommendations assign ownership, a deadline and a review measure."
+    ],
+    "wordTarget": {
+      "min": 300,
+      "max": 360
+    }
+  },
+  {
+    "id": "wp-mock-1-q5a",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Abstract: equipment loans",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Write out the exact sentence(s) for each of the four named parts. Do not enter only a letter or paraphrase.",
+    "abstract": "Temporary equipment loans can reduce interruptions to study. This study aimed to identify reasons for late laptop returns. Researchers reviewed 20 loan records and interviewed 18 borrowers. Six loans were overdue, and eleven interviewees could not locate their deadline. Clearer deadline messages may improve the reliability of the loan scheme.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Purpose",
+        "accepted": [
+          "This study aimed to identify reasons for late laptop returns."
+        ],
+        "explanation": "Purpose: states what the investigation aimed to establish."
+      },
+      {
+        "id": "p2",
+        "name": "Methodology",
+        "accepted": [
+          "Researchers reviewed 20 loan records and interviewed 18 borrowers."
+        ],
+        "explanation": "Methodology: specifies participants, material or the procedure used."
+      },
+      {
+        "id": "p3",
+        "name": "Results",
+        "accepted": [
+          "Six loans were overdue, and eleven interviewees could not locate their deadline."
+        ],
+        "explanation": "Results: reports the observed outcome rather than an intention."
+      },
+      {
+        "id": "p4",
+        "name": "Conclusion / implications",
+        "accepted": [
+          "Clearer deadline messages may improve the reliability of the loan scheme."
+        ],
+        "explanation": "Conclusion / implications: interprets the findings or states their wider use."
+      }
+    ]
+  },
+  {
+    "id": "wp-mock-1-q5b",
+    "subject": "wp",
+    "topic": "grammar",
+    "title": "Grammar: library loans",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "grammar-rewrite",
+    "partLabel": "Q5B",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Rewrite the entire paragraph, correcting every error. Highlight each correction using the selection button or ==correction==. Preserve the meaning.",
+    "original": "The library have started a loan scheme. Yesterday, three student borrows a laptop each. A librarian explained the rules to they. Each device were checked careful before collection, the return dates was printed on a card.",
+    "corrected": "The library has started a loan scheme. Yesterday, three students borrowed a laptop each. A librarian explained the rules to them. Each device was checked carefully before collection, and the return dates were printed on a card.",
+    "errors": [
+      {
+        "id": "e1",
+        "error": "library have",
+        "correction": "library has",
+        "rule": "Library is singular."
+      },
+      {
+        "id": "e2",
+        "error": "three student",
+        "correction": "three students",
+        "rule": "Three takes a plural noun."
+      },
+      {
+        "id": "e3",
+        "error": "student borrows",
+        "correction": "students borrowed",
+        "rule": "Yesterday requires past tense and the plural subject."
+      },
+      {
+        "id": "e4",
+        "error": "to they",
+        "correction": "to them",
+        "rule": "Use an object pronoun after to."
+      },
+      {
+        "id": "e5",
+        "error": "device were",
+        "correction": "device was",
+        "rule": "Each device is singular."
+      },
+      {
+        "id": "e6",
+        "error": "checked careful",
+        "correction": "checked carefully",
+        "rule": "Use an adverb."
+      },
+      {
+        "id": "e7",
+        "error": "collection, the return",
+        "correction": "collection, and the return",
+        "rule": "Repair the comma splice."
+      },
+      {
+        "id": "e8",
+        "error": "dates was",
+        "correction": "dates were",
+        "rule": "Dates is plural."
+      }
+    ],
+    "explanation": "Read the complete rewrite first. Scan agreement, tense, articles, prepositions, word form and punctuation. The automatic count checks phrases, not the quality of the whole paragraph. Compare the full diff and self-adjust if your valid rewrite uses another construction. Highlights are checked separately; mark every change."
+  },
+  {
+    "id": "wp-mock-2-q1a",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Repair culture",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Should workplaces prioritise safe repair over immediate equipment replacement? Write a 250-word argumentative essay.",
+    "modelAnswer": "Workplaces should prioritise safe repair before replacing equipment. This policy can reduce disposal and improve purchasing decisions, provided that safety and reliability remain conditions. Repair should be a reasoned assessment rather than a commitment to keep every old device indefinitely.\n\nFirst, inspection prevents usable equipment from being discarded because of a minor fault. A damaged connector or replaceable component does not necessarily make an entire device worthless. Technicians can assess whether restoration is and test the result before returning it to service. This process gives the organisation a basis for choosing between repair and replacement.\n\nSecond, repair records reveal recurring weaknesses. If several devices fail in the same way, the purchasing team can consider durability and maintenance support when selecting equipment. Recording both the cost and success of repairs also prevents a vague environmental promise from concealing expensive or unreliable practices. Decisions become easier to review and explain.\n\nOpponents reasonably worry that repairing equipment may interrupt work or create safety risks. Those risks justify clear limits. Unsafe devices should be withdrawn immediately, and replacements can support essential tasks during inspection. Where repeated repairs cost more than a replacement, the organisation should replace the item rather than defend repair at any price.\n\nThe strongest policy therefore combines technical judgement with records. Managers should assess service reliability alongside waste reduction and cost. Safe repair deserves priority because it treats replacement as a decision requiring evidence, while preserving the organisation's responsibility to provide equipment that staff can depend on throughout their working day.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: repair culture",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses repair culture directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 250,
+      "max": 250
+    }
+  },
+  {
+    "id": "wp-mock-2-q1b",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Quiet hours",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Paraphrase the paragraph without changing its meaning or approximate length.",
+    "modelAnswer": "Following discussion with residents, a hostel established periods when noise had to be limited in both rooms and common passageways. A duty officer could receive reports of repeated disturbance, avoiding the need for direct personal disputes. Four weeks later, the committee examined complaints and sought proposals. The policy remained open to adjustment if unforeseen problems arose, but its central purpose was still to safeguard opportunities to study and rest.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: quiet hours",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.5
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses quiet hours directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 60.0,
+      "max": 73.0
+    },
+    "passage": "A residence introduced quiet hours after consulting its occupants. The rule applied to shared corridors as well as individual rooms. Residents could report persistent disruption to a duty officer rather than confront others directly. After four weeks, the residence committee reviewed complaints and invited suggestions. It planned to revise the arrangement if it created unexpected difficulties, while retaining the aim of protecting time for rest and study."
+  },
+  {
+    "id": "wp-mock-2-q2a",
+    "subject": "wp",
+    "topic": "email",
+    "title": "Complaint about duplicate charge",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "email",
+    "partLabel": "Q2A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Write to an online training provider: you paid a workshop fee once, but your statement shows two charges. Request investigation and refund of the duplicate.",
+    "modelAnswer": "Subject: Duplicate workshop fee charge, registration WR-512\n\nDear Accounts Team,\n\nI am writing about a duplicate charge for workshop registration WR-512. I authorised one payment of Rs 1,200 on 6 November, but my statement shows two charges of the same amount under your organisation’s name.\n\nI received one registration confirmation and intended to reserve only one place. Copies of the payment receipt and the relevant statement entries are available for verification. Please let me know the appropriate channel for sharing them securely.\n\nCould you investigate the second charge and refund it if it is confirmed as a duplicate? I would appreciate acknowledgement of this request and an indication of the expected review time. Please also confirm that my original workshop registration will remain valid.\n\nThank you for your assistance. I look forward to your update.\n\nYours sincerely,\nKabir Jain",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Task fulfilled with details and explicit action: complaint about duplicate charge",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Purpose first and logical paragraphs",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Specific subject, salutation, close and sign-off",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Polite professional register and accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Use a specific subject and appropriate salutation",
+      "Put the purpose in the first paragraph",
+      "Include relevant facts and evidence",
+      "Make a specific, polite request",
+      "Close courteously and sign your full name"
+    ],
+    "annotations": [
+      "The answer addresses complaint about duplicate charge directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 130,
+      "max": 170
+    }
+  },
+  {
+    "id": "wp-mock-2-q2b",
+    "subject": "wp",
+    "topic": "questionnaire",
+    "title": "staff workshop arrangements",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "questionnaire",
+    "partLabel": "Q2B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Prepare a questionnaire on staff workshop arrangements. Include a short introduction and exactly 4 open-ended and 4 closed-ended questions.",
+    "modelAnswer": "This voluntary survey seeks feedback on staff workshop arrangements. Please answer from your experience; you may skip any item.\n\nOpen-ended questions\n1. What would improve staff workshop arrangements?\n2. Describe a difficulty you have experienced with this activity.\n3. What support would make participation easier for you?\n4. How would you prefer to receive information about changes?\n\nClosed-ended questions\n5. Have you participated this term? Yes / No.\n6. How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.\n7. How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.\n8. Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference.",
+    "rubric": [
+      {
+        "id": "o1",
+        "label": "Open question 1: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o2",
+        "label": "Open question 2: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o3",
+        "label": "Open question 3: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o4",
+        "label": "Open question 4: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "c1",
+        "label": "Closed question 1: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c2",
+        "label": "Closed question 2: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c3",
+        "label": "Closed question 3: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c4",
+        "label": "Closed question 4: relevant, neutral, with clear options",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Write one short neutral introduction",
+      "Include exactly four open questions",
+      "Include exactly four closed questions with answer options",
+      "Ask only one thing per question",
+      "Use neutral wording and a clear time frame"
+    ],
+    "annotations": [
+      "The answer addresses staff workshop arrangements directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "questionnaire": {
+      "intro": "This voluntary survey seeks feedback on staff workshop arrangements. Please answer from your experience; you may skip any item.",
+      "open": [
+        "What would improve staff workshop arrangements?",
+        "Describe a difficulty you have experienced with this activity.",
+        "What support would make participation easier for you?",
+        "How would you prefer to receive information about changes?"
+      ],
+      "closed": [
+        "Have you participated this term? Yes / No.",
+        "How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.",
+        "How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.",
+        "Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference."
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-2-q3a",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Workshop registrations and attendance",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Compare attendance counts and attendance rates. Calculate the overall attendance rate. Do not suggest causes.",
+    "modelAnswer": "The Software workshop had the largest number of attendees, but Writing and Software shared the highest attendance rate. Writing attracted 30 registrations and 24 attendees, giving a rate of 80%. Safety recorded 40 registrations and 20 attendees, equivalent to 50%. Software had 50 registrations and 40 attendees, also an 80% rate. Thus, Software exceeded Writing by 16 attendees while matching its proportion attending. Safety had the lowest attendance rate, 30 percentage points below the other two workshops, and 20 of its registered participants did not attend. Across all three events, 84 of 120 registered people attended, producing an overall rate of 70%. This combined rate uses the total counts rather than the simple average of the three percentages. The chart does not explain why registered participants missed a session.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: workshop registrations and attendance",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The answer addresses workshop registrations and attendance directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 120,
+      "max": 150
+    },
+    "chart": {
+      "kind": "bar",
+      "title": "Workshop registrations and attendance",
+      "xLabel": "Category / period",
+      "yLabel": "People",
+      "labels": [
+        "Writing",
+        "Safety",
+        "Software"
+      ],
+      "series": [
+        {
+          "name": "Registered",
+          "values": [
+            30,
+            40,
+            50
+          ]
+        },
+        {
+          "name": "Attended",
+          "values": [
+            24,
+            20,
+            40
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-2-q3b",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Summary: workshop access",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Summarise to about half the passage length. Give a title and highlight keywords. Include no personal opinions.",
+    "modelAnswer": "Accessible Workshop Scheduling\n\nThe training team linked uncertain attendance partly to ==shift conflicts==. It proposed collecting availability and offering alternative sessions. The next review would combine attendance records with ==employee feedback==, improving access while avoiding the assumption that every absence showed disinterest.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: summary: workshop access",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses summary: workshop access directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 40,
+      "max": 50
+    },
+    "passage": "A training team found that workshop registrations did not reliably predict attendance. Interviews suggested that some employees registered before their shift schedules were confirmed. The team decided to ask about availability before choosing session times and to offer the same content in two sessions where practical. Trainers would compare registration and attendance records during the next cycle. They would also ask employees whether the new timing helped them participate. The change aimed to improve access without assuming that every absence resulted from a lack of interest."
+  },
+  {
+    "id": "wp-mock-2-q4",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Workshop attendance",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "report",
+    "partLabel": "Q4",
+    "marks": 10,
+    "suggestedMinutes": 30,
+    "prompt": "Investigate low attendance at staff workshops and write a report for the training manager. For this simulated investigation, use these supplied notes: interviews with 22 employees and two trainers; observations during four workshops; only 12 of 30 registered employees attended the last session; 15 interviewees reported clashes with shift duties; Registration did not ask about shift patterns. Include title, abstract/executive summary, introduction, methodology, findings, conclusion and recommendations. You may propose feasible actions. Do not invent additional results.",
+    "modelAnswer": "Investigation into Low Attendance At Staff Workshops\n\nExecutive Summary\nThis report examines low attendance at staff workshops. Interviews and observations identified a service problem and a weakness in the arrangements supporting it. Clearer procedures and a short monitored trial are recommended. The evidence describes the investigation period and should not be treated as a permanent measure of performance.\n\nIntroduction\nThe investigation was requested by the training manager following concerns about low attendance at staff workshops. Its purpose was to establish the main difficulties and propose practical improvements. The review covered routine use during four workshops; it did not attempt to assess every possible condition.\n\nMethodology\nThe investigation combined interviews with 22 employees and two trainers and direct observations during four workshops. Interview responses were grouped by recurring concern. Observation notes were checked against these themes to distinguish reported experiences from events directly recorded. Participation was voluntary, and individual respondents were not identified. The limited sample restricts generalisation.\n\nFindings\nOnly 12 of 30 registered employees attended the last session; 15 interviewees reported clashes with shift duties. Registration did not ask about shift patterns. These observations identify both the immediate difficulty and a process requiring attention. They do not establish that every user had the same experience.\n\nConclusion\nThe evidence indicates that the current arrangements do not consistently meet users’ needs. The procedural weakness may contribute to the difficulty, although this brief investigation cannot establish its full effect. Improvement requires clear responsibility and follow-up rather than a single announcement.\n\nRecommendations\nThe training manager should offer two sessions covering different shifts within two weeks. The same office should collect availability before publishing the next schedule during a four-week trial. At the end of the trial, the original observation procedure should be repeated and users invited to comment. Results should determine whether to retain or revise the changes.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Investigation and evidence address the situation: low attendance at staff workshops",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Clear methods, scope and limitations",
+        "marks": 2.0
+      },
+      {
+        "id": "r3",
+        "label": "All seven headings and impersonal, accurate language",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Evidence-based conclusions and feasible specific recommendations",
+        "marks": 3.0
+      }
+    ],
+    "checklist": [
+      "Use all seven required headings",
+      "State scope and purpose in the introduction",
+      "Describe a plausible investigation with methods and sample",
+      "Separate observed findings from conclusions",
+      "Link specific, feasible recommendations to findings"
+    ],
+    "annotations": [
+      "The executive summary previews the issue, evidence and recommended direction.",
+      "Methods state participants, period, procedure and a limitation. Findings use only the supplied evidence.",
+      "The conclusion interprets cautiously. Recommendations assign ownership, a deadline and a review measure."
+    ],
+    "wordTarget": {
+      "min": 300,
+      "max": 360
+    }
+  },
+  {
+    "id": "wp-mock-2-q5a",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Abstract: training access",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Write out the exact sentence(s) for each of the four named parts. Do not enter only a letter or paraphrase.",
+    "abstract": "Registration totals alone do not establish whether staff can attend training. The purpose was to examine barriers to workshop attendance. Twenty-two employees were interviewed, and records from four workshops were reviewed. Fifteen interviewees reported that sessions conflicted with shift duties. Scheduling that considers shift patterns may improve access to training.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Purpose",
+        "accepted": [
+          "The purpose was to examine barriers to workshop attendance."
+        ],
+        "explanation": "Purpose: states what the investigation aimed to establish."
+      },
+      {
+        "id": "p2",
+        "name": "Methodology",
+        "accepted": [
+          "Twenty-two employees were interviewed, and records from four workshops were reviewed."
+        ],
+        "explanation": "Methodology: specifies participants, material or the procedure used."
+      },
+      {
+        "id": "p3",
+        "name": "Results",
+        "accepted": [
+          "Fifteen interviewees reported that sessions conflicted with shift duties."
+        ],
+        "explanation": "Results: reports the observed outcome rather than an intention."
+      },
+      {
+        "id": "p4",
+        "name": "Conclusion / implications",
+        "accepted": [
+          "Scheduling that considers shift patterns may improve access to training."
+        ],
+        "explanation": "Conclusion / implications: interprets the findings or states their wider use."
+      }
+    ]
+  },
+  {
+    "id": "wp-mock-2-q5b",
+    "subject": "wp",
+    "topic": "grammar",
+    "title": "Grammar: workshop notice",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "grammar-rewrite",
+    "partLabel": "Q5B",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Rewrite the entire paragraph, correcting every error. Highlight each correction using the selection button or ==correction==. Preserve the meaning.",
+    "original": "The trainer send a notice yesterday. It contain an useful description of the workshop. Several employee was interested, they asked for informations about the fee. The coordinator replied polite and confirmed there places.",
+    "corrected": "The trainer sent a notice yesterday. It contained a useful description of the workshop. Several employees were interested, and they asked for information about the fee. The coordinator replied politely and confirmed their places.",
+    "errors": [
+      {
+        "id": "e1",
+        "error": "trainer send",
+        "correction": "trainer sent",
+        "rule": "Yesterday requires the past tense."
+      },
+      {
+        "id": "e2",
+        "error": "It contain",
+        "correction": "It contained",
+        "rule": "Keep the past narrative consistent."
+      },
+      {
+        "id": "e3",
+        "error": "an useful description",
+        "correction": "a useful description",
+        "rule": "Useful starts with a consonant sound."
+      },
+      {
+        "id": "e4",
+        "error": "Several employee",
+        "correction": "Several employees",
+        "rule": "Several takes a plural noun."
+      },
+      {
+        "id": "e5",
+        "error": "employee was",
+        "correction": "employees were",
+        "rule": "The plural subject takes were."
+      },
+      {
+        "id": "e6",
+        "error": "interested, they",
+        "correction": "interested, and they",
+        "rule": "Repair the comma splice."
+      },
+      {
+        "id": "e7",
+        "error": "for informations",
+        "correction": "for information",
+        "rule": "Information is uncountable."
+      },
+      {
+        "id": "e8",
+        "error": "replied polite",
+        "correction": "replied politely",
+        "rule": "Use an adverb."
+      },
+      {
+        "id": "e9",
+        "error": "there places",
+        "correction": "their places",
+        "rule": "Their marks possession."
+      }
+    ],
+    "explanation": "Read the complete rewrite first. Scan agreement, tense, articles, prepositions, word form and punctuation. The automatic count checks phrases, not the quality of the whole paragraph. Compare the full diff and self-adjust if your valid rewrite uses another construction. Highlights are checked separately; mark every change."
+  },
+  {
+    "id": "wp-mock-3-q1a",
+    "subject": "wp",
+    "topic": "essay",
+    "title": "Community participation",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "essay",
+    "partLabel": "Q1A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Should colleges recognise community volunteering as part of student development? Write a 250-word argumentative essay.",
+    "modelAnswer": "Colleges should recognise community volunteering as a part of student development. Participation can connect academic learning with responsibility, but recognition should respect community needs and students' circumstances. A voluntary, well-supported programme offers more value than a compulsory competition for service hours.\n\nFirst, community work can develop skills that lectures alone cannot fully exercise. A student helping at a reading centre must listen, explain ideas clearly and adapt to different learners. These experiences create opportunities to practise patience and teamwork. Reflection afterwards can connect the activity with questions about communication, inclusion and responsible participation in shared institutions.\n\nSecond, a college can provide continuity that isolated volunteering often lacks. Staff can establish a partnership with a community organisation, train participants and agree on duties. This makes the programme more dependable for the host and gives students a clear understanding of their responsibilities. Community feedback should help determine whether the activity remains useful.\n\nCritics may argue that recognition turns service into a credential and disadvantages students with limited free time. This concern is justified when institutions reward hours without considering circumstances. Colleges should therefore offer flexible opportunities and recognise participation rather than impose a universal quota. Students who cannot attend should retain access to other developmental activities.\n\nVolunteering should also complement trained staff rather than replace necessary employment. With supervision, flexible participation and honest evaluation, colleges can support a meaningful relationship between learning and service. Recognition is worthwhile when it encourages responsibility and respects the people whom the programme is intended to support.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Clear thesis and developed reasoning: community participation",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Two arguments, counter-argument and effective rebuttal",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Logical paragraphs and cohesive conclusion",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar, punctuation and controlled academic vocabulary",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Answer the precise debate with a clear thesis",
+      "Develop two distinct arguments with examples",
+      "State a fair counter-argument and rebut it",
+      "Conclude without adding a new argument",
+      "Aim for 250 words in the upcoming exam"
+    ],
+    "annotations": [
+      "The answer addresses community participation directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 250,
+      "max": 250
+    }
+  },
+  {
+    "id": "wp-mock-3-q1b",
+    "subject": "wp",
+    "topic": "paraphrase",
+    "title": "Shared garden",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "paraphrase",
+    "partLabel": "Q1B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Paraphrase the paragraph without changing its meaning or approximate length.",
+    "modelAnswer": "An unused piece of land became a communal garden managed by local residents. They shared watering responsibilities through a rota and documented spending. Rather than begin with many varieties, participants selected plants appropriate to the area. Monthly meetings provided a way for visitors to propose changes. Before considering a larger garden, the group used the initial season to test the arrangements and understand the care the site required.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "All source meanings and qualifications retained: shared garden",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Independent sentence structures and word forms",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Appropriate vocabulary with technical terms intact",
+        "marks": 0.5
+      },
+      {
+        "id": "r4",
+        "label": "Accurate grammar and approximately the source length",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Preserve every essential claim, qualification and relationship",
+      "Change sentence structures and word forms as well as vocabulary",
+      "Keep names, figures and technical terms accurate",
+      "Keep approximately the original length",
+      "Check against the source for copied sentence frames"
+    ],
+    "annotations": [
+      "The answer addresses shared garden directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 61.0,
+      "max": 74.0
+    },
+    "passage": "A neighbourhood group created a shared garden on a small unused plot. Members agreed to rotate watering duties and keep a record of expenses. The group chose plants suited to local conditions instead of attempting to grow a wide range immediately. Visitors could suggest improvements through a monthly meeting. The first season was treated as a trial, allowing the group to learn about maintenance before expanding the project."
+  },
+  {
+    "id": "wp-mock-3-q2a",
+    "subject": "wp",
+    "topic": "email",
+    "title": "Enquiry about volunteering",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "email",
+    "partLabel": "Q2A",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Write to a community centre enquiring about weekend volunteering. Ask about duties, training, timings and how to apply.",
+    "modelAnswer": "Subject: Enquiry about weekend volunteering opportunities\n\nDear Community Centre Coordinator,\n\nI am a college student interested in supporting your weekend activities. I am writing to ask whether you currently accept volunteers and what responsibilities a new participant could undertake.\n\nI can usually attend on Saturday afternoons and would be particularly interested in supervised reading activities. Could you please share the session timings, minimum commitment and any eligibility requirements? I would also appreciate information about introductory training and the staff supervision provided during sessions.\n\nPlease let me know how to apply and whether you require references or an initial meeting. I would be happy to discuss my availability before making a commitment, so that the arrangement meets the centre’s needs.\n\nThank you for your time and guidance. I look forward to learning more about the programme.\n\nKind regards,\nLeela Nair",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Task fulfilled with details and explicit action: enquiry about volunteering",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Purpose first and logical paragraphs",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Specific subject, salutation, close and sign-off",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Polite professional register and accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Use a specific subject and appropriate salutation",
+      "Put the purpose in the first paragraph",
+      "Include relevant facts and evidence",
+      "Make a specific, polite request",
+      "Close courteously and sign your full name"
+    ],
+    "annotations": [
+      "The answer addresses enquiry about volunteering directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 130,
+      "max": 170
+    }
+  },
+  {
+    "id": "wp-mock-3-q2b",
+    "subject": "wp",
+    "topic": "questionnaire",
+    "title": "community garden participation",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "questionnaire",
+    "partLabel": "Q2B",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Prepare a questionnaire on community garden participation. Include a short introduction and exactly 4 open-ended and 4 closed-ended questions.",
+    "modelAnswer": "This voluntary survey seeks feedback on community garden participation. Please answer from your experience; you may skip any item.\n\nOpen-ended questions\n1. What would improve community garden participation?\n2. Describe a difficulty you have experienced with this activity.\n3. What support would make participation easier for you?\n4. How would you prefer to receive information about changes?\n\nClosed-ended questions\n5. Have you participated this term? Yes / No.\n6. How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.\n7. How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.\n8. Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference.",
+    "rubric": [
+      {
+        "id": "o1",
+        "label": "Open question 1: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o2",
+        "label": "Open question 2: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o3",
+        "label": "Open question 3: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "o4",
+        "label": "Open question 4: relevant, neutral and genuinely open",
+        "marks": 0.5
+      },
+      {
+        "id": "c1",
+        "label": "Closed question 1: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c2",
+        "label": "Closed question 2: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c3",
+        "label": "Closed question 3: relevant, neutral, with clear options",
+        "marks": 0.5
+      },
+      {
+        "id": "c4",
+        "label": "Closed question 4: relevant, neutral, with clear options",
+        "marks": 0.5
+      }
+    ],
+    "checklist": [
+      "Write one short neutral introduction",
+      "Include exactly four open questions",
+      "Include exactly four closed questions with answer options",
+      "Ask only one thing per question",
+      "Use neutral wording and a clear time frame"
+    ],
+    "annotations": [
+      "The answer addresses community garden participation directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "questionnaire": {
+      "intro": "This voluntary survey seeks feedback on community garden participation. Please answer from your experience; you may skip any item.",
+      "open": [
+        "What would improve community garden participation?",
+        "Describe a difficulty you have experienced with this activity.",
+        "What support would make participation easier for you?",
+        "How would you prefer to receive information about changes?"
+      ],
+      "closed": [
+        "Have you participated this term? Yes / No.",
+        "How clear is the published information? Very clear / Clear / Neutral / Unclear / Very unclear / Not seen.",
+        "How many times did you participate last month? 0 / 1 / 2–3 / 4 or more.",
+        "Which information channel do you prefer? Email / Noticeboard / Portal / In-person contact / Other / No preference."
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-3-q3a",
+    "subject": "wp",
+    "topic": "graph",
+    "title": "Garden spending",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "graph",
+    "partLabel": "Q3A",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Describe the spending distribution, calculate the total and compare the categories. Do not judge value.",
+    "modelAnswer": "The garden spent Rs 10,000 in total, with repairs accounting for the largest share and water for the smallest. Repairs cost Rs 4,000, or 40% of expenditure. Plants followed at Rs 3,000, representing 30%, while tools cost Rs 2,000, equivalent to 20%. Water accounted for the remaining Rs 1,000, or 10%. The largest and smallest categories differed by Rs 3,000. Spending on repairs was four times the amount spent on water and twice that spent on tools. Plants and tools together accounted for Rs 5,000, exactly half the total. Although repairs were the largest single category, their share was smaller than this combined amount. These figures describe the distribution of spending; they do not establish whether any category offered better value or whether the same pattern will continue.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Accurate key numbers, units and comparisons: garden spending",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Overview and selection of important features",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Exact response to the question; no unsupported causes",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Clear trend language, organisation and mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Read exactly what the question requests",
+      "Give an overview before figures",
+      "Compare important features using accurate values and units",
+      "Use by for change, to for endpoint and at for a peak",
+      "Offer causes only if requested; label them as possibilities"
+    ],
+    "annotations": [
+      "The answer addresses garden spending directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 120,
+      "max": 150
+    },
+    "chart": {
+      "kind": "pie",
+      "title": "Garden spending",
+      "xLabel": "Category / period",
+      "yLabel": "Rupees",
+      "labels": [
+        "Plants",
+        "Tools",
+        "Water",
+        "Repairs"
+      ],
+      "series": [
+        {
+          "name": "Recorded value",
+          "values": [
+            3000,
+            2000,
+            1000,
+            4000
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "wp-mock-3-q3b",
+    "subject": "wp",
+    "topic": "summary",
+    "title": "Summary: garden rota",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "summary",
+    "partLabel": "Q3B",
+    "marks": 5,
+    "suggestedMinutes": 15,
+    "prompt": "Summarise to about half the passage length. Give a title and highlight keywords. Include no personal opinions.",
+    "modelAnswer": "Confirming Garden Duties\n\nMissed watering duties revealed that the garden’s rota lacked a clear ==swap procedure==. The group required both volunteers to confirm changes and arranged daily checks during a trial. ==Missed-session records and feedback== would inform a decision on permanent adoption.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Main idea and essential content preserved: summary: garden rota",
+        "marks": 2.0
+      },
+      {
+        "id": "r2",
+        "label": "Concise independent wording at the required length",
+        "marks": 1.0
+      },
+      {
+        "id": "r3",
+        "label": "Accurate title and highlighted keywords",
+        "marks": 1.0
+      },
+      {
+        "id": "r4",
+        "label": "Neutral, coherent sentences with accurate mechanics",
+        "marks": 1.0
+      }
+    ],
+    "checklist": [
+      "Give a precise title",
+      "Retain the main idea and all essential qualifications",
+      "Cut examples and minor details",
+      "Use your own wording without opinions",
+      "Highlight key terms in your answer; follow the specified length"
+    ],
+    "annotations": [
+      "The answer addresses summary: garden rota directly.",
+      "Details support the requested task and each paragraph has a clear purpose.",
+      "The model follows the requested format with precise, complete sentences."
+    ],
+    "wordTarget": {
+      "min": 40,
+      "max": 50
+    },
+    "passage": "A community garden depended on volunteers to water plants throughout the week. The original rota listed names but did not explain how changes should be agreed. When duties were missed, organisers found that several volunteers had assumed someone else had accepted a swap. The group introduced a rule requiring both people to confirm each change. A caretaker would check the updated rota daily during a trial period. The group intended to review missed sessions and volunteer feedback before deciding whether the system should become permanent."
+  },
+  {
+    "id": "wp-mock-3-q4",
+    "subject": "wp",
+    "topic": "report",
+    "title": "Garden maintenance",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "writing",
+    "task": "report",
+    "partLabel": "Q4",
+    "marks": 10,
+    "suggestedMinutes": 30,
+    "prompt": "Investigate missed watering duties in a community garden and write a report for the community coordinator. For this simulated investigation, use these supplied notes: interviews with 12 volunteers and two caretakers; observations during two weeks; four scheduled watering sessions were missed; seven volunteers said duty changes were unclear; The shared rota had no procedure for confirming swaps. Include title, abstract/executive summary, introduction, methodology, findings, conclusion and recommendations. You may propose feasible actions. Do not invent additional results.",
+    "modelAnswer": "Investigation into Missed Watering Duties In A Community Garden\n\nExecutive Summary\nThis report examines missed watering duties in a community garden. Interviews and observations identified a service problem and a weakness in the arrangements supporting it. Clearer procedures and a short monitored trial are recommended. The evidence describes the investigation period and should not be treated as a permanent measure of performance.\n\nIntroduction\nThe investigation was requested by the community coordinator following concerns about missed watering duties in a community garden. Its purpose was to establish the main difficulties and propose practical improvements. The review covered routine use during two weeks; it did not attempt to assess every possible condition.\n\nMethodology\nThe investigation combined interviews with 12 volunteers and two caretakers and direct observations during two weeks. Interview responses were grouped by recurring concern. Observation notes were checked against these themes to distinguish reported experiences from events directly recorded. Participation was voluntary, and individual respondents were not identified. The limited sample restricts generalisation.\n\nFindings\nFour scheduled watering sessions were missed; seven volunteers said duty changes were unclear. The shared rota had no procedure for confirming swaps. These observations identify both the immediate difficulty and a process requiring attention. They do not establish that every user had the same experience.\n\nConclusion\nThe evidence indicates that the current arrangements do not consistently meet users’ needs. The procedural weakness may contribute to the difficulty, although this brief investigation cannot establish its full effect. Improvement requires clear responsibility and follow-up rather than a single announcement.\n\nRecommendations\nThe community coordinator should require duty swaps to be acknowledged by both volunteers within two weeks. The same office should review missed sessions after a four-week trial during a four-week trial. At the end of the trial, the original observation procedure should be repeated and users invited to comment. Results should determine whether to retain or revise the changes.",
+    "rubric": [
+      {
+        "id": "r1",
+        "label": "Investigation and evidence address the situation: missed watering duties in a community garden",
+        "marks": 3.0
+      },
+      {
+        "id": "r2",
+        "label": "Clear methods, scope and limitations",
+        "marks": 2.0
+      },
+      {
+        "id": "r3",
+        "label": "All seven headings and impersonal, accurate language",
+        "marks": 2.0
+      },
+      {
+        "id": "r4",
+        "label": "Evidence-based conclusions and feasible specific recommendations",
+        "marks": 3.0
+      }
+    ],
+    "checklist": [
+      "Use all seven required headings",
+      "State scope and purpose in the introduction",
+      "Describe a plausible investigation with methods and sample",
+      "Separate observed findings from conclusions",
+      "Link specific, feasible recommendations to findings"
+    ],
+    "annotations": [
+      "The executive summary previews the issue, evidence and recommended direction.",
+      "Methods state participants, period, procedure and a limitation. Findings use only the supplied evidence.",
+      "The conclusion interprets cautiously. Recommendations assign ownership, a deadline and a review measure."
+    ],
+    "wordTarget": {
+      "min": 300,
+      "max": 360
+    }
+  },
+  {
+    "id": "wp-mock-3-q5a",
+    "subject": "wp",
+    "topic": "abstracts",
+    "title": "Abstract: garden care",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "abstract-parts",
+    "partLabel": "Q5A",
+    "marks": 4,
+    "suggestedMinutes": 12,
+    "prompt": "Write out the exact sentence(s) for each of the four named parts. Do not enter only a letter or paraphrase.",
+    "abstract": "Shared gardens require reliable maintenance arrangements. This investigation sought to explain missed watering sessions. Researchers interviewed 12 volunteers and checked two weeks of rota records. Four sessions were missed, and seven volunteers reported unclear duty changes. Confirmed duty swaps may improve coordination, although a trial is needed.",
+    "parts": [
+      {
+        "id": "p1",
+        "name": "Purpose",
+        "accepted": [
+          "This investigation sought to explain missed watering sessions."
+        ],
+        "explanation": "Purpose: states what the investigation aimed to establish."
+      },
+      {
+        "id": "p2",
+        "name": "Methodology",
+        "accepted": [
+          "Researchers interviewed 12 volunteers and checked two weeks of rota records."
+        ],
+        "explanation": "Methodology: specifies participants, material or the procedure used."
+      },
+      {
+        "id": "p3",
+        "name": "Results",
+        "accepted": [
+          "Four sessions were missed, and seven volunteers reported unclear duty changes."
+        ],
+        "explanation": "Results: reports the observed outcome rather than an intention."
+      },
+      {
+        "id": "p4",
+        "name": "Conclusion / implications",
+        "accepted": [
+          "Confirmed duty swaps may improve coordination, although a trial is needed."
+        ],
+        "explanation": "Conclusion / implications: interprets the findings or states their wider use."
+      }
+    ]
+  },
+  {
+    "id": "wp-mock-3-q5b",
+    "subject": "wp",
+    "topic": "grammar",
+    "title": "Grammar: garden tasks",
+    "source": "Exclusive mock",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "grammar-rewrite",
+    "partLabel": "Q5B",
+    "marks": 6,
+    "suggestedMinutes": 18,
+    "prompt": "Rewrite the entire paragraph, correcting every error. Highlight each correction using the selection button or ==correction==. Preserve the meaning.",
+    "original": "Every volunteer were given a task last Sunday. The caretaker explain the plan, everyone listened careful. Two person arrived late and asked a other member for help. The group completed its work in time and leave the garden tidy.",
+    "corrected": "Every volunteer was given a task last Sunday. The caretaker explained the plan, and everyone listened carefully. Two people arrived late and asked another member for help. The group completed its work in time and left the garden tidy.",
+    "errors": [
+      {
+        "id": "e1",
+        "error": "volunteer were",
+        "correction": "volunteer was",
+        "rule": "Every volunteer is singular."
+      },
+      {
+        "id": "e2",
+        "error": "caretaker explain",
+        "correction": "caretaker explained",
+        "rule": "The event is in the past."
+      },
+      {
+        "id": "e3",
+        "error": "plan, everyone",
+        "correction": "plan, and everyone",
+        "rule": "Join independent clauses with a conjunction."
+      },
+      {
+        "id": "e4",
+        "error": "listened careful",
+        "correction": "listened carefully",
+        "rule": "Use an adverb."
+      },
+      {
+        "id": "e5",
+        "error": "Two person",
+        "correction": "Two people",
+        "rule": "The plural of person here is people."
+      },
+      {
+        "id": "e6",
+        "error": "a other member",
+        "correction": "another member",
+        "rule": "Another is the correct determiner."
+      },
+      {
+        "id": "e7",
+        "error": "and leave",
+        "correction": "and left",
+        "rule": "Maintain the past tense."
+      }
+    ],
+    "explanation": "Read the complete rewrite first. Scan agreement, tense, articles, prepositions, word form and punctuation. The automatic count checks phrases, not the quality of the whole paragraph. Compare the full diff and self-adjust if your valid rewrite uses another construction. Highlights are checked separately; mark every change."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "pdf": "2022-2023_SEM_2_Online B.Sc. CS-Batch 1_BCS ZC239_Writing Practice_EC-3_05-03-2023.pdf",
+    "page": 2,
+    "image": "/wp/chart-1.png",
+    "width": 632,
+    "height": 317,
+    "extraction": "pypdf offline fallback; PyMuPDF unavailable"
+  },
+  {
+    "pdf": "2022-2023_SEM_2_Online B.Sc. CS-Batch 1_BCS ZC239_Writing Practice_EC-3_MAKEUP_25-02-2023.pdf",
+    "page": 2,
+    "image": "/wp/chart-2.png",
+    "width": 1204,
+    "height": 954,
+    "extraction": "pypdf offline fallback; PyMuPDF unavailable"
+  },
+  {
+    "pdf": "2022-2023_SEM_2_Online B.Sc. CS-Batch 1_BCS ZC239_Writing Practice_EC-3_REGULAR_17-02-2023.pdf",
+    "page": 2,
+    "image": "/wp/chart-3.png",
+    "width": 465,
+    "height": 449,
+    "extraction": "pypdf offline fallback; PyMuPDF unavailable"
+  },
+  {
+    "pdf": "2023-2024_SEM_1_Online B.Sc. CS-Batch 2_SEM 1_BCS ZC239_Writing Practice_EC-3_SLOT-1_06-10-2023.pdf",
+    "page": 2,
+    "image": "/wp/chart-4.png",
+    "width": 608,
+    "height": 383,
+    "extraction": "pypdf offline fallback; PyMuPDF unavailable"
+  },
+  {
+    "pdf": "2023-2024_SEM_1_Online B.Sc. CS-Batch 2_SEM 1_BCS ZC239_Writing Practice_EC-3_SLOT-2_14-10-2023.pdf",
+    "page": 2,
+    "image": "/wp/chart-5.png",
+    "width": 832,
+    "height": 486,
+    "extraction": "pypdf offline fallback; PyMuPDF unavailable"
+  }
+]

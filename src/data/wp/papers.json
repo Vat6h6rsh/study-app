@@ -1,0 +1,53 @@
+[
+  {
+    "id": "wp-mock-1",
+    "subject": "wp",
+    "title": "Access and learning",
+    "description": "5 questions, 9 parts, 50 marks. Assumed duration: 2 hours 30 minutes. Exclusive original tasks.",
+    "questionIds": [
+      "wp-mock-1-q1a",
+      "wp-mock-1-q1b",
+      "wp-mock-1-q2a",
+      "wp-mock-1-q2b",
+      "wp-mock-1-q3a",
+      "wp-mock-1-q3b",
+      "wp-mock-1-q4",
+      "wp-mock-1-q5a",
+      "wp-mock-1-q5b"
+    ]
+  },
+  {
+    "id": "wp-mock-2",
+    "subject": "wp",
+    "title": "Workplace improvement",
+    "description": "5 questions, 9 parts, 50 marks. Assumed duration: 2 hours 30 minutes. Exclusive original tasks.",
+    "questionIds": [
+      "wp-mock-2-q1a",
+      "wp-mock-2-q1b",
+      "wp-mock-2-q2a",
+      "wp-mock-2-q2b",
+      "wp-mock-2-q3a",
+      "wp-mock-2-q3b",
+      "wp-mock-2-q4",
+      "wp-mock-2-q5a",
+      "wp-mock-2-q5b"
+    ]
+  },
+  {
+    "id": "wp-mock-3",
+    "subject": "wp",
+    "title": "Community and campus",
+    "description": "5 questions, 9 parts, 50 marks. Assumed duration: 2 hours 30 minutes. Exclusive original tasks.",
+    "questionIds": [
+      "wp-mock-3-q1a",
+      "wp-mock-3-q1b",
+      "wp-mock-3-q2a",
+      "wp-mock-3-q2b",
+      "wp-mock-3-q3a",
+      "wp-mock-3-q3b",
+      "wp-mock-3-q4",
+      "wp-mock-3-q5a",
+      "wp-mock-3-q5b"
+    ]
+  }
+]

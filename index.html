@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        let choice = 'system';
+        try { choice = localStorage.getItem('exam-desk.theme') || choice; } catch {}
+        if (!['system', 'paper', 'sky', 'midnight', 'ember'].includes(choice)) choice = 'system';
+        document.documentElement.dataset.theme = choice === 'system'
+          ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'midnight' : 'paper') : choice;
+      })();
+    </script>
+    <meta name="description" content="Offline C programming practice, past papers and timed mock exams for BITS BCS ZC313." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examdesk · C Programming Practice</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

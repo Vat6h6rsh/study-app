@@ -1,0 +1,3138 @@
+[
+  {
+    "id": "new-01",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Rank a student cohort",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Allocate three records, compute totals, and print the name and total of the first highest scorer. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n__A__ struct { char name[20]; int marks[2]; int total; } Student;\nint main(void) {\n    Student *s = __B__;\n    if (s == __C__) return 1;\n    __D__(s[0].name,\"Ada\");\n    strcpy(s[1].name,\"Lin\"); strcpy(s[2].name,\"Sam\");\n    int scores[3][2]={{40,45},{48,47},{39,49}};\n    int best=__E__;\n    for(int i=0; i<__F__; ++i) {\n        for(int j=0; j<2; ++j) s[i].total += __G__;\n        if(s[i].total __H__ s[best].total) best=i;\n    }\n    Student *p=__I__;\n    printf(\"%s %d\\n\",p->name,p->total);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "typedef"
+        ],
+        "explanation": "typedef gives the following structure a type name."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "calloc(3, sizeof *s)"
+        ],
+        "explanation": "Allocate three zero-initialised Student records."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "NULL indicates allocation failure."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "strcpy"
+        ],
+        "explanation": "Copy characters including the terminator into the array."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The first record establishes a valid candidate."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "There are three students."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "scores[i][j]"
+        ],
+        "explanation": "Add the current subject mark to this student's total."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          ">"
+        ],
+        "explanation": "Strict greater-than keeps the first winner in a tie."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "s + best"
+        ],
+        "explanation": "Pointer arithmetic selects the winning record."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(s)"
+        ],
+        "explanation": "Free the base address once, after the last use."
+      }
+    ],
+    "expectedOutput": "Lin 95\n",
+    "trace": [
+      "typedef gives the following structure a type name.",
+      "Allocate three zero-initialised Student records.",
+      "NULL indicates allocation failure.",
+      "Copy characters including the terminator into the array.",
+      "The first record establishes a valid candidate.",
+      "There are three students.",
+      "Add the current subject mark to this student's total.",
+      "Strict greater-than keeps the first winner in a tie.",
+      "Pointer arithmetic selects the winning record.",
+      "Free the base address once, after the last use."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Find and print the student with the highest total across two marks.",
+      "rules": [
+        "Student is a type alias containing a 20-character name buffer, two integer marks and an integer total.",
+        "Allocate three zero-initialized records and copy names Ada, Lin and Sam into them; totals must start at zero.",
+        "For each student sum both entries from the supplied 3-by-2 scores array; retain the first on a total tie.",
+        "Print the selected name and total, then free the array; stop with failure if allocation fails."
+      ],
+      "sample": {
+        "input": "",
+        "output": "Lin 95\n"
+      }
+    }
+  },
+  {
+    "id": "new-02",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Restock through a struct pointer",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Restock each product costing under 50 and print the total stock. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\ntypedef struct { int id, stock, price; } Product;\nvoid restock(__A__, int amount) {\n    p__B__stock __C__ amount;\n}\nint main(void) {\n    Product a[3]={{1,4,30},{2,2,80},{3,5,20}};\n    int total=__D__;\n    for(int i=__E__; i<__F__; ++i) {\n        if(a[i].price __G__ 50) restock(__H__,3);\n        total += __I__;\n    }\n    printf(\"%d %d\\n\",a[0].stock,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Product *p"
+        ],
+        "explanation": "The function receives the address of a product."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "->"
+        ],
+        "explanation": "Use -> to select a member through a pointer."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "+="
+        ],
+        "explanation": "Add the delivery to the current stock."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The sum begins at zero."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Arrays begin at index zero."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "Visit the three products."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "<"
+        ],
+        "explanation": "Only prices strictly below 50 qualify."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "&a[i]"
+        ],
+        "explanation": "Pass the address so the function can modify this record."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "a[i].stock"
+        ],
+        "explanation": "Use the updated stock of each product."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "total"
+        ],
+        "explanation": "Print the accumulated stock, 7+2+8."
+      }
+    ],
+    "expectedOutput": "7 17\n",
+    "trace": [
+      "The function receives the address of a product.",
+      "Use -> to select a member through a pointer.",
+      "Add the delivery to the current stock.",
+      "The sum begins at zero.",
+      "Arrays begin at index zero.",
+      "Visit the three products.",
+      "Only prices strictly below 50 qualify.",
+      "Pass the address so the function can modify this record.",
+      "Use the updated stock of each product.",
+      "Print the accumulated stock, 7+2+8."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Restock inexpensive products and print the first product's stock and total stock afterward.",
+      "rules": [
+        "Product has integer id, stock and price fields; process all three supplied records.",
+        "Add three units to every product priced strictly below 50, modifying each through its address.",
+        "Sum the updated stock of all products and print the two requested quantities separated by a space."
+      ],
+      "sample": {
+        "input": "",
+        "output": "7 17\n"
+      }
+    }
+  },
+  {
+    "id": "new-03",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Normalise a time interval",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Add two durations with second-to-minute and minute-to-hour carries. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n__A__ struct { int h,m,s; } Time;\nTime sum(Time a, Time b) {\n    Time t;\n    t.s=__B__;\n    t.m=__C__;\n    t.h=__D__;\n    t.m += t.s / __E__;\n    t.s __F__ 60;\n    t.h += __G__;\n    t.m = __H__;\n    return __I__;\n}\nint main(void) {\n    Time c=__J__;\n    printf(\"%d:%02d:%02d\\n\",c.h,c.m,c.s);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "typedef"
+        ],
+        "explanation": "Create a named type alias."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "a.s + b.s"
+        ],
+        "explanation": "Add the seconds fields before carrying."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "a.m + b.m"
+        ],
+        "explanation": "Add the minutes fields separately."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a.h + b.h"
+        ],
+        "explanation": "Add the hours fields."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "60"
+        ],
+        "explanation": "Every 60 seconds contributes one minute."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "%="
+        ],
+        "explanation": "Keep the remainder after dividing by 60."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "t.m / 60"
+        ],
+        "explanation": "Every complete 60 minutes contributes one hour."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "t.m % 60"
+        ],
+        "explanation": "Retain only the minutes below one hour."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "t"
+        ],
+        "explanation": "Return the entire normalised structure."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "sum((Time){1,45,50},(Time){2,30,25})"
+        ],
+        "explanation": "Pass two compound-literal Time values to the helper."
+      }
+    ],
+    "expectedOutput": "4:16:15\n",
+    "trace": [
+      "Create a named type alias.",
+      "Add the seconds fields before carrying.",
+      "Add the minutes fields separately.",
+      "Add the hours fields.",
+      "Every 60 seconds contributes one minute.",
+      "Keep the remainder after dividing by 60.",
+      "Every complete 60 minutes contributes one hour.",
+      "Retain only the minutes below one hour.",
+      "Return the entire normalised structure.",
+      "Pass two compound-literal Time values to the helper."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Add two time intervals and normalize the result into hours, minutes and seconds.",
+      "rules": [
+        "Time is a type alias with integer h, m and s fields.",
+        "Add 1:45:50 and 2:30:25 component by component.",
+        "Carry complete groups of 60 seconds into minutes and 60 minutes into hours, keeping the remainders; hours do not wrap at 24.",
+        "Return the complete Time result and print minutes and seconds with two digits each."
+      ],
+      "sample": {
+        "input": "",
+        "output": "4:16:15\n"
+      }
+    }
+  },
+  {
+    "id": "new-04",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Find a book by title",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Return the first matching book through a pointer; titles are case-sensitive. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <string.h>\ntypedef struct { char title[24]; int copies; } Book;\nBook *find(__A__, int n, const char *key) {\n    for(int i=0; i<__B__; __C__)\n        if(__D__(a[i].title,key) == __E__)\n            return __F__;\n    return __G__;\n}\nint main(void) {\n    Book b[2]={{\"C\",4},{\"Math\",2}};\n    Book *p=__H__;\n    if(p __I__ NULL) printf(\"%d\\n\",p__J__copies);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Book a[]"
+        ],
+        "explanation": "An array parameter refers to the caller's Book records."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Use the supplied record count."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "++i"
+        ],
+        "explanation": "Advance one record at a time."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "strcmp"
+        ],
+        "explanation": "Compare the contents of two strings."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "strcmp returns zero for equality."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "&a[i]"
+        ],
+        "explanation": "Return the address of the matching existing record."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "No match is represented by a null pointer."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "find(b,2,\"C\")"
+        ],
+        "explanation": "Pass the records, count and sought title."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "!="
+        ],
+        "explanation": "Only dereference p after establishing it is non-null."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "->"
+        ],
+        "explanation": "p points to a Book; use -> to access its field."
+      }
+    ],
+    "expectedOutput": "4\n",
+    "trace": [
+      "An array parameter refers to the caller's Book records.",
+      "Use the supplied record count.",
+      "Advance one record at a time.",
+      "Compare the contents of two strings.",
+      "strcmp returns zero for equality.",
+      "Return the address of the matching existing record.",
+      "No match is represented by a null pointer.",
+      "Pass the records, count and sought title.",
+      "Only dereference p after establishing it is non-null.",
+      "p points to a Book; use -> to access its field."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Find a book by exact title and print its copy count if found.",
+      "rules": [
+        "Book has a 24-character title buffer and integer copies; search the two records for title C.",
+        "Visit indices 0 through n minus 1 and compare complete string contents, including case.",
+        "Return the first matching record's address, or a null pointer if absent; access fields only for a non-null result."
+      ],
+      "sample": {
+        "input": "",
+        "output": "4\n"
+      }
+    }
+  },
+  {
+    "id": "new-05",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Sort employees by salary",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Use selection sort in ascending salary order, swapping whole structures. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\ntypedef struct { int id, salary; } Employee;\nint main(void) {\n    Employee e[3]={{101,500},{102,300},{103,400}};\n    for(int i=__A__; i<__B__; ++i) {\n        int k=__C__;\n        for(int j=__D__; j<__E__; ++j)\n            if(e[j].salary __F__ e[k].salary) k=__G__;\n        __H__ t=e[i];\n        e[i]=__I__;\n        e[k]=__J__;\n    }\n    for(int i=0;i<3;++i) printf(\"%d \",e[i].id);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start placement at the first record."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Three records need two selection passes."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "i"
+        ],
+        "explanation": "Begin with the first unsorted record as candidate."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "i+1"
+        ],
+        "explanation": "Search the rest of the unsorted suffix."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "Do not access past the third record."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "<"
+        ],
+        "explanation": "Select a smaller salary for ascending order."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "j"
+        ],
+        "explanation": "Remember the position of the smaller record."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "Employee"
+        ],
+        "explanation": "The temporary must preserve the whole record."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "e[k]"
+        ],
+        "explanation": "Copy the selected minimum record into position i."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "t"
+        ],
+        "explanation": "Complete the swap without losing the saved record."
+      }
+    ],
+    "expectedOutput": "102 103 101 ",
+    "trace": [
+      "Start placement at the first record.",
+      "Three records need two selection passes.",
+      "Begin with the first unsorted record as candidate.",
+      "Search the rest of the unsorted suffix.",
+      "Do not access past the third record.",
+      "Select a smaller salary for ascending order.",
+      "Remember the position of the smaller record.",
+      "The temporary must preserve the whole record.",
+      "Copy the selected minimum record into position i.",
+      "Complete the swap without losing the saved record."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Sort three employee records by ascending salary and print their IDs in that order.",
+      "rules": [
+        "Employee has integer id and salary fields; exchange whole records to keep IDs paired with salaries.",
+        "Visit positions from 0 through 1 and find the lowest salary in the suffix beginning at each position, searching through index 2.",
+        "Exchange that record into place and print every ID followed by a space."
+      ],
+      "sample": {
+        "input": "",
+        "output": "102 103 101 "
+      }
+    }
+  },
+  {
+    "id": "new-06",
+    "subject": "itp",
+    "topic": "memory",
+    "title": "Allocate and reverse an integer array",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Allocate five integers, reverse them in place, and release the allocation. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int n=5;\n    int *a=__A__;\n    if(a==__B__) return 1;\n    for(int i=0;i<__C__;++i) a[i]=__D__;\n    for(int i=0;i<__E__;++i) {\n        int j=__F__;\n        int t=__G__;\n        a[i]=__H__;\n        a[j]=__I__;\n    }\n    for(int i=0;i<n;++i) printf(\"%d \",a[i]);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "malloc(n * sizeof *a)"
+        ],
+        "explanation": "Allocate n complete integers, not n pointers."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Check allocation before any array access."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Initialise all n elements."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "i+1"
+        ],
+        "explanation": "Create the sequence 1 through 5."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n/2"
+        ],
+        "explanation": "Swap only the first half to avoid undoing swaps."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "n-1-i"
+        ],
+        "explanation": "Mirror index i around the final valid index."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "a[i]"
+        ],
+        "explanation": "Save the left-hand value."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[j]"
+        ],
+        "explanation": "Move the right-hand value to the left."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "t"
+        ],
+        "explanation": "Restore the saved value at the right."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(a)"
+        ],
+        "explanation": "Release the allocation exactly once."
+      }
+    ],
+    "expectedOutput": "5 4 3 2 1 ",
+    "trace": [
+      "Allocate n complete integers, not n pointers.",
+      "Check allocation before any array access.",
+      "Initialise all n elements.",
+      "Create the sequence 1 through 5.",
+      "Swap only the first half to avoid undoing swaps.",
+      "Mirror index i around the final valid index.",
+      "Save the left-hand value.",
+      "Move the right-hand value to the left.",
+      "Restore the saved value at the right.",
+      "Release the allocation exactly once."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Allocate an array, fill it with consecutive integers, and reverse it in place.",
+      "rules": [
+        "Reserve space for five integers and fill them with 1 through 5 in index order.",
+        "Swap positions in the first half with matching positions from the end; leave the centre of an odd-length array unchanged.",
+        "Print every value followed by a space and free the array; stop with failure if allocation fails."
+      ],
+      "sample": {
+        "input": "",
+        "output": "5 4 3 2 1 "
+      }
+    }
+  },
+  {
+    "id": "new-07",
+    "subject": "itp",
+    "topic": "memory",
+    "title": "Count decimal digits with calloc",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Use a dynamically allocated frequency array to count digits in 202406. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int *f=__A__;\n    if(f==__B__) return 1;\n    int n=__C__;\n    do {\n        int d=__D__;\n        __E__;\n        n=__F__;\n    } while(n __G__ 0);\n    for(int i=__H__;i<__I__;++i)\n        if(f[i]) printf(\"%d:%d \",i,f[i]);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "calloc(10, sizeof *f)"
+        ],
+        "explanation": "calloc provides ten counters initially equal to zero."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Stop if allocation fails."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "202406"
+        ],
+        "explanation": "This is the number whose digits are counted."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "n%10"
+        ],
+        "explanation": "Remainder by ten extracts the last decimal digit."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "++f[d]"
+        ],
+        "explanation": "Increment the corresponding digit counter."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "n/10"
+        ],
+        "explanation": "Discard the last decimal digit."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          ">"
+        ],
+        "explanation": "Continue while unprocessed positive digits remain."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Digit values start at zero."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "10"
+        ],
+        "explanation": "There are ten decimal digits."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(f)"
+        ],
+        "explanation": "Release the counter array."
+      }
+    ],
+    "expectedOutput": "0:2 2:2 4:1 6:1 ",
+    "trace": [
+      "calloc provides ten counters initially equal to zero.",
+      "Stop if allocation fails.",
+      "This is the number whose digits are counted.",
+      "Remainder by ten extracts the last decimal digit.",
+      "Increment the corresponding digit counter.",
+      "Discard the last decimal digit.",
+      "Continue while unprocessed positive digits remain.",
+      "Digit values start at zero.",
+      "There are ten decimal digits.",
+      "Release the counter array."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Count how often each decimal digit occurs in 202406.",
+      "rules": [
+        "Allocate ten zero-initialized integer counters for digits 0 through 9.",
+        "Extract the last digit, increment its counter, and remove it by integer division by 10; process at least once, even for zero.",
+        "Visit counters in ascending digit order and print only nonzero counts as digit:count followed by a space.",
+        "Free the counters afterward and stop with failure if allocation fails."
+      ],
+      "sample": {
+        "input": "",
+        "output": "0:2 2:2 4:1 6:1 "
+      }
+    }
+  },
+  {
+    "id": "new-08",
+    "subject": "itp",
+    "topic": "memory",
+    "title": "Allocate rows of unequal lengths",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Build a small ragged array inside an array of structs, total all values, and free it. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct { int n; int *v; } Row;\nint main(void) {\n    Row *r=__A__;\n    if(r==__B__) return 1;\n    int total=0;\n    for(int i=0;i<__C__;++i) {\n        r[i].n=__D__;\n        r[i].v=__E__;\n        if(!r[i].v) { for(int k=0;k<i;++k) free(r[k].v); free(r); return 1; }\n        for(int j=0;j<__F__;++j) {\n            r[i].v[j]=__G__;\n            total+=__H__;\n        }\n    }\n    printf(\"%d\\n\",total);\n    for(int i=0;i<2;++i) __I__;\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "calloc(2,sizeof *r)"
+        ],
+        "explanation": "Allocate two zero-initialised row records."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Check the outer allocation first."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "There are two rows."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "i+2"
+        ],
+        "explanation": "The row lengths are two and three."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "malloc(r[i].n * sizeof *r[i].v)"
+        ],
+        "explanation": "Allocate enough integers for this row."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "r[i].n"
+        ],
+        "explanation": "Respect the current row's own length."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "i+j"
+        ],
+        "explanation": "Populate this example with row index plus column index."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "r[i].v[j]"
+        ],
+        "explanation": "Accumulate the value just stored."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "free(r[i].v)"
+        ],
+        "explanation": "Free each inner array before the outer records."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(r)"
+        ],
+        "explanation": "Release the array of Row structures last."
+      }
+    ],
+    "expectedOutput": "7\n",
+    "trace": [
+      "Allocate two zero-initialised row records.",
+      "Check the outer allocation first.",
+      "There are two rows.",
+      "The row lengths are two and three.",
+      "Allocate enough integers for this row.",
+      "Respect the current row's own length.",
+      "Populate this example with row index plus column index.",
+      "Accumulate the value just stored.",
+      "Free each inner array before the outer records.",
+      "Release the array of Row structures last."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Allocate two unequal rows, fill their values, and print the overall total.",
+      "rules": [
+        "Row has integer n and integer-array pointer v; allocate two zero-initialized Row records.",
+        "Zero-based row i has length i plus 2; allocate that many integers and set column j to i plus j.",
+        "Sum every populated value, using each row's own length as its loop bound.",
+        "Free each inner array before the outer array; the existing failure paths clean up previous allocations."
+      ],
+      "sample": {
+        "input": "",
+        "output": "7\n"
+      }
+    }
+  },
+  {
+    "id": "new-09",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Transpose a rectangular matrix",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Store a 2 by 3 matrix into its 3 by 2 transpose. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    int a[2][3]={{1,2,3},{4,5,6}}, t[3][2];\n    for(int i=__A__;i<__B__;++i)\n        for(int j=0;j<__C__;++j)\n            t[__D__][__E__]=__F__;\n    for(int i=0;i<__G__;++i) {\n        for(int j=0;j<__H__;++j) printf(\"%d \",__I__);\n        __J__;\n    }\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start with the first original row."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "The original has two rows."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "The original has three columns."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "j"
+        ],
+        "explanation": "An original column becomes a transpose row."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "i"
+        ],
+        "explanation": "An original row becomes a transpose column."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i][j]"
+        ],
+        "explanation": "Copy the original cell to the reversed indices."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "The transpose has three rows."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Each transpose row has two columns."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "t[i][j]"
+        ],
+        "explanation": "Print the stored transpose in row-major order."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "puts(\"\")"
+        ],
+        "explanation": "End the current output row with a newline."
+      }
+    ],
+    "expectedOutput": "1 4 \n2 5 \n3 6 \n",
+    "trace": [
+      "Start with the first original row.",
+      "The original has two rows.",
+      "The original has three columns.",
+      "An original column becomes a transpose row.",
+      "An original row becomes a transpose column.",
+      "Copy the original cell to the reversed indices.",
+      "The transpose has three rows.",
+      "Each transpose row has two columns.",
+      "Print the stored transpose in row-major order.",
+      "End the current output row with a newline."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Construct and print the transpose of the supplied rectangular matrix.",
+      "rules": [
+        "The input has 2 rows and 3 columns; the destination has 3 rows and 2 columns.",
+        "For every input cell, store its value in the destination with row and column exchanged.",
+        "Print every destination row, with a space after each integer and a newline after each row."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 4 \n2 5 \n3 6 \n"
+      }
+    }
+  },
+  {
+    "id": "new-10",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Choose the greatest column sum",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Handle a matrix whose column sums are all negative and report the first maximum. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    int a[2][3]={{-5,-1,-4},{-2,-2,-6}};\n    int best=__A__, value=0;\n    for(int j=__B__;j<__C__;++j) {\n        int sum=__D__;\n        for(int i=0;i<__E__;++i) sum+=__F__;\n        if(__G__) {\n            best=__H__;\n            value=__I__;\n        }\n    }\n    printf(\"%d %d\\n\",best,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "-1"
+        ],
+        "explanation": "No column has been examined yet."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Columns use zero-based indexing."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "There are three columns."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Reset the sum for each new column."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Add the two row values in this column."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i][j]"
+        ],
+        "explanation": "Keep column j fixed while row i changes."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "best==-1 || sum>value"
+        ],
+        "explanation": "The first candidate establishes a baseline; later ones must be larger."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "j"
+        ],
+        "explanation": "Save the winning column index."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "sum"
+        ],
+        "explanation": "Save its actual sum, even if negative."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "value"
+        ],
+        "explanation": "Print the maximum sum paired with its index."
+      }
+    ],
+    "expectedOutput": "1 -3\n",
+    "trace": [
+      "No column has been examined yet.",
+      "Columns use zero-based indexing.",
+      "There are three columns.",
+      "Reset the sum for each new column.",
+      "Add the two row values in this column.",
+      "Keep column j fixed while row i changes.",
+      "The first candidate establishes a baseline; later ones must be larger.",
+      "Save the winning column index.",
+      "Save its actual sum, even if negative.",
+      "Print the maximum sum paired with its index."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Find the column with the greatest sum in the supplied matrix.",
+      "rules": [
+        "The matrix has 2 rows and 3 columns with zero-based indices; sum every row entry for each column.",
+        "Begin with no column selected; the first column establishes a baseline even when every sum is negative.",
+        "Retain the first on equal sums; print its index and sum separated by a space and followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 -3\n"
+      }
+    }
+  },
+  {
+    "id": "new-11",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Sum both diagonals once",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Count the centre of a 3 by 3 matrix only once in the sum of both diagonals. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    int n=3, a[3][3]={{1,2,3},{4,5,6},{7,8,9}};\n    int sum=__A__;\n    for(int i=__B__;i<__C__;__D__) {\n        sum+=__E__;\n        int j=__F__;\n        if(i __G__ j)\n            sum+=__H__;\n    }\n    printf(__I__,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start the accumulated total at zero."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start at the first row."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Visit all three rows."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "++i"
+        ],
+        "explanation": "Advance to the next row."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "a[i][i]"
+        ],
+        "explanation": "The main diagonal has equal row and column indices."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "n-1-i"
+        ],
+        "explanation": "This is the opposite-diagonal column in row i."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "!="
+        ],
+        "explanation": "Skip the cell already counted on the main diagonal."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[i][j]"
+        ],
+        "explanation": "Add the opposite diagonal only when it is a different cell."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "\"%d\\n\""
+        ],
+        "explanation": "Print an integer followed by one newline."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "sum"
+        ],
+        "explanation": "The five distinct diagonal cells sum to 25."
+      }
+    ],
+    "expectedOutput": "25\n",
+    "trace": [
+      "Start the accumulated total at zero.",
+      "Start at the first row.",
+      "Visit all three rows.",
+      "Advance to the next row.",
+      "The main diagonal has equal row and column indices.",
+      "This is the opposite-diagonal column in row i.",
+      "Skip the cell already counted on the main diagonal.",
+      "Add the opposite diagonal only when it is a different cell.",
+      "Print an integer followed by one newline.",
+      "The five distinct diagonal cells sum to 25."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Sum entries on both diagonals of a square matrix without counting the centre twice.",
+      "rules": [
+        "The supplied matrix has 3 rows and 3 columns with zero-based indices.",
+        "In row i the main diagonal uses column i and the other uses column n minus 1 minus i.",
+        "Start the total at zero; add the second diagonal cell only when distinct from the first.",
+        "Print the total as an integer followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "25\n"
+      }
+    }
+  },
+  {
+    "id": "new-12",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Clean and uppercase a line",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Remove the newline from a fixed input line, copy it, and uppercase the copy. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nint main(void) {\n    char s[30]=\"C exam\\n\", out[30];\n    size_t n=__A__;\n    if(n>0 && s[n-1]==__B__) s[__C__]=__D__;\n    __E__(out,__F__);\n    for(size_t i=0;i<__G__;++i)\n        out[i]=__H__;\n    printf(\"%s %zu\\n\",__I__,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "strlen(s)"
+        ],
+        "explanation": "strlen excludes the string terminator."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "'\\n'"
+        ],
+        "explanation": "Only remove a newline if one is present."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n-1"
+        ],
+        "explanation": "The last visible character is at index n-1."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "'\\0'"
+        ],
+        "explanation": "Terminate the shortened string."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "strcpy"
+        ],
+        "explanation": "Copy the full terminated string into the destination."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "s"
+        ],
+        "explanation": "The source is the cleaned input string."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "strlen(out)"
+        ],
+        "explanation": "Process the visible characters, excluding the terminator."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "toupper((unsigned char)out[i])"
+        ],
+        "explanation": "Store toupper's return value; the unsigned-char cast is safe for ctype."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "out"
+        ],
+        "explanation": "Print the modified copy."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "strlen(out)"
+        ],
+        "explanation": "The cleaned string has six visible characters."
+      }
+    ],
+    "expectedOutput": "C EXAM 6\n",
+    "trace": [
+      "strlen excludes the string terminator.",
+      "Only remove a newline if one is present.",
+      "The last visible character is at index n-1.",
+      "Terminate the shortened string.",
+      "Copy the full terminated string into the destination.",
+      "The source is the cleaned input string.",
+      "Process the visible characters, excluding the terminator.",
+      "Store toupper's return value; the unsigned-char cast is safe for ctype.",
+      "Print the modified copy.",
+      "The cleaned string has six visible characters."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Remove a trailing newline from a string, copy it, and print the uppercase copy and its length.",
+      "rules": [
+        "Both buffers have capacity 30; the initial text is C exam followed by a newline.",
+        "If the last character before the terminator is a newline, replace it with the null terminator.",
+        "Copy the complete resulting string and uppercase every character before its terminator, preserving spaces.",
+        "Print the copy and its length excluding the terminator, separated by a space."
+      ],
+      "sample": {
+        "input": "",
+        "output": "C EXAM 6\n"
+      }
+    }
+  },
+  {
+    "id": "new-13",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Manual string copy and compare",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Copy without strcpy and count positions matching a second string. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    char src[]=\"pointer\", other[]=\"painter\", dest[20];\n    int i=__A__;\n    while(src[i] __B__ __C__) {\n        dest[i]=__D__;\n        __E__;\n    }\n    dest[i]=__F__;\n    int same=0;\n    for(int j=0; dest[j] && __G__; ++j)\n        if(dest[j] __H__ other[j]) __I__;\n    printf(\"%s %d\\n\",__J__,same);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Begin at the first character."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "!="
+        ],
+        "explanation": "Continue until the source terminator."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "'\\0'"
+        ],
+        "explanation": "The null character terminates a C string."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "src[i]"
+        ],
+        "explanation": "Copy the current character."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "++i"
+        ],
+        "explanation": "Advance only after copying."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "'\\0'"
+        ],
+        "explanation": "A manual copy must explicitly copy or append the terminator."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "other[j]"
+        ],
+        "explanation": "Stop if either string reaches its terminator."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "=="
+        ],
+        "explanation": "Compare character values for equality."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "++same"
+        ],
+        "explanation": "Count matching positions."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "dest"
+        ],
+        "explanation": "The destination is a complete printable string."
+      }
+    ],
+    "expectedOutput": "pointer 6\n",
+    "trace": [
+      "Begin at the first character.",
+      "Continue until the source terminator.",
+      "The null character terminates a C string.",
+      "Copy the current character.",
+      "Advance only after copying.",
+      "A manual copy must explicitly copy or append the terminator.",
+      "Stop if either string reaches its terminator.",
+      "Compare character values for equality.",
+      "Count matching positions.",
+      "The destination is a complete printable string."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Copy a string manually and count equal characters at corresponding positions of two strings.",
+      "rules": [
+        "Copy pointer into the 20-character destination one character at a time, then add a null terminator.",
+        "Compare the copy with painter only while both strings still have characters.",
+        "Count each position containing equal characters; this is a matching-position count rather than a whole-string equality test.",
+        "Print the copied string and count separated by a space and followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "pointer 6\n"
+      }
+    }
+  },
+  {
+    "id": "new-14",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Detect a case-insensitive palindrome",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Check Level using two indices and ctype conversion without modifying the string. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nint main(void) {\n    char s[]=\"Level\";\n    int left=__A__, right=__B__;\n    int ok=__C__;\n    while(__D__) {\n        int a=__E__;\n        int b=__F__;\n        if(a __G__ b) { ok=0; __H__; }\n        __I__;\n        __J__;\n    }\n    printf(\"%s\\n\",ok ? \"yes\" : \"no\");\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The first character has index zero."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "(int)strlen(s)-1"
+        ],
+        "explanation": "The last character is one before the length."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "Begin by assuming the string is a palindrome."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "left<right"
+        ],
+        "explanation": "Compare pairs until the indices meet or cross."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "tolower((unsigned char)s[left])"
+        ],
+        "explanation": "Compare using lowercase character values."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "tolower((unsigned char)s[right])"
+        ],
+        "explanation": "Apply the same conversion at the right end."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "!="
+        ],
+        "explanation": "Any unequal pair disproves the palindrome."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "break"
+        ],
+        "explanation": "Stop at the first mismatch."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "++left"
+        ],
+        "explanation": "Move inward from the left."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "--right"
+        ],
+        "explanation": "Move inward from the right."
+      }
+    ],
+    "expectedOutput": "yes\n",
+    "trace": [
+      "The first character has index zero.",
+      "The last character is one before the length.",
+      "Begin by assuming the string is a palindrome.",
+      "Compare pairs until the indices meet or cross.",
+      "Compare using lowercase character values.",
+      "Apply the same conversion at the right end.",
+      "Any unequal pair disproves the palindrome.",
+      "Stop at the first mismatch.",
+      "Move inward from the left.",
+      "Move inward from the right."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Determine whether a string is a palindrome when letter case is ignored.",
+      "rules": [
+        "Test Level by comparing pairs from the first and last positions inward.",
+        "Convert both compared characters to the same case; a palindrome has equal characters in every mirrored pair.",
+        "Assume success initially, stop on the first mismatch, and finish when the positions meet or cross.",
+        "Print yes for a palindrome and no otherwise, followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "yes\n"
+      }
+    }
+  },
+  {
+    "id": "new-15",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Insert a separator and suffix",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Build exam-ready in a dynamically allocated string of exactly sufficient capacity. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void) {\n    const char *a=\"exam\", *b=\"ready\";\n    size_t n=__A__+__B__+__C__;\n    char *s=__D__;\n    if(s==__E__) return 1;\n    __F__(s,a);\n    __G__(s,__H__);\n    strcat(s,__I__);\n    puts(s);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "strlen(a)"
+        ],
+        "explanation": "Count the first word's visible characters."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "strlen(b)"
+        ],
+        "explanation": "Count the suffix's visible characters."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Reserve one separator and one terminating null character."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "malloc(n)"
+        ],
+        "explanation": "char has size one, so n bytes suffice."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Stop if storage could not be allocated."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "strcpy"
+        ],
+        "explanation": "Initialise the destination as a valid terminated string."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "strcat"
+        ],
+        "explanation": "Append after the current terminating null."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "\"-\""
+        ],
+        "explanation": "A string literal is needed, not a character literal."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "b"
+        ],
+        "explanation": "Append the second word."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(s)"
+        ],
+        "explanation": "Release the allocated destination after printing."
+      }
+    ],
+    "expectedOutput": "exam-ready\n",
+    "trace": [
+      "Count the first word's visible characters.",
+      "Count the suffix's visible characters.",
+      "Reserve one separator and one terminating null character.",
+      "char has size one, so n bytes suffice.",
+      "Stop if storage could not be allocated.",
+      "Initialise the destination as a valid terminated string.",
+      "Append after the current terminating null.",
+      "A string literal is needed, not a character literal.",
+      "Append the second word.",
+      "Release the allocated destination after printing."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Join two words with a hyphen using a dynamically allocated string.",
+      "rules": [
+        "Join exam and ready with exactly one hyphen between them.",
+        "Allocate both word lengths plus room for the separator and final null terminator.",
+        "Copy the first word, append the separator, then the second word; stop with failure if allocation fails.",
+        "Print the joined string with a newline and free the buffer."
+      ],
+      "sample": {
+        "input": "",
+        "output": "exam-ready\n"
+      }
+    }
+  },
+  {
+    "id": "new-16",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Read marks until EOF",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Read every integer from marks.txt and write the count and total to summary.txt. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    FILE *in=__A__;\n    if(in==__B__) return 1;\n    FILE *out=__C__;\n    if(!out) { fclose(in); return 1; }\n    int x, count=__D__, total=0;\n    while(__E__ == __F__) {\n        total+=__G__;\n        ++count;\n    }\n    __H__;\n    __I__;\n    __J__;\n    printf(\"%d %d\\n\",count,total);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"marks.txt\",\"r\")"
+        ],
+        "explanation": "Read mode requires the existing input file."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "Always check fopen before using the stream."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "fopen(\"summary.txt\",\"w\")"
+        ],
+        "explanation": "Write mode creates or truncates the output file."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "No integers have been read yet."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "fscanf(in,\"%d\",&x)"
+        ],
+        "explanation": "Read into x's address and inspect the conversion count."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "One successful integer conversion is required."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "x"
+        ],
+        "explanation": "Add the successfully read value."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "fprintf(out,\"%d %d\\n\",count,total)"
+        ],
+        "explanation": "Write the summary to the output stream."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "fclose(in)"
+        ],
+        "explanation": "Close the input after reading."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Flush and close the output after writing."
+      }
+    ],
+    "expectedOutput": "4 30\n",
+    "trace": [
+      "Read mode requires the existing input file.",
+      "Always check fopen before using the stream.",
+      "Write mode creates or truncates the output file.",
+      "No integers have been read yet.",
+      "Read into x's address and inspect the conversion count.",
+      "One successful integer conversion is required.",
+      "Add the successfully read value.",
+      "Write the summary to the output stream.",
+      "Close the input after reading.",
+      "Flush and close the output after writing."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "marks.txt": "5 10 7 8\n"
+    },
+    "expectedFiles": {
+      "summary.txt": "4 30\n"
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Read integer marks from a file and write their count and sum to a summary.",
+      "rules": [
+        "Open marks.txt for reading and summary.txt for writing that replaces existing contents.",
+        "Start count and sum at zero; continue only while scanning converts one integer, stopping at end of file or invalid input.",
+        "Write count and sum separated by a space and followed by a newline to both the summary and standard output.",
+        "Check file opens and close both files afterward.",
+        "For the sample, marks.txt contains \"5 10 7 8\\n\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "4 30\n"
+      }
+    }
+  },
+  {
+    "id": "new-17",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Copy text, then append a footer",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Copy all lines into a fresh file and append END using a separate append-mode stream. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    FILE *in=fopen(\"source.txt\",__A__);\n    FILE *out=fopen(\"copy.txt\",__B__);\n    if(in==__C__ || out==NULL) {\n        if(in) fclose(in); if(out) fclose(out); return 1;\n    }\n    char line[40];\n    while(__D__ != __E__)\n        __F__;\n    fclose(in); __G__;\n    out=fopen(\"copy.txt\",__H__);\n    if(!out) return 1;\n    __I__;\n    __J__;\n    puts(\"copied\");\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "\"r\""
+        ],
+        "explanation": "Open the source for reading."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "\"w\""
+        ],
+        "explanation": "Start with an empty destination."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "A failed open returns NULL."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "fgets(line,sizeof line,in)"
+        ],
+        "explanation": "Read at most capacity minus one characters and terminate the buffer."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "NULL marks EOF or a read error."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "fputs(line,out)"
+        ],
+        "explanation": "Write the line including its existing newline."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Close the writing stream before reopening."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "\"a\""
+        ],
+        "explanation": "Append preserves the copied text."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "fputs(\"END\\n\",out)"
+        ],
+        "explanation": "Write an explicit footer newline."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(out)"
+        ],
+        "explanation": "Flush and close the append stream."
+      }
+    ],
+    "expectedOutput": "copied\n",
+    "trace": [
+      "Open the source for reading.",
+      "Start with an empty destination.",
+      "A failed open returns NULL.",
+      "Read at most capacity minus one characters and terminate the buffer.",
+      "NULL marks EOF or a read error.",
+      "Write the line including its existing newline.",
+      "Close the writing stream before reopening.",
+      "Append preserves the copied text.",
+      "Write an explicit footer newline.",
+      "Flush and close the append stream."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "source.txt": "one\ntwo\n"
+    },
+    "expectedFiles": {
+      "copy.txt": "one\ntwo\nEND\n"
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Copy a text file and append a footer to the copy.",
+      "rules": [
+        "Open source.txt for reading and copy.txt for writing that replaces existing contents; check both opens.",
+        "Read chunks into the 40-character buffer until no more can be read, copying text and newlines unchanged.",
+        "Close both streams, reopen copy.txt in append mode, and add END followed by a newline.",
+        "Close the output and print copied followed by a newline.",
+        "For the sample, source.txt contains \"one\\ntwo\\n\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "copied\n"
+      }
+    }
+  },
+  {
+    "id": "new-18",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Count characters and lines",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Use an int for fgetc so that EOF is distinguishable from every byte value. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    FILE *fp=__A__;\n    if(fp==__B__) return 1;\n    __C__ ch;\n    int chars=__D__, lines=__E__;\n    while((ch=__F__) != __G__) {\n        __H__;\n        if(ch==__I__) ++lines;\n    }\n    __J__;\n    printf(\"%d %d\\n\",chars,lines);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"text.txt\",\"r\")"
+        ],
+        "explanation": "Read the existing text file."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "NULL"
+        ],
+        "explanation": "A failed file open cannot be used."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "int"
+        ],
+        "explanation": "fgetc returns an unsigned-char value converted to int, or EOF."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start the character counter at zero."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Count newline characters encountered."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "fgetc(fp)"
+        ],
+        "explanation": "Read one character from this stream."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "EOF"
+        ],
+        "explanation": "Test the int result against EOF before processing it."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "++chars"
+        ],
+        "explanation": "Count every character including newline."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "'\\n'"
+        ],
+        "explanation": "A newline completes one line in this fixture."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(fp)"
+        ],
+        "explanation": "Close the stream at the end."
+      }
+    ],
+    "expectedOutput": "5 2\n",
+    "trace": [
+      "Read the existing text file.",
+      "A failed file open cannot be used.",
+      "fgetc returns an unsigned-char value converted to int, or EOF.",
+      "Start the character counter at zero.",
+      "Count newline characters encountered.",
+      "Read one character from this stream.",
+      "Test the int result against EOF before processing it.",
+      "Count every character including newline.",
+      "A newline completes one line in this fixture.",
+      "Close the stream at the end."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "fixtures": {
+      "text.txt": "ab\nc\n"
+    },
+    "verified": true,
+    "brief": {
+      "goal": "Count characters and newline characters in a text file.",
+      "rules": [
+        "Open text.txt for reading and start both counts at zero.",
+        "Store each character read in a variable that can also hold the end-of-file marker, so the two cannot be confused.",
+        "Count every character including newlines; count a line only for a newline, with no extra line for an unterminated final fragment.",
+        "Close the file and print the character count followed by the newline count.",
+        "For the sample, text.txt contains \"ab\\nc\\n\". Escapes denote file characters."
+      ],
+      "sample": {
+        "input": "",
+        "output": "5 2\n"
+      }
+    }
+  },
+  {
+    "id": "new-19",
+    "subject": "itp",
+    "topic": "pointers",
+    "title": "Return minimum and maximum by address",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Find both extrema without returning an array or structure. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nvoid extremes(const int a[], int n, __A__, __B__) {\n    *lo=__C__;\n    *hi=__D__;\n    for(int i=1;i<__E__;++i) {\n        if(a[i]<*lo) __F__;\n        if(a[i]>*hi) __G__;\n    }\n}\nint main(void) {\n    int a[]={-3,9,2,7}, lo,hi;\n    extremes(a,__H__,__I__,__J__);\n    printf(\"%d %d\\n\",lo,hi);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "int *lo"
+        ],
+        "explanation": "Receive the address of the caller's minimum."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "int *hi"
+        ],
+        "explanation": "Receive the address of the caller's maximum."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "a[0]"
+        ],
+        "explanation": "Use an actual element as the initial minimum."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a[0]"
+        ],
+        "explanation": "The first element also establishes the maximum."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Visit all remaining elements."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "*lo=a[i]"
+        ],
+        "explanation": "Store through the pointer to modify the caller's minimum."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "*hi=a[i]"
+        ],
+        "explanation": "Store through the pointer to modify the caller's maximum."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "4"
+        ],
+        "explanation": "There are four array elements."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "&lo"
+        ],
+        "explanation": "Pass an address for the minimum result."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "&hi"
+        ],
+        "explanation": "Pass an address for the maximum result."
+      }
+    ],
+    "expectedOutput": "-3 9\n",
+    "trace": [
+      "Receive the address of the caller's minimum.",
+      "Receive the address of the caller's maximum.",
+      "Use an actual element as the initial minimum.",
+      "The first element also establishes the maximum.",
+      "Visit all remaining elements.",
+      "Store through the pointer to modify the caller's minimum.",
+      "Store through the pointer to modify the caller's maximum.",
+      "There are four array elements.",
+      "Pass an address for the minimum result.",
+      "Pass an address for the maximum result."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Find an array's minimum and maximum integers and return them through addresses.",
+      "rules": [
+        "The array is nonempty; the driver supplies four integers.",
+        "Initialize both extremes from the first element, then examine indices 1 through n minus 1.",
+        "Update the minimum only for a smaller value and the maximum only for a larger one; store through the supplied pointers.",
+        "Print minimum and maximum separated by a space and followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "-3 9\n"
+      }
+    }
+  },
+  {
+    "id": "new-20",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursive digit sum",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Define a recursion with a zero base case and one-digit progress. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\n__A__ digit_sum(__B__) {\n    if(n==__C__) return __D__;\n    return __E__ + digit_sum(__F__);\n}\nint main(void) {\n    int n=__G__;\n    int result=__H__;\n    printf(__I__,__J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "int"
+        ],
+        "explanation": "The helper returns an integer sum."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "int n"
+        ],
+        "explanation": "Pass the nonnegative number by value."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Zero ends the recursion."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Zero contributes no more digits."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n%10"
+        ],
+        "explanation": "The remainder extracts the current last digit."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "n/10"
+        ],
+        "explanation": "The quotient removes one digit and approaches the base case."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "4702"
+        ],
+        "explanation": "The example input has digits 4, 7, 0 and 2."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "digit_sum(n)"
+        ],
+        "explanation": "Call the helper on the whole number."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "\"%d\\n\""
+        ],
+        "explanation": "Use an integer conversion and print a newline."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "result"
+        ],
+        "explanation": "The returned sum is 13."
+      }
+    ],
+    "expectedOutput": "13\n",
+    "trace": [
+      "The helper returns an integer sum.",
+      "Pass the nonnegative number by value.",
+      "Zero ends the recursion.",
+      "Zero contributes no more digits.",
+      "The remainder extracts the current last digit.",
+      "The quotient removes one digit and approaches the base case.",
+      "The example input has digits 4, 7, 0 and 2.",
+      "Call the helper on the whole number.",
+      "Use an integer conversion and print a newline.",
+      "The returned sum is 13."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Compute the sum of the decimal digits of 4702 recursively.",
+      "rules": [
+        "The function takes and returns integers; the digit sum of zero is zero.",
+        "For a positive value, add its last digit to the digit sum of the remaining leading digits.",
+        "Use remainder and integer division by 10 to split digits; print the result as an integer with a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "13\n"
+      }
+    }
+  },
+  {
+    "id": "new-21",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursive binary search",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Return the index of 13 in a sorted array; inclusive bounds are used. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint search(const int a[],int lo,int hi,int key) {\n    if(__A__) return __B__;\n    int mid=__C__;\n    if(a[mid]__D__key) return __E__;\n    if(key<a[mid]) return search(a,lo,__F__,key);\n    return search(a,__G__,hi,key);\n}\nint main(void) {\n    int a[]={2,5,8,13,21};\n    int n=__H__;\n    printf(\"%d\\n\",search(a,__I__,__J__,13));\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "lo>hi"
+        ],
+        "explanation": "Crossed inclusive bounds mean the interval is empty."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "-1"
+        ],
+        "explanation": "Use -1 to report absence."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "lo+(hi-lo)/2"
+        ],
+        "explanation": "Choose the middle without adding both full bounds."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "=="
+        ],
+        "explanation": "Equality identifies the target."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "mid"
+        ],
+        "explanation": "Return the matching array index."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "mid-1"
+        ],
+        "explanation": "Exclude the already examined middle from the left half."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "mid+1"
+        ],
+        "explanation": "Exclude the middle from the right half."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "sizeof a/sizeof a[0]"
+        ],
+        "explanation": "sizeof recovers the count here because a is an actual array."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The first valid index is zero."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "n-1"
+        ],
+        "explanation": "Inclusive upper bound is the last valid index."
+      }
+    ],
+    "expectedOutput": "3\n",
+    "trace": [
+      "Crossed inclusive bounds mean the interval is empty.",
+      "Use -1 to report absence.",
+      "Choose the middle without adding both full bounds.",
+      "Equality identifies the target.",
+      "Return the matching array index.",
+      "Exclude the already examined middle from the left half.",
+      "Exclude the middle from the right half.",
+      "sizeof recovers the count here because a is an actual array.",
+      "The first valid index is zero.",
+      "Inclusive upper bound is the last valid index."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Use recursive binary search to find the index of 13 in the sorted array.",
+      "rules": [
+        "The five integers are ascending; use inclusive bounds from index 0 through the element count minus 1.",
+        "If lower exceeds upper, return -1; otherwise choose the midpoint using integer arithmetic.",
+        "Return the midpoint index on equality; otherwise search the appropriate half, excluding that midpoint.",
+        "Print the returned index followed by a newline."
+      ],
+      "sample": {
+        "input": "",
+        "output": "3\n"
+      }
+    }
+  },
+  {
+    "id": "new-22",
+    "subject": "itp",
+    "topic": "loops",
+    "title": "Reverse and test a decimal number",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Preserve the original value, reverse its digits, and test for a palindrome. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    int original=12321, n=__A__;\n    int reverse=__B__, digits=0;\n    do {\n        int d=__C__;\n        reverse=reverse*__D__+__E__;\n        n=__F__;\n        __G__;\n    } while(__H__);\n    printf(\"%d %d %s\\n\",reverse,__I__,reverse__J__original ? \"yes\":\"no\");\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "original"
+        ],
+        "explanation": "Make a working copy because division destroys digits."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The reversed number begins at zero."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n%10"
+        ],
+        "explanation": "Extract the rightmost digit."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "10"
+        ],
+        "explanation": "Shift the reversed decimal number left by one place."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "d"
+        ],
+        "explanation": "Append the extracted digit."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "n/10"
+        ],
+        "explanation": "Remove that digit from the working copy."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "++digits"
+        ],
+        "explanation": "Record one processed digit."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "n>0"
+        ],
+        "explanation": "Stop when every digit has been consumed."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "digits"
+        ],
+        "explanation": "The example has five digits."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "=="
+        ],
+        "explanation": "A numeric palindrome equals its reversal."
+      }
+    ],
+    "expectedOutput": "12321 5 yes\n",
+    "trace": [
+      "Make a working copy because division destroys digits.",
+      "The reversed number begins at zero.",
+      "Extract the rightmost digit.",
+      "Shift the reversed decimal number left by one place.",
+      "Append the extracted digit.",
+      "Remove that digit from the working copy.",
+      "Record one processed digit.",
+      "Stop when every digit has been consumed.",
+      "The example has five digits.",
+      "A numeric palindrome equals its reversal."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Reverse a decimal integer, count its digits, and test for a palindrome.",
+      "rules": [
+        "Use original value 12321 and preserve it while consuming a working copy.",
+        "Start reversal and count at zero; append each extracted digit by multiplying the reversal by 10 and adding the digit.",
+        "Remove each last digit with integer division by 10 and count it; process at least once, including for zero.",
+        "A number is a palindrome when its reversal equals its original; print reversal, digit count and yes or no separated by spaces."
+      ],
+      "sample": {
+        "input": "",
+        "output": "12321 5 yes\n"
+      }
+    }
+  },
+  {
+    "id": "new-23",
+    "subject": "itp",
+    "topic": "loops",
+    "title": "List primes with a divisor bound",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Test divisors up to the square root without floating-point functions. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint prime(__A__) {\n    if(n__B__2) return __C__;\n    for(int d=__D__; __E__; __F__)\n        if(n__G__d==0) return __H__;\n    return __I__;\n}\nint main(void) {\n    for(int n=1;n<=15;++n) if(__J__) printf(\"%d \",n);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "int n"
+        ],
+        "explanation": "The helper tests one integer."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "<"
+        ],
+        "explanation": "Zero, one and negative values are not prime."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Return false for numbers below two."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "Start with the smallest possible nontrivial divisor."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "d<=n/d"
+        ],
+        "explanation": "Equivalent to d*d<=n for positive d without multiplication overflow."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "++d"
+        ],
+        "explanation": "Try the next integer divisor."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "%"
+        ],
+        "explanation": "Remainder detects exact divisibility."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Finding one nontrivial divisor disproves primality."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "1"
+        ],
+        "explanation": "No divisor was found; the number is prime."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "prime(n)"
+        ],
+        "explanation": "Print only numbers accepted by the helper."
+      }
+    ],
+    "expectedOutput": "2 3 5 7 11 13 ",
+    "trace": [
+      "The helper tests one integer.",
+      "Zero, one and negative values are not prime.",
+      "Return false for numbers below two.",
+      "Start with the smallest possible nontrivial divisor.",
+      "Equivalent to d*d<=n for positive d without multiplication overflow.",
+      "Try the next integer divisor.",
+      "Remainder detects exact divisibility.",
+      "Finding one nontrivial divisor disproves primality.",
+      "No divisor was found; the number is prime.",
+      "Print only numbers accepted by the helper."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Print every prime number from 1 through 15.",
+      "rules": [
+        "A prime is at least 2 with no positive divisors other than 1 and itself.",
+        "Reject values below 2; test consecutive divisors from 2 through the square root inclusively.",
+        "Do not use floating-point functions or a multiplication that could overflow; keep the divisor limit test in integer arithmetic.",
+        "Return false on an exact divisor and true otherwise; print each prime followed by a space."
+      ],
+      "sample": {
+        "input": "",
+        "output": "2 3 5 7 11 13 "
+      }
+    }
+  },
+  {
+    "id": "new-24",
+    "subject": "itp",
+    "topic": "arrays",
+    "title": "Merge sorted arrays with leftovers",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Merge two ascending arrays without losing elements after one input is exhausted. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint main(void) {\n    int a[]={1,4,9},b[]={2,3},c[5];\n    int i=__A__,j=__B__,k=0;\n    while(i<__C__ && j<__D__) {\n        if(a[i]__E__b[j]) c[k++]=__F__;\n        else c[k++]=__G__;\n    }\n    while(i<3) __H__;\n    while(j<2) __I__;\n    for(int p=0;p<__J__;++p) printf(\"%d \",c[p]);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start at the first element of a."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Start at the first element of b."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "3"
+        ],
+        "explanation": "a has three elements."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "2"
+        ],
+        "explanation": "b has two elements."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "<="
+        ],
+        "explanation": "Take the smaller current value, preferring a in a tie."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i++]"
+        ],
+        "explanation": "Copy from a and then advance i."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "b[j++]"
+        ],
+        "explanation": "Copy from b and then advance j."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "c[k++]=a[i++]"
+        ],
+        "explanation": "Copy all leftover elements of a."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "c[k++]=b[j++]"
+        ],
+        "explanation": "Copy all leftover elements of b."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "k"
+        ],
+        "explanation": "k is the number of populated output elements."
+      }
+    ],
+    "expectedOutput": "1 2 3 4 9 ",
+    "trace": [
+      "Start at the first element of a.",
+      "Start at the first element of b.",
+      "a has three elements.",
+      "b has two elements.",
+      "Take the smaller current value, preferring a in a tie.",
+      "Copy from a and then advance i.",
+      "Copy from b and then advance j.",
+      "Copy all leftover elements of a.",
+      "Copy all leftover elements of b.",
+      "k is the number of populated output elements."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Merge two ascending arrays into one ascending array, retaining every element.",
+      "rules": [
+        "The first source has three integers, the second two, and the destination capacity five.",
+        "Start at each source's first element and copy the smaller current value; take from the first source on equality.",
+        "Advance the chosen source and destination; when either source ends, copy every leftover from the other.",
+        "Print the populated destination, with a space after each integer."
+      ],
+      "sample": {
+        "input": "",
+        "output": "1 2 3 4 9 "
+      }
+    }
+  },
+  {
+    "id": "new-25",
+    "subject": "itp",
+    "topic": "arrays",
+    "title": "Compact duplicates in place",
+    "source": "Original • exam-style practice",
+    "difficulty": "Exam",
+    "pool": "original",
+    "type": "blanks",
+    "prompt": "Preserve first occurrences without allocating a second array. Complete each blank. Each blank earns one mark. Input sizes and arithmetic are within the shown bounds.",
+    "code": "#include <stdio.h>\nint unique(int a[],int n) {\n    int k=__A__;\n    for(int i=__B__;i<__C__;++i) {\n        int j;\n        for(j=0;j<__D__;++j)\n            if(a[j]__E__a[i]) __F__;\n        if(j==__G__) a[k++]=__H__;\n    }\n    return __I__;\n}\nint main(void) {\n    int a[]={3,1,3,2,1,4};\n    int n=__J__;\n    for(int i=0;i<n;++i) printf(\"%d \",a[i]);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "The accepted prefix is initially empty."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "0"
+        ],
+        "explanation": "Visit the input from its first element."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n"
+        ],
+        "explanation": "Stop at the supplied input length."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "k"
+        ],
+        "explanation": "Search only values already accepted."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "=="
+        ],
+        "explanation": "Look for a duplicate of the current value."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "break"
+        ],
+        "explanation": "Stop the search as soon as a duplicate is found."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "k"
+        ],
+        "explanation": "Reaching the end without a match means this is new."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[i]"
+        ],
+        "explanation": "Append the new value to the accepted prefix."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "k"
+        ],
+        "explanation": "Return the compacted logical length."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "unique(a,6)"
+        ],
+        "explanation": "Process all six input values."
+      }
+    ],
+    "expectedOutput": "3 1 2 4 ",
+    "trace": [
+      "The accepted prefix is initially empty.",
+      "Visit the input from its first element.",
+      "Stop at the supplied input length.",
+      "Search only values already accepted.",
+      "Look for a duplicate of the current value.",
+      "Stop the search as soon as a duplicate is found.",
+      "Reaching the end without a match means this is new.",
+      "Append the new value to the accepted prefix.",
+      "Return the compacted logical length.",
+      "Process all six input values."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Remove duplicates in place while preserving first occurrences.",
+      "rules": [
+        "The driver supplies six integers; keep unique values packed at the beginning of the same array.",
+        "For each source value search only the populated unique prefix, stopping that search on equality.",
+        "Append to the prefix only if no match was found and return the prefix length.",
+        "Print only the retained prefix, with a space after each integer."
+      ],
+      "sample": {
+        "input": "",
+        "output": "3 1 2 4 "
+      }
+    }
+  },
+  {
+    "id": "out-01",
+    "subject": "itp",
+    "topic": "operators",
+    "title": "Separate pre- and post-increments",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int x=4; int a=x++; int b=++x; printf(\"%d %d %d\\n\",a,b,x); return 0; }",
+    "blanks": [],
+    "expectedOutput": "4 6 6\n",
+    "trace": [
+      "x++ gives a the old value 4, then x becomes 5.",
+      "++x changes x to 6, then gives b 6.",
+      "The final values are a=4, b=6, x=6."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace the separate increment statements and predict the exact output.",
+      "rules": [
+        "Start x at 4 and execute assignments in order.",
+        "Post-increment contributes the old value before updating x; pre-increment updates before contributing.",
+        "The print shows a, b and x separated by spaces and ends with a newline."
+      ]
+    }
+  },
+  {
+    "id": "out-02",
+    "subject": "itp",
+    "topic": "operators",
+    "title": "Integer division before conversion",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int a=7,b=2; printf(\"%d %.1f %.1f\\n\",a/b,(double)(a/b),(double)a/b); return 0; }",
+    "blanks": [],
+    "expectedOutput": "3 3.0 3.5\n",
+    "trace": [
+      "7/2 uses integer division and gives 3.",
+      "Casting the result of integer division gives 3.0.",
+      "Casting an operand before division gives 3.5."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace integer division and conversions to predict the three printed values.",
+      "rules": [
+        "Both operands start as integers; integer division discards the fractional part before any later conversion.",
+        "Distinguish a cast on a completed quotient from a cast on an operand before division.",
+        "Floating-point fields use one decimal place; preserve spaces and the newline."
+      ]
+    }
+  },
+  {
+    "id": "out-03",
+    "subject": "itp",
+    "topic": "operators",
+    "title": "Signed remainder",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { printf(\"%d %d %d\\n\",-17/5,-17%5,17%-5); return 0; }",
+    "blanks": [],
+    "expectedOutput": "-3 -2 2\n",
+    "trace": [
+      "C11 integer division truncates toward zero, so -17/5 is -3.",
+      "-17 = (-3)*5 + (-2), so the first remainder is -2.",
+      "A nonzero remainder has the dividend’s sign, so 17%-5 is 2."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace signed integer division and remainders to predict the output.",
+      "rules": [
+        "C integer division truncates toward zero.",
+        "Dividend equals quotient times divisor plus remainder; a nonzero remainder has the dividend's sign.",
+        "Evaluate expressions independently and preserve the final newline."
+      ]
+    }
+  },
+  {
+    "id": "out-04",
+    "subject": "itp",
+    "topic": "pointers",
+    "title": "Move a pointer before reading",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int a[]={3,6,9,12}; int *p=a+1; printf(\"%d \",*p++); printf(\"%d %td\\n\",*p,p-a); return 0; }",
+    "blanks": [],
+    "expectedOutput": "6 9 2\n",
+    "trace": [
+      "p initially points at a[1], whose value is 6.",
+      "*p++ reads 6 then advances p to a[2].",
+      "The new pointed value is 9 and the element offset is 2."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace a moving pointer and predict its printed values and offset.",
+      "rules": [
+        "The array has four integers; the pointer initially addresses index 1.",
+        "In the first print, postfix increment advances the pointer after the old target supplies its value.",
+        "Subtraction from the array start gives an element offset; preserve spaces between outputs."
+      ]
+    }
+  },
+  {
+    "id": "out-05",
+    "subject": "itp",
+    "topic": "pointers",
+    "title": "Pointer indexing changes the array",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int a[]={2,4,6,8}; int *p=a+1; p[1]+=3; printf(\"%d %d %d\\n\",a[2],*(p-1),p[2]); return 0; }",
+    "blanks": [],
+    "expectedOutput": "9 2 8\n",
+    "trace": [
+      "p[1] refers to a[2], changing it from 6 to 9.",
+      "p-1 points at a[0], whose value is 2.",
+      "p[2] refers to a[3], whose value remains 8."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace pointer indexing and the resulting array mutation.",
+      "rules": [
+        "The pointer initially addresses index 1 of the four-element array.",
+        "Pointer subscripts are relative to that target; writing through one changes the original array cell.",
+        "Evaluate all three prints after the update and preserve spaces and the newline."
+      ]
+    }
+  },
+  {
+    "id": "out-06",
+    "subject": "itp",
+    "topic": "scope",
+    "title": "A shadowed block variable",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint x=9; int main(void) { int x=2; { int x=5; ++x; printf(\"%d \",x); } printf(\"%d\\n\",x); return 0; }",
+    "blanks": [],
+    "expectedOutput": "6 2\n",
+    "trace": [
+      "The inner block declares its own x=5, then increments it to 6.",
+      "After the block ends, the local x in main is still 2.",
+      "The global x=9 is shadowed and never printed."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace nested scopes and predict which value each print uses.",
+      "rules": [
+        "A global, a main-local and a nested-block variable share a name.",
+        "At each use resolve the nearest enclosing declaration; updates affect that object.",
+        "Track the block increment and print, then the print after leaving the block."
+      ]
+    }
+  },
+  {
+    "id": "out-07",
+    "subject": "itp",
+    "topic": "scope",
+    "title": "Static local across calls",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nvoid f(void) { int a=1; static int b=1; printf(\"%d:%d \",a++,b++); } int main(void) { f(); f(); f(); return 0; }",
+    "blanks": [],
+    "expectedOutput": "1:1 1:2 1:3 ",
+    "trace": [
+      "The automatic a is recreated with value 1 for every call.",
+      "Static b is initialised once and retains 2 then 3 across calls.",
+      "Each post-increment prints the old value. No newline is printed."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace three calls with automatic and static local counters.",
+      "rules": [
+        "The automatic local is initialized on each call; the static local is initialized once and retains its value.",
+        "Both print operands use postfix increment; follow all three calls in order.",
+        "Each pair has a colon and trailing space; there is no final newline."
+      ]
+    }
+  },
+  {
+    "id": "out-08",
+    "subject": "itp",
+    "topic": "operators",
+    "title": "Short-circuit side effects",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int x=0,y=3; int a=x && ++y; int b=1 || ++y; printf(\"%d %d %d\\n\",a,b,y); return 0; }",
+    "blanks": [],
+    "expectedOutput": "0 1 3\n",
+    "trace": [
+      "x is zero, so && skips ++y and yields 0.",
+      "The left operand of || is true, so its ++y is also skipped and the result is 1.",
+      "y is never modified and remains 3."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace logical expressions with side effects and predict the output.",
+      "rules": [
+        "AND skips its right operand when the left is false; OR skips it when the left is true.",
+        "Logical results are integer truth values; update y only when its increment is evaluated.",
+        "Execute both assignments in order, then print a, b and y with spaces and a newline."
+      ]
+    }
+  },
+  {
+    "id": "out-09",
+    "subject": "itp",
+    "topic": "operators",
+    "title": "Post-decrement loop test",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nint main(void) { int n=3; while(n--) printf(\"%d \",n); printf(\"|%d\\n\",n); return 0; }",
+    "blanks": [],
+    "expectedOutput": "2 1 0 |-1\n",
+    "trace": [
+      "Tests use old values 3, 2, and 1; after decrement the bodies print 2, 1, and 0.",
+      "The final condition tests old zero, which is false, but still decrements n to -1.",
+      "The last printf prints |-1 and a newline."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace the post-decrement loop condition and predict all printed values.",
+      "rules": [
+        "Begin with n equal to 3; each condition evaluation tests the old value and decrements n.",
+        "The body sees the decremented value; also track the decrement in the final failed condition.",
+        "Preserve spaces after loop values, the vertical bar before the final value and the newline."
+      ]
+    }
+  },
+  {
+    "id": "out-10",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursion prints on both sides",
+    "source": "Original • output drill",
+    "difficulty": "Foundation",
+    "pool": "original",
+    "type": "output",
+    "prompt": "Predict the exact standard output. These operations are sequenced; there is no undefined increment behavior. Preserve leading spaces and line breaks.",
+    "code": "#include <stdio.h>\nvoid f(int n) { if(n==0) return; printf(\"%d \",n); f(n-1); printf(\"%d \",n); } int main(void) { f(2); return 0; }",
+    "blanks": [],
+    "expectedOutput": "2 1 1 2 ",
+    "trace": [
+      "f(2) prints 2 before calling f(1).",
+      "f(1) prints 1, calls the silent base case f(0), then prints 1.",
+      "Returning to f(2) prints 2. The program prints no newline."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "brief": {
+      "goal": "Trace recursive calls and returns to predict the printed order.",
+      "rules": [
+        "The base case returns immediately when n is zero.",
+        "Each non-base call prints before calling with n minus 1 and again after the recursive call returns.",
+        "Start with the supplied argument; each integer has a trailing space and no final newline."
+      ]
+    }
+  }
+]
