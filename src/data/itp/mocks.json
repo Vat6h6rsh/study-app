@@ -110,7 +110,45 @@
         "input": "",
         "output": "101 3300\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Each employee record keeps an identifier and a salary."
+      },
+      {
+        "line": 4,
+        "text": "A pointer parameter allows the helper to update the original salary."
+      },
+      {
+        "line": 5,
+        "text": "The arrow accesses a structure member through a pointer."
+      },
+      {
+        "line": 9,
+        "text": "Reserve heap storage and handle an unsuccessful allocation."
+      },
+      {
+        "line": 12,
+        "text": "Populate identifiers and starting pay before applying raises."
+      },
+      {
+        "line": 13,
+        "text": "Apply each raise and track the highest resulting salary."
+      },
+      {
+        "line": 17,
+        "text": "Select a record by address and display its members."
+      },
+      {
+        "line": 19,
+        "text": "Release the record array after use."
+      }
+    ]
   },
   {
     "id": "mock-a2",
@@ -223,7 +261,41 @@
         "input": "",
         "output": "11 19\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Two output pointers allow the helper to report separate triangular totals."
+      },
+      {
+        "line": 3,
+        "text": "Initialise both caller-owned totals before scanning."
+      },
+      {
+        "line": 4,
+        "text": "Nested loops visit every square-matrix element."
+      },
+      {
+        "line": 6,
+        "text": "One strict index relationship selects the upper triangle."
+      },
+      {
+        "line": 7,
+        "text": "The opposite strict relationship selects the lower triangle, excluding the diagonal."
+      },
+      {
+        "line": 12,
+        "text": "Pass the addresses of the two result variables."
+      },
+      {
+        "line": 13,
+        "text": "Display both computed totals."
+      }
+    ]
   },
   {
     "id": "mock-a3",
@@ -343,7 +415,41 @@
         "input": "",
         "output": "2 125\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "A record pairs a roll number and a mark."
+      },
+      {
+        "line": 4,
+        "text": "Open a record input stream and a separate passing-record output stream."
+      },
+      {
+        "line": 6,
+        "text": "Close any successfully opened stream if the other opening fails."
+      },
+      {
+        "line": 6,
+        "text": "Close both streams before displaying the summary."
+      },
+      {
+        "line": 8,
+        "text": "Process a record only when both numeric conversions succeed."
+      },
+      {
+        "line": 9,
+        "text": "Filter records by the inclusive passing threshold."
+      },
+      {
+        "line": 10,
+        "text": "Write each passing record and accumulate its mark and count."
+      }
+    ]
   },
   {
     "id": "mock-a4",
@@ -456,7 +562,41 @@
         "input": "",
         "output": "3/4\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Euclid's algorithm recursively reduces the pair to a greatest common divisor."
+      },
+      {
+        "line": 2,
+        "text": "Compute a common divisor from the original numerator and denominator."
+      },
+      {
+        "line": 3,
+        "text": "The base case ends recursion when the second value is zero."
+      },
+      {
+        "line": 4,
+        "text": "Each recursive step uses the former divisor and its remainder."
+      },
+      {
+        "line": 6,
+        "text": "Pointer parameters let the helper change both fraction components."
+      },
+      {
+        "line": 6,
+        "text": "Divide both pointed-to components by the same divisor."
+      },
+      {
+        "line": 13,
+        "text": "Pass addresses so the caller's fraction is updated."
+      }
+    ]
   },
   {
     "id": "mock-a5",
@@ -569,7 +709,41 @@
         "input": "",
         "output": "CEXAM 5\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 5,
+        "text": "Keep the original text and a separate writable output buffer."
+      },
+      {
+        "line": 6,
+        "text": "Track the next free output position."
+      },
+      {
+        "line": 7,
+        "text": "Inspect every input character before its terminator."
+      },
+      {
+        "line": 8,
+        "text": "Convert to the character-library domain before classification or conversion."
+      },
+      {
+        "line": 9,
+        "text": "Retain only letters and convert them to uppercase as they are appended."
+      },
+      {
+        "line": 11,
+        "text": "Terminate the compacted string before displaying it."
+      },
+      {
+        "line": 12,
+        "text": "Display the filtered text and its length."
+      }
+    ]
   },
   {
     "id": "mock-b1",
@@ -682,7 +856,45 @@
         "input": "",
         "output": "1 6.0\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Each vector record owns a length and an element pointer."
+      },
+      {
+        "line": 5,
+        "text": "Allocate the outer record storage."
+      },
+      {
+        "line": 8,
+        "text": "Create variable-length vectors from the corresponding input rows."
+      },
+      {
+        "line": 11,
+        "text": "Release earlier inner allocations if a later allocation fails."
+      },
+      {
+        "line": 11,
+        "text": "Copy current row values while accumulating their total."
+      },
+      {
+        "line": 16,
+        "text": "Convert before division so the average retains a fractional part."
+      },
+      {
+        "line": 17,
+        "text": "Accept the first row, then keep only improvements."
+      },
+      {
+        "line": 20,
+        "text": "Release inner buffers before the outer record array."
+      }
+    ]
   },
   {
     "id": "mock-b2",
@@ -795,7 +1007,41 @@
         "input": "",
         "output": "1 3 5 6 7 9 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "The caller supplies a sorted array with spare capacity for one more element."
+      },
+      {
+        "line": 3,
+        "text": "Start looking for the insertion point at the beginning."
+      },
+      {
+        "line": 4,
+        "text": "Skip elements that belong before the new value."
+      },
+      {
+        "line": 4,
+        "text": "Place the new value into the gap."
+      },
+      {
+        "line": 5,
+        "text": "Shift elements backward from the end to avoid overwriting unread values."
+      },
+      {
+        "line": 8,
+        "text": "Give the caller the enlarged logical length."
+      },
+      {
+        "line": 13,
+        "text": "Print the valid prefix after insertion."
+      }
+    ]
   },
   {
     "id": "mock-b3",
@@ -917,7 +1163,45 @@
         "input": "",
         "output": "merged\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Open two sorted inputs and a separate merged-output stream."
+      },
+      {
+        "line": 5,
+        "text": "Handle failed openings without leaving successfully opened streams behind."
+      },
+      {
+        "line": 5,
+        "text": "Close all streams once merging finishes."
+      },
+      {
+        "line": 7,
+        "text": "Prime each input and record whether its first integer was read."
+      },
+      {
+        "line": 9,
+        "text": "Merge while both sources have current values available."
+      },
+      {
+        "line": 10,
+        "text": "Write the earlier value and refresh only that source."
+      },
+      {
+        "line": 13,
+        "text": "Drain any remaining integers from the first source."
+      },
+      {
+        "line": 14,
+        "text": "Drain any remaining integers from the second source."
+      }
+    ]
   },
   {
     "id": "mock-b4",
@@ -1030,7 +1314,41 @@
         "input": "",
         "output": "-2\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "The helper recursively finds the largest value in a nonempty prefix."
+      },
+      {
+        "line": 2,
+        "text": "Calculate the array length before invoking the helper."
+      },
+      {
+        "line": 3,
+        "text": "A single-element prefix supplies the base result."
+      },
+      {
+        "line": 4,
+        "text": "Ask the same helper for the shorter prefix's maximum."
+      },
+      {
+        "line": 5,
+        "text": "Inspect the element omitted from that recursive call."
+      },
+      {
+        "line": 6,
+        "text": "Choose the larger of the prefix result and the final element."
+      },
+      {
+        "line": 11,
+        "text": "Display the maximum, including when all elements are negative."
+      }
+    ]
   },
   {
     "id": "mock-b5",
@@ -1143,7 +1461,41 @@
         "input": "",
         "output": "1 650 350\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Keep each account's identifier paired with its balance."
+      },
+      {
+        "line": 3,
+        "text": "Two pointer parameters allow one operation to update both accounts."
+      },
+      {
+        "line": 4,
+        "text": "Reject a nonpositive amount or insufficient funds before changing balances."
+      },
+      {
+        "line": 5,
+        "text": "Subtract the permitted amount from the source account."
+      },
+      {
+        "line": 6,
+        "text": "Add the same amount to the destination account."
+      },
+      {
+        "line": 7,
+        "text": "Report success only after both balance updates."
+      },
+      {
+        "line": 11,
+        "text": "Pass account addresses and display the status and resulting balances."
+      }
+    ]
   },
   {
     "id": "mock-c1",
@@ -1256,7 +1608,45 @@
         "input": "",
         "output": "Book 120\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Each sale record pairs a name with quantity and unit price."
+      },
+      {
+        "line": 6,
+        "text": "Reserve record storage and handle allocation failure."
+      },
+      {
+        "line": 8,
+        "text": "Populate writable name arrays before selecting a record."
+      },
+      {
+        "line": 11,
+        "text": "Populate quantity and price for each record."
+      },
+      {
+        "line": 13,
+        "text": "Compute this record's revenue from its two numeric fields."
+      },
+      {
+        "line": 14,
+        "text": "Accept the first record, then retain only better revenue."
+      },
+      {
+        "line": 18,
+        "text": "Form a pointer to the selected record for display."
+      },
+      {
+        "line": 20,
+        "text": "Release the record array after use."
+      }
+    ]
   },
   {
     "id": "mock-c2",
@@ -1369,7 +1759,41 @@
         "input": "",
         "output": "4 5 \n10 11 \n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "The input inner dimensions agree; the destination has the outer dimensions."
+      },
+      {
+        "line": 3,
+        "text": "Visit every destination row."
+      },
+      {
+        "line": 3,
+        "text": "Display the resulting matrix one row per line."
+      },
+      {
+        "line": 4,
+        "text": "Visit every destination column and reset that cell's accumulation."
+      },
+      {
+        "line": 6,
+        "text": "The inner loop pairs a row of the first input with a column of the second."
+      },
+      {
+        "line": 7,
+        "text": "Accumulate products to form the current matrix entry."
+      },
+      {
+        "line": 12,
+        "text": "The caller supplies writable destination storage to the helper."
+      }
+    ]
   },
   {
     "id": "mock-c3",
@@ -1490,7 +1914,41 @@
         "input": "",
         "output": "2\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Open an incoming-text stream and preserve existing destination log contents."
+      },
+      {
+        "line": 6,
+        "text": "Handle failed openings and close any surviving stream."
+      },
+      {
+        "line": 6,
+        "text": "Close both streams before displaying the processed-chunk count."
+      },
+      {
+        "line": 7,
+        "text": "A bounded buffer holds each text chunk."
+      },
+      {
+        "line": 8,
+        "text": "Read chunks until the source reports no further text."
+      },
+      {
+        "line": 9,
+        "text": "Convert each stored character to uppercase using the safe library domain."
+      },
+      {
+        "line": 10,
+        "text": "Append the converted chunk and count this successful read."
+      }
+    ]
   },
   {
     "id": "mock-c4",
@@ -1603,7 +2061,41 @@
         "input": "",
         "output": "4\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Repeated and leading spaces test the boundary-tracking logic."
+      },
+      {
+        "line": 5,
+        "text": "Track both the word count and whether the scan is currently inside a word."
+      },
+      {
+        "line": 6,
+        "text": "Visit all stored characters before the terminator."
+      },
+      {
+        "line": 7,
+        "text": "A space moves the scanner outside a word."
+      },
+      {
+        "line": 8,
+        "text": "Count a word only on the first nonspace character after a boundary."
+      },
+      {
+        "line": 9,
+        "text": "Remember that the scanner is now inside the newly counted word."
+      },
+      {
+        "line": 12,
+        "text": "Display the number of word starts found."
+      }
+    ]
   },
   {
     "id": "mock-c5",
@@ -1716,6 +2208,44 @@
         "input": "",
         "output": "153 370 371 407 \ncount=4\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "A helper computes the combined cubes of a candidate's decimal digits."
+      },
+      {
+        "line": 3,
+        "text": "Start a fresh total for each helper call."
+      },
+      {
+        "line": 4,
+        "text": "Continue until the working quotient has no digits left."
+      },
+      {
+        "line": 5,
+        "text": "Extract a digit, accumulate its cube and discard it."
+      },
+      {
+        "line": 9,
+        "text": "Give the completed digit-cube total back to the caller."
+      },
+      {
+        "line": 13,
+        "text": "Test every candidate in the inclusive three-digit range."
+      },
+      {
+        "line": 14,
+        "text": "Display and count only candidates equal to their digit-cube total."
+      },
+      {
+        "line": 15,
+        "text": "Display the final number of matching candidates."
+      }
+    ]
   }
 ]

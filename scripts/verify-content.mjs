@@ -11,18 +11,30 @@ const coverage = JSON.parse(await readFile(new URL('../src/data/itp/coverage.jso
 const ids = new Set()
 for (const q of questions) {
   assert(!ids.has(q.id), `Duplicate question ${q.id}`); ids.add(q.id)
-  const tokens = [...new Set([...q.code.matchAll(/__([A-Z])__/g)].map(m => m[1]))].sort()
+  const markers = [...q.code.matchAll(/__([A-Z])__/g)].map(m => m[1])
+  const tokens = [...new Set(markers)].sort()
   assert.deepEqual(tokens, q.blanks.map(b => b.id).sort(), `Token mismatch ${q.id}`)
   assert(q.title && q.source && q.topic && q.prompt && q.trace.length && typeof q.runnable === 'boolean', `Metadata ${q.id}`)
   for (const b of q.blanks) assert(b.accepted.length && b.accepted.every(x => typeof x === 'string' && x.length) && b.explanation, `${q.id} blank ${b.id}`)
+  if (q.type === 'blanks') {
+    assert.equal(q.blanks.length, 10, `${q.id}: exactly 10 blanks required`)
+    const ordered = Array.from({ length: 10 }, (_, i) => String.fromCharCode(65 + i))
+    assert.deepEqual(markers, ordered, `${q.id}: Blank 1..10 must occur once each in program order (A..J internally)`)
+    assert.deepEqual(q.blanks.map(b => b.id), ordered, `${q.id}: answer order`)
+    assert(Array.isArray(q.explanations) && q.explanations.length >= 6 && q.explanations.length <= 15, `${q.id}: whole-program explanations required`)
+    for (const comment of q.explanations) {
+      assert(Number.isInteger(comment.line) && comment.line >= 1 && comment.line <= q.code.split('\n').length, `${q.id}: invalid explanation line`)
+      assert(typeof comment.text === 'string' && comment.text.trim() && !/[\r\n]/.test(comment.text), `${q.id}: comments must be short single lines`)
+      for (const blank of q.blanks) for (const answer of blank.accepted) if (answer.length >= 4) assert(!comment.text.includes(answer), `${q.id}: explanation leaks Blank ${blank.id}: ${answer}`)
+    }
+  }
   assert(q.brief && typeof q.brief.goal === 'string' && q.brief.goal.trim().length > 0, `${q.id} brief needs a goal`)
   assert(Array.isArray(q.brief.rules) && q.brief.rules.length >= 1 && q.brief.rules.every(r => typeof r === 'string' && r.trim()), `${q.id} brief needs at least one rule`)
   if (q.brief.sample !== undefined) assert(typeof q.brief.sample.output === 'string' && q.brief.sample.output.length && (q.brief.sample.input === undefined || typeof q.brief.sample.input === 'string'), `${q.id} malformed brief sample`)
   if (q.type === 'output') assert(!q.brief.sample, `${q.id} output question must not have a brief sample (reveals the answer)`)
-  for (const b of q.blanks) for (const a of b.accepted) if (a.replace(/s+/g, '').length >= 5 && q.brief.rules.some(r => r.replace(/s+/g, '').includes(a.replace(/s+/g, '')))) console.log(`LEAK? ${q.id} blank ${b.id} answer "${a}" appears in a brief rule`)
+  for (const b of q.blanks) for (const a of b.accepted) if (a.replace(/\s+/g, '').length >= 5 && q.brief.rules.some(r => r.replace(/\s+/g, '').includes(a.replace(/\s+/g, '')))) console.log(`LEAK? ${q.id} blank ${b.id} answer "${a}" appears in a brief rule`)
   if (q.type === 'output') assert.equal(typeof q.expectedOutput, 'string', `${q.id} has no expected output`)
   if (q.runnable) assert.equal(typeof q.expectedOutput, 'string', `${q.id} needs a worked test expectation`)
-  if (q.pool !== 'past' && q.type === 'blanks') assert(q.blanks.length >= 8 && q.blanks.length <= 12, `${q.id} blank count`)
 }
 assert.equal(coverage.length, 69)
 for (const section of coverage) for (const id of section.questionIds) assert(ids.has(id), `Missing source ${section.section}`)
@@ -40,6 +52,11 @@ for (const p of papers) {
 }
 console.log(`Structural validation passed: ${questions.length} questions, ${coverage.length} source sections, ${papers.length} disjoint mock papers.`)
 const gcc = await findGcc()
+// Structural-only runs must not erase the last real compiler evidence or verified flags.
+if (!gcc) {
+  console.log(`GCC unavailable on PATH and WinGet location. 0/${questions.filter(q => q.runnable).length} runnable questions compiled. Previous compiler evidence retained; re-run with readable GCC.`)
+  process.exit(process.argv.includes('--require-gcc') ? 1 : 0)
+}
 const report = { checkedAt: new Date().toISOString(), compiler: gcc, structuralQuestions: questions.length, runnableQuestions: questions.filter(q => q.runnable).length, verified: 0, samplesVerified: 0, unrunSamples: [], skipped: [], failures: [], results: [] }
 const normalize = s => s.replace(/\r\n/g, '\n').split('\n').map(l => l.replace(/[ \t]+$/, '')).join('\n')
 for (const q of questions) {

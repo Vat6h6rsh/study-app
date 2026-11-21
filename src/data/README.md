@@ -39,13 +39,19 @@ The schema is defined in `types.ts`. Register subjects and import their question
 }
 ```
 
-Use `__A__`, `__B__`, … in `code`. Every token needs a matching `blanks` entry; repeated labels share an answer and earn one mark. Put punctuation outside a blank where practical. Use complete programs, or add a clearly labelled sample driver to source fragments. Output questions have `blanks: []`, complete code, an `expectedOutput` string (including its exact final newline), and an explicit step-by-step `trace`.
+Use `__A__`, `__B__`, … `__J__` in `code`, once each in order, with ten matching `blanks` entries (the schema excerpt above is abbreviated). Put punctuation outside a blank where practical. Use complete programs, or add a clearly labelled sample driver to source fragments. Output questions have `blanks: []`, complete code, an `expectedOutput` string (including its exact final newline), and an explicit step-by-step `trace`.
 
 One correct blank earns one mark. Comparison removes all whitespace and final semicolons, then matches any accepted spelling. It does not reason about semantic equivalence. Students can override an incorrect mark after submission; the original entered answer is retained. Output comparison converts CRLF to LF and removes spaces/tabs at each line's end. Leading whitespace, blank lines, and the presence of a final newline still matter.
 
 Fixtures use simple filenames only. The verifier seeds them in the disposable working directory and checks `expectedFiles`. The scratchpad includes a visible C harness that seeds these files and displays resulting file contents; the HTTP runner accepts only `{code, stdin}`. C executables run locally, so use trusted code.
 
 ## ITP content and provenance
+
+Every ITP `blanks` program has exactly **10 distinct markers, `__A__` through `__J__`, once each in source order**. The UI presents these as Blank 1 through Blank 10. Repeated occurrences must be separate blanks, each with its own accepted list. `output` questions have no markers or blanks. Preserve source whitespace and indentation; the program window renders the original code without input controls.
+
+`explanations?: { line: number; text: string }[]` adds optional C-style teaching comments above original source lines. `line` is 1-based in `code`, before inserted comments, including empty lines. All 86 current blanks programs have 6–15 short comments covering declarations, input, the algorithm and cleanup/output. Match the target line's indentation; never place comments inside a blank. Explain intent without giving the answer: “Visit only valid positions” rather than the missing loop condition. No accepted answer of four or more characters may occur verbatim anywhere in a comment (even as a substring). The verifier enforces counts, marker order, line bounds and leaks. The Explain code switch conditionally renders comments, remembers practice preference with guarded storage, and starts OFF in each running mock.
+
+Practice validation uses the same whitespace/trailing-semicolon normalisation as marking and all accepted alternatives. Eye reveals retain the student's input; once revealed, that blank earns no mark for that attempt even after hiding or retyping, and cannot be self-overridden. Reveals are recorded separately on the attempt. Ten correct, unrevealed answers automatically check the attempt once, updating the existing streak and celebration. Mock inputs remain neutral and expose no reveal controls until the submitted report supplies marking and accepted keys.
 
 - `itp/past.json`: **71 exercises from every one of the 69 non-SKIP numbered sections** in the supplied `question_bank.md`. Combined duplicate sources retain all source tags. Two output variants are separate exercises.
 - `itp/coverage.json`: section-to-exercise mapping. Theory, flowcharts and recurring-idiom appendix examples are not separate exam questions.

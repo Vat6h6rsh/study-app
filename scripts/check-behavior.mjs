@@ -1,11 +1,18 @@
 import assert from 'node:assert/strict'
 import { mark, normalizeCode, normalizeOutput, filledCode } from '../src/lib/grading.ts'
+import { blankState, markPractice, readExplainCode, storeExplainCode, EXPLAIN_KEY } from '../src/lib/practice.ts'
 import { accuracy, latestMistakes, loadProgress, readSaved, save, remove, PROGRESS_KEY } from '../src/lib/storage.ts'
 const question = { type: 'blanks', code: 'int n=__A__;\n__B__;', blanks: [{ id: 'A', accepted: ['n + 1', '1+n'] }, { id: 'B', accepted: ['++i'] }] }
 assert.equal(normalizeCode(' n + 1 ; ; '), 'n+1')
 assert.equal(normalizeCode('a=1; b=2;'), 'a=1;b=2')
 assert.deepEqual(mark(question, { A: ' 1 + n; ', B: '++i ;' }), { A: true, B: true })
 assert.deepEqual(mark(question, { A: 'n+2', B: '' }), { A: false, B: false })
+assert.equal(blankState(['n + 1', '1+n'], ''), 'neutral')
+assert.equal(blankState(['n + 1', '1+n'], ' 1 + n; '), 'correct')
+assert.equal(blankState(['n + 1'], 'n+2'), 'wrong')
+assert.equal(blankState(['n + 1'], 'n+1', true), 'revealed')
+for (const value of ['', 'n+1', 'wrong']) assert.equal(blankState(['n+1'], value, false, true), 'neutral', 'Mocks never validate live')
+assert.deepEqual(markPractice(question, { A: 'n+1', B: '++i' }, ['A']), { A: false, B: true }, 'A revealed answer never earns a mark, even after hiding or retyping')
 assert.equal(filledCode(question, { A: '3;', B: '++i;' }), 'int n=3;\n++i;')
 assert.equal(normalizeOutput('x \r\ny\t\n'), 'x\ny\n')
 assert.equal(mark({ type: 'output', expectedOutput: ' x\ny\n' }, { output: ' x \r\ny\t\r\n' }).output, true)
@@ -18,6 +25,9 @@ assert.equal(accuracy([]).percent, null)
 const memory = new Map()
 globalThis.localStorage = { getItem: k => memory.get(k) ?? null, setItem: (k, v) => memory.set(k, v), removeItem: k => memory.delete(k) }
 memory.set(PROGRESS_KEY, '{corrupt')
+storeExplainCode(true); assert.equal(memory.get(EXPLAIN_KEY), 'true'); assert.equal(readExplainCode(), true)
+storeExplainCode(false); assert.equal(readExplainCode(), false)
+memory.set(EXPLAIN_KEY, 'corrupt'); assert.equal(readExplainCode(), false)
 assert.deepEqual(loadProgress(), { version: 1, attempts: [] })
 memory.set(PROGRESS_KEY, JSON.stringify({ version: 1, attempts: [null, { results: null }] }))
 assert.deepEqual(loadProgress(), { version: 1, attempts: [] })
@@ -26,6 +36,7 @@ globalThis.localStorage = { getItem() { throw Error('denied') }, setItem() { thr
 assert.equal(readSaved('key'), null); assert.equal(save('key', {}), false); assert.equal(remove('key'), false)
 assert.deepEqual(loadProgress(), { version: 1, attempts: [] })
 console.log('Behavior checks passed: exact per-blank marking, accepted alternatives, normalization, output line boundaries, latest-attempt mistakes, accuracy, corrupt and unavailable localStorage.')
+assert.equal(readExplainCode(), false); assert.doesNotThrow(() => storeExplainCode(true))
 import { readFile } from 'node:fs/promises'
 import { markWP, wpScore, normalizeSentence, wordCount, grammarMatches, wordDiff, highlightSelection, initialWPAnswers } from '../src/lib/wp.ts'
 import { submissionMarkdown } from '../server/save-writing.mjs'

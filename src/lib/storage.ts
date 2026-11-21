@@ -8,6 +8,7 @@ export interface Attempt {
   answers: Record<string, string>
   results: Record<string, boolean>
   overrides: string[]
+  revealed?: string[]
   score?: number
   total?: number
 }

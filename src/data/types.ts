@@ -15,6 +15,8 @@ export interface CodeQuestion {
   prompt: string
   code: string
   blanks: Blank[]
+  /** Comments placed above a 1-based line of the original code, without disclosing keys. */
+  explanations?: { line: number; text: string }[]
   expectedOutput?: string
   trace: string[]
   notes?: string

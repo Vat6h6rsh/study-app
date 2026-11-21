@@ -1,4 +1,5 @@
 import { checkWPUI } from './check-wp-ui.mjs'
+import { checkTwoPaneBrowser } from './check-two-pane-browser.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
@@ -44,6 +45,8 @@ pairs.push(['on-primary', 'primary', 4.5], ['on-primary', 'primary-hover', 4.5],
 // Component aliases are asserted as well as the public palette roles.
 for (const bg of ['code', 'code-field']) for (const [fg, min] of [['code-text', 4.5], ['code-muted', 4.5], ['code-border', 3], ['code-focus', 3], ['code-good', 4.5], ['code-bad', 4.5]]) pairs.push([fg, bg, min])
 pairs.push(['warning', 'warning-bg', 4.5])
+// Two-pane code chips, comments, revealed keys, eye controls and input verdicts use these aliases.
+pairs.push(['code-muted', 'code-bg', 4.5], ['accent', 'blank-highlight', 4.5], ['accent', 'code-bg', 3], ['muted', 'surface-2', 4.5], ['primary', 'blank-highlight', 4.5], ['correct', 'surface', 4.5], ['wrong', 'surface', 4.5])
 // Topic surfaces also form the hero, feedback and score gradients. Both opaque
 // endpoints and their actual sRGB interpolations must retain readable text.
 const hues = ['indigo', 'teal', 'amber', 'sky', 'pink', 'violet', 'cyan', 'orange', 'iris', 'gold', 'plum']
@@ -199,10 +202,31 @@ try {
   assert(previous.includes('Previous run') && previous.includes('Code or input changed') && previous.includes('aria-busy="true"'))
   const q = questions.find(q => q.type === 'blanks'), failed = Object.fromEntries(questions.find(q => q.type === 'blanks').blanks.map(b => [b.id, false]))
   const code = renderToString(createElement(CodeQuestion, { question:q, answers:{}, results:failed, locked:true, onChange(){} }))
-  assert(code.includes('answer differs; review marked answers below') && /readonly/i.test(code))
+  assert(code.includes('Answer differs; review marked answers below') && /readonly/i.test(code))
   assert(!code.includes('<pre'), 'Interactive code lines must not create invalid pre/div nesting')
   const liveCode = renderToString(createElement(CodeQuestion, { question:q, answers:{}, results:{ ...failed, [q.blanks[0].id]: true }, locked:true, feedback:true, onChange(){} }))
   assert(liveCode.includes('feedback-live') && liveCode.includes('is-wrong') && liveCode.includes('is-correct') && liveCode.includes('✗') && liveCode.includes('✓'))
+  const { EXPLAIN_KEY } = await server.ssrLoadModule('/src/lib/practice.ts')
+  const renderCode = props => renderToString(createElement(CodeQuestion, { question:q, answers:{}, onChange(){}, ...props })).replace(/<!--[\s\S]*?-->/g, '')
+  globalThis.localStorage = { getItem: () => null }
+  const neutral = renderCode({})
+  assert.equal((neutral.match(/class="blank-field is-neutral/g) || []).length, 10)
+  assert.equal((neutral.match(/type="text"/g) || []).length, 10)
+  for (let i = 1; i <= 10; i++) assert(neutral.includes(`_________Blank${i}_________`) && neutral.includes(`>Blank ${i}</label>`))
+  assert(!neutral.includes('code-comment') && neutral.includes('role="switch" aria-checked="false"'))
+  assert(neutral.includes('aria-label="Reveal answer for Blank 1" aria-pressed="false"'))
+  assert(neutral.includes('autoCorrect="off"') || neutral.includes('autocorrect="off"'))
+  globalThis.localStorage = { getItem: key => key === EXPLAIN_KEY ? 'true' : null }
+  const explained = renderCode({})
+  assert(explained.includes('code-comment') && explained.includes('// The include directive'))
+  const mockCode = renderCode({ mode:'mock', answers:Object.fromEntries(q.blanks.map(b => [b.id,b.accepted[0]])) })
+  assert(!mockCode.includes('reveal-answer') && !mockCode.includes('is-correct') && !mockCode.includes('is-wrong') && !mockCode.includes('code-comment') && !mockCode.includes('aria-invalid'))
+  const revealedCode = renderCode({ revealed:[q.blanks[0].id], answers:{ [q.blanks[0].id]:q.blanks[0].accepted[0] } })
+  assert(revealedCode.includes('is-revealed') && revealedCode.includes('Revealed · no mark') && revealedCode.includes('1 revealed'))
+  for (const question of questions.filter(q => q.subject === 'itp' && q.type === 'blanks')) {
+    assert.equal(question.blanks.length,10)
+    assert.deepEqual([...question.code.matchAll(/__([A-Z])__/g)].map(m => m[1]), Array.from({length:10},(_,i)=>String.fromCharCode(65+i)))
+  }
   const fallback = renderToString(createElement(QuestionBrief, { question: { ...q, brief: undefined, prompt: 'Read the input. Calculate the sum. Print the result.' } }))
   assert(fallback.includes('<p>Read the input. Calculate the sum.</p><p>Print the result.</p>'))
   const brief = renderToString(createElement(QuestionBrief, { question: { ...q, prompt: 'Preserve the final newline.', brief: { goal: 'Sum two values.', rules: ['Read two integers.', 'Add the values.'], sample: { input: '2 3', output: '5\n<script>' } } } }))
@@ -226,10 +250,11 @@ try {
     assert(ring.includes('aria-hidden="true"') && ring.includes('stroke-dashoffset:100'))
   }
   const report = renderToString(createElement(Report, { question:q, attempt:{ id:'test', answers:{}, results:failed, overrides:[] }, onOverride(){} }))
-  assert(report.includes('Mark blank ' + q.blanks[0].id + ' as equivalent'))
+  assert(report.includes('Mark blank 1 as equivalent'))
   await checkWPUI(server, app, themes, contrast)
-  console.log('UI checks passed: ' + rows.length + ' CSS contrast pairs across Paper/Sky/Midnight/Ember plus gradient samples; topic colours, briefs/fallbacks, escaped note tables/callouts, feedback states, score rings and guarded streak storage; startup preferences, labelled theme/sidebar controls; all screens, mock states, timer warnings, missing reports, confirmations, runner results, verdict semantics and unique IDs. Focus, animation, visual reflow and assistive-technology behaviour still need a real browser.')
+  console.log('UI checks passed: ' + rows.length + ' CSS contrast pairs across Paper/Sky/Midnight/Ember plus gradient samples; topic colours, briefs/fallbacks, escaped note tables/callouts, feedback states, score rings and guarded streak storage; startup preferences, labelled theme/sidebar controls; all screens, mock states, timer warnings, missing reports, confirmations, runner results, verdict semantics and unique IDs. Headless interaction/reflow checks follow; physical-device keyboard, animation feel and assistive technology still need device testing.')
 } finally {
   globalThis.window = oldWindow; globalThis.localStorage = oldStorage
   await server.close()
 }
+await checkTwoPaneBrowser()

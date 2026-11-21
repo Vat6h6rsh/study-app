@@ -47,7 +47,7 @@ try {
     const results = Object.fromEntries((question.type==='output' ? ['output'] : question.blanks.map(b=>b.id)).map(id=>[id,true]))
     const code = renderToString(createElement(CodeQuestion,{question,answers,results,locked:true,onChange(){}}))
     assert(code.includes('code-editor'))
-    if(question.type==='blanks') assert(code.includes(`aria-label="Blank ${question.blanks[0].id}`))
+    if(question.type==='blanks') assert(code.includes('aria-label="Blank 1, go to answer"') && (code.match(/type="text"/g)||[]).length===10)
     const report = renderToString(createElement(Report,{question,attempt:{id:'test',answers,results,overrides:[]},onOverride(){},onLearn(){}}))
     assert(report.includes('Marked answers'))
     assert(report.includes('Understand this pattern in Learn'))

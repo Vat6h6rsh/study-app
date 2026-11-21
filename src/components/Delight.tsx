@@ -43,12 +43,12 @@ export function Confetti({ burst }: { burst: string }) {
   return <canvas ref={canvas} className="confetti" aria-hidden="true"/>
 }
 
-export function AnswerFeedback({ correct, total, burst, celebrate = true }: { correct: number; total: number; burst: string; celebrate?: boolean }) {
+export function AnswerFeedback({ correct, total, burst, celebrate = true, revealed = 0 }: { correct: number; total: number; burst: string; celebrate?: boolean; revealed?: number }) {
   const complete = total > 0 && correct === total
   return <div className={`answer-feedback ${complete ? 'complete' : 'partial'}`}>
     {complete && celebrate && <Confetti burst={burst}/>}
     <span className="feedback-symbol" aria-hidden="true">{complete ? '✦' : '✧'}</span>
-    <div><strong>{complete ? `All ${total} correct!` : `${correct}/${total} — ${correct ? 'good progress!' : 'A fresh starting point.'}`}</strong><p>{complete ? 'Beautiful work. Keep your momentum going.' : 'Fix the red ones — each correction is a step forward.'}</p></div>
+    <div><strong>{complete ? `All ${total} correct!` : `${correct}/${total} — ${correct ? 'good progress!' : 'A fresh starting point.'}`}</strong><p>{complete ? 'Beautiful work. Keep your momentum going.' : revealed ? 'Review the revealed keys and any red answers, then try again for a fresh attempt.' : 'Fix the red ones — each correction is a step forward.'}</p></div>
   </div>
 }
 

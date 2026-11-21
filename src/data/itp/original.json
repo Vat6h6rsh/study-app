@@ -110,7 +110,41 @@
         "input": "",
         "output": "Lin 95\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Give the student record a type alias."
+      },
+      {
+        "line": 6,
+        "text": "Zero-initialised allocation also clears each record's running total."
+      },
+      {
+        "line": 8,
+        "text": "Copy names into the records' writable character arrays."
+      },
+      {
+        "line": 12,
+        "text": "Visit each student and accumulate both subject scores."
+      },
+      {
+        "line": 14,
+        "text": "Keep the position of the highest-scoring record."
+      },
+      {
+        "line": 16,
+        "text": "Form a pointer to the selected record and display its members."
+      },
+      {
+        "line": 18,
+        "text": "Release the record array after printing."
+      }
+    ]
   },
   {
     "id": "new-02",
@@ -222,7 +256,37 @@
         "input": "",
         "output": "7 17\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Group each product's identifier, stock count and price."
+      },
+      {
+        "line": 3,
+        "text": "A structure pointer lets the helper change the caller's stock."
+      },
+      {
+        "line": 4,
+        "text": "The arrow accesses the stock member through that pointer."
+      },
+      {
+        "line": 9,
+        "text": "Visit all products and accumulate the resulting stock counts."
+      },
+      {
+        "line": 10,
+        "text": "Restock only products whose price meets the threshold rule."
+      },
+      {
+        "line": 13,
+        "text": "Display the first product's stock and the combined stock."
+      }
+    ]
   },
   {
     "id": "new-03",
@@ -335,7 +399,41 @@
         "input": "",
         "output": "4:16:15\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Group hours, minutes and seconds in one record type."
+      },
+      {
+        "line": 3,
+        "text": "The helper builds a combined interval and gives the whole record back."
+      },
+      {
+        "line": 5,
+        "text": "First add each pair of matching time components."
+      },
+      {
+        "line": 8,
+        "text": "Carry complete minutes out of the seconds total."
+      },
+      {
+        "line": 10,
+        "text": "Carry complete hours out of the minutes total."
+      },
+      {
+        "line": 12,
+        "text": "Give the normalised record back to the caller."
+      },
+      {
+        "line": 15,
+        "text": "Create two example intervals and display their combined result."
+      }
+    ]
   },
   {
     "id": "new-04",
@@ -447,7 +545,41 @@
         "input": "",
         "output": "4\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Each book record pairs title text with an available-copy count."
+      },
+      {
+        "line": 4,
+        "text": "Search a record array and produce a pointer to a matching book."
+      },
+      {
+        "line": 5,
+        "text": "Visit only valid book positions."
+      },
+      {
+        "line": 6,
+        "text": "String comparison identifies equal title contents."
+      },
+      {
+        "line": 7,
+        "text": "Produce the address of the first matching record."
+      },
+      {
+        "line": 8,
+        "text": "Use a null pointer to indicate that no title matched."
+      },
+      {
+        "line": 13,
+        "text": "Check the pointer before accessing the chosen book's copy count."
+      }
+    ]
   },
   {
     "id": "new-05",
@@ -551,7 +683,7 @@
     "brief": {
       "goal": "Sort three employee records by ascending salary and print their IDs in that order.",
       "rules": [
-        "Employee has integer id and salary fields; exchange whole records to keep IDs paired with salaries.",
+        "Each record has integer identifier and salary fields; exchange whole records to keep them paired.",
         "Visit positions from 0 through 1 and find the lowest salary in the suffix beginning at each position, searching through index 2.",
         "Exchange that record into place and print every ID followed by a space."
       ],
@@ -559,7 +691,41 @@
         "input": "",
         "output": "102 103 101 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Each employee record keeps its identifier paired with its salary."
+      },
+      {
+        "line": 4,
+        "text": "Create the sample records to be sorted."
+      },
+      {
+        "line": 5,
+        "text": "Fix the next sorted position on every outer pass."
+      },
+      {
+        "line": 6,
+        "text": "Remember the current candidate for the smallest remaining salary."
+      },
+      {
+        "line": 7,
+        "text": "Search the remaining suffix for a smaller salary."
+      },
+      {
+        "line": 9,
+        "text": "Exchange whole records so identifiers stay paired with salaries."
+      },
+      {
+        "line": 13,
+        "text": "Print identifiers in the resulting salary order."
+      }
+    ]
   },
   {
     "id": "new-06",
@@ -671,7 +837,41 @@
         "input": "",
         "output": "5 4 3 2 1 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Choose the sample element count before allocating storage."
+      },
+      {
+        "line": 5,
+        "text": "Reserve heap storage and handle a failed allocation."
+      },
+      {
+        "line": 7,
+        "text": "Populate the array with an ascending sequence."
+      },
+      {
+        "line": 8,
+        "text": "Swap mirrored positions, stopping halfway to avoid undoing the swaps."
+      },
+      {
+        "line": 9,
+        "text": "Find the matching position measured from the far end."
+      },
+      {
+        "line": 10,
+        "text": "Save one value while exchanging the pair."
+      },
+      {
+        "line": 15,
+        "text": "Release the array after displaying the reversed sequence."
+      }
+    ]
   },
   {
     "id": "new-07",
@@ -784,7 +984,41 @@
         "input": "",
         "output": "0:2 2:2 4:1 6:1 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 4,
+        "text": "Zero-initialised heap storage provides one frequency slot per decimal digit."
+      },
+      {
+        "line": 6,
+        "text": "Choose the integer whose digits will be counted."
+      },
+      {
+        "line": 7,
+        "text": "Process at least one digit, which also supports an input value of zero."
+      },
+      {
+        "line": 8,
+        "text": "Extract the rightmost digit and increment its frequency slot."
+      },
+      {
+        "line": 10,
+        "text": "Discard the digit just processed using integer division."
+      },
+      {
+        "line": 12,
+        "text": "Display only digit slots whose counts are nonzero."
+      },
+      {
+        "line": 14,
+        "text": "Release the frequency table after use."
+      }
+    ]
   },
   {
     "id": "new-08",
@@ -897,7 +1131,41 @@
         "input": "",
         "output": "7\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Each row owns a length and a pointer to its elements."
+      },
+      {
+        "line": 5,
+        "text": "Allocate the outer record array and check for failure."
+      },
+      {
+        "line": 8,
+        "text": "Allocate and populate rows with different lengths."
+      },
+      {
+        "line": 8,
+        "text": "Release inner row storage before the outer record storage."
+      },
+      {
+        "line": 11,
+        "text": "On failure, release every earlier row before releasing the outer array."
+      },
+      {
+        "line": 12,
+        "text": "Fill the current row and accumulate its values into the overall total."
+      },
+      {
+        "line": 17,
+        "text": "Display the total after all rows are populated."
+      }
+    ]
   },
   {
     "id": "new-09",
@@ -1009,7 +1277,37 @@
         "input": "",
         "output": "1 4 \n2 5 \n3 6 \n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "The destination swaps the input's row and column dimensions."
+      },
+      {
+        "line": 4,
+        "text": "Visit each original row."
+      },
+      {
+        "line": 5,
+        "text": "Visit each original column and store the element at exchanged indices."
+      },
+      {
+        "line": 7,
+        "text": "Visit every row of the destination matrix."
+      },
+      {
+        "line": 8,
+        "text": "Display the transposed elements in row order."
+      },
+      {
+        "line": 9,
+        "text": "End each output row with a line ending."
+      }
+    ]
   },
   {
     "id": "new-10",
@@ -1121,7 +1419,37 @@
         "input": "",
         "output": "1 -3\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Negative entries ensure selection cannot assume totals are positive."
+      },
+      {
+        "line": 4,
+        "text": "A sentinel means no column has been chosen yet."
+      },
+      {
+        "line": 5,
+        "text": "Compute one fresh total per column."
+      },
+      {
+        "line": 7,
+        "text": "Accumulate all row entries in the current column."
+      },
+      {
+        "line": 8,
+        "text": "Always accept the first column, then retain only improvements."
+      },
+      {
+        "line": 13,
+        "text": "Display the winning zero-based column and its total."
+      }
+    ]
   },
   {
     "id": "new-11",
@@ -1234,7 +1562,37 @@
         "input": "",
         "output": "25\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Set up a square matrix with an odd dimension."
+      },
+      {
+        "line": 4,
+        "text": "Initialise the diagonal accumulation before visiting rows."
+      },
+      {
+        "line": 5,
+        "text": "Each row contributes one primary-diagonal element."
+      },
+      {
+        "line": 7,
+        "text": "Locate the secondary-diagonal column in this row."
+      },
+      {
+        "line": 8,
+        "text": "Skip the shared centre when both diagonal positions coincide."
+      },
+      {
+        "line": 11,
+        "text": "Display the combined diagonal total."
+      }
+    ]
   },
   {
     "id": "new-12",
@@ -1347,7 +1705,37 @@
         "input": "",
         "output": "C EXAM 6\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 5,
+        "text": "Keep separate source and destination character buffers."
+      },
+      {
+        "line": 6,
+        "text": "Measure the input string before checking its last character."
+      },
+      {
+        "line": 7,
+        "text": "Remove a trailing line ending only when the string is nonempty."
+      },
+      {
+        "line": 8,
+        "text": "Copy the cleaned string into the destination."
+      },
+      {
+        "line": 9,
+        "text": "Convert every destination character using a safe unsigned-character value."
+      },
+      {
+        "line": 11,
+        "text": "Display the converted string and its length."
+      }
+    ]
   },
   {
     "id": "new-13",
@@ -1460,7 +1848,41 @@
         "input": "",
         "output": "pointer 6\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Keep two source strings and a writable output buffer."
+      },
+      {
+        "line": 4,
+        "text": "Start copying at the first character."
+      },
+      {
+        "line": 5,
+        "text": "Copy characters until reaching the source terminator."
+      },
+      {
+        "line": 9,
+        "text": "Terminate the copied string explicitly."
+      },
+      {
+        "line": 11,
+        "text": "Compare corresponding positions only while both strings have characters."
+      },
+      {
+        "line": 12,
+        "text": "Count equal character positions; this is not a full equality test."
+      },
+      {
+        "line": 13,
+        "text": "Display the copy and the matching-position count."
+      }
+    ]
   },
   {
     "id": "new-14",
@@ -1573,7 +1995,41 @@
         "input": "",
         "output": "yes\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 5,
+        "text": "Use a mixed-case word to test case-insensitive symmetry."
+      },
+      {
+        "line": 6,
+        "text": "Start at both ends and assume symmetry until disproved."
+      },
+      {
+        "line": 8,
+        "text": "Compare paired characters while the two positions have not met."
+      },
+      {
+        "line": 9,
+        "text": "Convert both characters to a shared case before comparing."
+      },
+      {
+        "line": 11,
+        "text": "Reject on the first differing pair and stop scanning."
+      },
+      {
+        "line": 12,
+        "text": "Move both positions inward after a matching pair."
+      },
+      {
+        "line": 15,
+        "text": "Display whether every inspected pair matched."
+      }
+    ]
   },
   {
     "id": "new-15",
@@ -1686,7 +2142,41 @@
         "input": "",
         "output": "exam-ready\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 5,
+        "text": "The two source strings are read-only."
+      },
+      {
+        "line": 6,
+        "text": "Reserve space for both strings, one separator and the null terminator."
+      },
+      {
+        "line": 7,
+        "text": "Allocate a writable buffer and handle failure."
+      },
+      {
+        "line": 9,
+        "text": "Copy the first source to establish a valid destination string."
+      },
+      {
+        "line": 10,
+        "text": "Append the separator before the second source."
+      },
+      {
+        "line": 12,
+        "text": "Display the completed string with a line ending."
+      },
+      {
+        "line": 13,
+        "text": "Release the destination buffer after use."
+      }
+    ]
   },
   {
     "id": "new-16",
@@ -1806,7 +2296,41 @@
         "input": "",
         "output": "4 30\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Open the input data stream and check for failure."
+      },
+      {
+        "line": 5,
+        "text": "Create a summary stream; close the input if creation fails."
+      },
+      {
+        "line": 6,
+        "text": "Close both streams after processing."
+      },
+      {
+        "line": 7,
+        "text": "Initialise the count and total before reading."
+      },
+      {
+        "line": 8,
+        "text": "Continue only when the next formatted read converts one integer."
+      },
+      {
+        "line": 9,
+        "text": "Accumulate each successfully read value and increment the count."
+      },
+      {
+        "line": 12,
+        "text": "Write the final count and total into the summary file."
+      }
+    ]
   },
   {
     "id": "new-17",
@@ -1926,7 +2450,41 @@
         "input": "",
         "output": "copied\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Open a source stream and create a destination stream."
+      },
+      {
+        "line": 4,
+        "text": "Reopen in a mode that preserves existing text and writes at its end."
+      },
+      {
+        "line": 5,
+        "text": "If either opening fails, close any stream that did open."
+      },
+      {
+        "line": 6,
+        "text": "Close the initial streams before reopening the destination."
+      },
+      {
+        "line": 8,
+        "text": "Read bounded text chunks so the buffer cannot overflow."
+      },
+      {
+        "line": 9,
+        "text": "Copy chunks until the input reports no more text."
+      },
+      {
+        "line": 14,
+        "text": "Add the footer and close the stream to flush it."
+      }
+    ]
   },
   {
     "id": "new-18",
@@ -2043,7 +2601,41 @@
         "input": "",
         "output": "5 2\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Open a text stream and handle an unsuccessful opening."
+      },
+      {
+        "line": 5,
+        "text": "Character reads need an integer to distinguish every byte from end-of-file."
+      },
+      {
+        "line": 6,
+        "text": "Initialise separate character and line-ending counts."
+      },
+      {
+        "line": 7,
+        "text": "Read one character at a time until the stream reports exhaustion."
+      },
+      {
+        "line": 8,
+        "text": "Count every character, including line endings."
+      },
+      {
+        "line": 9,
+        "text": "Count newline characters; an unterminated final line adds no newline."
+      },
+      {
+        "line": 11,
+        "text": "Close the stream before displaying the counts."
+      }
+    ]
   },
   {
     "id": "new-19",
@@ -2156,7 +2748,41 @@
         "input": "",
         "output": "-3 9\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Output pointers let one helper write both extrema for the caller."
+      },
+      {
+        "line": 3,
+        "text": "Seed both extrema from an actual array element."
+      },
+      {
+        "line": 5,
+        "text": "Inspect the remaining elements for smaller or larger values."
+      },
+      {
+        "line": 6,
+        "text": "Write a newly discovered minimum through its output pointer."
+      },
+      {
+        "line": 7,
+        "text": "Write a newly discovered maximum through its output pointer."
+      },
+      {
+        "line": 12,
+        "text": "Pass the addresses of the caller's result variables."
+      },
+      {
+        "line": 13,
+        "text": "Display the two results after the helper finishes."
+      }
+    ]
   },
   {
     "id": "new-20",
@@ -2262,13 +2888,43 @@
       "rules": [
         "The function takes and returns integers; the digit sum of zero is zero.",
         "For a positive value, add its last digit to the digit sum of the remaining leading digits.",
-        "Use remainder and integer division by 10 to split digits; print the result as an integer with a newline."
+        "Use remainder and integer division by 10 to split digits; print the total as an integer with a newline."
       ],
       "sample": {
         "input": "",
         "output": "13\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "A recursive helper computes a nonnegative integer's digit total."
+      },
+      {
+        "line": 2,
+        "text": "Choose the sample input for the recursive calculation."
+      },
+      {
+        "line": 3,
+        "text": "The base case stops recursion once no digits remain."
+      },
+      {
+        "line": 4,
+        "text": "Combine the final digit with the recursive total for the shortened number."
+      },
+      {
+        "line": 8,
+        "text": "Invoke the helper and keep its computed value."
+      },
+      {
+        "line": 9,
+        "text": "Display the total with a final line ending."
+      }
+    ]
   },
   {
     "id": "new-21",
@@ -2381,7 +3037,41 @@
         "input": "",
         "output": "3\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Search a sorted array within inclusive lower and upper positions."
+      },
+      {
+        "line": 3,
+        "text": "An empty interval indicates that the key is absent."
+      },
+      {
+        "line": 4,
+        "text": "Calculate the midpoint without adding the two bounds directly."
+      },
+      {
+        "line": 5,
+        "text": "A matching midpoint supplies the successful position immediately."
+      },
+      {
+        "line": 6,
+        "text": "Search only the left half when the key is smaller."
+      },
+      {
+        "line": 7,
+        "text": "Otherwise search the right half, excluding the inspected midpoint."
+      },
+      {
+        "line": 11,
+        "text": "Calculate the element count before choosing the initial inclusive bounds."
+      }
+    ]
   },
   {
     "id": "new-22",
@@ -2485,16 +3175,50 @@
     "brief": {
       "goal": "Reverse a decimal integer, count its digits, and test for a palindrome.",
       "rules": [
-        "Use original value 12321 and preserve it while consuming a working copy.",
+        "Use input value 12321 and preserve it while consuming a working copy.",
         "Start reversal and count at zero; append each extracted digit by multiplying the reversal by 10 and adding the digit.",
         "Remove each last digit with integer division by 10 and count it; process at least once, including for zero.",
-        "A number is a palindrome when its reversal equals its original; print reversal, digit count and yes or no separated by spaces."
+        "A number is a palindrome when its reversal equals the preserved input; print reversal, digit count and yes or no separated by spaces."
       ],
       "sample": {
         "input": "",
         "output": "12321 5 yes\n"
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Preserve the input while digit extraction modifies a working copy."
+      },
+      {
+        "line": 4,
+        "text": "Start an empty reversed value and digit counter."
+      },
+      {
+        "line": 4,
+        "text": "Shift the reversed value one decimal position and append that digit."
+      },
+      {
+        "line": 5,
+        "text": "Process at least one digit, even for an input value of zero."
+      },
+      {
+        "line": 6,
+        "text": "Extract the final decimal digit."
+      },
+      {
+        "line": 8,
+        "text": "Shorten the working number and count the consumed digit."
+      },
+      {
+        "line": 11,
+        "text": "Display the reversal, digit count and comparison with the preserved input."
+      }
+    ]
   },
   {
     "id": "new-23",
@@ -2607,7 +3331,37 @@
         "input": "",
         "output": "2 3 5 7 11 13 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Decide whether a candidate is prime."
+      },
+      {
+        "line": 3,
+        "text": "Reject values below the smallest prime."
+      },
+      {
+        "line": 4,
+        "text": "Try divisors only through the square-root bound using division."
+      },
+      {
+        "line": 5,
+        "text": "Any exact divisor disproves primality immediately."
+      },
+      {
+        "line": 6,
+        "text": "Surviving the entire divisor search establishes primality."
+      },
+      {
+        "line": 9,
+        "text": "Test the sample range and display only candidates the helper accepts."
+      }
+    ]
   },
   {
     "id": "new-24",
@@ -2720,7 +3474,41 @@
         "input": "",
         "output": "1 2 3 4 9 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 3,
+        "text": "Two sorted sources share a destination large enough for both."
+      },
+      {
+        "line": 4,
+        "text": "Maintain independent input positions and a destination position."
+      },
+      {
+        "line": 5,
+        "text": "Compare current values while both sources still have elements."
+      },
+      {
+        "line": 6,
+        "text": "Copy the smaller candidate and advance only its source position."
+      },
+      {
+        "line": 9,
+        "text": "Copy remaining first-source values after the comparison loop."
+      },
+      {
+        "line": 10,
+        "text": "Copy remaining second-source values after the comparison loop."
+      },
+      {
+        "line": 11,
+        "text": "Print only the populated destination prefix."
+      }
+    ]
   },
   {
     "id": "new-25",
@@ -2833,7 +3621,41 @@
         "input": "",
         "output": "3 1 2 4 "
       }
-    }
+    },
+    "explanations": [
+      {
+        "line": 1,
+        "text": "The include directive imports library declarations used by this program."
+      },
+      {
+        "line": 2,
+        "text": "Compact distinct values into the beginning of the same array."
+      },
+      {
+        "line": 3,
+        "text": "Track how many distinct values have already been retained."
+      },
+      {
+        "line": 4,
+        "text": "Inspect input values in their original order."
+      },
+      {
+        "line": 4,
+        "text": "Display only the retained values."
+      },
+      {
+        "line": 6,
+        "text": "Search only the retained prefix for an earlier equal value."
+      },
+      {
+        "line": 8,
+        "text": "Append the current value only when no equal prefix entry was found."
+      },
+      {
+        "line": 10,
+        "text": "Give the caller the length of the compacted prefix."
+      }
+    ]
   },
   {
     "id": "out-01",
