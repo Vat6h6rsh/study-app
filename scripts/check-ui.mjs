@@ -1,5 +1,6 @@
 import { checkWPUI } from './check-wp-ui.mjs'
 import { checkTwoPaneBrowser } from './check-two-pane-browser.mjs'
+import { checkInlineBrowser } from './check-inline-browser.mjs'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
@@ -76,6 +77,12 @@ for (const [theme, values] of Object.entries(themes)) {
 if (process.argv.includes('--ratios')) console.log(JSON.stringify(rows, null, 2))
 assert(!/font-size:\s*[\d.]+px/.test(css), 'Text sizes should follow the user root size')
 assert(css.includes('prefers-reduced-motion') && css.includes('forced-colors'))
+// The program renders in the page flow: no height cap or scroll box on any code container, soft wrap with a hanging indent.
+assert(!/\.code-scroll|\.program-window[^{]*\{[^}]*(max-height|overflow:\s*(auto|scroll))/.test(css), 'No scroll box on the program window')
+const codeRule = /\.code-line>code \{([^}]+)\}/.exec(css)?.[1] || ''
+assert(codeRule.includes('white-space:pre-wrap') && codeRule.includes('text-indent:calc(var(--ind) * -1ch)') && codeRule.includes('padding-left:calc(var(--ind) * 1ch)'), 'Soft wrap with hanging indent')
+assert(!/\.code-lines[^{]*\{[^}]*(overflow-x|width:max-content)/.test(css), 'No horizontal panning in the code')
+assert(css.includes('.kbd-bar') && css.includes('html[data-bar] main'), 'Keyboard accessory toolbar styles')
 
 // Execute the real first-paint script with saved, invalid and denied storage.
 const index = await readFile(new URL('../index.html', import.meta.url), 'utf8')
@@ -222,7 +229,11 @@ try {
   assert(neutral.includes('autoCorrect="off"') || neutral.includes('autocorrect="off"'))
   globalThis.localStorage = { getItem: key => key === EXPLAIN_KEY ? 'true' : null }
   const explained = renderCode({})
-  assert(explained.includes('code-comment') && /\/\/ [A-Z]/.test(explained))
+  assert(explained.includes('code-comment') && explained.includes('class="code-note"') && explained.includes('aria-expanded="true"') && /aria-label="Explain line 1"/.test(explained))
+  assert(!neutral.includes('code-comment') && neutral.includes('aria-expanded="false"') && neutral.includes('class="line-marker"'), 'Comment markers exist, comments stay folded until asked')
+  assert(neutral.includes('class="mode-toggle"') && neutral.includes('Side panel') && neutral.includes('Inline'), 'Desktop answer-mode toggle')
+  assert(!neutral.includes('class="code-scroll"') && neutral.includes('class="code-lines"'), 'The program has no scroll container')
+  assert(neutral.includes('<summary><h3>Expected output</h3>') && neutral.includes('class="out-preview"'), 'Expected output is a compact disclosure')
   const mockCode = renderCode({ mode:'mock', answers:Object.fromEntries(q.blanks.map(b => [b.id,b.accepted[0]])) })
   assert(!mockCode.includes('reveal-answer') && !mockCode.includes('reveal-all') && !mockCode.includes('program-answer') && !mockCode.includes('is-correct') && !mockCode.includes('is-wrong') && !mockCode.includes('code-comment') && !mockCode.includes('aria-invalid'))
   const revealedCode = renderCode({ revealed:[q.blanks[0].id], answers:{ [q.blanks[0].id]:q.blanks[0].accepted[0] } })
@@ -289,3 +300,4 @@ try {
   await server.close()
 }
 await checkTwoPaneBrowser()
+await checkInlineBrowser()

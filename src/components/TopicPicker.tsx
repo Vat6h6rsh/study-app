@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import type { Question, Subject } from '../data/types'
 import { concepts, wpConcepts } from '../data/concepts'
 import type { Attempt } from '../lib/storage'
@@ -16,14 +16,15 @@ export function studyTopics(subject: Subject) {
 export function PriorityChip({ priority }: { priority: 'core' | 'extra' }) {
   return <span className={`tag priority-chip priority-${priority}`}>{priority === 'core' ? 'Core' : 'Extra'}</span>
 }
-export function TopicPicker({ subject, pool, current, attempts, onSelect, onLearn }: {
+export const TopicPicker = memo(function TopicPicker({ subject, pool, current, attempts, onSelect, onLearn }: {
   subject: Subject; pool: Question[]; current?: Question; attempts: Attempt[]
   onSelect: (id: string) => void; onLearn: (topic: string) => void
 }) {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({ [current?.topic || '']: true })
   useEffect(() => { if (current) setExpanded(open => ({ ...open, [current.topic]: true })) }, [current?.topic])
-  const latest = new Map(attempts.map(a => [a.questionId, a]))
-  return <nav className="topic-groups" aria-label="Practice topics in Learn order">{topicGroups(pool, studyTopics(subject)).map(group => {
+  const latest = useMemo(() => new Map(attempts.map(a => [a.questionId, a])), [attempts])
+  const groups = useMemo(() => topicGroups(pool, studyTopics(subject)), [pool, subject])
+  return <nav className="topic-groups" aria-label="Practice topics in Learn order">{groups.map(group => {
     const progress = questionProgress(group.questions, attempts)
     return <details key={group.id} className="practice-topic" data-topic={group.id} data-tone={topicTone(group.id)} open={!!expanded[group.id]} onToggle={e => {
       const open = e.currentTarget.open
@@ -40,4 +41,4 @@ export function TopicPicker({ subject, pool, current, attempts, onSelect, onLear
       })}</div>
     </details>
   })}</nav>
-}
+})

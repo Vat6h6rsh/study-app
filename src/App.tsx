@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { lazy, memo, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ConfirmDialog } from './components/ConfirmDialog'
 import { StudyLink } from './components/StudyLink'
 import { Sidebar } from './components/Sidebar'
@@ -20,6 +20,7 @@ import { Report } from './components/Report'
 import { Scratchpad, defaultDraft, scratchDraft } from './components/Scratchpad'
 import type { ScratchDraft } from './components/Scratchpad'
 import { mark } from './lib/grading'
+import { useStable } from './lib/stable'
 import { markPractice } from './lib/practice'
 import { accuracy, EXAM_KEY, latestMistakes, loadProgress, PROGRESS_KEY, readSaved, remove, save } from './lib/storage'
 import type { Attempt } from './lib/storage'
@@ -139,17 +140,20 @@ function App() {
   useEffect(() => { if (!save(PROGRESS_KEY, progress)) setStorageFailed(true) }, [progress])
   useEffect(() => { if (exam && !save(EXAM_KEY, exam)) setStorageFailed(true) }, [exam])
   useEffect(() => { if (!save(SUBJECT_KEY, subjectId)) setStorageFailed(true); if (subjectId === 'wp' && page === 'scratch') setPage('home') }, [subjectId, page])
-  const attempts = progress.attempts.filter(a => a.subject === subjectId)
-  const mistakes = latestMistakes(attempts)
+  // Stable identities: typing in a mock must not re-render the (hidden) Practice view.
+  const attempts = useMemo(() => progress.attempts.filter(a => a.subject === subjectId), [progress.attempts, subjectId])
+  const mistakes = useMemo(() => latestMistakes(attempts), [attempts])
+  const mistakeIds = useMemo(() => mistakes.map(a => a.questionId), [mistakes])
   function openPractice(topic = 'all') { setFilter(topic); setPracticeOpened(true); setPage('practice', topic) }
   function openLearn(topic = 'strategy', fromQuestion = false) { setLesson(topic); setFromPractice(fromQuestion); setPage('learn', topic) }
   const backToPractice = () => setPage('practice', undefined, true)
   const barTitle = `${subject.code} · ${({ home: 'Overview', learn: 'Learn', practice: 'Practice', exam: 'Mock exam', scratch: 'Scratchpad' })[page]}`
-  function record(attempt: Attempt) { setProgress(p => ({ ...p, attempts: p.attempts.some(a => a.id === attempt.id) ? p.attempts.map(a => a.id === attempt.id ? attempt : a) : [...p.attempts, attempt] })) }
-  function override(attemptId: string, blankId: string) {
+  const record = useStable(function record(attempt: Attempt) { setProgress(p => ({ ...p, attempts: p.attempts.some(a => a.id === attempt.id) ? p.attempts.map(a => a.id === attempt.id ? attempt : a) : [...p.attempts, attempt] })) })
+  const override = useStable(function override(attemptId: string, blankId: string) {
     setProgress(p => ({ ...p, attempts: p.attempts.map(a => a.id === attemptId ? { ...a, results: { ...a.results, [blankId]: true }, overrides: [...new Set([...a.overrides, blankId])] } : a) }))
-  }
-  function runAnswers(q: Question, answers: Record<string, string>) { setDraft(scratchDraft(q, answers)); setPage('scratch') }
+  })
+  const runAnswers = useStable((q: Question, answers: Record<string, string>) => { setDraft(scratchDraft(q, answers)); setPage('scratch') })
+  const learnFromQuestion = useStable((topic: string) => openLearn(topic, true))
   function finishExam(session: ExamSession) {
     if (session.submitted || submittedExams.current.has(session.startedAt)) return
     submittedExams.current.add(session.startedAt)
@@ -191,7 +195,7 @@ function App() {
       {storageFailed && <div className="notice error" role="status">Browser storage is unavailable or full. You can keep practising, but changes may not survive a reload.</div>}
       {page === 'home' && <Home subject={subject} attempts={attempts} onPractice={openPractice} onExam={() => setPage('exam')} onLearn={() => openLearn()} />}
       {page === 'learn' && <LessonBoundary><Suspense fallback={<div className="notes-loading" aria-busy="true"><p role="status">Opening your study notes…</p></div>}><Learn key={subjectId} subject={subjectId} selected={lesson} fromPractice={fromPractice} onBackToPractice={backToPractice} onSelect={id => { setLesson(id); setPage('learn', id) }} onPractice={openPractice} onRun={(code, title) => { setDraft({ code, stdin: '', title }); setPage('scratch') }} /></Suspense></LessonBoundary>}
-      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={topic => openLearn(topic, true)}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakes.map(a => a.questionId)} record={record} override={override} runAnswers={runAnswers} onLearn={topic => openLearn(topic, true)} />}</div>}
+      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={topic => openLearn(topic, true)}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakeIds} record={record} override={override} runAnswers={runAnswers} onLearn={learnFromQuestion} />}</div>}
       {page === 'exam' && subjectId === 'itp' && <Exams freshResult={examFeedback?.id === exam?.startedAt && !!examFeedback} subject={subject} session={exam} update={setExam} finish={finishExam} attempts={attempts} override={override} onLearn={openLearn} />}
       <WPExams visible={page === 'exam' && subjectId === 'wp'} record={record} onLearn={openLearn} resetKey={practiceKey}/>
       <div hidden={page !== 'scratch' || subjectId !== 'itp'}><Scratchpad draft={draft} onChange={setDraft} /></div>
@@ -221,7 +225,7 @@ function Home({ subject, attempts, onPractice, onExam, onLearn }: { subject: Sub
 function Stat({ value, label, detail }: { value: string; label: string; detail: string }) { return <div className="stat-card"><div><strong>{value}</strong><h3>{label}</h3><p>{detail}</p></div></div> }
 
 interface PracticeProps { subject: Subject; initialFilter: string; attempts: Attempt[]; mistakes: string[]; record: (a: Attempt) => void; override: (a: string, b: string) => void; runAnswers: (q: Question, a: Record<string, string>) => void; onLearn: (topic: string) => void }
-function Practice({ subject, initialFilter, attempts, mistakes, record, override, runAnswers, onLearn }: PracticeProps) {
+const Practice = memo(function Practice({ subject, initialFilter, attempts, mistakes, record, override, runAnswers, onLearn }: PracticeProps) {
   const [topic, setTopic] = useState(['core', 'extra', 'mistakes'].includes(initialFilter) ? 'all' : initialFilter)
   const [priority, setPriority] = useState(['core', 'extra'].includes(initialFilter) ? initialFilter : 'all')
   const [onlyMistakes, setOnlyMistakes] = useState(initialFilter === 'mistakes')
@@ -234,10 +238,12 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
   const [drafts, setDrafts] = useState<Record<string, { answers: Record<string, string>; attemptId: string | null; revealed?: string[]; revision?: number }>>({})
   useEffect(() => { setTopic(['core', 'extra', 'mistakes'].includes(initialFilter) ? 'all' : initialFilter); setPriority(['core', 'extra'].includes(initialFilter) ? initialFilter : 'all'); setOnlyMistakes(initialFilter === 'mistakes'); setSelected('') }, [initialFilter])
   // Submitted mock questions can be reviewed, with their mock source clearly labelled.
-  const available = questions.filter(q => q.pool !== 'mock' || attempts.some(a => a.questionId === q.id && a.mode === 'exam'))
-  const eligibleGroups = topicGroups(available.filter(q => q.subject === subject.id && (!onlyMistakes || mistakes.includes(q.id)) && (type === 'all' || q.type === type) && (source === 'all' || q.pool === source || source === 'exam21' && !!q.set) && (priority === 'all' || q.priority === priority)), studyTopics(subject))
-  const groups = eligibleGroups.filter(group => topic === 'all' || group.id === topic)
-  const pool = groups.flatMap(group => group.questions)
+  const eligibleGroups = useMemo(() => {
+    const available = questions.filter(q => q.pool !== 'mock' || attempts.some(a => a.questionId === q.id && a.mode === 'exam'))
+    return topicGroups(available.filter(q => q.subject === subject.id && (!onlyMistakes || mistakes.includes(q.id)) && (type === 'all' || q.type === type) && (source === 'all' || q.pool === source || source === 'exam21' && !!q.set) && (priority === 'all' || q.priority === priority)), studyTopics(subject))
+  }, [attempts, subject, onlyMistakes, mistakes, type, source, priority])
+  const groups = useMemo(() => eligibleGroups.filter(group => topic === 'all' || group.id === topic), [eligibleGroups, topic])
+  const pool = useMemo(() => groups.flatMap(group => group.questions), [groups])
   const question = pool.find(q => q.id === selected) || (selected && drafts[selected]?.attemptId ? questionById.get(selected) : null) || pool[0]
   const saved = drafts[question?.id] || { answers: {}, attemptId: null }
   const answers = saved.answers
@@ -259,10 +265,12 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
   const topicPool = currentGroup?.questions || []
   const currentIndex = topicPool.findIndex(q => q.id === question?.id)
   const nextGroup = eligibleGroups[eligibleGroups.findIndex(group => group.id === currentGroup?.id) + 1]
-  function choose(id: string) { setSelected(id); setNotice(''); focusQuestion() }
+  const choose = useCallback((id: string) => { setSelected(id); setNotice(''); focusQuestion() }, [])
+  const chooseAndClose = useCallback((id: string) => { setPickerOpen(false); choose(id) }, [choose])
+  const learnAndClose = useCallback((id: string) => { setPickerOpen(false); onLearn(id) }, [onLearn])
   function changeFilter(setter: (value: string) => void, value: string) { setter(value); setSelected(''); setNotice('') }
   const topicName = subject.topics.find(t => t.id === question?.topic)?.name
-  const questionRows = (close: boolean) => <TopicPicker subject={subject} pool={pool} current={question} attempts={attempts} onSelect={id => { if (close) setPickerOpen(false); choose(id) }} onLearn={id => { setPickerOpen(false); onLearn(id) }}/>
+  const questionRows = (close: boolean) => <TopicPicker subject={subject} pool={pool} current={question} attempts={attempts} onSelect={close ? chooseAndClose : choose} onLearn={learnAndClose}/>
   function submit() { if (!question || attempt) return; const result = { ...makeAttempt(question, answers, 'practice'), results: markPractice(question, answers, saved.revealed), revealed: saved.revealed || [] }; record(result);
     const values = Object.values(result.results)
     const correct = values.filter(Boolean).length
@@ -271,30 +279,29 @@ function Practice({ subject, initialFilter, attempts, mistakes, record, override
     setStreak(nextStreak); storeStreak(nextStreak); setFreshAttempt({ id: result.id, complete })
     setSelected(question.id); setDrafts(d => ({ ...d, [question.id]: { ...saved, answers: { ...answers }, attemptId: result.id } })); setNotice(`${complete ? `All ${values.length} correct! ${nextStreak} fully correct in a row.` : `${correct}/${values.length} correct.${result.revealed.length ? ` ${result.revealed.length} revealed; no marks for revealed answers.` : ' Fix the red ones.'}`} Review each answer below.`) }
   return <>
-    <div className="page-heading"><div><h1>Practice</h1><p className="muted">Try the code, check each blank, and learn from the trace.</p></div><div className="practice-meta"><span className="streak-badge"><span aria-hidden="true">&#10022; </span>{streak} fully correct in a row</span><span className="tag" role="status">{pool.length} matching questions</span></div></div>
+    <div className="page-heading practice-heading"><div><h1>Practice</h1><p className="muted">Try the code, check each blank, and learn from the trace.</p></div><div className="practice-meta"><span className="streak-badge" data-zero={streak === 0 ? '' : undefined}><span aria-hidden="true">&#10022; </span>{streak} fully correct in a row</span><span className="tag" role="status">{pool.length} matching questions</span></div></div>
     <details className="filter-details" open={!mobile || filtersOpen} onToggle={e => { if (mobile) setFiltersOpen(e.currentTarget.open) }}><summary onClick={e => { if (!mobile) e.preventDefault() }}>Filters · {topic === 'all' ? 'All topics' : topic === 'mistakes' ? 'My mistakes' : subject.topics.find(t => t.id === topic)?.name}{type !== 'all' || source !== 'all' ? ' + more' : ''}</summary><div className="filter-bar"><label>Topic<select value={topic} onChange={e => changeFilter(setTopic, e.target.value)}><option value="all">All topics</option>{studyTopics(subject).map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></label><label>Question type<select value={type} onChange={e => changeFilter(setType, e.target.value)}><option value="all">All question types</option><option value="blanks">Fill in the blanks</option><option value="output">Predict the output</option></select></label><label>Question bank<select value={source} onChange={e => changeFilter(setSource, e.target.value)}><option value="all">All available questions</option><option value="past">Past papers</option><option value="original">Original practice</option><option value="exam21">Exam pattern practice (based on the 21 Nov paper)</option><option value="mock">Submitted mock review</option></select></label><label>Priority<select value={priority} onChange={e => changeFilter(setPriority, e.target.value)}><option value="all">All · Core first</option><option value="core">Core only</option><option value="extra">Extra only</option></select></label><label className="check-label"><input type="checkbox" checked={onlyMistakes} onChange={e => { setOnlyMistakes(e.target.checked); setSelected('') }}/>Only mistakes</label></div></details>
     {!question ? <section className="panel empty-state"><h2>{onlyMistakes ? 'A clean slate.' : 'No matching questions.'}</h2><p>{onlyMistakes ? 'Questions with mistakes on your latest attempt appear here. Start practising to build your review list.' : 'Try a different topic or question type.'}</p><button type="button" className="button primary" onClick={() => { setTopic('all'); setType('all'); setSource('all'); setPriority('all'); setOnlyMistakes(false); choose('') }}>Browse all questions</button></section> : <div className="practice-layout"><aside className="question-nav panel"><details className="question-picker"><summary>Topics and progress · {groups.length} topics · {pool.length} questions</summary>{questionRows(false)}</details></aside><section className="question-workspace" data-tone={topicTone(question.topic)}>
       <div className="question-bar">
         <button type="button" className="question-bar-step" aria-label="Previous question" disabled={currentIndex <= 0} onClick={() => choose(topicPool[currentIndex - 1].id)}><span aria-hidden="true">‹</span></button>
-        <button type="button" className="question-bar-position" aria-haspopup="dialog" onClick={() => setPickerOpen(true)}><strong>{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${topicPool.length} in ${currentGroup?.name || topicName}` : 'Marked question'}</strong><span className="small muted">Topics <span aria-hidden="true">▾</span></span></button>
+        <button type="button" className="question-bar-position" aria-haspopup="dialog" onClick={() => setPickerOpen(true)}><strong>{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${topicPool.length} in ${currentGroup?.name || topicName}` : 'Marked question'}</strong><span className="small muted">Topics <span aria-hidden="true">▾</span><span id="question-score-slot" className="bar-score"/></span></button>
         <button type="button" className="question-bar-step" aria-label="Next question" disabled={currentIndex < 0 || currentIndex >= topicPool.length - 1} onClick={() => choose(topicPool[currentIndex + 1].id)}><span aria-hidden="true">›</span></button>
         <span className="question-bar-progress" aria-hidden="true"><span style={{ width: `${currentIndex >= 0 ? (currentIndex + 1) / topicPool.length * 100 : 0}%` }}/></span>
       </div>
       <Sheet title="Topics and questions" open={pickerOpen} onClose={() => setPickerOpen(false)}>{questionRows(true)}</Sheet>
-      <div className="question-heading" data-question-id={question.id} tabIndex={-1}><div className="question-tags"><span className="tag topic-chip">{subject.topics.find(t => t.id === question.topic)?.name}</span><PriorityChip priority={question.priority}/><span className="tag">{question.difficulty}</span><span className="tag">{question.source}</span>{question.verified && <span className="tag verified">GCC checked</span>}</div><h2>{question.title}</h2>{!attempt && <a className="text-button desk-only" href="#practice-submit" onClick={jumpTo('practice-submit')}>Go to check answers</a>}</div>
+      <div className="question-heading" data-question-id={question.id} tabIndex={-1}><div className="question-tags"><span className="topic-eyebrow desk-only">{subject.topics.find(t => t.id === question.topic)?.name}</span><PriorityChip priority={question.priority}/><span className="meta-text">{[question.difficulty, question.source, question.verified ? 'GCC checked' : ''].filter(Boolean).join(' · ')}</span>{!attempt && <a className="text-button desk-only skip-to-check" href="#practice-submit" onClick={jumpTo('practice-submit')}>Go to check answers</a>}</div><h2>{question.title}</h2></div>
       <QuestionBrief question={question}/>
-      <ConceptNote key={question.id} question={question} onLearn={onLearn}/>
-      
       {question.fixtures && <details className="sample-input"><summary>Input files (included when running)</summary>{Object.entries(question.fixtures).map(([name, contents]) => <div key={name}><h4>{name}</h4><pre>{contents}</pre></div>)}</details>}
       <CodeQuestion key={`${question.id}:${saved.revision || 0}`} question={question} answers={answers} locked={!!attempt} results={attempt?.results} revealed={saved.revealed} onReveal={ids => setDrafts(d => { const current = d[question.id] || saved; return { ...d, [question.id]: { ...current, revealed: [...new Set([...(current.revealed || []), ...ids])] } } })} onComplete={submit} feedback={!!attempt && freshAttempt?.id === attempt.id} onChange={(id, value) => setAnswers({ ...answers, [id]: value })}/>
       {question.type === 'output' && <label className="output-answer">Your predicted output<textarea aria-describedby="output-help" autoCapitalize="off" autoComplete="off" rows={5} spellCheck={false} readOnly={!!attempt} value={answers.output || ''} onChange={e => setAnswers({ output: e.target.value })} placeholder="Type exactly what the program prints…"/><span id="output-help" className="small muted">Trailing spaces on each line are ignored. Leading spaces and final newlines matter.</span></label>}
       {question.runnable && <div className="question-tools"><button type="button" className="button secondary" onClick={() => runAnswers(question, answers)}>Run with my answers</button></div>}
+      {!attempt && <ConceptNote key={question.id} question={question} onLearn={onLearn}/>}
       {!attempt && <p className="small muted marking-note">One mark per blank · Whitespace and trailing semicolons ignored · Equivalent answers can be self-marked after submission.</p>}
       <p className="sr-only" role="status">{notice}</p><div ref={report} tabIndex={-1} role="group" aria-label="Marked answers and score">{attempt && <Report question={question} attempt={attempt} onOverride={override} onLearn={onLearn} celebrate={freshAttempt?.id === attempt.id && freshAttempt.complete} animate={freshAttempt?.id === attempt.id}/>}</div>
       <div className="topic-end"><p className="small muted">{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${topicPool.length} in ${currentGroup?.name}` : `Marked question in ${topicName}`}</p>{currentIndex >= 0 && currentIndex === topicPool.length - 1 && <div className="topic-end-actions">{nextGroup ? <button type="button" className="button primary" onClick={() => { if (topic !== 'all') setTopic(nextGroup.id); choose(nextGroup.questions[0].id) }}>Next topic: {nextGroup.name}</button> : <button type="button" className="button secondary" onClick={() => setPickerOpen(true)}>Choose another topic</button>}<button type="button" className="button secondary" onClick={() => { setTopic(question.topic); setOnlyMistakes(true); setSelected('') }}>Review mistakes in this topic</button></div>}</div><div className="question-actions sticky-dock"><div className="dock-main">{!attempt ? <button type="button" id="practice-submit" className="button primary" onClick={submit}>Check {question.type === 'blanks' ? 'answers' : 'output'}</button> : <button type="button" className="button secondary" onClick={() => { setDrafts(d => ({ ...d, [question.id]: { answers: {}, attemptId: null, revision: (saved.revision || 0) + 1 } })); setNotice('New attempt ready.'); requestAnimationFrame(() => document.querySelector<HTMLInputElement>('#main .blank-field input, #main .output-answer textarea')?.focus()) }}>Try again</button>}{question.runnable && <button type="button" className="button secondary desk-only" onClick={() => runAnswers(question, answers)}>Run with my answers</button>}</div><span className="question-step"><span className="small muted desk-only">{currentIndex >= 0 ? `Question ${currentIndex + 1} of ${topicPool.length} in ${currentGroup?.name || topicName}` : 'Marked question'}</span>{currentIndex >= 0 && currentIndex < topicPool.length - 1 && <button type="button" className={`button ${attempt ? 'primary' : 'secondary'}`} onClick={() => choose(topicPool[currentIndex + 1].id)}>Next question</button>}{currentIndex >= 0 && currentIndex === topicPool.length - 1 && <><span className="small muted desk-only">Topic complete</span><button type="button" className="button secondary mobile-only" onClick={() => setPickerOpen(true)}>All questions</button></>}</span></div>
     </section></div>}
   </>
-}
+})
 
 const jumpTo = (id: string) => (event: { preventDefault: () => void }) => { event.preventDefault(); document.getElementById(id)?.focus() }
 const clockText = (seconds: number) => { const n = Math.max(0, Math.floor(seconds)); return `${String(Math.floor(n / 3600)).padStart(2,'0')}:${String(Math.floor(n % 3600 / 60)).padStart(2,'0')}:${String(n % 60).padStart(2,'0')}` }

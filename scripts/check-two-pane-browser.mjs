@@ -134,8 +134,8 @@ export async function checkTwoPaneBrowser() {
    for(const theme of ['paper','sky','midnight','ember']){
     await evaluate(`document.documentElement.dataset.theme=${JSON.stringify(theme)}`)
     assert(await evaluate('document.documentElement.scrollWidth <= innerWidth'),`${theme} page overflow at ${width}px`)
-    if(width>=768) assert(await evaluate('document.querySelector(".answer-window").getBoundingClientRect().left > document.querySelector(".program-window").getBoundingClientRect().left'),`Two columns at ${width}`)
-    else assert(await evaluate('document.querySelector(".answer-window").getBoundingClientRect().top > document.querySelector(".program-window").getBoundingClientRect().top'),'Source precedes answers on phones')
+    if(width>=1200) assert(await evaluate('document.querySelector(".answer-window").getBoundingClientRect().left > document.querySelector(".program-window").getBoundingClientRect().left'),`Two columns at ${width}`)
+    else assert(await evaluate('!document.querySelector(".answer-window") && document.querySelectorAll(".program-window .ib input").length===10'),`Inline answers below 75rem (${width}px)`)
    }
   }
   await navigate('/?view=practice')
@@ -185,8 +185,8 @@ export async function checkTwoPaneBrowser() {
   await click('.explain-switch');assert(await evaluate('document.querySelector(".code-comment")!==null'))
   await click('#exam-submit');await wait('document.querySelector("dialog[open]")')
   await click('.dialog-actions button:last-child');await wait('document.querySelector(".exam-reports")')
-  assert.equal(await evaluate('document.querySelectorAll(".exam-question-report:first-child .blank-field.is-correct").length'),10)
-  assert(await evaluate('document.querySelector(".exam-question-report:nth-child(2) .blank-field.is-wrong")!==null'))
+  assert.equal(await evaluate('document.querySelectorAll(".exam-question-report:first-child :is(.blank-field,.ib).is-correct").length'),10)
+  assert(await evaluate('document.querySelector(".exam-question-report:nth-child(2) :is(.blank-field,.ib).is-wrong")!==null'))
   assert(await evaluate('document.querySelector(".accepted-answer")!==null'))
   assert(await evaluate('document.documentElement.scrollWidth <= innerWidth'),'Mock report overflow at 320px')
   if(process.env.EXAMDESK_SCREENSHOT) {
