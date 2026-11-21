@@ -2,6 +2,10 @@ import './verify-wp.mjs'
 import { readFile, writeFile } from 'node:fs/promises'
 import assert from 'node:assert/strict'
 import { findGcc, runC } from '../server/run-c.mjs'
+import { verifyITPMethods } from './verify-itp-methods.mjs'
+
+// Switch on after the per-question concept notes have been merged into the bank.
+const REQUIRE_CONCEPT = true
 
 const paths = ['past', 'original', 'mocks'].map(name => new URL(`../src/data/itp/${name}.json`, import.meta.url))
 const pools = await Promise.all(paths.map(path => readFile(path, 'utf8').then(JSON.parse)))
@@ -16,12 +20,20 @@ for (const q of questions) {
   assert.deepEqual(tokens, q.blanks.map(b => b.id).sort(), `Token mismatch ${q.id}`)
   assert(q.title && q.source && q.topic && q.prompt && q.trace.length && typeof q.runnable === 'boolean', `Metadata ${q.id}`)
   for (const b of q.blanks) assert(b.accepted.length && b.accepted.every(x => typeof x === 'string' && x.length) && b.explanation, `${q.id} blank ${b.id}`)
+  if (REQUIRE_CONCEPT || q.concept !== undefined) {
+    assert(typeof q.concept === 'string', `${q.id}: concept must be a string`)
+    const concept = q.concept.trim()
+    assert(concept.length >= 20 && concept.length <= 600, `${q.id}: concept must be 20–600 characters`)
+    const sentences = concept.split(/[.!?]+(?:["')\]]+)?(?:\s+|$)/).filter(part => part.trim())
+    assert(sentences.length >= 2 && sentences.length <= 4, `${q.id}: concept needs 2–4 sentences`)
+    for (const blank of q.blanks) for (const answer of blank.accepted) if (answer.length >= 3) assert(!concept.toLowerCase().includes(answer.toLowerCase()), `${q.id}: concept leaks Blank ${blank.id}: ${answer}`)
+  }
   if (q.type === 'blanks') {
     assert.equal(q.blanks.length, 10, `${q.id}: exactly 10 blanks required`)
     const ordered = Array.from({ length: 10 }, (_, i) => String.fromCharCode(65 + i))
     assert.deepEqual(markers, ordered, `${q.id}: Blank 1..10 must occur once each in program order (A..J internally)`)
     assert.deepEqual(q.blanks.map(b => b.id), ordered, `${q.id}: answer order`)
-    assert(Array.isArray(q.explanations) && q.explanations.length >= 6 && q.explanations.length <= 15, `${q.id}: whole-program explanations required`)
+    assert(Array.isArray(q.explanations) && q.explanations.length >= 6 && q.explanations.length <= 18, `${q.id}: whole-program explanations required (6-18)`)
     for (const comment of q.explanations) {
       assert(Number.isInteger(comment.line) && comment.line >= 1 && comment.line <= q.code.split('\n').length, `${q.id}: invalid explanation line`)
       assert(typeof comment.text === 'string' && comment.text.trim() && !/[\r\n]/.test(comment.text), `${q.id}: comments must be short single lines`)
@@ -38,7 +50,7 @@ for (const q of questions) {
 }
 assert.equal(coverage.length, 69)
 for (const section of coverage) for (const id of section.questionIds) assert(ids.has(id), `Missing source ${section.section}`)
-assert.equal(questions.filter(q => q.pool === 'original' && q.type === 'blanks').length, 25)
+assert(questions.filter(q => q.pool === 'original' && q.type === 'blanks').length >= 55)
 assert.equal(questions.filter(q => q.pool === 'original' && q.type === 'output').length, 10)
 const used = new Set()
 for (const p of papers) {
@@ -51,6 +63,7 @@ for (const p of papers) {
   }
 }
 console.log(`Structural validation passed: ${questions.length} questions, ${coverage.length} source sections, ${papers.length} disjoint mock papers.`)
+await verifyITPMethods(questions, papers)
 const gcc = await findGcc()
 // Structural-only runs must not erase the last real compiler evidence or verified flags.
 if (!gcc) {

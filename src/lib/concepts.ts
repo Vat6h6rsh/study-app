@@ -5,6 +5,13 @@ export interface ConceptExample {
   expectedOutput: string
 }
 
+/** First prose paragraph, skipping note metadata, headings and fenced examples. */
+export function firstConceptParagraph(markdown: string) {
+  const prose = markdown.replace(/\r\n/g, '\n').replace(/^```[^\n]*\n[\s\S]*?^```\s*$/gm, '')
+  return (prose.split(/\n\s*\n/).map(block => block.split('\n').filter(line => !/^(?:#|Topic ID:)/.test(line)).join(' ').trim()).find(block => block && !/^(?:[-*>|]|\d+\.)\s/.test(block)) || '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/`|\*\*/g, '')
+}
+
 // Keep answer extraction shared by the lesson runner and the GCC verifier.
 // Authoring format: a C fence with main, then Answers: A = `...`, then a text output fence.
 export function conceptExamples(markdown: string): ConceptExample[] {

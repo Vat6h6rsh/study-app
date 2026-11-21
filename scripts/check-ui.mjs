@@ -47,6 +47,8 @@ for (const bg of ['code', 'code-field']) for (const [fg, min] of [['code-text', 
 pairs.push(['warning', 'warning-bg', 4.5])
 // Two-pane code chips, comments, revealed keys, eye controls and input verdicts use these aliases.
 pairs.push(['code-muted', 'code-bg', 4.5], ['accent', 'blank-highlight', 4.5], ['accent', 'code-bg', 3], ['muted', 'surface-2', 4.5], ['primary', 'blank-highlight', 4.5], ['correct', 'surface', 4.5], ['wrong', 'surface', 4.5])
+// Concept disclosure/link, amber revealed tokens/fields, green completed code and reveal-all.
+pairs.push(['muted', 'surface', 4.5], ['text', 'surface', 4.5], ['primary', 'surface-2', 4.5], ['hue-amber', 'tint-amber', 4.5], ['correct', 'code-bg', 4.5])
 // Topic surfaces also form the hero, feedback and score gradients. Both opaque
 // endpoints and their actual sRGB interpolations must retain readable text.
 const hues = ['indigo', 'teal', 'amber', 'sky', 'pink', 'violet', 'cyan', 'orange', 'iris', 'gold', 'plum']
@@ -138,16 +140,16 @@ try {
   assert.doesNotThrow(() => persistPreference(THEME_KEY, 'sky'))
 
   assert(app('learn').includes('Opening your study notes'))
-  assert(app('practice').includes('Check answers'))
+  assert(app('practice').includes('Check output'))
   const practice = app('practice')
   assert(practice.indexOf('What this program does') < practice.indexOf('class="code-editor'), 'Practice brief precedes code')
   assert(practice.includes('0 fully correct in a row'))
   // Phone navigation: four labelled primary tabs with the current one marked, a position bar,
-  // a Review-concept link and a sticky action dock; the top bar and safe areas are in the CSS.
+  // a collapsed concept note and a sticky action dock; the top bar and safe areas are in the CSS.
   const learnHtml = app("learn"), tabs = learnHtml.slice(learnHtml.indexOf("<nav class=\"tab-bar\""), learnHtml.indexOf("</nav>", learnHtml.indexOf("<nav class=\"tab-bar\"")))
   for (const label of ['Home', 'Learn', 'Practice', 'Mock']) assert(tabs.includes('>' + label + '</span>'), 'Tab: ' + label)
   assert(/class="tab active"[^>]*aria-current="page"/.test(tabs) && (tabs.match(/aria-current/g) || []).length === 1, 'Exactly one current tab')
-  assert(practice.includes('Question 1 of') && practice.includes('aria-label="Previous question"') && practice.includes('Review concept') && practice.includes('sticky-dock'))
+  assert(practice.includes('Question 1 of') && practice.includes('aria-label="Previous question"') && practice.includes('<details class="concept-note">') && practice.includes('Concept:') && practice.includes('sticky-dock'))
   const phoneCss = css.slice(css.indexOf("--bar-h:calc("))
   assert(phoneCss.includes(".sidebar { position:sticky; top:0"), "Phone top bar is sticky")
   assert(css.includes("env(safe-area-inset-bottom)") && css.includes("html[data-kbd] .sticky-dock") && css.includes("--tab-h:3.5rem"))
@@ -203,13 +205,15 @@ try {
   const q = questions.find(q => q.type === 'blanks'), failed = Object.fromEntries(questions.find(q => q.type === 'blanks').blanks.map(b => [b.id, false]))
   const code = renderToString(createElement(CodeQuestion, { question:q, answers:{}, results:failed, locked:true, onChange(){} }))
   assert(code.includes('Answer differs; review marked answers below') && /readonly/i.test(code))
-  assert(!code.includes('<pre'), 'Interactive code lines must not create invalid pre/div nesting')
+  assert(!/<pre[^>]*>[^<]*<div/.test(code), 'Code lines must not create invalid pre/div nesting')
+  assert(code.includes('aria-label="Expected output"') && code.indexOf('Expected output') > code.indexOf('editor-bottom'), 'Expected stdout follows the program window')
   const liveCode = renderToString(createElement(CodeQuestion, { question:q, answers:{}, results:{ ...failed, [q.blanks[0].id]: true }, locked:true, feedback:true, onChange(){} }))
   assert(liveCode.includes('feedback-live') && liveCode.includes('is-wrong') && liveCode.includes('is-correct') && liveCode.includes('✗') && liveCode.includes('✓'))
   const { EXPLAIN_KEY } = await server.ssrLoadModule('/src/lib/practice.ts')
   const renderCode = props => renderToString(createElement(CodeQuestion, { question:q, answers:{}, onChange(){}, ...props })).replace(/<!--[\s\S]*?-->/g, '')
   globalThis.localStorage = { getItem: () => null }
   const neutral = renderCode({})
+  assert(neutral.includes('class="reveal-all" aria-pressed="false"') && neutral.includes('Reveal all'))
   assert.equal((neutral.match(/class="blank-field is-neutral/g) || []).length, 10)
   assert.equal((neutral.match(/type="text"/g) || []).length, 10)
   for (let i = 1; i <= 10; i++) assert(neutral.includes(`_________Blank${i}_________`) && neutral.includes(`>Blank ${i}</label>`))
@@ -218,11 +222,25 @@ try {
   assert(neutral.includes('autoCorrect="off"') || neutral.includes('autocorrect="off"'))
   globalThis.localStorage = { getItem: key => key === EXPLAIN_KEY ? 'true' : null }
   const explained = renderCode({})
-  assert(explained.includes('code-comment') && explained.includes('// The include directive'))
+  assert(explained.includes('code-comment') && /\/\/ [A-Z]/.test(explained))
   const mockCode = renderCode({ mode:'mock', answers:Object.fromEntries(q.blanks.map(b => [b.id,b.accepted[0]])) })
-  assert(!mockCode.includes('reveal-answer') && !mockCode.includes('is-correct') && !mockCode.includes('is-wrong') && !mockCode.includes('code-comment') && !mockCode.includes('aria-invalid'))
+  assert(!mockCode.includes('reveal-answer') && !mockCode.includes('reveal-all') && !mockCode.includes('program-answer') && !mockCode.includes('is-correct') && !mockCode.includes('is-wrong') && !mockCode.includes('code-comment') && !mockCode.includes('aria-invalid'))
   const revealedCode = renderCode({ revealed:[q.blanks[0].id], answers:{ [q.blanks[0].id]:q.blanks[0].accepted[0] } })
   assert(revealedCode.includes('is-revealed') && revealedCode.includes('Revealed · no mark') && revealedCode.includes('1 revealed'))
+  const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;')
+  const typed = renderCode({ answers:{ [q.blanks[0].id]:q.blanks[0].accepted[0] } })
+  assert(typed.includes('program-answer is-correct') && typed.includes(`aria-label="Blank 1, correct: ${escape(q.blanks[0].accepted[0])}"`))
+  assert(renderCode({answers:{[q.blanks[0].id]:'equivalent expression'},results:{[q.blanks[0].id]:true},locked:true}).includes('aria-label="Blank 1, correct: equivalent expression"'),'A self-marked equivalent fills the code with the student answer')
+  assert(!renderCode({ answers:{ [q.blanks[0].id]:'definitely wrong' } }).includes('program-answer'))
+  const { ConceptNote } = await server.ssrLoadModule('/src/components/ConceptNote.tsx')
+  const { conceptByTopic } = await server.ssrLoadModule('/src/data/concepts.ts')
+  const { firstConceptParagraph } = await server.ssrLoadModule('/src/lib/concepts.ts')
+  const note = conceptByTopic.get(q.topic)
+  const conceptHtml = question => renderToString(createElement(ConceptNote,{question,onLearn(){}})).replace(/<!--[\s\S]*?-->/g,'')
+  const fallbackConcept = conceptHtml({...q,concept:undefined})
+  assert(fallbackConcept.includes('<details class="concept-note">') && !fallbackConcept.includes(' open='))
+  assert(fallbackConcept.includes(escape(firstConceptParagraph(note.markdown))) && fallbackConcept.includes(`aria-label="Open the full ${escape(note.title)} lesson"`))
+  assert(conceptHtml({...q,concept:'A local concept. Keep the idea in mind.'}).includes('<p>A local concept. Keep the idea in mind.</p>'))
   for (const question of questions.filter(q => q.subject === 'itp' && q.type === 'blanks')) {
     assert.equal(question.blanks.length,10)
     assert.deepEqual([...question.code.matchAll(/__([A-Z])__/g)].map(m => m[1]), Array.from({length:10},(_,i)=>String.fromCharCode(65+i)))
@@ -230,8 +248,21 @@ try {
   const fallback = renderToString(createElement(QuestionBrief, { question: { ...q, brief: undefined, prompt: 'Read the input. Calculate the sum. Print the result.' } }))
   assert(fallback.includes('<p>Read the input. Calculate the sum.</p><p>Print the result.</p>'))
   const brief = renderToString(createElement(QuestionBrief, { question: { ...q, prompt: 'Preserve the final newline.', brief: { goal: 'Sum two values.', rules: ['Read two integers.', 'Add the values.'], sample: { input: '2 3', output: '5\n<script>' } } } }))
-  assert(brief.includes('Rules</h4><ul><li>Read two integers.') && brief.includes('Sample input') && brief.includes('Sample output') && brief.includes('Preserve the final newline.'))
-  assert(!brief.includes('<script>') && brief.includes('&lt;script&gt;'))
+  assert(brief.includes('Rules</h4><ul><li>Read two integers.') && !brief.includes('Sample output') && brief.includes('Preserve the final newline.'))
+  const expectedSample = renderToString(createElement(CodeQuestion, { question:{ ...q, expectedOutput:undefined, stdin:'', brief:{ sample:{input:'2 3',output:'5\n<script>'} } }, answers:{}, onChange(){} }))
+  assert(expectedSample.includes('Sample input') && expectedSample.includes('Expected output') && expectedSample.includes('&lt;script&gt;') && !expectedSample.includes('<script>'))
+  const { TopicPicker, studyTopics } = await server.ssrLoadModule('/src/components/TopicPicker.tsx')
+  const itpSubject = (await server.ssrLoadModule('/src/data/index.ts')).subjects.find(s=>s.id==='itp')
+  const picker = renderToString(createElement(TopicPicker,{subject:itpSubject,pool:questions.filter(q=>q.subject==='itp'&&q.pool!=='mock'),current:q,attempts:[],onSelect(){},onLearn(){}})).replace(/<!--[\s\S]*?-->/g,'')
+  assert(picker.includes('Core 0/') && picker.includes('correct') && picker.includes('revisit') && picker.includes('Read the note') && picker.includes('priority-extra'))
+  let previousTitle=-1
+  for(const topic of studyTopics(itpSubject)) {const index=picker.indexOf(topic.name.replaceAll('&','&amp;'));assert(index>previousTitle,'Picker follows Learn order');previousTitle=index}
+  assert(home.includes('Start Core practice') && home.includes('Go further'))
+  assert(practice.includes('All · Core first') && practice.includes('Only mistakes'))
+  for (const question of questions.filter(q=>q.subject==='itp')) {
+    const html=renderToString(createElement(CodeQuestion,{question,answers:{},onChange(){}}))
+    assert.equal(html.includes('aria-label="Expected output"'),question.type==='blanks',question.id+': expected output visibility')
+  }
   const markdown = renderToString(createElement(Markdown, { text: 'Intro.\nTip: Use `sizeof`.\n\n**Trap:** Check bounds.\n\nNote: Read carefully.\n\nRemember: End with a newline.\n\n| Name | Meaning |\n| --- | --- |\n| **n** | <script> |\n\n```c\nputs("ok");\n```' }))
   for (const kind of ['tip', 'trap', 'note', 'remember']) assert(markdown.includes('callout-' + kind))
   assert(markdown.includes('<table>') && markdown.includes('scope="col"') && markdown.includes('<strong>n</strong>') && markdown.includes('C · fill the blanks'))

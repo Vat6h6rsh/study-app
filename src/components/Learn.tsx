@@ -22,6 +22,7 @@ export function Markdown({ text }: { text: string }) {
   const blocks: ReactNode[] = []
   let i = 0
   while (i < lines.length) {
+    const blockKey = i
     const line = lines[i]
     if (!line.trim() || line.startsWith('Topic ID:')) { i++; continue }
     if (line.startsWith('```')) {
@@ -30,7 +31,7 @@ export function Markdown({ text }: { text: string }) {
       i++
       while (i < lines.length && !lines[i].startsWith('```')) code.push(lines[i++])
       i++
-      blocks.push(<div className="learn-code" key={i}><span>{language === 'c' ? 'C · fill the blanks before revealing' : language === 'text' ? 'Template / reference' : language ? `${language} · example` : 'Code example'}</span><pre tabIndex={0}><code>{code.join('\n')}</code></pre></div>)
+      blocks.push(<div className="learn-code" key={blockKey}><span>{language === 'c' ? 'C · fill the blanks before revealing' : language === 'text' ? 'Template / reference' : language ? `${language} · example` : 'Code example'}</span><pre tabIndex={0}><code>{code.join('\n')}</code></pre></div>)
       continue
     }
     const cells = (row: string) => row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim())
@@ -39,7 +40,7 @@ export function Markdown({ text }: { text: string }) {
       i += 2
       const rows: string[][] = []
       while (i < lines.length && lines[i].trim() && lines[i].includes('|')) rows.push(cells(lines[i++]))
-      blocks.push(<div className="learn-table-wrap" key={i} tabIndex={0} role="region" aria-label={`Reference table: ${headers.join(', ')}`}><table><thead><tr>{headers.map((cell, j) => <th scope="col" key={j}>{inline(cell)}</th>)}</tr></thead><tbody>{rows.map((row, j) => <tr key={j}>{headers.map((_, k) => <td key={k}>{inline(row[k] || '')}</td>)}</tr>)}</tbody></table></div>)
+      blocks.push(<div className="learn-table-wrap" key={blockKey} tabIndex={0} role="region" aria-label={`Reference table: ${headers.join(', ')}`}><table><thead><tr>{headers.map((cell, j) => <th scope="col" key={j}>{inline(cell)}</th>)}</tr></thead><tbody>{rows.map((row, j) => <tr key={j}>{headers.map((_, k) => <td key={k}>{inline(row[k] || '')}</td>)}</tr>)}</tbody></table></div>)
       continue
     }
     const callout = /^(?:>\s*)?(?:\*\*)?(Tip|Trap|Note|Remember):(?:\*\*)?\s*(.*)$/i.exec(line)
@@ -48,20 +49,20 @@ export function Markdown({ text }: { text: string }) {
       const text = [callout[2]]
       i++
       while (i < lines.length && lines[i].trim() && !/^(#|```|\||- |\d+\. |Answers:|Topic ID:|(?:>\s*)?(?:\*\*)?(?:Tip|Trap|Note|Remember):)/i.test(lines[i])) text.push(lines[i++].replace(/^>\s*/, ''))
-      blocks.push(<aside className={`learn-callout callout-${kind}`} key={i}><strong><span aria-hidden="true">{({ tip: '✦', trap: '⚑', note: 'ⓘ', remember: '◆' })[kind]}</span> {callout[1]}</strong><p>{inline(text.join(' '))}</p></aside>)
+      blocks.push(<aside className={`learn-callout callout-${kind}`} key={blockKey}><strong><span aria-hidden="true">{({ tip: '✦', trap: '⚑', note: 'ⓘ', remember: '◆' })[kind]}</span> {callout[1]}</strong><p>{inline(text.join(' '))}</p></aside>)
       continue
     }
     if (line.startsWith('Answers:')) {
       const answer: string[] = []
       while (i < lines.length && !/^#{1,3} /.test(lines[i])) answer.push(lines[i++])
-      blocks.push(<details className="learn-solution" key={i}><summary>Reveal answers and reasoning</summary><Markdown text={answer.join('\n').replace(/^Answers:/, '**Answers:**')}/></details>)
+      blocks.push(<details className="learn-solution" key={blockKey}><summary>Reveal answers and reasoning</summary><Markdown text={answer.join('\n').replace(/^Answers:/, '**Answers:**')}/></details>)
       continue
     }
     const heading = /^(#{1,3}) (.+)$/.exec(line)
     if (heading) {
       const title = inline(heading[2])
       const id = headingId(heading[2])
-      blocks.push(heading[1].length === 1 ? <h2 tabIndex={-1} key={i} id={id}>{title}</h2> : heading[1].length === 2 ? <h3 tabIndex={-1} key={i} id={id}>{title}</h3> : <h4 tabIndex={-1} key={i} id={id}>{title}</h4>)
+      blocks.push(heading[1].length === 1 ? <h2 tabIndex={-1} key={blockKey} id={id}>{title}</h2> : heading[1].length === 2 ? <h3 tabIndex={-1} key={blockKey} id={id}>{title}</h3> : <h4 tabIndex={-1} key={blockKey} id={id}>{title}</h4>)
       i++; continue
     }
     if (/^(- |\d+\. )/.test(line)) {
@@ -71,13 +72,13 @@ export function Markdown({ text }: { text: string }) {
       while (i < lines.length && pattern.test(lines[i])) {
         items.push(<li key={i}>{inline(lines[i++].replace(pattern, ''))}</li>)
       }
-      blocks.push(ordered ? <ol key={i}>{items}</ol> : <ul key={i}>{items}</ul>)
+      blocks.push(ordered ? <ol key={blockKey}>{items}</ol> : <ul key={blockKey}>{items}</ul>)
       continue
     }
     const paragraph = [line]
     i++
     while (i < lines.length && lines[i].trim() && !/^(#|```|\||- |\d+\. |Answers:|Topic ID:|(?:>\s*)?(?:\*\*)?(?:Tip|Trap|Note|Remember):)/i.test(lines[i])) paragraph.push(lines[i++])
-    blocks.push(<p key={i}>{inline(paragraph.join(' '))}</p>)
+    blocks.push(<p key={blockKey}>{inline(paragraph.join(' '))}</p>)
   }
   return <>{blocks}</>
 }
@@ -89,7 +90,7 @@ interface Props {
   onSelect: (id: string) => void
   onPractice: (topic?: string) => void
   onRun: (code: string, title: string) => void
-  /** True when the reader arrived from a practice question's "Review concept" link. */
+  /** True when the reader arrived from a practice question's concept note. */
   fromPractice?: boolean
   onBackToPractice?: () => void
 }

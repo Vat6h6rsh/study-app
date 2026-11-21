@@ -8,7 +8,11 @@ import { AnswerFeedback } from './Delight'
 import { PromptText } from './QuestionBrief'
 import { StudyLink } from './StudyLink'
 import { topicTone } from '../topicColors'
-import { questions } from '../data'
+import { questions, subjects } from '../data'
+import { Sheet } from './Sheet'
+import { studyTopics, TopicPicker } from './TopicPicker'
+import { topicGroups } from '../lib/practiceNavigation'
+import { useIsMobile } from '../lib/viewport'
 
 export const timeText = (seconds: number) => { const s = Math.max(0, Math.floor(seconds)); return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}` }
 export const scoreText = (score: number) => Number(score.toFixed(2)).toString()
@@ -67,11 +71,35 @@ function Exercise({question:q,record,onLearn}:{question:WPQuestion;record:(a:Att
   </section>
 }
 export function WPPractice({topic:initialTopic,attempts,record,onLearn}:{topic:string;attempts:Attempt[];record:(a:Attempt)=>void;onLearn:(s:string)=>void}) {
-  const [topic,setTopic]=useState(initialTopic),[source,setSource]=useState('all'),[type,setType]=useState('all'),[selected,setSelected]=useState('')
-  useEffect(()=>{setTopic(initialTopic);setSelected('')},[initialTopic])
-  const latest=new Map(attempts.map(a=>[a.questionId,a]));const available=questions.filter((q):q is WPQuestion=>q.subject==='wp' && (q.pool!=='mock'||attempts.some(a=>a.questionId===q.id&&a.mode==='exam')))
-  const topics=[...new Set(available.map(q=>q.topic))]
-  const pool=available.filter(q=>(topic==='all'||topic==='mistakes'?(topic==='all'||(latest.get(q.id)?.score !== undefined ? latest.get(q.id)!.score! < latest.get(q.id)!.total! : Object.values(latest.get(q.id)?.results||{}).some(x=>!x))):q.topic===topic)&&(source==='all'||q.pool===source)&&(type==='all'||q.type===type))
-  const q=pool.find(q=>q.id===selected)||pool[0]
-  return <><div className="page-heading"><div><h1>Writing Practice</h1><p className="muted">Draft, review the rubric, compare a model, then revise. Writing scores are self-assessed.</p></div><span className="tag">{pool.length} matching tasks</span></div><div className="filter-bar"><label>Topic<select value={topic} onChange={e=>{setTopic(e.target.value);setSelected('')}}><option value="all">All topics</option><option value="mistakes">Only my mistakes</option>{topics.map(t=><option key={t}>{t}</option>)}</select></label><label>Question bank<select value={source} onChange={e=>setSource(e.target.value)}><option value="all">All available</option><option value="past">Past papers</option><option value="original">Original practice</option><option value="mock">Submitted mock review</option></select></label><label>Question type<select value={type} onChange={e=>setType(e.target.value)}><option value="all">All types</option>{['writing','abstract-parts','grammar-rewrite','mcq','match'].map(t=><option key={t}>{t}</option>)}</select></label></div>{q?<><label className="wp-question-picker">Choose a task<select value={q.id} onChange={e=>{setSelected(e.target.value);requestAnimationFrame(()=>document.querySelector<HTMLElement>('.question-heading')?.focus())}}>{pool.map(x=><option key={x.id} value={x.id}>{x.title} · {x.source}</option>)}</select></label><Exercise key={q.id} question={q} record={record} onLearn={onLearn}/></>:<div className="panel empty-state"><h2>No matching tasks</h2><p>Try another topic or question bank.</p><button type="button" className="button secondary" onClick={()=>{setTopic('all');setType('all');setSource('all')}}>Browse all tasks</button></div>}</>
+  const [topic,setTopic]=useState(initialTopic==='mistakes'?'all':initialTopic),[source,setSource]=useState('all'),[type,setType]=useState('all'),[selected,setSelected]=useState('')
+  const [onlyMistakes,setOnlyMistakes]=useState(initialTopic==='mistakes'),[pickerOpen,setPickerOpen]=useState(false)
+  const mobile=useIsMobile(),[filtersOpen,setFiltersOpen]=useState(false)
+  useEffect(()=>{setTopic(initialTopic==='mistakes'?'all':initialTopic);setOnlyMistakes(initialTopic==='mistakes');setSelected('')},[initialTopic])
+  const subject=subjects.find(s=>s.id==='wp')!, latest=new Map(attempts.map(a=>[a.questionId,a]))
+  const available=questions.filter((q):q is WPQuestion=>q.subject==='wp' && (q.pool!=='mock'||attempts.some(a=>a.questionId===q.id&&a.mode==='exam')))
+  const eligible=topicGroups(available.filter(q=>{
+    const a=latest.get(q.id), mistake=a && (a.score!==undefined && a.total!==undefined ? a.score<a.total : Object.values(a.results).some(x=>!x))
+    return (!onlyMistakes||mistake)&&(source==='all'||q.pool===source)&&(type==='all'||q.type===type)
+  }),studyTopics(subject))
+  const groups=eligible.filter(g=>topic==='all'||g.id===topic), pool=groups.flatMap(g=>g.questions)
+  const q=pool.find(q=>q.id===selected)||pool[0], group=groups.find(g=>g.id===q?.topic)
+  const inTopic=group?.questions||[], index=inTopic.findIndex(x=>x.id===q?.id), next=eligible[eligible.findIndex(g=>g.id===q?.topic)+1]
+  function choose(id:string) {setSelected(id);setPickerOpen(false);requestAnimationFrame(()=>document.querySelector<HTMLElement>('.question-heading')?.focus())}
+  const picker=<TopicPicker subject={subject} pool={pool} current={q} attempts={attempts} onSelect={choose} onLearn={id=>{setPickerOpen(false);onLearn(id)}}/>
+  return <>
+    <div className="page-heading"><div><h1>Writing Practice</h1><p className="muted">Draft, review the rubric, compare a model, then revise. Writing scores are self-assessed.</p></div><span className="tag">{pool.length} matching tasks</span></div>
+    <details className="filter-details" open={!mobile||filtersOpen} onToggle={e=>{if(mobile)setFiltersOpen(e.currentTarget.open)}}><summary onClick={e=>{if(!mobile)e.preventDefault()}}>Filters · {topic==='all'?'All topics':group?.name}</summary><div className="filter-bar">
+      <label>Topic<select value={topic} onChange={e=>{setTopic(e.target.value);setSelected('')}}><option value="all">All topics</option>{studyTopics(subject).map(t=><option key={t.id} value={t.id}>{t.name}</option>)}</select></label>
+      <label>Question bank<select value={source} onChange={e=>{setSource(e.target.value);setSelected('')}}><option value="all">All available</option><option value="past">Past papers</option><option value="original">Original practice</option><option value="mock">Submitted mock review</option></select></label>
+      <label>Question type<select value={type} onChange={e=>{setType(e.target.value);setSelected('')}}><option value="all">All types</option>{['writing','abstract-parts','grammar-rewrite','mcq','match'].map(t=><option key={t}>{t}</option>)}</select></label>
+      <label className="check-label"><input type="checkbox" checked={onlyMistakes} onChange={e=>{setOnlyMistakes(e.target.checked);setSelected('')}}/>Only mistakes</label>
+    </div></details>
+    {q?<>
+      <aside className="question-nav panel"><details className="question-picker"><summary>Topics and progress · {groups.length} topics</summary>{picker}</details></aside>
+      <div className="question-bar"><button type="button" className="question-bar-step" aria-label="Previous question" disabled={index<=0} onClick={()=>choose(inTopic[index-1].id)}>‹</button><button type="button" className="question-bar-position" onClick={()=>setPickerOpen(true)} aria-haspopup="dialog"><strong>Question {index+1} of {inTopic.length} in {group?.name}</strong><span className="small muted">Topics ▾</span></button><button type="button" className="question-bar-step" aria-label="Next question" disabled={index===inTopic.length-1} onClick={()=>choose(inTopic[index+1].id)}>›</button></div>
+      <Sheet title="Topics and tasks" open={pickerOpen} onClose={()=>setPickerOpen(false)}>{picker}</Sheet>
+      <Exercise key={q.id} question={q} record={record} onLearn={onLearn}/>
+      {index===inTopic.length-1 && <div className="topic-end-actions">{next && <button type="button" className="button primary" onClick={()=>{if(topic!=='all')setTopic(next.id);choose(next.questions[0].id)}}>Next topic: {next.name}</button>}<button type="button" className="button secondary" onClick={()=>{setTopic(q.topic);setOnlyMistakes(true);setSelected('')}}>Review mistakes in this topic</button></div>}
+    </>:<div className="panel empty-state"><h2>No matching tasks</h2><p>Try another topic or question bank.</p><button type="button" className="button secondary" onClick={()=>{setTopic('all');setType('all');setSource('all');setOnlyMistakes(false)}}>Browse all tasks</button></div>}
+  </>
 }

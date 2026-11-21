@@ -38,6 +38,29 @@ assert.deepEqual(loadProgress(), { version: 1, attempts: [] })
 console.log('Behavior checks passed: exact per-blank marking, accepted alternatives, normalization, output line boundaries, latest-attempt mistakes, accuracy, corrupt and unavailable localStorage.')
 assert.equal(readExplainCode(), false); assert.doesNotThrow(() => storeExplainCode(true))
 import { readFile } from 'node:fs/promises'
+import { topicGroups, questionProgress } from '../src/lib/practiceNavigation.ts'
+const itpPools = await Promise.all(['past','original','mocks'].map(n=>readFile(new URL(`../src/data/itp/${n}.json`,import.meta.url),'utf8').then(JSON.parse)))
+const itpPractice = itpPools.flat().filter(q=>q.pool!=='mock')
+const topicOrder=['operators','loops','arrays','matrices','strings','functions','pointers','structs','memory','files','scope'].map(id=>({id,name:id,priority:'High'}))
+const groups=topicGroups(itpPractice,topicOrder)
+assert.deepEqual(groups.map(g=>g.id),topicOrder.map(t=>t.id))
+for(const group of groups) {
+  const firstExtra=group.questions.findIndex(q=>q.priority==='extra')
+  if(firstExtra!==-1) assert(group.questions.slice(firstExtra).every(q=>q.priority==='extra'),'Core precedes Extra within every topic')
+  for(const priority of ['core','extra']) {
+    const subset=group.questions.filter(q=>q.priority===priority)
+    for(let i=1;i<subset.length;i++) {
+      const prev=subset[i-1], next=subset[i], rank={Foundation:0,Exam:1,Challenge:2}
+      assert(rank[prev.difficulty]<=rank[next.difficulty])
+      if(prev.difficulty===next.difficulty && prev.pool==='original') assert.notEqual(next.pool,'past')
+    }
+  }
+}
+const progressQ=itpPractice.find(q=>q.priority==='core')
+const progress=questionProgress([progressQ],[{questionId:progressQ.id,results:{A:false}},{questionId:progressQ.id,results:{A:true}}])
+assert.deepEqual(progress,{done:1,correct:1,revisit:0,coreCount:1,coreDone:1},'Topic progress uses the latest attempt once')
+assert(itpPools[2].every(q=>!itpPractice.some(p=>p.id===q.id)),'All six mocks remain exclusive')
+console.log('Navigation behavior passed: Learn topic order, Core-first ordering, Foundation/Exam/Challenge then source order, latest-attempt topic progress and mock exclusivity.')
 import { markWP, wpScore, normalizeSentence, wordCount, grammarMatches, wordDiff, highlightSelection, initialWPAnswers } from '../src/lib/wp.ts'
 import { submissionMarkdown } from '../server/save-writing.mjs'
 const wpPools=await Promise.all(['past','original','mocks'].map(n=>readFile(new URL(`../src/data/wp/${n}.json`,import.meta.url),'utf8').then(JSON.parse)))

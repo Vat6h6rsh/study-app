@@ -1,0 +1,20 @@
+UI task for this Vite+React+TS study app ("Examdesk"). ITP practice is a two-pane view (program pane with `_________BlankN_________` chips | answer pane with 10 password-style boxes: eye reveal, live red/green), an "Explain code" switch, expected output, topic grouping, Core/Extra, mocks A-F. Read README.md, src/ (esp. CodeQuestion.tsx, src/lib/practice.ts, App.tsx, Learn.tsx, Report.tsx), src/index.css, src/data/types.ts, src/data/README.md, scripts/, and ../ui-ux-learning-guide.md (the UI standard) first. No new npm deps. Keep themes, mobile shell, accessibility, reduced motion, confetti/streak, Core/Extra, topic grouping and everything else. Edit files with your file tools, never PowerShell Get-Content/Set-Content (corrupts UTF-8). Run node scripts from upper-case Y:\. Do NOT run git. Other agents are writing NEW files under tmp-patches/ in parallel (a per-question `concept` string and rewritten `explanations`); do NOT edit src/data/itp/*.json question files and do not touch tmp-patches/ or src/data/dm/ or content/dm/.
+
+## 1. "Review concept" becomes an inline collapsible concept note
+Replace the "Review concept" button in the practice question view/feedback with a compact collapsible panel (closed by default; native <details>/<summary> or an accessible disclosure): summary row "Concept: <topic name>" with a chevron; expanded it shows the question's `concept` text (a new optional string field on ITP questions, 2-4 sentences; add it to src/data/types.ts and document it in src/data/README.md), plus a small arrow-link icon button (aria-label "Open the full <Topic> lesson") that navigates to the matching Learn note, keeping the existing "Back to your question" return flow. If `concept` is missing, fall back to the first paragraph of the topic's Learn note. Style it subtly so it doesn't compete with the code (progressive disclosure, hierarchy, AA contrast in all 4 themes).
+
+## 2. Revealed answers fill the program window
+- When a blank is revealed via its eye button, the corresponding `Blank N` chip in the program pane is replaced by the answer text, rendered inline as code in a distinct "revealed" style (e.g. amber/accent outline + small eye icon, AA contrast in all 4 themes), so the program reads as complete code. Hiding restores the chip.
+- When the student's typed answer is correct (green), also fill that chip with their answer in the correct (green) style. Wrong/empty input keeps the chip.
+- Inline flow; long answers stay within the pane's horizontal scroll, never breaking page layout.
+- Screen readers: "Blank N, revealed: <answer>" / "Blank N, correct: <answer>".
+
+## 3. Reveal all answers
+A "Reveal all" / "Hide all" toggle button at the top of the answer pane (eye icon, aria-pressed). Reveal all shows every answer in the boxes AND fills every chip at once; Hide all restores. Revealed blanks count as revealed (not correct) for score/streak, like individual reveals. Hidden/disabled in mock exams while the timer runs. On mobile keep it in the answers section header.
+
+## 4. Checks
+- verify-content.mjs: if a question has `concept`, it must be 2-4 sentences-ish (20-600 chars) and contain no accepted answer (length >= 3) of its blanks, case-insensitive. Do NOT require `concept` to exist yet (the supervisor will merge them and then switch the check to required: add a clearly named constant REQUIRE_CONCEPT = false at the top that, when true, requires it for every ITP question).
+- UI/browser checks: reveal fills the chip and hide restores; correct typed answer fills the chip; reveal-all/hide-all; reveal controls absent during mocks; concept panel closed by default with a working link to the Learn note; contrast of any new tokens in all 4 themes; no horizontal overflow at 390px.
+- node scripts/check-ui.mjs (and browser check scripts), npm run check:behavior, npm run verify:content (structural; gcc may be blocked in your sandbox), npm run build must pass. Revert verification.json if only its timestamp changed.
+- Write a short audit section to content/study-app-ui-audit-reveal.md (separate file; supervisor merges it).
+Report what changed and the check results.

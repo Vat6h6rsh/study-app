@@ -114,41 +114,91 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf, the function that displays formatted text."
+      },
+      {
+        "line": 2,
+        "text": "This header declares functions for requesting and releasing memory while the program runs."
       },
       {
         "line": 3,
-        "text": "Each employee record keeps an identifier and a salary."
+        "text": "A struct groups named fields, called members. This record keeps an employee number and salary together."
       },
       {
         "line": 4,
-        "text": "A pointer parameter allows the helper to update the original salary."
+        "text": "This helper receives access to an employee and a percentage. A pointer holds an address, the location of data in memory."
       },
       {
         "line": 5,
-        "text": "The arrow accesses a structure member through a pointer."
+        "text": "The arrow follows p to its record and selects the salary member. The update applies a percentage increase to that employee."
+      },
+      {
+        "line": 7,
+        "text": "Execution starts in main. It prepares the employees and calls the helper for each one."
+      },
+      {
+        "line": 8,
+        "text": "n tracks the record count. best holds an index, a position counted from zero, for the leading employee."
       },
       {
         "line": 9,
-        "text": "Reserve heap storage and handle an unsuccessful allocation."
+        "text": "Request enough memory for the employee records. e will point to the beginning of this storage."
+      },
+      {
+        "line": 10,
+        "text": "Check whether the memory request failed before using e. Returning 1 ends the program with an error status."
+      },
+      {
+        "line": 11,
+        "text": "This array, an ordered collection of values, supplies the starting salaries."
       },
       {
         "line": 12,
-        "text": "Populate identifiers and starting pay before applying raises."
+        "text": "Start i at zero; check the limit before each round, then increase i. Fill each record with its number and starting pay."
       },
       {
         "line": 13,
-        "text": "Apply each raise and track the highest resulting salary."
+        "text": "Start another pass through the records. Each round updates one employee before comparing salaries."
+      },
+      {
+        "line": 14,
+        "text": "Give the helper access to this employee so its change affects the stored record, rather than a separate copy."
+      },
+      {
+        "line": 15,
+        "text": "Compare the updated employee with the leader. Replace the saved position only when this employee should lead."
       },
       {
         "line": 17,
-        "text": "Select a record by address and display its members."
+        "text": "Make winner point to the chosen record so the following display can use its fields."
+      },
+      {
+        "line": 18,
+        "text": "Each %d is a placeholder for an integer. Display the chosen employee number and salary, then end the line."
       },
       {
         "line": 19,
-        "text": "Release the record array after use."
+        "text": "Release the requested storage after its final use so it does not remain occupied unnecessarily."
+      },
+      {
+        "line": 20,
+        "text": "Returning zero from main tells the environment that the program finished successfully."
       }
-    ]
+    ],
+    "methods": [
+      "malloc",
+      "null-allocation",
+      "free",
+      "dynamic-struct",
+      "arrow",
+      "struct-value-pointer",
+      "struct-search"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "malloc"
+    ],
+    "concept": "A struct groups related values into one record, here an employee number and salary. A pointer stores a memory address so a helper can change the original record. The program reserves storage while running, updates each employee, and remembers which record has the greatest salary."
   },
   {
     "id": "mock-a2",
@@ -265,37 +315,63 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares the formatted display function used below."
       },
       {
         "line": 2,
-        "text": "Two output pointers allow the helper to report separate triangular totals."
+        "text": "The helper receives a table and its size. Pointer parameters hold memory addresses so it can change the caller's two totals."
       },
       {
         "line": 3,
-        "text": "Initialise both caller-owned totals before scanning."
+        "text": "The star follows an address to the stored integer. Prepare both running totals before any entries are added."
       },
       {
         "line": 4,
-        "text": "Nested loops visit every square-matrix element."
+        "text": "The outer loop visits the rows. It checks its limit before each round and increases i after that row is processed."
+      },
+      {
+        "line": 5,
+        "text": "For each row, start j at zero and visit its columns. An index is a position counted from zero."
       },
       {
         "line": 6,
-        "text": "One strict index relationship selects the upper triangle."
+        "text": "Check whether this position belongs above the diagonal. If it does, include its entry in the upper total."
       },
       {
         "line": 7,
-        "text": "The opposite strict relationship selects the lower triangle, excluding the diagonal."
+        "text": "Only if the preceding test failed, check the lower region. Diagonal entries belong to neither total here."
+      },
+      {
+        "line": 10,
+        "text": "Execution begins in main, which prepares data before calling the helper."
+      },
+      {
+        "line": 11,
+        "text": "The braces form a table of rows. u and l will receive the two results from the helper."
       },
       {
         "line": 12,
-        "text": "Pass the addresses of the two result variables."
+        "text": "Pass the table and access to both result variables. Their addresses tell the helper where to store its answers."
       },
       {
         "line": 13,
-        "text": "Display both computed totals."
+        "text": "Each %d displays an integer supplied after the format string. The newline moves the next display onto a fresh line."
+      },
+      {
+        "line": 14,
+        "text": "Return zero to report successful completion to the environment."
       }
-    ]
+    ],
+    "methods": [
+      "triangles",
+      "multiple-return",
+      "address"
+    ],
+    "priority": "extra",
+    "mainMethods": [
+      "triangles"
+    ],
+    "concept": "A square matrix is a table with equally many rows and columns. Comparing row and column positions separates entries above and below its main diagonal. Pointer parameters let one helper store two separate results in variables belonging to its caller."
   },
   {
     "id": "mock-a3",
@@ -419,37 +495,74 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares file operations and printf, which displays formatted text."
       },
       {
         "line": 2,
-        "text": "A record pairs a roll number and a mark."
+        "text": "A struct groups related fields into a record. Each result has a roll number and a mark."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which opens the files before processing any records."
       },
       {
         "line": 4,
-        "text": "Open a record input stream and a separate passing-record output stream."
+        "text": "Create an input stream, a connection used to read a file. Its mode must allow existing results to be read."
+      },
+      {
+        "line": 5,
+        "text": "Create a separate output stream for the selected records. The mode controls how the destination file is prepared."
       },
       {
         "line": 6,
-        "text": "Close any successfully opened stream if the other opening fails."
+        "text": "If either open failed, close any stream that did succeed and return an error status. This avoids using an invalid connection."
       },
       {
-        "line": 6,
-        "text": "Close both streams before displaying the summary."
+        "line": 7,
+        "text": "r holds one record at a time. count tracks accepted records and total accumulates their marks."
       },
       {
         "line": 8,
-        "text": "Process a record only when both numeric conversions succeed."
+        "text": "Try to read a complete record on every round. %d reads an integer; addresses tell fscanf where to put the values."
       },
       {
         "line": 9,
-        "text": "Filter records by the inclusive passing threshold."
+        "text": "Test the mark against the passing rule. Only records satisfying that rule enter the following block."
       },
       {
         "line": 10,
-        "text": "Write each passing record and accumulate its mark and count."
+        "text": "Send the accepted record to the destination file using its required numeric layout."
+      },
+      {
+        "line": 11,
+        "text": "Add this accepted mark to the running total and update the number of accepted records."
+      },
+      {
+        "line": 14,
+        "text": "Close both file connections after reading ends. Closing output also completes any buffered writing."
+      },
+      {
+        "line": 15,
+        "text": "Display the accepted-record count and mark total. Each %d is replaced by an integer and the newline ends the line."
+      },
+      {
+        "line": 16,
+        "text": "Return zero from main to report that processing completed successfully."
       }
-    ]
+    ],
+    "methods": [
+      "file-r",
+      "file-w",
+      "file-null",
+      "file-records",
+      "formatted-file",
+      "file-close"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "file-r"
+    ],
+    "concept": "Text files store records that can be read as numbers. This program selects records using a mark threshold, writes the selected records to another file, and tracks their count and total marks. Checking each read prevents incomplete records from being processed."
   },
   {
     "id": "mock-a4",
@@ -566,37 +679,67 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for displaying formatted text."
       },
       {
         "line": 2,
-        "text": "Euclid's algorithm recursively reduces the pair to a greatest common divisor."
-      },
-      {
-        "line": 2,
-        "text": "Compute a common divisor from the original numerator and denominator."
+        "text": "This function finds a common divisor. Each call has its own a and b, separate from the values in other calls."
       },
       {
         "line": 3,
-        "text": "The base case ends recursion when the second value is zero."
+        "text": "Handle the stopping case before making another call. A recursive function needs a case that can finish without calling itself."
       },
       {
         "line": 4,
-        "text": "Each recursive step uses the former divisor and its remainder."
+        "text": "Ask the same function to solve a smaller divisor problem. The remainder, what is left after division, makes progress possible."
       },
       {
         "line": 6,
-        "text": "Pointer parameters let the helper change both fraction components."
+        "text": "This helper receives pointers, which hold memory addresses. They let it change the caller's two integers."
       },
       {
-        "line": 6,
-        "text": "Divide both pointed-to components by the same divisor."
+        "line": 7,
+        "text": "First obtain the shared divisor from the stored numerator and denominator. The star accesses a value through its address."
+      },
+      {
+        "line": 8,
+        "text": "Use the shared divisor to simplify the numerator stored in the caller's variable."
+      },
+      {
+        "line": 9,
+        "text": "Divide the stored denominator by g as well, preserving the value of the fraction."
+      },
+      {
+        "line": 11,
+        "text": "Execution begins in main; the helper functions run only when called."
+      },
+      {
+        "line": 12,
+        "text": "These integers hold the original numerator and denominator of the fraction."
       },
       {
         "line": 13,
-        "text": "Pass addresses so the caller's fraction is updated."
+        "text": "Give reduce access to both variables so the simplified fraction replaces their original contents."
+      },
+      {
+        "line": 14,
+        "text": "Each %d prints an integer; the slash is ordinary displayed text separating the fraction's two parts."
+      },
+      {
+        "line": 15,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "rec-gcd",
+      "multiple-return",
+      "address"
+    ],
+    "priority": "extra",
+    "mainMethods": [
+      "rec-gcd"
+    ],
+    "concept": "Recursion means that a function calls itself to solve a smaller version of its task. The greatest common divisor is the largest positive number dividing both inputs without a remainder. Pointer parameters let the reduction helper change the numerator and denominator held in main."
   },
   {
     "id": "mock-a5",
@@ -713,37 +856,63 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for displaying text and numbers."
+      },
+      {
+        "line": 2,
+        "text": "This header provides character tests and case conversion functions."
+      },
+      {
+        "line": 3,
+        "text": "This header provides string operations, including measuring the text length."
+      },
+      {
+        "line": 4,
+        "text": "Execution starts in main, where the input and output storage are prepared."
       },
       {
         "line": 5,
-        "text": "Keep the original text and a separate writable output buffer."
+        "text": "in holds the original characters; out reserves space for the filtered text. Arrays keep values in consecutive positions."
       },
       {
         "line": 6,
-        "text": "Track the next free output position."
+        "text": "k tracks where the next kept character belongs in the destination. Prepare it before scanning begins."
       },
       {
         "line": 7,
-        "text": "Inspect every input character before its terminator."
+        "text": "Visit the input characters in order, checking whether the text has ended before each round and advancing after the body."
       },
       {
         "line": 8,
-        "text": "Convert to the character-library domain before classification or conversion."
+        "text": "Use an unsigned character value for the library tests. This avoids invalid negative character values on some systems."
       },
       {
         "line": 9,
-        "text": "Retain only letters and convert them to uppercase as they are appended."
+        "text": "Test whether the character is a letter. Store a converted letter at the write position, then advance that position."
       },
       {
         "line": 11,
-        "text": "Terminate the compacted string before displaying it."
+        "text": "Place the hidden string end marker after the kept text so display and length operations know where to stop."
       },
       {
         "line": 12,
-        "text": "Display the filtered text and its length."
+        "text": "The format specifiers %s and %zu display a string and a size value. Measure the kept text rather than the full storage array."
+      },
+      {
+        "line": 13,
+        "text": "Return zero to tell the environment that the program succeeded."
       }
-    ]
+    ],
+    "methods": [
+      "ctype-case",
+      "nul",
+      "strlen"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "ctype-case"
+    ],
+    "concept": "A C string is a sequence of characters followed by a hidden end marker. This program scans the original text, copies only letters into another array, and changes their case. Separate read and write positions keep rejected characters from leaving gaps."
   },
   {
     "id": "mock-b1",
@@ -860,41 +1029,91 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf, the formatted display function."
+      },
+      {
+        "line": 2,
+        "text": "This header declares functions for allocating and releasing storage while the program runs."
       },
       {
         "line": 3,
-        "text": "Each vector record owns a length and an element pointer."
+        "text": "A struct groups fields into one record. n is a length and v is a pointer, a value holding an array's memory address."
+      },
+      {
+        "line": 4,
+        "text": "Execution starts in main, which owns the records and their separate arrays."
       },
       {
         "line": 5,
-        "text": "Allocate the outer record storage."
+        "text": "Request the record table with initially cleared storage. Each row's data will need a separate memory request."
+      },
+      {
+        "line": 6,
+        "text": "If the record request failed, stop with an error status before using the pointer."
+      },
+      {
+        "line": 7,
+        "text": "data supplies the original rows. best marks whether a leader has been chosen; the decimal variable holds its mean."
       },
       {
         "line": 8,
-        "text": "Create variable-length vectors from the corresponding input rows."
+        "text": "Start i at zero and process each record in turn. The condition is checked before every round, then i increases afterward."
+      },
+      {
+        "line": 9,
+        "text": "Store the length needed for this row. The two records intentionally use different amounts of the supplied data."
+      },
+      {
+        "line": 10,
+        "text": "Request a separate integer array for this record using its stored length."
       },
       {
         "line": 11,
-        "text": "Release earlier inner allocations if a later allocation fails."
+        "text": "If a row request fails, release earlier rows and the record table before reporting an error."
       },
       {
-        "line": 11,
-        "text": "Copy current row values while accumulating their total."
+        "line": 12,
+        "text": "Prepare a running sum for this row so values from the previous row are not carried over."
+      },
+      {
+        "line": 13,
+        "text": "Visit only the positions belonging to this row. j increases after each entry is processed."
+      },
+      {
+        "line": 14,
+        "text": "Copy an entry from the fixed data into the allocated row, then include that entry in the row sum."
       },
       {
         "line": 16,
-        "text": "Convert before division so the average retains a fractional part."
+        "text": "Compute the row mean with decimal arithmetic so a fractional part is preserved. Then the following test can compare means."
       },
       {
         "line": 17,
-        "text": "Accept the first row, then keep only improvements."
+        "text": "Accept the first candidate, or a later candidate that improves on it. Save its row position and mean together."
+      },
+      {
+        "line": 19,
+        "text": "Print the chosen row position and mean; %d displays an integer and %.1f displays one digit after the decimal point."
       },
       {
         "line": 20,
-        "text": "Release inner buffers before the outer record array."
+        "text": "Release every row, then the table on the following line. Finally return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "calloc",
+      "malloc",
+      "free",
+      "null-allocation",
+      "leaks",
+      "array-total",
+      "cast"
+    ],
+    "priority": "extra",
+    "mainMethods": [
+      "calloc"
+    ],
+    "concept": "A struct can contain a pointer to a separately allocated array, so records may own different amounts of data. This program computes a mean for each row and remembers the row with the greatest mean. Every successful allocation needs matching cleanup, including when a later request fails."
   },
   {
     "id": "mock-b2",
@@ -1011,37 +1230,66 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
       },
       {
         "line": 2,
-        "text": "The caller supplies a sorted array with spare capacity for one more element."
+        "text": "The function receives an array, its occupied length and a value to insert. Array changes are visible to the caller."
       },
       {
         "line": 3,
-        "text": "Start looking for the insertion point at the beginning."
+        "text": "Prepare the position used to search for an insertion point. An index is an array position counted from zero."
       },
       {
         "line": 4,
-        "text": "Skip elements that belong before the new value."
-      },
-      {
-        "line": 4,
-        "text": "Place the new value into the gap."
+        "text": "Scan while the position is valid and the ordering rule says to keep moving. The left test guards the array access on the right."
       },
       {
         "line": 5,
-        "text": "Shift elements backward from the end to avoid overwriting unread values."
+        "text": "Move backward through the entries that must shift. Checking the limit each round keeps earlier entries in place."
+      },
+      {
+        "line": 6,
+        "text": "Copy an existing entry into the neighboring space on its right. Working backward preserves entries still waiting to move."
+      },
+      {
+        "line": 7,
+        "text": "Place the new value into the opening created by the shifts."
       },
       {
         "line": 8,
-        "text": "Give the caller the enlarged logical length."
+        "text": "Send the updated occupied length back to the caller; a return value is the answer supplied by a function call."
+      },
+      {
+        "line": 10,
+        "text": "Execution begins in main, which prepares storage and calls the insertion helper."
+      },
+      {
+        "line": 11,
+        "text": "The array has room beyond its initially occupied sorted entries. That spare capacity makes insertion possible."
+      },
+      {
+        "line": 12,
+        "text": "Call insert with the occupied length and the new value. Save the returned length for the display loop."
       },
       {
         "line": 13,
-        "text": "Print the valid prefix after insertion."
+        "text": "Visit each occupied position after insertion. %d prints an integer and the space separates neighboring entries."
+      },
+      {
+        "line": 14,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "insert-delete",
+      "array-parameter"
+    ],
+    "priority": "extra",
+    "mainMethods": [
+      "insert-delete"
+    ],
+    "concept": "Insertion into a sorted array requires locating a position and moving existing entries to make room. Moving from the right prevents a copied entry from overwriting data that is still needed. The function changes the array and returns its updated logical length."
   },
   {
     "id": "mock-b3",
@@ -1167,41 +1415,82 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares file operations and text display functions."
+      },
+      {
+        "line": 2,
+        "text": "Execution begins in main, which opens all file connections before reading."
       },
       {
         "line": 3,
-        "text": "Open two sorted inputs and a separate merged-output stream."
+        "text": "Open the two source files using modes that preserve their contents. A stream is a connection through which file data is accessed."
+      },
+      {
+        "line": 4,
+        "text": "Open a separate destination stream. Its mode must prepare the file for the merged text."
       },
       {
         "line": 5,
-        "text": "Handle failed openings without leaving successfully opened streams behind."
+        "text": "If any connection failed, close those that opened successfully and return an error status."
       },
       {
-        "line": 5,
-        "text": "Close all streams once merging finishes."
+        "line": 6,
+        "text": "x and y hold the current candidate integers, one from each source."
       },
       {
         "line": 7,
-        "text": "Prime each input and record whether its first integer was read."
+        "text": "Try to obtain the first candidate from the first file. Save whether a complete integer was actually read."
+      },
+      {
+        "line": 8,
+        "text": "Do the same for the second file. Read-success flags prevent comparisons with missing data."
       },
       {
         "line": 9,
-        "text": "Merge while both sources have current values available."
+        "text": "Repeat comparisons only while both sources still supply a candidate. The condition is tested before every round."
       },
       {
         "line": 10,
-        "text": "Write the earlier value and refresh only that source."
+        "text": "Choose the candidate that should come next. %d writes an integer; &x gives its memory address for the following read."
+      },
+      {
+        "line": 11,
+        "text": "Otherwise write the candidate from the other source and refresh only that source's value and availability flag."
       },
       {
         "line": 13,
-        "text": "Drain any remaining integers from the first source."
+        "text": "Copy any remaining candidates from the first source, checking each new read before another round."
       },
       {
         "line": 14,
-        "text": "Drain any remaining integers from the second source."
+        "text": "Then copy any remaining candidates from the second source. No comparison is needed once the other source has ended."
+      },
+      {
+        "line": 15,
+        "text": "Close all three connections. Closing the destination finishes buffered writing before the completion message."
+      },
+      {
+        "line": 16,
+        "text": "puts displays a completion message and automatically ends its line."
+      },
+      {
+        "line": 17,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "file-r",
+      "file-w",
+      "file-null",
+      "formatted-file",
+      "file-close",
+      "merge"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "file-r"
+    ],
+    "concept": "Merging combines two sorted sequences while preserving order. Keep one unread candidate from each file, write the one that belongs next, and refresh only that candidate. When one file runs out, the other file can be copied without further comparisons."
   },
   {
     "id": "mock-b4",
@@ -1318,37 +1607,59 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
       },
       {
         "line": 2,
-        "text": "The helper recursively finds the largest value in a nonempty prefix."
-      },
-      {
-        "line": 2,
-        "text": "Calculate the array length before invoking the helper."
+        "text": "The helper receives read-only array data and a count. Read-only means the helper must not change the entries through a."
       },
       {
         "line": 3,
-        "text": "A single-element prefix supplies the base result."
+        "text": "Handle the smallest supported problem directly. This stopping case prevents endless calls and starts with real array data."
       },
       {
         "line": 4,
-        "text": "Ask the same helper for the shorter prefix's maximum."
+        "text": "Call the same helper on a smaller portion. Recursion means solving a task through another call to the same function."
       },
       {
         "line": 5,
-        "text": "Inspect the element omitted from that recursive call."
+        "text": "Read the entry excluded from that smaller portion, ready to compare it with the answer just obtained."
       },
       {
         "line": 6,
-        "text": "Choose the larger of the prefix result and the final element."
+        "text": "The question mark and colon select between two choices. Return the larger candidate to the waiting caller."
+      },
+      {
+        "line": 8,
+        "text": "Execution starts in main, which prepares the array and requests its maximum."
+      },
+      {
+        "line": 9,
+        "text": "Every entry is negative, so an assumed starting maximum of zero would be unsuitable."
+      },
+      {
+        "line": 10,
+        "text": "Determine the entry count from storage sizes here, where a still denotes the complete array."
       },
       {
         "line": 11,
-        "text": "Display the maximum, including when all elements are negative."
+        "text": "Run the helper and display its returned integer using %d. The newline ends the display line."
+      },
+      {
+        "line": 12,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "array-parameter",
+      "return",
+      "ternary"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "array-parameter"
+    ],
+    "concept": "A recursive maximum search compares one array entry with the maximum of a smaller part. Its stopping case must use an actual entry so arrays of negative numbers are handled correctly. The array length is calculated where the complete array is available."
   },
   {
     "id": "mock-b5",
@@ -1465,37 +1776,64 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
       },
       {
         "line": 2,
-        "text": "Keep each account's identifier paired with its balance."
+        "text": "A struct groups named fields into one record. Each account holds its identifier and balance together."
       },
       {
         "line": 3,
-        "text": "Two pointer parameters allow one operation to update both accounts."
+        "text": "The helper receives access to two records and a transfer amount. A pointer holds the address where a record lives in memory."
       },
       {
         "line": 4,
-        "text": "Reject a nonpositive amount or insufficient funds before changing balances."
+        "text": "Validate the amount and available funds before changing balances. The double bar means either failing rule is enough to reject it."
       },
       {
         "line": 5,
-        "text": "Subtract the permitted amount from the source account."
+        "text": "The arrow follows the source pointer and selects its balance member, a named field. Apply the withdrawal only after validation."
       },
       {
         "line": 6,
-        "text": "Add the same amount to the destination account."
+        "text": "Update the destination balance to complete the matching deposit. Both changes affect the original records."
       },
       {
         "line": 7,
-        "text": "Report success only after both balance updates."
+        "text": "Return the success status to the caller after both updates are complete."
+      },
+      {
+        "line": 9,
+        "text": "Execution begins in main, which prepares the accounts and requests a transfer."
+      },
+      {
+        "line": 10,
+        "text": "The braces initialize each account's fields in declaration order: identifier first, then balance."
       },
       {
         "line": 11,
-        "text": "Pass account addresses and display the status and resulting balances."
+        "text": "Pass access to both original records and the requested amount. Save the returned status in ok for the display."
+      },
+      {
+        "line": 12,
+        "text": "Each %d displays an integer. Show the status and both balances after the helper finishes."
+      },
+      {
+        "line": 13,
+        "text": "Return zero from main to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "arrow",
+      "address",
+      "struct-value-pointer",
+      "return"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "arrow"
+    ],
+    "concept": "A pointer lets a function change a record belonging to its caller. A transfer must validate the requested amount before changing either balance, then update both accounts as one successful operation. The function also returns a status so the caller can tell whether it succeeded."
   },
   {
     "id": "mock-c1",
@@ -1612,41 +1950,90 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header declares functions for requesting and releasing memory during execution."
+      },
+      {
+        "line": 3,
+        "text": "This header declares string operations for copying names."
       },
       {
         "line": 4,
-        "text": "Each sale record pairs a name with quantity and unit price."
+        "text": "A struct groups named fields into a record. The name array holds characters; qty and price hold integers."
+      },
+      {
+        "line": 5,
+        "text": "Execution starts in main, which prepares the sales records."
       },
       {
         "line": 6,
-        "text": "Reserve record storage and handle allocation failure."
+        "text": "Request storage for the record table. s is a pointer: it holds the memory address where those records begin."
+      },
+      {
+        "line": 7,
+        "text": "Check whether storage was obtained before using s. Returning 1 stops the program with an error status."
       },
       {
         "line": 8,
-        "text": "Populate writable name arrays before selecting a record."
+        "text": "Copy the first product name into its record. The destination must have enough room for the text and its hidden end marker."
+      },
+      {
+        "line": 9,
+        "text": "Copy the remaining names. C strings finish with a hidden zero character that tells text operations where to stop."
+      },
+      {
+        "line": 10,
+        "text": "These arrays supply quantities and prices. best records the leading position, an index counted from zero."
       },
       {
         "line": 11,
-        "text": "Populate quantity and price for each record."
+        "text": "Visit the records in order. Check the limit before each round and advance i after processing that record."
+      },
+      {
+        "line": 12,
+        "text": "Store this record's quantity and price before calculating how much money it represents."
       },
       {
         "line": 13,
-        "text": "Compute this record's revenue from its two numeric fields."
+        "text": "Calculate this record's sales revenue from its stored fields, ready for comparison."
       },
       {
         "line": 14,
-        "text": "Accept the first record, then retain only better revenue."
+        "text": "Select the first candidate or replace the leader when a later record earns more."
+      },
+      {
+        "line": 15,
+        "text": "Save the chosen position and its revenue together so both describe the same record."
       },
       {
         "line": 18,
-        "text": "Form a pointer to the selected record for display."
+        "text": "Adding an index to a record pointer moves by whole records. winner now gives access to the chosen record."
+      },
+      {
+        "line": 19,
+        "text": "The format specifiers %s and %d display a string and an integer. Show the selected name with its revenue."
       },
       {
         "line": 20,
-        "text": "Release the record array after use."
+        "text": "Release the allocated table after displaying it. The following return of zero reports successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "malloc",
+      "free",
+      "dynamic-struct",
+      "strcpy",
+      "arrow",
+      "struct-search"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "malloc"
+    ],
+    "concept": "A struct keeps a product name, quantity and price together as one sales record. The program calculates revenue for each record and remembers the position of the leader. A pointer then provides access to the chosen record before the allocated storage is released."
   },
   {
     "id": "mock-c2",
@@ -1763,37 +2150,71 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf and puts for displaying text."
       },
       {
         "line": 2,
-        "text": "The input inner dimensions agree; the destination has the outer dimensions."
+        "text": "The helper receives two input tables and a destination table. Changes to destination entries remain visible in main."
       },
       {
         "line": 3,
-        "text": "Visit every destination row."
-      },
-      {
-        "line": 3,
-        "text": "Display the resulting matrix one row per line."
+        "text": "The outer loop chooses a destination row. Its limit is checked before each round and i advances afterward."
       },
       {
         "line": 4,
-        "text": "Visit every destination column and reset that cell's accumulation."
+        "text": "For each chosen row, visit the destination columns. j is an index, a position counted from zero."
+      },
+      {
+        "line": 5,
+        "text": "Prepare this cell's running value before adding products. Otherwise an old or uninitialized value could affect it."
       },
       {
         "line": 6,
-        "text": "The inner loop pairs a row of the first input with a column of the second."
+        "text": "Use k to walk through matching positions in the selected left row and right column."
       },
       {
         "line": 7,
-        "text": "Accumulate products to form the current matrix entry."
+        "text": "Multiply a matching pair of entries and add its contribution to the destination cell. Repeat until that cell is complete."
+      },
+      {
+        "line": 10,
+        "text": "Execution starts in main, which prepares the input tables before calling the helper."
+      },
+      {
+        "line": 11,
+        "text": "The nested braces describe rows. The destination table has storage but receives its values from the helper."
       },
       {
         "line": 12,
-        "text": "The caller supplies writable destination storage to the helper."
+        "text": "Call the multiplication helper with access to all three tables. It fills the destination before returning."
+      },
+      {
+        "line": 13,
+        "text": "Now visit each finished destination row for display, starting at row zero."
+      },
+      {
+        "line": 14,
+        "text": "Within that row, print each entry using %d, the integer placeholder. Spaces separate adjacent entries."
+      },
+      {
+        "line": 15,
+        "text": "End the display line after the row so separate rows appear on separate lines."
+      },
+      {
+        "line": 17,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "matrix-multiply",
+      "array-parameter",
+      "void"
+    ],
+    "priority": "extra",
+    "mainMethods": [
+      "matrix-multiply"
+    ],
+    "concept": "Matrix multiplication combines a row from the left table with a column from the right table. Three nested loops select a result row, a result column and the pairs of entries contributing to that cell. Each cell needs a fresh running total before its products are accumulated."
   },
   {
     "id": "mock-c3",
@@ -1918,37 +2339,75 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares file operations and formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header provides functions for changing character case."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which opens the two file connections."
       },
       {
         "line": 4,
-        "text": "Open an incoming-text stream and preserve existing destination log contents."
+        "text": "Prepare the source stream, a connection used to read existing text from a file."
+      },
+      {
+        "line": 5,
+        "text": "Prepare the destination stream so new text follows what is already stored. A file mode selects this behavior."
       },
       {
         "line": 6,
-        "text": "Handle failed openings and close any surviving stream."
-      },
-      {
-        "line": 6,
-        "text": "Close both streams before displaying the processed-chunk count."
+        "text": "If either open failed, close whichever connection succeeded and report an error before processing text."
       },
       {
         "line": 7,
-        "text": "A bounded buffer holds each text chunk."
+        "text": "line is a character array used as temporary storage. count tracks the chunks successfully processed."
       },
       {
         "line": 8,
-        "text": "Read chunks until the source reports no further text."
+        "text": "Attempt a bounded string read before each round. A successful read stores a hidden zero character marking the string end."
       },
       {
         "line": 9,
-        "text": "Convert each stored character to uppercase using the safe library domain."
+        "text": "Start i at zero and continue while the stored character is nonzero. Convert each character safely before advancing i."
       },
       {
         "line": 10,
-        "text": "Append the converted chunk and count this successful read."
+        "text": "Write the converted chunk to the log. A newline read from the source is already part of the text."
+      },
+      {
+        "line": 11,
+        "text": "Update the count after this chunk has been handled, then attempt another read."
+      },
+      {
+        "line": 13,
+        "text": "Close both connections after reading stops. Closing output completes any buffered writing."
+      },
+      {
+        "line": 14,
+        "text": "Use %d, the integer placeholder, to show the processed-chunk count. The newline ends the display line."
+      },
+      {
+        "line": 15,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "file-r",
+      "file-a",
+      "file-null",
+      "file-close",
+      "line-file",
+      "ctype-case",
+      "file-append"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "file-r"
+    ],
+    "concept": "A file can be opened for appending so new text follows existing contents. This program reads bounded chunks of text, changes letters to uppercase and appends each chunk to a log. Each chunk is a C string, with a hidden end marker that the character loop must respect."
   },
   {
     "id": "mock-c4",
@@ -2065,37 +2524,57 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header provides operations for measuring C strings."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, where the text and counting state are prepared."
       },
       {
         "line": 4,
-        "text": "Repeated and leading spaces test the boundary-tracking logic."
+        "text": "s is a character array. Its hidden zero end marker tells string operations where the stored text stops."
       },
       {
         "line": 5,
-        "text": "Track both the word count and whether the scan is currently inside a word."
+        "text": "Prepare the word count and the inside flag, a value remembering whether a word has already begun."
       },
       {
         "line": 6,
-        "text": "Visit all stored characters before the terminator."
+        "text": "Visit character positions in order, checking the text length before each round. size_t is an unsigned type used for sizes."
       },
       {
         "line": 7,
-        "text": "A space moves the scanner outside a word."
+        "text": "When a separator is encountered, change the remembered state so the next word can be recognized."
       },
       {
         "line": 8,
-        "text": "Count a word only on the first nonspace character after a boundary."
+        "text": "For a non-separator, check the remembered state before counting. Letters within an existing word must not count again."
       },
       {
         "line": 9,
-        "text": "Remember that the scanner is now inside the newly counted word."
+        "text": "Count a newly entered word and record that scanning is now within it. The next round continues with the next character."
       },
       {
         "line": 12,
-        "text": "Display the number of word starts found."
+        "text": "Display the word count using %d, a placeholder for an integer. The newline finishes the display line."
+      },
+      {
+        "line": 13,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "strlen"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "strlen"
+    ],
+    "concept": "A state variable remembers whether scanning is currently inside a word. This program treats spaces as separators and counts a word only when a non-space follows a separator or the beginning of the string. Repeated spaces therefore do not create extra words."
   },
   {
     "id": "mock-c5",
@@ -2212,40 +2691,2989 @@
     "explanations": [
       {
         "line": 1,
-        "text": "The include directive imports library declarations used by this program."
+        "text": "This header declares printf for formatted display."
       },
       {
         "line": 2,
-        "text": "A helper computes the combined cubes of a candidate's decimal digits."
+        "text": "The helper receives its own copy of an integer. Changing that copy will not change the number held by its caller."
       },
       {
         "line": 3,
-        "text": "Start a fresh total for each helper call."
+        "text": "Prepare an accumulator, a variable that collects contributions from successive digits."
       },
       {
         "line": 4,
-        "text": "Continue until the working quotient has no digits left."
+        "text": "Check whether any digits remain before each round. Each round must make progress toward the stopping case."
       },
       {
         "line": 5,
-        "text": "Extract a digit, accumulate its cube and discard it."
+        "text": "Separate the rightmost decimal digit. A decimal number uses ten possible digit symbols."
+      },
+      {
+        "line": 6,
+        "text": "Include this digit's cube in the accumulator. A cube is the value obtained by multiplying a number by itself twice."
+      },
+      {
+        "line": 7,
+        "text": "Remove the processed digit from the working copy so the following round handles a different digit."
       },
       {
         "line": 9,
-        "text": "Give the completed digit-cube total back to the caller."
+        "text": "Send the combined digit contributions back to the caller as the function's return value."
+      },
+      {
+        "line": 11,
+        "text": "Execution starts in main, which checks candidate numbers using the helper."
+      },
+      {
+        "line": 12,
+        "text": "count records how many candidates satisfy the rule; initially none have been examined."
       },
       {
         "line": 13,
-        "text": "Test every candidate in the inclusive three-digit range."
+        "text": "Visit the requested three-digit range in increasing order. Check the upper limit before each round and advance afterward."
       },
       {
         "line": 14,
-        "text": "Display and count only candidates equal to their digit-cube total."
+        "text": "Compare the helper's answer with the candidate. When the rule holds, display the candidate with %d and update the count."
       },
       {
         "line": 15,
-        "text": "Display the final number of matching candidates."
+        "text": "Move to a new line and display the count of matching candidates. The label is ordinary printed text."
+      },
+      {
+        "line": 16,
+        "text": "Return zero to report successful completion."
       }
-    ]
+    ],
+    "methods": [
+      "armstrong",
+      "digit-sum",
+      "modulo",
+      "return"
+    ],
+    "priority": "core",
+    "mainMethods": [
+      "armstrong"
+    ],
+    "concept": "Decimal digits can be processed one at a time by separating the rightmost digit from the remaining number. A helper combines the cubes of those digits, and the caller checks whether that value matches the original number. The helper works on its own copy so the caller can still compare with the original."
+  },
+  {
+    "id": "mock-d1",
+    "subject": "itp",
+    "topic": "arrays",
+    "title": "Daily prefixes, Target counts and Usage percentages",
+    "source": "Exam style · Mock D",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "prefix",
+      "array-total",
+      "cast",
+      "for"
+    ],
+    "mainMethods": [
+      "prefix"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Build cumulative daily ticket sales, count target days and report the percentage of available tickets sold.",
+      "rules": [
+        "Daily sales are 6, 9, 4, 11, 5 with 12 seats available each day. Target days sell at least 8 tickets.",
+        "Each prefix entry includes the current day. Unused seats = 5*12 minus total sales.",
+        "Usage percentage = total sold divided by total capacity times 100, printed to one decimal."
+      ],
+      "sample": {
+        "output": "Prefixes=6 15 19 30 35\nTarget=2 Unused=25\nUsage=58.3%\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint main(void) {\n    int daily[] = {6,9,4,11,5}, prefix[5];\n    int total = __A__, target_days = 0;\n    for (int i = 0; __B__; ++i) {\n        total += __C__;\n        prefix[i] = __D__;\n        if (__E__) __F__;\n    }\n    int capacity = __G__;\n    int unused = __H__;\n    double usage = __I__;\n    printf(\"Prefixes=%d %d %d %d %d\\n\", prefix[0], prefix[1], prefix[2], prefix[3], prefix[4]);\n    printf(\"Target=%d Unused=%d\\n\", target_days, unused);\n\n    printf(\"Usage=%.1f%%\\n\", __J__);\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Begin accumulation before the first day."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "i < 5"
+        ],
+        "explanation": "Process five daily readings."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "daily[i]",
+          "(daily[i])"
+        ],
+        "explanation": "Add the current day's sales."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "total",
+          "(total)"
+        ],
+        "explanation": "Store an inclusive cumulative sum."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "daily[i] >= 8"
+        ],
+        "explanation": "The target condition includes exactly eight."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "++target_days",
+          "target_days++"
+        ],
+        "explanation": "Count the qualifying day."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "5 * 12"
+        ],
+        "explanation": "There are twelve available seats on each day."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "capacity - total"
+        ],
+        "explanation": "Subtract sold tickets from available capacity."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "100.0 * total / capacity"
+        ],
+        "explanation": "Floating arithmetic retains the fractional percentage."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "usage",
+          "(usage)"
+        ],
+        "explanation": "A doubled percent sign prints a literal percent."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "Execution begins in main, which processes the fixed daily figures."
+      },
+      {
+        "line": 3,
+        "text": "daily stores the readings in order. prefix reserves a matching slot for each accumulated amount."
+      },
+      {
+        "line": 4,
+        "text": "Prepare the running accumulator and the count of qualifying days before scanning the readings."
+      },
+      {
+        "line": 5,
+        "text": "Start i at zero and visit valid positions. The condition is checked before each round, then i increases after the body."
+      },
+      {
+        "line": 6,
+        "text": "Include this day's reading in the running amount before saving the corresponding prefix."
+      },
+      {
+        "line": 7,
+        "text": "Store a snapshot of the accumulated amount at this position. Later updates must not replace earlier snapshots."
+      },
+      {
+        "line": 8,
+        "text": "Test this day against the required threshold. Update the qualifying-day count only when the rule holds."
+      },
+      {
+        "line": 10,
+        "text": "Determine the full capacity for the observation period. This is the reference amount used by the remaining calculations."
+      },
+      {
+        "line": 11,
+        "text": "Work out the remaining capacity from the full allowance and the accumulated amount."
+      },
+      {
+        "line": 12,
+        "text": "Calculate the percentage using decimal arithmetic so division does not discard the fractional part."
+      },
+      {
+        "line": 13,
+        "text": "Each %d is an integer placeholder. Show the saved prefixes in their original order, then finish the line."
+      },
+      {
+        "line": 14,
+        "text": "Display the qualifying-day count and remaining capacity with labels that identify their meanings."
+      },
+      {
+        "line": 16,
+        "text": "The format %.1f shows one digit after the decimal point; %% prints a percent sign. Supply the calculated percentage."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Prefixes=6 15 19 30 35\nTarget=2 Unused=25\nUsage=58.3%\n",
+    "trace": [
+      "Begin accumulation before the first day.",
+      "Process five daily readings.",
+      "Add the current day's sales.",
+      "Store an inclusive cumulative sum.",
+      "The target condition includes exactly eight.",
+      "Count the qualifying day.",
+      "There are twelve available seats on each day.",
+      "Subtract sold tickets from available capacity.",
+      "Floating arithmetic retains the fractional percentage.",
+      "A doubled percent sign prints a literal percent."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P1",
+    "verified": true,
+    "concept": "A prefix records the accumulated amount up to a particular position in a sequence. This program also counts days meeting a threshold and compares the combined amount with a fixed capacity. Decimal arithmetic preserves the fractional part of the final percentage."
+  },
+  {
+    "id": "mock-d2",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Binary lookup, Array parameters and Persistent calls",
+    "source": "Exam style · Mock D",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "binary-search",
+      "static-local",
+      "array-parameter",
+      "return"
+    ],
+    "mainMethods": [
+      "binary-search",
+      "static-local"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Search two targets in a sorted array using an array function that retains a static call number.",
+      "rules": [
+        "Use sorted values 3, 6, 10, 15, 21. Search 15 and then 4, returning a matching index or -1.",
+        "Print the persistent call number at the start of each function entry. Use an inclusive iterative binary-search interval.",
+        "The array is read-only; do not modify it while searching."
+      ],
+      "sample": {
+        "output": "Call=1\nCall=2\nIndices=3 -1\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint search(__A__, int n, int key) {\n    __B__ int calls = 0;\n    printf(\"Call=%d\\n\", __C__);\n    int low = 0, high = n - 1;\n    while (__D__) {\n        int mid = __E__;\n        if (a[mid] == key) return __F__;\n        if (a[mid] < key) low = __G__;\n        else high = __H__;\n    }\n    return __I__;\n}\nint main(void) {\n    int values[] = {3,6,10,15,21};\n    int first = __J__;\n    int second = search(values, 5, 4);\n    printf(\"Indices=%d %d\\n\", first, second);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "const int a[]",
+          "const int *a"
+        ],
+        "explanation": "Pass the array as a read-only sequence."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "static"
+        ],
+        "explanation": "The local call number must survive between calls."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "++calls"
+        ],
+        "explanation": "Increment before printing the call number."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "low <= high"
+        ],
+        "explanation": "Inclusive bounds allow a one-element search interval."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "low + (high - low) / 2"
+        ],
+        "explanation": "Choose the midpoint of the remaining interval."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "mid",
+          "(mid)"
+        ],
+        "explanation": "A matching midpoint is the requested array index."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "mid + 1"
+        ],
+        "explanation": "Discard the lower half including mid."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "mid - 1"
+        ],
+        "explanation": "Discard the upper half including mid."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "-1"
+        ],
+        "explanation": "An empty interval signals absence."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "search(values, 5, 15)"
+        ],
+        "explanation": "Call the search function with the first fixed target."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "The helper receives read-only array access, an entry count and a target. Read-only access prevents changes through this parameter."
+      },
+      {
+        "line": 3,
+        "text": "The counter needs a lifetime spanning separate calls. Its initial setup happens once, rather than resetting for every search."
+      },
+      {
+        "line": 4,
+        "text": "Update the call count for this invocation and display it with %d, the integer placeholder."
+      },
+      {
+        "line": 5,
+        "text": "low and high mark the inclusive search interval. Array positions, called indexes, start at zero."
+      },
+      {
+        "line": 6,
+        "text": "Repeat while the interval still contains possible candidates. Check this before attempting an array access."
+      },
+      {
+        "line": 7,
+        "text": "Choose a central position inside the remaining interval so a comparison can eliminate part of the search."
+      },
+      {
+        "line": 8,
+        "text": "If the selected entry equals the target, finish this call immediately and send its position back to the caller."
+      },
+      {
+        "line": 9,
+        "text": "When the selected value is too small, continue only with the larger-value portion of the sorted array."
+      },
+      {
+        "line": 10,
+        "text": "Otherwise continue with the smaller-value portion. Exclude the entry already examined so the interval shrinks."
+      },
+      {
+        "line": 12,
+        "text": "If no candidates remain, return the designated failure value. It must be distinguishable from a valid array position."
+      },
+      {
+        "line": 14,
+        "text": "Execution starts in main; the helper runs when the following calls request searches."
+      },
+      {
+        "line": 15,
+        "text": "The fixed entries are in increasing order, which makes discarding half the candidates safe."
+      },
+      {
+        "line": 16,
+        "text": "Run the first requested lookup and save its returned position or failure indication."
+      },
+      {
+        "line": 17,
+        "text": "Run another lookup for a different target. The retained counter links these otherwise separate calls."
+      },
+      {
+        "line": 18,
+        "text": "Display the two returned search answers. Each %d is replaced by its corresponding integer."
+      },
+      {
+        "line": 19,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Call=1\nCall=2\nIndices=3 -1\n",
+    "trace": [
+      "Pass the array as a read-only sequence.",
+      "The local call number must survive between calls.",
+      "Increment before printing the call number.",
+      "Inclusive bounds allow a one-element search interval.",
+      "Choose the midpoint of the remaining interval.",
+      "A matching midpoint is the requested array index.",
+      "Discard the lower half including mid.",
+      "Discard the upper half including mid.",
+      "An empty interval signals absence.",
+      "Call the search function with the first fixed target."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P2",
+    "verified": true,
+    "concept": "Binary search repeatedly discards the half of a sorted sequence that cannot contain the target. A remembered call counter keeps its value between separate invocations of the helper. The search returns a position when successful and a special failure value otherwise."
+  },
+  {
+    "id": "mock-d3",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Palindrome matching, Vowel counts and Case folding",
+    "source": "Exam style · Mock D",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "string-palindrome",
+      "character-count",
+      "ctype-case",
+      "strlen"
+    ],
+    "mainMethods": [
+      "string-palindrome",
+      "character-count"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Test whether a fixed mixed-case word is a palindrome ignoring case and count its vowels.",
+      "rules": [
+        "Use \"ReFeR\". Compare lowercase forms of mirrored characters, without changing the source.",
+        "Count a, e, i, o, u in either case over the whole word. Use unsigned-char inputs for ctype calls.",
+        "Print a yes/no palindrome result and the vowel count."
+      ],
+      "sample": {
+        "output": "Palindrome=yes Vowels=2\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nint main(void) {\n    char s[] = \"ReFeR\";\n    int n = __A__;\n    int ok = __B__, vowels = 0;\n    for (int i = 0; __C__; ++i) {\n        int a = __D__;\n        int b = __E__;\n        if (__F__) ok = 0;\n    }\n    for (int i = 0; i < n; ++i) {\n        int c = __G__;\n        if (__H__) __I__;\n    }\n    printf(\"Palindrome=%s Vowels=%d\\n\", __J__, vowels);\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "(int)strlen(s)"
+        ],
+        "explanation": "Measure only the nonterminal characters."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "1",
+          "(1)"
+        ],
+        "explanation": "Assume symmetry until a mismatch is found."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "i < n / 2"
+        ],
+        "explanation": "Compare each mirrored pair once."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "tolower((unsigned char)s[i])"
+        ],
+        "explanation": "Normalise the left character safely."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "tolower((unsigned char)s[n - 1 - i])"
+        ],
+        "explanation": "Normalise the corresponding right character."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a != b"
+        ],
+        "explanation": "A case-insensitive mismatch disproves the palindrome."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "tolower((unsigned char)s[i])"
+        ],
+        "explanation": "Vowel matching uses the same normalised case."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'"
+        ],
+        "explanation": "Any one of the five vowels qualifies."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "++vowels",
+          "vowels++"
+        ],
+        "explanation": "Count one vowel occurrence."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "ok ? \"yes\" : \"no\""
+        ],
+        "explanation": "Select the requested text verdict."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header provides string length operations."
+      },
+      {
+        "line": 3,
+        "text": "This header provides functions for changing character case."
+      },
+      {
+        "line": 4,
+        "text": "Execution begins in main, which prepares the text and checks it in two passes."
+      },
+      {
+        "line": 5,
+        "text": "s stores mixed-case characters and a hidden zero end marker. That marker tells string operations where the text ends."
+      },
+      {
+        "line": 6,
+        "text": "Determine the text length for the scans. This counts characters before the hidden marker, rather than all available storage."
+      },
+      {
+        "line": 7,
+        "text": "Prepare the match flag, a value remembering whether comparisons have failed, and the vowel counter."
+      },
+      {
+        "line": 8,
+        "text": "Visit paired positions from opposite ends without repeating pairs. Check the limit before each round and advance i afterward."
+      },
+      {
+        "line": 9,
+        "text": "Obtain a common-case version of the character on one side. Use an unsigned character value for safe library conversion."
+      },
+      {
+        "line": 10,
+        "text": "Obtain the corresponding common-case character on the other side. The original string remains unchanged."
+      },
+      {
+        "line": 11,
+        "text": "If a pair fails to match, remember the failure. Later matching pairs must not erase it."
+      },
+      {
+        "line": 13,
+        "text": "Start a separate pass at position zero and visit every text character, increasing i after each round."
+      },
+      {
+        "line": 14,
+        "text": "Prepare this character in a common case so uppercase and lowercase vowels can share one test."
+      },
+      {
+        "line": 15,
+        "text": "Test whether the prepared character is a vowel. Update the count only when it belongs to that group."
+      },
+      {
+        "line": 17,
+        "text": "Choose a message from the match flag. %s displays that string and %d displays the vowel count."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Palindrome=yes Vowels=2\n",
+    "trace": [
+      "Measure only the nonterminal characters.",
+      "Assume symmetry until a mismatch is found.",
+      "Compare each mirrored pair once.",
+      "Normalise the left character safely.",
+      "Normalise the corresponding right character.",
+      "A case-insensitive mismatch disproves the palindrome.",
+      "Vowel matching uses the same normalised case.",
+      "Any one of the five vowels qualifies.",
+      "Count one vowel occurrence.",
+      "Select the requested text verdict."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P3",
+    "verified": true,
+    "concept": "A palindrome has matching letters when read from either end. Converting letters to a common case makes the comparisons independent of capitalization. A separate scan counts vowels, so the program uses two passes for two different tasks."
+  },
+  {
+    "id": "mock-d4",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Nested dimensions, Pointer scaling and Value copies",
+    "source": "Exam style · Mock D",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "nested-struct",
+      "struct-value-pointer",
+      "arrow",
+      "strcpy"
+    ],
+    "mainMethods": [
+      "nested-struct",
+      "struct-value-pointer"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Scale a named panel through a pointer, contrast a change to a by-value copy and compute the resulting area.",
+      "rules": [
+        "A Panel has a char-array name and a nested Size containing width and height. Start at width 3, height 5.",
+        "A by-value helper changes only its copy, while a pointer helper doubles both original dimensions.",
+        "Print the copy area, then the original name, dimensions and final area."
+      ],
+      "sample": {
+        "output": "CopyArea=5\nNorth 6 10 Area=60\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <string.h>\ntypedef struct { int width, height; } Size;\ntypedef struct { char name[16]; Size size; } Panel;\nint copy_area(__A__) {\n    p.size.width = __B__;\n    return __C__;\n}\nvoid scale(__D__) {\n    __E__ *= 2;\n    p->size.height __F__ 2;\n}\nint main(void) {\n    Panel p = {\"\", {3,5}};\n    __G__;\n    printf(\"CopyArea=%d\\n\", __H__);\n    scale(__I__);\n    printf(\"%s %d %d Area=%d\\n\", p.name, p.size.width, p.size.height,\n           __J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Panel p"
+        ],
+        "explanation": "A by-value parameter is a separate complete record."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "1",
+          "(1)"
+        ],
+        "explanation": "Changing the copied width cannot affect main."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "p.size.width * p.size.height"
+        ],
+        "explanation": "Compute area using the modified local copy."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "Panel *p"
+        ],
+        "explanation": "The address lets this helper mutate the original nested record."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "p->size.width"
+        ],
+        "explanation": "Use arrow for the outer pointer and dot for its nested value."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "*="
+        ],
+        "explanation": "Both original dimensions are doubled."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "strcpy(p.name, \"North\")"
+        ],
+        "explanation": "Copy the fixed name into the record's character array."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "copy_area(p)"
+        ],
+        "explanation": "Passing by value leaves the original dimensions intact."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "&p"
+        ],
+        "explanation": "Pass the original record's address for persistent mutation."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "p.size.width * p.size.height"
+        ],
+        "explanation": "Compute the scaled original area."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header declares operations for copying character strings."
+      },
+      {
+        "line": 3,
+        "text": "A struct groups named fields, called members. Size keeps a width and height together."
+      },
+      {
+        "line": 4,
+        "text": "Panel contains a name array and a nested Size record. Nested members allow the dimensions to remain grouped."
+      },
+      {
+        "line": 5,
+        "text": "This helper needs its own record copy. Changes to that copy do not alter the record supplied by the caller."
+      },
+      {
+        "line": 6,
+        "text": "Change the width in the helper's copy. Dot notation accesses a named member within a record."
+      },
+      {
+        "line": 7,
+        "text": "Calculate an area from the copy's dimensions and return that integer to the caller."
+      },
+      {
+        "line": 9,
+        "text": "This helper instead receives a pointer, which holds the memory address of the caller's record."
+      },
+      {
+        "line": 10,
+        "text": "Follow the pointer into the nested dimensions and scale the original width."
+      },
+      {
+        "line": 11,
+        "text": "The arrow accesses a member through a pointer, then the dot selects its nested height. Scale that stored dimension as well."
+      },
+      {
+        "line": 13,
+        "text": "Execution begins in main, which calls both helpers on its record."
+      },
+      {
+        "line": 14,
+        "text": "Initialize the name and nested dimensions. The inner braces supply the Size fields in their declaration order."
+      },
+      {
+        "line": 15,
+        "text": "Copy the required name into the character array. C strings include a hidden zero marker that marks the end of the text."
+      },
+      {
+        "line": 16,
+        "text": "Run the copy-based helper and display its returned area with %d, an integer placeholder."
+      },
+      {
+        "line": 17,
+        "text": "Give the scaling helper access to the original record so its updates remain visible after the call."
+      },
+      {
+        "line": 18,
+        "text": "The format specifiers %s and %d display a string and integers. Display the name and the original record's updated dimensions."
+      },
+      {
+        "line": 19,
+        "text": "Supply the area calculated from the updated original dimensions as the final display argument."
+      },
+      {
+        "line": 20,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "CopyArea=5\nNorth 6 10 Area=60\n",
+    "trace": [
+      "A by-value parameter is a separate complete record.",
+      "Changing the copied width cannot affect main.",
+      "Compute area using the modified local copy.",
+      "The address lets this helper mutate the original nested record.",
+      "Use arrow for the outer pointer and dot for its nested value.",
+      "Both original dimensions are doubled.",
+      "Copy the fixed name into the record's character array.",
+      "Passing by value leaves the original dimensions intact.",
+      "Pass the original record's address for persistent mutation.",
+      "Compute the scaled original area."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P4",
+    "verified": true,
+    "concept": "A struct can contain another struct, keeping related dimensions inside a larger record. Passing a whole record gives a helper a copy, while passing its address allows changes to the original. The two helpers demonstrate why those choices produce different effects on stored data."
+  },
+  {
+    "id": "mock-d5",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Appended readings, Zeroed arrays and Maximum search",
+    "source": "Exam style · Mock D",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "calloc",
+      "file-a",
+      "extreme-index",
+      "file-r",
+      "formatted-file",
+      "free"
+    ],
+    "mainMethods": [
+      "calloc",
+      "file-a",
+      "extreme-index"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Create two readings, append two more, load all four into zeroed heap storage and print the maximum.",
+      "rules": [
+        "Write 13 and 4 to batch.txt, close it, then append 19 and 8 using append mode.",
+        "Reopen in read mode, allocate four zero-initialised ints and read exactly four successful conversions.",
+        "Initialise the maximum from the first read value. Free the heap block and close every stream on success and failure."
+      ],
+      "sample": {
+        "output": "Maximum=19\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    FILE *fp = fopen(\"batch.txt\", \"w\");\n    if (!fp) return 1;\n    fprintf(fp, \"13\\n4\\n\"); fclose(fp);\n    fp = __A__;\n    if (__B__) return 1;\n    __C__;\n    __D__;\n    fp = fopen(\"batch.txt\", \"r\");\n    if (!fp) return 1;\n    int *a = __E__;\n    if (__F__) { fclose(fp); return 1; }\n    for (int i = 0; i < 4; ++i) {\n        if (__G__ != 1) { free(a); fclose(fp); return 1; }\n    }\n    fclose(fp);\n    int largest = __H__;\n    for (int i = 1; i < 4; ++i) if (__I__) largest = a[i];\n    printf(\"Maximum=%d\\n\", largest);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"batch.txt\", \"a\")"
+        ],
+        "explanation": "Append mode preserves the two existing readings."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "fp == NULL",
+          "!fp"
+        ],
+        "explanation": "Guard the append stream."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "fprintf(fp, \"19\\n8\\n\")"
+        ],
+        "explanation": "Add the two new readings as text."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "fclose(fp)"
+        ],
+        "explanation": "Complete the appended output before reading."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "calloc(4, sizeof *a)"
+        ],
+        "explanation": "Allocate four zeroed integer entries."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a == NULL",
+          "!a"
+        ],
+        "explanation": "Close the file if allocation fails."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "fscanf(fp, \"%d\", a + i)"
+        ],
+        "explanation": "Pointer arithmetic supplies the next destination address."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[0]",
+          "(a[0])"
+        ],
+        "explanation": "Seed from actual data rather than an arbitrary sentinel."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "a[i] > largest"
+        ],
+        "explanation": "Replace the maximum when a larger entry is found."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(a)"
+        ],
+        "explanation": "Release the array after its final use."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares file operations and printf. The following header declares memory allocation and release functions."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which creates the data file before reading it."
+      },
+      {
+        "line": 4,
+        "text": "fp holds a file connection's address. Mode \"w\" creates or replaces its contents; the following check stops if opening failed."
+      },
+      {
+        "line": 6,
+        "text": "Write the initial readings as text and close the connection so that stage of writing is complete."
+      },
+      {
+        "line": 7,
+        "text": "Reopen the file so further readings can follow the stored text. Preserve existing contents; the following check tests opening success."
+      },
+      {
+        "line": 9,
+        "text": "Write the required additional readings to the end of the file, keeping each reading on its own line."
+      },
+      {
+        "line": 10,
+        "text": "Finish the append stage by closing its connection before reopening the file for reading."
+      },
+      {
+        "line": 11,
+        "text": "The mode \"r\" opens existing contents for reading. The following check stops with an error if this connection fails."
+      },
+      {
+        "line": 13,
+        "text": "Request an integer array with cleared storage. a holds its memory address; the following check handles failure before a can be used."
+      },
+      {
+        "line": 15,
+        "text": "Visit each destination slot in order, checking the limit before each round and increasing i after a successful read."
+      },
+      {
+        "line": 16,
+        "text": "Read an integer into this slot and check the read count. On failure, release the array, close the file and report an error."
+      },
+      {
+        "line": 18,
+        "text": "Close the input connection after all required readings have been loaded."
+      },
+      {
+        "line": 19,
+        "text": "Choose a stored reading as the initial maximum candidate so the scan starts from actual data."
+      },
+      {
+        "line": 20,
+        "text": "Scan the remaining readings. Replace the candidate only when the new reading is larger."
+      },
+      {
+        "line": 21,
+        "text": "Use %d, an integer placeholder, to display the maximum. The newline ends the display line."
+      },
+      {
+        "line": 22,
+        "text": "Release the allocated array after its final use so its storage does not remain occupied unnecessarily."
+      },
+      {
+        "line": 23,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Maximum=19\n",
+    "trace": [
+      "Append mode preserves the two existing readings.",
+      "Guard the append stream.",
+      "Add the two new readings as text.",
+      "Complete the appended output before reading.",
+      "Allocate four zeroed integer entries.",
+      "Close the file if allocation fails.",
+      "Pointer arithmetic supplies the next destination address.",
+      "Seed from actual data rather than an arbitrary sentinel.",
+      "Replace the maximum when a larger entry is found.",
+      "Release the array after its final use."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P5",
+    "expectedFiles": {
+      "batch.txt": "13\n4\n19\n8\n"
+    },
+    "verified": true,
+    "concept": "Appending adds data after a file's existing contents, unlike opening it for replacement. The program loads the completed file into allocated integer storage, then scans for a maximum. Using a real entry as the starting candidate also works when readings might be negative."
+  },
+  {
+    "id": "mock-e1",
+    "subject": "itp",
+    "topic": "arrays",
+    "title": "Daily rotation, Distinct rankings and Mean activity",
+    "source": "Exam style · Mock E",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "rotate",
+      "second-largest",
+      "array-total",
+      "cast"
+    ],
+    "mainMethods": [
+      "rotate",
+      "second-largest"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Rotate daily counts right once, find their second distinct largest value, and report the mean and below-target count.",
+      "rules": [
+        "Use 5, 12, 7, 12, 9. Rotate by moving the last entry to the front and shifting the other entries right.",
+        "Track largest and second distinct largest in a single scan, ignoring repeated maxima. These positive values have at least two distinct entries.",
+        "Count days with values at least 9; below-target days = five minus that count. Print the mean with one decimal."
+      ],
+      "sample": {
+        "output": "First=9 Second=9\nBelow=2 Mean=9.0\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint main(void) {\n    int a[] = {5,12,7,12,9};\n    int last = __A__;\n    for (int i = 4; i > 0; --i) a[i] = __B__;\n    a[0] = __C__;\n    int best = 0, second = 0, total = 0, reached = 0;\n    for (int i = 0; i < 5; ++i) {\n        total += a[i];\n        if (a[i] >= 9) ++reached;\n        if (__D__) {\n            second = __E__;\n            best = a[i];\n        } else if (__F__) second = __G__;\n    }\n    printf(\"First=%d Second=%d\\n\", a[0], second);\n    printf(\"Below=%d Mean=%.1f\\n\", __H__, __I__);\n    return __J__;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "a[4]",
+          "(a[4])"
+        ],
+        "explanation": "Save the final day before shifting."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "a[i - 1]",
+          "(a[i - 1])"
+        ],
+        "explanation": "Shift from right to left without losing earlier values."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "last",
+          "(last)"
+        ],
+        "explanation": "Wrap the saved final value to the front."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a[i] > best"
+        ],
+        "explanation": "A new largest demotes the previous largest."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "best",
+          "(best)"
+        ],
+        "explanation": "The previous maximum becomes second distinct largest."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[i] < best && a[i] > second"
+        ],
+        "explanation": "Ignore equal maxima and improve only the distinct runner-up."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "a[i]",
+          "(a[i])"
+        ],
+        "explanation": "Keep the best qualifying runner-up."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "5 - reached"
+        ],
+        "explanation": "Derive the complement of the target count."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "(double)total / 5"
+        ],
+        "explanation": "Convert before dividing to retain the mean fraction."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Signal successful completion."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "Execution starts in main, which rearranges the readings before scanning them."
+      },
+      {
+        "line": 3,
+        "text": "The array holds positive readings in order. An index is a position counted from zero."
+      },
+      {
+        "line": 4,
+        "text": "Save the ending entry before any shifts can overwrite it. This temporary value completes the rotation later."
+      },
+      {
+        "line": 5,
+        "text": "Start i at 4 and move backward while i is positive. Copy neighboring entries rightward, then decrease i before checking again."
+      },
+      {
+        "line": 6,
+        "text": "Fill the opening at the front using the saved value. The rotation changes order without adding or removing readings."
+      },
+      {
+        "line": 7,
+        "text": "Prepare two ranked candidates, a running sum and a threshold counter. The starting candidates suit these positive inputs."
+      },
+      {
+        "line": 8,
+        "text": "Start i at zero and scan the full array. Check the limit before each round and increase i after processing the entry."
+      },
+      {
+        "line": 9,
+        "text": "Include this reading in the running sum, even if another reading has the same value."
+      },
+      {
+        "line": 10,
+        "text": "Check the threshold of 9 and increase reached only for readings that meet it."
+      },
+      {
+        "line": 11,
+        "text": "Check whether this reading should become the leading ranked value."
+      },
+      {
+        "line": 12,
+        "text": "When promoting a new leader, preserve the previous leader as the runner-up before replacing it."
+      },
+      {
+        "line": 13,
+        "text": "Store the newly leading value after preserving the old one."
+      },
+      {
+        "line": 14,
+        "text": "Otherwise consider improving the runner-up. Equal copies of the leader must not occupy this distinct rank."
+      },
+      {
+        "line": 16,
+        "text": "Each %d displays an integer. Show the front entry after rotation and the distinct runner-up."
+      },
+      {
+        "line": 17,
+        "text": "Find how many readings missed the threshold and calculate a decimal mean. %.1f displays one digit after the decimal point."
+      },
+      {
+        "line": 18,
+        "text": "Return the normal success status from main after the calculations and display are complete."
+      }
+    ],
+    "expectedOutput": "First=9 Second=9\nBelow=2 Mean=9.0\n",
+    "trace": [
+      "Save the final day before shifting.",
+      "Shift from right to left without losing earlier values.",
+      "Wrap the saved final value to the front.",
+      "A new largest demotes the previous largest.",
+      "The previous maximum becomes second distinct largest.",
+      "Ignore equal maxima and improve only the distinct runner-up.",
+      "Keep the best qualifying runner-up.",
+      "Derive the complement of the target count.",
+      "Convert before dividing to retain the mean fraction.",
+      "Signal successful completion."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P1",
+    "verified": true,
+    "concept": "Rotating an array moves its ending entry to the front while preserving the order of the others. The program also tracks two different leading values, ignoring repetitions when choosing the runner-up. A separate count and a decimal mean describe the same positive readings."
+  },
+  {
+    "id": "mock-e2",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Selection sorting, Last-index search and Block scope",
+    "source": "Exam style · Mock E",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "selection",
+      "linear-last",
+      "block-scope",
+      "array-parameter"
+    ],
+    "mainMethods": [
+      "selection",
+      "linear-last",
+      "block-scope"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Sort an array in a user-defined function, find the last matching index and demonstrate a nested local hiding another local.",
+      "rules": [
+        "Use 8, 3, 8, 1, 6 and selection-sort ascending. Then search all entries for the last 8.",
+        "The search returns -1 if absent. A block declares code=9 inside main, whose outer code=2 remains unchanged.",
+        "Print the block value, the outer value and the last matching sorted index."
+      ],
+      "sample": {
+        "output": "Block=9\nOuter=2 Last=4\n"
+      }
+    },
+    "code": "#include <stdio.h>\nvoid sort(int a[], int n) {\n    for (int i = 0; i < n - 1; ++i) {\n        int smallest = __A__;\n        for (int j = i + 1; j < n; ++j) if (__B__) smallest = j;\n        int t = a[i]; a[i] = __C__; a[smallest] = t;\n    }\n}\nint last(const int a[], int n, int key) {\n    int result = __D__;\n    for (int i = 0; i < n; ++i) if (__E__) result = __F__;\n    return __G__;\n}\nint main(void) {\n    int a[] = {8,3,8,1,6}, code = 2;\n    sort(__H__);\n    {\n        int code = 9;\n        printf(\"Block=%d\\n\", __I__);\n    }\n    printf(\"Outer=%d Last=%d\\n\", code, __J__);\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "i",
+          "(i)"
+        ],
+        "explanation": "Start the selection at the beginning of the unsorted suffix."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "a[j] < a[smallest]"
+        ],
+        "explanation": "Remember the smallest remaining value."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "a[smallest]",
+          "(a[smallest])"
+        ],
+        "explanation": "Bring the selected minimum forward."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "-1"
+        ],
+        "explanation": "No match is represented by a negative index."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "a[i] == key"
+        ],
+        "explanation": "Each equality may replace the previous matching index."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "i",
+          "(i)"
+        ],
+        "explanation": "Retain the latest matching position."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "result",
+          "(result)"
+        ],
+        "explanation": "Return the final last-occurrence index."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a, 5"
+        ],
+        "explanation": "Pass the caller's array so sorting modifies its elements."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "code",
+          "(code)"
+        ],
+        "explanation": "The inner declaration wins inside this block."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "last(a, 5, 8)"
+        ],
+        "explanation": "Search the sorted array for the final matching index."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This helper rearranges the caller's array into increasing order. n is the number of entries to consider."
+      },
+      {
+        "line": 3,
+        "text": "Advance the boundary of the sorted portion one position per round. Each pass searches the remaining unsorted portion."
+      },
+      {
+        "line": 4,
+        "text": "Prepare the position of the smallest candidate for this pass. Array positions, called indexes, start at zero."
+      },
+      {
+        "line": 5,
+        "text": "Scan positions beyond the boundary. Whenever an entry improves on the candidate, remember its position."
+      },
+      {
+        "line": 6,
+        "text": "Swap the boundary entry with the selected entry. t temporarily preserves one value so assigning the other does not destroy it."
+      },
+      {
+        "line": 9,
+        "text": "This read-only search helper receives an array, a count and a target. It must not change entries through a."
+      },
+      {
+        "line": 10,
+        "text": "Prepare a failure indication for the case where no entry matches. It must differ from valid array positions."
+      },
+      {
+        "line": 11,
+        "text": "Visit every entry and replace the remembered position on each match. Continuing the scan allows later matches to take priority."
+      },
+      {
+        "line": 12,
+        "text": "Send the remembered position or failure indication back to the caller."
+      },
+      {
+        "line": 14,
+        "text": "Execution starts in main, which prepares the data before calling the helpers."
+      },
+      {
+        "line": 15,
+        "text": "The array contains a repeated value, making it useful for testing which matching position is remembered."
+      },
+      {
+        "line": 16,
+        "text": "Call the sorting helper with the array and its length. Its changes remain visible after it returns."
+      },
+      {
+        "line": 17,
+        "text": "This opening brace begins an inner block, a region that can declare its own local variables."
+      },
+      {
+        "line": 18,
+        "text": "Declare an inner variable sharing an outer variable's name. Inside this block it hides access to that outer variable by name."
+      },
+      {
+        "line": 19,
+        "text": "Display the value visible inside the block using %d, an integer placeholder. Closing the block ends the inner variable's scope."
+      },
+      {
+        "line": 21,
+        "text": "After the block, the outer value is visible again. Also run the search on the sorted array and display its returned position."
+      },
+      {
+        "line": 22,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Block=9\nOuter=2 Last=4\n",
+    "trace": [
+      "Start the selection at the beginning of the unsorted suffix.",
+      "Remember the smallest remaining value.",
+      "Bring the selected minimum forward.",
+      "No match is represented by a negative index.",
+      "Each equality may replace the previous matching index.",
+      "Retain the latest matching position.",
+      "Return the final last-occurrence index.",
+      "Pass the caller's array so sorting modifies its elements.",
+      "The inner declaration wins inside this block.",
+      "Search the sorted array for the final matching index."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P2",
+    "verified": true,
+    "concept": "Selection sort repeatedly puts the smallest remaining entry into the next unfilled position. A later scan remembers each matching position so the final saved position is the latest match. Block scope allows an inner variable to share an outer variable's name while holding a separate value."
+  },
+  {
+    "id": "mock-e3",
+    "subject": "itp",
+    "topic": "strings",
+    "title": "Concatenated phrases, Word states and Uppercase conversion",
+    "source": "Exam style · Mock E",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "strcat",
+      "word-count",
+      "ctype-case",
+      "strlen",
+      "nul"
+    ],
+    "mainMethods": [
+      "strcat",
+      "word-count",
+      "ctype-case"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Join two hard-coded phrases, uppercase the resulting sentence and count its words.",
+      "rules": [
+        "Use a 40-byte destination initially containing \"learn C\" and append \"  each day\".",
+        "Count words on transitions from a space to a non-space, so the double space creates no empty word.",
+        "Store the result of toupper for each character using an unsigned-char input. Preserve spaces and termination."
+      ],
+      "sample": {
+        "output": "LEARN C  EACH DAY\nWords=4 Length=17\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <string.h>\n#include <ctype.h>\nint main(void) {\n    char sentence[40] = \"learn C\";\n    __A__(sentence, __B__);\n    int words = __C__, inside = 0;\n    for (int i = 0; __D__; ++i) {\n        if (__E__) inside = 0;\n        else if (__F__) {\n            __G__;\n            inside = __H__;\n        }\n        sentence[i] = __I__;\n    }\n    printf(\"%s\\nWords=%d Length=%zu\\n\", sentence, words, __J__);\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "strcat"
+        ],
+        "explanation": "Append after the destination's existing terminator."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "\"  each day\""
+        ],
+        "explanation": "The suffix deliberately starts with two spaces."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "The word counter begins before any word is seen."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "sentence[i] != '\\0'"
+        ],
+        "explanation": "Do not transform or count the terminal byte."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "sentence[i] == ' '"
+        ],
+        "explanation": "Space leaves the current word."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "!inside"
+        ],
+        "explanation": "A non-space after a gap begins a new word."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "++words",
+          "words++"
+        ],
+        "explanation": "Count that new word once."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "1",
+          "(1)"
+        ],
+        "explanation": "Subsequent letters belong to the same word."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "toupper((unsigned char)sentence[i])"
+        ],
+        "explanation": "Store the conversion result back into the sentence."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "strlen(sentence)"
+        ],
+        "explanation": "Count all retained characters including spaces."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header provides string joining and length operations."
+      },
+      {
+        "line": 3,
+        "text": "This header provides character case conversion functions."
+      },
+      {
+        "line": 4,
+        "text": "Execution starts in main, which prepares the destination text before scanning it."
+      },
+      {
+        "line": 5,
+        "text": "sentence reserves spare character storage. Its hidden zero end marker tells string operations where the existing text stops."
+      },
+      {
+        "line": 6,
+        "text": "Extend the existing text with the required phrase. There must be space for all added characters and a new hidden end marker."
+      },
+      {
+        "line": 7,
+        "text": "Prepare the word count and inside flag. A flag is a small stored state, here remembering whether a word has already begun."
+      },
+      {
+        "line": 8,
+        "text": "Start i at zero and visit characters until the hidden end marker. Check before each round and advance i afterward."
+      },
+      {
+        "line": 9,
+        "text": "A separator ends the current word, so clear the remembered word state when one is found."
+      },
+      {
+        "line": 10,
+        "text": "For a non-separator, check whether this position begins a new word rather than continuing one already counted."
+      },
+      {
+        "line": 11,
+        "text": "Update the word count only at the beginning of a new word."
+      },
+      {
+        "line": 12,
+        "text": "Remember that scanning is now within a word. Further letters in the same word must not increase its count."
+      },
+      {
+        "line": 14,
+        "text": "Convert this character using a safe unsigned character value for the library operation. Store the converted character in place."
+      },
+      {
+        "line": 16,
+        "text": "The format specifiers %s, %d and %zu display text, an integer and a size. Show the transformed text, word count and text length."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "LEARN C  EACH DAY\nWords=4 Length=17\n",
+    "trace": [
+      "Append after the destination's existing terminator.",
+      "The suffix deliberately starts with two spaces.",
+      "The word counter begins before any word is seen.",
+      "Do not transform or count the terminal byte.",
+      "Space leaves the current word.",
+      "A non-space after a gap begins a new word.",
+      "Count that new word once.",
+      "Subsequent letters belong to the same word.",
+      "Store the conversion result back into the sentence.",
+      "Count all retained characters including spaces."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P3",
+    "verified": true,
+    "concept": "Joining strings extends existing text inside a destination array that must have enough spare room. A word-state flag prevents repeated spaces from being counted as extra words. The same scan changes letters to uppercase without changing how many characters the string contains."
+  },
+  {
+    "id": "mock-e4",
+    "subject": "itp",
+    "topic": "structs",
+    "title": "Enum records, Field ranking and Struct return values",
+    "source": "Exam style · Mock E",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "enum",
+      "struct-sort",
+      "struct-return",
+      "arrow",
+      "typedef"
+    ],
+    "mainMethods": [
+      "enum",
+      "struct-sort",
+      "struct-return"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Sort named packages by mass, return the first package by value and print it through a struct pointer.",
+      "rules": [
+        "Package records contain name, mass and an enum zone: LOCAL=0 or REMOTE=1. Use Cedar 8/REMOTE, Ash 3/LOCAL, Elm 5/LOCAL.",
+        "Selection-sort the whole records in ascending mass. A helper returns the first sorted record by value.",
+        "Point to that returned record and print its name, mass and numeric enum zone with arrow access."
+      ],
+      "sample": {
+        "output": "Ash Mass=3 Zone=0\n"
+      }
+    },
+    "code": "#include <stdio.h>\nenum Zone { LOCAL, REMOTE };\ntypedef struct { char name[12]; int mass; enum Zone zone; } Package;\n__A__ lightest(Package a[]) { return __B__; }\nint main(void) {\n    Package a[] = {{\"Cedar\",8,REMOTE},{\"Ash\",3,LOCAL},{\"Elm\",5,LOCAL}};\n    for (int i = 0; i < 2; ++i) {\n        int k = __C__;\n        for (int j = i + 1; j < 3; ++j) if (__D__) k = j;\n        Package t = __E__;\n        a[i] = __F__;\n        a[k] = __G__;\n    }\n    Package chosen = lightest(a);\n    Package *p = __H__;\n    printf(\"%s Mass=%d Zone=%d\\n\", __I__, __J__, p->zone);\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "Package"
+        ],
+        "explanation": "Return a complete record rather than a pointer to a local object."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "a[0]",
+          "(a[0])"
+        ],
+        "explanation": "The sorted first record has the least mass."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "i",
+          "(i)"
+        ],
+        "explanation": "Begin with the current unsorted position."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a[j].mass < a[k].mass"
+        ],
+        "explanation": "Rank by the mass field."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "a[i]",
+          "(a[i])"
+        ],
+        "explanation": "Save the complete record."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "a[k]",
+          "(a[k])"
+        ],
+        "explanation": "Move the selected lighter record forward."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "t",
+          "(t)"
+        ],
+        "explanation": "Restore the saved record in the vacated position."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "&chosen"
+        ],
+        "explanation": "Point to a record whose lifetime lasts through printing."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "p->name"
+        ],
+        "explanation": "Access the name field through the pointer."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "p->mass"
+        ],
+        "explanation": "Access the selected mass through the same pointer."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "An enum gives names to integer choices. These two names represent the available zones."
+      },
+      {
+        "line": 3,
+        "text": "A struct groups named fields, called members. Each record holds a character name, an integer mass and an enum zone."
+      },
+      {
+        "line": 4,
+        "text": "This helper returns a complete record by value, meaning a copy. It relies on the caller to have arranged records by mass first."
+      },
+      {
+        "line": 5,
+        "text": "Execution begins in main, which prepares and orders the records before choosing one."
+      },
+      {
+        "line": 6,
+        "text": "Nested braces initialize each record in field order. Each stored name includes a hidden zero character marking the string end."
+      },
+      {
+        "line": 7,
+        "text": "Move the sorted boundary forward one position per round. The final remaining record will then already be in place."
+      },
+      {
+        "line": 8,
+        "text": "Prepare a candidate position within the unsorted portion. An index is a position counted from zero."
+      },
+      {
+        "line": 9,
+        "text": "Check later records for a lighter candidate. Save the position whenever the mass comparison improves the choice."
+      },
+      {
+        "line": 10,
+        "text": "Preserve one complete record temporarily before the swap. Copying the whole struct keeps all its fields together."
+      },
+      {
+        "line": 11,
+        "text": "Move the selected record into the boundary position."
+      },
+      {
+        "line": 12,
+        "text": "Finish the swap by restoring the preserved record into the other position."
+      },
+      {
+        "line": 14,
+        "text": "Call the helper after sorting and store the returned record copy in chosen."
+      },
+      {
+        "line": 15,
+        "text": "Make p hold the memory address of the chosen record. A pointer is a value used to locate other data in memory."
+      },
+      {
+        "line": 16,
+        "text": "The arrow accesses fields through a pointer. %s displays text; %d displays integer fields, including the enum's numeric value."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Ash Mass=3 Zone=0\n",
+    "trace": [
+      "Return a complete record rather than a pointer to a local object.",
+      "The sorted first record has the least mass.",
+      "Begin with the current unsorted position.",
+      "Rank by the mass field.",
+      "Save the complete record.",
+      "Move the selected lighter record forward.",
+      "Restore the saved record in the vacated position.",
+      "Point to a record whose lifetime lasts through printing.",
+      "Access the name field through the pointer.",
+      "Access the selected mass through the same pointer."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P4",
+    "verified": true,
+    "concept": "An enumeration supplies names for a fixed set of integer choices, here two zones. Sorting whole structs by one field keeps every record's name, mass and zone together. A function can return an entire record by value, after which a pointer can access the returned copy."
+  },
+  {
+    "id": "mock-e5",
+    "subject": "itp",
+    "topic": "files",
+    "title": "File updates, Dynamic growth and Reading averages",
+    "source": "Exam style · Mock E",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "core",
+    "methods": [
+      "file-rplus",
+      "realloc",
+      "array-total",
+      "formatted-file",
+      "free"
+    ],
+    "mainMethods": [
+      "file-rplus",
+      "realloc",
+      "array-total"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Create a readings file, update its first value, grow an int array while reading and calculate the mean.",
+      "rules": [
+        "Seed values.txt with 2, 6 and 10 on separate lines. Reopen r+ and overwrite the initial one-digit 2 with one-digit 4; rewind before reading.",
+        "Start capacity two and grow it to four when the third integer is read, using a temporary realloc result.",
+        "On any allocation failure release owned memory and close the file. Print the successful count and floating average to one decimal."
+      ],
+      "sample": {
+        "output": "Count=3 Mean=6.7\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    FILE *fp = fopen(\"values.txt\", \"w\");\n    if (!fp) return 1;\n    fprintf(fp, \"2\\n6\\n10\\n\"); fclose(fp);\n    fp = __A__;\n    if (!fp) return 1;\n    __B__;\n    __C__;\n    int capacity = 2, n = 0, value, total = 0;\n    int *a = __D__;\n    if (!a) { fclose(fp); return 1; }\n    while (__E__ == 1) {\n        if (n == capacity) {\n            capacity *= 2;\n            int *next = __F__;\n            if (__G__) { free(a); fclose(fp); return 1; }\n            a = __H__;\n        }\n        a[n++] = value;\n        total += value;\n    }\n    fclose(fp);\n    printf(\"Count=%d Mean=%.1f\\n\", n, __I__);\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"values.txt\", \"r+\")"
+        ],
+        "explanation": "Update the existing file without truncating it."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "fputc('4', fp)"
+        ],
+        "explanation": "Replace the first byte with another single-digit value."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "rewind(fp)"
+        ],
+        "explanation": "Seek before switching from writing to reading."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "malloc(capacity * sizeof *a)"
+        ],
+        "explanation": "Reserve the initial two slots."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "fscanf(fp, \"%d\", &value)"
+        ],
+        "explanation": "Read a complete integer into a temporary value."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "realloc(a, capacity * sizeof *a)"
+        ],
+        "explanation": "Grow using a temporary pointer so failure cannot lose the block."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "next == NULL",
+          "!next"
+        ],
+        "explanation": "The old allocation still belongs to a on failure."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "next",
+          "(next)"
+        ],
+        "explanation": "Adopt the successful grown allocation."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "(double)total / n"
+        ],
+        "explanation": "Convert before dividing the accumulated readings."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(a)"
+        ],
+        "explanation": "Release the final heap array."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares file operations and printf. The following header declares memory allocation and release functions."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which creates the sample file before reopening it for an update."
+      },
+      {
+        "line": 4,
+        "text": "fp holds a file connection's address. Mode \"w\" creates or replaces its contents; the following check stops if opening failed."
+      },
+      {
+        "line": 6,
+        "text": "Write the initial readings as text and close the connection, completing this stage of writing."
+      },
+      {
+        "line": 7,
+        "text": "Reopen the existing file for both writing and reading without erasing its contents. The following check stops if opening failed."
+      },
+      {
+        "line": 9,
+        "text": "Replace the initial character with the required digit. This overwrite must preserve the remaining file contents."
+      },
+      {
+        "line": 10,
+        "text": "Return the file position to the beginning before reading. Repositioning also permits the switch from writing to reading."
+      },
+      {
+        "line": 11,
+        "text": "capacity counts available slots; n counts occupied slots. value holds each reading and total accumulates their sum."
+      },
+      {
+        "line": 12,
+        "text": "Request the initial integer storage. a holds its memory address; the following check closes the file and stops if allocation failed."
+      },
+      {
+        "line": 14,
+        "text": "Try to read an integer before each round. Continue only after a successful conversion; an address tells the read where to store it."
+      },
+      {
+        "line": 15,
+        "text": "Check whether all slots are occupied before storing another reading. If so, double the capacity on the following line."
+      },
+      {
+        "line": 17,
+        "text": "Request a larger block through a temporary pointer. If growth fails, the following check releases the old block and closes the file."
+      },
+      {
+        "line": 19,
+        "text": "Adopt the successful resized storage only after checking it. This keeps access to the original block if growth fails."
+      },
+      {
+        "line": 21,
+        "text": "Store the reading at the first unoccupied position, then increase n. The following line includes its value in the running sum."
+      },
+      {
+        "line": 24,
+        "text": "Close the input connection after reading finishes so it no longer holds file resources."
+      },
+      {
+        "line": 25,
+        "text": "Use decimal arithmetic for the mean so division preserves a fractional part. %d shows an integer; %.1f shows one decimal place."
+      },
+      {
+        "line": 26,
+        "text": "Release the allocated array after its final use. Its pointer must no longer be used to access that storage."
+      },
+      {
+        "line": 27,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Count=3 Mean=6.7\n",
+    "trace": [
+      "Update the existing file without truncating it.",
+      "Replace the first byte with another single-digit value.",
+      "Seek before switching from writing to reading.",
+      "Reserve the initial two slots.",
+      "Read a complete integer into a temporary value.",
+      "Grow using a temporary pointer so failure cannot lose the block.",
+      "The old allocation still belongs to a on failure.",
+      "Adopt the successful grown allocation.",
+      "Convert before dividing the accumulated readings.",
+      "Release the final heap array."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "pattern": "P5",
+    "expectedFiles": {
+      "values.txt": "4\n6\n10\n"
+    },
+    "verified": true,
+    "concept": "An update stream can modify an existing file and then read it after an explicit repositioning step. A growable array tracks both occupied length and available capacity. Resizing through a temporary pointer preserves access to the original allocation if the request fails."
+  },
+  {
+    "id": "mock-f1",
+    "subject": "itp",
+    "topic": "matrices",
+    "title": "Rectangular products, Dot products and Matrix output",
+    "source": "Exam style · Mock F",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "extra",
+    "methods": [
+      "matrix-multiply",
+      "for"
+    ],
+    "mainMethods": [
+      "matrix-multiply"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Multiply a fixed 2 by 3 matrix by a 3 by 2 matrix and print the 2 by 2 product.",
+      "rules": [
+        "Left rows are {2,1,3} and {0,4,2}; right rows are {1,2}, {3,0}, {2,1}.",
+        "Each product cell sums three pairwise products from a left row and right column. Initialise each result cell before accumulation."
+      ],
+      "sample": {
+        "output": "11 7\n16 2\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint main(void) {\n    int a[2][3] = {{2,1,3},{0,4,2}};\n    int b[3][2] = {{1,2},{3,0},{2,1}}, c[2][2];\n    for (int i = __A__; __B__; ++i) {\n        for (int j = __C__; __D__; ++j) {\n            c[i][j] = __E__;\n            for (int k = 0; __F__; ++k) {\n                c[i][j] __G__ __H__ * __I__;\n            }\n        }\n    }\n    for (int i = 0; i < 2; ++i) {\n        printf(\"%d %d\\n\", c[i][0], __J__);\n\n    }\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Begin at the first result row."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "i < 2"
+        ],
+        "explanation": "There are two left rows."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Begin at the first result column."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "j < 2"
+        ],
+        "explanation": "There are two right columns."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Reset the dot product before adding its terms."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "k < 3"
+        ],
+        "explanation": "The shared inner dimension is three."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "+="
+        ],
+        "explanation": "Accumulate each pairwise product."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "a[i][k]"
+        ],
+        "explanation": "Select an entry across the left row."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "b[k][j]"
+        ],
+        "explanation": "Select an entry down the right column."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "c[i][1]"
+        ],
+        "explanation": "Print both entries in the current product row."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "Execution starts in main, which prepares both input tables."
+      },
+      {
+        "line": 3,
+        "text": "The nested braces describe the left table's rows. Array positions, called indexes, are counted from zero."
+      },
+      {
+        "line": 4,
+        "text": "Prepare the right table and reserve the destination table. A destination entry is not ready to read until the loops assign it."
+      },
+      {
+        "line": 5,
+        "text": "The outer loop selects a destination row. It checks its limit before each round and advances i after processing the row."
+      },
+      {
+        "line": 6,
+        "text": "For each row, visit the destination columns in order. Each combination selects a single result cell."
+      },
+      {
+        "line": 7,
+        "text": "Prepare this cell's starting value before accumulating products. Earlier cells must not contribute to its calculation."
+      },
+      {
+        "line": 8,
+        "text": "Use k to visit the matching positions along the selected left row and right column."
+      },
+      {
+        "line": 9,
+        "text": "Multiply the corresponding entries and include that contribution in this result cell. Continue until all its pairs are processed."
+      },
+      {
+        "line": 13,
+        "text": "After every cell is complete, visit the destination rows for display. i increases after each displayed row."
+      },
+      {
+        "line": 14,
+        "text": "Each %d is an integer placeholder. Display the entries from this result row, and use the newline to end the row."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "11 7\n16 2\n",
+    "trace": [
+      "Begin at the first result row.",
+      "There are two left rows.",
+      "Begin at the first result column.",
+      "There are two right columns.",
+      "Reset the dot product before adding its terms.",
+      "The shared inner dimension is three.",
+      "Accumulate each pairwise product.",
+      "Select an entry across the left row.",
+      "Select an entry down the right column.",
+      "Print both entries in the current product row."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "concept": "A rectangular matrix is a table whose row and column counts may differ. Multiplication is possible here because a left row and a right column contain equally many entries. Each result cell accumulates matching pairwise products before the completed table is displayed row by row."
+  },
+  {
+    "id": "mock-f2",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursive search, Sorted intervals and Missing targets",
+    "source": "Exam style · Mock F",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "extra",
+    "methods": [
+      "rec-binary",
+      "array-parameter",
+      "sizeof",
+      "return"
+    ],
+    "mainMethods": [
+      "rec-binary"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Search a sorted array recursively for one present and one absent target.",
+      "rules": [
+        "Use 4, 9, 16, 25, 36, 49. Search 36 and 18.",
+        "The interval is inclusive. Return -1 when low exceeds high; otherwise compare the midpoint and recurse into exactly one smaller interval."
+      ],
+      "sample": {
+        "output": "Found=4 Missing=-1\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint search(const int a[], int low, int high, int target) {\n    if (__A__) return __B__;\n    int mid = __C__;\n    if (__D__) return __E__;\n    if (target < a[mid]) {\n        return search(a, low, __F__, target);\n    }\n    return search(a, __G__, high, target);\n}\nint main(void) {\n    int a[] = {4,9,16,25,36,49};\n    int n = __H__;\n    int present = search(a, 0, __I__, 36);\n    int absent = __J__;\n    printf(\"Found=%d Missing=%d\\n\", present, absent);\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "low > high"
+        ],
+        "explanation": "An empty interval is the failure base case."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "-1"
+        ],
+        "explanation": "Use the absent-target sentinel."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "low + (high - low) / 2"
+        ],
+        "explanation": "Choose a midpoint inside the current interval."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "a[mid] == target"
+        ],
+        "explanation": "A midpoint equality is the success base case."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "mid",
+          "(mid)"
+        ],
+        "explanation": "Return the found zero-based index."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "mid - 1"
+        ],
+        "explanation": "Exclude the midpoint from the lower recursive interval."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "mid + 1"
+        ],
+        "explanation": "Exclude the midpoint from the upper recursive interval."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "sizeof a / sizeof a[0]"
+        ],
+        "explanation": "Compute the number of array entries."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "n - 1"
+        ],
+        "explanation": "The final valid index is one below the length."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "search(a, 0, n - 1, 18)"
+        ],
+        "explanation": "Run the same recursive algorithm for the missing target."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "The helper receives read-only array access, interval boundaries and a target. Indexes are array positions counted from zero."
+      },
+      {
+        "line": 3,
+        "text": "Check for an empty interval before accessing the array. End this call with a failure indication if no candidates remain."
+      },
+      {
+        "line": 4,
+        "text": "Choose a central position within the current interval. This prepares the entry used to divide the search."
+      },
+      {
+        "line": 5,
+        "text": "If that entry matches the target, return its position immediately. This is the successful stopping case."
+      },
+      {
+        "line": 6,
+        "text": "If the target is smaller than the selected entry, only the lower-value portion can contain it because the array is sorted."
+      },
+      {
+        "line": 7,
+        "text": "Search the smaller-value interval with another call to the same helper. Exclude the entry already checked to ensure progress."
+      },
+      {
+        "line": 9,
+        "text": "Otherwise search the larger-value interval. Return that call's answer directly to the waiting caller."
+      },
+      {
+        "line": 11,
+        "text": "Execution starts in main, which prepares the data before requesting searches."
+      },
+      {
+        "line": 12,
+        "text": "These entries are in increasing order, a requirement for safely discarding half the candidates."
+      },
+      {
+        "line": 13,
+        "text": "Determine the entry count using storage sizes here, where the complete array is available."
+      },
+      {
+        "line": 14,
+        "text": "Search for the requested present value using the full valid interval. Save the returned position."
+      },
+      {
+        "line": 15,
+        "text": "Run a separate lookup for the requested absent value, saving its returned failure indication."
+      },
+      {
+        "line": 16,
+        "text": "Each %d displays an integer. Show the two search answers with labels identifying the corresponding lookups."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Found=4 Missing=-1\n",
+    "trace": [
+      "An empty interval is the failure base case.",
+      "Use the absent-target sentinel.",
+      "Choose a midpoint inside the current interval.",
+      "A midpoint equality is the success base case.",
+      "Return the found zero-based index.",
+      "Exclude the midpoint from the lower recursive interval.",
+      "Exclude the midpoint from the upper recursive interval.",
+      "Compute the number of array entries.",
+      "The final valid index is one below the length.",
+      "Run the same recursive algorithm for the missing target."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "concept": "Recursive binary search calls itself on a smaller interval of a sorted array. Comparing a central entry with the target determines which half can still contain a match. An empty interval is the stopping case for failure, while a matching entry ends the search successfully."
+  },
+  {
+    "id": "mock-f3",
+    "subject": "itp",
+    "topic": "functions",
+    "title": "Recursive factorials, Digit recursion and Result composition",
+    "source": "Exam style · Mock F",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "extra",
+    "methods": [
+      "rec-factorial",
+      "rec-digits",
+      "return"
+    ],
+    "mainMethods": [
+      "rec-factorial",
+      "rec-digits"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Compute a factorial and the sum of its decimal digits using two separate recursive functions.",
+      "rules": [
+        "Factorial returns one when n<=1 and otherwise returns n times factorial(n-1). Use n=6.",
+        "Digit sum returns zero at zero and otherwise combines the last digit with the digit sum of the remaining quotient.",
+        "Store the factorial before passing it to the digit function; the chosen values fit int."
+      ],
+      "sample": {
+        "output": "Factorial=720 Digits=9\n"
+      }
+    },
+    "code": "#include <stdio.h>\nint factorial(int n) {\n    if (__A__) return __B__;\n    return __C__ * factorial(__D__);\n}\nint digits(int n) {\n    if (__E__) return __F__;\n    return __G__ + digits(__H__);\n}\n\nint main(void) {\n    int result = __I__;\n\n    int sum = __J__;\n\n    printf(\"Factorial=%d Digits=%d\\n\", result, sum);\n\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "n <= 1"
+        ],
+        "explanation": "Stop before the factorial argument becomes negative."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "1",
+          "(1)"
+        ],
+        "explanation": "Use the factorial identity."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "n",
+          "(n)"
+        ],
+        "explanation": "The current factor multiplies the smaller factorial."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "n - 1"
+        ],
+        "explanation": "Reduce the factorial argument by one."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "n == 0"
+        ],
+        "explanation": "No remaining digits means no further contribution."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Digit sum uses the additive identity."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "n % 10"
+        ],
+        "explanation": "Extract the current last digit."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "n / 10"
+        ],
+        "explanation": "Discard the processed last digit."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "factorial(6)"
+        ],
+        "explanation": "Compute the complete factorial first."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "digits(result)"
+        ],
+        "explanation": "Recurse over the computed factorial's digits."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This helper computes a factorial, a product associated with the sequence of positive integers up to an input."
+      },
+      {
+        "line": 3,
+        "text": "Handle the smallest factorial cases directly. This stopping case prevents recursive calls from continuing indefinitely."
+      },
+      {
+        "line": 4,
+        "text": "Ask for the factorial of a smaller input, then combine that returned answer by multiplication. Each call waits for its own answer."
+      },
+      {
+        "line": 6,
+        "text": "This second recursive helper computes a decimal digit total. Its calls are independent of the factorial helper's calls."
+      },
+      {
+        "line": 7,
+        "text": "Handle the case with no remaining digits. A completed smaller problem lets the waiting calls finish their additions."
+      },
+      {
+        "line": 8,
+        "text": "Separate the ending decimal digit from the remaining digits. Combine its contribution with the answer from a smaller digit problem."
+      },
+      {
+        "line": 11,
+        "text": "Execution starts in main, which calls the helpers in the required order."
+      },
+      {
+        "line": 12,
+        "text": "Compute and save the required factorial before attempting to process its digits."
+      },
+      {
+        "line": 14,
+        "text": "Pass the stored factorial to the digit helper and save its returned total."
+      },
+      {
+        "line": 16,
+        "text": "Each %d is an integer placeholder. Display the saved factorial and its digit total, then end the line."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Factorial=720 Digits=9\n",
+    "trace": [
+      "Stop before the factorial argument becomes negative.",
+      "Use the factorial identity.",
+      "The current factor multiplies the smaller factorial.",
+      "Reduce the factorial argument by one.",
+      "No remaining digits means no further contribution.",
+      "Digit sum uses the additive identity.",
+      "Extract the current last digit.",
+      "Discard the processed last digit.",
+      "Compute the complete factorial first.",
+      "Recurse over the computed factorial's digits."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "concept": "Recursion solves a task through calls to the same function on smaller inputs. One helper builds a factorial by multiplication; another combines decimal digits by addition. Each helper needs its own stopping case, and the factorial is stored before its digits are processed."
+  },
+  {
+    "id": "mock-f4",
+    "subject": "itp",
+    "topic": "memory",
+    "title": "Dynamic matrices, Row ownership and Column reduction",
+    "source": "Exam style · Mock F",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "extra",
+    "methods": [
+      "dynamic-matrix",
+      "malloc",
+      "null-allocation",
+      "free",
+      "leaks",
+      "column-sum"
+    ],
+    "mainMethods": [
+      "dynamic-matrix",
+      "leaks"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Build a dynamic 3 by 2 matrix, populate it with a formula and compute the second-column sum.",
+      "rules": [
+        "Allocate three row pointers, then two ints for each row. Set cell (i,j)=10*i+j+1.",
+        "If a row allocation fails, free all earlier rows and the row-pointer table.",
+        "After reducing column index 1, free every row before freeing the table."
+      ],
+      "sample": {
+        "output": "Column=36\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int **m = __A__;\n    if (__B__) return 1;\n    for (int i = 0; i < 3; ++i) {\n        m[i] = __C__;\n        if (__D__) {\n            for (int k = 0; k < i; ++k) __E__;\n            free(m); return 1;\n        }\n        for (int j = 0; j < 2; ++j) m[i][j] = __F__;\n    }\n    int total = __G__;\n    for (int i = 0; i < 3; ++i) total += __H__;\n    printf(\"Column=%d\\n\", total);\n    for (int i = 0; i < 3; ++i) __I__;\n    __J__;\n    return 0;\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "malloc(3 * sizeof *m)"
+        ],
+        "explanation": "Reserve the table of three row pointers."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "m == NULL",
+          "!m"
+        ],
+        "explanation": "Check the outer allocation first."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "malloc(2 * sizeof *m[i])"
+        ],
+        "explanation": "Reserve two integers for this row."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "m[i] == NULL",
+          "!m[i]"
+        ],
+        "explanation": "A failed row requires partial cleanup."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "free(m[k])"
+        ],
+        "explanation": "Release only previously completed rows."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "10 * i + j + 1"
+        ],
+        "explanation": "Use the specified deterministic cell formula."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "0",
+          "(0)"
+        ],
+        "explanation": "Start the selected-column sum."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "m[i][1]"
+        ],
+        "explanation": "Vary the row and keep column one fixed."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "free(m[i])"
+        ],
+        "explanation": "Release each allocated row."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "free(m)"
+        ],
+        "explanation": "Release the outer pointer table last."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header declares functions for allocating and releasing memory during execution."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which creates the matrix storage before filling it."
+      },
+      {
+        "line": 4,
+        "text": "Request a table of row pointers. m holds its address; each table entry will later hold the address of a separate integer row."
+      },
+      {
+        "line": 5,
+        "text": "If the table request failed, stop with an error status before trying to use its entries."
+      },
+      {
+        "line": 6,
+        "text": "Start i at zero and create the rows in order. Check the limit before each round and increase i after completing the row."
+      },
+      {
+        "line": 7,
+        "text": "Request the integer storage for this row and store its address in the pointer table."
+      },
+      {
+        "line": 8,
+        "text": "Check whether this row request failed. Earlier rows may already exist and must be cleaned up before leaving."
+      },
+      {
+        "line": 9,
+        "text": "Visit only the earlier successful rows and release their storage. The failed row does not own a usable block."
+      },
+      {
+        "line": 10,
+        "text": "Release the pointer table after its rows, then return an error status."
+      },
+      {
+        "line": 12,
+        "text": "Visit the row's columns and fill each entry using the prescribed pattern. Row and column indexes are positions counted from zero."
+      },
+      {
+        "line": 14,
+        "text": "Prepare a fresh running total for the selected column after the matrix has been filled."
+      },
+      {
+        "line": 15,
+        "text": "Visit each row while keeping the requested column fixed. Add that row's selected entry to the running total."
+      },
+      {
+        "line": 16,
+        "text": "Use %d, an integer placeholder, to display the completed column total. The newline ends the display line."
+      },
+      {
+        "line": 17,
+        "text": "Visit all successfully allocated rows and release each row's storage."
+      },
+      {
+        "line": 18,
+        "text": "Release the pointer table only after its row addresses are no longer needed."
+      },
+      {
+        "line": 19,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Column=36\n",
+    "trace": [
+      "Reserve the table of three row pointers.",
+      "Check the outer allocation first.",
+      "Reserve two integers for this row.",
+      "A failed row requires partial cleanup.",
+      "Release only previously completed rows.",
+      "Use the specified deterministic cell formula.",
+      "Start the selected-column sum.",
+      "Vary the row and keep column one fixed.",
+      "Release each allocated row.",
+      "Release the outer pointer table last."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "concept": "A dynamic matrix can use an allocated table of pointers with a separate allocation for each row. A pointer holds a memory address, and each level must be checked before it is used. Both partial failure and normal completion require releasing the owned rows before the pointer table."
+  },
+  {
+    "id": "mock-f5",
+    "subject": "itp",
+    "topic": "files",
+    "title": "Character streams, Line counts and Whitespace states",
+    "source": "Exam style · Mock F",
+    "set": "Exam pattern practice (based on the 21 Nov paper)",
+    "difficulty": "Exam",
+    "pool": "mock",
+    "type": "blanks",
+    "priority": "extra",
+    "methods": [
+      "char-file",
+      "file-count",
+      "file-r",
+      "file-null",
+      "file-close"
+    ],
+    "mainMethods": [
+      "char-file",
+      "file-count"
+    ],
+    "prompt": "Complete the ten blanks. Use the fixed data and print the expected output exactly.",
+    "brief": {
+      "goal": "Create a fixed text log, scan it byte by byte, and report characters, words and newline count.",
+      "rules": [
+        "Write \"go now\\n\\nrest\\n\" into log.txt, then reopen for reading.",
+        "Count all bytes, count a line for every newline, and count words when non-whitespace follows whitespace or the start.",
+        "Store fgetc in int to distinguish EOF. Close the file after scanning."
+      ],
+      "sample": {
+        "output": "Chars=13 Words=3 Lines=3\n"
+      }
+    },
+    "code": "#include <stdio.h>\n#include <ctype.h>\nint main(void) {\n    FILE *fp = fopen(\"log.txt\", \"w\");\n    if (!fp) return 1;\n    fputs(\"go now\\n\\nrest\\n\", fp); fclose(fp);\n    fp = __A__;\n    if (__B__) return 1;\n    int ch, chars = 0, words = 0, lines = 0, inside = 0;\n    while ((ch = __C__) != __D__) {\n        __E__;\n        if (__F__) ++lines;\n        if (__G__) inside = 0;\n        else if (__H__) { __I__; inside = 1; }\n    }\n    __J__;\n    printf(\"Chars=%d Words=%d Lines=%d\\n\", chars, words, lines);\n    return 0;\n\n}\n",
+    "blanks": [
+      {
+        "id": "A",
+        "accepted": [
+          "fopen(\"log.txt\", \"r\")"
+        ],
+        "explanation": "Reopen the completed log without truncation."
+      },
+      {
+        "id": "B",
+        "accepted": [
+          "fp == NULL",
+          "!fp"
+        ],
+        "explanation": "Check before reading."
+      },
+      {
+        "id": "C",
+        "accepted": [
+          "fgetc(fp)"
+        ],
+        "explanation": "Read the next byte into an int."
+      },
+      {
+        "id": "D",
+        "accepted": [
+          "EOF"
+        ],
+        "explanation": "Stop only at the end-of-file sentinel."
+      },
+      {
+        "id": "E",
+        "accepted": [
+          "++chars",
+          "chars++"
+        ],
+        "explanation": "Count every successful byte read."
+      },
+      {
+        "id": "F",
+        "accepted": [
+          "ch == '\\n'"
+        ],
+        "explanation": "Even an empty line contributes one newline."
+      },
+      {
+        "id": "G",
+        "accepted": [
+          "isspace((unsigned char)ch)"
+        ],
+        "explanation": "Any whitespace ends the current word."
+      },
+      {
+        "id": "H",
+        "accepted": [
+          "!inside"
+        ],
+        "explanation": "The first non-whitespace character starts a word."
+      },
+      {
+        "id": "I",
+        "accepted": [
+          "++words",
+          "words++"
+        ],
+        "explanation": "Count the word once on entry."
+      },
+      {
+        "id": "J",
+        "accepted": [
+          "fclose(fp)"
+        ],
+        "explanation": "Release the read stream."
+      }
+    ],
+    "explanations": [
+      {
+        "line": 1,
+        "text": "This header declares file operations and printf for formatted display."
+      },
+      {
+        "line": 2,
+        "text": "This header provides character classification functions, including tests for whitespace such as spaces, tabs and newlines."
+      },
+      {
+        "line": 3,
+        "text": "Execution starts in main, which creates a sample log before counting its contents."
+      },
+      {
+        "line": 4,
+        "text": "fp holds a file connection's memory address. The mode \"w\" creates the file or replaces its prior contents."
+      },
+      {
+        "line": 5,
+        "text": "Check whether opening failed. Returning 1 stops the program with an error status before writing."
+      },
+      {
+        "line": 6,
+        "text": "Write the sample text with its newline characters, then close the connection to complete this writing stage."
+      },
+      {
+        "line": 7,
+        "text": "Reopen the completed file for a reading pass. The chosen mode must preserve the stored contents."
+      },
+      {
+        "line": 8,
+        "text": "Check the read connection before attempting to obtain characters."
+      },
+      {
+        "line": 9,
+        "text": "Use an integer for the read result, three counters and an inside flag. The flag remembers whether a word is already in progress."
+      },
+      {
+        "line": 10,
+        "text": "Read one character before each round and stop on the special end indication. Keeping it in an integer distinguishes it from data."
+      },
+      {
+        "line": 11,
+        "text": "Count every successfully obtained character, including spaces and newline characters."
+      },
+      {
+        "line": 12,
+        "text": "Check for a newline and update the line counter when one is encountered. An empty line still has a newline character."
+      },
+      {
+        "line": 13,
+        "text": "Whitespace ends a word, so clear the inside flag. The character test must receive a safely represented character value."
+      },
+      {
+        "line": 14,
+        "text": "For other characters, count a word only if one was not already in progress. Then remember that this word has begun."
+      },
+      {
+        "line": 16,
+        "text": "Close the input connection after the scan stops, releasing its resources."
+      },
+      {
+        "line": 17,
+        "text": "Each %d displays an integer. Show the character, word and newline counts with labels, then end the display line."
+      },
+      {
+        "line": 18,
+        "text": "Return zero to report successful completion."
+      }
+    ],
+    "expectedOutput": "Chars=13 Words=3 Lines=3\n",
+    "trace": [
+      "Reopen the completed log without truncation.",
+      "Check before reading.",
+      "Read the next byte into an int.",
+      "Stop only at the end-of-file sentinel.",
+      "Count every successful byte read.",
+      "Even an empty line contributes one newline.",
+      "Any whitespace ends the current word.",
+      "The first non-whitespace character starts a word.",
+      "Count the word once on entry.",
+      "Release the read stream."
+    ],
+    "runnable": true,
+    "stdin": "",
+    "verified": true,
+    "concept": "Character-by-character file reading lets a program count all characters, newline markers and word beginnings separately. A state flag remembers whether the scan is already inside a word so consecutive letters count only once. Reading into an integer keeps ordinary character values distinct from the special end-of-file indication."
   }
 ]

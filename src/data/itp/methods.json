@@ -1,0 +1,1554 @@
+[
+  {
+    "id": "integer-division",
+    "label": "Integer versus floating division",
+    "topic": "operators",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q2",
+      "p1 Q3",
+      "p1 Q4a–b",
+      "p1 Q5",
+      "p2 Q3",
+      "p2 Q6",
+      "p3 Q4",
+      "p3 Q8",
+      "p4 Q2c",
+      "p5 Q2a",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "modulo",
+    "label": "Remainder %",
+    "topic": "operators",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p1 Q11",
+      "p1 Q7",
+      "p1 Q8",
+      "p1 Q9",
+      "p2 Q11",
+      "p2 Q3",
+      "p2 Q6",
+      "p3 Q8",
+      "p4 Q3c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "cast",
+    "label": "Explicit type casting",
+    "topic": "operators",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q4",
+      "p3 Q4",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "increment",
+    "label": "Pre/post increment and decrement",
+    "topic": "operators",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q11",
+      "p2 Q12",
+      "p2 Q13",
+      "p2 Q3",
+      "p2 Q5",
+      "p3 Q12",
+      "p3 Q3",
+      "p3 Q7",
+      "p4 Q2a",
+      "p5 Q2b",
+      "p5 Q2c",
+      "p5 Q3c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "compound",
+    "label": "Compound assignment",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q12",
+      "p4 Q1c",
+      "p5 Q2c",
+      "p5 Q5b"
+    ]
+  },
+  {
+    "id": "short-circuit",
+    "label": "Relational/logical short-circuit",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q7"
+    ]
+  },
+  {
+    "id": "ternary",
+    "label": "Ternary ?:",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "bitwise",
+    "label": "Bitwise & OR XOR and shifts",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q3",
+      "p4 Q3b"
+    ]
+  },
+  {
+    "id": "xor-swap",
+    "label": "XOR swap",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p4 Q3b"
+    ]
+  },
+  {
+    "id": "sizeof",
+    "label": "sizeof",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q9; p5 Q4b"
+    ]
+  },
+  {
+    "id": "precedence",
+    "label": "Operator precedence",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q11",
+      "p1 Q4a–b",
+      "p2 Q3",
+      "p3 Q3",
+      "p5 Q2b"
+    ]
+  },
+  {
+    "id": "macro",
+    "label": "#define macro",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p1 Q5",
+      "p5 Q2c",
+      "p5 Q6a"
+    ]
+  },
+  {
+    "id": "const",
+    "label": "const",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "ascii",
+    "label": "Character arithmetic (ASCII)",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q11",
+      "p2 Q4"
+    ]
+  },
+  {
+    "id": "formats",
+    "label": "printf formats (%d %f %.2f %c %s %ld %lld %x and width)",
+    "topic": "operators",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q4d",
+      "p2 Q4",
+      "p3 Q15; p4 Q8",
+      "p3 Q4",
+      "p4 Q1c",
+      "p4 Q2c",
+      "p4 Q5",
+      "p5 Q2a"
+    ]
+  },
+  {
+    "id": "ladder",
+    "label": "if / else-if ladder",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p5 Q2c"
+    ]
+  },
+  {
+    "id": "switch",
+    "label": "Switch with break and fall-through",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q8",
+      "p5 Q3b"
+    ]
+  },
+  {
+    "id": "for",
+    "label": "for loop",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q13",
+      "p1 Q14",
+      "p1 Q3",
+      "p1 Q4a–b",
+      "p1 Q5",
+      "p1 Q7",
+      "p1 Q8",
+      "p1 Q9",
+      "p2 Q10",
+      "p2 Q11",
+      "p2 Q5",
+      "p2 Q7",
+      "p2 Q9",
+      "p3 Q10",
+      "p3 Q11",
+      "p3 Q15; p4 Q8",
+      "p3 Q5",
+      "p3 Q9; p5 Q4b",
+      "p4 Q1c",
+      "p4 Q4",
+      "p4 Q6",
+      "p5 Q3c",
+      "p5 Q4a",
+      "p5 Q5b",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "while",
+    "label": "while loop",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p1 Q14",
+      "p1 Q9",
+      "p2 Q11",
+      "p2 Q12",
+      "p2 Q6",
+      "p3 Q11",
+      "p3 Q12",
+      "p3 Q17",
+      "p3 Q6",
+      "p3 Q7",
+      "p4 Q3c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "do-while",
+    "label": "do-while loop",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "nested-loops",
+    "label": "Nested loops",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q3",
+      "p2 Q5"
+    ]
+  },
+  {
+    "id": "triangle",
+    "label": "Triangle pattern",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q5"
+    ]
+  },
+  {
+    "id": "pyramid",
+    "label": "Pyramid pattern",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "floyd",
+    "label": "Floyd triangle",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q5"
+    ]
+  },
+  {
+    "id": "pascal",
+    "label": "Pascal triangle",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q3"
+    ]
+  },
+  {
+    "id": "break-continue",
+    "label": "break and continue",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q14",
+      "p1 Q9",
+      "p2 Q7"
+    ]
+  },
+  {
+    "id": "sentinel",
+    "label": "Sentinel loop",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "digit-sum",
+    "label": "Digit sum",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p2 Q6"
+    ]
+  },
+  {
+    "id": "digit-reverse",
+    "label": "Digit reverse",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "digit-count",
+    "label": "Count digits",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "number-palindrome",
+    "label": "Number palindrome",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "armstrong",
+    "label": "Armstrong test",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p4 Q3c"
+    ]
+  },
+  {
+    "id": "prime",
+    "label": "Prime test",
+    "topic": "loops",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q9"
+    ]
+  },
+  {
+    "id": "gcd-lcm",
+    "label": "GCD and LCM",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "factorial",
+    "label": "Iterative factorial",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q2"
+    ]
+  },
+  {
+    "id": "fibonacci",
+    "label": "Iterative Fibonacci",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q6"
+    ]
+  },
+  {
+    "id": "power",
+    "label": "Iterative power",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p4 Q1c"
+    ]
+  },
+  {
+    "id": "series",
+    "label": "Series sum",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "perfect",
+    "label": "Perfect number",
+    "topic": "loops",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "array-total",
+    "label": "Array sum and average",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q5",
+      "p5 Q9",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "extreme-index",
+    "label": "Max/min with index",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p1 Q13",
+      "p2 Q15",
+      "p4 Q4",
+      "p5 Q9",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "second-largest",
+    "label": "Second distinct largest",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "linear-first",
+    "label": "Linear search first index",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q9; p5 Q4b",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "linear-last",
+    "label": "Linear search last index",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "linear-count",
+    "label": "Linear search occurrence count",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q7",
+      "p3 Q17",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "binary-search",
+    "label": "Iterative binary search",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "bubble",
+    "label": "Bubble sort",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "selection",
+    "label": "Selection sort",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q9",
+      "p5 Q4a"
+    ]
+  },
+  {
+    "id": "insertion",
+    "label": "Insertion sort",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "array-reverse",
+    "label": "Reverse array in place",
+    "topic": "arrays",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rotate",
+    "label": "Rotate left and right",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "frequency",
+    "label": "Array frequency count",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "deduplicate",
+    "label": "Remove duplicates",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q7",
+      "p3 Q17"
+    ]
+  },
+  {
+    "id": "merge",
+    "label": "Merge sorted arrays",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q7"
+    ]
+  },
+  {
+    "id": "insert-delete",
+    "label": "Insert and delete at position",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "prefix",
+    "label": "Prefix sums",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "even-odd",
+    "label": "Separate even and odd",
+    "topic": "arrays",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "row-sum",
+    "label": "Row sums",
+    "topic": "matrices",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "column-sum",
+    "label": "Column sums",
+    "topic": "matrices",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p4 Q4"
+    ]
+  },
+  {
+    "id": "diagonals",
+    "label": "Main and secondary diagonals",
+    "topic": "matrices",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "square-transpose",
+    "label": "Square transpose in place",
+    "topic": "matrices",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p5 Q6a"
+    ]
+  },
+  {
+    "id": "rect-transpose",
+    "label": "Rectangular transpose",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q10"
+    ]
+  },
+  {
+    "id": "matrix-add",
+    "label": "Matrix addition",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q10"
+    ]
+  },
+  {
+    "id": "matrix-multiply",
+    "label": "Matrix multiplication",
+    "topic": "matrices",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "row-max",
+    "label": "Maximum per row",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "matrix-check",
+    "label": "Symmetric and identity check",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "triangles",
+    "label": "Upper and lower triangles",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "matrix-search",
+    "label": "Search matrix",
+    "topic": "matrices",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "manual-length",
+    "label": "Manual string length",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q11",
+      "p3 Q11"
+    ]
+  },
+  {
+    "id": "strlen",
+    "label": "strlen",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q14",
+      "p1 Q4c",
+      "p5 Q6b",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "strcpy",
+    "label": "strcpy",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p4 Q5",
+      "p5 Q6b",
+      "p5 Q6c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "strncpy",
+    "label": "strncpy",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "strcat",
+    "label": "strcat",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p5 Q6c"
+    ]
+  },
+  {
+    "id": "strcmp",
+    "label": "strcmp",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q14"
+    ]
+  },
+  {
+    "id": "manual-compare",
+    "label": "Manual lexicographic comparison",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "string-reverse",
+    "label": "String reverse",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "string-palindrome",
+    "label": "String palindrome",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "character-count",
+    "label": "Count vowels/consonants/digits/spaces",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "word-count",
+    "label": "Word count",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "ctype-case",
+    "label": "toupper / tolower",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q14",
+      "p1 Q4e",
+      "p2 Q11",
+      "p3 Q11",
+      "p5 Q6b"
+    ]
+  },
+  {
+    "id": "ascii-case",
+    "label": "ASCII +/-32 case conversion",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "char-frequency",
+    "label": "Character frequency",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "remove-char",
+    "label": "Remove spaces or a character",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "substring",
+    "label": "strstr substring search",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "fgets-newline",
+    "label": "fgets and newline removal",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "atoi",
+    "label": "atoi",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "manual-atoi",
+    "label": "Manual string-to-int",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "string-sort",
+    "label": "Array of strings and string sorting",
+    "topic": "strings",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "nul",
+    "label": "Null terminator handling",
+    "topic": "strings",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q14",
+      "p2 Q11",
+      "p3 Q11",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "prototype",
+    "label": "Function prototypes",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "return",
+    "label": "Return values",
+    "topic": "functions",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q10",
+      "p1 Q13",
+      "p1 Q2",
+      "p1 Q5",
+      "p1 Q9",
+      "p2 Q7",
+      "p2 Q8",
+      "p3 Q17",
+      "p3 Q8",
+      "p3 Q9; p5 Q4b",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "void",
+    "label": "Void functions",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q12",
+      "p2 Q14",
+      "p3 Q14",
+      "p5 Q5b",
+      "p5 Q6a"
+    ]
+  },
+  {
+    "id": "array-parameter",
+    "label": "Passing arrays",
+    "topic": "functions",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q13",
+      "p2 Q14",
+      "p2 Q7",
+      "p2 Q9",
+      "p3 Q9; p5 Q4b",
+      "p5 Q4a",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "value-reference",
+    "label": "Call by value versus by reference",
+    "topic": "functions",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q14"
+    ]
+  },
+  {
+    "id": "rec-factorial",
+    "label": "Recursive factorial",
+    "topic": "functions",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-fibonacci",
+    "label": "Recursive Fibonacci",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-digits",
+    "label": "Recursive digit sum",
+    "topic": "functions",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-power",
+    "label": "Recursive power",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-gcd",
+    "label": "Recursive GCD",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-reverse",
+    "label": "Recursive string reverse",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "rec-binary",
+    "label": "Recursive binary search",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "static-calls",
+    "label": "Counting calls with static local",
+    "topic": "functions",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "address",
+    "label": "Address and dereference",
+    "topic": "pointers",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q13",
+      "p2 Q13",
+      "p3 Q13",
+      "p3 Q14",
+      "p3 Q15; p4 Q8",
+      "p4 Q6",
+      "p4 Q7a",
+      "p5 Q7a",
+      "p5 Q7b",
+      "p5 Q7c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "pointer-arithmetic",
+    "label": "Pointer arithmetic over arrays",
+    "topic": "pointers",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q13",
+      "p2 Q14",
+      "p3 Q13",
+      "p4 Q7a",
+      "p5 Q7a"
+    ]
+  },
+  {
+    "id": "array-pointer",
+    "label": "Array / pointer equivalence",
+    "topic": "pointers",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q14",
+      "p3 Q13",
+      "p4 Q7a",
+      "p5 Q7a"
+    ]
+  },
+  {
+    "id": "double-pointer",
+    "label": "Pointer to pointer",
+    "topic": "pointers",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "pointer-swap",
+    "label": "Swap through pointers",
+    "topic": "pointers",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q14",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "multiple-return",
+    "label": "Multiple outputs through pointer parameters",
+    "topic": "pointers",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q12",
+      "p5 Q7b"
+    ]
+  },
+  {
+    "id": "char-pointer",
+    "label": "Walking a string with char pointer",
+    "topic": "pointers",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p5 Q6b"
+    ]
+  },
+  {
+    "id": "null",
+    "label": "NULL checks",
+    "topic": "pointers",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q13"
+    ]
+  },
+  {
+    "id": "pointer-const",
+    "label": "Const pointer versus pointer to const",
+    "topic": "pointers",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "typedef",
+    "label": "Struct definition and typedef",
+    "topic": "structs",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q5",
+      "p2 Q12",
+      "p4 Q5",
+      "p4 Q6",
+      "p4 Q7a",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "nested-struct",
+    "label": "Nested struct",
+    "topic": "structs",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "struct-search",
+    "label": "Array of structs search / max by field",
+    "topic": "structs",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p1 Q13"
+    ]
+  },
+  {
+    "id": "struct-sort",
+    "label": "Sort records by a field",
+    "topic": "structs",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "arrow",
+    "label": "Pointer to struct ->",
+    "topic": "structs",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q13",
+      "p3 Q12",
+      "p3 Q15; p4 Q8",
+      "p4 Q7a",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "struct-value-pointer",
+    "label": "Struct by value versus by pointer",
+    "topic": "structs",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q5",
+      "p3 Q12",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "struct-return",
+    "label": "Function returning a struct",
+    "topic": "structs",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "enum",
+    "label": "enum",
+    "topic": "structs",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "malloc",
+    "label": "malloc",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p1 Q6",
+      "p3 Q15; p4 Q8",
+      "p5 Q6c",
+      "p5 Q7c",
+      "p5 Q9",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "null-allocation",
+    "label": "Allocation NULL check",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q15; p4 Q8",
+      "p5 Q6c",
+      "p5 Q7c",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "calloc",
+    "label": "calloc zero initialisation",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "realloc",
+    "label": "Safe realloc growth",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "free",
+    "label": "free",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p1 Q6",
+      "p3 Q15; p4 Q8",
+      "p5 Q6c",
+      "p5 Q7c",
+      "p5 Q9",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "dynamic-struct",
+    "label": "Dynamic array of structs",
+    "topic": "memory",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p1 Q6",
+      "p3 Q15; p4 Q8",
+      "p5 Q7c",
+      "p5 Q9"
+    ]
+  },
+  {
+    "id": "dynamic-string",
+    "label": "Dynamic string",
+    "topic": "memory",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q12",
+      "p5 Q6c"
+    ]
+  },
+  {
+    "id": "dynamic-matrix",
+    "label": "Dynamic 2D row pointers and freeing",
+    "topic": "memory",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "leaks",
+    "label": "Avoiding leaks including failure paths",
+    "topic": "memory",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-r",
+    "label": "fopen r",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q6",
+      "p2 Q15",
+      "p3 Q16; p4 Q9",
+      "p5 Q8",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "file-w",
+    "label": "fopen w",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q6",
+      "p2 Q15",
+      "p5 Q8",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "file-a",
+    "label": "fopen a",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p3 Q16; p4 Q9"
+    ]
+  },
+  {
+    "id": "file-rplus",
+    "label": "fopen r+",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-wplus",
+    "label": "fopen w+",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-aplus",
+    "label": "fopen a+",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-null",
+    "label": "fopen NULL check",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "formatted-file",
+    "label": "fprintf / fscanf",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q15",
+      "p5 Q8",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "line-file",
+    "label": "fputs / fgets",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q6",
+      "p3 Q16; p4 Q9"
+    ]
+  },
+  {
+    "id": "char-file",
+    "label": "fputc / fgetc with EOF loop",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-count",
+    "label": "Count characters/words/lines",
+    "topic": "files",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "file-copy",
+    "label": "Copy file",
+    "topic": "files",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q16; p4 Q9"
+    ]
+  },
+  {
+    "id": "file-append",
+    "label": "Append file",
+    "topic": "files",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p3 Q16; p4 Q9"
+    ]
+  },
+  {
+    "id": "file-records",
+    "label": "Text struct records",
+    "topic": "files",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p1 Q6"
+    ]
+  },
+  {
+    "id": "file-close",
+    "label": "fclose",
+    "topic": "files",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p1 Q6",
+      "p2 Q15",
+      "p3 Q16; p4 Q9",
+      "p5 Q8",
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "shadow",
+    "label": "Local / global shadowing",
+    "topic": "scope",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "21 Nov P1–P5"
+    ]
+  },
+  {
+    "id": "static-local",
+    "label": "Static local persistence",
+    "topic": "scope",
+    "minimum": 2,
+    "priority": "core",
+    "sources": [
+      "p2 Q16"
+    ]
+  },
+  {
+    "id": "block-scope",
+    "label": "Block scope",
+    "topic": "scope",
+    "minimum": 1,
+    "priority": "core",
+    "sources": [
+      "p2 Q16"
+    ]
+  },
+  {
+    "id": "extern",
+    "label": "extern declaration concept",
+    "topic": "scope",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  },
+  {
+    "id": "auto-register",
+    "label": "auto and register concepts",
+    "topic": "scope",
+    "minimum": 1,
+    "priority": "extra",
+    "sources": []
+  }
+]

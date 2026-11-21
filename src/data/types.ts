@@ -11,8 +11,16 @@ export interface CodeQuestion {
   source: string
   difficulty: 'Foundation' | 'Exam' | 'Challenge'
   pool: 'past' | 'original' | 'mock'
+  priority: 'core' | 'extra'
+  /** Audited IDs from itp/methods.json. Coverage gates exclude mocks and output drills. */
+  methods: string[]
+  mainMethods?: string[]
+  set?: string
+  pattern?: 'P1' | 'P2' | 'P3' | 'P4' | 'P5'
   type: 'blanks' | 'output'
   prompt: string
+  /** Short, answer-free concept note (2–4 sentences); falls back to the topic lesson. */
+  concept?: string
   code: string
   blanks: Blank[]
   /** Comments placed above a 1-based line of the original code, without disclosing keys. */
@@ -108,4 +116,4 @@ export interface Subject {
   active: boolean
   topics: { id: string; name: string; priority: 'High' | 'Medium' }[]
 }
-export interface MockPaper { id: string; subject: string; title: string; description: string; questionIds: string[] }
+export interface MockPaper { id: string; subject: string; title: string; description: string; questionIds: string[]; priority?: 'core' | 'extra' }

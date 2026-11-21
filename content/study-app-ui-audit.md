@@ -783,3 +783,49 @@ Validation: build, behavior, all-question rendering and UI checks pass. UI check
 Fresh GCC verification is blocked: PATH has no readable compiler and the supplied WinGet folder returns EPERM. Structural verification passes; **0/120** runnable programs were freshly compiled, and `--require-gcc` fails explicitly. Compiler-less runs retain existing evidence. `verification.json` remains unchanged, preserving earlier **120/120** GCC results and **81** sample checks for identical completed source; this is historical evidence, not a fresh compilation claim.
 
 This section is ready to append to `content/study-app-ui-audit.md`. The sandbox denied writes to that existing file (EPERM), so it is supplied separately.
+
+
+## Exam pattern and method coverage (2026-11-21)
+
+Added 77 original programs: 62 practice (33 Core / 29 Extra), Mock D/E (10 Core) in P1–P5 order, and Mock F (5 Extra). Every new program has hard-coded data, a descriptive combined-concept title, detailed rules, 20–45 source lines, ten ordered blanks, accepted keys, reasons, guarded Explain-code comments and deterministic stdout. The method audit maps 148 methods (81 Core / 67 Extra) to IDs and source papers; all 68 starred methods have two or more blank-bearing practice programs. Output drills and exclusive mocks do not satisfy those minimums. The coverage document lists every new ID for compiler handoff.
+
+Guide §§8, 13, 14 and 31–33: expected output sits directly below the source, with sample input above it where needed; predict-the-output exercises disclose no output. Learn-ordered, collapsible topic groups show note titles/colours, Core progress, done/correct/revisit and note links. All priority ordering keeps Extra visible; filters compose, navigation stays inside a topic and its end offers the next topic and topic mistake review. Phones use the existing Sheet; a compact desktop panel preserves the source/answer width. WP shares exam-part grouping and keeps historical full tasks first. The dashboard leads to Core; Extra is “Go further”. No dependencies, themes, marking, reduced-motion behaviour or mobile shell were replaced.
+
+Validation: structural content/method gates, build, behavior, all-question rendering and UI checks pass. UI checks retain 1,268 AA contrast pairs plus gradient samples; new roles reuse audited tokens. Headless Chromium checks include Learn round-trip answer preservation, grouped sheets, composed topic/type/bank/priority/mistake filters, topic boundary steps, expected output in all 15 new mock slots, neutral mock fields, reveals/streaks and 1440/768/390/320px layouts in all four themes. Physical-phone keyboards and assistive technology remain device checks.
+
+Fresh GCC is blocked: the supplied WinGet executable returns Windows access denied and PATH has no compiler. Structural verification covers 198 questions; 0/197 runnable programs were freshly compiled, including 0/77 new programs. Existing verification.json is retained unchanged. Run `npm run verify:content -- --require-gcc` from upper-case Y: with readable GCC to capture fresh output/file evidence. Vite retains its bundle-size advisory.
+
+
+# ITP concept notes and answer reveals
+
+21 November 2026. Scope: ITP practice and marked feedback. No dependencies added; question JSON, parallel patches and DM files untouched.
+
+## Changes and UI standard
+
+- **Disclosure (guide §§1, 2, 13):** compact, initially closed “Concept: <topic>” panels replace the practice button and report lesson link. They use optional `concept` text or the Learn note's first paragraph. The labelled 44px arrow link preserves the return-to-question flow.
+- **Feedback (§§17, 21, 26):** amber dashed code with an eye replaces revealed markers; green code with a check fills correct answers. Wrong/empty inputs retain markers. Accessible names include blank number, state and answer.
+- **Controls/mobile (§§15, 16, 31, 33):** Reveal all / Hide all stays in the answers header with `aria-pressed`. Keys appear in boxes; hiding restores drafts. All reveals retain no-mark history. Running mocks have no reveal controls or live verdicts. Mobile shell, Core/Extra, topic grouping, expected output, Explain code, reduced motion and confetti/streak remain.
+- **Reflow/themes (§§6, 9, 34):** long filled tokens stay inline inside source scrolling. Existing palette tokens supply every new treatment; no new animation.
+
+## Contrast evidence
+
+Ratios computed from CSS exceed AA's 4.5:1 text threshold. Reveal outlines/icons exceed 3:1; control/focus checks pass.
+
+| Pair | Paper | Sky | Midnight | Ember |
+| --- | ---: | ---: | ---: | ---: |
+| Concept text / surface | 15.80 | 16.33 | 13.95 | 13.75 |
+| Concept summary / surface | 6.13 | 6.34 | 7.12 | 6.76 |
+| Lesson link / surface | 6.29 | 5.52 | 6.16 | 8.05 |
+| Revealed text / amber tint | 5.39 | 5.86 | 8.94 | 8.68 |
+| Correct code / code surface | 5.16 | 5.22 | 10.27 | 9.05 |
+
+## Verification
+
+- `node scripts/check-ui.mjs`: passed 1,288 contrast pairs, gradient samples, rendering and Chromium checks.
+- `node scripts/check-two-pane-browser.mjs`: passed single/batch reveals, box/token values, pressed states, restored drafts, zero credit after hiding/retyping, streak reset, closed concept panel, matching Learn round trip and mock isolation. Reflow passes at 1440/768/390/320px in all themes, including a correct answer padded with 500 spaces. Existing navigation/filter/mock checks pass. Desktop, 390px program and Midnight answer screenshots were visually inspected.
+- `npm run check:behavior`, `node scripts/check-render.mjs`, `npm run build`: passed. Existing large-bundle advisory remains.
+- `npm run verify:content`: structural checks passed for 198 ITP questions, 69 source sections, six mocks and method coverage, plus WP. Existing `LEAK?` advisories concern brief rules. GCC unavailable: 0/197 programs compiled; prior evidence retained.
+- Concept-guard fixtures passed optional/required mode, type/length/sentence bounds and case-insensitive three-character substring leaks. `REQUIRE_CONCEPT = false` can be enabled after the content merge.
+- Question JSON and `verification.json` stayed byte-for-byte unchanged; no timestamp restoration needed.
+
+Physical-device keyboards and assistive-technology speech were not manually tested; native semantics, accessible names and focus behavior were checked through rendering/browser assertions.

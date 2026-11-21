@@ -1,7 +1,7 @@
 import type { MouseEvent, ReactNode } from 'react'
 
-export function StudyLink({ view, topic, onNavigate, children, className, current, title, 'data-tone': tone }: {
-  view: string; topic?: string; onNavigate: () => void; children: ReactNode; className?: string; current?: boolean; title?: string; 'data-tone'?: string
+export function StudyLink({ view, topic, onNavigate, children, className, current, title, 'aria-label': ariaLabel, 'data-tone': tone }: {
+  view: string; topic?: string; onNavigate: () => void; children: ReactNode; className?: string; current?: boolean; title?: string; 'aria-label'?: string; 'data-tone'?: string
 }) {
   const params = new URLSearchParams({ view, ...(topic ? { topic } : {}) })
   function follow(event: MouseEvent<HTMLAnchorElement>) {
@@ -9,5 +9,5 @@ export function StudyLink({ view, topic, onNavigate, children, className, curren
     event.preventDefault()
     onNavigate()
   }
-  return <a href={`?${params}`} className={className} data-tone={tone} title={title} aria-current={current ? 'page' : undefined} onClick={follow}>{children}</a>
+  return <a href={`?${params}`} className={className} data-tone={tone} title={title} aria-label={ariaLabel} aria-current={current ? 'page' : undefined} onClick={follow}>{children}</a>
 }

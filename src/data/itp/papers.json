@@ -37,5 +37,47 @@
       "mock-c4",
       "mock-c5"
     ]
+  },
+  {
+    "id": "mock-d",
+    "subject": "itp",
+    "title": "Mock D: 21 Nov exam pattern",
+    "priority": "core",
+    "description": "Five exclusive programs. 150 minutes, 50 blanks. Daily arrays → array functions and scope → strings → records and pointers → files and heap memory.",
+    "questionIds": [
+      "mock-d1",
+      "mock-d2",
+      "mock-d3",
+      "mock-d4",
+      "mock-d5"
+    ]
+  },
+  {
+    "id": "mock-e",
+    "subject": "itp",
+    "title": "Mock E: 21 Nov exam pattern",
+    "priority": "core",
+    "description": "Five exclusive programs. 150 minutes, 50 blanks. Daily arrays → array functions and scope → strings → records and pointers → files and heap memory.",
+    "questionIds": [
+      "mock-e1",
+      "mock-e2",
+      "mock-e3",
+      "mock-e4",
+      "mock-e5"
+    ]
+  },
+  {
+    "id": "mock-f",
+    "subject": "itp",
+    "title": "Mock F: mixed methods",
+    "priority": "extra",
+    "description": "Five exclusive programs. 150 minutes, 50 blanks. Extend your range with matrices, search, recursion, growth and character I/O.",
+    "questionIds": [
+      "mock-f1",
+      "mock-f2",
+      "mock-f3",
+      "mock-f4",
+      "mock-f5"
+    ]
   }
 ]

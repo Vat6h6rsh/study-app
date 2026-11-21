@@ -1,0 +1,8 @@
+Task: UI/UX audit + fix of this Vite+React+TS exam-practice app ("Examdesk"; read README.md and all of src/ first), following ../ui-ux-learning-guide.md TO THE LETTER.
+
+1. Read ../ui-ux-learning-guide.md completely and carefully. Extract every concrete rule, principle, checklist item and heuristic it contains into a numbered checklist (keep the guide's own wording/section references).
+2. Audit every screen and state of the app against EVERY checklist item: Home/dashboard, Learn (topic list, note page, worked answers), Practice (question view, blanks input, submitted/marked state, overrides, run-with-my-answers), Mock exam (start, in-progress with timer, submit confirm, report), Scratchpad (compile error, runtime output, gcc missing), empty states, error states, loading states, dark mode, narrow widths, keyboard-only use, focus visibility, screen-reader semantics, colour contrast (compute contrast ratios from the actual CSS values).
+3. Write the audit to ../docs/study-app-ui-audit.md: a table of checklist item | guide section | screen(s) | PASS/FAIL/N.A. | evidence (file:line) | fix. Then a prioritised fix list.
+4. Implement ALL fixes for FAIL items in the code. Don't add npm dependencies (no network). Don't change question content or marking logic. Keep this a calm, focused study tool: the student uses it for long sessions under exam pressure.
+5. Re-run npm run verify:content, check:behavior, build: all must pass. Then append to the audit file a "After fixes" column/section showing each FAIL now resolved (or why not), and list anything that needs real-browser visual checking.
+Only touch files inside this folder plus ../docs/study-app-ui-audit.md.

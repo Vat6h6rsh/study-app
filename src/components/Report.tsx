@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { CodeQuestion as Question } from '../data/types'
 import type { Attempt } from '../lib/storage'
 import { AnswerFeedback } from './Delight'
-import { StudyLink } from './StudyLink'
+import { ConceptNote } from './ConceptNote'
 
 export function Report({ question, attempt, onOverride, onLearn, celebrate = false, animate = false }: { question: Question; attempt: Attempt; onOverride: (attemptId: string, blankId: string) => void; onLearn?: (topic: string) => void; celebrate?: boolean; animate?: boolean }) {
   const [announcement, setAnnouncement] = useState('')
@@ -28,7 +28,7 @@ export function Report({ question, attempt, onOverride, onLearn, celebrate = fal
       <p className="explanation">{blank.explanation}</p>
     </article>)}</div>}
     {question.notes && <details className="source-notes"><summary>Source notes, repairs & alternate answers</summary><div>{question.notes}</div></details>}
-    {onLearn && <p className="question-lesson"><StudyLink view="learn" topic={question.topic} className="text-button" onNavigate={() => onLearn(question.topic)}>Understand this pattern in Learn</StudyLink></p>}
+    {onLearn && <ConceptNote key={question.id} question={question} onLearn={onLearn}/>}
     <p className="small muted">Equivalent code can be self-marked. An override updates this attempt and your saved progress.{!!attempt.revealed?.length && ' Revealed answers earn no mark; try again for a fresh attempt.'}</p>
   </section>
 }

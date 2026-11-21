@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-21T13:57:18.006Z",
+  "checkedAt": "2026-11-21T14:58:19.452Z",
   "compiler": "C:\\Users\\hashj\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\\mingw64\\bin\\gcc.exe",
-  "structuralQuestions": 121,
-  "runnableQuestions": 120,
-  "verified": 120,
-  "samplesVerified": 81,
+  "structuralQuestions": 198,
+  "runnableQuestions": 197,
+  "verified": 197,
+  "samplesVerified": 158,
   "unrunSamples": [],
   "skipped": [
     {
@@ -973,6 +973,576 @@
       "outputCompared": true
     },
     {
+      "id": "exam21-p1-1",
+      "stdout": "Total=50\r\nReached=3 Below=2\r\nMean=10.0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p1-2",
+      "stdout": "Total=35\r\nReached=3 Below=2\r\nMean=7.0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p1-3",
+      "stdout": "Total=32\r\nReached=3 Below=2\r\nMean=6.4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p2-1",
+      "stdout": "First=0 Odd=3\r\nLocal=5\r\nGlobal=40\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p2-2",
+      "stdout": "First=1 Odd=3\r\nLocal=5\r\nGlobal=60\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p2-3",
+      "stdout": "First=1 Odd=2\r\nLocal=5\r\nGlobal=80\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p3-1",
+      "stdout": "Reverse=a24enaL\r\nClass=4 Match=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p3-2",
+      "stdout": "Reverse=703kcoD\r\nClass=3 Match=1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p3-3",
+      "stdout": "Reverse=r6reviR\r\nClass=5 Match=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p4-1",
+      "stdout": "Banner 3 7\r\nArea=21 Perimeter=20\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p4-2",
+      "stdout": "Crate 8 12\r\nArea=96 Perimeter=40\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p4-3",
+      "stdout": "Garden 27 6\r\nArea=162 Perimeter=66\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p5-1",
+      "stdout": "max=23\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "readings.txt": "16\r\n7\r\n23\r\n11\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p5-2",
+      "stdout": "min=5\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "readings.txt": "8\r\n14\r\n5\r\n9\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-p5-3",
+      "stdout": "mean=8.0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "readings.txt": "5\r\n9\r\n12\r\n6\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-indexed-extremes-1",
+      "stdout": "Min=-2 At=1 Max=11 At=2\r\nFrequency=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-indexed-extremes-2",
+      "stdout": "Min=-4 At=2 Max=8 At=0\r\nFrequency=1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-bitwork",
+      "stdout": "2 14 12 20 5\r\n14 9\r\n3 1.500000 2.25 C go 8 12 1f    7\r\nStep=1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-decisions",
+      "stdout": "middle 0 1 0\r\n4 4 2 2.25 4\r\nPrecedence=14\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-sentinel",
+      "stdout": "Count=3 Cost=15\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-pyramid",
+      "stdout": "  *\r\n ***\r\n*****\r\nStars=9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-digit-lab",
+      "stdout": "40804 5 16\r\nPalindrome=yes\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-number-tools",
+      "stdout": "GCD=6 LCM=72 Fact=120\r\nPerfect=1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-series",
+      "stdout": "0 1 1 2 3 5\r\nPower=81 Series=2.08\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-binary-1",
+      "stdout": "Index=3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-binary-2",
+      "stdout": "Index=-1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-search-count-1",
+      "stdout": "First=0 Last=4 Count=3\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-search-count-2",
+      "stdout": "First=1 Last=3 Count=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-bubble-1",
+      "stdout": "9 7 5 3 1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-bubble-2",
+      "stdout": "8 6 4 2 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-insertion",
+      "stdout": "Second=7\r\n2 4 7 9 9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-rotate-prefix",
+      "stdout": "Prefix=2 7 15 18\r\nEven=2 8 Count=2\r\nOdd=5 3 Count=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-insert-delete",
+      "stdout": "2 6 8 10\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-matrix-totals-1",
+      "stdout": "Row0=6 Max=3\r\nRow1=15 Max=6\r\nRow2=24 Max=9\r\nDiagonals=15 15\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-matrix-totals-2",
+      "stdout": "Row0=7 Max=3\r\nRow1=16 Max=6\r\nRow2=25 Max=10\r\nDiagonals=18 16\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-transpose-check",
+      "stdout": "Symmetric=0 Identity=0\r\n1 3\r\n2 1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-multiply-1",
+      "stdout": "4 4\r\n10 8\r\nColumns=14 12\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-multiply-2",
+      "stdout": "6 4\r\n10 8\r\nColumns=16 12\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-matrix-search",
+      "stdout": "Found=0,1 Upper=17 Lower=14\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-character-count-1",
+      "stdout": "Length=8 Copy=A ca\r\nV=2 C=2 D=2 S=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-character-count-2",
+      "stdout": "Length=9 Copy=We c\r\nV=3 C=3 D=1 S=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-palindrome-clean",
+      "stdout": "neven yes\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-words-substring",
+      "stdout": "Words=3 Offset=10\r\nLength=16\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-line-numbers",
+      "stdout": "3142 3142 3142\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-string-sort",
+      "stdout": "apple lime pear\r\nCompare=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-swap-1",
+      "stdout": "Inside=5 12\r\nValue=12 5\r\nReference=5 12\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-swap-2",
+      "stdout": "Inside=19 7\r\nValue=7 19\r\nReference=19 7\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-pointer-walk",
+      "stdout": "Selected=9 Read=9\r\nEquivalent=12 12\r\nFirst=4 Length=4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-rec-factorial-1",
+      "stdout": "Calls=5\r\nFact=120\r\nCalls=7\r\nFact=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-rec-factorial-2",
+      "stdout": "Calls=6\r\nFact=720\r\nCalls=8\r\nFact=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-recursive-numbers",
+      "stdout": "Digits=18\r\nGCD=7\r\nPower=32\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-recursive-text",
+      "stdout": "tibro 8\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-record-sort",
+      "stdout": "Noor 1:59\r\nNoor Ivo Mira\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-enum-record",
+      "stdout": "Job=33 Priority=7\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-grow-1",
+      "stdout": "Total=40 Last=16\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-grow-2",
+      "stdout": "Total=30 Last=12\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-heap-matrix",
+      "stdout": "Row0=9\r\nRow1=18\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-update-modes-1",
+      "stdout": "First=r Final=Xed!\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "update.txt": "Xed!"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-update-modes-2",
+      "stdout": "First=s Final=Xun!\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "update.txt": "Xun!"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-file-copy-count",
+      "stdout": "Chars=10 Words=3 Lines=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "copy.txt": "one two\r\nC\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-text-records",
+      "stdout": "Records=2 Value=34\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "exam21-storage",
+      "stdout": "Inner=4\r\nOuter=12\r\nGlobal=12 Calls=1 Scratch=1\r\nGlobal=12 Calls=2 Scratch=1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
       "id": "mock-a1",
       "stdout": "101 3300\r\n",
       "compileOutput": "",
@@ -1107,6 +1677,145 @@
     {
       "id": "mock-c5",
       "stdout": "153 370 371 407 \r\ncount=4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-d1",
+      "stdout": "Prefixes=6 15 19 30 35\r\nTarget=2 Unused=25\r\nUsage=58.3%\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-d2",
+      "stdout": "Call=1\r\nCall=2\r\nIndices=3 -1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-d3",
+      "stdout": "Palindrome=yes Vowels=2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-d4",
+      "stdout": "CopyArea=5\r\nNorth 6 10 Area=60\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-d5",
+      "stdout": "Maximum=19\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "batch.txt": "13\r\n4\r\n19\r\n8\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "mock-e1",
+      "stdout": "First=9 Second=9\r\nBelow=2 Mean=9.0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-e2",
+      "stdout": "Block=9\r\nOuter=2 Last=4\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-e3",
+      "stdout": "LEARN C  EACH DAY\r\nWords=4 Length=17\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-e4",
+      "stdout": "Ash Mass=3 Zone=0\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-e5",
+      "stdout": "Count=3 Mean=6.7\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {
+        "values.txt": "4\r\n6\r\n10\r\n"
+      },
+      "outputCompared": true
+    },
+    {
+      "id": "mock-f1",
+      "stdout": "11 7\r\n16 2\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-f2",
+      "stdout": "Found=4 Missing=-1\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-f3",
+      "stdout": "Factorial=720 Digits=9\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-f4",
+      "stdout": "Column=36\r\n",
+      "compileOutput": "",
+      "stderr": "",
+      "exitCode": 0,
+      "files": {},
+      "outputCompared": true
+    },
+    {
+      "id": "mock-f5",
+      "stdout": "Chars=13 Words=3 Lines=3\r\n",
       "compileOutput": "",
       "stderr": "",
       "exitCode": 0,
