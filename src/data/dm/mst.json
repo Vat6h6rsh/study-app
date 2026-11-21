@@ -1,0 +1,3642 @@
+[
+  {
+    "id": "dm-mst-kruskal-1",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex kruskal trace 1",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E}; edges: AB(1), BC(4), CD(7), DE(1), EA(4), AC(3), BD(3), CE(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge AB (weight 1). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge DE (weight 1). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AC (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge BD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Kruskal's algorithm; total weight = 1 + 1 + 3 + 3 = 8."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 1
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 7
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 1
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 4
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "A-B",
+        "D-E",
+        "A-C",
+        "B-D"
+      ],
+      "totalWeight": 8
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-1",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex prim trace 1",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at A. V={A,B,C,D,E}; edges: AB(1), BC(4), CD(7), DE(1), EA(4), AC(3), BD(3), CE(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge AB (weight 1). Start at A. It is a minimum-weight crossing edge. Reached vertices are {A, B}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge AC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {A, B, C}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge BD (weight 3). It is a minimum-weight crossing edge. Reached vertices are {A, B, C, D}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge DE (weight 1). It is a minimum-weight crossing edge. Reached vertices are {A, B, C, D, E}."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Prim's algorithm; total weight = 1 + 3 + 3 + 1 = 8."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 1
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 7
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 1
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 4
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "A",
+    "answer": {
+      "edgeSequence": [
+        "A-B",
+        "A-C",
+        "B-D",
+        "D-E"
+      ],
+      "totalWeight": 8
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-2",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex kruskal trace 2",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F}; edges: AB(3), BC(6), CD(9), DE(3), EF(6), FA(9), AC(3), BD(8), CE(2), DF(7). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge CE (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge AB (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge DE (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge AC (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge EF (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 3 + 3 + 3 + 6 = 17."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 3
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 6
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 9
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 6
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 9
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 8
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 2
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 7
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "C-E",
+        "A-B",
+        "D-E",
+        "A-C",
+        "E-F"
+      ],
+      "totalWeight": 17
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-2",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex prim trace 2",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at B. V={A,B,C,D,E,F}; edges: AB(3), BC(6), CD(9), DE(3), EF(6), FA(9), AC(3), BD(8), CE(2), DF(7). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge AB (weight 3). Start at B. It is a minimum-weight crossing edge. Reached vertices are {B, A}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge AC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {B, A, C}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge CE (weight 2). It is a minimum-weight crossing edge. Reached vertices are {B, A, C, E}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge DE (weight 3). It is a minimum-weight crossing edge. Reached vertices are {B, A, C, E, D}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge EF (weight 6). It is a minimum-weight crossing edge. Reached vertices are {B, A, C, E, D, F}."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Prim's algorithm; total weight = 3 + 3 + 2 + 3 + 6 = 17."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 3
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 6
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 9
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 6
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 9
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 8
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 2
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 7
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "B",
+    "answer": {
+      "edgeSequence": [
+        "A-B",
+        "A-C",
+        "C-E",
+        "D-E",
+        "E-F"
+      ],
+      "totalWeight": 17
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-3",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "7-vertex kruskal trace 3",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F,G}; edges: AB(5), BC(8), CD(2), DE(5), EF(8), FG(2), GA(5), AC(4), BD(9), CE(3), DF(8), EG(2). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge CD (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge FG (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge EG (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge CE (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge AC (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge AB (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 7,
+        "text": "Finally all 7 vertices are connected using 6 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 2 + 2 + 3 + 4 + 5 = 18."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 5
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 8
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 2
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 5
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 8
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 2
+        },
+        {
+          "id": "G-A",
+          "u": "G",
+          "v": "A",
+          "weight": 5
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 9
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 8
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 2
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 219,
+          "y": 236
+        },
+        "C": {
+          "x": 126,
+          "y": 257
+        },
+        "D": {
+          "x": 51,
+          "y": 198
+        },
+        "E": {
+          "x": 51,
+          "y": 102
+        },
+        "F": {
+          "x": 126,
+          "y": 43
+        },
+        "G": {
+          "x": 219,
+          "y": 64
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "C-D",
+        "F-G",
+        "E-G",
+        "C-E",
+        "A-C",
+        "A-B"
+      ],
+      "totalWeight": 18
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-3",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "7-vertex prim trace 3",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at C. V={A,B,C,D,E,F,G}; edges: AB(5), BC(8), CD(2), DE(5), EF(8), FG(2), GA(5), AC(4), BD(9), CE(3), DF(8), EG(2). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge CD (weight 2). Start at C. It is a minimum-weight crossing edge. Reached vertices are {C, D}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge CE (weight 3). It is a minimum-weight crossing edge. Reached vertices are {C, D, E}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge EG (weight 2). It is a minimum-weight crossing edge. Reached vertices are {C, D, E, G}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge FG (weight 2). It is a minimum-weight crossing edge. Reached vertices are {C, D, E, G, F}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge AC (weight 4). It is a minimum-weight crossing edge. Reached vertices are {C, D, E, G, F, A}."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge AB (weight 5). It is a minimum-weight crossing edge. Reached vertices are {C, D, E, G, F, A, B}."
+      },
+      {
+        "step": 7,
+        "text": "Finally all 7 vertices are connected using 6 edges, so this is the MST by Prim's algorithm; total weight = 2 + 3 + 2 + 2 + 4 + 5 = 18."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 5
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 8
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 2
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 5
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 8
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 2
+        },
+        {
+          "id": "G-A",
+          "u": "G",
+          "v": "A",
+          "weight": 5
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 9
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 8
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 2
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 219,
+          "y": 236
+        },
+        "C": {
+          "x": 126,
+          "y": 257
+        },
+        "D": {
+          "x": 51,
+          "y": 198
+        },
+        "E": {
+          "x": 51,
+          "y": 102
+        },
+        "F": {
+          "x": 126,
+          "y": 43
+        },
+        "G": {
+          "x": 219,
+          "y": 64
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "C",
+    "answer": {
+      "edgeSequence": [
+        "C-D",
+        "C-E",
+        "E-G",
+        "F-G",
+        "A-C",
+        "A-B"
+      ],
+      "totalWeight": 18
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-4",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "8-vertex kruskal trace 4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F,G,H}; edges: AB(7), BC(1), CD(4), DE(7), EF(1), FG(4), GH(7), HA(1), AC(3), BD(3), CE(3), DF(3), EG(3), FH(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge BC (weight 1). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge EF (weight 1). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge HA (weight 1). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge AC (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge BD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge CE (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 7,
+        "text": "Step 7: add edge EG (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 8,
+        "text": "Finally all 8 vertices are connected using 7 edges, so this is the MST by Kruskal's algorithm; total weight = 1 + 1 + 1 + 3 + 3 + 3 + 3 = 15."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 7
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 1
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 4
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 7
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 1
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 4
+        },
+        {
+          "id": "G-H",
+          "u": "G",
+          "v": "H",
+          "weight": 7
+        },
+        {
+          "id": "H-A",
+          "u": "H",
+          "v": "A",
+          "weight": 1
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 3
+        },
+        {
+          "id": "F-H",
+          "u": "F",
+          "v": "H",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 228,
+          "y": 228
+        },
+        "C": {
+          "x": 150,
+          "y": 260
+        },
+        "D": {
+          "x": 72,
+          "y": 228
+        },
+        "E": {
+          "x": 40,
+          "y": 150
+        },
+        "F": {
+          "x": 72,
+          "y": 72
+        },
+        "G": {
+          "x": 150,
+          "y": 40
+        },
+        "H": {
+          "x": 228,
+          "y": 72
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "B-C",
+        "E-F",
+        "H-A",
+        "A-C",
+        "B-D",
+        "C-E",
+        "E-G"
+      ],
+      "totalWeight": 15
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-4",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "8-vertex prim trace 4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at D. V={A,B,C,D,E,F,G,H}; edges: AB(7), BC(1), CD(4), DE(7), EF(1), FG(4), GH(7), HA(1), AC(3), BD(3), CE(3), DF(3), EG(3), FH(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge BD (weight 3). Start at D. It is a minimum-weight crossing edge. Reached vertices are {D, B}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge BC (weight 1). It is a minimum-weight crossing edge. Reached vertices are {D, B, C}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge HA (weight 1). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A, H}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge CE (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A, H, E}."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge EF (weight 1). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A, H, E, F}."
+      },
+      {
+        "step": 7,
+        "text": "Step 7: add edge EG (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A, H, E, F, G}."
+      },
+      {
+        "step": 8,
+        "text": "Finally all 8 vertices are connected using 7 edges, so this is the MST by Prim's algorithm; total weight = 3 + 1 + 3 + 1 + 3 + 1 + 3 = 15."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 7
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 1
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 4
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 7
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 1
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 4
+        },
+        {
+          "id": "G-H",
+          "u": "G",
+          "v": "H",
+          "weight": 7
+        },
+        {
+          "id": "H-A",
+          "u": "H",
+          "v": "A",
+          "weight": 1
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 3
+        },
+        {
+          "id": "F-H",
+          "u": "F",
+          "v": "H",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 228,
+          "y": 228
+        },
+        "C": {
+          "x": 150,
+          "y": 260
+        },
+        "D": {
+          "x": 72,
+          "y": 228
+        },
+        "E": {
+          "x": 40,
+          "y": 150
+        },
+        "F": {
+          "x": 72,
+          "y": 72
+        },
+        "G": {
+          "x": 150,
+          "y": 40
+        },
+        "H": {
+          "x": 228,
+          "y": 72
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "D",
+    "answer": {
+      "edgeSequence": [
+        "B-D",
+        "B-C",
+        "A-C",
+        "H-A",
+        "C-E",
+        "E-F",
+        "E-G"
+      ],
+      "totalWeight": 15
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-5",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex kruskal trace 5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E}; edges: AB(9), BC(3), CD(6), DE(9), EA(3), AC(6), BD(11), CE(5). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge BC (weight 3). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge EA (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge CE (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge CD (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Kruskal's algorithm; total weight = 3 + 3 + 5 + 6 = 17."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 9
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 6
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 9
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 3
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 6
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 11
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 5
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "B-C",
+        "E-A",
+        "C-E",
+        "C-D"
+      ],
+      "totalWeight": 17
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-5",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex prim trace 5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at E. V={A,B,C,D,E}; edges: AB(9), BC(3), CD(6), DE(9), EA(3), AC(6), BD(11), CE(5). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge EA (weight 3). Start at E. It is a minimum-weight crossing edge. Reached vertices are {E, A}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge CE (weight 5). It is a minimum-weight crossing edge. Reached vertices are {E, A, C}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge BC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {E, A, C, B}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge CD (weight 6). It is a minimum-weight crossing edge. Reached vertices are {E, A, C, B, D}."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Prim's algorithm; total weight = 3 + 5 + 3 + 6 = 17."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 9
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 6
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 9
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 3
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 6
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 11
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 5
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "E",
+    "answer": {
+      "edgeSequence": [
+        "E-A",
+        "C-E",
+        "B-C",
+        "C-D"
+      ],
+      "totalWeight": 17
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-6",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex kruskal trace 6",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F}; edges: AB(2), BC(5), CD(8), DE(2), EF(5), FA(8), AC(7), BD(12), CE(6), DF(11). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge AB (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge DE (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge BC (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge EF (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge CE (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 2 + 5 + 5 + 6 = 20."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 2
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 5
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 8
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 2
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 5
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 8
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 7
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 12
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 6
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 11
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "A-B",
+        "D-E",
+        "B-C",
+        "E-F",
+        "C-E"
+      ],
+      "totalWeight": 20
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-6",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex prim trace 6",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at F. V={A,B,C,D,E,F}; edges: AB(2), BC(5), CD(8), DE(2), EF(5), FA(8), AC(7), BD(12), CE(6), DF(11). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge EF (weight 5). Start at F. It is a minimum-weight crossing edge. Reached vertices are {F, E}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge DE (weight 2). It is a minimum-weight crossing edge. Reached vertices are {F, E, D}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge CE (weight 6). It is a minimum-weight crossing edge. Reached vertices are {F, E, D, C}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge BC (weight 5). It is a minimum-weight crossing edge. Reached vertices are {F, E, D, C, B}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge AB (weight 2). It is a minimum-weight crossing edge. Reached vertices are {F, E, D, C, B, A}."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Prim's algorithm; total weight = 5 + 2 + 6 + 5 + 2 = 20."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 2
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 5
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 8
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 2
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 5
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 8
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 7
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 12
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 6
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 11
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "F",
+    "answer": {
+      "edgeSequence": [
+        "E-F",
+        "D-E",
+        "C-E",
+        "B-C",
+        "A-B"
+      ],
+      "totalWeight": 20
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-7",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "7-vertex kruskal trace 7",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F,G}; edges: AB(4), BC(7), CD(1), DE(4), EF(7), FG(1), GA(4), AC(3), BD(3), CE(3), DF(3), EG(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge CD (weight 1). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge FG (weight 1). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AC (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge BD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge CE (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge DF (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 7,
+        "text": "Finally all 7 vertices are connected using 6 edges, so this is the MST by Kruskal's algorithm; total weight = 1 + 1 + 3 + 3 + 3 + 3 = 14."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 4
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 7
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 1
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 4
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 7
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 1
+        },
+        {
+          "id": "G-A",
+          "u": "G",
+          "v": "A",
+          "weight": 4
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 219,
+          "y": 236
+        },
+        "C": {
+          "x": 126,
+          "y": 257
+        },
+        "D": {
+          "x": 51,
+          "y": 198
+        },
+        "E": {
+          "x": 51,
+          "y": 102
+        },
+        "F": {
+          "x": 126,
+          "y": 43
+        },
+        "G": {
+          "x": 219,
+          "y": 64
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "C-D",
+        "F-G",
+        "A-C",
+        "B-D",
+        "C-E",
+        "D-F"
+      ],
+      "totalWeight": 14
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-7",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "7-vertex prim trace 7",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at G. V={A,B,C,D,E,F,G}; edges: AB(4), BC(7), CD(1), DE(4), EF(7), FG(1), GA(4), AC(3), BD(3), CE(3), DF(3), EG(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge FG (weight 1). Start at G. It is a minimum-weight crossing edge. Reached vertices are {G, F}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge DF (weight 3). It is a minimum-weight crossing edge. Reached vertices are {G, F, D}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge CD (weight 1). It is a minimum-weight crossing edge. Reached vertices are {G, F, D, C}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge AC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {G, F, D, C, A}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge BD (weight 3). It is a minimum-weight crossing edge. Reached vertices are {G, F, D, C, A, B}."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge CE (weight 3). It is a minimum-weight crossing edge. Reached vertices are {G, F, D, C, A, B, E}."
+      },
+      {
+        "step": 7,
+        "text": "Finally all 7 vertices are connected using 6 edges, so this is the MST by Prim's algorithm; total weight = 1 + 3 + 1 + 3 + 3 + 3 = 14."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 4
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 7
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 1
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 4
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 7
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 1
+        },
+        {
+          "id": "G-A",
+          "u": "G",
+          "v": "A",
+          "weight": 4
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 219,
+          "y": 236
+        },
+        "C": {
+          "x": 126,
+          "y": 257
+        },
+        "D": {
+          "x": 51,
+          "y": 198
+        },
+        "E": {
+          "x": 51,
+          "y": 102
+        },
+        "F": {
+          "x": 126,
+          "y": 43
+        },
+        "G": {
+          "x": 219,
+          "y": 64
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "G",
+    "answer": {
+      "edgeSequence": [
+        "F-G",
+        "D-F",
+        "C-D",
+        "A-C",
+        "B-D",
+        "C-E"
+      ],
+      "totalWeight": 14
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-8",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "8-vertex kruskal trace 8",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F,G,H}; edges: AB(6), BC(9), CD(3), DE(6), EF(9), FG(3), GH(6), HA(9), AC(9), BD(3), CE(8), DF(2), EG(7), FH(12). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge DF (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge CD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge FG (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge BD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge AB (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge DE (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 7,
+        "text": "Step 7: add edge GH (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 8,
+        "text": "Finally all 8 vertices are connected using 7 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 3 + 3 + 3 + 6 + 6 + 6 = 29."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 6
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 9
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 6
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 9
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 3
+        },
+        {
+          "id": "G-H",
+          "u": "G",
+          "v": "H",
+          "weight": 6
+        },
+        {
+          "id": "H-A",
+          "u": "H",
+          "v": "A",
+          "weight": 9
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 9
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 8
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 2
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 7
+        },
+        {
+          "id": "F-H",
+          "u": "F",
+          "v": "H",
+          "weight": 12
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 228,
+          "y": 228
+        },
+        "C": {
+          "x": 150,
+          "y": 260
+        },
+        "D": {
+          "x": 72,
+          "y": 228
+        },
+        "E": {
+          "x": 40,
+          "y": 150
+        },
+        "F": {
+          "x": 72,
+          "y": 72
+        },
+        "G": {
+          "x": 150,
+          "y": 40
+        },
+        "H": {
+          "x": 228,
+          "y": 72
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "D-F",
+        "C-D",
+        "F-G",
+        "B-D",
+        "A-B",
+        "D-E",
+        "G-H"
+      ],
+      "totalWeight": 29
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-8",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "8-vertex prim trace 8",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at H. V={A,B,C,D,E,F,G,H}; edges: AB(6), BC(9), CD(3), DE(6), EF(9), FG(3), GH(6), HA(9), AC(9), BD(3), CE(8), DF(2), EG(7), FH(12). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge GH (weight 6). Start at H. It is a minimum-weight crossing edge. Reached vertices are {H, G}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge FG (weight 3). It is a minimum-weight crossing edge. Reached vertices are {H, G, F}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge DF (weight 2). It is a minimum-weight crossing edge. Reached vertices are {H, G, F, D}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge CD (weight 3). It is a minimum-weight crossing edge. Reached vertices are {H, G, F, D, C}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge BD (weight 3). It is a minimum-weight crossing edge. Reached vertices are {H, G, F, D, C, B}."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge AB (weight 6). It is a minimum-weight crossing edge. Reached vertices are {H, G, F, D, C, B, A}."
+      },
+      {
+        "step": 7,
+        "text": "Step 7: add edge DE (weight 6). It is a minimum-weight crossing edge. Reached vertices are {H, G, F, D, C, B, A, E}."
+      },
+      {
+        "step": 8,
+        "text": "Finally all 8 vertices are connected using 7 edges, so this is the MST by Prim's algorithm; total weight = 6 + 3 + 2 + 3 + 3 + 6 + 6 = 29."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 6
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 9
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 6
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 9
+        },
+        {
+          "id": "F-G",
+          "u": "F",
+          "v": "G",
+          "weight": 3
+        },
+        {
+          "id": "G-H",
+          "u": "G",
+          "v": "H",
+          "weight": 6
+        },
+        {
+          "id": "H-A",
+          "u": "H",
+          "v": "A",
+          "weight": 9
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 9
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 8
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 2
+        },
+        {
+          "id": "E-G",
+          "u": "E",
+          "v": "G",
+          "weight": 7
+        },
+        {
+          "id": "F-H",
+          "u": "F",
+          "v": "H",
+          "weight": 12
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 228,
+          "y": 228
+        },
+        "C": {
+          "x": 150,
+          "y": 260
+        },
+        "D": {
+          "x": 72,
+          "y": 228
+        },
+        "E": {
+          "x": 40,
+          "y": 150
+        },
+        "F": {
+          "x": 72,
+          "y": 72
+        },
+        "G": {
+          "x": 150,
+          "y": 40
+        },
+        "H": {
+          "x": 228,
+          "y": 72
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "H",
+    "answer": {
+      "edgeSequence": [
+        "G-H",
+        "F-G",
+        "D-F",
+        "C-D",
+        "B-D",
+        "A-B",
+        "D-E"
+      ],
+      "totalWeight": 29
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-9",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex kruskal trace 9",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E}; edges: AB(8), BC(2), CD(5), DE(8), EA(2), AC(10), BD(4), CE(9). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge BC (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge EA (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge BD (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge AB (weight 8). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 2 + 4 + 8 = 16."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 8
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 2
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 5
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 8
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 2
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 10
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 4
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 9
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "B-C",
+        "E-A",
+        "B-D",
+        "A-B"
+      ],
+      "totalWeight": 16
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-9",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "5-vertex prim trace 9",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at D. V={A,B,C,D,E}; edges: AB(8), BC(2), CD(5), DE(8), EA(2), AC(10), BD(4), CE(9). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge BD (weight 4). Start at D. It is a minimum-weight crossing edge. Reached vertices are {D, B}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge BC (weight 2). It is a minimum-weight crossing edge. Reached vertices are {D, B, C}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AB (weight 8). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge EA (weight 2). It is a minimum-weight crossing edge. Reached vertices are {D, B, C, A, E}."
+      },
+      {
+        "step": 5,
+        "text": "Finally all 5 vertices are connected using 4 edges, so this is the MST by Prim's algorithm; total weight = 4 + 2 + 8 + 2 = 16."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 8
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 2
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 5
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 8
+        },
+        {
+          "id": "E-A",
+          "u": "E",
+          "v": "A",
+          "weight": 2
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 10
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 4
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 9
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 184,
+          "y": 255
+        },
+        "C": {
+          "x": 61,
+          "y": 215
+        },
+        "D": {
+          "x": 61,
+          "y": 85
+        },
+        "E": {
+          "x": 184,
+          "y": 45
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "D",
+    "answer": {
+      "edgeSequence": [
+        "B-D",
+        "B-C",
+        "A-B",
+        "E-A"
+      ],
+      "totalWeight": 16
+    },
+    "tags": [
+      "mixed-weights"
+    ]
+  },
+  {
+    "id": "dm-mst-kruskal-10",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex kruskal trace 10",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F}; edges: AB(1), BC(4), CD(7), DE(1), EF(4), FA(7), AC(3), BD(3), CE(3), DF(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge AB (weight 1). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge DE (weight 1). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AC (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge BD (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge DF (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 1 + 1 + 3 + 3 + 3 = 11."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 1
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 7
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 1
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 4
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 7
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "A-B",
+        "D-E",
+        "A-C",
+        "B-D",
+        "D-F"
+      ],
+      "totalWeight": 11
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-mst-prim-10",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "6-vertex prim trace 10",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Find an MST using Prim's algorithm, starting at D. V={A,B,C,D,E,F}; edges: AB(1), BC(4), CD(7), DE(1), EF(4), FA(7), AC(3), BD(3), CE(3), DF(3). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge DE (weight 1). Start at D. It is a minimum-weight crossing edge. Reached vertices are {D, E}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge BD (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, E, B}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge AB (weight 1). It is a minimum-weight crossing edge. Reached vertices are {D, E, B, A}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge AC (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, E, B, A, C}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge DF (weight 3). It is a minimum-weight crossing edge. Reached vertices are {D, E, B, A, C, F}."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Prim's algorithm; total weight = 1 + 3 + 1 + 3 + 3 = 11."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "edges": [
+        {
+          "id": "A-B",
+          "u": "A",
+          "v": "B",
+          "weight": 1
+        },
+        {
+          "id": "B-C",
+          "u": "B",
+          "v": "C",
+          "weight": 4
+        },
+        {
+          "id": "C-D",
+          "u": "C",
+          "v": "D",
+          "weight": 7
+        },
+        {
+          "id": "D-E",
+          "u": "D",
+          "v": "E",
+          "weight": 1
+        },
+        {
+          "id": "E-F",
+          "u": "E",
+          "v": "F",
+          "weight": 4
+        },
+        {
+          "id": "F-A",
+          "u": "F",
+          "v": "A",
+          "weight": 7
+        },
+        {
+          "id": "A-C",
+          "u": "A",
+          "v": "C",
+          "weight": 3
+        },
+        {
+          "id": "B-D",
+          "u": "B",
+          "v": "D",
+          "weight": 3
+        },
+        {
+          "id": "C-E",
+          "u": "C",
+          "v": "E",
+          "weight": 3
+        },
+        {
+          "id": "D-F",
+          "u": "D",
+          "v": "F",
+          "weight": 3
+        }
+      ],
+      "layout": {
+        "A": {
+          "x": 260,
+          "y": 150
+        },
+        "B": {
+          "x": 205,
+          "y": 245
+        },
+        "C": {
+          "x": 95,
+          "y": 245
+        },
+        "D": {
+          "x": 40,
+          "y": 150
+        },
+        "E": {
+          "x": 95,
+          "y": 55
+        },
+        "F": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "D",
+    "answer": {
+      "edgeSequence": [
+        "D-E",
+        "B-D",
+        "A-B",
+        "A-C",
+        "D-F"
+      ],
+      "totalWeight": 11
+    },
+    "tags": [
+      "ties"
+    ]
+  },
+  {
+    "id": "dm-p1-q7a",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "Recovered graph: prim",
+    "source": "Past paper 1 Q7a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "Find an MST using Prim's algorithm, starting at 1. V={1,2,3,4,5,6}; edges: 14(2), 13(3), 65(4), 46(5), 43(6), 42(7), 25(8), 45(9). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge 14 (weight 2). Start at 1. It is a minimum-weight crossing edge. Reached vertices are {1, 4}."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge 13 (weight 3). It is a minimum-weight crossing edge. Reached vertices are {1, 4, 3}."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge 46 (weight 5). It is a minimum-weight crossing edge. Reached vertices are {1, 4, 3, 6}."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge 65 (weight 4). It is a minimum-weight crossing edge. Reached vertices are {1, 4, 3, 6, 5}."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge 42 (weight 7). It is a minimum-weight crossing edge. Reached vertices are {1, 4, 3, 6, 5, 2}."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Prim's algorithm; total weight = 2 + 3 + 5 + 4 + 7 = 21."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "edges": [
+        {
+          "id": "1-4",
+          "u": "1",
+          "v": "4",
+          "weight": 2
+        },
+        {
+          "id": "1-3",
+          "u": "1",
+          "v": "3",
+          "weight": 3
+        },
+        {
+          "id": "6-5",
+          "u": "6",
+          "v": "5",
+          "weight": 4
+        },
+        {
+          "id": "4-6",
+          "u": "4",
+          "v": "6",
+          "weight": 5
+        },
+        {
+          "id": "4-3",
+          "u": "4",
+          "v": "3",
+          "weight": 6
+        },
+        {
+          "id": "4-2",
+          "u": "4",
+          "v": "2",
+          "weight": 7
+        },
+        {
+          "id": "2-5",
+          "u": "2",
+          "v": "5",
+          "weight": 8
+        },
+        {
+          "id": "4-5",
+          "u": "4",
+          "v": "5",
+          "weight": 9
+        }
+      ],
+      "image": "/dm/source-images/paper1-image116.png",
+      "layout": {
+        "1": {
+          "x": 260,
+          "y": 150
+        },
+        "2": {
+          "x": 205,
+          "y": 245
+        },
+        "3": {
+          "x": 95,
+          "y": 245
+        },
+        "4": {
+          "x": 40,
+          "y": 150
+        },
+        "5": {
+          "x": 95,
+          "y": 55
+        },
+        "6": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "prim",
+    "startVertex": "1",
+    "answer": {
+      "edgeSequence": [
+        "1-4",
+        "1-3",
+        "4-6",
+        "6-5",
+        "4-2"
+      ],
+      "totalWeight": 21
+    },
+    "provenance": {
+      "paper": 1,
+      "question": "7a",
+      "printedMarks": 20,
+      "page": 2,
+      "marksNote": "Q7 prints 20 marks jointly; 10 per algorithm is an editorial allocation.",
+      "image": "/dm/source-images/paper1-image116.png",
+      "recoveredFromImage": [
+        "All six vertex labels and all eight edge weights."
+      ]
+    }
+  },
+  {
+    "id": "dm-p1-q7b",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "Recovered graph: kruskal",
+    "source": "Past paper 1 Q7b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "Find an MST using Kruskal's algorithm. V={1,2,3,4,5,6}; edges: 14(2), 13(3), 65(4), 46(5), 43(6), 42(7), 25(8), 45(9). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge 14 (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge 13 (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge 65 (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge 46 (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge 42 (weight 7). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 3 + 4 + 5 + 7 = 21."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "edges": [
+        {
+          "id": "1-4",
+          "u": "1",
+          "v": "4",
+          "weight": 2
+        },
+        {
+          "id": "1-3",
+          "u": "1",
+          "v": "3",
+          "weight": 3
+        },
+        {
+          "id": "6-5",
+          "u": "6",
+          "v": "5",
+          "weight": 4
+        },
+        {
+          "id": "4-6",
+          "u": "4",
+          "v": "6",
+          "weight": 5
+        },
+        {
+          "id": "4-3",
+          "u": "4",
+          "v": "3",
+          "weight": 6
+        },
+        {
+          "id": "4-2",
+          "u": "4",
+          "v": "2",
+          "weight": 7
+        },
+        {
+          "id": "2-5",
+          "u": "2",
+          "v": "5",
+          "weight": 8
+        },
+        {
+          "id": "4-5",
+          "u": "4",
+          "v": "5",
+          "weight": 9
+        }
+      ],
+      "image": "/dm/source-images/paper1-image116.png",
+      "layout": {
+        "1": {
+          "x": 260,
+          "y": 150
+        },
+        "2": {
+          "x": 205,
+          "y": 245
+        },
+        "3": {
+          "x": 95,
+          "y": 245
+        },
+        "4": {
+          "x": 40,
+          "y": 150
+        },
+        "5": {
+          "x": 95,
+          "y": 55
+        },
+        "6": {
+          "x": 205,
+          "y": 55
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "1-4",
+        "1-3",
+        "6-5",
+        "4-6",
+        "4-2"
+      ],
+      "totalWeight": 21
+    },
+    "provenance": {
+      "paper": 1,
+      "question": "7b",
+      "printedMarks": 20,
+      "page": 2,
+      "marksNote": "Q7 prints 20 marks jointly; 10 per algorithm is an editorial allocation.",
+      "image": "/dm/source-images/paper1-image116.png",
+      "recoveredFromImage": [
+        "All six vertex labels and all eight edge weights."
+      ]
+    }
+  },
+  {
+    "id": "dm-p4-q9",
+    "subject": "dm",
+    "topic": "mst",
+    "title": "Recovered seven-vertex Kruskal graph",
+    "source": "Past paper 4 Q9",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find an MST using Kruskal's algorithm. V={a,b,c,d,e,f,g}; edges: ab(5), ac(10), bc(15), bd(5), bf(6), cd(7), cg(12), ce(30), df(9), dg(8), fg(14), ge(20). Type each accepted edge in order, justify it, and state total weight.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Step 1: add edge ab (weight 5). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 2,
+        "text": "Step 2: add edge bd (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 3,
+        "text": "Step 3: add edge bf (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 4,
+        "text": "Step 4: add edge cd (weight 7). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 5,
+        "text": "Step 5: add edge dg (weight 8). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 6,
+        "text": "Step 6: add edge ge (weight 20). It is a minimum-weight edge joining two current components, so no cycle is formed."
+      },
+      {
+        "step": 7,
+        "text": "Finally all 7 vertices are connected using 6 edges, so this is the MST by Kruskal's algorithm; total weight = 5 + 5 + 6 + 7 + 8 + 20 = 51."
+      }
+    ],
+    "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+    "type": "mst",
+    "graph": {
+      "vertices": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g"
+      ],
+      "edges": [
+        {
+          "id": "a-b",
+          "u": "a",
+          "v": "b",
+          "weight": 5
+        },
+        {
+          "id": "a-c",
+          "u": "a",
+          "v": "c",
+          "weight": 10
+        },
+        {
+          "id": "b-c",
+          "u": "b",
+          "v": "c",
+          "weight": 15
+        },
+        {
+          "id": "b-d",
+          "u": "b",
+          "v": "d",
+          "weight": 5
+        },
+        {
+          "id": "b-f",
+          "u": "b",
+          "v": "f",
+          "weight": 6
+        },
+        {
+          "id": "c-d",
+          "u": "c",
+          "v": "d",
+          "weight": 7
+        },
+        {
+          "id": "c-g",
+          "u": "c",
+          "v": "g",
+          "weight": 12
+        },
+        {
+          "id": "c-e",
+          "u": "c",
+          "v": "e",
+          "weight": 30
+        },
+        {
+          "id": "d-f",
+          "u": "d",
+          "v": "f",
+          "weight": 9
+        },
+        {
+          "id": "d-g",
+          "u": "d",
+          "v": "g",
+          "weight": 8
+        },
+        {
+          "id": "f-g",
+          "u": "f",
+          "v": "g",
+          "weight": 14
+        },
+        {
+          "id": "g-e",
+          "u": "g",
+          "v": "e",
+          "weight": 20
+        }
+      ],
+      "image": "/dm/source-images/paper4-image97.png",
+      "layout": {
+        "a": {
+          "x": 260,
+          "y": 150
+        },
+        "b": {
+          "x": 219,
+          "y": 236
+        },
+        "c": {
+          "x": 126,
+          "y": 257
+        },
+        "d": {
+          "x": 51,
+          "y": 198
+        },
+        "e": {
+          "x": 51,
+          "y": 102
+        },
+        "f": {
+          "x": 126,
+          "y": 43
+        },
+        "g": {
+          "x": 219,
+          "y": 64
+        }
+      }
+    },
+    "algorithm": "kruskal",
+    "answer": {
+      "edgeSequence": [
+        "a-b",
+        "b-d",
+        "b-f",
+        "c-d",
+        "d-g",
+        "g-e"
+      ],
+      "totalWeight": 51
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "9",
+      "printedMarks": 5,
+      "page": 2,
+      "image": "/dm/source-images/paper4-image97.png",
+      "recoveredFromImage": [
+        "All seven vertices and twelve weights, including the tie ab=bd=5."
+      ]
+    }
+  }
+]

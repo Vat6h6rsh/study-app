@@ -19,3 +19,5 @@ Every delegated job's prompt, in order, so the reasoning behind each feature is 
 | 21 Nov | `itp-comments-content.md` | Beginner-level comments + concept notes, run as 5 parallel slices writing `tmp-patches/*.json` | Merged by id by the manager |
 | 21 Nov | `itp-reveal-ui.md` | Concept fold-out, revealed answers fill the program, Reveal all | |
 | 21 Nov | `dm-content.md` | DM content: notes, auto-gradable question types, mocks, maths verifiers | DM exam 28 Nov; UI integration is a follow-up |
+| 21 Nov | `itp-mobile-inline.md` + `itp-code-no-scroll.md` | Phones: answer inline in the code with a keyboard toolbar; decluttered practice page; desktop Side panel/Inline toggle; stutter fixed (line-level memoisation); program in page flow with soft-wrap, no inner scroll | Codex hit its limit before starting; done by a Sonnet subagent (commit 54ea1b4) |
+| 21 Nov | `dm-ui.md` | (pending) DM UI integration spec | To be run by Codex after its usage resets |

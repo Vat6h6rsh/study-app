@@ -1,0 +1,2423 @@
+[
+  {
+    "id": "dm-relations-1",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Equality on three elements",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "On A={1,2,3}, R={(1,1), (2,2), (3,3)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: yes. All diagonal pairs (1,1),(2,2),(3,3) occur."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: no. (1,1) is present."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: yes. Every displayed pair has its reversed pair in the displayed list."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: yes. No distinct x,y have both (x,y) and (y,x) in the list."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: yes. Reflexivity, symmetry and transitivity all hold."
+      },
+      {
+        "step": 7,
+        "text": "partial order: yes. Reflexivity, antisymmetry and transitivity all hold."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": true,
+      "irreflexive": false,
+      "symmetric": true,
+      "antisymmetric": true,
+      "transitive": true,
+      "equivalence relation": true,
+      "partial order": true
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-2",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "At most on four integers",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "On A={1,2,3,4}, R={(1,1), (1,2), (1,3), (1,4), (2,2), (2,3), (2,4), (3,3), (3,4), (4,4)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: yes. All diagonal pairs (1,1),(2,2),(3,3),(4,4) occur."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: no. (1,1) is present."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: no. (1,2) is present but (2,1) is absent."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: yes. No distinct x,y have both (x,y) and (y,x) in the list."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails symmetric."
+      },
+      {
+        "step": 7,
+        "text": "partial order: yes. Reflexivity, antisymmetry and transitivity all hold."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": true,
+      "irreflexive": false,
+      "symmetric": false,
+      "antisymmetric": true,
+      "transitive": true,
+      "equivalence relation": false,
+      "partial order": true
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "4"
+          ],
+          [
+            "4",
+            "4"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-3",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Strictly less",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "On A={1,2,3}, R={(1,2), (1,3), (2,3)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: no. (1,1) is missing."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: yes. There are no diagonal pairs."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: no. (1,2) is present but (2,1) is absent."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: yes. No distinct x,y have both (x,y) and (y,x) in the list."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails reflexive, symmetric."
+      },
+      {
+        "step": 7,
+        "text": "partial order: no. It fails reflexive."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": false,
+      "irreflexive": true,
+      "symmetric": false,
+      "antisymmetric": true,
+      "transitive": true,
+      "equivalence relation": false,
+      "partial order": false
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pairs": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "2",
+            "3"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-4",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Unequal integers",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={1,2,3}, R={(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: no. (1,1) is missing."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: yes. There are no diagonal pairs."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: yes. Every displayed pair has its reversed pair in the displayed list."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: no. (1,2) and (2,1) both occur with 1!=2."
+      },
+      {
+        "step": 5,
+        "text": "transitive: no. (1,2) and (2,1) occur but (1,1) does not."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails reflexive, transitive."
+      },
+      {
+        "step": 7,
+        "text": "partial order: no. It fails reflexive, antisymmetric, transitive."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": false,
+      "irreflexive": true,
+      "symmetric": true,
+      "antisymmetric": false,
+      "transitive": false,
+      "equivalence relation": false,
+      "partial order": false
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pairs": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "2",
+            "1"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "3",
+            "2"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-5",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Same parity",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={0,1,2,3,4,5}, R={(0,0), (0,2), (0,4), (1,1), (1,3), (1,5), (2,0), (2,2), (2,4), (3,1), (3,3), (3,5), (4,0), (4,2), (4,4), (5,1), (5,3), (5,5)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: yes. All diagonal pairs (0,0),(1,1),(2,2),(3,3),(4,4),(5,5) occur."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: no. (0,0) is present."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: yes. Every displayed pair has its reversed pair in the displayed list."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: no. (0,2) and (2,0) both occur with 0!=2."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: yes. Reflexivity, symmetry and transitivity all hold."
+      },
+      {
+        "step": 7,
+        "text": "partial order: no. It fails antisymmetric."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": true,
+      "irreflexive": false,
+      "symmetric": true,
+      "antisymmetric": false,
+      "transitive": true,
+      "equivalence relation": true,
+      "partial order": false
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "pairs": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "4"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "2",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "5"
+          ],
+          [
+            "4",
+            "0"
+          ],
+          [
+            "4",
+            "2"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "1"
+          ],
+          [
+            "5",
+            "3"
+          ],
+          [
+            "5",
+            "5"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-6",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Distance at most one",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={1,2,3}, R={(1,1), (1,2), (2,1), (2,2), (2,3), (3,2), (3,3)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: yes. All diagonal pairs (1,1),(2,2),(3,3) occur."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: no. (1,1) is present."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: yes. Every displayed pair has its reversed pair in the displayed list."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: no. (1,2) and (2,1) both occur with 1!=2."
+      },
+      {
+        "step": 5,
+        "text": "transitive: no. (1,2) and (2,3) occur but (1,3) does not."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails transitive."
+      },
+      {
+        "step": 7,
+        "text": "partial order: no. It fails antisymmetric, transitive."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": true,
+      "irreflexive": false,
+      "symmetric": true,
+      "antisymmetric": false,
+      "transitive": false,
+      "equivalence relation": false,
+      "partial order": false
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "3"
+          ],
+          [
+            "3",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-7",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Divisibility",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={1,2,3,6}, R={(1,1), (1,2), (1,3), (1,6), (2,2), (2,6), (3,3), (3,6), (6,6)}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: yes. All diagonal pairs (1,1),(2,2),(3,3),(6,6) occur."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: no. (1,1) is present."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: no. (1,2) is present but (2,1) is absent."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: yes. No distinct x,y have both (x,y) and (y,x) in the list."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails symmetric."
+      },
+      {
+        "step": 7,
+        "text": "partial order: yes. Reflexivity, antisymmetry and transitivity all hold."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": true,
+      "irreflexive": false,
+      "symmetric": false,
+      "antisymmetric": true,
+      "transitive": true,
+      "equivalence relation": false,
+      "partial order": true
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-8",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Empty relation",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={1,2}, R={}. Decide each listed property, giving definitions or witnesses.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "reflexive: no. (1,1) is missing."
+      },
+      {
+        "step": 2,
+        "text": "irreflexive: yes. There are no diagonal pairs."
+      },
+      {
+        "step": 3,
+        "text": "symmetric: yes. Every displayed pair has its reversed pair in the displayed list."
+      },
+      {
+        "step": 4,
+        "text": "antisymmetric: yes. No distinct x,y have both (x,y) and (y,x) in the list."
+      },
+      {
+        "step": 5,
+        "text": "transitive: yes. Checking each composable pair in the finite list produces an already listed endpoint pair."
+      },
+      {
+        "step": 6,
+        "text": "equivalence relation: no. It fails reflexive."
+      },
+      {
+        "step": 7,
+        "text": "partial order: no. It fails reflexive."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "properties",
+    "options": [
+      "reflexive",
+      "irreflexive",
+      "symmetric",
+      "antisymmetric",
+      "transitive",
+      "equivalence relation",
+      "partial order"
+    ],
+    "answer": {
+      "reflexive": false,
+      "irreflexive": true,
+      "symmetric": true,
+      "antisymmetric": true,
+      "transitive": true,
+      "equivalence relation": false,
+      "partial order": false
+    },
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "1",
+          "2"
+        ],
+        "pairs": []
+      }
+    }
+  },
+  {
+    "id": "dm-relations-9",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Partition modulo 2",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={0,1,2,3,4,5,6,7,8,9}, define x R y iff x=y (mod 2). List the equivalence classes as a partition.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Reflexive: m divides x-x=0. Symmetric: if m divides x-y it divides y-x. Transitive: add x-y and y-z."
+      },
+      {
+        "step": 2,
+        "text": "The class [a] contains all x in A with the same remainder as a modulo 2."
+      },
+      {
+        "step": 3,
+        "text": "Distinct classes are {0,2,4,6,8}; {1,3,5,7,9}."
+      },
+      {
+        "step": 4,
+        "text": "These classes are disjoint and cover A, so they form the required partition."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "partition",
+    "answer": [
+      [
+        "0",
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      [
+        "1",
+        "3",
+        "5",
+        "7",
+        "9"
+      ]
+    ],
+    "inputHint": "Enter {0,2,4}; {1,3,5}, with every element exactly once (adapt to this set).",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pairs": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "4"
+          ],
+          [
+            "0",
+            "6"
+          ],
+          [
+            "0",
+            "8"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "7"
+          ],
+          [
+            "1",
+            "9"
+          ],
+          [
+            "2",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "3",
+            "1"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "7"
+          ],
+          [
+            "3",
+            "9"
+          ],
+          [
+            "4",
+            "0"
+          ],
+          [
+            "4",
+            "2"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "6"
+          ],
+          [
+            "4",
+            "8"
+          ],
+          [
+            "5",
+            "1"
+          ],
+          [
+            "5",
+            "3"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "5",
+            "7"
+          ],
+          [
+            "5",
+            "9"
+          ],
+          [
+            "6",
+            "0"
+          ],
+          [
+            "6",
+            "2"
+          ],
+          [
+            "6",
+            "4"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "8"
+          ],
+          [
+            "7",
+            "1"
+          ],
+          [
+            "7",
+            "3"
+          ],
+          [
+            "7",
+            "5"
+          ],
+          [
+            "7",
+            "7"
+          ],
+          [
+            "7",
+            "9"
+          ],
+          [
+            "8",
+            "0"
+          ],
+          [
+            "8",
+            "2"
+          ],
+          [
+            "8",
+            "4"
+          ],
+          [
+            "8",
+            "6"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "9",
+            "1"
+          ],
+          [
+            "9",
+            "3"
+          ],
+          [
+            "9",
+            "5"
+          ],
+          [
+            "9",
+            "7"
+          ],
+          [
+            "9",
+            "9"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-10",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Partition modulo 3",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={0,1,2,3,4,5,6,7,8,9}, define x R y iff x=y (mod 3). List the equivalence classes as a partition.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Reflexive: m divides x-x=0. Symmetric: if m divides x-y it divides y-x. Transitive: add x-y and y-z."
+      },
+      {
+        "step": 2,
+        "text": "The class [a] contains all x in A with the same remainder as a modulo 3."
+      },
+      {
+        "step": 3,
+        "text": "Distinct classes are {0,3,6,9}; {1,4,7}; {2,5,8}."
+      },
+      {
+        "step": 4,
+        "text": "These classes are disjoint and cover A, so they form the required partition."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "partition",
+    "answer": [
+      [
+        "0",
+        "3",
+        "6",
+        "9"
+      ],
+      [
+        "1",
+        "4",
+        "7"
+      ],
+      [
+        "2",
+        "5",
+        "8"
+      ]
+    ],
+    "inputHint": "Enter {0,2,4}; {1,3,5}, with every element exactly once (adapt to this set).",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pairs": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ],
+          [
+            "0",
+            "6"
+          ],
+          [
+            "0",
+            "9"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "7"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "5"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "3",
+            "0"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "9"
+          ],
+          [
+            "4",
+            "1"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "7"
+          ],
+          [
+            "5",
+            "2"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "5",
+            "8"
+          ],
+          [
+            "6",
+            "0"
+          ],
+          [
+            "6",
+            "3"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "9"
+          ],
+          [
+            "7",
+            "1"
+          ],
+          [
+            "7",
+            "4"
+          ],
+          [
+            "7",
+            "7"
+          ],
+          [
+            "8",
+            "2"
+          ],
+          [
+            "8",
+            "5"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "9",
+            "0"
+          ],
+          [
+            "9",
+            "3"
+          ],
+          [
+            "9",
+            "6"
+          ],
+          [
+            "9",
+            "9"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-11",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Partition modulo 4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={0,1,2,3,4,5,6,7,8,9}, define x R y iff x=y (mod 4). List the equivalence classes as a partition.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Reflexive: m divides x-x=0. Symmetric: if m divides x-y it divides y-x. Transitive: add x-y and y-z."
+      },
+      {
+        "step": 2,
+        "text": "The class [a] contains all x in A with the same remainder as a modulo 4."
+      },
+      {
+        "step": 3,
+        "text": "Distinct classes are {0,4,8}; {1,5,9}; {2,6}; {3,7}."
+      },
+      {
+        "step": 4,
+        "text": "These classes are disjoint and cover A, so they form the required partition."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "partition",
+    "answer": [
+      [
+        "0",
+        "4",
+        "8"
+      ],
+      [
+        "1",
+        "5",
+        "9"
+      ],
+      [
+        "2",
+        "6"
+      ],
+      [
+        "3",
+        "7"
+      ]
+    ],
+    "inputHint": "Enter {0,2,4}; {1,3,5}, with every element exactly once (adapt to this set).",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pairs": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "4"
+          ],
+          [
+            "0",
+            "8"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "9"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "7"
+          ],
+          [
+            "4",
+            "0"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "8"
+          ],
+          [
+            "5",
+            "1"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "5",
+            "9"
+          ],
+          [
+            "6",
+            "2"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "7",
+            "3"
+          ],
+          [
+            "7",
+            "7"
+          ],
+          [
+            "8",
+            "0"
+          ],
+          [
+            "8",
+            "4"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "9",
+            "1"
+          ],
+          [
+            "9",
+            "5"
+          ],
+          [
+            "9",
+            "9"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-12",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Partition modulo 5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={0,1,2,3,4,5,6,7,8,9}, define x R y iff x=y (mod 5). List the equivalence classes as a partition.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Reflexive: m divides x-x=0. Symmetric: if m divides x-y it divides y-x. Transitive: add x-y and y-z."
+      },
+      {
+        "step": 2,
+        "text": "The class [a] contains all x in A with the same remainder as a modulo 5."
+      },
+      {
+        "step": 3,
+        "text": "Distinct classes are {0,5}; {1,6}; {2,7}; {3,8}; {4,9}."
+      },
+      {
+        "step": 4,
+        "text": "These classes are disjoint and cover A, so they form the required partition."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "partition",
+    "answer": [
+      [
+        "0",
+        "5"
+      ],
+      [
+        "1",
+        "6"
+      ],
+      [
+        "2",
+        "7"
+      ],
+      [
+        "3",
+        "8"
+      ],
+      [
+        "4",
+        "9"
+      ]
+    ],
+    "inputHint": "Enter {0,2,4}; {1,3,5}, with every element exactly once (adapt to this set).",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "pairs": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "7"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "8"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "9"
+          ],
+          [
+            "5",
+            "0"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "1"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "7",
+            "2"
+          ],
+          [
+            "7",
+            "7"
+          ],
+          [
+            "8",
+            "3"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "9",
+            "4"
+          ],
+          [
+            "9",
+            "9"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "id": "dm-relations-13",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "A finite congruence class modulo 3",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={-6,-5,...,6}, x R y iff 3 divides x-y. Find [1].",
+    "solution": [
+      {
+        "step": 1,
+        "text": "By definition [1]={x in A: 3 divides x-1}."
+      },
+      {
+        "step": 2,
+        "text": "Test x=1+3*k while -6<=x<=6."
+      },
+      {
+        "step": 3,
+        "text": "The resulting class is {-5,-2,1,4}."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "set-answer",
+    "answer": [
+      "-5",
+      "-2",
+      "1",
+      "4"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "-6",
+          "-5",
+          "-4",
+          "-3",
+          "-2",
+          "-1",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "-6",
+            "-6"
+          ],
+          [
+            "-6",
+            "-3"
+          ],
+          [
+            "-6",
+            "0"
+          ],
+          [
+            "-6",
+            "3"
+          ],
+          [
+            "-6",
+            "6"
+          ],
+          [
+            "-5",
+            "-5"
+          ],
+          [
+            "-5",
+            "-2"
+          ],
+          [
+            "-5",
+            "1"
+          ],
+          [
+            "-5",
+            "4"
+          ],
+          [
+            "-4",
+            "-4"
+          ],
+          [
+            "-4",
+            "-1"
+          ],
+          [
+            "-4",
+            "2"
+          ],
+          [
+            "-4",
+            "5"
+          ],
+          [
+            "-3",
+            "-6"
+          ],
+          [
+            "-3",
+            "-3"
+          ],
+          [
+            "-3",
+            "0"
+          ],
+          [
+            "-3",
+            "3"
+          ],
+          [
+            "-3",
+            "6"
+          ],
+          [
+            "-2",
+            "-5"
+          ],
+          [
+            "-2",
+            "-2"
+          ],
+          [
+            "-2",
+            "1"
+          ],
+          [
+            "-2",
+            "4"
+          ],
+          [
+            "-1",
+            "-4"
+          ],
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "2"
+          ],
+          [
+            "-1",
+            "5"
+          ],
+          [
+            "0",
+            "-6"
+          ],
+          [
+            "0",
+            "-3"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ],
+          [
+            "0",
+            "6"
+          ],
+          [
+            "1",
+            "-5"
+          ],
+          [
+            "1",
+            "-2"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "2",
+            "-4"
+          ],
+          [
+            "2",
+            "-1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "5"
+          ],
+          [
+            "3",
+            "-6"
+          ],
+          [
+            "3",
+            "-3"
+          ],
+          [
+            "3",
+            "0"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "-5"
+          ],
+          [
+            "4",
+            "-2"
+          ],
+          [
+            "4",
+            "1"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "-4"
+          ],
+          [
+            "5",
+            "-1"
+          ],
+          [
+            "5",
+            "2"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "-6"
+          ],
+          [
+            "6",
+            "-3"
+          ],
+          [
+            "6",
+            "0"
+          ],
+          [
+            "6",
+            "3"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "class",
+      "element": "1"
+    }
+  },
+  {
+    "id": "dm-relations-14",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "A finite congruence class modulo 4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={-6,-5,...,6}, x R y iff 4 divides x-y. Find [2].",
+    "solution": [
+      {
+        "step": 1,
+        "text": "By definition [2]={x in A: 4 divides x-2}."
+      },
+      {
+        "step": 2,
+        "text": "Test x=2+4*k while -6<=x<=6."
+      },
+      {
+        "step": 3,
+        "text": "The resulting class is {-6,-2,2,6}."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "set-answer",
+    "answer": [
+      "-6",
+      "-2",
+      "2",
+      "6"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "-6",
+          "-5",
+          "-4",
+          "-3",
+          "-2",
+          "-1",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "-6",
+            "-6"
+          ],
+          [
+            "-6",
+            "-2"
+          ],
+          [
+            "-6",
+            "2"
+          ],
+          [
+            "-6",
+            "6"
+          ],
+          [
+            "-5",
+            "-5"
+          ],
+          [
+            "-5",
+            "-1"
+          ],
+          [
+            "-5",
+            "3"
+          ],
+          [
+            "-4",
+            "-4"
+          ],
+          [
+            "-4",
+            "0"
+          ],
+          [
+            "-4",
+            "4"
+          ],
+          [
+            "-3",
+            "-3"
+          ],
+          [
+            "-3",
+            "1"
+          ],
+          [
+            "-3",
+            "5"
+          ],
+          [
+            "-2",
+            "-6"
+          ],
+          [
+            "-2",
+            "-2"
+          ],
+          [
+            "-2",
+            "2"
+          ],
+          [
+            "-2",
+            "6"
+          ],
+          [
+            "-1",
+            "-5"
+          ],
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "3"
+          ],
+          [
+            "0",
+            "-4"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "4"
+          ],
+          [
+            "1",
+            "-3"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "2",
+            "-6"
+          ],
+          [
+            "2",
+            "-2"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "-5"
+          ],
+          [
+            "3",
+            "-1"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "4",
+            "-4"
+          ],
+          [
+            "4",
+            "0"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "-3"
+          ],
+          [
+            "5",
+            "1"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "-6"
+          ],
+          [
+            "6",
+            "-2"
+          ],
+          [
+            "6",
+            "2"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "class",
+      "element": "2"
+    }
+  },
+  {
+    "id": "dm-relations-15",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "A finite congruence class modulo 5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "On A={-6,-5,...,6}, x R y iff 5 divides x-y. Find [0].",
+    "solution": [
+      {
+        "step": 1,
+        "text": "By definition [0]={x in A: 5 divides x-0}."
+      },
+      {
+        "step": 2,
+        "text": "Test x=0+5*k while -6<=x<=6."
+      },
+      {
+        "step": 3,
+        "text": "The resulting class is {-5,0,5}."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "set-answer",
+    "answer": [
+      "-5",
+      "0",
+      "5"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "relation",
+      "relation": {
+        "elements": [
+          "-6",
+          "-5",
+          "-4",
+          "-3",
+          "-2",
+          "-1",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "-6",
+            "-6"
+          ],
+          [
+            "-6",
+            "-1"
+          ],
+          [
+            "-6",
+            "4"
+          ],
+          [
+            "-5",
+            "-5"
+          ],
+          [
+            "-5",
+            "0"
+          ],
+          [
+            "-5",
+            "5"
+          ],
+          [
+            "-4",
+            "-4"
+          ],
+          [
+            "-4",
+            "1"
+          ],
+          [
+            "-4",
+            "6"
+          ],
+          [
+            "-3",
+            "-3"
+          ],
+          [
+            "-3",
+            "2"
+          ],
+          [
+            "-2",
+            "-2"
+          ],
+          [
+            "-2",
+            "3"
+          ],
+          [
+            "-1",
+            "-6"
+          ],
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "-1",
+            "4"
+          ],
+          [
+            "0",
+            "-5"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5"
+          ],
+          [
+            "1",
+            "-4"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "-3"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "-2"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "4",
+            "-6"
+          ],
+          [
+            "4",
+            "-1"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "-5"
+          ],
+          [
+            "5",
+            "0"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "-4"
+          ],
+          [
+            "6",
+            "1"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "class",
+      "element": "0"
+    }
+  },
+  {
+    "id": "dm-trap-5",
+    "subject": "dm",
+    "topic": "relations",
+    "title": "Antisymmetric is not asymmetric",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Which relation on {1,2} is both symmetric and antisymmetric?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Symmetry requires every reversed pair."
+      },
+      {
+        "step": 2,
+        "text": "Antisymmetry forbids a two-way pair only for distinct elements."
+      },
+      {
+        "step": 3,
+        "text": "The diagonal-only relation satisfies both. The other choices have both (1,2) and (2,1)."
+      }
+    ],
+    "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+    "type": "mcq",
+    "options": [
+      "{(1,1),(2,2)}",
+      "{(1,2),(2,1)}",
+      "{(1,1),(1,2),(2,1)}"
+    ],
+    "correctIndex": 0,
+    "verification": {
+      "kind": "relation-options",
+      "required": [
+        "symmetric",
+        "antisymmetric"
+      ],
+      "relations": [
+        {
+          "elements": [
+            "1",
+            "2"
+          ],
+          "pairs": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "2"
+            ]
+          ]
+        },
+        {
+          "elements": [
+            "1",
+            "2"
+          ],
+          "pairs": [
+            [
+              "1",
+              "2"
+            ],
+            [
+              "2",
+              "1"
+            ]
+          ]
+        },
+        {
+          "elements": [
+            "1",
+            "2"
+          ],
+          "pairs": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "2"
+            ],
+            [
+              "2",
+              "1"
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

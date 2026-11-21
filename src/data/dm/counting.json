@@ -1,0 +1,381 @@
+[
+  {
+    "id": "dm-counting-1",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Seven-bit union",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many bit strings of length 7 start with 00 or end with 111?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Starting with 00 leaves 5 free bits: 2^5=32."
+      },
+      {
+        "step": 2,
+        "text": "Ending with 111 leaves 4 free bits: 2^4=16. Both conditions leave 2 free bits: 2^2=4."
+      },
+      {
+        "step": 3,
+        "text": "By inclusion-exclusion: 32+16-4=44."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 44,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "bitstrings",
+      "length": 7,
+      "prefix": "00",
+      "suffix": "111",
+      "mode": "or"
+    }
+  },
+  {
+    "id": "dm-counting-2",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Eight-bit intersection",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many 8-bit strings start with 10 and end with 01?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The prescribed first two and last two positions do not overlap."
+      },
+      {
+        "step": 2,
+        "text": "Four positions are free, each with 2 choices."
+      },
+      {
+        "step": 3,
+        "text": "There are 2^4=16 strings."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 16,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "bitstrings",
+      "length": 8,
+      "prefix": "10",
+      "suffix": "01",
+      "mode": "and"
+    }
+  },
+  {
+    "id": "dm-counting-3",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Birthday months",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many people guarantee two with the same birth month?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are 12 month boxes."
+      },
+      {
+        "step": 2,
+        "text": "With 12 people, one person per month is still possible."
+      },
+      {
+        "step": 3,
+        "text": "The 13th person forces a repeated month. Answer: 13."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 13,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "pigeonhole",
+      "boxes": 12,
+      "occupancy": 2
+    }
+  },
+  {
+    "id": "dm-counting-4",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Three matching residues",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many integers guarantee three in the same residue class modulo 5?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are 5 residue boxes."
+      },
+      {
+        "step": 2,
+        "text": "At most 2 in each box permits 10 integers without a triple."
+      },
+      {
+        "step": 3,
+        "text": "The next integer forces a triple: 5*(3-1)+1=11."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 11,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "pigeonhole",
+      "boxes": 5,
+      "occupancy": 3
+    }
+  },
+  {
+    "id": "dm-counting-5",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Choose a committee",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many 3-person committees can be chosen from 8 distinct people?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Order does not matter, so use combinations."
+      },
+      {
+        "step": 2,
+        "text": "C(8,3)=8*7*6/(3*2*1)."
+      },
+      {
+        "step": 3,
+        "text": "The answer is 56."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 56,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "choose",
+      "n": 8,
+      "r": 3
+    }
+  },
+  {
+    "id": "dm-counting-6",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Professors and scores",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Six professors give integer scores from 0 through 60. How many students guarantee two with the same professor and score?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use a box for each ordered pair (professor,score)."
+      },
+      {
+        "step": 2,
+        "text": "There are 6*61=366 boxes, since both 0 and 60 are included."
+      },
+      {
+        "step": 3,
+        "text": "With 367 students, two share a box. With 366, one per box is possible. Thus the minimum is 367."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 367,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "pigeonhole",
+      "boxes": 366,
+      "occupancy": 2
+    }
+  },
+  {
+    "id": "dm-counting-7",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Product rule with no repetition",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many 3-letter codes can be made from A,B,C,D,E without repeating letters?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are 5 choices for the first letter, 4 for the second and 3 for the third."
+      },
+      {
+        "step": 2,
+        "text": "By the product rule, 5*4*3=60."
+      },
+      {
+        "step": 3,
+        "text": "Order matters because the objects are codes."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 60,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "permutations",
+      "n": 5,
+      "r": 3
+    }
+  },
+  {
+    "id": "dm-p3-q5",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Identical programs pigeonhole",
+    "source": "Past paper 3 Q5",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "An alphabet has 128 characters. Students submit nonempty strings of length at most 100. What minimum class size guarantees two identical submissions?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are 128^i strings of length i. All nonempty lengths 1 through 100 are possible boxes."
+      },
+      {
+        "step": 2,
+        "text": "The number of boxes is S=sum_(i=1)^100 128^i=(128^101-128)/127."
+      },
+      {
+        "step": 3,
+        "text": "S submissions could all be distinct. By the pigeonhole principle S+1 submissions force a duplicate."
+      },
+      {
+        "step": 4,
+        "text": "Minimum = (128^101-128)/127+1. This exact expression is preferable to expanding the very large integer."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": "5301554294473951251392493740225641489688531454813907511935275240888170990157687757720860760972687572890187559162132376907610136441130133027404411737349927155860382912633392980854590244166876439454531781277008001",
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "stringsUpTo",
+      "alphabet": 128,
+      "maxLength": 100,
+      "plusOne": true
+    },
+    "provenance": {
+      "paper": 3,
+      "question": "5",
+      "printedMarks": 15,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p4-q5",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Professors and scores",
+    "source": "Past paper 4 Q5",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Six professors give integer scores from 0 through 60. How many students guarantee two with the same professor and score?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use a box for each ordered pair (professor,score)."
+      },
+      {
+        "step": 2,
+        "text": "There are 6*61=366 boxes, since both 0 and 60 are included."
+      },
+      {
+        "step": 3,
+        "text": "With 367 students, two share a box. With 366, one per box is possible. Thus the minimum is 367."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 367,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "pigeonhole",
+      "boxes": 366,
+      "occupancy": 2
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "5",
+      "printedMarks": 5,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p5-q5",
+    "subject": "dm",
+    "topic": "counting",
+    "title": "Seven-bit union",
+    "source": "Past paper 5 Q5",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many bit strings of length 7 start with 00 or end with 111?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Starting with 00 leaves 5 free bits: 2^5=32."
+      },
+      {
+        "step": 2,
+        "text": "Ending with 111 leaves 4 free bits: 2^4=16. Both conditions leave 2 free bits: 2^2=4."
+      },
+      {
+        "step": 3,
+        "text": "By inclusion-exclusion: 32+16-4=44."
+      }
+    ],
+    "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+    "type": "numeric",
+    "answer": 44,
+    "tolerance": 0,
+    "verification": {
+      "kind": "counting",
+      "operation": "bitstrings",
+      "length": 7,
+      "prefix": "00",
+      "suffix": "111",
+      "mode": "or"
+    },
+    "provenance": {
+      "paper": 5,
+      "question": "5",
+      "printedMarks": 5,
+      "page": 1
+    }
+  }
+]

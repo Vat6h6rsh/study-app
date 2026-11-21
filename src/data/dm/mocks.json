@@ -1,0 +1,2580 @@
+[
+  {
+    "id": "dm-mock-1",
+    "title": "DM typed mock 1",
+    "subject": "dm",
+    "totalMarks": 50,
+    "durationMinutes": 150,
+    "instructions": [
+      "Original practice paper; the actual pattern is unknown.",
+      "Type numbered, justified steps for every question.",
+      "Auto-graded final answers/checkpoints do not replace written working.",
+      "For MST, give each accepted edge in order and the total weight."
+    ],
+    "questions": [
+      {
+        "id": "dm-m1-1",
+        "subject": "dm",
+        "topic": "logic",
+        "title": "Mock 1: logic",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "exam",
+        "marks": 5,
+        "prompt": "Construct the truth table, including every listed intermediate column: ~(p v q); ~p ^ ~q; (~p ^ ~q) -> r. Show your row order.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+          },
+          {
+            "step": 2,
+            "text": "Columns: p | q | r | ~(p v q) | ~p ^ ~q | (~p ^ ~q) -> r."
+          },
+          {
+            "step": 3,
+            "text": "T | T | T | F | F | T"
+          },
+          {
+            "step": 4,
+            "text": "T | T | F | F | F | T"
+          },
+          {
+            "step": 5,
+            "text": "T | F | T | F | F | T"
+          },
+          {
+            "step": 6,
+            "text": "T | F | F | F | F | T"
+          },
+          {
+            "step": 7,
+            "text": "F | T | T | F | F | T"
+          },
+          {
+            "step": 8,
+            "text": "F | T | F | F | F | T"
+          },
+          {
+            "step": 9,
+            "text": "F | F | T | T | T | T"
+          },
+          {
+            "step": 10,
+            "text": "F | F | F | T | T | F"
+          }
+        ],
+        "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+        "type": "truth-table",
+        "variables": [
+          "p",
+          "q",
+          "r"
+        ],
+        "columns": [
+          "~(p v q)",
+          "~p ^ ~q",
+          "(~p ^ ~q) -> r"
+        ],
+        "answer": [
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            false
+          ]
+        ]
+      },
+      {
+        "id": "dm-m1-2",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Shifted geometric divisibility 1",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Prove 3 divides (4)^n-1 for n>=0 by induction.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=0 gives 0, divisible by 3."
+          },
+          {
+            "step": 2,
+            "text": "Assume (4)^k-1=3*t for an integer t."
+          },
+          {
+            "step": 3,
+            "text": "(4)^(k+1)-1=(4)*((4)^k-1)+3=3*((4)*t+1)."
+          },
+          {
+            "step": 4,
+            "text": "Hence the step holds, and induction proves the result for every n>=0."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Basis n=0 gives 0, divisible by 3.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Assume (4)^k-1=3*t for an integer t.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "(4)^(k+1)-1=(4)*((4)^k-1)+3=3*((4)*t+1).",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "Hence the step holds, and induction proves the result for every n>=0.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m1-3",
+        "subject": "dm",
+        "topic": "relations",
+        "title": "A congruence partition",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "On A={1,2,3,4,5,6,7,8,9}, x R y iff x=y (mod 3). Prove equivalence and list the partition.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Reflexivity follows from x-x=0. Symmetry follows by negating a divisible difference. Transitivity follows by adding two divisible differences."
+          },
+          {
+            "step": 2,
+            "text": "The classes are the equal-remainder groups: {1,4,7}; {2,5,8}; {3,6,9}."
+          },
+          {
+            "step": 3,
+            "text": "They are disjoint and cover A, so this is the partition."
+          }
+        ],
+        "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+        "type": "partition",
+        "answer": [
+          [
+            "1",
+            "4",
+            "7"
+          ],
+          [
+            "2",
+            "5",
+            "8"
+          ],
+          [
+            "3",
+            "6",
+            "9"
+          ]
+        ],
+        "inputHint": "Enter classes separated by semicolons.",
+        "verification": {
+          "kind": "relation",
+          "relation": {
+            "elements": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "pairs": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "4"
+              ],
+              [
+                "1",
+                "7"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "5"
+              ],
+              [
+                "2",
+                "8"
+              ],
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "6"
+              ],
+              [
+                "3",
+                "9"
+              ],
+              [
+                "4",
+                "1"
+              ],
+              [
+                "4",
+                "4"
+              ],
+              [
+                "4",
+                "7"
+              ],
+              [
+                "5",
+                "2"
+              ],
+              [
+                "5",
+                "5"
+              ],
+              [
+                "5",
+                "8"
+              ],
+              [
+                "6",
+                "3"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "9"
+              ],
+              [
+                "7",
+                "1"
+              ],
+              [
+                "7",
+                "4"
+              ],
+              [
+                "7",
+                "7"
+              ],
+              [
+                "8",
+                "2"
+              ],
+              [
+                "8",
+                "5"
+              ],
+              [
+                "8",
+                "8"
+              ],
+              [
+                "9",
+                "3"
+              ],
+              [
+                "9",
+                "6"
+              ],
+              [
+                "9",
+                "9"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "id": "dm-m1-4",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Bounds in a divisibility poset",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In the poset A={1,2,3,6,9,18}, R={(1,1), (1,2), (1,3), (1,6), (1,9), (1,18), (2,2), (2,6), (2,18), (3,3), (3,6), (3,9), (3,18), (6,6), (6,18), (9,9), (9,18), (18,18)}, for S={6,9}, find lub. Explain the comparisons.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+          },
+          {
+            "step": 2,
+            "text": "Minimal={1}; maximal={18}; least={1}; greatest={18}."
+          },
+          {
+            "step": 3,
+            "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,6), (3,6), (3,9), (6,18), (9,18)."
+          },
+          {
+            "step": 4,
+            "text": "Upper bounds of S={18}; lower bounds={1,3}."
+          },
+          {
+            "step": 5,
+            "text": "LUB={18}; GLB={3}. A missing singleton answer means no such bound in this poset."
+          },
+          {
+            "step": 6,
+            "text": "The requested lub set is {18}. Every pair has a unique LUB and GLB; this poset is a lattice."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "set-answer",
+        "answer": [
+          "18"
+        ],
+        "elementFormat": "atom",
+        "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "1",
+              "2",
+              "3",
+              "6",
+              "9",
+              "18"
+            ],
+            "pairs": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "6"
+              ],
+              [
+                "1",
+                "9"
+              ],
+              [
+                "1",
+                "18"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "2",
+                "18"
+              ],
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "6"
+              ],
+              [
+                "3",
+                "9"
+              ],
+              [
+                "3",
+                "18"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "18"
+              ],
+              [
+                "9",
+                "9"
+              ],
+              [
+                "9",
+                "18"
+              ],
+              [
+                "18",
+                "18"
+              ]
+            ]
+          },
+          "query": "lub",
+          "subset": [
+            "6",
+            "9"
+          ]
+        }
+      },
+      {
+        "id": "dm-m1-5",
+        "subject": "dm",
+        "topic": "recurrences",
+        "title": "Non-homogeneous initial value problem",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Solve a_n=2*a_(n-1)+2, n>=1, a_0=1.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Homogeneous solution: C*2^n. Try a constant K."
+          },
+          {
+            "step": 2,
+            "text": "K=2*K+2 gives K=-2."
+          },
+          {
+            "step": 3,
+            "text": "a_0=1 gives C=3. Hence a_n=3*2^n-2."
+          },
+          {
+            "step": 4,
+            "text": "Check a_0=1 and substitute the formula into the recurrence."
+          }
+        ],
+        "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+        "type": "formula",
+        "answer": "3*2^n-2",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 1
+          },
+          {
+            "n": 1,
+            "expected": 4
+          },
+          {
+            "n": 2,
+            "expected": 10
+          },
+          {
+            "n": 3,
+            "expected": 22
+          },
+          {
+            "n": 5,
+            "expected": 94
+          },
+          {
+            "n": 8,
+            "expected": 766
+          },
+          {
+            "n": 12,
+            "expected": 12286
+          }
+        ],
+        "recurrence": {
+          "startIndex": 0,
+          "initial": [
+            1
+          ],
+          "coefficients": [
+            2
+          ],
+          "forcing": "2"
+        }
+      },
+      {
+        "id": "dm-m1-6",
+        "subject": "dm",
+        "topic": "mst",
+        "title": "Typed MST trace",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F}; edges: AB(2), AC(3), BC(2), BD(5), CD(4), CE(6), DE(3), DF(7), EF(2). Type each accepted edge in order, justify it, and state total weight.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Step 1: add edge AB (weight 2). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 2,
+            "text": "Step 2: add edge BC (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 3,
+            "text": "Step 3: add edge EF (weight 2). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 4,
+            "text": "Step 4: add edge DE (weight 3). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 5,
+            "text": "Step 5: add edge CD (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 6,
+            "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 2 + 2 + 2 + 3 + 4 = 13."
+          }
+        ],
+        "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+        "type": "mst",
+        "graph": {
+          "vertices": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "edges": [
+            {
+              "id": "A-B",
+              "u": "A",
+              "v": "B",
+              "weight": 2
+            },
+            {
+              "id": "A-C",
+              "u": "A",
+              "v": "C",
+              "weight": 3
+            },
+            {
+              "id": "B-C",
+              "u": "B",
+              "v": "C",
+              "weight": 2
+            },
+            {
+              "id": "B-D",
+              "u": "B",
+              "v": "D",
+              "weight": 5
+            },
+            {
+              "id": "C-D",
+              "u": "C",
+              "v": "D",
+              "weight": 4
+            },
+            {
+              "id": "C-E",
+              "u": "C",
+              "v": "E",
+              "weight": 6
+            },
+            {
+              "id": "D-E",
+              "u": "D",
+              "v": "E",
+              "weight": 3
+            },
+            {
+              "id": "D-F",
+              "u": "D",
+              "v": "F",
+              "weight": 7
+            },
+            {
+              "id": "E-F",
+              "u": "E",
+              "v": "F",
+              "weight": 2
+            }
+          ],
+          "layout": {
+            "A": {
+              "x": 260,
+              "y": 150
+            },
+            "B": {
+              "x": 205,
+              "y": 245
+            },
+            "C": {
+              "x": 95,
+              "y": 245
+            },
+            "D": {
+              "x": 40,
+              "y": 150
+            },
+            "E": {
+              "x": 95,
+              "y": 55
+            },
+            "F": {
+              "x": 205,
+              "y": 55
+            }
+          }
+        },
+        "algorithm": "kruskal",
+        "answer": {
+          "edgeSequence": [
+            "A-B",
+            "B-C",
+            "E-F",
+            "D-E",
+            "C-D"
+          ],
+          "totalWeight": 13
+        }
+      },
+      {
+        "id": "dm-m1-7",
+        "subject": "dm",
+        "topic": "graphs",
+        "title": "Euler and Hamilton reasoning",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For the star K1,4, determine whether an Euler path and a Hamilton path exist. Explain.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "The centre has degree 4; the 4 leaves each have degree 1."
+          },
+          {
+            "step": 2,
+            "text": "The graph has 4 odd-degree vertices, which is more than 2. Hence there is no Euler path."
+          },
+          {
+            "step": 3,
+            "text": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path."
+          }
+        ],
+        "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "The centre has degree 4; the 4 leaves each have degree 1.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "The graph has 4 odd-degree vertices, which is more than 2. Hence there is no Euler path.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m1-8",
+        "subject": "dm",
+        "topic": "counting",
+        "title": "Bit-string inclusion-exclusion",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Count bit strings of length 9 starting with 00 or ending with 111.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Let A be the prefix event and B the suffix event. |A|=2^7; |B|=2^6."
+          },
+          {
+            "step": 2,
+            "text": "The blocks do not overlap, so |A intersection B|=2^4."
+          },
+          {
+            "step": 3,
+            "text": "The answer is |A|+|B|-|A intersection B|=176."
+          }
+        ],
+        "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+        "type": "numeric",
+        "answer": 176,
+        "tolerance": 0,
+        "verification": {
+          "kind": "counting",
+          "operation": "bitstrings",
+          "length": 9,
+          "prefix": "00",
+          "suffix": "111",
+          "mode": "or"
+        }
+      },
+      {
+        "id": "dm-m1-9",
+        "subject": "dm",
+        "topic": "groups",
+        "title": "Inverse of a product",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In a group, prove (a*b)^(-1)=b^(-1)*a^(-1). Then specialise to an additive abelian group with a=1, b=4.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e."
+          },
+          {
+            "step": 2,
+            "text": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e."
+          },
+          {
+            "step": 3,
+            "text": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula."
+          },
+          {
+            "step": 4,
+            "text": "For addition, the inverse of 1+4=5 is -5=(-4)+(-1)."
+          }
+        ],
+        "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula.",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "For addition, the inverse of 1+4=5 is -5=(-4)+(-1).",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m1-10",
+        "subject": "dm",
+        "topic": "sets",
+        "title": "Function with restricted range",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For f:Z->Z, f(x)=3*x+1, decide injectivity and surjectivity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "If f(x)=f(y), then 3*x+1=3*y+1, so x=y. Thus f is injective."
+          },
+          {
+            "step": 2,
+            "text": "All outputs are congruent to 1 modulo 3. The integer 2 is not in that residue class and has no preimage."
+          },
+          {
+            "step": 3,
+            "text": "Hence f is not surjective onto Z."
+          }
+        ],
+        "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "If f(x)=f(y), then 3*x+1=3*y+1, so x=y. Thus f is injective.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "All outputs are congruent to 1 modulo 3. The integer 2 is not in that residue class and has no preimage.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Hence f is not surjective onto Z.",
+            "marks": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dm-mock-2",
+    "title": "DM typed mock 2",
+    "subject": "dm",
+    "totalMarks": 50,
+    "durationMinutes": 120,
+    "instructions": [
+      "Original practice paper; the actual pattern is unknown.",
+      "Type numbered, justified steps for every question.",
+      "Auto-graded final answers/checkpoints do not replace written working.",
+      "For MST, give each accepted edge in order and the total weight."
+    ],
+    "questions": [
+      {
+        "id": "dm-m2-1",
+        "subject": "dm",
+        "topic": "logic",
+        "title": "Mock 2: logic",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "exam",
+        "marks": 5,
+        "prompt": "Construct the truth table, including every listed intermediate column: p -> r; q -> r; (p v q) -> r; (p -> r) ^ (q -> r). Show your row order.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+          },
+          {
+            "step": 2,
+            "text": "Columns: p | q | r | p -> r | q -> r | (p v q) -> r | (p -> r) ^ (q -> r)."
+          },
+          {
+            "step": 3,
+            "text": "T | T | T | T | T | T | T"
+          },
+          {
+            "step": 4,
+            "text": "T | T | F | F | F | F | F"
+          },
+          {
+            "step": 5,
+            "text": "T | F | T | T | T | T | T"
+          },
+          {
+            "step": 6,
+            "text": "T | F | F | F | T | F | F"
+          },
+          {
+            "step": 7,
+            "text": "F | T | T | T | T | T | T"
+          },
+          {
+            "step": 8,
+            "text": "F | T | F | T | F | F | F"
+          },
+          {
+            "step": 9,
+            "text": "F | F | T | T | T | T | T"
+          },
+          {
+            "step": 10,
+            "text": "F | F | F | T | T | T | T"
+          }
+        ],
+        "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+        "type": "truth-table",
+        "variables": [
+          "p",
+          "q",
+          "r"
+        ],
+        "columns": [
+          "p -> r",
+          "q -> r",
+          "(p v q) -> r",
+          "(p -> r) ^ (q -> r)"
+        ],
+        "answer": [
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ]
+      },
+      {
+        "id": "dm-m2-2",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Shifted geometric divisibility 2",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Prove 4 divides (5)^n-1 for n>=0 by induction.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=0 gives 0, divisible by 4."
+          },
+          {
+            "step": 2,
+            "text": "Assume (5)^k-1=4*t for an integer t."
+          },
+          {
+            "step": 3,
+            "text": "(5)^(k+1)-1=(5)*((5)^k-1)+4=4*((5)*t+1)."
+          },
+          {
+            "step": 4,
+            "text": "Hence the step holds, and induction proves the result for every n>=0."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Basis n=0 gives 0, divisible by 4.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Assume (5)^k-1=4*t for an integer t.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "(5)^(k+1)-1=(5)*((5)^k-1)+4=4*((5)*t+1).",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "Hence the step holds, and induction proves the result for every n>=0.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m2-3",
+        "subject": "dm",
+        "topic": "relations",
+        "title": "A congruence partition",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "On A={2,3,4,5,6,7,8,9,10}, x R y iff x=y (mod 4). Prove equivalence and list the partition.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Reflexivity follows from x-x=0. Symmetry follows by negating a divisible difference. Transitivity follows by adding two divisible differences."
+          },
+          {
+            "step": 2,
+            "text": "The classes are the equal-remainder groups: {2,6,10}; {3,7}; {4,8}; {5,9}."
+          },
+          {
+            "step": 3,
+            "text": "They are disjoint and cover A, so this is the partition."
+          }
+        ],
+        "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+        "type": "partition",
+        "answer": [
+          [
+            "2",
+            "6",
+            "10"
+          ],
+          [
+            "3",
+            "7"
+          ],
+          [
+            "4",
+            "8"
+          ],
+          [
+            "5",
+            "9"
+          ]
+        ],
+        "inputHint": "Enter classes separated by semicolons.",
+        "verification": {
+          "kind": "relation",
+          "relation": {
+            "elements": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10"
+            ],
+            "pairs": [
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "2",
+                "10"
+              ],
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "7"
+              ],
+              [
+                "4",
+                "4"
+              ],
+              [
+                "4",
+                "8"
+              ],
+              [
+                "5",
+                "5"
+              ],
+              [
+                "5",
+                "9"
+              ],
+              [
+                "6",
+                "2"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "10"
+              ],
+              [
+                "7",
+                "3"
+              ],
+              [
+                "7",
+                "7"
+              ],
+              [
+                "8",
+                "4"
+              ],
+              [
+                "8",
+                "8"
+              ],
+              [
+                "9",
+                "5"
+              ],
+              [
+                "9",
+                "9"
+              ],
+              [
+                "10",
+                "2"
+              ],
+              [
+                "10",
+                "6"
+              ],
+              [
+                "10",
+                "10"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "id": "dm-m2-4",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Bounds in a divisibility poset",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In the poset A={1,2,3,6,9,18}, R={(1,1), (1,2), (1,3), (1,6), (1,9), (1,18), (2,2), (2,6), (2,18), (3,3), (3,6), (3,9), (3,18), (6,6), (6,18), (9,9), (9,18), (18,18)}, for S={6,9}, find glb. Explain the comparisons.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+          },
+          {
+            "step": 2,
+            "text": "Minimal={1}; maximal={18}; least={1}; greatest={18}."
+          },
+          {
+            "step": 3,
+            "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,6), (3,6), (3,9), (6,18), (9,18)."
+          },
+          {
+            "step": 4,
+            "text": "Upper bounds of S={18}; lower bounds={1,3}."
+          },
+          {
+            "step": 5,
+            "text": "LUB={18}; GLB={3}. A missing singleton answer means no such bound in this poset."
+          },
+          {
+            "step": 6,
+            "text": "The requested glb set is {3}. Every pair has a unique LUB and GLB; this poset is a lattice."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "set-answer",
+        "answer": [
+          "3"
+        ],
+        "elementFormat": "atom",
+        "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "1",
+              "2",
+              "3",
+              "6",
+              "9",
+              "18"
+            ],
+            "pairs": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "6"
+              ],
+              [
+                "1",
+                "9"
+              ],
+              [
+                "1",
+                "18"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "2",
+                "18"
+              ],
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "6"
+              ],
+              [
+                "3",
+                "9"
+              ],
+              [
+                "3",
+                "18"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "18"
+              ],
+              [
+                "9",
+                "9"
+              ],
+              [
+                "9",
+                "18"
+              ],
+              [
+                "18",
+                "18"
+              ]
+            ]
+          },
+          "query": "glb",
+          "subset": [
+            "6",
+            "9"
+          ]
+        }
+      },
+      {
+        "id": "dm-m2-5",
+        "subject": "dm",
+        "topic": "recurrences",
+        "title": "Non-homogeneous initial value problem",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Solve a_n=3*a_(n-1)+6, n>=1, a_0=1.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Homogeneous solution: C*3^n. Try a constant K."
+          },
+          {
+            "step": 2,
+            "text": "K=3*K+6 gives K=-3."
+          },
+          {
+            "step": 3,
+            "text": "a_0=1 gives C=4. Hence a_n=4*3^n-3."
+          },
+          {
+            "step": 4,
+            "text": "Check a_0=1 and substitute the formula into the recurrence."
+          }
+        ],
+        "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+        "type": "formula",
+        "answer": "4*3^n-3",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 1
+          },
+          {
+            "n": 1,
+            "expected": 9
+          },
+          {
+            "n": 2,
+            "expected": 33
+          },
+          {
+            "n": 3,
+            "expected": 105
+          },
+          {
+            "n": 5,
+            "expected": 969
+          },
+          {
+            "n": 8,
+            "expected": 26241
+          },
+          {
+            "n": 12,
+            "expected": 2125761
+          }
+        ],
+        "recurrence": {
+          "startIndex": 0,
+          "initial": [
+            1
+          ],
+          "coefficients": [
+            3
+          ],
+          "forcing": "6"
+        }
+      },
+      {
+        "id": "dm-m2-6",
+        "subject": "dm",
+        "topic": "mst",
+        "title": "Typed MST trace",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Find an MST using Prim's algorithm, starting at C. V={A,B,C,D,E,F}; edges: AB(3), AC(4), BC(3), BD(6), CD(5), CE(7), DE(4), DF(8), EF(3). Type each accepted edge in order, justify it, and state total weight.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Step 1: add edge BC (weight 3). Start at C. It is a minimum-weight crossing edge. Reached vertices are {C, B}."
+          },
+          {
+            "step": 2,
+            "text": "Step 2: add edge AB (weight 3). It is a minimum-weight crossing edge. Reached vertices are {C, B, A}."
+          },
+          {
+            "step": 3,
+            "text": "Step 3: add edge CD (weight 5). It is a minimum-weight crossing edge. Reached vertices are {C, B, A, D}."
+          },
+          {
+            "step": 4,
+            "text": "Step 4: add edge DE (weight 4). It is a minimum-weight crossing edge. Reached vertices are {C, B, A, D, E}."
+          },
+          {
+            "step": 5,
+            "text": "Step 5: add edge EF (weight 3). It is a minimum-weight crossing edge. Reached vertices are {C, B, A, D, E, F}."
+          },
+          {
+            "step": 6,
+            "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Prim's algorithm; total weight = 3 + 3 + 5 + 4 + 3 = 18."
+          }
+        ],
+        "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+        "type": "mst",
+        "graph": {
+          "vertices": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "edges": [
+            {
+              "id": "A-B",
+              "u": "A",
+              "v": "B",
+              "weight": 3
+            },
+            {
+              "id": "A-C",
+              "u": "A",
+              "v": "C",
+              "weight": 4
+            },
+            {
+              "id": "B-C",
+              "u": "B",
+              "v": "C",
+              "weight": 3
+            },
+            {
+              "id": "B-D",
+              "u": "B",
+              "v": "D",
+              "weight": 6
+            },
+            {
+              "id": "C-D",
+              "u": "C",
+              "v": "D",
+              "weight": 5
+            },
+            {
+              "id": "C-E",
+              "u": "C",
+              "v": "E",
+              "weight": 7
+            },
+            {
+              "id": "D-E",
+              "u": "D",
+              "v": "E",
+              "weight": 4
+            },
+            {
+              "id": "D-F",
+              "u": "D",
+              "v": "F",
+              "weight": 8
+            },
+            {
+              "id": "E-F",
+              "u": "E",
+              "v": "F",
+              "weight": 3
+            }
+          ],
+          "layout": {
+            "A": {
+              "x": 260,
+              "y": 150
+            },
+            "B": {
+              "x": 205,
+              "y": 245
+            },
+            "C": {
+              "x": 95,
+              "y": 245
+            },
+            "D": {
+              "x": 40,
+              "y": 150
+            },
+            "E": {
+              "x": 95,
+              "y": 55
+            },
+            "F": {
+              "x": 205,
+              "y": 55
+            }
+          }
+        },
+        "algorithm": "prim",
+        "startVertex": "C",
+        "answer": {
+          "edgeSequence": [
+            "B-C",
+            "A-B",
+            "C-D",
+            "D-E",
+            "E-F"
+          ],
+          "totalWeight": 18
+        }
+      },
+      {
+        "id": "dm-m2-7",
+        "subject": "dm",
+        "topic": "graphs",
+        "title": "Euler and Hamilton reasoning",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For the star K1,5, determine whether an Euler path and a Hamilton path exist. Explain.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "The centre has degree 5; the 5 leaves each have degree 1."
+          },
+          {
+            "step": 2,
+            "text": "The graph has 6 odd-degree vertices, which is more than 2. Hence there is no Euler path."
+          },
+          {
+            "step": 3,
+            "text": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path."
+          }
+        ],
+        "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "The centre has degree 5; the 5 leaves each have degree 1.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "The graph has 6 odd-degree vertices, which is more than 2. Hence there is no Euler path.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m2-8",
+        "subject": "dm",
+        "topic": "counting",
+        "title": "Bit-string inclusion-exclusion",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Count bit strings of length 10 starting with 000 or ending with 111.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Let A be the prefix event and B the suffix event. |A|=2^7; |B|=2^7."
+          },
+          {
+            "step": 2,
+            "text": "The blocks do not overlap, so |A intersection B|=2^4."
+          },
+          {
+            "step": 3,
+            "text": "The answer is |A|+|B|-|A intersection B|=240."
+          }
+        ],
+        "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+        "type": "numeric",
+        "answer": 240,
+        "tolerance": 0,
+        "verification": {
+          "kind": "counting",
+          "operation": "bitstrings",
+          "length": 10,
+          "prefix": "000",
+          "suffix": "111",
+          "mode": "or"
+        }
+      },
+      {
+        "id": "dm-m2-9",
+        "subject": "dm",
+        "topic": "groups",
+        "title": "Inverse of a product",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In a group, prove (a*b)^(-1)=b^(-1)*a^(-1). Then specialise to an additive abelian group with a=2, b=5.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e."
+          },
+          {
+            "step": 2,
+            "text": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e."
+          },
+          {
+            "step": 3,
+            "text": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula."
+          },
+          {
+            "step": 4,
+            "text": "For addition, the inverse of 2+5=7 is -7=(-5)+(-2)."
+          }
+        ],
+        "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula.",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "For addition, the inverse of 2+5=7 is -7=(-5)+(-2).",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m2-10",
+        "subject": "dm",
+        "topic": "sets",
+        "title": "Function with restricted range",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For f:Z->Z, f(x)=4*x+2, decide injectivity and surjectivity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "If f(x)=f(y), then 4*x+2=4*y+2, so x=y. Thus f is injective."
+          },
+          {
+            "step": 2,
+            "text": "All outputs are congruent to 2 modulo 4. The integer 3 is not in that residue class and has no preimage."
+          },
+          {
+            "step": 3,
+            "text": "Hence f is not surjective onto Z."
+          }
+        ],
+        "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "If f(x)=f(y), then 4*x+2=4*y+2, so x=y. Thus f is injective.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "All outputs are congruent to 2 modulo 4. The integer 3 is not in that residue class and has no preimage.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Hence f is not surjective onto Z.",
+            "marks": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dm-mock-3",
+    "title": "DM typed mock 3",
+    "subject": "dm",
+    "totalMarks": 50,
+    "durationMinutes": 150,
+    "instructions": [
+      "Original practice paper; the actual pattern is unknown.",
+      "Type numbered, justified steps for every question.",
+      "Auto-graded final answers/checkpoints do not replace written working.",
+      "For MST, give each accepted edge in order and the total weight."
+    ],
+    "questions": [
+      {
+        "id": "dm-m3-1",
+        "subject": "dm",
+        "topic": "logic",
+        "title": "Mock 3: logic",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "exam",
+        "marks": 5,
+        "prompt": "Construct the truth table, including every listed intermediate column: p <-> q; q <-> r; (p <-> q) ^ (q <-> r); ((p <-> q) ^ (q <-> r)) -> (p <-> r). Show your row order.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+          },
+          {
+            "step": 2,
+            "text": "Columns: p | q | r | p <-> q | q <-> r | (p <-> q) ^ (q <-> r) | ((p <-> q) ^ (q <-> r)) -> (p <-> r)."
+          },
+          {
+            "step": 3,
+            "text": "T | T | T | T | T | T | T"
+          },
+          {
+            "step": 4,
+            "text": "T | T | F | T | F | F | T"
+          },
+          {
+            "step": 5,
+            "text": "T | F | T | F | F | F | T"
+          },
+          {
+            "step": 6,
+            "text": "T | F | F | F | T | F | T"
+          },
+          {
+            "step": 7,
+            "text": "F | T | T | F | T | F | T"
+          },
+          {
+            "step": 8,
+            "text": "F | T | F | F | F | F | T"
+          },
+          {
+            "step": 9,
+            "text": "F | F | T | T | F | F | T"
+          },
+          {
+            "step": 10,
+            "text": "F | F | F | T | T | T | T"
+          }
+        ],
+        "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+        "type": "truth-table",
+        "variables": [
+          "p",
+          "q",
+          "r"
+        ],
+        "columns": [
+          "p <-> q",
+          "q <-> r",
+          "(p <-> q) ^ (q <-> r)",
+          "((p <-> q) ^ (q <-> r)) -> (p <-> r)"
+        ],
+        "answer": [
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true
+          ],
+          [
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ]
+      },
+      {
+        "id": "dm-m3-2",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Shifted geometric divisibility 3",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Prove 5 divides (6)^n-1 for n>=0 by induction.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=0 gives 0, divisible by 5."
+          },
+          {
+            "step": 2,
+            "text": "Assume (6)^k-1=5*t for an integer t."
+          },
+          {
+            "step": 3,
+            "text": "(6)^(k+1)-1=(6)*((6)^k-1)+5=5*((6)*t+1)."
+          },
+          {
+            "step": 4,
+            "text": "Hence the step holds, and induction proves the result for every n>=0."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Basis n=0 gives 0, divisible by 5.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Assume (6)^k-1=5*t for an integer t.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "(6)^(k+1)-1=(6)*((6)^k-1)+5=5*((6)*t+1).",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "Hence the step holds, and induction proves the result for every n>=0.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m3-3",
+        "subject": "dm",
+        "topic": "relations",
+        "title": "A congruence partition",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "On A={3,4,5,6,7,8,9,10,11}, x R y iff x=y (mod 5). Prove equivalence and list the partition.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Reflexivity follows from x-x=0. Symmetry follows by negating a divisible difference. Transitivity follows by adding two divisible differences."
+          },
+          {
+            "step": 2,
+            "text": "The classes are the equal-remainder groups: {3,8}; {4,9}; {5,10}; {6,11}; {7}."
+          },
+          {
+            "step": 3,
+            "text": "They are disjoint and cover A, so this is the partition."
+          }
+        ],
+        "conceptNote": "Equivalence means reflexive, symmetric and transitive; partial order replaces symmetry with antisymmetry. Classes are relative to the specified universe.",
+        "type": "partition",
+        "answer": [
+          [
+            "3",
+            "8"
+          ],
+          [
+            "4",
+            "9"
+          ],
+          [
+            "5",
+            "10"
+          ],
+          [
+            "6",
+            "11"
+          ],
+          [
+            "7"
+          ]
+        ],
+        "inputHint": "Enter classes separated by semicolons.",
+        "verification": {
+          "kind": "relation",
+          "relation": {
+            "elements": [
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "pairs": [
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "8"
+              ],
+              [
+                "4",
+                "4"
+              ],
+              [
+                "4",
+                "9"
+              ],
+              [
+                "5",
+                "5"
+              ],
+              [
+                "5",
+                "10"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "11"
+              ],
+              [
+                "7",
+                "7"
+              ],
+              [
+                "8",
+                "3"
+              ],
+              [
+                "8",
+                "8"
+              ],
+              [
+                "9",
+                "4"
+              ],
+              [
+                "9",
+                "9"
+              ],
+              [
+                "10",
+                "5"
+              ],
+              [
+                "10",
+                "10"
+              ],
+              [
+                "11",
+                "6"
+              ],
+              [
+                "11",
+                "11"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "id": "dm-m3-4",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Bounds in a divisibility poset",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In the poset A={1,2,3,6,9,18}, R={(1,1), (1,2), (1,3), (1,6), (1,9), (1,18), (2,2), (2,6), (2,18), (3,3), (3,6), (3,9), (3,18), (6,6), (6,18), (9,9), (9,18), (18,18)}, find covers. Explain the comparisons.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+          },
+          {
+            "step": 2,
+            "text": "Minimal={1}; maximal={18}; least={1}; greatest={18}."
+          },
+          {
+            "step": 3,
+            "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,6), (3,6), (3,9), (6,18), (9,18)."
+          },
+          {
+            "step": 4,
+            "text": "The requested covers set is {(1,2),(1,3),(2,6),(3,6),(3,9),(6,18),(9,18)}. Every pair has a unique LUB and GLB; this poset is a lattice."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "set-answer",
+        "answer": [
+          "(1,2)",
+          "(1,3)",
+          "(2,6)",
+          "(3,6)",
+          "(3,9)",
+          "(6,18)",
+          "(9,18)"
+        ],
+        "elementFormat": "pair",
+        "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "1",
+              "2",
+              "3",
+              "6",
+              "9",
+              "18"
+            ],
+            "pairs": [
+              [
+                "1",
+                "1"
+              ],
+              [
+                "1",
+                "2"
+              ],
+              [
+                "1",
+                "3"
+              ],
+              [
+                "1",
+                "6"
+              ],
+              [
+                "1",
+                "9"
+              ],
+              [
+                "1",
+                "18"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "2",
+                "18"
+              ],
+              [
+                "3",
+                "3"
+              ],
+              [
+                "3",
+                "6"
+              ],
+              [
+                "3",
+                "9"
+              ],
+              [
+                "3",
+                "18"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "18"
+              ],
+              [
+                "9",
+                "9"
+              ],
+              [
+                "9",
+                "18"
+              ],
+              [
+                "18",
+                "18"
+              ]
+            ]
+          },
+          "query": "covers",
+          "subset": []
+        }
+      },
+      {
+        "id": "dm-m3-5",
+        "subject": "dm",
+        "topic": "recurrences",
+        "title": "Non-homogeneous initial value problem",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Solve a_n=4*a_(n-1)+12, n>=1, a_0=1.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Homogeneous solution: C*4^n. Try a constant K."
+          },
+          {
+            "step": 2,
+            "text": "K=4*K+12 gives K=-4."
+          },
+          {
+            "step": 3,
+            "text": "a_0=1 gives C=5. Hence a_n=5*4^n-4."
+          },
+          {
+            "step": 4,
+            "text": "Check a_0=1 and substitute the formula into the recurrence."
+          }
+        ],
+        "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+        "type": "formula",
+        "answer": "5*4^n-4",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 1
+          },
+          {
+            "n": 1,
+            "expected": 16
+          },
+          {
+            "n": 2,
+            "expected": 76
+          },
+          {
+            "n": 3,
+            "expected": 316
+          },
+          {
+            "n": 5,
+            "expected": 5116
+          },
+          {
+            "n": 8,
+            "expected": 327676
+          },
+          {
+            "n": 12,
+            "expected": 83886076
+          }
+        ],
+        "recurrence": {
+          "startIndex": 0,
+          "initial": [
+            1
+          ],
+          "coefficients": [
+            4
+          ],
+          "forcing": "12"
+        }
+      },
+      {
+        "id": "dm-m3-6",
+        "subject": "dm",
+        "topic": "mst",
+        "title": "Typed MST trace",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Find an MST using Kruskal's algorithm. V={A,B,C,D,E,F}; edges: AB(4), AC(5), BC(4), BD(7), CD(6), CE(8), DE(5), DF(9), EF(4). Type each accepted edge in order, justify it, and state total weight.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Step 1: add edge AB (weight 4). Consider edges in nondecreasing weight order. It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 2,
+            "text": "Step 2: add edge BC (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 3,
+            "text": "Step 3: add edge EF (weight 4). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 4,
+            "text": "Step 4: add edge DE (weight 5). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 5,
+            "text": "Step 5: add edge CD (weight 6). It is a minimum-weight edge joining two current components, so no cycle is formed."
+          },
+          {
+            "step": 6,
+            "text": "Finally all 6 vertices are connected using 5 edges, so this is the MST by Kruskal's algorithm; total weight = 4 + 4 + 4 + 5 + 6 = 23."
+          }
+        ],
+        "conceptNote": "Kruskal joins different components; Prim crosses the reached cut. Ties permit alternative traces, but every result must be a spanning tree of minimum total weight.",
+        "type": "mst",
+        "graph": {
+          "vertices": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "edges": [
+            {
+              "id": "A-B",
+              "u": "A",
+              "v": "B",
+              "weight": 4
+            },
+            {
+              "id": "A-C",
+              "u": "A",
+              "v": "C",
+              "weight": 5
+            },
+            {
+              "id": "B-C",
+              "u": "B",
+              "v": "C",
+              "weight": 4
+            },
+            {
+              "id": "B-D",
+              "u": "B",
+              "v": "D",
+              "weight": 7
+            },
+            {
+              "id": "C-D",
+              "u": "C",
+              "v": "D",
+              "weight": 6
+            },
+            {
+              "id": "C-E",
+              "u": "C",
+              "v": "E",
+              "weight": 8
+            },
+            {
+              "id": "D-E",
+              "u": "D",
+              "v": "E",
+              "weight": 5
+            },
+            {
+              "id": "D-F",
+              "u": "D",
+              "v": "F",
+              "weight": 9
+            },
+            {
+              "id": "E-F",
+              "u": "E",
+              "v": "F",
+              "weight": 4
+            }
+          ],
+          "layout": {
+            "A": {
+              "x": 260,
+              "y": 150
+            },
+            "B": {
+              "x": 205,
+              "y": 245
+            },
+            "C": {
+              "x": 95,
+              "y": 245
+            },
+            "D": {
+              "x": 40,
+              "y": 150
+            },
+            "E": {
+              "x": 95,
+              "y": 55
+            },
+            "F": {
+              "x": 205,
+              "y": 55
+            }
+          }
+        },
+        "algorithm": "kruskal",
+        "answer": {
+          "edgeSequence": [
+            "A-B",
+            "B-C",
+            "E-F",
+            "D-E",
+            "C-D"
+          ],
+          "totalWeight": 23
+        }
+      },
+      {
+        "id": "dm-m3-7",
+        "subject": "dm",
+        "topic": "graphs",
+        "title": "Euler and Hamilton reasoning",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For the star K1,6, determine whether an Euler path and a Hamilton path exist. Explain.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "The centre has degree 6; the 6 leaves each have degree 1."
+          },
+          {
+            "step": 2,
+            "text": "The graph has 6 odd-degree vertices, which is more than 2. Hence there is no Euler path."
+          },
+          {
+            "step": 3,
+            "text": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path."
+          }
+        ],
+        "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "The centre has degree 6; the 6 leaves each have degree 1.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "The graph has 6 odd-degree vertices, which is more than 2. Hence there is no Euler path.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Every leaf would be an endpoint of a Hamilton path, but there are more than two leaves. Hence there is no Hamilton path.",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m3-8",
+        "subject": "dm",
+        "topic": "counting",
+        "title": "Bit-string inclusion-exclusion",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "Count bit strings of length 11 starting with 0000 or ending with 111.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Let A be the prefix event and B the suffix event. |A|=2^7; |B|=2^8."
+          },
+          {
+            "step": 2,
+            "text": "The blocks do not overlap, so |A intersection B|=2^4."
+          },
+          {
+            "step": 3,
+            "text": "The answer is |A|+|B|-|A intersection B|=368."
+          }
+        ],
+        "conceptNote": "Identify distinct outcomes and overlaps first. For a minimum guarantee, show both the forcing threshold and why one fewer can avoid the event.",
+        "type": "numeric",
+        "answer": 368,
+        "tolerance": 0,
+        "verification": {
+          "kind": "counting",
+          "operation": "bitstrings",
+          "length": 11,
+          "prefix": "0000",
+          "suffix": "111",
+          "mode": "or"
+        }
+      },
+      {
+        "id": "dm-m3-9",
+        "subject": "dm",
+        "topic": "groups",
+        "title": "Inverse of a product",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "In a group, prove (a*b)^(-1)=b^(-1)*a^(-1). Then specialise to an additive abelian group with a=3, b=6.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e."
+          },
+          {
+            "step": 2,
+            "text": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e."
+          },
+          {
+            "step": 3,
+            "text": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula."
+          },
+          {
+            "step": 4,
+            "text": "For addition, the inverse of 3+6=9 is -9=(-6)+(-3)."
+          }
+        ],
+        "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "Compute (a*b)*(b^(-1)*a^(-1))=a*(b*b^(-1))*a^(-1)=e.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "Compute (b^(-1)*a^(-1))*(a*b)=b^(-1)*(a^(-1)*a)*b=e.",
+            "marks": 1
+          },
+          {
+            "step": 3,
+            "criterion": "Thus b^(-1)*a^(-1) is the inverse of a*b. Uniqueness of inverse gives the formula.",
+            "marks": 1
+          },
+          {
+            "step": 4,
+            "criterion": "For addition, the inverse of 3+6=9 is -9=(-6)+(-3).",
+            "marks": 1
+          }
+        ]
+      },
+      {
+        "id": "dm-m3-10",
+        "subject": "dm",
+        "topic": "sets",
+        "title": "Function with restricted range",
+        "source": "Original",
+        "priority": "past",
+        "difficulty": "standard",
+        "marks": 5,
+        "prompt": "For f:Z->Z, f(x)=5*x+3, decide injectivity and surjectivity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "If f(x)=f(y), then 5*x+3=5*y+3, so x=y. Thus f is injective."
+          },
+          {
+            "step": 2,
+            "text": "All outputs are congruent to 3 modulo 5. The integer 4 is not in that residue class and has no preimage."
+          },
+          {
+            "step": 3,
+            "text": "Hence f is not surjective onto Z."
+          }
+        ],
+        "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+        "type": "steps",
+        "rubric": [
+          {
+            "step": 1,
+            "criterion": "If f(x)=f(y), then 5*x+3=5*y+3, so x=y. Thus f is injective.",
+            "marks": 2
+          },
+          {
+            "step": 2,
+            "criterion": "All outputs are congruent to 3 modulo 5. The integer 4 is not in that residue class and has no preimage.",
+            "marks": 2
+          },
+          {
+            "step": 3,
+            "criterion": "Hence f is not surjective onto Z.",
+            "marks": 1
+          }
+        ]
+      }
+    ]
+  }
+]

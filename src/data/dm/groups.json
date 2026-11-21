@@ -1,0 +1,502 @@
+[
+  {
+    "id": "dm-groups-1",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Uniqueness of identity",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove a group has a unique identity element.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let e and f both be identities."
+      },
+      {
+        "step": 2,
+        "text": "Since e is an identity, e*f=f. Since f is an identity, e*f=e."
+      },
+      {
+        "step": 3,
+        "text": "Thus e=f, proving uniqueness."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let e and f both be identities.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Since e is an identity, e*f=f. Since f is an identity, e*f=e.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Thus e=f, proving uniqueness.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-groups-2",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Uniqueness of inverse",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "If a*b=e in a group, prove b=a^(-1).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Left multiply a*b=e by a^(-1): a^(-1)*(a*b)=a^(-1)*e."
+      },
+      {
+        "step": 2,
+        "text": "Associativity gives (a^(-1)*a)*b=a^(-1)."
+      },
+      {
+        "step": 3,
+        "text": "Hence e*b=a^(-1), so b=a^(-1)."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Left multiply a*b=e by a^(-1): a^(-1)*(a*b)=a^(-1)*e.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Associativity gives (a^(-1)*a)*b=a^(-1).",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Hence e*b=a^(-1), so b=a^(-1).",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-groups-3",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Cancellation yields identity",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In a group, a*b=a. Prove b=e.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Left multiply by a^(-1)."
+      },
+      {
+        "step": 2,
+        "text": "Associativity gives (a^(-1)*a)*b=a^(-1)*a, hence e*b=e."
+      },
+      {
+        "step": 3,
+        "text": "Therefore b=e."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Left multiply by a^(-1).",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Associativity gives (a^(-1)*a)*b=a^(-1)*a, hence e*b=e.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Therefore b=e.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-groups-4",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Union of subgroups can fail",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Show a union of two subgroups need not be a subgroup.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "In (Z,+), take H=2Z and K=3Z; both are subgroups."
+      },
+      {
+        "step": 2,
+        "text": "The numbers 2 and 3 belong to H union K."
+      },
+      {
+        "step": 3,
+        "text": "But 2+3=5 is in neither 2Z nor 3Z, so the union is not closed under addition."
+      },
+      {
+        "step": 4,
+        "text": "Therefore H union K need not be a subgroup."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "In (Z,+), take H=2Z and K=3Z; both are subgroups.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The numbers 2 and 3 belong to H union K.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "But 2+3=5 is in neither 2Z nor 3Z, so the union is not closed under addition.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore H union K need not be a subgroup.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-groups-5",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Intersection of subgroups",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove H intersection K is a subgroup if H,K are subgroups of G.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The identity belongs to both H and K, so the intersection is nonempty."
+      },
+      {
+        "step": 2,
+        "text": "If x,y are in H intersection K, then x*y^(-1) is in H and in K by their subgroup properties."
+      },
+      {
+        "step": 3,
+        "text": "Thus x*y^(-1) belongs to the intersection. By the subgroup test it is a subgroup."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "The identity belongs to both H and K, so the intersection is nonempty.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "If x,y are in H intersection K, then x*y^(-1) is in H and in K by their subgroup properties.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Thus x*y^(-1) belongs to the intersection. By the subgroup test it is a subgroup.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-groups-6",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "A cancellation-like condition",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Suppose a group satisfies: for every x,y,z, x*y=z*x implies y=z. Prove the group is abelian.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Choose arbitrary x,y in the group, and put z=x*y*x^(-1)."
+      },
+      {
+        "step": 2,
+        "text": "Then z*x=(x*y*x^(-1))*x=x*y by associativity and inverse laws."
+      },
+      {
+        "step": 3,
+        "text": "The assumed implication yields y=z=x*y*x^(-1). Right multiply by x to obtain y*x=x*y."
+      },
+      {
+        "step": 4,
+        "text": "Since x,y were arbitrary, every pair commutes and the group is abelian."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Choose arbitrary x,y in the group, and put z=x*y*x^(-1).",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Then z*x=(x*y*x^(-1))*x=x*y by associativity and inverse laws.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The assumed implication yields y=z=x*y*x^(-1). Right multiply by x to obtain y*x=x*y.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Since x,y were arbitrary, every pair commutes and the group is abelian.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-p1-q8",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Union of subgroups can fail",
+    "source": "Past paper 1 Q8",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Show a union of two subgroups need not be a subgroup.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "In (Z,+), take H=2Z and K=3Z; both are subgroups."
+      },
+      {
+        "step": 2,
+        "text": "The numbers 2 and 3 belong to H union K."
+      },
+      {
+        "step": 3,
+        "text": "But 2+3=5 is in neither 2Z nor 3Z, so the union is not closed under addition."
+      },
+      {
+        "step": 4,
+        "text": "Therefore H union K need not be a subgroup."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "In (Z,+), take H=2Z and K=3Z; both are subgroups.",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "The numbers 2 and 3 belong to H union K.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "But 2+3=5 is in neither 2Z nor 3Z, so the union is not closed under addition.",
+        "marks": 5
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore H union K need not be a subgroup.",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "8",
+      "printedMarks": 20,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p2-q8",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Uniqueness of inverse",
+    "source": "Past paper 2 Q8",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "If a*b=e in a group, prove b=a^(-1).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Left multiply a*b=e by a^(-1): a^(-1)*(a*b)=a^(-1)*e."
+      },
+      {
+        "step": 2,
+        "text": "Associativity gives (a^(-1)*a)*b=a^(-1)."
+      },
+      {
+        "step": 3,
+        "text": "Hence e*b=a^(-1), so b=a^(-1)."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Left multiply a*b=e by a^(-1): a^(-1)*(a*b)=a^(-1)*e.",
+        "marks": 7
+      },
+      {
+        "step": 2,
+        "criterion": "Associativity gives (a^(-1)*a)*b=a^(-1).",
+        "marks": 7
+      },
+      {
+        "step": 3,
+        "criterion": "Hence e*b=a^(-1), so b=a^(-1).",
+        "marks": 6
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "8",
+      "printedMarks": 20,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p3-q9",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "Cancellation yields identity",
+    "source": "Past paper 3 Q9",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "In a group, a*b=a. Prove b=e.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Left multiply by a^(-1)."
+      },
+      {
+        "step": 2,
+        "text": "Associativity gives (a^(-1)*a)*b=a^(-1)*a, hence e*b=e."
+      },
+      {
+        "step": 3,
+        "text": "Therefore b=e."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Left multiply by a^(-1).",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "Associativity gives (a^(-1)*a)*b=a^(-1)*a, hence e*b=e.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "Therefore b=e.",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "9",
+      "printedMarks": 15,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p5-q7",
+    "subject": "dm",
+    "topic": "groups",
+    "title": "A cancellation-like condition",
+    "source": "Past paper 5 Q7",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Suppose a group satisfies: for every x,y,z, x*y=z*x implies y=z. Prove the group is abelian.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Choose arbitrary x,y in the group, and put z=x*y*x^(-1)."
+      },
+      {
+        "step": 2,
+        "text": "Then z*x=(x*y*x^(-1))*x=x*y by associativity and inverse laws."
+      },
+      {
+        "step": 3,
+        "text": "The assumed implication yields y=z=x*y*x^(-1). Right multiply by x to obtain y*x=x*y."
+      },
+      {
+        "step": 4,
+        "text": "Since x,y were arbitrary, every pair commutes and the group is abelian."
+      }
+    ],
+    "conceptNote": "Associativity changes parentheses, not factor order. Multiply by inverses on the correct side and prove closure before calling a subset a subgroup.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Choose arbitrary x,y in the group, and put z=x*y*x^(-1).",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Then z*x=(x*y*x^(-1))*x=x*y by associativity and inverse laws.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The assumed implication yields y=z=x*y*x^(-1). Right multiply by x to obtain y*x=x*y.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Since x,y were arbitrary, every pair commutes and the group is abelian.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "7",
+      "printedMarks": 5,
+      "page": 1
+    }
+  }
+]

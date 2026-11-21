@@ -1,0 +1,765 @@
+[
+  {
+    "id": "dm-sets-1",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "A nonidentity bijection",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give a bijection N->N that is not the identity. Use N={0,1,2,...}.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Define f(0)=1, f(1)=0, and f(n)=n for n>=2."
+      },
+      {
+        "step": 2,
+        "text": "The values 0 and 1 are swapped and every other value is fixed. Thus each output has exactly one preimage."
+      },
+      {
+        "step": 3,
+        "text": "Hence f is injective and surjective, and f(0)!=0 so it is not the identity."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Define f(0)=1, f(1)=0, and f(n)=n for n>=2.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The values 0 and 1 are swapped and every other value is fixed. Thus each output has exactly one preimage.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Hence f is injective and surjective, and f(0)!=0 so it is not the identity.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-sets-2",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Neither injective nor onto",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give f:N->N that is neither injective nor surjective. Use N={0,1,2,...}.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Define f(n)=0 for every n."
+      },
+      {
+        "step": 2,
+        "text": "Since f(0)=f(1), the function is not one-to-one."
+      },
+      {
+        "step": 3,
+        "text": "The number 1 has no preimage, so the function is not onto."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Define f(n)=0 for every n.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Since f(0)=f(1), the function is not one-to-one.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "The number 1 has no preimage, so the function is not onto.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-sets-3",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Composition injection trap",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Disprove: if f composed with g is one-to-one, then f is one-to-one.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let g:{0}->{0,1} send 0 to 0. Let f:{0,1}->{0} send both inputs to 0."
+      },
+      {
+        "step": 2,
+        "text": "The composition f o g has a singleton domain, so it is injective."
+      },
+      {
+        "step": 3,
+        "text": "But f(0)=f(1) with 0!=1, so f is not injective."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let g:{0}->{0,1} send 0 to 0. Let f:{0,1}->{0} send both inputs to 0.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The composition f o g has a singleton domain, so it is injective.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "But f(0)=f(1) with 0!=1, so f is not injective.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-sets-4",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Countability of integers",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Show Z is countably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List the integers as 0,1,-1,2,-2,3,-3,... ."
+      },
+      {
+        "step": 2,
+        "text": "Every integer occurs once: 0 first, each positive k at index 2*k-1, and -k at index 2*k."
+      },
+      {
+        "step": 3,
+        "text": "This gives a bijection from N={0,1,...} to Z, so Z is countably infinite."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "List the integers as 0,1,-1,2,-2,3,-3,... .",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Every integer occurs once: 0 first, each positive k at index 2*k-1, and -k at index 2*k.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "This gives a bijection from N={0,1,...} to Z, so Z is countably infinite.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-sets-5",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Uncountable sets with countable difference",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give uncountable A,B for which A-B is countably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A=R and B=R-Z."
+      },
+      {
+        "step": 2,
+        "text": "B is uncountable: otherwise R=B union Z would be a union of two countable sets and thus countable."
+      },
+      {
+        "step": 3,
+        "text": "A-B=Z, which is countably infinite. Both required sets are uncountable."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A=R and B=R-Z.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "B is uncountable: otherwise R=B union Z would be a union of two countable sets and thus countable.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "A-B=Z, which is countably infinite. Both required sets are uncountable.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-sets-6",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Uncountability diagonal argument",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Explain why the set of infinite binary sequences is uncountable.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Assume a list s1,s2,... contains every infinite binary sequence."
+      },
+      {
+        "step": 2,
+        "text": "Define t by choosing its nth bit different from the nth bit of sn."
+      },
+      {
+        "step": 3,
+        "text": "Then t differs from sn in position n for each n, so t is missing from the list."
+      },
+      {
+        "step": 4,
+        "text": "This contradiction shows no countable list exists. The set is uncountable."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Assume a list s1,s2,... contains every infinite binary sequence.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Define t by choosing its nth bit different from the nth bit of sn.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Then t differs from sn in position n for each n, so t is missing from the list.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "This contradiction shows no countable list exists. The set is uncountable.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-trap-6",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Countability trap",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Explain why infinite binary sequences are uncountable while finite binary strings and the rational numbers are countable.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Finite binary strings can be listed by length, then lexicographically; rationals have a countable diagonal listing."
+      },
+      {
+        "step": 2,
+        "text": "For any proposed list of infinite binary sequences, flip the nth bit of the nth sequence."
+      },
+      {
+        "step": 3,
+        "text": "The resulting sequence is absent from the list, proving uncountability."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Finite binary strings can be listed by length, then lexicographically; rationals have a countable diagonal listing.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "For any proposed list of infinite binary sequences, flip the nth bit of the nth sequence.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "The resulting sequence is absent from the list, proving uncountability.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-p1-q2",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Composition injection trap",
+    "source": "Past paper 1 Q2",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Disprove: if f composed with g is one-to-one, then f is one-to-one.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let g:{0}->{0,1} send 0 to 0. Let f:{0,1}->{0} send both inputs to 0."
+      },
+      {
+        "step": 2,
+        "text": "The composition f o g has a singleton domain, so it is injective."
+      },
+      {
+        "step": 3,
+        "text": "But f(0)=f(1) with 0!=1, so f is not injective."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let g:{0}->{0,1} send 0 to 0. Let f:{0,1}->{0} send both inputs to 0.",
+        "marks": 7
+      },
+      {
+        "step": 2,
+        "criterion": "The composition f o g has a singleton domain, so it is injective.",
+        "marks": 7
+      },
+      {
+        "step": 3,
+        "criterion": "But f(0)=f(1) with 0!=1, so f is not injective.",
+        "marks": 6
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "2",
+      "printedMarks": 20,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p1-q3a",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Finite difference of uncountable sets",
+    "source": "Past paper 1 Q3a",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give uncountably infinite A and B such that A-B is finite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A=R and B=R-{0}. Both are uncountable."
+      },
+      {
+        "step": 2,
+        "text": "Then A-B={0}, which is finite."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A=R and B=R-{0}. Both are uncountable.",
+        "marks": 3
+      },
+      {
+        "step": 2,
+        "criterion": "Then A-B={0}, which is finite.",
+        "marks": 2
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "3a",
+      "printedMarks": 15,
+      "page": 1,
+      "marksNote": "Q3 prints 15 marks for all three parts; 5 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p1-q3b",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Countably infinite difference of uncountable sets",
+    "source": "Past paper 1 Q3b",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give uncountably infinite A and B such that A-B is countably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A=R and B=R-Z."
+      },
+      {
+        "step": 2,
+        "text": "B is uncountable: otherwise R=B union Z would be a union of two countable sets and thus countable."
+      },
+      {
+        "step": 3,
+        "text": "A-B=Z, which is countably infinite. Both required sets are uncountable."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A=R and B=R-Z.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "B is uncountable: otherwise R=B union Z would be a union of two countable sets and thus countable.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "A-B=Z, which is countably infinite. Both required sets are uncountable.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "3b",
+      "printedMarks": 15,
+      "page": 1,
+      "marksNote": "Q3 prints 15 marks for all three parts; 5 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p1-q3c",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Uncountably infinite difference",
+    "source": "Past paper 1 Q3c",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give uncountably infinite A and B such that A-B is uncountably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A=R and B=(-infinity,0). Both are uncountable."
+      },
+      {
+        "step": 2,
+        "text": "Then A-B=[0,infinity), which is uncountable."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A=R and B=(-infinity,0). Both are uncountable.",
+        "marks": 3
+      },
+      {
+        "step": 2,
+        "criterion": "Then A-B=[0,infinity), which is uncountable.",
+        "marks": 2
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "3c",
+      "printedMarks": 15,
+      "page": 1,
+      "marksNote": "Q3 prints 15 marks for all three parts; 5 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q3a",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "A nonidentity bijection",
+    "source": "Past paper 4 Q3a",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 1,
+    "prompt": "Give a bijection N->N that is not the identity. Use N={0,1,2,...}.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Define f(0)=1, f(1)=0, and f(n)=n for n>=2."
+      },
+      {
+        "step": 2,
+        "text": "The values 0 and 1 are swapped and every other value is fixed. Thus each output has exactly one preimage."
+      },
+      {
+        "step": 3,
+        "text": "Hence f is injective and surjective, and f(0)!=0 so it is not the identity."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Define f(0)=1, f(1)=0, and f(n)=n for n>=2.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "The values 0 and 1 are swapped and every other value is fixed. Thus each output has exactly one preimage.",
+        "marks": 0
+      },
+      {
+        "step": 3,
+        "criterion": "Hence f is injective and surjective, and f(0)!=0 so it is not the identity.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "3a",
+      "printedMarks": 2,
+      "page": 1,
+      "marksNote": "Q3 prints 2 marks jointly; 1 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q3b",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Neither injective nor onto",
+    "source": "Past paper 4 Q3b",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 1,
+    "prompt": "Give f:N->N that is neither injective nor surjective. Use N={0,1,2,...}.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Define f(n)=0 for every n."
+      },
+      {
+        "step": 2,
+        "text": "Since f(0)=f(1), the function is not one-to-one."
+      },
+      {
+        "step": 3,
+        "text": "The number 1 has no preimage, so the function is not onto."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Define f(n)=0 for every n.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "Since f(0)=f(1), the function is not one-to-one.",
+        "marks": 0
+      },
+      {
+        "step": 3,
+        "criterion": "The number 1 has no preimage, so the function is not onto.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "3b",
+      "printedMarks": 2,
+      "page": 1,
+      "marksNote": "Q3 prints 2 marks jointly; 1 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p5-q3a",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Membership and subset together",
+    "source": "Past paper 5 Q3a",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 1,
+    "prompt": "Find sets A,B such that A in B and A subseteq B.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A={} and B={{}}."
+      },
+      {
+        "step": 2,
+        "text": "A={} is the sole element of B, so A in B."
+      },
+      {
+        "step": 3,
+        "text": "The empty set is a subset of every set, so A subseteq B."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A={} and B={{}}.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "A={} is the sole element of B, so A in B.",
+        "marks": 0
+      },
+      {
+        "step": 3,
+        "criterion": "The empty set is a subset of every set, so A subseteq B.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "3a",
+      "printedMarks": 5,
+      "page": 1,
+      "marksNote": "Q3 prints 5 marks jointly; 1+2+2 is an editorial allocation.",
+      "recoveredFromImage": [
+        "A in B (image34) and A subseteq B (image36)."
+      ]
+    }
+  },
+  {
+    "id": "dm-p5-q3b",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Uncountable sets with countable intersection",
+    "source": "Past paper 5 Q3b",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "Find uncountable A,B such that A intersection B is countably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take A=(-infinity,0) union Z and B=(0,infinity) union Z."
+      },
+      {
+        "step": 2,
+        "text": "Each set contains an interval, so each is uncountable."
+      },
+      {
+        "step": 3,
+        "text": "Their intersection is exactly Z, which is countably infinite."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take A=(-infinity,0) union Z and B=(0,infinity) union Z.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "Each set contains an interval, so each is uncountable.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Their intersection is exactly Z, which is countably infinite.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "3b",
+      "printedMarks": 5,
+      "page": 1,
+      "marksNote": "Q3 prints 5 marks jointly; 1+2+2 is an editorial allocation.",
+      "recoveredFromImage": [
+        "A intersection B (image38)."
+      ]
+    }
+  },
+  {
+    "id": "dm-p5-q3c",
+    "subject": "dm",
+    "topic": "sets",
+    "title": "Both differences countably infinite",
+    "source": "Past paper 5 Q3c",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "Find uncountable A,B such that A-B and B-A are both countably infinite.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let I=R-Z, E={2*k:k in Z}, O={2*k+1:k in Z}. Define A=I union E and B=I union O."
+      },
+      {
+        "step": 2,
+        "text": "I is uncountable, so A and B are uncountable. E and O are disjoint."
+      },
+      {
+        "step": 3,
+        "text": "A-B=E and B-A=O, both countably infinite."
+      }
+    ],
+    "conceptNote": "Membership, subset inclusion and cardinality are different claims. Function properties depend on both domain and codomain.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let I=R-Z, E={2*k:k in Z}, O={2*k+1:k in Z}. Define A=I union E and B=I union O.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "I is uncountable, so A and B are uncountable. E and O are disjoint.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "A-B=E and B-A=O, both countably infinite.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "3c",
+      "printedMarks": 5,
+      "page": 1,
+      "marksNote": "Q3 prints 5 marks jointly; 1+2+2 is an editorial allocation."
+    }
+  }
+]

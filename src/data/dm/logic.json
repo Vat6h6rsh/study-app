@@ -1,0 +1,2230 @@
+[
+  {
+    "id": "dm-logic-01",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Implication as an OR",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: ~p; p -> q; ~p v q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | ~p | p -> q | ~p v q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | F | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | F | F"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "~p",
+      "p -> q",
+      "~p v q"
+    ],
+    "answer": [
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-02",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "De Morgan for AND",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p ^ q; ~(p ^ q); ~p v ~q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p ^ q | ~(p ^ q) | ~p v ~q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | F | F"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | T | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | F | T | T"
+      },
+      {
+        "step": 6,
+        "text": "F | F | F | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p ^ q",
+      "~(p ^ q)",
+      "~p v ~q"
+    ],
+    "answer": [
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-03",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "De Morgan for OR",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p v q; ~(p v q); ~p ^ ~q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p v q | ~(p v q) | ~p ^ ~q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | F | F"
+      },
+      {
+        "step": 4,
+        "text": "T | F | T | F | F"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F | F"
+      },
+      {
+        "step": 6,
+        "text": "F | F | F | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p v q",
+      "~(p v q)",
+      "~p ^ ~q"
+    ],
+    "answer": [
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-04",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Contrapositive",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; ~q -> ~p. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p -> q | ~q -> ~p."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | F"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p -> q",
+      "~q -> ~p"
+    ],
+    "answer": [
+      [
+        true,
+        true
+      ],
+      [
+        false,
+        false
+      ],
+      [
+        true,
+        true
+      ],
+      [
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-05",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Converse trap",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; q -> p. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p -> q | q -> p."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns differ in at least one row, so they are not equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p -> q",
+      "q -> p"
+    ],
+    "answer": [
+      [
+        true,
+        true
+      ],
+      [
+        false,
+        true
+      ],
+      [
+        true,
+        false
+      ],
+      [
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 1,
+      "compareColumns": [
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-06",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Biconditional",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; q -> p; (p -> q) ^ (q -> p); p <-> q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p -> q | q -> p | (p -> q) ^ (q -> p) | p <-> q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | T | F | F"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F | F | F"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | T | T | T"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p -> q",
+      "q -> p",
+      "(p -> q) ^ (q -> p)",
+      "p <-> q"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-07",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Exclusive OR",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p v q; p ^ q; (p v q) ^ ~(p ^ q). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p v q | p ^ q | (p v q) ^ ~(p ^ q)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | F"
+      },
+      {
+        "step": 4,
+        "text": "T | F | T | F | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F | T"
+      },
+      {
+        "step": 6,
+        "text": "F | F | F | F | F"
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p v q",
+      "p ^ q",
+      "(p v q) ^ ~(p ^ q)"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        false,
+        true
+      ],
+      [
+        true,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        false
+      ]
+    ]
+  },
+  {
+    "id": "dm-logic-08",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Excluded middle",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: ~p; p v ~p. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | ~p | p v ~p."
+      },
+      {
+        "step": 3,
+        "text": "T | F | T"
+      },
+      {
+        "step": 4,
+        "text": "F | T | T"
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p"
+    ],
+    "columns": [
+      "~p",
+      "p v ~p"
+    ],
+    "answer": [
+      [
+        false,
+        true
+      ],
+      [
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "id": "dm-logic-09",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Contradiction",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: ~p; p ^ ~p. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | ~p | p ^ ~p."
+      },
+      {
+        "step": 3,
+        "text": "T | F | F"
+      },
+      {
+        "step": 4,
+        "text": "F | T | F"
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p"
+    ],
+    "columns": [
+      "~p",
+      "p ^ ~p"
+    ],
+    "answer": [
+      [
+        false,
+        false
+      ],
+      [
+        true,
+        false
+      ]
+    ]
+  },
+  {
+    "id": "dm-logic-10",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Modus ponens",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; p ^ (p -> q); (p ^ (p -> q)) -> q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p -> q | p ^ (p -> q) | (p ^ (p -> q)) -> q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | F | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F | T"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | F | T"
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p -> q",
+      "p ^ (p -> q)",
+      "(p ^ (p -> q)) -> q"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true
+      ],
+      [
+        true,
+        false,
+        true
+      ],
+      [
+        true,
+        false,
+        true
+      ]
+    ]
+  },
+  {
+    "id": "dm-logic-11",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Distributive law",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: q v r; p ^ (q v r); (p ^ q) v (p ^ r). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | r | q v r | p ^ (q v r) | (p ^ q) v (p ^ r)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | T | F | T | T | T"
+      },
+      {
+        "step": 5,
+        "text": "T | F | T | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "T | F | F | F | F | F"
+      },
+      {
+        "step": 7,
+        "text": "F | T | T | T | F | F"
+      },
+      {
+        "step": 8,
+        "text": "F | T | F | T | F | F"
+      },
+      {
+        "step": 9,
+        "text": "F | F | T | T | F | F"
+      },
+      {
+        "step": 10,
+        "text": "F | F | F | F | F | F"
+      },
+      {
+        "step": 11,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ],
+    "columns": [
+      "q v r",
+      "p ^ (q v r)",
+      "(p ^ q) v (p ^ r)"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-12",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Implication is not associative",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; q -> r; (p -> q) -> r; p -> (q -> r). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | r | p -> q | q -> r | (p -> q) -> r | p -> (q -> r)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | T | F | T | F | F | F"
+      },
+      {
+        "step": 5,
+        "text": "T | F | T | F | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "T | F | F | F | T | T | T"
+      },
+      {
+        "step": 7,
+        "text": "F | T | T | T | T | T | T"
+      },
+      {
+        "step": 8,
+        "text": "F | T | F | T | F | F | T"
+      },
+      {
+        "step": 9,
+        "text": "F | F | T | T | T | T | T"
+      },
+      {
+        "step": 10,
+        "text": "F | F | F | T | T | F | T"
+      },
+      {
+        "step": 11,
+        "text": "The last two columns differ in at least one row, so they are not equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ],
+    "columns": [
+      "p -> q",
+      "q -> r",
+      "(p -> q) -> r",
+      "p -> (q -> r)"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        false,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 1,
+      "compareColumns": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-13",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Transitivity of implication",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; q -> r; p -> r; ((p -> q) ^ (q -> r)) -> (p -> r). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | r | p -> q | q -> r | p -> r | ((p -> q) ^ (q -> r)) -> (p -> r)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | T | F | T | F | F | T"
+      },
+      {
+        "step": 5,
+        "text": "T | F | T | F | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "T | F | F | F | T | F | T"
+      },
+      {
+        "step": 7,
+        "text": "F | T | T | T | T | T | T"
+      },
+      {
+        "step": 8,
+        "text": "F | T | F | T | F | T | T"
+      },
+      {
+        "step": 9,
+        "text": "F | F | T | T | T | T | T"
+      },
+      {
+        "step": 10,
+        "text": "F | F | F | T | T | T | T"
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ],
+    "columns": [
+      "p -> q",
+      "q -> r",
+      "p -> r",
+      "((p -> q) ^ (q -> r)) -> (p -> r)"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        false,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ]
+    ]
+  },
+  {
+    "id": "dm-logic-14",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Negating an implication",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; ~(p -> q); p ^ ~q. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p -> q | ~(p -> q) | p ^ ~q."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | F | F"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | T | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | T | F | F"
+      },
+      {
+        "step": 6,
+        "text": "F | F | T | F | F"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p -> q",
+      "~(p -> q)",
+      "p ^ ~q"
+    ],
+    "answer": [
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        false,
+        false
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-logic-15",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Absorption",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: p ^ q; p v (p ^ q); p. Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | p ^ q | p v (p ^ q) | p."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | F | F | T | T"
+      },
+      {
+        "step": 5,
+        "text": "F | T | F | F | F"
+      },
+      {
+        "step": 6,
+        "text": "F | F | F | F | F"
+      },
+      {
+        "step": 7,
+        "text": "The last two columns agree in every row, so they are logically equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q"
+    ],
+    "columns": [
+      "p ^ q",
+      "p v (p ^ q)",
+      "p"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the last two columns equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "id": "dm-knights-1",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "A praises B",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B are each a knight (K) or knave (N). A lowercase letter means that person is a knight. Statements in person order: A says b; B says ~a. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false."
+      },
+      {
+        "step": 2,
+        "text": "Test all 4 assignments; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: no assignments."
+      },
+      {
+        "step": 4,
+        "text": "Thus the statements are inconsistent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B"
+      ],
+      "statements": [
+        "b",
+        "~a"
+      ],
+      "spies": false
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test all 4 assignments; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: no assignments.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the statements are inconsistent.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-knights-2",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Both claim the other is a knight",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B are each a knight (K) or knave (N). A lowercase letter means that person is a knight. Statements in person order: A says b; B says a. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false."
+      },
+      {
+        "step": 2,
+        "text": "Test all 4 assignments; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: A=N, B=N; A=K, B=K."
+      },
+      {
+        "step": 4,
+        "text": "Thus the information does not determine a unique assignment."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B"
+      ],
+      "statements": [
+        "b",
+        "a"
+      ],
+      "spies": false
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test all 4 assignments; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: A=N, B=N; A=K, B=K.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the information does not determine a unique assignment.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-knights-3",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "A says they differ",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B are each a knight (K) or knave (N). A lowercase letter means that person is a knight. Statements in person order: A says ~(a <-> b); B says a. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false."
+      },
+      {
+        "step": 2,
+        "text": "Test all 4 assignments; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: A=N, B=N."
+      },
+      {
+        "step": 4,
+        "text": "Thus the solution is unique."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B"
+      ],
+      "statements": [
+        "~(a <-> b)",
+        "a"
+      ],
+      "spies": false
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test all 4 assignments; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: A=N, B=N.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the solution is unique.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-knights-4",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "An OR statement",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B are each a knight (K) or knave (N). A lowercase letter means that person is a knight. Statements in person order: A says a v b; B says ~a. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false."
+      },
+      {
+        "step": 2,
+        "text": "Test all 4 assignments; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: A=K, B=N."
+      },
+      {
+        "step": 4,
+        "text": "Thus the solution is unique."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B"
+      ],
+      "statements": [
+        "a v b",
+        "~a"
+      ],
+      "spies": false
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test all 4 assignments; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: A=K, B=N.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the solution is unique.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-knights-5",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "A three-person chain",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B, C are each a knight (K) or knave (N). A lowercase letter means that person is a knight. Statements in person order: A says b; B says c; C says a. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false."
+      },
+      {
+        "step": 2,
+        "text": "Test all 8 assignments; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: A=N, B=N, C=N; A=K, B=K, C=K."
+      },
+      {
+        "step": 4,
+        "text": "Thus the information does not determine a unique assignment."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B",
+        "C"
+      ],
+      "statements": [
+        "b",
+        "c",
+        "a"
+      ],
+      "spies": false
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test all 8 assignments; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: A=N, B=N, C=N; A=K, B=K, C=K.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the information does not determine a unique assignment.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-knights-6",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Exactly one spy",
+    "source": "Original",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A, B, C are one knight (K), one knave (N), one spy (S). A lowercase letter means that person is a knight. Statements in person order: A says a; B says ~a; C says ~b. Determine every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A knight's statement must be true and a knave's statement must be false. A spy may say either."
+      },
+      {
+        "step": 2,
+        "text": "Test the six permutations of K,N,S; for each speaker check statement truth against their type."
+      },
+      {
+        "step": 3,
+        "text": "The complete consistent list is: A=K, B=N, C=S; A=N, B=K, C=S; A=N, B=S, C=K; A=S, B=K, C=N."
+      },
+      {
+        "step": 4,
+        "text": "Thus the information does not determine a unique assignment."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B",
+        "C"
+      ],
+      "statements": [
+        "a",
+        "~a",
+        "~b"
+      ],
+      "spies": true
+    },
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "A knight's statement must be true and a knave's statement must be false. A spy may say either.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Test the six permutations of K,N,S; for each speaker check statement truth against their type.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The complete consistent list is: A=K, B=N, C=S; A=N, B=K, C=S; A=N, B=S, C=K; A=S, B=K, C=N.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the information does not determine a unique assignment.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-trap-3",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "False antecedent",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "When is p -> q false?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Implication is equivalent to ~p v q."
+      },
+      {
+        "step": 2,
+        "text": "This OR is false only if ~p=F and q=F."
+      },
+      {
+        "step": 3,
+        "text": "Thus p=T,q=F is the unique false row."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "mcq",
+    "options": [
+      "Only p=T,q=F.",
+      "Only p=F,q=T.",
+      "Whenever p is false."
+    ],
+    "correctIndex": 0,
+    "verification": {
+      "kind": "logic-false-rows",
+      "variables": [
+        "p",
+        "q"
+      ],
+      "expression": "p -> q"
+    },
+    "optionValues": [
+      [
+        "TF"
+      ],
+      [
+        "FT"
+      ],
+      [
+        "FT",
+        "FF"
+      ]
+    ]
+  },
+  {
+    "id": "dm-p2-q1",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Knights: implication with three inhabitants",
+    "source": "Past paper 2 Q1",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "A says \"B is a knight.\" B says \"If A is a knight, so is C.\" A,B,C are each knights or knaves. Determine their types.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let a,b,c denote that A,B,C respectively are knights. Then a=b and b=(a->c)."
+      },
+      {
+        "step": 2,
+        "text": "If a=F, then b=F, but a->c is T. This contradicts B being a knave."
+      },
+      {
+        "step": 3,
+        "text": "Therefore a=T and b=T. B's implication with a=T forces c=T."
+      },
+      {
+        "step": 4,
+        "text": "Hence A,B,C are all knights, uniquely."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let a,b,c denote that A,B,C respectively are knights. Then a=b and b=(a->c).",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "If a=F, then b=F, but a->c is T. This contradicts B being a knave.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "Therefore a=T and b=T. B's implication with a=T forces c=T.",
+        "marks": 5
+      },
+      {
+        "step": 4,
+        "criterion": "Hence A,B,C are all knights, uniquely.",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "1",
+      "printedMarks": 20,
+      "page": 1
+    },
+    "tags": [
+      "knights-knaves"
+    ],
+    "verification": {
+      "kind": "knights",
+      "people": [
+        "A",
+        "B",
+        "C"
+      ],
+      "statements": [
+        "b",
+        "a -> c",
+        "c"
+      ]
+    }
+  },
+  {
+    "id": "dm-p3-q1",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Is implication associative?",
+    "source": "Past paper 3 Q1",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 15,
+    "prompt": "Construct the truth table, including every listed intermediate column: p -> q; q -> r; (p -> q) -> r; p -> (q -> r). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | r | p -> q | q -> r | (p -> q) -> r | p -> (q -> r)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | T | T | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | T | F | T | F | F | F"
+      },
+      {
+        "step": 5,
+        "text": "T | F | T | F | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "T | F | F | F | T | T | T"
+      },
+      {
+        "step": 7,
+        "text": "F | T | T | T | T | T | T"
+      },
+      {
+        "step": 8,
+        "text": "F | T | F | T | F | F | T"
+      },
+      {
+        "step": 9,
+        "text": "F | F | T | T | T | T | T"
+      },
+      {
+        "step": 10,
+        "text": "F | F | F | T | T | F | T"
+      },
+      {
+        "step": 11,
+        "text": "For p=F,q=T,r=F, the left-associated statement is F while the right-associated statement is T. Therefore implication is not associative."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ],
+    "columns": [
+      "p -> q",
+      "q -> r",
+      "(p -> q) -> r",
+      "p -> (q -> r)"
+    ],
+    "answer": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        false,
+        false,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        false,
+        true
+      ]
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "1",
+      "printedMarks": 15,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p3-q2",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Exactly one quantifier",
+    "source": "Past paper 3 Q2",
+    "priority": "extra",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "Express \"there exists exactly one x such that P(x)\" using only standard quantifiers, connectives and equality.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "An existence clause is exists x P(x)."
+      },
+      {
+        "step": 2,
+        "text": "Require every witness y to equal the chosen x."
+      },
+      {
+        "step": 3,
+        "text": "The complete formula is: exists x (P(x) ^ forall y (P(y) -> y=x))."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "An existence clause is exists x P(x).",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "Require every witness y to equal the chosen x.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "The complete formula is: exists x (P(x) ^ forall y (P(y) -> y=x)).",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "2",
+      "printedMarks": 15,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p4-q1",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Knight, knave and spy",
+    "source": "Past paper 4 Q1",
+    "priority": "past",
+    "difficulty": "standard",
+    "marks": 8,
+    "prompt": "Exactly one of A,B,C is a knight, one a knave, one a spy. A says \"I am the knight\"; B says \"A is not the knave\"; C says \"B is not the knave\". Find every consistent assignment.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "If A is the knight, B cannot be the knave because B's statement would be true. Then B is the spy and C is the knave, but C's statement is true, impossible."
+      },
+      {
+        "step": 2,
+        "text": "If A is the knave, B says something false and so must be the spy; C is then the knight. All three statements fit their types. This gives (A=N,B=S,C=K)."
+      },
+      {
+        "step": 3,
+        "text": "If A is the spy, B's statement is true, so B must be the knight and C the knave. But C's statement is true, impossible."
+      },
+      {
+        "step": 4,
+        "text": "Therefore the unique solution is A=knave, B=spy, C=knight."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "If A is the knight, B cannot be the knave because B's statement would be true. Then B is the spy and C is the knave, but C's statement is true, impossible.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "If A is the knave, B says something false and so must be the spy; C is then the knight. All three statements fit their types. This gives (A=N,B=S,C=K).",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "If A is the spy, B's statement is true, so B must be the knight and C the knave. But C's statement is true, impossible.",
+        "marks": 2
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore the unique solution is A=knave, B=spy, C=knight.",
+        "marks": 2
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "1",
+      "printedMarks": 8,
+      "page": 1
+    },
+    "tags": [
+      "knights-knaves"
+    ]
+  },
+  {
+    "id": "dm-p5-q1",
+    "subject": "dm",
+    "topic": "logic",
+    "title": "Recovered compound statements",
+    "source": "Past paper 5 Q1",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Construct the truth table, including every listed intermediate column: ~q; ~q v r; p -> (~q v r); p -> ~q; p -> r; (p -> ~q) v (p -> r). Show your row order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use row order p, q, r with T before F. Compute ~ first, then ^, then v, then ->, then <-> unless parentheses specify otherwise."
+      },
+      {
+        "step": 2,
+        "text": "Columns: p | q | r | ~q | ~q v r | p -> (~q v r) | p -> ~q | p -> r | (p -> ~q) v (p -> r)."
+      },
+      {
+        "step": 3,
+        "text": "T | T | T | F | T | T | F | T | T"
+      },
+      {
+        "step": 4,
+        "text": "T | T | F | F | F | F | F | F | F"
+      },
+      {
+        "step": 5,
+        "text": "T | F | T | T | T | T | T | T | T"
+      },
+      {
+        "step": 6,
+        "text": "T | F | F | T | T | T | T | F | T"
+      },
+      {
+        "step": 7,
+        "text": "F | T | T | F | T | T | T | T | T"
+      },
+      {
+        "step": 8,
+        "text": "F | T | F | F | F | T | T | T | T"
+      },
+      {
+        "step": 9,
+        "text": "F | F | T | T | T | T | T | T | T"
+      },
+      {
+        "step": 10,
+        "text": "F | F | F | T | T | T | T | T | T"
+      },
+      {
+        "step": 11,
+        "text": "The full statements agree in all eight rows; therefore they are equivalent."
+      }
+    ],
+    "conceptNote": "Evaluate each connective using its truth condition; equivalence requires agreement in every row, and speakers must satisfy their truth constraints.",
+    "type": "truth-table",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ],
+    "columns": [
+      "~q",
+      "~q v r",
+      "p -> (~q v r)",
+      "p -> ~q",
+      "p -> r",
+      "(p -> ~q) v (p -> r)"
+    ],
+    "answer": [
+      [
+        false,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "followUp": {
+      "prompt": "Are the two full statements equivalent?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctIndex": 0,
+      "compareColumns": [
+        2,
+        5
+      ]
+    },
+    "provenance": {
+      "paper": 5,
+      "question": "1",
+      "printedMarks": 5,
+      "page": 1,
+      "image": "/dm/source-images/paper5-image26.png",
+      "recoveredFromImage": [
+        "p -> (~q v r) and (p -> ~q) v (p -> r), from embedded images 26 and 28."
+      ]
+    }
+  }
+]

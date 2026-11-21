@@ -1,0 +1,1267 @@
+[
+  {
+    "id": "dm-induction-1",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Sum of first n integers",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Prove 1+2+...+n = n*(n+1)/2 for n >= 1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1: 1=1*2/2."
+      },
+      {
+        "step": 2,
+        "text": "Inductive hypothesis: for an arbitrary k>=1, 1+...+k=k*(k+1)/2."
+      },
+      {
+        "step": 3,
+        "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2."
+      },
+      {
+        "step": 4,
+        "text": "Thus the statement holds at k+1. By induction it holds for every n>=1."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1: 1=1*2/2.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Inductive hypothesis: for an arbitrary k>=1, 1+...+k=k*(k+1)/2.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the statement holds at k+1. By induction it holds for every n>=1.",
+        "marks": 1
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "dm-induction-1-formula",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Identity checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Enter the closed-form right-hand side of the proved identity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=1: 1=1*2/2."
+          },
+          {
+            "step": 2,
+            "text": "Inductive hypothesis: for an arbitrary k>=1, 1+...+k=k*(k+1)/2."
+          },
+          {
+            "step": 3,
+            "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2."
+          },
+          {
+            "step": 4,
+            "text": "Thus the statement holds at k+1. By induction it holds for every n>=1."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "formula",
+        "answer": "n*(n+1)/2",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 0
+          },
+          {
+            "n": 1,
+            "expected": 1
+          },
+          {
+            "n": 2,
+            "expected": 3
+          },
+          {
+            "n": 3,
+            "expected": 6
+          },
+          {
+            "n": 5,
+            "expected": 15
+          },
+          {
+            "n": 8,
+            "expected": 36
+          },
+          {
+            "n": 12,
+            "expected": 78
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-2",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Sum of odd integers",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Prove 1+3+...+(2*n-1)=n^2 for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1: 1=1^2."
+      },
+      {
+        "step": 2,
+        "text": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
+      },
+      {
+        "step": 3,
+        "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2."
+      },
+      {
+        "step": 4,
+        "text": "Therefore the formula holds for every n>=1 by induction."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1: 1=1^2.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore the formula holds for every n>=1 by induction.",
+        "marks": 1
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "dm-induction-2-formula",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Identity checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Enter the closed-form right-hand side of the proved identity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=1: 1=1^2."
+          },
+          {
+            "step": 2,
+            "text": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
+          },
+          {
+            "step": 3,
+            "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2."
+          },
+          {
+            "step": 4,
+            "text": "Therefore the formula holds for every n>=1 by induction."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "formula",
+        "answer": "n^2",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 0
+          },
+          {
+            "n": 1,
+            "expected": 1
+          },
+          {
+            "n": 2,
+            "expected": 4
+          },
+          {
+            "n": 3,
+            "expected": 9
+          },
+          {
+            "n": 5,
+            "expected": 25
+          },
+          {
+            "n": 8,
+            "expected": 64
+          },
+          {
+            "n": 12,
+            "expected": 144
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-3",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Geometric sum",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Prove 1+2+...+2^n=2^(n+1)-1 for n>=0.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=0: 1=2^1-1."
+      },
+      {
+        "step": 2,
+        "text": "Assume sum_(i=0)^k 2^i=2^(k+1)-1."
+      },
+      {
+        "step": 3,
+        "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1."
+      },
+      {
+        "step": 4,
+        "text": "The basis and step prove the formula for all n>=0."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=0: 1=2^1-1.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume sum_(i=0)^k 2^i=2^(k+1)-1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "The basis and step prove the formula for all n>=0.",
+        "marks": 1
+      }
+    ],
+    "checkpoints": [
+      {
+        "id": "dm-induction-3-formula",
+        "subject": "dm",
+        "topic": "induction",
+        "title": "Identity checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Enter the closed-form right-hand side of the proved identity.",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Basis n=0: 1=2^1-1."
+          },
+          {
+            "step": 2,
+            "text": "Assume sum_(i=0)^k 2^i=2^(k+1)-1."
+          },
+          {
+            "step": 3,
+            "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1."
+          },
+          {
+            "step": 4,
+            "text": "The basis and step prove the formula for all n>=0."
+          }
+        ],
+        "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+        "type": "formula",
+        "answer": "2^(n+1)-1",
+        "testPoints": [
+          {
+            "n": 0,
+            "expected": 1
+          },
+          {
+            "n": 1,
+            "expected": 3
+          },
+          {
+            "n": 2,
+            "expected": 7
+          },
+          {
+            "n": 3,
+            "expected": 15
+          },
+          {
+            "n": 5,
+            "expected": 63
+          },
+          {
+            "n": 8,
+            "expected": 511
+          },
+          {
+            "n": 12,
+            "expected": 8191
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-4",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Sum of squares",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove sum_(i=1)^n i^2=n*(n+1)*(2*n+1)/6 for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1 gives 1=1*2*3/6."
+      },
+      {
+        "step": 2,
+        "text": "Assume the formula holds at k>=1."
+      },
+      {
+        "step": 3,
+        "text": "Add (k+1)^2: the new sum equals (k+1)*[k*(2*k+1)+6*(k+1)]/6."
+      },
+      {
+        "step": 4,
+        "text": "The bracket is 2*k^2+7*k+6=(k+2)*(2*k+3), giving (k+1)*(k+2)*(2*k+3)/6."
+      },
+      {
+        "step": 5,
+        "text": "By induction, the formula holds for every n>=1."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1 gives 1=1*2*3/6.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "Assume the formula holds at k>=1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Add (k+1)^2: the new sum equals (k+1)*[k*(2*k+1)+6*(k+1)]/6.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "The bracket is 2*k^2+7*k+6=(k+2)*(2*k+3), giving (k+1)*(k+2)*(2*k+3)/6.",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "By induction, the formula holds for every n>=1.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-5",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Divisibility by three",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove 3 divides 4^n-1 for n>=0.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=0: 4^0-1=0 is divisible by 3."
+      },
+      {
+        "step": 2,
+        "text": "Assume 4^k-1=3*t for an integer t."
+      },
+      {
+        "step": 3,
+        "text": "4^(k+1)-1=4*(4^k-1)+3=3*(4*t+1)."
+      },
+      {
+        "step": 4,
+        "text": "Since 4*t+1 is an integer, divisibility holds at k+1 and hence for all n>=0."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=0: 4^0-1=0 is divisible by 3.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 4^k-1=3*t for an integer t.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "4^(k+1)-1=4*(4^k-1)+3=3*(4*t+1).",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Since 4*t+1 is an integer, divisibility holds at k+1 and hence for all n>=0.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-6",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Divisibility by six",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove 6 divides n^3-n for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1 gives 0, divisible by 6."
+      },
+      {
+        "step": 2,
+        "text": "Assume 6 divides k^3-k."
+      },
+      {
+        "step": 3,
+        "text": "(k+1)^3-(k+1)=(k^3-k)+3*k*(k+1)."
+      },
+      {
+        "step": 4,
+        "text": "One of consecutive integers k,k+1 is even, so 3*k*(k+1) is divisible by 6. The whole expression is divisible by 6."
+      },
+      {
+        "step": 5,
+        "text": "The result follows for all n>=1."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1 gives 0, divisible by 6.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 6 divides k^3-k.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "(k+1)^3-(k+1)=(k^3-k)+3*k*(k+1).",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "One of consecutive integers k,k+1 is even, so 3*k*(k+1) is divisible by 6. The whole expression is divisible by 6.",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "The result follows for all n>=1.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-7",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Exponential lower bound",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove 2^n >= n+1 for n>=0.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=0: 1>=1."
+      },
+      {
+        "step": 2,
+        "text": "Assume 2^k>=k+1 for k>=0."
+      },
+      {
+        "step": 3,
+        "text": "2^(k+1)=2*2^k>=2*k+2>=k+2 because k>=0."
+      },
+      {
+        "step": 4,
+        "text": "Thus the result holds for all n>=0."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=0: 1>=1.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 2^k>=k+1 for k>=0.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "2^(k+1)=2*2^k>=2*k+2>=k+2 because k>=0.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus the result holds for all n>=0.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-8",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Factorial lower bound",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove n! >= 2^(n-1) for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1: 1!=1=2^0."
+      },
+      {
+        "step": 2,
+        "text": "Assume k!>=2^(k-1), k>=1."
+      },
+      {
+        "step": 3,
+        "text": "(k+1)!=(k+1)*k!>=2*2^(k-1)=2^k because k+1>=2."
+      },
+      {
+        "step": 4,
+        "text": "Hence the inequality holds for every n>=1."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1: 1!=1=2^0.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume k!>=2^(k-1), k>=1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "(k+1)!=(k+1)*k!>=2*2^(k-1)=2^k because k+1>=2.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Hence the inequality holds for every n>=1.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-9",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Exponential beats a square",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove 2^n>=n^2 for n>=4.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=4: 16=4^2."
+      },
+      {
+        "step": 2,
+        "text": "Assume 2^k>=k^2 for k>=4."
+      },
+      {
+        "step": 3,
+        "text": "2^(k+1)>=2*k^2. Also 2*k^2-(k+1)^2=k^2-2*k-1>=7>0 for k>=4."
+      },
+      {
+        "step": 4,
+        "text": "Therefore 2^(k+1)>=(k+1)^2. By induction the claim holds for n>=4."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=4: 16=4^2.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 2^k>=k^2 for k>=4.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "2^(k+1)>=2*k^2. Also 2*k^2-(k+1)^2=k^2-2*k-1>=7>0 for k>=4.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore 2^(k+1)>=(k+1)^2. By induction the claim holds for n>=4.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-10",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Strong induction and stamps",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Prove every integer n>=12 equals 4*a+5*b for some nonnegative integers a,b.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis: 12=3*4, 13=2*4+5, 14=4+2*5, 15=3*5."
+      },
+      {
+        "step": 2,
+        "text": "Strong hypothesis: assume every integer from 12 through k is representable, where k>=15."
+      },
+      {
+        "step": 3,
+        "text": "For k+1, we have 12<=k-3<=k. By the hypothesis k-3=4*a+5*b."
+      },
+      {
+        "step": 4,
+        "text": "Then k+1=4*(a+1)+5*b, with nonnegative coefficients. Hence all n>=12 are representable."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis: 12=3*4, 13=2*4+5, 14=4+2*5, 15=3*5.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Strong hypothesis: assume every integer from 12 through k is representable, where k>=15.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "For k+1, we have 12<=k-3<=k. By the hypothesis k-3=4*a+5*b.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Then k+1=4*(a+1)+5*b, with nonnegative coefficients. Hence all n>=12 are representable.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-11",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Prime factorisation exists",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Use strong induction to prove every integer n>=2 is a product of primes.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=2 is itself prime."
+      },
+      {
+        "step": 2,
+        "text": "Assume each integer from 2 through k is a product of primes."
+      },
+      {
+        "step": 3,
+        "text": "If k+1 is prime, it is a one-factor product. Otherwise k+1=a*b with 2<=a,b<=k."
+      },
+      {
+        "step": 4,
+        "text": "Both a and b are products of primes by the strong hypothesis, so their product is too. The result follows."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=2 is itself prime.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume each integer from 2 through k is a product of primes.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "If k+1 is prime, it is a one-factor product. Otherwise k+1=a*b with 2<=a,b<=k.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Both a and b are products of primes by the strong hypothesis, so their product is too. The result follows.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-12",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Binary strings structural induction",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Binary strings are built from the empty string by appending 0 or 1. Prove length(s)=number_of_0s(s)+number_of_1s(s).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis: the empty string has length 0 and zero of both symbols."
+      },
+      {
+        "step": 2,
+        "text": "Structural hypothesis: assume the equality holds for a constructed string s."
+      },
+      {
+        "step": 3,
+        "text": "Appending 0 increases length and number of 0s by 1, leaving number of 1s unchanged. Appending 1 increases length and number of 1s by 1."
+      },
+      {
+        "step": 4,
+        "text": "Each constructor preserves the equality. Thus it holds for every generated binary string."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis: the empty string has length 0 and zero of both symbols.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Structural hypothesis: assume the equality holds for a constructed string s.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Appending 0 increases length and number of 0s by 1, leaving number of 1s unchanged. Appending 1 increases length and number of 1s by 1.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Each constructor preserves the equality. Thus it holds for every generated binary string.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-13",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Full binary tree leaves",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Prove by structural induction that a full binary tree has leaves = internal vertices + 1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis: a single leaf has L=1 and I=0."
+      },
+      {
+        "step": 2,
+        "text": "A non-leaf full binary tree consists of a root and two smaller full binary trees. Assume L1=I1+1 and L2=I2+1."
+      },
+      {
+        "step": 3,
+        "text": "The combined tree has L=L1+L2=I1+I2+2 and I=1+I1+I2. Therefore L=I+1."
+      },
+      {
+        "step": 4,
+        "text": "By structural induction the identity holds for all full binary trees."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis: a single leaf has L=1 and I=0.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "A non-leaf full binary tree consists of a root and two smaller full binary trees. Assume L1=I1+1 and L2=I2+1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The combined tree has L=L1+L2=I1+I2+2 and I=1+I1+I2. Therefore L=I+1.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "By structural induction the identity holds for all full binary trees.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-14",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Fibonacci bound",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Let F_0=0,F_1=1,F_n=F_(n-1)+F_(n-2). Prove F_n<=2^(n-1) for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis: F_1=1<=1 and F_2=1<=2."
+      },
+      {
+        "step": 2,
+        "text": "Assume the inequality holds for every integer from 1 through k, where k>=2."
+      },
+      {
+        "step": 3,
+        "text": "F_(k+1)=F_k+F_(k-1)<=2^(k-1)+2^(k-2)=3*2^(k-2)<=4*2^(k-2)=2^k."
+      },
+      {
+        "step": 4,
+        "text": "Thus strong induction establishes the bound for all n>=1."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis: F_1=1<=1 and F_2=1<=2.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Assume the inequality holds for every integer from 1 through k, where k>=2.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "F_(k+1)=F_k+F_(k-1)<=2^(k-1)+2^(k-2)=3*2^(k-2)<=4*2^(k-2)=2^k.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Thus strong induction establishes the bound for all n>=1.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-induction-15",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Spot an invalid induction",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "A claimed proof of 2^n=1 starts at n=0 and uses 2^(k+1)=2^k*2^k/2^(k-1). Explain the error.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The basis n=0 is true, but n=1 gives 2, so the conclusion is false."
+      },
+      {
+        "step": 2,
+        "text": "The recurrence step requires k-1>=0 to apply the hypothesis. At the first step k=0, it invokes n=-1, which is outside the established range."
+      },
+      {
+        "step": 3,
+        "text": "A valid two-term step needs enough basis cases. Adding n=1 exposes the false claim immediately."
+      },
+      {
+        "step": 4,
+        "text": "Therefore the alleged induction does not establish the statement."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "The basis n=0 is true, but n=1 gives 2, so the conclusion is false.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The recurrence step requires k-1>=0 to apply the hypothesis. At the first step k=0, it invokes n=-1, which is outside the established range.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "A valid two-term step needs enough basis cases. Adding n=1 exposes the false claim immediately.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore the alleged induction does not establish the statement.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-p2-q2",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Ternary tree height bound",
+    "source": "Past paper 2 Q2",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Prove by strong induction on height h (root height 0) that a ternary tree of height h has at most 4^h nodes.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis h=0: the tree contains one root, and 1=4^0."
+      },
+      {
+        "step": 2,
+        "text": "Strong hypothesis: every ternary tree of height j<=k has at most 4^j nodes."
+      },
+      {
+        "step": 3,
+        "text": "A tree of height k+1 consists of its root and at most three subtrees, each of height at most k. Each has at most 4^k nodes."
+      },
+      {
+        "step": 4,
+        "text": "Thus total nodes <=1+3*4^k<=4^k+3*4^k=4^(k+1), because 4^k>=1."
+      },
+      {
+        "step": 5,
+        "text": "By strong induction the bound holds for all h>=0."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis h=0: the tree contains one root, and 1=4^0.",
+        "marks": 4
+      },
+      {
+        "step": 2,
+        "criterion": "Strong hypothesis: every ternary tree of height j<=k has at most 4^j nodes.",
+        "marks": 4
+      },
+      {
+        "step": 3,
+        "criterion": "A tree of height k+1 consists of its root and at most three subtrees, each of height at most k. Each has at most 4^k nodes.",
+        "marks": 4
+      },
+      {
+        "step": 4,
+        "criterion": "Thus total nodes <=1+3*4^k<=4^k+3*4^k=4^(k+1), because 4^k>=1.",
+        "marks": 4
+      },
+      {
+        "step": 5,
+        "criterion": "By strong induction the bound holds for all h>=0.",
+        "marks": 4
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "2",
+      "printedMarks": 20,
+      "page": 1
+    },
+    "reconstructed": true,
+    "reconstructionNote": "Superscript restored as 4^h from flattened text \"4h\"; full-page renderer unavailable. Height convention stated explicitly."
+  },
+  {
+    "id": "dm-p3-q3",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "A recovered induction inequality",
+    "source": "Past paper 3 Q3",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "Prove by induction that 2^n >= n+12 for all natural numbers n>=4.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=4: 2^4=16=4+12."
+      },
+      {
+        "step": 2,
+        "text": "Assume 2^k>=k+12 for an arbitrary k>=4."
+      },
+      {
+        "step": 3,
+        "text": "2^(k+1)=2*2^k>=2*k+24. Also 2*k+24-(k+13)=k+11>=0."
+      },
+      {
+        "step": 4,
+        "text": "Hence 2^(k+1)>=k+13=(k+1)+12. By induction the inequality holds for all n>=4."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=4: 2^4=16=4+12.",
+        "marks": 4
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 2^k>=k+12 for an arbitrary k>=4.",
+        "marks": 4
+      },
+      {
+        "step": 3,
+        "criterion": "2^(k+1)=2*2^k>=2*k+24. Also 2*k+24-(k+13)=k+11>=0.",
+        "marks": 4
+      },
+      {
+        "step": 4,
+        "criterion": "Hence 2^(k+1)>=k+13=(k+1)+12. By induction the inequality holds for all n>=4.",
+        "marks": 3
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "3",
+      "printedMarks": 15,
+      "page": 1
+    },
+    "reconstructed": true,
+    "reconstructionNote": "Flattened text \"2n n + 12\" restored as 2^n >= n+12, as explicitly clarified in the user-supplied source warning."
+  },
+  {
+    "id": "dm-p4-q6",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Structural congruence",
+    "source": "Past paper 4 Q6",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "S is recursively generated: 1 in S; if n in S then 3*n+2 and n^2 are in S. Prove every n in S is congruent to 1 modulo 4.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis: 1=1 (mod 4)."
+      },
+      {
+        "step": 2,
+        "text": "Structural hypothesis: take a generated n with n=1 (mod 4)."
+      },
+      {
+        "step": 3,
+        "text": "Then 3*n+2=3*1+2=5=1 (mod 4), and n^2=1^2=1 (mod 4)."
+      },
+      {
+        "step": 4,
+        "text": "Both constructors preserve the property. Hence by structural induction every element of S is congruent to 1 modulo 4."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis: 1=1 (mod 4).",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Structural hypothesis: take a generated n with n=1 (mod 4).",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Then 3*n+2=3*1+2=5=1 (mod 4), and n^2=1^2=1 (mod 4).",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Both constructors preserve the property. Hence by structural induction every element of S is congruent to 1 modulo 4.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "6",
+      "printedMarks": 5,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p5-q2",
+    "subject": "dm",
+    "topic": "induction",
+    "title": "Strict exponential inequality",
+    "source": "Past paper 5 Q2",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove 2^(n+1) < 1+(n+1)*2^n for every positive integer n, using induction.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Basis n=1: 2^2=4<1+2*2=5."
+      },
+      {
+        "step": 2,
+        "text": "Assume 2^(k+1)<1+(k+1)*2^k for an arbitrary k>=1."
+      },
+      {
+        "step": 3,
+        "text": "Multiply by 2: 2^(k+2)<2+(k+1)*2^(k+1)."
+      },
+      {
+        "step": 4,
+        "text": "Since 1<=2^(k+1), we have 2+(k+1)*2^(k+1)<=1+(k+2)*2^(k+1)."
+      },
+      {
+        "step": 5,
+        "text": "Hence 2^(k+2)<1+(k+2)*2^(k+1), proving the step and the claim."
+      }
+    ],
+    "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Basis n=1: 2^2=4<1+2*2=5.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "Assume 2^(k+1)<1+(k+1)*2^k for an arbitrary k>=1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Multiply by 2: 2^(k+2)<2+(k+1)*2^(k+1).",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Since 1<=2^(k+1), we have 2+(k+1)*2^(k+1)<=1+(k+2)*2^(k+1).",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Hence 2^(k+2)<1+(k+2)*2^(k+1), proving the step and the claim.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "2",
+      "printedMarks": 5,
+      "page": 1
+    },
+    "reconstructed": true,
+    "reconstructionNote": "Superscripts restored from flattened \"2n+1 < 1 + (n + 1)2n\"; full-page rendering unavailable. Stated positive-integer domain checked."
+  }
+]

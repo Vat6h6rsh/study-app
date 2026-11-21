@@ -1,0 +1,2586 @@
+[
+  {
+    "id": "dm-graphs-1",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Edges of K5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4,5}, E={(1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)}, find edges. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 5 vertices and 10 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (4,4,4,4,4); its sum is 20=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For edges, the answer is 10. Count the requested quantity directly from the definitions."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 10,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "1-3",
+            "u": "1",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "1-4",
+            "u": "1",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "1-5",
+            "u": "1",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "2-4",
+            "u": "2",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "2-5",
+            "u": "2",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "3-5",
+            "u": "3",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "4-5",
+            "u": "4",
+            "v": "5",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 184,
+            "y": 255
+          },
+          "3": {
+            "x": 61,
+            "y": 215
+          },
+          "4": {
+            "x": 61,
+            "y": 85
+          },
+          "5": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      },
+      "query": "edges"
+    }
+  },
+  {
+    "id": "dm-graphs-2",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Odd degrees of K4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4}, E={(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)}, find oddDegrees. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 4 vertices and 6 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (3,3,3,3); its sum is 12=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For oddDegrees, the answer is 4. Count the requested quantity directly from the definitions."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 4,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "1-3",
+            "u": "1",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "1-4",
+            "u": "1",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "2-4",
+            "u": "2",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 150,
+            "y": 260
+          },
+          "3": {
+            "x": 40,
+            "y": 150
+          },
+          "4": {
+            "x": 150,
+            "y": 40
+          }
+        }
+      },
+      "query": "oddDegrees"
+    }
+  },
+  {
+    "id": "dm-graphs-3",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Chromatic number of C5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4,5}, E={(1,2),(2,3),(3,4),(4,5),(5,1)}, find chromatic. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 5 vertices and 5 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (2,2,2,2,2); its sum is 10=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For chromatic, the answer is 3. A 3-coloring exists; fewer colors fail the edge constraints (check adjacent vertices)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 3,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "4-5",
+            "u": "4",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "5-1",
+            "u": "5",
+            "v": "1",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 184,
+            "y": 255
+          },
+          "3": {
+            "x": 61,
+            "y": 215
+          },
+          "4": {
+            "x": 61,
+            "y": 85
+          },
+          "5": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      },
+      "query": "chromatic"
+    }
+  },
+  {
+    "id": "dm-graphs-4",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Chromatic number of K3,4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={a1,a2,a3,b1,b2,b3,b4}, E={(a1,b1),(a1,b2),(a1,b3),(a1,b4),(a2,b1),(a2,b2),(a2,b3),(a2,b4),(a3,b1),(a3,b2),(a3,b3),(a3,b4)}, find chromatic. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 7 vertices and 12 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (4,4,4,3,3,3,3); its sum is 24=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For chromatic, the answer is 2. A 2-coloring exists; fewer colors fail the edge constraints (check adjacent vertices)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 2,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a1",
+          "a2",
+          "a3",
+          "b1",
+          "b2",
+          "b3",
+          "b4"
+        ],
+        "edges": [
+          {
+            "id": "a1-b1",
+            "u": "a1",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a1-b2",
+            "u": "a1",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a1-b3",
+            "u": "a1",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a1-b4",
+            "u": "a1",
+            "v": "b4",
+            "weight": 1
+          },
+          {
+            "id": "a2-b1",
+            "u": "a2",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a2-b2",
+            "u": "a2",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a2-b3",
+            "u": "a2",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a2-b4",
+            "u": "a2",
+            "v": "b4",
+            "weight": 1
+          },
+          {
+            "id": "a3-b1",
+            "u": "a3",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a3-b2",
+            "u": "a3",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a3-b3",
+            "u": "a3",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a3-b4",
+            "u": "a3",
+            "v": "b4",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a1": {
+            "x": 260,
+            "y": 150
+          },
+          "a2": {
+            "x": 219,
+            "y": 236
+          },
+          "a3": {
+            "x": 126,
+            "y": 257
+          },
+          "b1": {
+            "x": 51,
+            "y": 198
+          },
+          "b2": {
+            "x": 51,
+            "y": 102
+          },
+          "b3": {
+            "x": 126,
+            "y": 43
+          },
+          "b4": {
+            "x": 219,
+            "y": 64
+          }
+        }
+      },
+      "query": "chromatic"
+    }
+  },
+  {
+    "id": "dm-graphs-5",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Edges of K2,5",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={a1,a2,b1,b2,b3,b4,b5}, E={(a1,b1),(a1,b2),(a1,b3),(a1,b4),(a1,b5),(a2,b1),(a2,b2),(a2,b3),(a2,b4),(a2,b5)}, find edges. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 7 vertices and 10 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (5,5,2,2,2,2,2); its sum is 20=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For edges, the answer is 10. Count the requested quantity directly from the definitions."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 10,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a1",
+          "a2",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5"
+        ],
+        "edges": [
+          {
+            "id": "a1-b1",
+            "u": "a1",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a1-b2",
+            "u": "a1",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a1-b3",
+            "u": "a1",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a1-b4",
+            "u": "a1",
+            "v": "b4",
+            "weight": 1
+          },
+          {
+            "id": "a1-b5",
+            "u": "a1",
+            "v": "b5",
+            "weight": 1
+          },
+          {
+            "id": "a2-b1",
+            "u": "a2",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a2-b2",
+            "u": "a2",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a2-b3",
+            "u": "a2",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a2-b4",
+            "u": "a2",
+            "v": "b4",
+            "weight": 1
+          },
+          {
+            "id": "a2-b5",
+            "u": "a2",
+            "v": "b5",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a1": {
+            "x": 260,
+            "y": 150
+          },
+          "a2": {
+            "x": 219,
+            "y": 236
+          },
+          "b1": {
+            "x": 126,
+            "y": 257
+          },
+          "b2": {
+            "x": 51,
+            "y": 198
+          },
+          "b3": {
+            "x": 51,
+            "y": 102
+          },
+          "b4": {
+            "x": 126,
+            "y": 43
+          },
+          "b5": {
+            "x": 219,
+            "y": 64
+          }
+        }
+      },
+      "query": "edges"
+    }
+  },
+  {
+    "id": "dm-graphs-6",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Components with an isolate",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={a,b,c,d,e,f}, E={(a,b),(b,c),(a,c),(d,e)}, find components. Show your reasoning.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "List adjacency information from the given edges. There are 6 vertices and 4 edges."
+      },
+      {
+        "step": 2,
+        "text": "The nonincreasing degree sequence is (2,2,2,1,1,0); its sum is 8=2*|E|."
+      },
+      {
+        "step": 3,
+        "text": "For components, the answer is 3. A search from one unvisited vertex at a time gives 3 components."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 3,
+    "tolerance": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f"
+        ],
+        "edges": [
+          {
+            "id": "a-b",
+            "u": "a",
+            "v": "b",
+            "weight": 1
+          },
+          {
+            "id": "b-c",
+            "u": "b",
+            "v": "c",
+            "weight": 1
+          },
+          {
+            "id": "a-c",
+            "u": "a",
+            "v": "c",
+            "weight": 1
+          },
+          {
+            "id": "d-e",
+            "u": "d",
+            "v": "e",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a": {
+            "x": 260,
+            "y": 150
+          },
+          "b": {
+            "x": 205,
+            "y": 245
+          },
+          "c": {
+            "x": 95,
+            "y": 245
+          },
+          "d": {
+            "x": 40,
+            "y": 150
+          },
+          "e": {
+            "x": 95,
+            "y": 55
+          },
+          "f": {
+            "x": 205,
+            "y": 55
+          }
+        }
+      },
+      "query": "components"
+    }
+  },
+  {
+    "id": "dm-graphs-7",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Graph properties 1",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4,5,6}, E={(1,2),(2,3),(3,4),(4,5),(5,6),(6,1)}, decide bipartite, Eulerian (has an Euler circuit), and Hamiltonian (has a Hamilton circuit).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The degree sequence is (2,2,2,2,2,2) and the graph is connected."
+      },
+      {
+        "step": 2,
+        "text": "Eulerian=true: an undirected connected graph has an Euler circuit iff every degree is even."
+      },
+      {
+        "step": 3,
+        "text": "Bipartite=true: try alternating colors along edges; an odd cycle is an obstruction."
+      },
+      {
+        "step": 4,
+        "text": "Hamiltonian=true: the cyclic vertex order in a cycle (or 1,2,3,4,1 in K4) gives a Hamilton circuit."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "properties",
+    "options": [
+      "bipartite",
+      "Eulerian",
+      "Hamiltonian"
+    ],
+    "answer": {
+      "bipartite": true,
+      "Eulerian": true,
+      "Hamiltonian": true
+    },
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "4-5",
+            "u": "4",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "5-6",
+            "u": "5",
+            "v": "6",
+            "weight": 1
+          },
+          {
+            "id": "6-1",
+            "u": "6",
+            "v": "1",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 205,
+            "y": 245
+          },
+          "3": {
+            "x": 95,
+            "y": 245
+          },
+          "4": {
+            "x": 40,
+            "y": 150
+          },
+          "5": {
+            "x": 95,
+            "y": 55
+          },
+          "6": {
+            "x": 205,
+            "y": 55
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "dm-graphs-8",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Graph properties 2",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4,5}, E={(1,2),(2,3),(3,4),(4,5),(5,1)}, decide bipartite, Eulerian (has an Euler circuit), and Hamiltonian (has a Hamilton circuit).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The degree sequence is (2,2,2,2,2) and the graph is connected."
+      },
+      {
+        "step": 2,
+        "text": "Eulerian=true: an undirected connected graph has an Euler circuit iff every degree is even."
+      },
+      {
+        "step": 3,
+        "text": "Bipartite=false: try alternating colors along edges; an odd cycle is an obstruction."
+      },
+      {
+        "step": 4,
+        "text": "Hamiltonian=true: the cyclic vertex order in a cycle (or 1,2,3,4,1 in K4) gives a Hamilton circuit."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "properties",
+    "options": [
+      "bipartite",
+      "Eulerian",
+      "Hamiltonian"
+    ],
+    "answer": {
+      "bipartite": false,
+      "Eulerian": true,
+      "Hamiltonian": true
+    },
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "4-5",
+            "u": "4",
+            "v": "5",
+            "weight": 1
+          },
+          {
+            "id": "5-1",
+            "u": "5",
+            "v": "1",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 184,
+            "y": 255
+          },
+          "3": {
+            "x": 61,
+            "y": 215
+          },
+          "4": {
+            "x": 61,
+            "y": 85
+          },
+          "5": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "dm-graphs-9",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Graph properties 3",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={1,2,3,4}, E={(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)}, decide bipartite, Eulerian (has an Euler circuit), and Hamiltonian (has a Hamilton circuit).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The degree sequence is (3,3,3,3) and the graph is connected."
+      },
+      {
+        "step": 2,
+        "text": "Eulerian=false: an undirected connected graph has an Euler circuit iff every degree is even."
+      },
+      {
+        "step": 3,
+        "text": "Bipartite=false: try alternating colors along edges; an odd cycle is an obstruction."
+      },
+      {
+        "step": 4,
+        "text": "Hamiltonian=true: the cyclic vertex order in a cycle (or 1,2,3,4,1 in K4) gives a Hamilton circuit."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "properties",
+    "options": [
+      "bipartite",
+      "Eulerian",
+      "Hamiltonian"
+    ],
+    "answer": {
+      "bipartite": false,
+      "Eulerian": false,
+      "Hamiltonian": true
+    },
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "edges": [
+          {
+            "id": "1-2",
+            "u": "1",
+            "v": "2",
+            "weight": 1
+          },
+          {
+            "id": "1-3",
+            "u": "1",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "1-4",
+            "u": "1",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "2-3",
+            "u": "2",
+            "v": "3",
+            "weight": 1
+          },
+          {
+            "id": "2-4",
+            "u": "2",
+            "v": "4",
+            "weight": 1
+          },
+          {
+            "id": "3-4",
+            "u": "3",
+            "v": "4",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "1": {
+            "x": 260,
+            "y": 150
+          },
+          "2": {
+            "x": 150,
+            "y": 260
+          },
+          "3": {
+            "x": 40,
+            "y": 150
+          },
+          "4": {
+            "x": 150,
+            "y": 40
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "dm-graphs-10",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Graph properties 4",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For V={a1,a2,b1,b2,b3}, E={(a1,b1),(a1,b2),(a1,b3),(a2,b1),(a2,b2),(a2,b3)}, decide bipartite, Eulerian (has an Euler circuit), and Hamiltonian (has a Hamilton circuit).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The degree sequence is (3,3,2,2,2) and the graph is connected."
+      },
+      {
+        "step": 2,
+        "text": "Eulerian=false: an undirected connected graph has an Euler circuit iff every degree is even."
+      },
+      {
+        "step": 3,
+        "text": "Bipartite=true: try alternating colors along edges; an odd cycle is an obstruction."
+      },
+      {
+        "step": 4,
+        "text": "Hamiltonian=false: the two parts have different sizes, so an alternating circuit cannot visit all vertices."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "properties",
+    "options": [
+      "bipartite",
+      "Eulerian",
+      "Hamiltonian"
+    ],
+    "answer": {
+      "bipartite": true,
+      "Eulerian": false,
+      "Hamiltonian": false
+    },
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a1",
+          "a2",
+          "b1",
+          "b2",
+          "b3"
+        ],
+        "edges": [
+          {
+            "id": "a1-b1",
+            "u": "a1",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a1-b2",
+            "u": "a1",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a1-b3",
+            "u": "a1",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a2-b1",
+            "u": "a2",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a2-b2",
+            "u": "a2",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a2-b3",
+            "u": "a2",
+            "v": "b3",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a1": {
+            "x": 260,
+            "y": 150
+          },
+          "a2": {
+            "x": 184,
+            "y": 255
+          },
+          "b1": {
+            "x": 61,
+            "y": 215
+          },
+          "b2": {
+            "x": 61,
+            "y": 85
+          },
+          "b3": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "dm-graphs-11",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "cutEdges",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "V={a,b,c,d,e}, E={a-b,b-c,c-a,c-d,d-e}. Find cutEdges; justify by deletion.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Initially the graph has 1 connected component."
+      },
+      {
+        "step": 2,
+        "text": "Delete each candidate edge and its incident edges as appropriate. A cut object increases the number of components."
+      },
+      {
+        "step": 3,
+        "text": "Exactly {c-d,d-e} have this property. Triangle edges have alternate routes."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "set-answer",
+    "answer": [
+      "c-d",
+      "d-e"
+    ],
+    "elementFormat": "edge",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "edges": [
+          {
+            "id": "a-b",
+            "u": "a",
+            "v": "b",
+            "weight": 1
+          },
+          {
+            "id": "b-c",
+            "u": "b",
+            "v": "c",
+            "weight": 1
+          },
+          {
+            "id": "c-a",
+            "u": "c",
+            "v": "a",
+            "weight": 1
+          },
+          {
+            "id": "c-d",
+            "u": "c",
+            "v": "d",
+            "weight": 1
+          },
+          {
+            "id": "d-e",
+            "u": "d",
+            "v": "e",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a": {
+            "x": 260,
+            "y": 150
+          },
+          "b": {
+            "x": 184,
+            "y": 255
+          },
+          "c": {
+            "x": 61,
+            "y": 215
+          },
+          "d": {
+            "x": 61,
+            "y": 85
+          },
+          "e": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      },
+      "query": "cutEdges"
+    }
+  },
+  {
+    "id": "dm-graphs-12",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "cutVertices",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "V={a,b,c,d,e}, E={a-b,b-c,c-a,c-d,d-e}. Find cutVertices; justify by deletion.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Initially the graph has 1 connected component."
+      },
+      {
+        "step": 2,
+        "text": "Delete each candidate vertex and its incident edges as appropriate. A cut object increases the number of components."
+      },
+      {
+        "step": 3,
+        "text": "Exactly {c,d} have this property. Triangle edges have alternate routes."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "set-answer",
+    "answer": [
+      "c",
+      "d"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e"
+        ],
+        "edges": [
+          {
+            "id": "a-b",
+            "u": "a",
+            "v": "b",
+            "weight": 1
+          },
+          {
+            "id": "b-c",
+            "u": "b",
+            "v": "c",
+            "weight": 1
+          },
+          {
+            "id": "c-a",
+            "u": "c",
+            "v": "a",
+            "weight": 1
+          },
+          {
+            "id": "c-d",
+            "u": "c",
+            "v": "d",
+            "weight": 1
+          },
+          {
+            "id": "d-e",
+            "u": "d",
+            "v": "e",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a": {
+            "x": 260,
+            "y": 150
+          },
+          "b": {
+            "x": 184,
+            "y": 255
+          },
+          "c": {
+            "x": 61,
+            "y": 215
+          },
+          "d": {
+            "x": 61,
+            "y": 85
+          },
+          "e": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      },
+      "query": "cutVertices"
+    }
+  },
+  {
+    "id": "dm-graphs-13",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Count labelled simple graphs",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many simple undirected loopless graphs have a fixed labelled vertex set of size n?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are n*(n-1)/2 unordered pairs of distinct vertices."
+      },
+      {
+        "step": 2,
+        "text": "Each possible edge is independently present or absent."
+      },
+      {
+        "step": 3,
+        "text": "By the product rule the answer is 2^(n*(n-1)/2)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "formula",
+    "answer": "2^(n*(n-1)/2)",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 2
+      },
+      {
+        "n": 3,
+        "expected": 8
+      },
+      {
+        "n": 5,
+        "expected": 1024
+      },
+      {
+        "n": 8,
+        "expected": 268435456
+      },
+      {
+        "n": 12,
+        "expected": 73786976294838210000
+      }
+    ],
+    "verification": {
+      "kind": "counting",
+      "operation": "labelledGraphs",
+      "directed": false,
+      "loops": false
+    }
+  },
+  {
+    "id": "dm-graphs-14",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Count labelled directed graphs",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "How many directed graphs on n fixed labelled vertices allow loops but no parallel arcs?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Each ordered pair (u,v), including u=v, can be an arc. There are n^2 pairs."
+      },
+      {
+        "step": 2,
+        "text": "Choose present or absent independently for each pair."
+      },
+      {
+        "step": 3,
+        "text": "The count is 2^(n^2)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "formula",
+    "answer": "2^(n^2)",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 2
+      },
+      {
+        "n": 2,
+        "expected": 16
+      },
+      {
+        "n": 3,
+        "expected": 512
+      },
+      {
+        "n": 5,
+        "expected": 33554432
+      },
+      {
+        "n": 8,
+        "expected": 18446744073709552000
+      },
+      {
+        "n": 12,
+        "expected": 2.2300745198530623e+43
+      }
+    ],
+    "verification": {
+      "kind": "counting",
+      "operation": "labelledGraphs",
+      "directed": true,
+      "loops": true
+    }
+  },
+  {
+    "id": "dm-graphs-15",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Planarity obstruction",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove K3,3 is nonplanar.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "K3,3 is simple, connected and bipartite, with v=6 and e=9."
+      },
+      {
+        "step": 2,
+        "text": "In a simple bipartite planar graph with v>=3, every face boundary has length at least 4; Euler's formula gives e<=2*v-4."
+      },
+      {
+        "step": 3,
+        "text": "Here 9>2*6-4=8, contradicting the planar bound. Hence K3,3 is nonplanar."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "K3,3 is simple, connected and bipartite, with v=6 and e=9.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "In a simple bipartite planar graph with v>=3, every face boundary has length at least 4; Euler's formula gives e<=2*v-4.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Here 9>2*6-4=8, contradicting the planar bound. Hence K3,3 is nonplanar.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-graphs-16",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Planar faces",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A connected planar graph has 8 vertices and 12 edges. How many faces, including the unbounded face?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Euler's formula is v-e+f=2 for a connected planar embedding."
+      },
+      {
+        "step": 2,
+        "text": "Substitute v=8,e=12: 8-12+f=2."
+      },
+      {
+        "step": 3,
+        "text": "Therefore f=6, including the unbounded face."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 6,
+    "tolerance": 0,
+    "verification": {
+      "kind": "arithmetic",
+      "expression": "2-8+12"
+    }
+  },
+  {
+    "id": "dm-graphs-17",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Hypercube and wheel counts",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Find vertices, edges and degrees of Q4 and W5. Use W_n = C_n plus one hub.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Q4 has all 4-bit strings as vertices, hence 2^4=16 vertices. Each vertex has degree 4 by flipping one bit."
+      },
+      {
+        "step": 2,
+        "text": "The handshake theorem gives |E(Q4)|=16*4/2=32."
+      },
+      {
+        "step": 3,
+        "text": "W5 has 5 rim vertices and one hub, hence 6 vertices. There are 5 rim edges and 5 spokes, hence 10 edges."
+      },
+      {
+        "step": 4,
+        "text": "The hub has degree 5 and each rim vertex degree 3, giving degree sequence (5,3,3,3,3,3)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Q4 has all 4-bit strings as vertices, hence 2^4=16 vertices. Each vertex has degree 4 by flipping one bit.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The handshake theorem gives |E(Q4)|=16*4/2=32.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "W5 has 5 rim vertices and one hub, hence 6 vertices. There are 5 rim edges and 5 spokes, hence 10 edges.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "The hub has degree 5 and each rim vertex degree 3, giving degree sequence (5,3,3,3,3,3).",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-graphs-18",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Isomorphism requires adjacency",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Prove two triangles and a cycle C6 have the same degree sequence but are not isomorphic.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Both graphs have 6 vertices, each of degree 2. Their degree sequences are (2,2,2,2,2,2)."
+      },
+      {
+        "step": 2,
+        "text": "The disjoint union of two triangles has 2 connected components; C6 has 1."
+      },
+      {
+        "step": 3,
+        "text": "An isomorphism preserves paths and therefore connected components."
+      },
+      {
+        "step": 4,
+        "text": "Since the component counts differ, the graphs are not isomorphic."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Both graphs have 6 vertices, each of degree 2. Their degree sequences are (2,2,2,2,2,2).",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The disjoint union of two triangles has 2 connected components; C6 has 1.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "An isomorphism preserves paths and therefore connected components.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Since the component counts differ, the graphs are not isomorphic.",
+        "marks": 1
+      }
+    ]
+  },
+  {
+    "id": "dm-trap-4",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Bipartite coloring trap",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "What is the chromatic number of K2,3?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The graph has two independent parts; color one part red and the other blue."
+      },
+      {
+        "step": 2,
+        "text": "There is at least one edge, so one color cannot suffice."
+      },
+      {
+        "step": 3,
+        "text": "Therefore the chromatic number is 2."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "mcq",
+    "options": [
+      "2",
+      "3",
+      "5"
+    ],
+    "correctIndex": 0,
+    "verification": {
+      "kind": "graph",
+      "graph": {
+        "vertices": [
+          "a1",
+          "a2",
+          "b1",
+          "b2",
+          "b3"
+        ],
+        "edges": [
+          {
+            "id": "a1-b1",
+            "u": "a1",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a1-b2",
+            "u": "a1",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a1-b3",
+            "u": "a1",
+            "v": "b3",
+            "weight": 1
+          },
+          {
+            "id": "a2-b1",
+            "u": "a2",
+            "v": "b1",
+            "weight": 1
+          },
+          {
+            "id": "a2-b2",
+            "u": "a2",
+            "v": "b2",
+            "weight": 1
+          },
+          {
+            "id": "a2-b3",
+            "u": "a2",
+            "v": "b3",
+            "weight": 1
+          }
+        ],
+        "layout": {
+          "a1": {
+            "x": 260,
+            "y": 150
+          },
+          "a2": {
+            "x": 184,
+            "y": 255
+          },
+          "b1": {
+            "x": 61,
+            "y": 215
+          },
+          "b2": {
+            "x": 61,
+            "y": 85
+          },
+          "b3": {
+            "x": 184,
+            "y": 45
+          }
+        }
+      },
+      "query": "chromatic"
+    },
+    "optionValues": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "id": "dm-p1-q4",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Directed graph count",
+    "source": "Past paper 1 Q4",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "For V={v1,...,vn}, how many distinct directed graphs have vertex set V? State the loop convention.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use the course convention of directed graphs with loops permitted and no parallel arcs."
+      },
+      {
+        "step": 2,
+        "text": "There are n^2 possible ordered pairs, each independently selected or omitted. Thus there are 2^(n^2) graphs."
+      },
+      {
+        "step": 3,
+        "text": "If the intended convention excludes loops, the alternative is 2^(n*(n-1)). State the convention explicitly."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "formula",
+    "answer": "2^(n^2)",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 2
+      },
+      {
+        "n": 2,
+        "expected": 16
+      },
+      {
+        "n": 3,
+        "expected": 512
+      },
+      {
+        "n": 5,
+        "expected": 33554432
+      },
+      {
+        "n": 8,
+        "expected": 18446744073709552000
+      },
+      {
+        "n": 12,
+        "expected": 2.2300745198530623e+43
+      }
+    ],
+    "verification": {
+      "kind": "counting",
+      "operation": "labelledGraphs",
+      "directed": true,
+      "loops": true
+    },
+    "provenance": {
+      "paper": 1,
+      "question": "4",
+      "printedMarks": 15,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p1-q5a",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Degree sequence of K_m,n",
+    "source": "Past paper 1 Q5a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Give the degree sequence of K_m,n, m,n positive integers, in nonincreasing order.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Each of the m vertices in the first part is adjacent to all n vertices in the other part, so has degree n."
+      },
+      {
+        "step": 2,
+        "text": "Each of the n vertices in the second part has degree m."
+      },
+      {
+        "step": 3,
+        "text": "The degree multiset is n repeated m times and m repeated n times. For m<=n put the n entries first; for m>n put the m entries first."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Each of the m vertices in the first part is adjacent to all n vertices in the other part, so has degree n.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Each of the n vertices in the second part has degree m.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "The degree multiset is n repeated m times and m repeated n times. For m<=n put the n entries first; for m>n put the m entries first.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "5a",
+      "printedMarks": 5,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p1-q5b",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Degree sequence does not imply isomorphism",
+    "source": "Past paper 1 Q5b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Prove two triangles and a cycle C6 have the same degree sequence but are not isomorphic.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Both graphs have 6 vertices, each of degree 2. Their degree sequences are (2,2,2,2,2,2)."
+      },
+      {
+        "step": 2,
+        "text": "The disjoint union of two triangles has 2 connected components; C6 has 1."
+      },
+      {
+        "step": 3,
+        "text": "An isomorphism preserves paths and therefore connected components."
+      },
+      {
+        "step": 4,
+        "text": "Since the component counts differ, the graphs are not isomorphic."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Both graphs have 6 vertices, each of degree 2. Their degree sequences are (2,2,2,2,2,2).",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "The disjoint union of two triangles has 2 connected components; C6 has 1.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "An isomorphism preserves paths and therefore connected components.",
+        "marks": 5
+      },
+      {
+        "step": 4,
+        "criterion": "Since the component counts differ, the graphs are not isomorphic.",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "5b",
+      "printedMarks": 20,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p1-q6",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "A path stays in its SCC",
+    "source": "Past paper 1 Q6",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "Prove every vertex on a directed path between two vertices in the same strongly connected component is also in that component.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let u and v be in one SCC, and x lie on a directed path from u to v."
+      },
+      {
+        "step": 2,
+        "text": "The path provides u->...->x and x->...->v. Since v and u are in one SCC, there is a path v->...->u."
+      },
+      {
+        "step": 3,
+        "text": "Concatenate x->...->v->...->u to show x reaches u, while u reaches x."
+      },
+      {
+        "step": 4,
+        "text": "Thus x is mutually reachable with u and belongs to the same SCC."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let u and v be in one SCC, and x lie on a directed path from u to v.",
+        "marks": 4
+      },
+      {
+        "step": 2,
+        "criterion": "The path provides u->...->x and x->...->v. Since v and u are in one SCC, there is a path v->...->u.",
+        "marks": 4
+      },
+      {
+        "step": 3,
+        "criterion": "Concatenate x->...->v->...->u to show x reaches u, while u reaches x.",
+        "marks": 4
+      },
+      {
+        "step": 4,
+        "criterion": "Thus x is mutually reachable with u and belongs to the same SCC.",
+        "marks": 3
+      }
+    ],
+    "provenance": {
+      "paper": 1,
+      "question": "6",
+      "printedMarks": 15,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p2-q4",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Undirected labelled graph count",
+    "source": "Past paper 2 Q4",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "How many distinct simple undirected loopless graphs have V={v1,...,vn}?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are n*(n-1)/2 unordered pairs of distinct vertices."
+      },
+      {
+        "step": 2,
+        "text": "Each possible edge is independently present or absent."
+      },
+      {
+        "step": 3,
+        "text": "By the product rule the answer is 2^(n*(n-1)/2)."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "formula",
+    "answer": "2^(n*(n-1)/2)",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 2
+      },
+      {
+        "n": 3,
+        "expected": 8
+      },
+      {
+        "n": 5,
+        "expected": 1024
+      },
+      {
+        "n": 8,
+        "expected": 268435456
+      },
+      {
+        "n": 12,
+        "expected": 73786976294838210000
+      }
+    ],
+    "verification": {
+      "kind": "counting",
+      "operation": "labelledGraphs",
+      "directed": false,
+      "loops": false
+    },
+    "provenance": {
+      "paper": 2,
+      "question": "4",
+      "printedMarks": 15,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p2-q5",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Same chromatic number does not imply isomorphism",
+    "source": "Past paper 2 Q5",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Disprove: two simple undirected graphs with the same chromatic number are isomorphic.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take P3 with edges {12,23} and P4 with edges {12,23,34}."
+      },
+      {
+        "step": 2,
+        "text": "Both have an edge and are bipartite, so both have chromatic number 2."
+      },
+      {
+        "step": 3,
+        "text": "They have different numbers of vertices (3 and 4), so no vertex bijection exists. They are not isomorphic."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take P3 with edges {12,23} and P4 with edges {12,23,34}.",
+        "marks": 7
+      },
+      {
+        "step": 2,
+        "criterion": "Both have an edge and are bipartite, so both have chromatic number 2.",
+        "marks": 7
+      },
+      {
+        "step": 3,
+        "criterion": "They have different numbers of vertices (3 and 4), so no vertex bijection exists. They are not isomorphic.",
+        "marks": 6
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "5",
+      "printedMarks": 20,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p2-q7a",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Hamilton path gives a spanning tree",
+    "source": "Past paper 2 Q7a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "Prove if a simple undirected graph has a Hamilton path, then it has a spanning tree.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let v1,...,vn be the Hamilton path, visiting each vertex once."
+      },
+      {
+        "step": 2,
+        "text": "Keep only its n-1 consecutive path edges. These edges connect every vertex."
+      },
+      {
+        "step": 3,
+        "text": "A path has no cycle, so this connected spanning subgraph is a tree. Thus it is a spanning tree of G."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let v1,...,vn be the Hamilton path, visiting each vertex once.",
+        "marks": 4
+      },
+      {
+        "step": 2,
+        "criterion": "Keep only its n-1 consecutive path edges. These edges connect every vertex.",
+        "marks": 3
+      },
+      {
+        "step": 3,
+        "criterion": "A path has no cycle, so this connected spanning subgraph is a tree. Thus it is a spanning tree of G.",
+        "marks": 3
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "7a",
+      "printedMarks": 10,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p2-q7b",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Spanning tree does not give a Hamilton path",
+    "source": "Past paper 2 Q7b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "Disprove the converse: if G has a spanning tree, then G has a Hamilton path.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Take the star K1,3, with centre c and leaves a,b,d. It is already a spanning tree of itself."
+      },
+      {
+        "step": 2,
+        "text": "Every leaf has degree 1, so if a Hamilton path existed each leaf would have to be an endpoint."
+      },
+      {
+        "step": 3,
+        "text": "A path has only two endpoints, but this star has three leaves. Thus it has no Hamilton path."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Take the star K1,3, with centre c and leaves a,b,d. It is already a spanning tree of itself.",
+        "marks": 4
+      },
+      {
+        "step": 2,
+        "criterion": "Every leaf has degree 1, so if a Hamilton path existed each leaf would have to be an endpoint.",
+        "marks": 3
+      },
+      {
+        "step": 3,
+        "criterion": "A path has only two endpoints, but this star has three leaves. Thus it has no Hamilton path.",
+        "marks": 3
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "7b",
+      "printedMarks": 10,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p3-q6",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Four colors do not imply planar",
+    "source": "Past paper 3 Q6",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Is every graph with chromatic number at most 4 planar? Prove or disprove.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "No. Take K3,3. It is bipartite and has an edge, so its chromatic number is 2<=4."
+      },
+      {
+        "step": 2,
+        "text": "It has v=6,e=9. A simple bipartite planar graph with v>=3 has e<=2*v-4=8."
+      },
+      {
+        "step": 3,
+        "text": "Since 9>8, K3,3 is nonplanar. Thus the proposed converse is false."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "No. Take K3,3. It is bipartite and has an edge, so its chromatic number is 2<=4.",
+        "marks": 7
+      },
+      {
+        "step": 2,
+        "criterion": "It has v=6,e=9. A simple bipartite planar graph with v>=3 has e<=2*v-4=8.",
+        "marks": 7
+      },
+      {
+        "step": 3,
+        "criterion": "Since 9>8, K3,3 is nonplanar. Thus the proposed converse is false.",
+        "marks": 6
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "6",
+      "printedMarks": 20,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p3-q8",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Bridge iff no cycle",
+    "source": "Past paper 3 Q8",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 20,
+    "prompt": "Show an edge e in a simple undirected graph is a cut edge iff it lies on no simple circuit.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "If e lies on a simple circuit, the other circuit edges give an alternate path between its endpoints after deleting e. Every route using e can be rerouted, so deleting e does not increase the number of components. Thus e is not a cut edge."
+      },
+      {
+        "step": 2,
+        "text": "Conversely, suppose e=uv is not a cut edge. Its endpoints remain connected in G-e. Choose a simple u-v path there."
+      },
+      {
+        "step": 3,
+        "text": "Adding e to that path creates a simple circuit containing e."
+      },
+      {
+        "step": 4,
+        "text": "Thus e is a cut edge exactly when it belongs to no simple circuit."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "If e lies on a simple circuit, the other circuit edges give an alternate path between its endpoints after deleting e. Every route using e can be rerouted, so deleting e does not increase the number of components. Thus e is not a cut edge.",
+        "marks": 5
+      },
+      {
+        "step": 2,
+        "criterion": "Conversely, suppose e=uv is not a cut edge. Its endpoints remain connected in G-e. Choose a simple u-v path there.",
+        "marks": 5
+      },
+      {
+        "step": 3,
+        "criterion": "Adding e to that path creates a simple circuit containing e.",
+        "marks": 5
+      },
+      {
+        "step": 4,
+        "criterion": "Thus e is a cut edge exactly when it belongs to no simple circuit.",
+        "marks": 5
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "8",
+      "printedMarks": 20,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p4-q7",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Mutual reachability transitive",
+    "source": "Past paper 4 Q7",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "If u,v are mutually reachable and v,w are mutually reachable in a directed graph, prove u,w are mutually reachable.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are paths u->...->v and v->...->w. Concatenate to obtain a directed walk from u to w. Remove repeated-vertex cycles to obtain a path."
+      },
+      {
+        "step": 2,
+        "text": "Likewise w->...->v followed by v->...->u gives a path from w to u."
+      },
+      {
+        "step": 3,
+        "text": "Thus u reaches w and w reaches u, so they are mutually reachable."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "There are paths u->...->v and v->...->w. Concatenate to obtain a directed walk from u to w. Remove repeated-vertex cycles to obtain a path.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Likewise w->...->v followed by v->...->u gives a path from w to u.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Thus u reaches w and w reaches u, so they are mutually reachable.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "7",
+      "printedMarks": 5,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p4-q8a",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Average degree lower bound",
+    "source": "Past paper 4 Q8a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 3,
+    "prompt": "For a graph with v>0 vertices, e edges, minimum degree m, prove 2*e/v >= m.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Every degree is at least m, so sum deg(x)>=v*m."
+      },
+      {
+        "step": 2,
+        "text": "By the handshake theorem sum deg(x)=2*e."
+      },
+      {
+        "step": 3,
+        "text": "Divide by v>0 to obtain 2*e/v>=m."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Every degree is at least m, so sum deg(x)>=v*m.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "By the handshake theorem sum deg(x)=2*e.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Divide by v>0 to obtain 2*e/v>=m.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "8a",
+      "printedMarks": 5,
+      "page": 2,
+      "marksNote": "Q8 prints 5 marks jointly; 3+2 is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q8b",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Average degree upper bound",
+    "source": "Past paper 4 Q8b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "For a graph with v>0 vertices, e edges, maximum degree M, prove 2*e/v <= M.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Every degree is at most M, so sum deg(x)<=v*M."
+      },
+      {
+        "step": 2,
+        "text": "By the handshake theorem sum deg(x)=2*e."
+      },
+      {
+        "step": 3,
+        "text": "Divide by v>0 to obtain 2*e/v<=M."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Every degree is at most M, so sum deg(x)<=v*M.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "By the handshake theorem sum deg(x)=2*e.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Divide by v>0 to obtain 2*e/v<=M.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 4,
+      "question": "8b",
+      "printedMarks": 5,
+      "page": 2,
+      "marksNote": "Q8 prints 5 marks jointly; 3+2 is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p5-q8",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Odd circuit forbids two colors",
+    "source": "Past paper 5 Q8",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Show a simple graph containing a circuit with an odd number of vertices cannot be colored with two colors.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Let the odd cycle be v1,v2,...,v_(2*k+1),v1."
+      },
+      {
+        "step": 2,
+        "text": "In a proper two-coloring, adjacent cycle vertices must alternate colors. Thus odd-indexed vertices have the color of v1 and even-indexed vertices the other color."
+      },
+      {
+        "step": 3,
+        "text": "Since 2*k+1 is odd, v_(2*k+1) and v1 have the same color but are adjacent. This is impossible."
+      },
+      {
+        "step": 4,
+        "text": "Therefore the graph cannot be colored using two colors."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Let the odd cycle be v1,v2,...,v_(2*k+1),v1.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "In a proper two-coloring, adjacent cycle vertices must alternate colors. Thus odd-indexed vertices have the color of v1 and even-indexed vertices the other color.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Since 2*k+1 is odd, v_(2*k+1) and v1 have the same color but are adjacent. This is impossible.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "Therefore the graph cannot be colored using two colors.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "8",
+      "printedMarks": 5,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p5-q9",
+    "subject": "dm",
+    "topic": "graphs",
+    "title": "Complement edge count",
+    "source": "Past paper 5 Q9",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A simple graph G has 20 edges and its complement has 16. How many vertices does G have?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Every unordered pair of distinct vertices is an edge in exactly one of G and its complement."
+      },
+      {
+        "step": 2,
+        "text": "Therefore n*(n-1)/2=20+16=36, so n^2-n-72=0."
+      },
+      {
+        "step": 3,
+        "text": "Factor: (n-9)*(n+8)=0. Reject the negative root; n=9."
+      }
+    ],
+    "conceptNote": "Use the precise graph definition and invariants; equal necessary invariants alone do not prove isomorphism or existence of a traversal.",
+    "type": "numeric",
+    "answer": 9,
+    "tolerance": 0,
+    "verification": {
+      "kind": "complement",
+      "edges": 20,
+      "complementEdges": 16
+    },
+    "provenance": {
+      "paper": 5,
+      "question": "9",
+      "printedMarks": 5,
+      "page": 2
+    }
+  }
+]

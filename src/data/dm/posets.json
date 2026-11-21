@@ -1,0 +1,6495 @@
+[
+  {
+    "id": "dm-posets-1",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: maximal",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, find maximal. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "The requested maximal set is {12}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "12"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "maximal",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-2",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: minimal",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, find minimal. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "The requested minimal set is {1}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "1"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "minimal",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-3",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: greatest",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, find greatest. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "The requested greatest set is {12}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "12"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "greatest",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-4",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: least",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, find least. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "The requested least set is {1}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "1"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "least",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-5",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: upper bounds",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, for S={2,3}, find upperBounds. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={6,12}; lower bounds={1}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={6}; GLB={1}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested upperBounds set is {6,12}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "6",
+      "12"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "upperBounds",
+      "subset": [
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-6",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: lower bounds",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, for S={4,6}, find lowerBounds. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={12}; lower bounds={1,2}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={12}; GLB={2}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested lowerBounds set is {1,2}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "1",
+      "2"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "lowerBounds",
+      "subset": [
+        "4",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-7",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: LUB",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, for S={4,6}, find lub. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={12}; lower bounds={1,2}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={12}; GLB={2}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested lub set is {12}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "12"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "lub",
+      "subset": [
+        "4",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-8",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: GLB",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, for S={4,6}, find glb. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={12}; lower bounds={1,2}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={12}; GLB={2}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested glb set is {2}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "2"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "glb",
+      "subset": [
+        "4",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-9",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisors: Hasse covers",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "In the poset A={1,2,3,4,6,12}, R={(1,1), (1,2), (1,3), (1,4), (1,6), (1,12), (2,2), (2,4), (2,6), (2,12), (3,3), (3,6), (3,12), (4,4), (4,12), (6,6), (6,12), (12,12)}, find covers. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={12}; least={1}; greatest={12}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (2,4), (2,6), (3,6), (4,12), (6,12)."
+      },
+      {
+        "step": 4,
+        "text": "The requested covers set is {(1,2),(1,3),(2,4),(2,6),(3,6),(4,12),(6,12)}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(1,2)",
+      "(1,3)",
+      "(2,4)",
+      "(2,6)",
+      "(3,6)",
+      "(4,12)",
+      "(6,12)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "1",
+            "12"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "4",
+            "12"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "12",
+            "12"
+          ]
+        ]
+      },
+      "query": "covers",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-10",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "No greatest element",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={2,3,6,12,18}, R={(2,2), (2,6), (2,12), (2,18), (3,3), (3,6), (3,12), (3,18), (6,6), (6,12), (6,18), (12,12), (18,18)}, find greatest. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={2,3}; maximal={12,18}; least={}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (2,6), (3,6), (6,12), (6,18)."
+      },
+      {
+        "step": 4,
+        "text": "The requested greatest set is {}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "2",
+          "3",
+          "6",
+          "12",
+          "18"
+        ],
+        "pairs": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "2",
+            "18"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "3",
+            "18"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "6",
+            "18"
+          ],
+          [
+            "12",
+            "12"
+          ],
+          [
+            "18",
+            "18"
+          ]
+        ]
+      },
+      "query": "greatest",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-11",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Two minimal elements",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={2,3,6,12,18}, R={(2,2), (2,6), (2,12), (2,18), (3,3), (3,6), (3,12), (3,18), (6,6), (6,12), (6,18), (12,12), (18,18)}, find minimal. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={2,3}; maximal={12,18}; least={}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (2,6), (3,6), (6,12), (6,18)."
+      },
+      {
+        "step": 4,
+        "text": "The requested minimal set is {2,3}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "2",
+      "3"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "2",
+          "3",
+          "6",
+          "12",
+          "18"
+        ],
+        "pairs": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "2",
+            "18"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "3",
+            "18"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "6",
+            "18"
+          ],
+          [
+            "12",
+            "12"
+          ],
+          [
+            "18",
+            "18"
+          ]
+        ]
+      },
+      "query": "minimal",
+      "subset": []
+    }
+  },
+  {
+    "id": "dm-posets-12",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Two incomparable upper bounds",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={2,3,6,12,18}, R={(2,2), (2,6), (2,12), (2,18), (3,3), (3,6), (3,12), (3,18), (6,6), (6,12), (6,18), (12,12), (18,18)}, for S={2,3}, find lub. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={2,3}; maximal={12,18}; least={}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (2,6), (3,6), (6,12), (6,18)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={6,12,18}; lower bounds={}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={6}; GLB={}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested lub set is {6}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "6"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "2",
+          "3",
+          "6",
+          "12",
+          "18"
+        ],
+        "pairs": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "12"
+          ],
+          [
+            "2",
+            "18"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "3",
+            "12"
+          ],
+          [
+            "3",
+            "18"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "12"
+          ],
+          [
+            "6",
+            "18"
+          ],
+          [
+            "12",
+            "12"
+          ],
+          [
+            "18",
+            "18"
+          ]
+        ]
+      },
+      "query": "lub",
+      "subset": [
+        "2",
+        "3"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-13",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Fork has no join",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={a,b,c}, R={(a,a), (a,b), (a,c), (b,b), (c,c)}, for S={b,c}, find lub. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={a}; maximal={b,c}; least={a}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (a,b), (a,c)."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={}; lower bounds={a}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={}; GLB={a}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested lub set is {}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "a",
+          "b",
+          "c"
+        ],
+        "pairs": [
+          [
+            "a",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "b"
+          ],
+          [
+            "c",
+            "c"
+          ]
+        ]
+      },
+      "query": "lub",
+      "subset": [
+        "b",
+        "c"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-14",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Subset diamond join",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={{},{a},{b},{a,b}}, R={({},{}), ({},{a}), ({},{b}), ({},{a,b}), ({a},{a}), ({a},{a,b}), ({b},{b}), ({b},{a,b}), ({a,b},{a,b})}, for S={{a},{b}}, find lub. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={{}}; maximal={{a,b}}; least={{}}; greatest={{a,b}}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are ({},{a}), ({},{b}), ({a},{a,b}), ({b},{a,b})."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={{a,b}}; lower bounds={{}}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={{a,b}}; GLB={{}}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested lub set is {{a,b}}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "{a,b}"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "{}",
+          "{a}",
+          "{b}",
+          "{a,b}"
+        ],
+        "pairs": [
+          [
+            "{}",
+            "{}"
+          ],
+          [
+            "{}",
+            "{a}"
+          ],
+          [
+            "{}",
+            "{b}"
+          ],
+          [
+            "{}",
+            "{a,b}"
+          ],
+          [
+            "{a}",
+            "{a}"
+          ],
+          [
+            "{a}",
+            "{a,b}"
+          ],
+          [
+            "{b}",
+            "{b}"
+          ],
+          [
+            "{b}",
+            "{a,b}"
+          ],
+          [
+            "{a,b}",
+            "{a,b}"
+          ]
+        ]
+      },
+      "query": "lub",
+      "subset": [
+        "{a}",
+        "{b}"
+      ]
+    }
+  },
+  {
+    "id": "dm-posets-15",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Subset diamond meet",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "In the poset A={{},{a},{b},{a,b}}, R={({},{}), ({},{a}), ({},{b}), ({},{a,b}), ({a},{a}), ({a},{a,b}), ({b},{b}), ({b},{a,b}), ({a,b},{a,b})}, for S={{a},{b}}, find glb. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={{}}; maximal={{a,b}}; least={{}}; greatest={{a,b}}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are ({},{a}), ({},{b}), ({a},{a,b}), ({b},{a,b})."
+      },
+      {
+        "step": 4,
+        "text": "Upper bounds of S={{a,b}}; lower bounds={{}}."
+      },
+      {
+        "step": 5,
+        "text": "LUB={{a,b}}; GLB={{}}. A missing singleton answer means no such bound in this poset."
+      },
+      {
+        "step": 6,
+        "text": "The requested glb set is {{}}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "{}"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "{}",
+          "{a}",
+          "{b}",
+          "{a,b}"
+        ],
+        "pairs": [
+          [
+            "{}",
+            "{}"
+          ],
+          [
+            "{}",
+            "{a}"
+          ],
+          [
+            "{}",
+            "{b}"
+          ],
+          [
+            "{}",
+            "{a,b}"
+          ],
+          [
+            "{a}",
+            "{a}"
+          ],
+          [
+            "{a}",
+            "{a,b}"
+          ],
+          [
+            "{b}",
+            "{b}"
+          ],
+          [
+            "{b}",
+            "{a,b}"
+          ],
+          [
+            "{a,b}",
+            "{a,b}"
+          ]
+        ]
+      },
+      "query": "glb",
+      "subset": [
+        "{a}",
+        "{b}"
+      ]
+    }
+  },
+  {
+    "id": "dm-trap-1",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Maximal versus greatest",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "A finite poset has two incomparable maximal elements. Which conclusion follows?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "A greatest element must be above every element."
+      },
+      {
+        "step": 2,
+        "text": "If a greatest element existed, each maximal element would have to equal it."
+      },
+      {
+        "step": 3,
+        "text": "Two distinct incomparable maximal elements therefore rule out a greatest element."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "mcq",
+    "options": [
+      "There is no greatest element.",
+      "Both are greatest.",
+      "There is no minimal element."
+    ],
+    "correctIndex": 0,
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "a",
+          "b",
+          "c"
+        ],
+        "pairs": [
+          [
+            "a",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "c"
+          ],
+          [
+            "b",
+            "b"
+          ],
+          [
+            "c",
+            "c"
+          ]
+        ]
+      },
+      "query": "greatest"
+    },
+    "optionValues": [
+      [],
+      [
+        "b",
+        "c"
+      ],
+      [
+        "no-minimal"
+      ]
+    ]
+  },
+  {
+    "id": "dm-p2-q3a",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Subset Hasse covers",
+    "source": "Past paper 2 Q3a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "For S1={a,b,c,d}, S2={b,c}, S3={a,d}, S4={a}, S5={d}, S6={c}, S7={} under subset inclusion. Describe the Hasse diagram using levels and cover edges.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Levels bottom to top: {S7}; {S4,S5,S6}; {S3,S2}; {S1}."
+      },
+      {
+        "step": 2,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 3,
+        "text": "Minimal={S7}; maximal={S1}; least={S7}; greatest={S1}."
+      },
+      {
+        "step": 4,
+        "text": "Cover edges, directed from lower to upper, are (S2,S1), (S3,S1), (S4,S3), (S5,S3), (S6,S2), (S7,S4), (S7,S5), (S7,S6)."
+      },
+      {
+        "step": 5,
+        "text": "The requested covers set is {(S2,S1),(S3,S1),(S4,S3),(S5,S3),(S6,S2),(S7,S4),(S7,S5),(S7,S6)}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(S2,S1)",
+      "(S3,S1)",
+      "(S4,S3)",
+      "(S5,S3)",
+      "(S6,S2)",
+      "(S7,S4)",
+      "(S7,S5)",
+      "(S7,S6)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ],
+        "pairs": [
+          [
+            "S1",
+            "S1"
+          ],
+          [
+            "S2",
+            "S1"
+          ],
+          [
+            "S2",
+            "S2"
+          ],
+          [
+            "S3",
+            "S1"
+          ],
+          [
+            "S3",
+            "S3"
+          ],
+          [
+            "S4",
+            "S1"
+          ],
+          [
+            "S4",
+            "S3"
+          ],
+          [
+            "S4",
+            "S4"
+          ],
+          [
+            "S5",
+            "S1"
+          ],
+          [
+            "S5",
+            "S3"
+          ],
+          [
+            "S5",
+            "S5"
+          ],
+          [
+            "S6",
+            "S1"
+          ],
+          [
+            "S6",
+            "S2"
+          ],
+          [
+            "S6",
+            "S6"
+          ],
+          [
+            "S7",
+            "S1"
+          ],
+          [
+            "S7",
+            "S2"
+          ],
+          [
+            "S7",
+            "S3"
+          ],
+          [
+            "S7",
+            "S4"
+          ],
+          [
+            "S7",
+            "S5"
+          ],
+          [
+            "S7",
+            "S6"
+          ],
+          [
+            "S7",
+            "S7"
+          ]
+        ]
+      },
+      "query": "covers",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 2,
+      "question": "3a",
+      "printedMarks": 10,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p2-q3b",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Subset maximal and minimal",
+    "source": "Past paper 2 Q3b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For S1={a,b,c,d}, S2={b,c}, S3={a,d}, S4={a}, S5={d}, S6={c}, S7={} under subset inclusion. Find maximal and minimal elements.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Maximal means no distinct larger member; only S1 qualifies."
+      },
+      {
+        "step": 2,
+        "text": "Minimal means no distinct smaller member; only S7={} qualifies."
+      },
+      {
+        "step": 3,
+        "text": "Therefore maximal={S1}, minimal={S7}."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Maximal means no distinct larger member; only S1 qualifies.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Minimal means no distinct smaller member; only S7={} qualifies.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Therefore maximal={S1}, minimal={S7}.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "3b",
+      "printedMarks": 5,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p2-q3c",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Subset lattice",
+    "source": "Past paper 2 Q3c",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Is the poset S1={a,b,c,d}, S2={b,c}, S3={a,d}, S4={a}, S5={d}, S6={c}, S7={} under subset inclusion. a lattice? Justify.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "S7 is a bottom and S1 a top. For comparable pairs, the smaller is the meet and the larger is the join."
+      },
+      {
+        "step": 2,
+        "text": "For incomparable pairs: S4,S5 have join S3; S2 with S3,S4 or S5 has join S1; S6 with S4 or S5 has join S1. Each of these pairs has meet S7."
+      },
+      {
+        "step": 3,
+        "text": "The remaining incomparable pair S3,S6 has join S1 and meet S7. Hence every pair has a unique join and meet, so this poset is a lattice."
+      },
+      {
+        "step": 4,
+        "text": "The absent set {b} does not by itself prevent a lattice: bounds are taken within the given poset."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "S7 is a bottom and S1 a top. For comparable pairs, the smaller is the meet and the larger is the join.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "For incomparable pairs: S4,S5 have join S3; S2 with S3,S4 or S5 has join S1; S6 with S4 or S5 has join S1. Each of these pairs has meet S7.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "The remaining incomparable pair S3,S6 has join S1 and meet S7. Hence every pair has a unique join and meet, so this poset is a lattice.",
+        "marks": 1
+      },
+      {
+        "step": 4,
+        "criterion": "The absent set {b} does not by itself prevent a lattice: bounds are taken within the given poset.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 2,
+      "question": "3c",
+      "printedMarks": 5,
+      "page": 1
+    },
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ],
+        "pairs": [
+          [
+            "S1",
+            "S1"
+          ],
+          [
+            "S2",
+            "S1"
+          ],
+          [
+            "S2",
+            "S2"
+          ],
+          [
+            "S3",
+            "S1"
+          ],
+          [
+            "S3",
+            "S3"
+          ],
+          [
+            "S4",
+            "S1"
+          ],
+          [
+            "S4",
+            "S3"
+          ],
+          [
+            "S4",
+            "S4"
+          ],
+          [
+            "S5",
+            "S1"
+          ],
+          [
+            "S5",
+            "S3"
+          ],
+          [
+            "S5",
+            "S5"
+          ],
+          [
+            "S6",
+            "S1"
+          ],
+          [
+            "S6",
+            "S2"
+          ],
+          [
+            "S6",
+            "S6"
+          ],
+          [
+            "S7",
+            "S1"
+          ],
+          [
+            "S7",
+            "S2"
+          ],
+          [
+            "S7",
+            "S3"
+          ],
+          [
+            "S7",
+            "S4"
+          ],
+          [
+            "S7",
+            "S5"
+          ],
+          [
+            "S7",
+            "S6"
+          ],
+          [
+            "S7",
+            "S7"
+          ]
+        ]
+      }
+    },
+    "checkpoints": [
+      {
+        "id": "dm-p2-q3c-lattice",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Lattice checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Does every pair have both a LUB and a GLB?",
+        "solution": [
+          {
+            "step": 1,
+            "text": "S7 is a bottom and S1 a top. For comparable pairs, the smaller is the meet and the larger is the join."
+          },
+          {
+            "step": 2,
+            "text": "For incomparable pairs: S4,S5 have join S3; S2 with S3,S4 or S5 has join S1; S6 with S4 or S5 has join S1. Each of these pairs has meet S7."
+          },
+          {
+            "step": 3,
+            "text": "The remaining incomparable pair S3,S6 has join S1 and meet S7. Hence every pair has a unique join and meet, so this poset is a lattice."
+          },
+          {
+            "step": 4,
+            "text": "The absent set {b} does not by itself prevent a lattice: bounds are taken within the given poset."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "properties",
+        "options": [
+          "lattice"
+        ],
+        "answer": {
+          "lattice": true
+        },
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "S5",
+              "S6",
+              "S7"
+            ],
+            "pairs": [
+              [
+                "S1",
+                "S1"
+              ],
+              [
+                "S2",
+                "S1"
+              ],
+              [
+                "S2",
+                "S2"
+              ],
+              [
+                "S3",
+                "S1"
+              ],
+              [
+                "S3",
+                "S3"
+              ],
+              [
+                "S4",
+                "S1"
+              ],
+              [
+                "S4",
+                "S3"
+              ],
+              [
+                "S4",
+                "S4"
+              ],
+              [
+                "S5",
+                "S1"
+              ],
+              [
+                "S5",
+                "S3"
+              ],
+              [
+                "S5",
+                "S5"
+              ],
+              [
+                "S6",
+                "S1"
+              ],
+              [
+                "S6",
+                "S2"
+              ],
+              [
+                "S6",
+                "S6"
+              ],
+              [
+                "S7",
+                "S1"
+              ],
+              [
+                "S7",
+                "S2"
+              ],
+              [
+                "S7",
+                "S3"
+              ],
+              [
+                "S7",
+                "S4"
+              ],
+              [
+                "S7",
+                "S5"
+              ],
+              [
+                "S7",
+                "S6"
+              ],
+              [
+                "S7",
+                "S7"
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm-p3-q4a",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility Hasse covers",
+    "source": "Past paper 3 Q4a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 10,
+    "prompt": "In the poset A={2,6,8,16,18,32,36}, R={(2,2), (2,6), (2,8), (2,16), (2,18), (2,32), (2,36), (6,6), (6,18), (6,36), (8,8), (8,16), (8,32), (16,16), (16,32), (18,18), (18,36), (32,32), (36,36)}, find covers. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Hasse levels bottom to top: {2}; {6,8}; {18,16}; {36,32}. Place 18 below 36 and 16 below 32."
+      },
+      {
+        "step": 2,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 3,
+        "text": "Minimal={2}; maximal={32,36}; least={2}; greatest={}."
+      },
+      {
+        "step": 4,
+        "text": "Cover edges, directed from lower to upper, are (2,6), (2,8), (6,18), (8,16), (16,32), (18,36)."
+      },
+      {
+        "step": 5,
+        "text": "The requested covers set is {(2,6),(2,8),(6,18),(8,16),(16,32),(18,36)}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(2,6)",
+      "(2,8)",
+      "(6,18)",
+      "(8,16)",
+      "(16,32)",
+      "(18,36)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "2",
+          "6",
+          "8",
+          "16",
+          "18",
+          "32",
+          "36"
+        ],
+        "pairs": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "2",
+            "16"
+          ],
+          [
+            "2",
+            "18"
+          ],
+          [
+            "2",
+            "32"
+          ],
+          [
+            "2",
+            "36"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "18"
+          ],
+          [
+            "6",
+            "36"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "8",
+            "16"
+          ],
+          [
+            "8",
+            "32"
+          ],
+          [
+            "16",
+            "16"
+          ],
+          [
+            "16",
+            "32"
+          ],
+          [
+            "18",
+            "18"
+          ],
+          [
+            "18",
+            "36"
+          ],
+          [
+            "32",
+            "32"
+          ],
+          [
+            "36",
+            "36"
+          ]
+        ]
+      },
+      "query": "covers",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 3,
+      "question": "4a",
+      "printedMarks": 10,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p3-q4b",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility extrema",
+    "source": "Past paper 3 Q4b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "For {2,6,8,16,18,32,36} ordered by divisibility, find maximal and minimal elements.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The maximal elements are 32 and 36, since neither divides a distinct member of the set."
+      },
+      {
+        "step": 2,
+        "text": "The only minimal element is 2, which divides every member."
+      },
+      {
+        "step": 3,
+        "text": "Thus maximal={32,36}, minimal={2}."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "The maximal elements are 32 and 36, since neither divides a distinct member of the set.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "The only minimal element is 2, which divides every member.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "Thus maximal={32,36}, minimal={2}.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "4b",
+      "printedMarks": 5,
+      "page": 1
+    }
+  },
+  {
+    "id": "dm-p3-q4c",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility lattice failure",
+    "source": "Past paper 3 Q4c",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Is {2,6,8,16,18,32,36}, ordered by divisibility, a lattice?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Consider 32 and 36. No member of this set is divisible by both."
+      },
+      {
+        "step": 2,
+        "text": "Thus the pair has no upper bound in the set, and no LUB."
+      },
+      {
+        "step": 3,
+        "text": "A lattice requires a LUB and GLB for every pair. Hence this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Consider 32 and 36. No member of this set is divisible by both.",
+        "marks": 2
+      },
+      {
+        "step": 2,
+        "criterion": "Thus the pair has no upper bound in the set, and no LUB.",
+        "marks": 2
+      },
+      {
+        "step": 3,
+        "criterion": "A lattice requires a LUB and GLB for every pair. Hence this poset is not a lattice.",
+        "marks": 1
+      }
+    ],
+    "provenance": {
+      "paper": 3,
+      "question": "4c",
+      "printedMarks": 5,
+      "page": 1
+    },
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "2",
+          "6",
+          "8",
+          "16",
+          "18",
+          "32",
+          "36"
+        ],
+        "pairs": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "2",
+            "16"
+          ],
+          [
+            "2",
+            "18"
+          ],
+          [
+            "2",
+            "32"
+          ],
+          [
+            "2",
+            "36"
+          ],
+          [
+            "6",
+            "6"
+          ],
+          [
+            "6",
+            "18"
+          ],
+          [
+            "6",
+            "36"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "8",
+            "16"
+          ],
+          [
+            "8",
+            "32"
+          ],
+          [
+            "16",
+            "16"
+          ],
+          [
+            "16",
+            "32"
+          ],
+          [
+            "18",
+            "18"
+          ],
+          [
+            "18",
+            "36"
+          ],
+          [
+            "32",
+            "32"
+          ],
+          [
+            "36",
+            "36"
+          ]
+        ]
+      }
+    },
+    "checkpoints": [
+      {
+        "id": "dm-p3-q4c-lattice",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Lattice checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Does every pair have both a LUB and a GLB?",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Consider 32 and 36. No member of this set is divisible by both."
+          },
+          {
+            "step": 2,
+            "text": "Thus the pair has no upper bound in the set, and no LUB."
+          },
+          {
+            "step": 3,
+            "text": "A lattice requires a LUB and GLB for every pair. Hence this poset is not a lattice."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "properties",
+        "options": [
+          "lattice"
+        ],
+        "answer": {
+          "lattice": false
+        },
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "2",
+              "6",
+              "8",
+              "16",
+              "18",
+              "32",
+              "36"
+            ],
+            "pairs": [
+              [
+                "2",
+                "2"
+              ],
+              [
+                "2",
+                "6"
+              ],
+              [
+                "2",
+                "8"
+              ],
+              [
+                "2",
+                "16"
+              ],
+              [
+                "2",
+                "18"
+              ],
+              [
+                "2",
+                "32"
+              ],
+              [
+                "2",
+                "36"
+              ],
+              [
+                "6",
+                "6"
+              ],
+              [
+                "6",
+                "18"
+              ],
+              [
+                "6",
+                "36"
+              ],
+              [
+                "8",
+                "8"
+              ],
+              [
+                "8",
+                "16"
+              ],
+              [
+                "8",
+                "32"
+              ],
+              [
+                "16",
+                "16"
+              ],
+              [
+                "16",
+                "32"
+              ],
+              [
+                "18",
+                "18"
+              ],
+              [
+                "18",
+                "36"
+              ],
+              [
+                "32",
+                "32"
+              ],
+              [
+                "36",
+                "36"
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm-p4-q4a",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility: covers",
+    "source": "Past paper 4 Q4a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "In the poset A={1,2,3,4,5,6}, R={(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,2), (2,4), (2,6), (3,3), (3,6), (4,4), (5,5), (6,6)}, find covers. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={4,5,6}; least={1}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (1,5), (2,4), (2,6), (3,6)."
+      },
+      {
+        "step": 4,
+        "text": "The requested covers set is {(1,2),(1,3),(1,5),(2,4),(2,6),(3,6)}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(1,2)",
+      "(1,3)",
+      "(1,5)",
+      "(2,4)",
+      "(2,6)",
+      "(3,6)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "covers",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "4a",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q4b",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility: maximal",
+    "source": "Past paper 4 Q4b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "In the poset A={1,2,3,4,5,6}, R={(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,2), (2,4), (2,6), (3,3), (3,6), (4,4), (5,5), (6,6)}, find maximal. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={4,5,6}; least={1}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (1,5), (2,4), (2,6), (3,6)."
+      },
+      {
+        "step": 4,
+        "text": "The requested maximal set is {4,5,6}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "4",
+      "5",
+      "6"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "maximal",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "4b",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q4c",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility: greatest",
+    "source": "Past paper 4 Q4c",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "In the poset A={1,2,3,4,5,6}, R={(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,2), (2,4), (2,6), (3,3), (3,6), (4,4), (5,5), (6,6)}, find greatest. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={4,5,6}; least={1}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (1,5), (2,4), (2,6), (3,6)."
+      },
+      {
+        "step": 4,
+        "text": "The requested greatest set is {}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "greatest",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "4c",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q4d",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility: minimal",
+    "source": "Past paper 4 Q4d",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "In the poset A={1,2,3,4,5,6}, R={(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,2), (2,4), (2,6), (3,3), (3,6), (4,4), (5,5), (6,6)}, find minimal. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={4,5,6}; least={1}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (1,5), (2,4), (2,6), (3,6)."
+      },
+      {
+        "step": 4,
+        "text": "The requested minimal set is {1}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "1"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "minimal",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "4d",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p4-q4e",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Divisibility: least",
+    "source": "Past paper 4 Q4e",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "In the poset A={1,2,3,4,5,6}, R={(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,2), (2,4), (2,6), (3,3), (3,6), (4,4), (5,5), (6,6)}, find least. Explain the comparisons.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 2,
+        "text": "Minimal={1}; maximal={4,5,6}; least={1}; greatest={}."
+      },
+      {
+        "step": 3,
+        "text": "Cover edges, directed from lower to upper, are (1,2), (1,3), (1,5), (2,4), (2,6), (3,6)."
+      },
+      {
+        "step": 4,
+        "text": "The requested least set is {1}. At least one pair lacks a LUB or GLB; this poset is not a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "1"
+    ],
+    "elementFormat": "atom",
+    "inputHint": "Comma-separated elements; use NONE for no elements. Preserve brackets inside set or pair labels.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "pairs": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ],
+          [
+            "1",
+            "3"
+          ],
+          [
+            "1",
+            "4"
+          ],
+          [
+            "1",
+            "5"
+          ],
+          [
+            "1",
+            "6"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "6"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "3",
+            "6"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5",
+            "5"
+          ],
+          [
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "query": "least",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 4,
+      "question": "4e",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2 per part is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p5-q4a",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Lexicographic predecessors",
+    "source": "Past paper 5 Q4a",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "S={a,c,e,g}. List all pairs in S x S lexicographically less than (c,e).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Compare first coordinates first; only if they tie compare second coordinates."
+      },
+      {
+        "step": 2,
+        "text": "All four pairs starting with a precede (c,e). Among pairs starting with c, only (c,a) and (c,c) precede it."
+      },
+      {
+        "step": 3,
+        "text": "Answer: {(a,a),(a,c),(a,e),(a,g),(c,a),(c,c)}."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(a,a)",
+      "(a,c)",
+      "(a,e)",
+      "(a,g)",
+      "(c,a)",
+      "(c,c)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Comma-separated ordered pairs.",
+    "provenance": {
+      "paper": 5,
+      "question": "4a",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2+2+4+2 is an editorial allocation."
+    },
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "(a,a)",
+          "(a,c)",
+          "(a,e)",
+          "(a,g)",
+          "(c,a)",
+          "(c,c)",
+          "(c,e)",
+          "(c,g)",
+          "(e,a)",
+          "(e,c)",
+          "(e,e)",
+          "(e,g)",
+          "(g,a)",
+          "(g,c)",
+          "(g,e)",
+          "(g,g)"
+        ],
+        "pairs": [
+          [
+            "(a,a)",
+            "(a,a)"
+          ],
+          [
+            "(a,a)",
+            "(a,c)"
+          ],
+          [
+            "(a,a)",
+            "(a,e)"
+          ],
+          [
+            "(a,a)",
+            "(a,g)"
+          ],
+          [
+            "(a,a)",
+            "(c,a)"
+          ],
+          [
+            "(a,a)",
+            "(c,c)"
+          ],
+          [
+            "(a,a)",
+            "(c,e)"
+          ],
+          [
+            "(a,a)",
+            "(c,g)"
+          ],
+          [
+            "(a,a)",
+            "(e,a)"
+          ],
+          [
+            "(a,a)",
+            "(e,c)"
+          ],
+          [
+            "(a,a)",
+            "(e,e)"
+          ],
+          [
+            "(a,a)",
+            "(e,g)"
+          ],
+          [
+            "(a,a)",
+            "(g,a)"
+          ],
+          [
+            "(a,a)",
+            "(g,c)"
+          ],
+          [
+            "(a,a)",
+            "(g,e)"
+          ],
+          [
+            "(a,a)",
+            "(g,g)"
+          ],
+          [
+            "(a,c)",
+            "(a,c)"
+          ],
+          [
+            "(a,c)",
+            "(a,e)"
+          ],
+          [
+            "(a,c)",
+            "(a,g)"
+          ],
+          [
+            "(a,c)",
+            "(c,a)"
+          ],
+          [
+            "(a,c)",
+            "(c,c)"
+          ],
+          [
+            "(a,c)",
+            "(c,e)"
+          ],
+          [
+            "(a,c)",
+            "(c,g)"
+          ],
+          [
+            "(a,c)",
+            "(e,a)"
+          ],
+          [
+            "(a,c)",
+            "(e,c)"
+          ],
+          [
+            "(a,c)",
+            "(e,e)"
+          ],
+          [
+            "(a,c)",
+            "(e,g)"
+          ],
+          [
+            "(a,c)",
+            "(g,a)"
+          ],
+          [
+            "(a,c)",
+            "(g,c)"
+          ],
+          [
+            "(a,c)",
+            "(g,e)"
+          ],
+          [
+            "(a,c)",
+            "(g,g)"
+          ],
+          [
+            "(a,e)",
+            "(a,e)"
+          ],
+          [
+            "(a,e)",
+            "(a,g)"
+          ],
+          [
+            "(a,e)",
+            "(c,a)"
+          ],
+          [
+            "(a,e)",
+            "(c,c)"
+          ],
+          [
+            "(a,e)",
+            "(c,e)"
+          ],
+          [
+            "(a,e)",
+            "(c,g)"
+          ],
+          [
+            "(a,e)",
+            "(e,a)"
+          ],
+          [
+            "(a,e)",
+            "(e,c)"
+          ],
+          [
+            "(a,e)",
+            "(e,e)"
+          ],
+          [
+            "(a,e)",
+            "(e,g)"
+          ],
+          [
+            "(a,e)",
+            "(g,a)"
+          ],
+          [
+            "(a,e)",
+            "(g,c)"
+          ],
+          [
+            "(a,e)",
+            "(g,e)"
+          ],
+          [
+            "(a,e)",
+            "(g,g)"
+          ],
+          [
+            "(a,g)",
+            "(a,g)"
+          ],
+          [
+            "(a,g)",
+            "(c,a)"
+          ],
+          [
+            "(a,g)",
+            "(c,c)"
+          ],
+          [
+            "(a,g)",
+            "(c,e)"
+          ],
+          [
+            "(a,g)",
+            "(c,g)"
+          ],
+          [
+            "(a,g)",
+            "(e,a)"
+          ],
+          [
+            "(a,g)",
+            "(e,c)"
+          ],
+          [
+            "(a,g)",
+            "(e,e)"
+          ],
+          [
+            "(a,g)",
+            "(e,g)"
+          ],
+          [
+            "(a,g)",
+            "(g,a)"
+          ],
+          [
+            "(a,g)",
+            "(g,c)"
+          ],
+          [
+            "(a,g)",
+            "(g,e)"
+          ],
+          [
+            "(a,g)",
+            "(g,g)"
+          ],
+          [
+            "(c,a)",
+            "(c,a)"
+          ],
+          [
+            "(c,a)",
+            "(c,c)"
+          ],
+          [
+            "(c,a)",
+            "(c,e)"
+          ],
+          [
+            "(c,a)",
+            "(c,g)"
+          ],
+          [
+            "(c,a)",
+            "(e,a)"
+          ],
+          [
+            "(c,a)",
+            "(e,c)"
+          ],
+          [
+            "(c,a)",
+            "(e,e)"
+          ],
+          [
+            "(c,a)",
+            "(e,g)"
+          ],
+          [
+            "(c,a)",
+            "(g,a)"
+          ],
+          [
+            "(c,a)",
+            "(g,c)"
+          ],
+          [
+            "(c,a)",
+            "(g,e)"
+          ],
+          [
+            "(c,a)",
+            "(g,g)"
+          ],
+          [
+            "(c,c)",
+            "(c,c)"
+          ],
+          [
+            "(c,c)",
+            "(c,e)"
+          ],
+          [
+            "(c,c)",
+            "(c,g)"
+          ],
+          [
+            "(c,c)",
+            "(e,a)"
+          ],
+          [
+            "(c,c)",
+            "(e,c)"
+          ],
+          [
+            "(c,c)",
+            "(e,e)"
+          ],
+          [
+            "(c,c)",
+            "(e,g)"
+          ],
+          [
+            "(c,c)",
+            "(g,a)"
+          ],
+          [
+            "(c,c)",
+            "(g,c)"
+          ],
+          [
+            "(c,c)",
+            "(g,e)"
+          ],
+          [
+            "(c,c)",
+            "(g,g)"
+          ],
+          [
+            "(c,e)",
+            "(c,e)"
+          ],
+          [
+            "(c,e)",
+            "(c,g)"
+          ],
+          [
+            "(c,e)",
+            "(e,a)"
+          ],
+          [
+            "(c,e)",
+            "(e,c)"
+          ],
+          [
+            "(c,e)",
+            "(e,e)"
+          ],
+          [
+            "(c,e)",
+            "(e,g)"
+          ],
+          [
+            "(c,e)",
+            "(g,a)"
+          ],
+          [
+            "(c,e)",
+            "(g,c)"
+          ],
+          [
+            "(c,e)",
+            "(g,e)"
+          ],
+          [
+            "(c,e)",
+            "(g,g)"
+          ],
+          [
+            "(c,g)",
+            "(c,g)"
+          ],
+          [
+            "(c,g)",
+            "(e,a)"
+          ],
+          [
+            "(c,g)",
+            "(e,c)"
+          ],
+          [
+            "(c,g)",
+            "(e,e)"
+          ],
+          [
+            "(c,g)",
+            "(e,g)"
+          ],
+          [
+            "(c,g)",
+            "(g,a)"
+          ],
+          [
+            "(c,g)",
+            "(g,c)"
+          ],
+          [
+            "(c,g)",
+            "(g,e)"
+          ],
+          [
+            "(c,g)",
+            "(g,g)"
+          ],
+          [
+            "(e,a)",
+            "(e,a)"
+          ],
+          [
+            "(e,a)",
+            "(e,c)"
+          ],
+          [
+            "(e,a)",
+            "(e,e)"
+          ],
+          [
+            "(e,a)",
+            "(e,g)"
+          ],
+          [
+            "(e,a)",
+            "(g,a)"
+          ],
+          [
+            "(e,a)",
+            "(g,c)"
+          ],
+          [
+            "(e,a)",
+            "(g,e)"
+          ],
+          [
+            "(e,a)",
+            "(g,g)"
+          ],
+          [
+            "(e,c)",
+            "(e,c)"
+          ],
+          [
+            "(e,c)",
+            "(e,e)"
+          ],
+          [
+            "(e,c)",
+            "(e,g)"
+          ],
+          [
+            "(e,c)",
+            "(g,a)"
+          ],
+          [
+            "(e,c)",
+            "(g,c)"
+          ],
+          [
+            "(e,c)",
+            "(g,e)"
+          ],
+          [
+            "(e,c)",
+            "(g,g)"
+          ],
+          [
+            "(e,e)",
+            "(e,e)"
+          ],
+          [
+            "(e,e)",
+            "(e,g)"
+          ],
+          [
+            "(e,e)",
+            "(g,a)"
+          ],
+          [
+            "(e,e)",
+            "(g,c)"
+          ],
+          [
+            "(e,e)",
+            "(g,e)"
+          ],
+          [
+            "(e,e)",
+            "(g,g)"
+          ],
+          [
+            "(e,g)",
+            "(e,g)"
+          ],
+          [
+            "(e,g)",
+            "(g,a)"
+          ],
+          [
+            "(e,g)",
+            "(g,c)"
+          ],
+          [
+            "(e,g)",
+            "(g,e)"
+          ],
+          [
+            "(e,g)",
+            "(g,g)"
+          ],
+          [
+            "(g,a)",
+            "(g,a)"
+          ],
+          [
+            "(g,a)",
+            "(g,c)"
+          ],
+          [
+            "(g,a)",
+            "(g,e)"
+          ],
+          [
+            "(g,a)",
+            "(g,g)"
+          ],
+          [
+            "(g,c)",
+            "(g,c)"
+          ],
+          [
+            "(g,c)",
+            "(g,e)"
+          ],
+          [
+            "(g,c)",
+            "(g,g)"
+          ],
+          [
+            "(g,e)",
+            "(g,e)"
+          ],
+          [
+            "(g,e)",
+            "(g,g)"
+          ],
+          [
+            "(g,g)",
+            "(g,g)"
+          ]
+        ]
+      },
+      "query": "strictLower",
+      "subset": [
+        "(c,e)"
+      ]
+    }
+  },
+  {
+    "id": "dm-p5-q4b",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Lexicographic successors",
+    "source": "Past paper 5 Q4b",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "S={a,c,e,g}. List all pairs lexicographically greater than (e,a).",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Within the e block, (e,c),(e,e),(e,g) follow (e,a)."
+      },
+      {
+        "step": 2,
+        "text": "Every pair starting with g is larger, regardless of its second coordinate."
+      },
+      {
+        "step": 3,
+        "text": "Answer: {(e,c),(e,e),(e,g),(g,a),(g,c),(g,e),(g,g)}."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "(e,c)",
+      "(e,e)",
+      "(e,g)",
+      "(g,a)",
+      "(g,c)",
+      "(g,e)",
+      "(g,g)"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Comma-separated ordered pairs.",
+    "provenance": {
+      "paper": 5,
+      "question": "4b",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2+2+4+2 is an editorial allocation."
+    },
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "(a,a)",
+          "(a,c)",
+          "(a,e)",
+          "(a,g)",
+          "(c,a)",
+          "(c,c)",
+          "(c,e)",
+          "(c,g)",
+          "(e,a)",
+          "(e,c)",
+          "(e,e)",
+          "(e,g)",
+          "(g,a)",
+          "(g,c)",
+          "(g,e)",
+          "(g,g)"
+        ],
+        "pairs": [
+          [
+            "(a,a)",
+            "(a,a)"
+          ],
+          [
+            "(a,a)",
+            "(a,c)"
+          ],
+          [
+            "(a,a)",
+            "(a,e)"
+          ],
+          [
+            "(a,a)",
+            "(a,g)"
+          ],
+          [
+            "(a,a)",
+            "(c,a)"
+          ],
+          [
+            "(a,a)",
+            "(c,c)"
+          ],
+          [
+            "(a,a)",
+            "(c,e)"
+          ],
+          [
+            "(a,a)",
+            "(c,g)"
+          ],
+          [
+            "(a,a)",
+            "(e,a)"
+          ],
+          [
+            "(a,a)",
+            "(e,c)"
+          ],
+          [
+            "(a,a)",
+            "(e,e)"
+          ],
+          [
+            "(a,a)",
+            "(e,g)"
+          ],
+          [
+            "(a,a)",
+            "(g,a)"
+          ],
+          [
+            "(a,a)",
+            "(g,c)"
+          ],
+          [
+            "(a,a)",
+            "(g,e)"
+          ],
+          [
+            "(a,a)",
+            "(g,g)"
+          ],
+          [
+            "(a,c)",
+            "(a,c)"
+          ],
+          [
+            "(a,c)",
+            "(a,e)"
+          ],
+          [
+            "(a,c)",
+            "(a,g)"
+          ],
+          [
+            "(a,c)",
+            "(c,a)"
+          ],
+          [
+            "(a,c)",
+            "(c,c)"
+          ],
+          [
+            "(a,c)",
+            "(c,e)"
+          ],
+          [
+            "(a,c)",
+            "(c,g)"
+          ],
+          [
+            "(a,c)",
+            "(e,a)"
+          ],
+          [
+            "(a,c)",
+            "(e,c)"
+          ],
+          [
+            "(a,c)",
+            "(e,e)"
+          ],
+          [
+            "(a,c)",
+            "(e,g)"
+          ],
+          [
+            "(a,c)",
+            "(g,a)"
+          ],
+          [
+            "(a,c)",
+            "(g,c)"
+          ],
+          [
+            "(a,c)",
+            "(g,e)"
+          ],
+          [
+            "(a,c)",
+            "(g,g)"
+          ],
+          [
+            "(a,e)",
+            "(a,e)"
+          ],
+          [
+            "(a,e)",
+            "(a,g)"
+          ],
+          [
+            "(a,e)",
+            "(c,a)"
+          ],
+          [
+            "(a,e)",
+            "(c,c)"
+          ],
+          [
+            "(a,e)",
+            "(c,e)"
+          ],
+          [
+            "(a,e)",
+            "(c,g)"
+          ],
+          [
+            "(a,e)",
+            "(e,a)"
+          ],
+          [
+            "(a,e)",
+            "(e,c)"
+          ],
+          [
+            "(a,e)",
+            "(e,e)"
+          ],
+          [
+            "(a,e)",
+            "(e,g)"
+          ],
+          [
+            "(a,e)",
+            "(g,a)"
+          ],
+          [
+            "(a,e)",
+            "(g,c)"
+          ],
+          [
+            "(a,e)",
+            "(g,e)"
+          ],
+          [
+            "(a,e)",
+            "(g,g)"
+          ],
+          [
+            "(a,g)",
+            "(a,g)"
+          ],
+          [
+            "(a,g)",
+            "(c,a)"
+          ],
+          [
+            "(a,g)",
+            "(c,c)"
+          ],
+          [
+            "(a,g)",
+            "(c,e)"
+          ],
+          [
+            "(a,g)",
+            "(c,g)"
+          ],
+          [
+            "(a,g)",
+            "(e,a)"
+          ],
+          [
+            "(a,g)",
+            "(e,c)"
+          ],
+          [
+            "(a,g)",
+            "(e,e)"
+          ],
+          [
+            "(a,g)",
+            "(e,g)"
+          ],
+          [
+            "(a,g)",
+            "(g,a)"
+          ],
+          [
+            "(a,g)",
+            "(g,c)"
+          ],
+          [
+            "(a,g)",
+            "(g,e)"
+          ],
+          [
+            "(a,g)",
+            "(g,g)"
+          ],
+          [
+            "(c,a)",
+            "(c,a)"
+          ],
+          [
+            "(c,a)",
+            "(c,c)"
+          ],
+          [
+            "(c,a)",
+            "(c,e)"
+          ],
+          [
+            "(c,a)",
+            "(c,g)"
+          ],
+          [
+            "(c,a)",
+            "(e,a)"
+          ],
+          [
+            "(c,a)",
+            "(e,c)"
+          ],
+          [
+            "(c,a)",
+            "(e,e)"
+          ],
+          [
+            "(c,a)",
+            "(e,g)"
+          ],
+          [
+            "(c,a)",
+            "(g,a)"
+          ],
+          [
+            "(c,a)",
+            "(g,c)"
+          ],
+          [
+            "(c,a)",
+            "(g,e)"
+          ],
+          [
+            "(c,a)",
+            "(g,g)"
+          ],
+          [
+            "(c,c)",
+            "(c,c)"
+          ],
+          [
+            "(c,c)",
+            "(c,e)"
+          ],
+          [
+            "(c,c)",
+            "(c,g)"
+          ],
+          [
+            "(c,c)",
+            "(e,a)"
+          ],
+          [
+            "(c,c)",
+            "(e,c)"
+          ],
+          [
+            "(c,c)",
+            "(e,e)"
+          ],
+          [
+            "(c,c)",
+            "(e,g)"
+          ],
+          [
+            "(c,c)",
+            "(g,a)"
+          ],
+          [
+            "(c,c)",
+            "(g,c)"
+          ],
+          [
+            "(c,c)",
+            "(g,e)"
+          ],
+          [
+            "(c,c)",
+            "(g,g)"
+          ],
+          [
+            "(c,e)",
+            "(c,e)"
+          ],
+          [
+            "(c,e)",
+            "(c,g)"
+          ],
+          [
+            "(c,e)",
+            "(e,a)"
+          ],
+          [
+            "(c,e)",
+            "(e,c)"
+          ],
+          [
+            "(c,e)",
+            "(e,e)"
+          ],
+          [
+            "(c,e)",
+            "(e,g)"
+          ],
+          [
+            "(c,e)",
+            "(g,a)"
+          ],
+          [
+            "(c,e)",
+            "(g,c)"
+          ],
+          [
+            "(c,e)",
+            "(g,e)"
+          ],
+          [
+            "(c,e)",
+            "(g,g)"
+          ],
+          [
+            "(c,g)",
+            "(c,g)"
+          ],
+          [
+            "(c,g)",
+            "(e,a)"
+          ],
+          [
+            "(c,g)",
+            "(e,c)"
+          ],
+          [
+            "(c,g)",
+            "(e,e)"
+          ],
+          [
+            "(c,g)",
+            "(e,g)"
+          ],
+          [
+            "(c,g)",
+            "(g,a)"
+          ],
+          [
+            "(c,g)",
+            "(g,c)"
+          ],
+          [
+            "(c,g)",
+            "(g,e)"
+          ],
+          [
+            "(c,g)",
+            "(g,g)"
+          ],
+          [
+            "(e,a)",
+            "(e,a)"
+          ],
+          [
+            "(e,a)",
+            "(e,c)"
+          ],
+          [
+            "(e,a)",
+            "(e,e)"
+          ],
+          [
+            "(e,a)",
+            "(e,g)"
+          ],
+          [
+            "(e,a)",
+            "(g,a)"
+          ],
+          [
+            "(e,a)",
+            "(g,c)"
+          ],
+          [
+            "(e,a)",
+            "(g,e)"
+          ],
+          [
+            "(e,a)",
+            "(g,g)"
+          ],
+          [
+            "(e,c)",
+            "(e,c)"
+          ],
+          [
+            "(e,c)",
+            "(e,e)"
+          ],
+          [
+            "(e,c)",
+            "(e,g)"
+          ],
+          [
+            "(e,c)",
+            "(g,a)"
+          ],
+          [
+            "(e,c)",
+            "(g,c)"
+          ],
+          [
+            "(e,c)",
+            "(g,e)"
+          ],
+          [
+            "(e,c)",
+            "(g,g)"
+          ],
+          [
+            "(e,e)",
+            "(e,e)"
+          ],
+          [
+            "(e,e)",
+            "(e,g)"
+          ],
+          [
+            "(e,e)",
+            "(g,a)"
+          ],
+          [
+            "(e,e)",
+            "(g,c)"
+          ],
+          [
+            "(e,e)",
+            "(g,e)"
+          ],
+          [
+            "(e,e)",
+            "(g,g)"
+          ],
+          [
+            "(e,g)",
+            "(e,g)"
+          ],
+          [
+            "(e,g)",
+            "(g,a)"
+          ],
+          [
+            "(e,g)",
+            "(g,c)"
+          ],
+          [
+            "(e,g)",
+            "(g,e)"
+          ],
+          [
+            "(e,g)",
+            "(g,g)"
+          ],
+          [
+            "(g,a)",
+            "(g,a)"
+          ],
+          [
+            "(g,a)",
+            "(g,c)"
+          ],
+          [
+            "(g,a)",
+            "(g,e)"
+          ],
+          [
+            "(g,a)",
+            "(g,g)"
+          ],
+          [
+            "(g,c)",
+            "(g,c)"
+          ],
+          [
+            "(g,c)",
+            "(g,e)"
+          ],
+          [
+            "(g,c)",
+            "(g,g)"
+          ],
+          [
+            "(g,e)",
+            "(g,e)"
+          ],
+          [
+            "(g,e)",
+            "(g,g)"
+          ],
+          [
+            "(g,g)",
+            "(g,g)"
+          ]
+        ]
+      },
+      "query": "strictUpper",
+      "subset": [
+        "(e,a)"
+      ]
+    }
+  },
+  {
+    "id": "dm-p5-q4c",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "Lexicographic Hasse chain",
+    "source": "Past paper 5 Q4c",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 4,
+    "prompt": "S={a,c,e,g}. Describe the Hasse diagram of (S x S, lexicographic <=) as levels and cover pairs.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "There are 16 singleton levels, bottom to top: (a,a) < (a,c) < (a,e) < (a,g) < (c,a) < (c,c) < (c,e) < (c,g) < (e,a) < (e,c) < (e,e) < (e,g) < (g,a) < (g,c) < (g,e) < (g,g). Join consecutive levels only."
+      },
+      {
+        "step": 2,
+        "text": "Use x<=y exactly when (x,y) is in R. Omit reflexive and transitive edges when describing Hasse covers."
+      },
+      {
+        "step": 3,
+        "text": "Minimal={(a,a)}; maximal={(g,g)}; least={(a,a)}; greatest={(g,g)}."
+      },
+      {
+        "step": 4,
+        "text": "Cover edges, directed from lower to upper, are ((a,a),(a,c)), ((a,c),(a,e)), ((a,e),(a,g)), ((a,g),(c,a)), ((c,a),(c,c)), ((c,c),(c,e)), ((c,e),(c,g)), ((c,g),(e,a)), ((e,a),(e,c)), ((e,c),(e,e)), ((e,e),(e,g)), ((e,g),(g,a)), ((g,a),(g,c)), ((g,c),(g,e)), ((g,e),(g,g))."
+      },
+      {
+        "step": 5,
+        "text": "The requested covers set is {((a,a),(a,c)),((a,c),(a,e)),((a,e),(a,g)),((a,g),(c,a)),((c,a),(c,c)),((c,c),(c,e)),((c,e),(c,g)),((c,g),(e,a)),((e,a),(e,c)),((e,c),(e,e)),((e,e),(e,g)),((e,g),(g,a)),((g,a),(g,c)),((g,c),(g,e)),((g,e),(g,g))}. Every pair has a unique LUB and GLB; this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "set-answer",
+    "answer": [
+      "((a,a),(a,c))",
+      "((a,c),(a,e))",
+      "((a,e),(a,g))",
+      "((a,g),(c,a))",
+      "((c,a),(c,c))",
+      "((c,c),(c,e))",
+      "((c,e),(c,g))",
+      "((c,g),(e,a))",
+      "((e,a),(e,c))",
+      "((e,c),(e,e))",
+      "((e,e),(e,g))",
+      "((e,g),(g,a))",
+      "((g,a),(g,c))",
+      "((g,c),(g,e))",
+      "((g,e),(g,g))"
+    ],
+    "elementFormat": "pair",
+    "inputHint": "Enter pairs such as (1,2), (1,3). Pair order is lower,upper.",
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "(a,a)",
+          "(a,c)",
+          "(a,e)",
+          "(a,g)",
+          "(c,a)",
+          "(c,c)",
+          "(c,e)",
+          "(c,g)",
+          "(e,a)",
+          "(e,c)",
+          "(e,e)",
+          "(e,g)",
+          "(g,a)",
+          "(g,c)",
+          "(g,e)",
+          "(g,g)"
+        ],
+        "pairs": [
+          [
+            "(a,a)",
+            "(a,a)"
+          ],
+          [
+            "(a,a)",
+            "(a,c)"
+          ],
+          [
+            "(a,a)",
+            "(a,e)"
+          ],
+          [
+            "(a,a)",
+            "(a,g)"
+          ],
+          [
+            "(a,a)",
+            "(c,a)"
+          ],
+          [
+            "(a,a)",
+            "(c,c)"
+          ],
+          [
+            "(a,a)",
+            "(c,e)"
+          ],
+          [
+            "(a,a)",
+            "(c,g)"
+          ],
+          [
+            "(a,a)",
+            "(e,a)"
+          ],
+          [
+            "(a,a)",
+            "(e,c)"
+          ],
+          [
+            "(a,a)",
+            "(e,e)"
+          ],
+          [
+            "(a,a)",
+            "(e,g)"
+          ],
+          [
+            "(a,a)",
+            "(g,a)"
+          ],
+          [
+            "(a,a)",
+            "(g,c)"
+          ],
+          [
+            "(a,a)",
+            "(g,e)"
+          ],
+          [
+            "(a,a)",
+            "(g,g)"
+          ],
+          [
+            "(a,c)",
+            "(a,c)"
+          ],
+          [
+            "(a,c)",
+            "(a,e)"
+          ],
+          [
+            "(a,c)",
+            "(a,g)"
+          ],
+          [
+            "(a,c)",
+            "(c,a)"
+          ],
+          [
+            "(a,c)",
+            "(c,c)"
+          ],
+          [
+            "(a,c)",
+            "(c,e)"
+          ],
+          [
+            "(a,c)",
+            "(c,g)"
+          ],
+          [
+            "(a,c)",
+            "(e,a)"
+          ],
+          [
+            "(a,c)",
+            "(e,c)"
+          ],
+          [
+            "(a,c)",
+            "(e,e)"
+          ],
+          [
+            "(a,c)",
+            "(e,g)"
+          ],
+          [
+            "(a,c)",
+            "(g,a)"
+          ],
+          [
+            "(a,c)",
+            "(g,c)"
+          ],
+          [
+            "(a,c)",
+            "(g,e)"
+          ],
+          [
+            "(a,c)",
+            "(g,g)"
+          ],
+          [
+            "(a,e)",
+            "(a,e)"
+          ],
+          [
+            "(a,e)",
+            "(a,g)"
+          ],
+          [
+            "(a,e)",
+            "(c,a)"
+          ],
+          [
+            "(a,e)",
+            "(c,c)"
+          ],
+          [
+            "(a,e)",
+            "(c,e)"
+          ],
+          [
+            "(a,e)",
+            "(c,g)"
+          ],
+          [
+            "(a,e)",
+            "(e,a)"
+          ],
+          [
+            "(a,e)",
+            "(e,c)"
+          ],
+          [
+            "(a,e)",
+            "(e,e)"
+          ],
+          [
+            "(a,e)",
+            "(e,g)"
+          ],
+          [
+            "(a,e)",
+            "(g,a)"
+          ],
+          [
+            "(a,e)",
+            "(g,c)"
+          ],
+          [
+            "(a,e)",
+            "(g,e)"
+          ],
+          [
+            "(a,e)",
+            "(g,g)"
+          ],
+          [
+            "(a,g)",
+            "(a,g)"
+          ],
+          [
+            "(a,g)",
+            "(c,a)"
+          ],
+          [
+            "(a,g)",
+            "(c,c)"
+          ],
+          [
+            "(a,g)",
+            "(c,e)"
+          ],
+          [
+            "(a,g)",
+            "(c,g)"
+          ],
+          [
+            "(a,g)",
+            "(e,a)"
+          ],
+          [
+            "(a,g)",
+            "(e,c)"
+          ],
+          [
+            "(a,g)",
+            "(e,e)"
+          ],
+          [
+            "(a,g)",
+            "(e,g)"
+          ],
+          [
+            "(a,g)",
+            "(g,a)"
+          ],
+          [
+            "(a,g)",
+            "(g,c)"
+          ],
+          [
+            "(a,g)",
+            "(g,e)"
+          ],
+          [
+            "(a,g)",
+            "(g,g)"
+          ],
+          [
+            "(c,a)",
+            "(c,a)"
+          ],
+          [
+            "(c,a)",
+            "(c,c)"
+          ],
+          [
+            "(c,a)",
+            "(c,e)"
+          ],
+          [
+            "(c,a)",
+            "(c,g)"
+          ],
+          [
+            "(c,a)",
+            "(e,a)"
+          ],
+          [
+            "(c,a)",
+            "(e,c)"
+          ],
+          [
+            "(c,a)",
+            "(e,e)"
+          ],
+          [
+            "(c,a)",
+            "(e,g)"
+          ],
+          [
+            "(c,a)",
+            "(g,a)"
+          ],
+          [
+            "(c,a)",
+            "(g,c)"
+          ],
+          [
+            "(c,a)",
+            "(g,e)"
+          ],
+          [
+            "(c,a)",
+            "(g,g)"
+          ],
+          [
+            "(c,c)",
+            "(c,c)"
+          ],
+          [
+            "(c,c)",
+            "(c,e)"
+          ],
+          [
+            "(c,c)",
+            "(c,g)"
+          ],
+          [
+            "(c,c)",
+            "(e,a)"
+          ],
+          [
+            "(c,c)",
+            "(e,c)"
+          ],
+          [
+            "(c,c)",
+            "(e,e)"
+          ],
+          [
+            "(c,c)",
+            "(e,g)"
+          ],
+          [
+            "(c,c)",
+            "(g,a)"
+          ],
+          [
+            "(c,c)",
+            "(g,c)"
+          ],
+          [
+            "(c,c)",
+            "(g,e)"
+          ],
+          [
+            "(c,c)",
+            "(g,g)"
+          ],
+          [
+            "(c,e)",
+            "(c,e)"
+          ],
+          [
+            "(c,e)",
+            "(c,g)"
+          ],
+          [
+            "(c,e)",
+            "(e,a)"
+          ],
+          [
+            "(c,e)",
+            "(e,c)"
+          ],
+          [
+            "(c,e)",
+            "(e,e)"
+          ],
+          [
+            "(c,e)",
+            "(e,g)"
+          ],
+          [
+            "(c,e)",
+            "(g,a)"
+          ],
+          [
+            "(c,e)",
+            "(g,c)"
+          ],
+          [
+            "(c,e)",
+            "(g,e)"
+          ],
+          [
+            "(c,e)",
+            "(g,g)"
+          ],
+          [
+            "(c,g)",
+            "(c,g)"
+          ],
+          [
+            "(c,g)",
+            "(e,a)"
+          ],
+          [
+            "(c,g)",
+            "(e,c)"
+          ],
+          [
+            "(c,g)",
+            "(e,e)"
+          ],
+          [
+            "(c,g)",
+            "(e,g)"
+          ],
+          [
+            "(c,g)",
+            "(g,a)"
+          ],
+          [
+            "(c,g)",
+            "(g,c)"
+          ],
+          [
+            "(c,g)",
+            "(g,e)"
+          ],
+          [
+            "(c,g)",
+            "(g,g)"
+          ],
+          [
+            "(e,a)",
+            "(e,a)"
+          ],
+          [
+            "(e,a)",
+            "(e,c)"
+          ],
+          [
+            "(e,a)",
+            "(e,e)"
+          ],
+          [
+            "(e,a)",
+            "(e,g)"
+          ],
+          [
+            "(e,a)",
+            "(g,a)"
+          ],
+          [
+            "(e,a)",
+            "(g,c)"
+          ],
+          [
+            "(e,a)",
+            "(g,e)"
+          ],
+          [
+            "(e,a)",
+            "(g,g)"
+          ],
+          [
+            "(e,c)",
+            "(e,c)"
+          ],
+          [
+            "(e,c)",
+            "(e,e)"
+          ],
+          [
+            "(e,c)",
+            "(e,g)"
+          ],
+          [
+            "(e,c)",
+            "(g,a)"
+          ],
+          [
+            "(e,c)",
+            "(g,c)"
+          ],
+          [
+            "(e,c)",
+            "(g,e)"
+          ],
+          [
+            "(e,c)",
+            "(g,g)"
+          ],
+          [
+            "(e,e)",
+            "(e,e)"
+          ],
+          [
+            "(e,e)",
+            "(e,g)"
+          ],
+          [
+            "(e,e)",
+            "(g,a)"
+          ],
+          [
+            "(e,e)",
+            "(g,c)"
+          ],
+          [
+            "(e,e)",
+            "(g,e)"
+          ],
+          [
+            "(e,e)",
+            "(g,g)"
+          ],
+          [
+            "(e,g)",
+            "(e,g)"
+          ],
+          [
+            "(e,g)",
+            "(g,a)"
+          ],
+          [
+            "(e,g)",
+            "(g,c)"
+          ],
+          [
+            "(e,g)",
+            "(g,e)"
+          ],
+          [
+            "(e,g)",
+            "(g,g)"
+          ],
+          [
+            "(g,a)",
+            "(g,a)"
+          ],
+          [
+            "(g,a)",
+            "(g,c)"
+          ],
+          [
+            "(g,a)",
+            "(g,e)"
+          ],
+          [
+            "(g,a)",
+            "(g,g)"
+          ],
+          [
+            "(g,c)",
+            "(g,c)"
+          ],
+          [
+            "(g,c)",
+            "(g,e)"
+          ],
+          [
+            "(g,c)",
+            "(g,g)"
+          ],
+          [
+            "(g,e)",
+            "(g,e)"
+          ],
+          [
+            "(g,e)",
+            "(g,g)"
+          ],
+          [
+            "(g,g)",
+            "(g,g)"
+          ]
+        ]
+      },
+      "query": "covers",
+      "subset": []
+    },
+    "provenance": {
+      "paper": 5,
+      "question": "4c",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2+2+4+2 is an editorial allocation."
+    }
+  },
+  {
+    "id": "dm-p5-q4d",
+    "subject": "dm",
+    "topic": "posets",
+    "title": "A finite chain is a lattice",
+    "source": "Past paper 5 Q4d",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 2,
+    "prompt": "Is S x S with lexicographic order, S={a,c,e,g}, a lattice?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Lexicographic order totally orders these 16 pairs."
+      },
+      {
+        "step": 2,
+        "text": "For any two pairs x,y, the smaller is their GLB and the larger is their LUB."
+      },
+      {
+        "step": 3,
+        "text": "Both belong to S x S. Thus every pair has a unique GLB and LUB, so this poset is a lattice."
+      }
+    ],
+    "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+    "type": "steps",
+    "rubric": [
+      {
+        "step": 1,
+        "criterion": "Lexicographic order totally orders these 16 pairs.",
+        "marks": 1
+      },
+      {
+        "step": 2,
+        "criterion": "For any two pairs x,y, the smaller is their GLB and the larger is their LUB.",
+        "marks": 1
+      },
+      {
+        "step": 3,
+        "criterion": "Both belong to S x S. Thus every pair has a unique GLB and LUB, so this poset is a lattice.",
+        "marks": 0
+      }
+    ],
+    "provenance": {
+      "paper": 5,
+      "question": "4d",
+      "printedMarks": 10,
+      "page": 1,
+      "marksNote": "Q4 prints 10 marks jointly; 2+2+4+2 is an editorial allocation."
+    },
+    "verification": {
+      "kind": "poset",
+      "relation": {
+        "elements": [
+          "(a,a)",
+          "(a,c)",
+          "(a,e)",
+          "(a,g)",
+          "(c,a)",
+          "(c,c)",
+          "(c,e)",
+          "(c,g)",
+          "(e,a)",
+          "(e,c)",
+          "(e,e)",
+          "(e,g)",
+          "(g,a)",
+          "(g,c)",
+          "(g,e)",
+          "(g,g)"
+        ],
+        "pairs": [
+          [
+            "(a,a)",
+            "(a,a)"
+          ],
+          [
+            "(a,a)",
+            "(a,c)"
+          ],
+          [
+            "(a,a)",
+            "(a,e)"
+          ],
+          [
+            "(a,a)",
+            "(a,g)"
+          ],
+          [
+            "(a,a)",
+            "(c,a)"
+          ],
+          [
+            "(a,a)",
+            "(c,c)"
+          ],
+          [
+            "(a,a)",
+            "(c,e)"
+          ],
+          [
+            "(a,a)",
+            "(c,g)"
+          ],
+          [
+            "(a,a)",
+            "(e,a)"
+          ],
+          [
+            "(a,a)",
+            "(e,c)"
+          ],
+          [
+            "(a,a)",
+            "(e,e)"
+          ],
+          [
+            "(a,a)",
+            "(e,g)"
+          ],
+          [
+            "(a,a)",
+            "(g,a)"
+          ],
+          [
+            "(a,a)",
+            "(g,c)"
+          ],
+          [
+            "(a,a)",
+            "(g,e)"
+          ],
+          [
+            "(a,a)",
+            "(g,g)"
+          ],
+          [
+            "(a,c)",
+            "(a,c)"
+          ],
+          [
+            "(a,c)",
+            "(a,e)"
+          ],
+          [
+            "(a,c)",
+            "(a,g)"
+          ],
+          [
+            "(a,c)",
+            "(c,a)"
+          ],
+          [
+            "(a,c)",
+            "(c,c)"
+          ],
+          [
+            "(a,c)",
+            "(c,e)"
+          ],
+          [
+            "(a,c)",
+            "(c,g)"
+          ],
+          [
+            "(a,c)",
+            "(e,a)"
+          ],
+          [
+            "(a,c)",
+            "(e,c)"
+          ],
+          [
+            "(a,c)",
+            "(e,e)"
+          ],
+          [
+            "(a,c)",
+            "(e,g)"
+          ],
+          [
+            "(a,c)",
+            "(g,a)"
+          ],
+          [
+            "(a,c)",
+            "(g,c)"
+          ],
+          [
+            "(a,c)",
+            "(g,e)"
+          ],
+          [
+            "(a,c)",
+            "(g,g)"
+          ],
+          [
+            "(a,e)",
+            "(a,e)"
+          ],
+          [
+            "(a,e)",
+            "(a,g)"
+          ],
+          [
+            "(a,e)",
+            "(c,a)"
+          ],
+          [
+            "(a,e)",
+            "(c,c)"
+          ],
+          [
+            "(a,e)",
+            "(c,e)"
+          ],
+          [
+            "(a,e)",
+            "(c,g)"
+          ],
+          [
+            "(a,e)",
+            "(e,a)"
+          ],
+          [
+            "(a,e)",
+            "(e,c)"
+          ],
+          [
+            "(a,e)",
+            "(e,e)"
+          ],
+          [
+            "(a,e)",
+            "(e,g)"
+          ],
+          [
+            "(a,e)",
+            "(g,a)"
+          ],
+          [
+            "(a,e)",
+            "(g,c)"
+          ],
+          [
+            "(a,e)",
+            "(g,e)"
+          ],
+          [
+            "(a,e)",
+            "(g,g)"
+          ],
+          [
+            "(a,g)",
+            "(a,g)"
+          ],
+          [
+            "(a,g)",
+            "(c,a)"
+          ],
+          [
+            "(a,g)",
+            "(c,c)"
+          ],
+          [
+            "(a,g)",
+            "(c,e)"
+          ],
+          [
+            "(a,g)",
+            "(c,g)"
+          ],
+          [
+            "(a,g)",
+            "(e,a)"
+          ],
+          [
+            "(a,g)",
+            "(e,c)"
+          ],
+          [
+            "(a,g)",
+            "(e,e)"
+          ],
+          [
+            "(a,g)",
+            "(e,g)"
+          ],
+          [
+            "(a,g)",
+            "(g,a)"
+          ],
+          [
+            "(a,g)",
+            "(g,c)"
+          ],
+          [
+            "(a,g)",
+            "(g,e)"
+          ],
+          [
+            "(a,g)",
+            "(g,g)"
+          ],
+          [
+            "(c,a)",
+            "(c,a)"
+          ],
+          [
+            "(c,a)",
+            "(c,c)"
+          ],
+          [
+            "(c,a)",
+            "(c,e)"
+          ],
+          [
+            "(c,a)",
+            "(c,g)"
+          ],
+          [
+            "(c,a)",
+            "(e,a)"
+          ],
+          [
+            "(c,a)",
+            "(e,c)"
+          ],
+          [
+            "(c,a)",
+            "(e,e)"
+          ],
+          [
+            "(c,a)",
+            "(e,g)"
+          ],
+          [
+            "(c,a)",
+            "(g,a)"
+          ],
+          [
+            "(c,a)",
+            "(g,c)"
+          ],
+          [
+            "(c,a)",
+            "(g,e)"
+          ],
+          [
+            "(c,a)",
+            "(g,g)"
+          ],
+          [
+            "(c,c)",
+            "(c,c)"
+          ],
+          [
+            "(c,c)",
+            "(c,e)"
+          ],
+          [
+            "(c,c)",
+            "(c,g)"
+          ],
+          [
+            "(c,c)",
+            "(e,a)"
+          ],
+          [
+            "(c,c)",
+            "(e,c)"
+          ],
+          [
+            "(c,c)",
+            "(e,e)"
+          ],
+          [
+            "(c,c)",
+            "(e,g)"
+          ],
+          [
+            "(c,c)",
+            "(g,a)"
+          ],
+          [
+            "(c,c)",
+            "(g,c)"
+          ],
+          [
+            "(c,c)",
+            "(g,e)"
+          ],
+          [
+            "(c,c)",
+            "(g,g)"
+          ],
+          [
+            "(c,e)",
+            "(c,e)"
+          ],
+          [
+            "(c,e)",
+            "(c,g)"
+          ],
+          [
+            "(c,e)",
+            "(e,a)"
+          ],
+          [
+            "(c,e)",
+            "(e,c)"
+          ],
+          [
+            "(c,e)",
+            "(e,e)"
+          ],
+          [
+            "(c,e)",
+            "(e,g)"
+          ],
+          [
+            "(c,e)",
+            "(g,a)"
+          ],
+          [
+            "(c,e)",
+            "(g,c)"
+          ],
+          [
+            "(c,e)",
+            "(g,e)"
+          ],
+          [
+            "(c,e)",
+            "(g,g)"
+          ],
+          [
+            "(c,g)",
+            "(c,g)"
+          ],
+          [
+            "(c,g)",
+            "(e,a)"
+          ],
+          [
+            "(c,g)",
+            "(e,c)"
+          ],
+          [
+            "(c,g)",
+            "(e,e)"
+          ],
+          [
+            "(c,g)",
+            "(e,g)"
+          ],
+          [
+            "(c,g)",
+            "(g,a)"
+          ],
+          [
+            "(c,g)",
+            "(g,c)"
+          ],
+          [
+            "(c,g)",
+            "(g,e)"
+          ],
+          [
+            "(c,g)",
+            "(g,g)"
+          ],
+          [
+            "(e,a)",
+            "(e,a)"
+          ],
+          [
+            "(e,a)",
+            "(e,c)"
+          ],
+          [
+            "(e,a)",
+            "(e,e)"
+          ],
+          [
+            "(e,a)",
+            "(e,g)"
+          ],
+          [
+            "(e,a)",
+            "(g,a)"
+          ],
+          [
+            "(e,a)",
+            "(g,c)"
+          ],
+          [
+            "(e,a)",
+            "(g,e)"
+          ],
+          [
+            "(e,a)",
+            "(g,g)"
+          ],
+          [
+            "(e,c)",
+            "(e,c)"
+          ],
+          [
+            "(e,c)",
+            "(e,e)"
+          ],
+          [
+            "(e,c)",
+            "(e,g)"
+          ],
+          [
+            "(e,c)",
+            "(g,a)"
+          ],
+          [
+            "(e,c)",
+            "(g,c)"
+          ],
+          [
+            "(e,c)",
+            "(g,e)"
+          ],
+          [
+            "(e,c)",
+            "(g,g)"
+          ],
+          [
+            "(e,e)",
+            "(e,e)"
+          ],
+          [
+            "(e,e)",
+            "(e,g)"
+          ],
+          [
+            "(e,e)",
+            "(g,a)"
+          ],
+          [
+            "(e,e)",
+            "(g,c)"
+          ],
+          [
+            "(e,e)",
+            "(g,e)"
+          ],
+          [
+            "(e,e)",
+            "(g,g)"
+          ],
+          [
+            "(e,g)",
+            "(e,g)"
+          ],
+          [
+            "(e,g)",
+            "(g,a)"
+          ],
+          [
+            "(e,g)",
+            "(g,c)"
+          ],
+          [
+            "(e,g)",
+            "(g,e)"
+          ],
+          [
+            "(e,g)",
+            "(g,g)"
+          ],
+          [
+            "(g,a)",
+            "(g,a)"
+          ],
+          [
+            "(g,a)",
+            "(g,c)"
+          ],
+          [
+            "(g,a)",
+            "(g,e)"
+          ],
+          [
+            "(g,a)",
+            "(g,g)"
+          ],
+          [
+            "(g,c)",
+            "(g,c)"
+          ],
+          [
+            "(g,c)",
+            "(g,e)"
+          ],
+          [
+            "(g,c)",
+            "(g,g)"
+          ],
+          [
+            "(g,e)",
+            "(g,e)"
+          ],
+          [
+            "(g,e)",
+            "(g,g)"
+          ],
+          [
+            "(g,g)",
+            "(g,g)"
+          ]
+        ]
+      }
+    },
+    "checkpoints": [
+      {
+        "id": "dm-p5-q4d-lattice",
+        "subject": "dm",
+        "topic": "posets",
+        "title": "Lattice checkpoint",
+        "source": "Original",
+        "priority": "core",
+        "difficulty": "standard",
+        "marks": 1,
+        "prompt": "Does every pair have both a LUB and a GLB?",
+        "solution": [
+          {
+            "step": 1,
+            "text": "Lexicographic order totally orders these 16 pairs."
+          },
+          {
+            "step": 2,
+            "text": "For any two pairs x,y, the smaller is their GLB and the larger is their LUB."
+          },
+          {
+            "step": 3,
+            "text": "Both belong to S x S. Thus every pair has a unique GLB and LUB, so this poset is a lattice."
+          }
+        ],
+        "conceptNote": "All comparisons and bounds are taken within the stated poset. Maximal/minimal do not mean greatest/least, and lattices require a join and meet for every pair.",
+        "type": "properties",
+        "options": [
+          "lattice"
+        ],
+        "answer": {
+          "lattice": true
+        },
+        "verification": {
+          "kind": "poset",
+          "relation": {
+            "elements": [
+              "(a,a)",
+              "(a,c)",
+              "(a,e)",
+              "(a,g)",
+              "(c,a)",
+              "(c,c)",
+              "(c,e)",
+              "(c,g)",
+              "(e,a)",
+              "(e,c)",
+              "(e,e)",
+              "(e,g)",
+              "(g,a)",
+              "(g,c)",
+              "(g,e)",
+              "(g,g)"
+            ],
+            "pairs": [
+              [
+                "(a,a)",
+                "(a,a)"
+              ],
+              [
+                "(a,a)",
+                "(a,c)"
+              ],
+              [
+                "(a,a)",
+                "(a,e)"
+              ],
+              [
+                "(a,a)",
+                "(a,g)"
+              ],
+              [
+                "(a,a)",
+                "(c,a)"
+              ],
+              [
+                "(a,a)",
+                "(c,c)"
+              ],
+              [
+                "(a,a)",
+                "(c,e)"
+              ],
+              [
+                "(a,a)",
+                "(c,g)"
+              ],
+              [
+                "(a,a)",
+                "(e,a)"
+              ],
+              [
+                "(a,a)",
+                "(e,c)"
+              ],
+              [
+                "(a,a)",
+                "(e,e)"
+              ],
+              [
+                "(a,a)",
+                "(e,g)"
+              ],
+              [
+                "(a,a)",
+                "(g,a)"
+              ],
+              [
+                "(a,a)",
+                "(g,c)"
+              ],
+              [
+                "(a,a)",
+                "(g,e)"
+              ],
+              [
+                "(a,a)",
+                "(g,g)"
+              ],
+              [
+                "(a,c)",
+                "(a,c)"
+              ],
+              [
+                "(a,c)",
+                "(a,e)"
+              ],
+              [
+                "(a,c)",
+                "(a,g)"
+              ],
+              [
+                "(a,c)",
+                "(c,a)"
+              ],
+              [
+                "(a,c)",
+                "(c,c)"
+              ],
+              [
+                "(a,c)",
+                "(c,e)"
+              ],
+              [
+                "(a,c)",
+                "(c,g)"
+              ],
+              [
+                "(a,c)",
+                "(e,a)"
+              ],
+              [
+                "(a,c)",
+                "(e,c)"
+              ],
+              [
+                "(a,c)",
+                "(e,e)"
+              ],
+              [
+                "(a,c)",
+                "(e,g)"
+              ],
+              [
+                "(a,c)",
+                "(g,a)"
+              ],
+              [
+                "(a,c)",
+                "(g,c)"
+              ],
+              [
+                "(a,c)",
+                "(g,e)"
+              ],
+              [
+                "(a,c)",
+                "(g,g)"
+              ],
+              [
+                "(a,e)",
+                "(a,e)"
+              ],
+              [
+                "(a,e)",
+                "(a,g)"
+              ],
+              [
+                "(a,e)",
+                "(c,a)"
+              ],
+              [
+                "(a,e)",
+                "(c,c)"
+              ],
+              [
+                "(a,e)",
+                "(c,e)"
+              ],
+              [
+                "(a,e)",
+                "(c,g)"
+              ],
+              [
+                "(a,e)",
+                "(e,a)"
+              ],
+              [
+                "(a,e)",
+                "(e,c)"
+              ],
+              [
+                "(a,e)",
+                "(e,e)"
+              ],
+              [
+                "(a,e)",
+                "(e,g)"
+              ],
+              [
+                "(a,e)",
+                "(g,a)"
+              ],
+              [
+                "(a,e)",
+                "(g,c)"
+              ],
+              [
+                "(a,e)",
+                "(g,e)"
+              ],
+              [
+                "(a,e)",
+                "(g,g)"
+              ],
+              [
+                "(a,g)",
+                "(a,g)"
+              ],
+              [
+                "(a,g)",
+                "(c,a)"
+              ],
+              [
+                "(a,g)",
+                "(c,c)"
+              ],
+              [
+                "(a,g)",
+                "(c,e)"
+              ],
+              [
+                "(a,g)",
+                "(c,g)"
+              ],
+              [
+                "(a,g)",
+                "(e,a)"
+              ],
+              [
+                "(a,g)",
+                "(e,c)"
+              ],
+              [
+                "(a,g)",
+                "(e,e)"
+              ],
+              [
+                "(a,g)",
+                "(e,g)"
+              ],
+              [
+                "(a,g)",
+                "(g,a)"
+              ],
+              [
+                "(a,g)",
+                "(g,c)"
+              ],
+              [
+                "(a,g)",
+                "(g,e)"
+              ],
+              [
+                "(a,g)",
+                "(g,g)"
+              ],
+              [
+                "(c,a)",
+                "(c,a)"
+              ],
+              [
+                "(c,a)",
+                "(c,c)"
+              ],
+              [
+                "(c,a)",
+                "(c,e)"
+              ],
+              [
+                "(c,a)",
+                "(c,g)"
+              ],
+              [
+                "(c,a)",
+                "(e,a)"
+              ],
+              [
+                "(c,a)",
+                "(e,c)"
+              ],
+              [
+                "(c,a)",
+                "(e,e)"
+              ],
+              [
+                "(c,a)",
+                "(e,g)"
+              ],
+              [
+                "(c,a)",
+                "(g,a)"
+              ],
+              [
+                "(c,a)",
+                "(g,c)"
+              ],
+              [
+                "(c,a)",
+                "(g,e)"
+              ],
+              [
+                "(c,a)",
+                "(g,g)"
+              ],
+              [
+                "(c,c)",
+                "(c,c)"
+              ],
+              [
+                "(c,c)",
+                "(c,e)"
+              ],
+              [
+                "(c,c)",
+                "(c,g)"
+              ],
+              [
+                "(c,c)",
+                "(e,a)"
+              ],
+              [
+                "(c,c)",
+                "(e,c)"
+              ],
+              [
+                "(c,c)",
+                "(e,e)"
+              ],
+              [
+                "(c,c)",
+                "(e,g)"
+              ],
+              [
+                "(c,c)",
+                "(g,a)"
+              ],
+              [
+                "(c,c)",
+                "(g,c)"
+              ],
+              [
+                "(c,c)",
+                "(g,e)"
+              ],
+              [
+                "(c,c)",
+                "(g,g)"
+              ],
+              [
+                "(c,e)",
+                "(c,e)"
+              ],
+              [
+                "(c,e)",
+                "(c,g)"
+              ],
+              [
+                "(c,e)",
+                "(e,a)"
+              ],
+              [
+                "(c,e)",
+                "(e,c)"
+              ],
+              [
+                "(c,e)",
+                "(e,e)"
+              ],
+              [
+                "(c,e)",
+                "(e,g)"
+              ],
+              [
+                "(c,e)",
+                "(g,a)"
+              ],
+              [
+                "(c,e)",
+                "(g,c)"
+              ],
+              [
+                "(c,e)",
+                "(g,e)"
+              ],
+              [
+                "(c,e)",
+                "(g,g)"
+              ],
+              [
+                "(c,g)",
+                "(c,g)"
+              ],
+              [
+                "(c,g)",
+                "(e,a)"
+              ],
+              [
+                "(c,g)",
+                "(e,c)"
+              ],
+              [
+                "(c,g)",
+                "(e,e)"
+              ],
+              [
+                "(c,g)",
+                "(e,g)"
+              ],
+              [
+                "(c,g)",
+                "(g,a)"
+              ],
+              [
+                "(c,g)",
+                "(g,c)"
+              ],
+              [
+                "(c,g)",
+                "(g,e)"
+              ],
+              [
+                "(c,g)",
+                "(g,g)"
+              ],
+              [
+                "(e,a)",
+                "(e,a)"
+              ],
+              [
+                "(e,a)",
+                "(e,c)"
+              ],
+              [
+                "(e,a)",
+                "(e,e)"
+              ],
+              [
+                "(e,a)",
+                "(e,g)"
+              ],
+              [
+                "(e,a)",
+                "(g,a)"
+              ],
+              [
+                "(e,a)",
+                "(g,c)"
+              ],
+              [
+                "(e,a)",
+                "(g,e)"
+              ],
+              [
+                "(e,a)",
+                "(g,g)"
+              ],
+              [
+                "(e,c)",
+                "(e,c)"
+              ],
+              [
+                "(e,c)",
+                "(e,e)"
+              ],
+              [
+                "(e,c)",
+                "(e,g)"
+              ],
+              [
+                "(e,c)",
+                "(g,a)"
+              ],
+              [
+                "(e,c)",
+                "(g,c)"
+              ],
+              [
+                "(e,c)",
+                "(g,e)"
+              ],
+              [
+                "(e,c)",
+                "(g,g)"
+              ],
+              [
+                "(e,e)",
+                "(e,e)"
+              ],
+              [
+                "(e,e)",
+                "(e,g)"
+              ],
+              [
+                "(e,e)",
+                "(g,a)"
+              ],
+              [
+                "(e,e)",
+                "(g,c)"
+              ],
+              [
+                "(e,e)",
+                "(g,e)"
+              ],
+              [
+                "(e,e)",
+                "(g,g)"
+              ],
+              [
+                "(e,g)",
+                "(e,g)"
+              ],
+              [
+                "(e,g)",
+                "(g,a)"
+              ],
+              [
+                "(e,g)",
+                "(g,c)"
+              ],
+              [
+                "(e,g)",
+                "(g,e)"
+              ],
+              [
+                "(e,g)",
+                "(g,g)"
+              ],
+              [
+                "(g,a)",
+                "(g,a)"
+              ],
+              [
+                "(g,a)",
+                "(g,c)"
+              ],
+              [
+                "(g,a)",
+                "(g,e)"
+              ],
+              [
+                "(g,a)",
+                "(g,g)"
+              ],
+              [
+                "(g,c)",
+                "(g,c)"
+              ],
+              [
+                "(g,c)",
+                "(g,e)"
+              ],
+              [
+                "(g,c)",
+                "(g,g)"
+              ],
+              [
+                "(g,e)",
+                "(g,e)"
+              ],
+              [
+                "(g,e)",
+                "(g,g)"
+              ],
+              [
+                "(g,g)",
+                "(g,g)"
+              ]
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

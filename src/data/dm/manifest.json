@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "subject": "dm",
+  "course": "BCS ZC219",
+  "examDate": "2026-11-28",
+  "practiceFiles": [
+    "logic.json",
+    "induction.json",
+    "relations.json",
+    "posets.json",
+    "recurrences.json",
+    "mst.json",
+    "graphs.json",
+    "proofs.json",
+    "counting.json",
+    "sets.json",
+    "groups.json"
+  ],
+  "mockFile": "mocks.json",
+  "practiceCount": 217,
+  "pastPaperCount": 64,
+  "counts": {
+    "topic": {
+      "counting": 10,
+      "graphs": 34,
+      "groups": 10,
+      "induction": 19,
+      "logic": 27,
+      "mst": 23,
+      "posets": 31,
+      "proofs": 9,
+      "recurrences": 22,
+      "relations": 16,
+      "sets": 16
+    },
+    "type": {
+      "formula": 25,
+      "mcq": 5,
+      "mst": 23,
+      "numeric": 18,
+      "partition": 4,
+      "properties": 12,
+      "set-answer": 30,
+      "steps": 83,
+      "truth-table": 17
+    },
+    "priority": {
+      "core": 163,
+      "extra": 1,
+      "past": 53
+    }
+  },
+  "mocks": [
+    {
+      "id": "dm-mock-1",
+      "marks": 50,
+      "coreMarks": 35
+    },
+    {
+      "id": "dm-mock-2",
+      "marks": 50,
+      "coreMarks": 35
+    },
+    {
+      "id": "dm-mock-3",
+      "marks": 50,
+      "coreMarks": 35
+    }
+  ],
+  "reconstructed": [
+    {
+      "id": "dm-p2-q2",
+      "note": "Superscript restored as 4^h from flattened text \"4h\"; full-page renderer unavailable. Height convention stated explicitly."
+    },
+    {
+      "id": "dm-p3-q3",
+      "note": "Flattened text \"2n n + 12\" restored as 2^n >= n+12, as explicitly clarified in the user-supplied source warning."
+    },
+    {
+      "id": "dm-p5-q2",
+      "note": "Superscripts restored from flattened \"2n+1 < 1 + (n + 1)2n\"; full-page rendering unavailable. Stated positive-integer domain checked."
+    }
+  ],
+  "imageRecovered": [
+    {
+      "id": "dm-p1-q7a",
+      "details": [
+        "All six vertex labels and all eight edge weights."
+      ]
+    },
+    {
+      "id": "dm-p1-q7b",
+      "details": [
+        "All six vertex labels and all eight edge weights."
+      ]
+    },
+    {
+      "id": "dm-p4-q9",
+      "details": [
+        "All seven vertices and twelve weights, including the tie ab=bd=5."
+      ]
+    },
+    {
+      "id": "dm-p5-q1",
+      "details": [
+        "p -> (~q v r) and (p -> ~q) v (p -> r), from embedded images 26 and 28."
+      ]
+    },
+    {
+      "id": "dm-p5-q3a",
+      "details": [
+        "A in B (image34) and A subseteq B (image36)."
+      ]
+    },
+    {
+      "id": "dm-p5-q3b",
+      "details": [
+        "A intersection B (image38)."
+      ]
+    }
+  ]
+}

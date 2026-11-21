@@ -1,0 +1,1676 @@
+[
+  {
+    "id": "dm-recurrences-1",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "First-order growth",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Solve a_n=(3)*a_(n-1)+(0), n>=1; a_0=2. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous characteristic equation is r-3=0, so a_n=C*3^n."
+      },
+      {
+        "step": 2,
+        "text": "a_0=2 gives C=2."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=2*3^n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=2=2. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2*3^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 2
+      },
+      {
+        "n": 1,
+        "expected": 6
+      },
+      {
+        "n": 2,
+        "expected": 18
+      },
+      {
+        "n": 3,
+        "expected": 54
+      },
+      {
+        "n": 5,
+        "expected": 486
+      },
+      {
+        "n": 8,
+        "expected": 13122
+      },
+      {
+        "n": 12,
+        "expected": 1062882
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        2
+      ],
+      "coefficients": [
+        3
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-2",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Two distinct roots",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "foundation",
+    "marks": 5,
+    "prompt": "Solve a_n=(5)*a_(n-1)+(-6)*a_(n-2)+(0), n>=2; a_0=3, a_1=7. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^2-5*r+6=(r-2)*(r-3), so a_n=A*2^n+B*3^n."
+      },
+      {
+        "step": 2,
+        "text": "A+B=3 and 2*A+3*B=7 give A=2, B=1."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=2*2^n+3^n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=3=3; a_1=7=7. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2*2^n+3^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 3
+      },
+      {
+        "n": 1,
+        "expected": 7
+      },
+      {
+        "n": 2,
+        "expected": 17
+      },
+      {
+        "n": 3,
+        "expected": 43
+      },
+      {
+        "n": 5,
+        "expected": 307
+      },
+      {
+        "n": 8,
+        "expected": 7073
+      },
+      {
+        "n": 12,
+        "expected": 539633
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        3,
+        7
+      ],
+      "coefficients": [
+        5,
+        -6
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-3",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Distinct roots with negative coefficient",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(1)*a_(n-1)+(2)*a_(n-2)+(0), n>=2; a_0=2, a_1=1. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^2-r-2=(r-2)*(r+1), so a_n=A*2^n+B*(-1)^n."
+      },
+      {
+        "step": 2,
+        "text": "A+B=2 and 2*A-B=1 give A=B=1."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=2^n+(-1)^n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=2=2; a_1=1=1. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2^n+(-1)^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 2
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 5
+      },
+      {
+        "n": 3,
+        "expected": 7
+      },
+      {
+        "n": 5,
+        "expected": 31
+      },
+      {
+        "n": 8,
+        "expected": 257
+      },
+      {
+        "n": 12,
+        "expected": 4097
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        2,
+        1
+      ],
+      "coefficients": [
+        1,
+        2
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-4",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Repeated root two",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(4)*a_(n-1)+(-4)*a_(n-2)+(0), n>=2; a_0=3, a_1=8. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^2-4*r+4=(r-2)^2; hence a_n=(A+B*n)*2^n."
+      },
+      {
+        "step": 2,
+        "text": "a_0=3 gives A=3. a_1=8 gives 2*(3+B)=8, so B=1."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=(3+n)*2^n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=3=3; a_1=8=8. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "(3+n)*2^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 3
+      },
+      {
+        "n": 1,
+        "expected": 8
+      },
+      {
+        "n": 2,
+        "expected": 20
+      },
+      {
+        "n": 3,
+        "expected": 48
+      },
+      {
+        "n": 5,
+        "expected": 256
+      },
+      {
+        "n": 8,
+        "expected": 2816
+      },
+      {
+        "n": 12,
+        "expected": 61440
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        3,
+        8
+      ],
+      "coefficients": [
+        4,
+        -4
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-5",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Repeated root one",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(-1)*a_(n-2)+(0), n>=2; a_0=2, a_1=5. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^2-2*r+1=(r-1)^2; hence a_n=A+B*n."
+      },
+      {
+        "step": 2,
+        "text": "a_0=2 gives A=2, and a_1=5 gives B=3."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=2+3*n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=2=2; a_1=5=5. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2+3*n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 2
+      },
+      {
+        "n": 1,
+        "expected": 5
+      },
+      {
+        "n": 2,
+        "expected": 8
+      },
+      {
+        "n": 3,
+        "expected": 11
+      },
+      {
+        "n": 5,
+        "expected": 17
+      },
+      {
+        "n": 8,
+        "expected": 26
+      },
+      {
+        "n": 12,
+        "expected": 38
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        2,
+        5
+      ],
+      "coefficients": [
+        2,
+        -1
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-6",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Alternating repeated root",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(-2)*a_(n-1)+(-1)*a_(n-2)+(0), n>=2; a_0=1, a_1=-3. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^2+2*r+1=(r+1)^2; hence a_n=(A+B*n)*(-1)^n."
+      },
+      {
+        "step": 2,
+        "text": "a_0=1 gives A=1. a_1=-3 gives -(1+B)=-3, so B=2."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=(1+2*n)*(-1)^n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=1=1; a_1=-3=-3. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "(1+2*n)*(-1)^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": -3
+      },
+      {
+        "n": 2,
+        "expected": 5
+      },
+      {
+        "n": 3,
+        "expected": -7
+      },
+      {
+        "n": 5,
+        "expected": -11
+      },
+      {
+        "n": 8,
+        "expected": 17
+      },
+      {
+        "n": 12,
+        "expected": 25
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        1,
+        -3
+      ],
+      "coefficients": [
+        -2,
+        -1
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-7",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Constant forcing",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(3), n>=1; a_0=1. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is C*2^n. Try a constant particular solution K."
+      },
+      {
+        "step": 2,
+        "text": "K=2*K+3 gives K=-3. a_0=1 gives C-3=1, so C=4."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=4*2^n-3."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=1=1. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "4*2^n-3",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 5
+      },
+      {
+        "n": 2,
+        "expected": 13
+      },
+      {
+        "n": 3,
+        "expected": 29
+      },
+      {
+        "n": 5,
+        "expected": 125
+      },
+      {
+        "n": 8,
+        "expected": 1021
+      },
+      {
+        "n": 12,
+        "expected": 16381
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        1
+      ],
+      "coefficients": [
+        2
+      ],
+      "forcing": "3"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-8",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Resonant constant forcing",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=(1)*a_(n-1)+(4), n>=1; a_0=2. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is C. A constant trial overlaps, so try K*n."
+      },
+      {
+        "step": 2,
+        "text": "K*n=K*(n-1)+4 gives K=4. a_0=2 gives C=2."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=2+4*n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=2=2. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2+4*n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 2
+      },
+      {
+        "n": 1,
+        "expected": 6
+      },
+      {
+        "n": 2,
+        "expected": 10
+      },
+      {
+        "n": 3,
+        "expected": 14
+      },
+      {
+        "n": 5,
+        "expected": 22
+      },
+      {
+        "n": 8,
+        "expected": 34
+      },
+      {
+        "n": 12,
+        "expected": 50
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        2
+      ],
+      "coefficients": [
+        1
+      ],
+      "forcing": "4"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-9",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Linear forcing",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(n), n>=1; a_0=0. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is C*2^n. Try A*n+B."
+      },
+      {
+        "step": 2,
+        "text": "A*n+B=2*(A*(n-1)+B)+n. Coefficient comparison gives A=-1, B=-2."
+      },
+      {
+        "step": 3,
+        "text": "a_0=0 gives C=2."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=2^(n+1)-n-2."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=0=0. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2^(n+1)-n-2",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 4
+      },
+      {
+        "n": 3,
+        "expected": 11
+      },
+      {
+        "n": 5,
+        "expected": 57
+      },
+      {
+        "n": 8,
+        "expected": 502
+      },
+      {
+        "n": 12,
+        "expected": 8178
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0
+      ],
+      "coefficients": [
+        2
+      ],
+      "forcing": "n"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-10",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Exponential forcing distinct",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(3^n), n>=1; a_0=0. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is C*2^n. Try K*3^n."
+      },
+      {
+        "step": 2,
+        "text": "K*3^n=2*K*3^(n-1)+3^n gives K=3."
+      },
+      {
+        "step": 3,
+        "text": "a_0=0 gives C=-3."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=3*3^n-3*2^n."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=0=0. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "3*3^n-3*2^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 3
+      },
+      {
+        "n": 2,
+        "expected": 15
+      },
+      {
+        "n": 3,
+        "expected": 57
+      },
+      {
+        "n": 5,
+        "expected": 633
+      },
+      {
+        "n": 8,
+        "expected": 18915
+      },
+      {
+        "n": 12,
+        "expected": 1582035
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0
+      ],
+      "coefficients": [
+        2
+      ],
+      "forcing": "3^n"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-11",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Exponential resonance",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(2^n), n>=1; a_0=1. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The root 2 already occurs in the homogeneous solution C*2^n. Try K*n*2^n."
+      },
+      {
+        "step": 2,
+        "text": "After division by 2^n: K*n=K*(n-1)+1, so K=1."
+      },
+      {
+        "step": 3,
+        "text": "a_0=1 gives C=1."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=(1+n)*2^n."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=1=1. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "(1+n)*2^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 4
+      },
+      {
+        "n": 2,
+        "expected": 12
+      },
+      {
+        "n": 3,
+        "expected": 32
+      },
+      {
+        "n": 5,
+        "expected": 192
+      },
+      {
+        "n": 8,
+        "expected": 2304
+      },
+      {
+        "n": 12,
+        "expected": 53248
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        1
+      ],
+      "coefficients": [
+        2
+      ],
+      "forcing": "2^n"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-12",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Second-order constant forcing",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(3)*a_(n-1)+(-2)*a_(n-2)+(1), n>=2; a_0=0, a_1=0. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The roots of r^2-3*r+2=0 are 1 and 2. The homogeneous solution is A+B*2^n."
+      },
+      {
+        "step": 2,
+        "text": "A constant trial overlaps root 1, so try C*n. Substitution gives C*n=C*n+C+1, so C=-1."
+      },
+      {
+        "step": 3,
+        "text": "a_0=0 gives A+B=0. a_1=0 gives A+2*B-1=0. Thus B=1, A=-1."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=2^n-n-1."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=0=0; a_1=0=0. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2^n-n-1",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 0
+      },
+      {
+        "n": 2,
+        "expected": 1
+      },
+      {
+        "n": 3,
+        "expected": 4
+      },
+      {
+        "n": 5,
+        "expected": 26
+      },
+      {
+        "n": 8,
+        "expected": 247
+      },
+      {
+        "n": 12,
+        "expected": 4083
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0,
+        0
+      ],
+      "coefficients": [
+        3,
+        -2
+      ],
+      "forcing": "1"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-13",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Repeated resonance with constant",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(2)*a_(n-1)+(-1)*a_(n-2)+(2), n>=2; a_0=0, a_1=1. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The characteristic polynomial is (r-1)^2. Homogeneous solution is A+B*n."
+      },
+      {
+        "step": 2,
+        "text": "A constant forcing overlaps a root of multiplicity 2, so try C*n^2. Its second difference is 2*C; hence C=1."
+      },
+      {
+        "step": 3,
+        "text": "a_0=0 gives A=0. a_1=1 gives B=0."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=n^2."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=0=0; a_1=1=1. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "n^2",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 4
+      },
+      {
+        "n": 3,
+        "expected": 9
+      },
+      {
+        "n": 5,
+        "expected": 25
+      },
+      {
+        "n": 8,
+        "expected": 64
+      },
+      {
+        "n": 12,
+        "expected": 144
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0,
+        1
+      ],
+      "coefficients": [
+        2,
+        -1
+      ],
+      "forcing": "2"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-14",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Quadratic forcing accumulation",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(1)*a_(n-1)+(n^2), n>=1; a_0=0. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Iterate a_n=a_(n-1)+n^2 to obtain a_n=a_0+sum_(i=1)^n i^2."
+      },
+      {
+        "step": 2,
+        "text": "Since a_0=0, use sum of squares to get n*(n+1)*(2*n+1)/6."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=n*(n+1)*(2*n+1)/6."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=0=0. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "n*(n+1)*(2*n+1)/6",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 5
+      },
+      {
+        "n": 3,
+        "expected": 14
+      },
+      {
+        "n": 5,
+        "expected": 55
+      },
+      {
+        "n": 8,
+        "expected": 204
+      },
+      {
+        "n": 12,
+        "expected": 650
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0
+      ],
+      "coefficients": [
+        1
+      ],
+      "forcing": "n^2"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-15",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Two roots with exponential forcing",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(5)*a_(n-1)+(-6)*a_(n-2)+(4^n), n>=2; a_0=1, a_1=4. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is A*2^n+B*3^n. Try C*4^n."
+      },
+      {
+        "step": 2,
+        "text": "Substitution gives C*(16-20+6)=16, so C=8."
+      },
+      {
+        "step": 3,
+        "text": "a_0=1 gives A+B=-7. a_1=4 gives 2*A+3*B=-28. Thus B=-14, A=7."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=8*4^n-14*3^n+7*2^n."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=1=1; a_1=4=4. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "8*4^n-14*3^n+7*2^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 1
+      },
+      {
+        "n": 1,
+        "expected": 4
+      },
+      {
+        "n": 2,
+        "expected": 30
+      },
+      {
+        "n": 3,
+        "expected": 190
+      },
+      {
+        "n": 5,
+        "expected": 5014
+      },
+      {
+        "n": 8,
+        "expected": 434226
+      },
+      {
+        "n": 12,
+        "expected": 126806226
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        1,
+        4
+      ],
+      "coefficients": [
+        5,
+        -6
+      ],
+      "forcing": "4^n"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-16",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Resonance at a repeated root",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(4)*a_(n-1)+(-4)*a_(n-2)+(2^n), n>=2; a_0=0, a_1=2. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The homogeneous solution is (A+B*n)*2^n. Divide by 2^n and put b_n=a_n/2^n."
+      },
+      {
+        "step": 2,
+        "text": "Then b_n=2*b_(n-1)-b_(n-2)+1, b_0=0,b_1=1. Thus b_n=n*(n+1)/2."
+      },
+      {
+        "step": 3,
+        "text": "Therefore a_n=n*(n+1)*2^(n-1)."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=n*(n+1)*2^(n-1)."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=0=0; a_1=2=2. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "n*(n+1)*2^(n-1)",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 0
+      },
+      {
+        "n": 1,
+        "expected": 2
+      },
+      {
+        "n": 2,
+        "expected": 12
+      },
+      {
+        "n": 3,
+        "expected": 48
+      },
+      {
+        "n": 5,
+        "expected": 480
+      },
+      {
+        "n": 8,
+        "expected": 9216
+      },
+      {
+        "n": 12,
+        "expected": 319488
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        0,
+        2
+      ],
+      "coefficients": [
+        4,
+        -4
+      ],
+      "forcing": "2^n"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-17",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Iteration with constant decrement",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(1)*a_(n-1)+(-3), n>=1; a_0=10. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Iterating gives a_n=a_(n-1)-3=a_(n-2)-6=...=a_0-3*n."
+      },
+      {
+        "step": 2,
+        "text": "Since a_0=10, a_n=10-3*n."
+      },
+      {
+        "step": 3,
+        "text": "Hence a_n=10-3*n."
+      },
+      {
+        "step": 4,
+        "text": "Check: a_0=10=10. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "10-3*n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 10
+      },
+      {
+        "n": 1,
+        "expected": 7
+      },
+      {
+        "n": 2,
+        "expected": 4
+      },
+      {
+        "n": 3,
+        "expected": 1
+      },
+      {
+        "n": 5,
+        "expected": -5
+      },
+      {
+        "n": 8,
+        "expected": -14
+      },
+      {
+        "n": 12,
+        "expected": -26
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        10
+      ],
+      "coefficients": [
+        1
+      ],
+      "forcing": "-3"
+    },
+    "tags": [
+      "non-homogeneous"
+    ]
+  },
+  {
+    "id": "dm-recurrences-18",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Third-order roots",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "exam",
+    "marks": 5,
+    "prompt": "Solve a_n=(6)*a_(n-1)+(-11)*a_(n-2)+(6)*a_(n-3)+(0), n>=3; a_0=3, a_1=6, a_2=14. Show the method and check initial conditions.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "r^3-6*r^2+11*r-6=(r-1)*(r-2)*(r-3)."
+      },
+      {
+        "step": 2,
+        "text": "The form is A+B*2^n+C*3^n. Initial values give A+B+C=3, A+2*B+3*C=6, A+4*B+9*C=14."
+      },
+      {
+        "step": 3,
+        "text": "Subtract equations: B+2*C=3 and 2*B+6*C=8, so C=1,B=1,A=1."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=1+2^n+3^n."
+      },
+      {
+        "step": 5,
+        "text": "Check: a_0=3=3; a_1=6=6; a_2=14=14. Substitution into the recurrence gives the stated forcing term."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "1+2^n+3^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 3
+      },
+      {
+        "n": 1,
+        "expected": 6
+      },
+      {
+        "n": 2,
+        "expected": 14
+      },
+      {
+        "n": 3,
+        "expected": 36
+      },
+      {
+        "n": 5,
+        "expected": 276
+      },
+      {
+        "n": 8,
+        "expected": 6818
+      },
+      {
+        "n": 12,
+        "expected": 535538
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        3,
+        6,
+        14
+      ],
+      "coefficients": [
+        6,
+        -11,
+        6
+      ],
+      "forcing": "0"
+    },
+    "tags": [
+      "homogeneous"
+    ]
+  },
+  {
+    "id": "dm-trap-2",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Repeated-root trial",
+    "source": "Original",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "The characteristic polynomial is (r-2)^2 and the forcing is 2^n. Which particular trial is appropriate?",
+    "solution": [
+      {
+        "step": 1,
+        "text": "The unadjusted trial C*2^n overlaps the root 2."
+      },
+      {
+        "step": 2,
+        "text": "Root 2 has multiplicity 2, so multiply by n^2."
+      },
+      {
+        "step": 3,
+        "text": "Use a_n(particular)=C*n^2*2^n, then substitute to solve C."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "mcq",
+    "options": [
+      "C*n^2*2^n",
+      "C*2^n",
+      "C*n*2^n"
+    ],
+    "correctIndex": 0,
+    "verification": {
+      "kind": "resonance",
+      "coefficients": [
+        4,
+        -4
+      ],
+      "forcingBase": 2
+    },
+    "optionValues": [
+      2,
+      0,
+      1
+    ]
+  },
+  {
+    "id": "dm-p2-q6",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Factorial operation count",
+    "source": "Past paper 2 Q6",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "Solve H_n=H_(n-1)+1, n>=2, H_1=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Iterate: H_n=H_(n-1)+1=H_(n-2)+2=...=H_1+(n-1)."
+      },
+      {
+        "step": 2,
+        "text": "Substitute H_1=1 to obtain H_n=n, n>=1."
+      },
+      {
+        "step": 3,
+        "text": "Check H_1=1 and H_n-H_(n-1)=n-(n-1)=1."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "n",
+    "testPoints": [
+      {
+        "n": 1,
+        "expected": 1
+      },
+      {
+        "n": 2,
+        "expected": 2
+      },
+      {
+        "n": 3,
+        "expected": 3
+      },
+      {
+        "n": 5,
+        "expected": 5
+      },
+      {
+        "n": 8,
+        "expected": 8
+      },
+      {
+        "n": 12,
+        "expected": 12
+      }
+    ],
+    "recurrence": {
+      "startIndex": 1,
+      "initial": [
+        1
+      ],
+      "coefficients": [
+        1
+      ],
+      "forcing": "1"
+    },
+    "provenance": {
+      "paper": 2,
+      "question": "6",
+      "printedMarks": 15,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p3-q7",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Add two recurrence",
+    "source": "Past paper 3 Q7",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 15,
+    "prompt": "Solve f(0)=2, f(n)=f(n-1)+2 for n>=1.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Iterate: f(n)=f(n-1)+2=f(n-2)+4=...=f(0)+2*n."
+      },
+      {
+        "step": 2,
+        "text": "Therefore f(n)=2+2*n."
+      },
+      {
+        "step": 3,
+        "text": "Check f(0)=2 and f(n)-f(n-1)=2."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "2+2*n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 2
+      },
+      {
+        "n": 1,
+        "expected": 4
+      },
+      {
+        "n": 2,
+        "expected": 6
+      },
+      {
+        "n": 3,
+        "expected": 8
+      },
+      {
+        "n": 5,
+        "expected": 12
+      },
+      {
+        "n": 8,
+        "expected": 18
+      },
+      {
+        "n": 12,
+        "expected": 26
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        2
+      ],
+      "coefficients": [
+        1
+      ],
+      "forcing": "2"
+    },
+    "provenance": {
+      "paper": 3,
+      "question": "7",
+      "printedMarks": 15,
+      "page": 2
+    }
+  },
+  {
+    "id": "dm-p5-q6",
+    "subject": "dm",
+    "topic": "recurrences",
+    "title": "Roots two and four",
+    "source": "Past paper 5 Q6",
+    "priority": "core",
+    "difficulty": "standard",
+    "marks": 5,
+    "prompt": "Solve a_n=6*a_(n-1)-8*a_(n-2), n>=2, a_0=4,a_1=10.",
+    "solution": [
+      {
+        "step": 1,
+        "text": "Characteristic equation: r^2-6*r+8=(r-2)*(r-4)=0."
+      },
+      {
+        "step": 2,
+        "text": "Thus a_n=A*2^n+B*4^n."
+      },
+      {
+        "step": 3,
+        "text": "Initial conditions give A+B=4 and 2*A+4*B=10. Subtract twice the first equation: 2*B=2, so B=1 and A=3."
+      },
+      {
+        "step": 4,
+        "text": "Hence a_n=3*2^n+4^n. Check a_0=4 and a_1=10."
+      }
+    ],
+    "conceptNote": "Use characteristic roots for the homogeneous part, adjust particular trials for resonance, and apply initial conditions to the whole solution.",
+    "type": "formula",
+    "answer": "3*2^n+4^n",
+    "testPoints": [
+      {
+        "n": 0,
+        "expected": 4
+      },
+      {
+        "n": 1,
+        "expected": 10
+      },
+      {
+        "n": 2,
+        "expected": 28
+      },
+      {
+        "n": 3,
+        "expected": 88
+      },
+      {
+        "n": 5,
+        "expected": 1120
+      },
+      {
+        "n": 8,
+        "expected": 66304
+      },
+      {
+        "n": 12,
+        "expected": 16789504
+      }
+    ],
+    "recurrence": {
+      "startIndex": 0,
+      "initial": [
+        4,
+        10
+      ],
+      "coefficients": [
+        6,
+        -8
+      ],
+      "forcing": "0"
+    },
+    "provenance": {
+      "paper": 5,
+      "question": "6",
+      "printedMarks": 5,
+      "page": 1
+    }
+  }
+]

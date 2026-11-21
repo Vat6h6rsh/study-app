@@ -33,7 +33,7 @@ Read this first. It is the handover for any agent (human or AI) picking up this 
 ## 4. Current state (21 Nov 2026)
 - **ITP:** 71 past-paper questions, 97 original (including 77 added on 21 Nov: 43 Core / 34 Extra exam-pattern questions), 30 mock questions (Mocks A–F). Every fill-in program has **exactly 10 blanks**, a brief, expected output, `priority: core|extra`, `methods` tags, beginner `explanations` and (being merged) a `concept` note. **197/197 runnable questions verified with gcc.** Method coverage: 148 methods, all starred methods covered twice (`content/itp/method-coverage.md`). 13 Learn notes.
 - **WP:** 38 past tasks, 120 original (writing tasks, abstract parts, grammar rewrites, 60 drills), 3 mocks in the instructor's 50-mark Q1A–Q5B format. 12 notes + cheatsheet. Format: `content/wp/00-exam-format.md`.
-- **DM:** content being produced (notes, auto-gradable question types: truth tables, formulas, MST edge sequences, poset sets, partitions; step-by-step proofs with rubrics; 3 mocks) under `content/dm/` and `src/data/dm/`, verified by `scripts/verify-dm*.mjs`. **UI integration not yet built** (see §9).
+- **DM:** content DONE (21 Nov): 13 Learn notes (`content/dm/concepts/`), exam format + analysis, 217 practice questions (64 from past papers; 163 core) across logic/truth tables, induction, relations, posets, recurrences, graphs, MST, proofs, counting, sets, groups; 3 mocks (50 marks, 35 core); MST graphs and truth-table statements recovered from paper images; 3 items marked `reconstructed`. Schema: `src/data/dm/types.ts`. Verified by `scripts/verify-dm.mjs`, `verify-dm-math.mjs`, `verify-dm-build.mjs` (all must exit 0). **Not yet wired into the UI** (see §9; spec in `docs/agent-history/dm-ui.md`).
 - Study docs for the student: `content/README.md`, `content/exam-day-plan.md`, `content/itp/progress.md`, question banks as Markdown in `content/*/question-bank.md`.
 
 ## 5. Definition of done: verify before every commit
@@ -74,7 +74,7 @@ Plus subject-specific verifiers (e.g. `node scripts/verify-dm-math.mjs`, `verify
 
 ## 9. Backlog / next steps
 - Merge `tmp-patches/` (ITP comments + concept notes), set `REQUIRE_CONCEPT = true` in `scripts/verify-content.mjs`, run §5, commit.
-- **DM UI integration**: renderers for the DM question types (truth-table grid, formula evaluator, MST edge-sequence builder with SVG graph, set/partition inputs, properties checkboxes, steps + rubric), Learn/Practice/Mock wiring, DM active in the subject list, checks. Then DM exam-day plan.
+- **DM UI integration** (next, before 28 Nov): run the spec `docs/agent-history/dm-ui.md` (renderers: truth-table grid, safe formula evaluator, MST edge-sequence builder with SVG graph, set/partition inputs, properties, steps + rubric; Learn/Practice/Mock wiring; DM active; checks; 7-day DM plan). The user wants Codex (gpt-6.1-sol) to do it once its usage resets; the manager then verifies and commits.
 - Real-device QA on a phone (iOS Safari keyboard, Android, screen reader).
 - Main JS chunk is ~1 MB: code-split per subject.
 - Future terms: add a subject = `src/data/<id>/`, `content/<id>/concepts/`, a subject entry (active), types/renderers if new question types, verifiers, and update this file.
