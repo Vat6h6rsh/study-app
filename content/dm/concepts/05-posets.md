@@ -62,3 +62,23 @@ Trap: “No greatest element” does not mean “no maximal elements.”
 Remember: LUB is least among upper bounds, not merely one minimal upper bound.
 
 Note: Type a nonexistent LUB/GLB as an empty answer set in this bank; write “does not exist” in the exam explanation.
+
+## Missing gcd/lcm: check actual bounds before answering
+
+In the complete divisor set D(m), every pair has `GLB=gcd` and `LUB=lcm`: both values are divisors of m. In a restricted divisor set, these formulas still work **when the gcd/lcm belongs to the set**. When one is absent, recompute the bounds in the stated set; the bound may change or fail to exist.
+
+```text
+Example 1: A={1,2,3,4,6,24}, ordered by divisibility.
+For {4,6}, gcd=2 is present, so GLB=2.
+The lcm 12 is absent. The only upper bound in A is 24.
+Hence LUB=24; it is not correct to say no LUB merely because 12 is absent.
+
+Example 2: B={1,2,3,4,6,24,36,72}.
+For {4,6}, upper bounds are {24,36,72}.
+Neither 24 divides 36 nor 36 divides 24, so there is no least upper bound.
+For {24,36}, gcd=12 is absent. Lower bounds are {1,2,3,4,6}.
+The maximal lower bounds 4 and 6 are incomparable, so there is no GLB.
+One failing pair is enough to show B is not a lattice.
+```
+
+In the reported set `{1,2,3,4,6,10,12,20,30,60}`, all pairwise gcds and lcms remain in the set. Therefore it is a lattice, with least/minimal 1 and greatest/maximal 60. The fact that 5 and 15 were removed does not alone decide the lattice question. See the Slot 1 note for all cover edges and the named-pair bounds table.

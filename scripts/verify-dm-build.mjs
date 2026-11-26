@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {truth,relationFacts,mstRun,graphFacts,arithmetic,count,logic} from './verify-dm-math.mjs';
+import {slot1Content,slot1Guide,strengthenLegacyInduction} from './verify-dm-slot1.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const bank=[],mocks=[];
 const core=new Set(['logic','induction','relations','posets','recurrences','graphs','mst']);
@@ -300,11 +301,20 @@ for(let m=1;m<=3;m++){
  mocks.push({id:`dm-mock-${m}`,title:`DM typed mock ${m}`,subject:'dm',totalMarks:50,durationMinutes:m===2?120:150,instructions:['Original practice paper; the actual pattern is unknown.','Type numbered, justified steps for every question.','Auto-graded final answers/checkpoints do not replace written working.','For MST, give each accepted edge in order and the total weight.'],questions:qs});
 }
 
-function write(relative,value){if(!/^(src\/data\/dm\/|content\/dm\/)/.test(relative))throw Error('Outside DM write scope');const target=path.join(root,relative);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,typeof value==='string'?value:JSON.stringify(value,null,2)+'\n');}
-for(const topic of [...new Set(bank.map(q=>q.topic))])write(`src/data/dm/${topic}.json`,bank.filter(q=>q.topic===topic));
+const slot1=slot1Content();
+bank.push(...slot1.practice);mocks.push(...slot1.mocks);
+strengthenLegacyInduction(bank,mocks);
+
+// --check reproduces every generated artifact in memory and compares without writing.
+// Use this while a parallel content author owns the DM files.
+function write(relative,value){if(!/^(src\/data\/dm\/|content\/dm\/)/.test(relative))throw Error('Outside DM write scope');const target=path.join(root,relative),serialized=typeof value==='string'?value:JSON.stringify(value,null,2)+'\n';if(process.argv.includes('--check')){if(fs.readFileSync(target,'utf8').replace(/\r\n/g,'\n')!==serialized.replace(/\r\n/g,'\n'))throw Error(`Generated content differs: ${relative}. Ask the content owner to rebuild.`);return;}fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,serialized);}
+for(const topic of [...new Set(bank.map(q=>q.topic))])write(`src/data/dm/${topic}.json`,bank.filter(q=>q.topic===topic&&!q.tags?.includes('slot1-pattern')));
+write('src/data/dm/slot1-pattern.json',slot1.practice);
+write('content/dm/slot1-pattern.md',slot1Guide(slot1.practice));
+write('content/dm/concepts/12-slot1-pattern.md',slot1Guide(slot1.practice));
 write('src/data/dm/mocks.json',mocks);
 const tally=(qs,key)=>Object.fromEntries([...new Set(qs.map(q=>q[key]))].sort().map(k=>[k,qs.filter(q=>q[key]===k).length]));
-const manifest={schemaVersion:1,subject:'dm',course:'BCS ZC219',examDate:'2026-11-28',practiceFiles:[...new Set(bank.map(q=>q.topic))].map(t=>`${t}.json`),mockFile:'mocks.json',practiceCount:bank.length,pastPaperCount:past.length,counts:{topic:tally(bank,'topic'),type:tally(bank,'type'),priority:tally(bank,'priority')},mocks:mocks.map(m=>({id:m.id,marks:m.questions.reduce((s,q)=>s+q.marks,0),coreMarks:m.questions.filter(q=>q.priority==='core').reduce((s,q)=>s+q.marks,0)})),reconstructed:past.filter(q=>q.reconstructed).map(q=>({id:q.id,note:q.reconstructionNote})),imageRecovered:past.filter(q=>q.provenance?.recoveredFromImage).map(q=>({id:q.id,details:q.provenance.recoveredFromImage}))};
+const manifest={schemaVersion:1,subject:'dm',course:'BCS ZC219',examDate:'2026-11-28',practiceFiles:[...new Set(bank.map(q=>q.topic))].map(t=>`${t}.json`).concat('slot1-pattern.json'),mockFile:'mocks.json',practiceCount:bank.length,pastPaperCount:past.length,counts:{topic:tally(bank,'topic'),type:tally(bank,'type'),priority:tally(bank,'priority')},mocks:mocks.map(m=>({id:m.id,marks:m.questions.reduce((s,q)=>s+q.marks,0),coreMarks:m.questions.filter(q=>q.priority==='core').reduce((s,q)=>s+q.marks,0)})),reconstructed:past.filter(q=>q.reconstructed).map(q=>({id:q.id,note:q.reconstructionNote})),imageRecovered:past.filter(q=>q.provenance?.recoveredFromImage).map(q=>({id:q.id,details:q.provenance.recoveredFromImage}))};
 write('src/data/dm/manifest.json',manifest);
 let md='# Discrete mathematics practice bank\n\nBCS ZC219. Exam: 28 November 2026. All answers use typed steps. Mocks live separately in mocks.json and are excluded from this practice export.\n\n';
 for(const topic of Object.keys(manifest.counts.topic)){md+=`## ${topic}\n\n`;for(const q of bank.filter(q=>q.topic===topic)){md+=`### ${q.id}: ${q.title}\n\n${q.source} | ${q.marks} marks | ${q.priority} | ${q.difficulty} | ${q.type}\n\n${q.prompt}\n\n`;if(q.reconstructed)md+=`Note: Reconstructed notation. ${q.reconstructionNote}\n\n`;if(q.graph?.image)md+=`![Source graph](${q.graph.image})\n\n`;md+='<details>\n<summary>Step-by-step model solution</summary>\n\n```text\n'+q.solution.map(s=>`${/^Step \d+:/.test(s.text)?'':`Step ${s.step}: `}${s.text}`).join('\n')+'\n```\n\n'+`Concept: ${q.conceptNote}\n\n</details>\n\n`;}}
@@ -322,5 +332,5 @@ analysis+='\nP1 Q7 edges: 14(2),13(3),65(4),46(5),43(6),42(7),25(8),45(9). MST w
 manifest.reconstructed.forEach(x=>analysis+=`- ${x.id}, reconstructed=true: ${x.note}\n`);
 analysis+='\nP1 Q4 does not explicitly specify loops. The model states the course convention (loops allowed), and also gives the loopless alternative. Paper 5 Q3(a) membership and subset symbols, and Q3(b) intersection, were recovered from embedded formula images. Paper 4 Q8 inequality directions were restored from the degree bounds and checked algebraically. No graph weights were reconstructed.\n';
 write('content/dm/00-exam-analysis.md',analysis);
-write('content/dm/COUNTS.md','# DM bank counts\n\nPractice only (mocks excluded):\n\n```json\n'+JSON.stringify(manifest,null,2)+'\n```\n');
+write('content/dm/COUNTS.md','# DM bank counts\n\nPractice only (mocks excluded):\n\n```json\n'+JSON.stringify(manifest,null,2)+'\n```\n\n## Slot 1 extension\n\n39 core practice questions with 171 optional checkpoints; 2 fresh 50-mark mocks with 14 main items and 56 checkpoints. Total: 256 practice questions, 5 mocks, 14 Learn notes. Checkpoint marks are included in parent marks. Full induction proofs are required.\n');
 console.log(JSON.stringify({practice:bank.length,past:past.length,counts:manifest.counts,mocks:manifest.mocks},null,2));

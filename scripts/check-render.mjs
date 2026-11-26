@@ -9,7 +9,7 @@ try {
   const { default: App } = await server.ssrLoadModule('/src/App.tsx')
   const home = renderToString(createElement(App))
   assert(home.includes('<h1>Overview</h1>'))
-  assert(home.includes('Coming soon'))
+  assert(home.includes('Discrete Mathematics') && !home.includes('Coming soon'))
   const { practiceQuestions } = await server.ssrLoadModule('/src/data/index.ts')
   assert(home.includes(`${practiceQuestions.filter(q=>q.subject==='itp').length} in your practice bank`))
   assert(home.includes('Learn from zero'))

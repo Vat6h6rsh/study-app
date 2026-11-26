@@ -7,7 +7,7 @@ Topic ID: `induction`
 To prove P(n) for every integer n>=n0, establish the first case and a step from an arbitrary proved case to its successor. The inductive hypothesis is a temporary assumption for that arbitrary index, not an assumption that the whole theorem is true.
 
 ```text
-Basis: At n=n0, [evaluate both sides], so P(n0) holds.
+Basis: At n=n0, evaluate both sides, so P(n0) holds.
 Inductive hypothesis: Assume P(k) for an arbitrary integer k>=n0.
 Inductive step: [derive P(k+1), using P(k) explicitly].
 Conclusion: By mathematical induction, P(n) holds for every n>=n0.
@@ -65,3 +65,43 @@ Trap: A step using P(k-1) when k is the first basis index may refer to an unprov
 Remember: State the exact lower bound n0 in both the basis and conclusion.
 
 Note: Weak and strong induction have the same proving power; choose the clearer hypothesis for the problem.
+
+## Divisibility: write the full proof, not just a checkpoint
+
+The exam answer is the complete typed proof. A basis number or a final factor alone cannot earn the proof marks. A useful 5-mark practice rubric is: statement and computed basis 1, explicit hypothesis 1, algebra exposing the hypothesis 1, substitution and integer factor 1, quantified induction conclusion 1.
+
+```text
+Let P(n) be the statement that 57 divides 7^(n+2)+8^(2*n+1),
+for every integer n>=0.
+
+Basis: At n=0, 7^2+8^1=49+8=57=57*1.
+Thus P(0) is true.
+
+Inductive hypothesis: Let k>=0 be an arbitrary integer.
+Assume P(k): 7^(k+2)+8^(2*k+1)=57*m for some integer m.
+
+Inductive step: Start with the expression in P(k+1):
+7^(k+3)+8^(2*k+3)
+= 7*7^(k+2)+64*8^(2*k+1)
+= 7*(7^(k+2)+8^(2*k+1))+(64-7)*8^(2*k+1)
+= 7*(57*m)+57*8^(2*k+1)
+= 57*(7*m+8^(2*k+1)).
+Let t=7*m+8^(2*k+1). Since m and k are integers and k>=0,
+t is an integer. Hence P(k+1) is true.
+
+Conclusion: By the principle of mathematical induction, 57 divides
+7^(n+2)+8^(2*n+1) for every integer n>=0.
+```
+
+For a new divisor d, copy the structure, then replace the expression, starting index and algebra. Find a multiplier c such that `E(k+1)=c*E(k)+d*R(k)`. After the hypothesis `E(k)=d*m`, write `E(k+1)=d*(c*m+R(k))` and explain why the bracket is an integer. If the expression contains a power such as `12^(2*n-1)`, check the domain: the 133-divisibility exercise starts at n=1, not n=0.
+
+Common mark-losing mistakes:
+
+- Omitting the statement P(n), its domain, or the numerical basis calculation.
+- Saying ?assume true? without writing the actual hypothesis and integer multiple.
+- Assuming P(k+1), which is what must be proved, rather than deriving it.
+- Reaching a similar-looking expression without substituting the hypothesis.
+- Saying ?therefore divisible? without displaying d times a named integer.
+- Ending after algebra with no conclusion citing induction and the full domain.
+
+Tip: Type the proof first; optional auto-graded basis/factor fields are only checks.

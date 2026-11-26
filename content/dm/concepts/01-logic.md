@@ -55,3 +55,11 @@ Trap: A false antecedent makes an implication true; it does not make the speaker
 Remember: “Equivalent” refers to all rows, not the row representing the actual story.
 
 Note: The exactly-one quantifier can be expressed as `exists x (P(x) ^ forall y (P(y) -> y=x))`.
+
+## Nested implications with four variables
+
+A four-variable table has 16 rows: TTTT, TTTF, TTFT, TTFF, TFTT, TFTF, TFFT, TFFF, FTTT, FTTF, FTFT, FTFF, FFTT, FFTF, FFFT, FFFF. The first variable changes every eight rows, then every four, every two, every row.
+
+For `((p -> q) -> r) -> s`, name `A=p -> q`, `B=A -> r`, `C=B -> s`. Evaluate A, then B, then C on each row. Do not regroup it as `p -> (q -> (r -> s))`. For example at p=T,q=F,r=F,s=F, A=F, B=T, C=F. A false antecedent made B true, then that true antecedent with s=F made C false. The full 16-row worked table is in the Slot 1 Learn note.
+
+To test equivalence, compare the two complete expression columns on all rows. To classify a single expression, all T means tautology, all F means contradiction, and mixed entries mean contingency. The reported nested expression is a contingency.

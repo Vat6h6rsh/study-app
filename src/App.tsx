@@ -1,6 +1,6 @@
 import { lazy, memo, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ConfirmDialog } from './components/ConfirmDialog'
-import { StudyLink } from './components/StudyLink'
+import { StudyLink, StudySubject } from './components/StudyLink'
 import { Sidebar } from './components/Sidebar'
 import { TabBar } from './components/TabBar'
 import { Sheet } from './components/Sheet'
@@ -28,6 +28,11 @@ import type { Attempt } from './lib/storage'
 import { WPPractice } from './components/WPQuestion'
 import { WPExams } from './components/WPExams'
 import { SUBJECT_KEY, WP_EXAM_KEY, wpDraftKey } from './lib/wp'
+import { DMHome } from './components/DMHome'
+import { DMPractice } from './components/DMPractice'
+import { DMExams } from './components/DMExams'
+import { dmQuestions } from './data/dm'
+import { DM_EXAM_KEY, dmDraftKey } from './lib/dm'
 
 const Learn = lazy(() => import('./components/Learn').then(module => ({ default: module.Learn })))
 
@@ -75,10 +80,10 @@ function App() {
     if (pageRef.current === 'practice') scrollMemo.current.practice = y
   }
   // `resume` returns to a view that kept its state (Practice) at the position where it was left.
-  function setPage(next: Page, topic?: string, resume = false) {
+  function setPage(next: Page, topic?: string, resume = false, nextSubject = subjectId) {
     setMenuOpen(false)
     const url = new URL(window.location.href)
-    url.search = new URLSearchParams({ view: next, ...(topic ? { topic } : {}) }).toString()
+    url.search = new URLSearchParams({ view: next, ...(nextSubject !== 'itp' ? { subject: nextSubject } : {}), ...(topic ? { topic } : {}) }).toString()
     url.hash = ''
     if (url.href !== window.location.href) {
       rememberScroll()
@@ -110,11 +115,13 @@ function App() {
     document.addEventListener('focusout', settle)
     return () => { document.removeEventListener('focusin', sync); document.removeEventListener('focusout', settle); document.documentElement.removeAttribute('data-kbd') }
   }, [])
-  const [subjectId, setSubjectId] = useState(() => { const saved = readSaved<string>(SUBJECT_KEY); return subjects.some(s => s.id === saved && s.active) ? saved! : 'itp' })
+  const [subjectId, setSubjectId] = useState(() => { const requested = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('subject'); const saved = requested || readSaved<string>(SUBJECT_KEY); return subjects.some(s => s.id === saved && s.active) ? saved! : 'itp' })
+  const [dmExamLive, setDMExamLive] = useState(false)
   const subject = subjects.find(s => s.id === subjectId)!
   const [progress, setProgress] = useState(loadProgress)
   const [storageFailed, setStorageFailed] = useState(false)
   const [exam, setExam] = useState<ExamSession | null>(loadExam)
+  const subjectExamLive = subjectId === 'dm' ? dmExamLive : subjectId === 'itp' && !!exam && !exam.submitted
   const [filter, setFilter] = useState(() => locationState().page === 'practice' ? locationState().topic || 'all' : 'all')
   const [practiceKey, setPracticeKey] = useState(0)
   const [draft, setDraft] = useState<ScratchDraft>(defaultDraft)
@@ -127,6 +134,8 @@ function App() {
       rememberScroll()
       historyKey.current = (window.history.state as { k?: string } | null)?.k || 'start'
       const next = locationState()
+      const nextSubject = new URLSearchParams(window.location.search).get('subject')
+      if (subjects.some(s => s.id === (nextSubject || 'itp') && s.active)) setSubjectId(nextSubject || 'itp')
       if (next.page === 'practice') { setPracticeOpened(true); setFilter(next.topic || 'all') }
       if (next.page === 'learn' && next.topic) setLesson(next.topic)
       if (next.page !== 'learn') setFromPractice(false)
@@ -139,7 +148,7 @@ function App() {
   }, [])
   useEffect(() => { if (!save(PROGRESS_KEY, progress)) setStorageFailed(true) }, [progress])
   useEffect(() => { if (exam && !save(EXAM_KEY, exam)) setStorageFailed(true) }, [exam])
-  useEffect(() => { if (!save(SUBJECT_KEY, subjectId)) setStorageFailed(true); if (subjectId === 'wp' && page === 'scratch') setPage('home') }, [subjectId, page])
+  useEffect(() => { if (!save(SUBJECT_KEY, subjectId)) setStorageFailed(true); if (subjectId !== 'itp' && page === 'scratch') setPage('home') }, [subjectId, page])
   // Stable identities: typing in a mock must not re-render the (hidden) Practice view.
   const attempts = useMemo(() => progress.attempts.filter(a => a.subject === subjectId), [progress.attempts, subjectId])
   const mistakes = useMemo(() => latestMistakes(attempts), [attempts])
@@ -175,16 +184,16 @@ function App() {
   }, [exam])
   function resetProgress() {
     setProgress({ version: 1, attempts: [] }); setExam(null); setResetPrompt(false)
-    remove(STREAK_KEY); remove(WP_EXAM_KEY); allQuestions.filter(q => q.subject === 'wp').forEach(q => remove(wpDraftKey(q.id))); setExamFeedback(null); setStorageFailed(!remove(EXAM_KEY)); setPracticeKey(k => k + 1); setAnnouncement('Saved progress cleared.')
+    remove(STREAK_KEY); remove(WP_EXAM_KEY); remove(DM_EXAM_KEY); dmQuestions.forEach(q => remove(dmDraftKey(q.id))); allQuestions.filter(q => q.subject === 'wp').forEach(q => remove(wpDraftKey(q.id))); setExamFeedback(null); setStorageFailed(!remove(EXAM_KEY)); setPracticeKey(k => k + 1); setAnnouncement('Saved progress cleared.')
   }
-  return <div className="app-shell">
+  return <StudySubject.Provider value={subjectId}><div className="app-shell">
     {examFeedback?.celebrate && <Confetti key={examFeedback.id} burst={String(examFeedback.id)}/>}
     <a className="skip-link" href="#main">Skip to content</a>
     <Sidebar onHome={() => setPage('home')} onReset={() => setResetPrompt(true)} menuOpen={menuOpen} setMenuOpen={setMenuOpen} barTitle={barTitle}>
       <div className="sidebar-section-label">Workspace</div>
-      <nav className="desktop-nav" aria-label="Main navigation">{([['home', 'Overview'], ['learn', 'Learn'], ['practice', 'Practice'], ['exam', 'Mock exams'], ['scratch', 'C scratchpad']] as [Page, string][]).filter(([id]) => id !== 'scratch' || subjectId === 'itp').map(([id, title]) => <StudyLink key={id} view={id} title={`${title}${id === 'exam' && exam && !exam.submitted ? ' — In progress' : ''}`} className={`nav-item ${page === id ? 'active' : ''}`} current={page === id} onNavigate={() => { if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}><span className="rail-symbol nav-symbol" data-nav={id} aria-hidden="true">{({ home: '\u25c8', learn: '\u25a4', practice: '\u270e', exam: '\u25f7', scratch: '\u2318' })[id]}</span><span className="nav-copy">{title}{id === 'exam' && exam && !exam.submitted && <span className="exam-live-label">In progress</span>}</span></StudyLink>)}</nav>
+      <nav className="desktop-nav" aria-label="Main navigation">{([['home', 'Overview'], ['learn', 'Learn'], ['practice', 'Practice'], ['exam', 'Mock exams'], ['scratch', 'C scratchpad']] as [Page, string][]).filter(([id]) => id !== 'scratch' || subjectId === 'itp').map(([id, title]) => <StudyLink key={id} view={id} title={`${title}${id === 'exam' && subjectExamLive ? ' — In progress' : ''}`} className={`nav-item ${page === id ? 'active' : ''}`} current={page === id} onNavigate={() => { if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}><span className="rail-symbol nav-symbol" data-nav={id} aria-hidden="true">{({ home: '\u25c8', learn: '\u25a4', practice: '\u270e', exam: '\u25f7', scratch: '\u2318' })[id]}</span><span className="nav-copy">{title}{id === 'exam' && subjectExamLive && <span className="exam-live-label">In progress</span>}</span></StudyLink>)}</nav>
       <div className="sidebar-section-label subject-label">Subject</div>
-      <div className="subject-menu">{subjects.map(s => <button type="button" key={s.id} disabled={!s.active} aria-pressed={subjectId === s.id} className={`subject-option ${s.id === subjectId ? 'selected' : ''}`} onClick={() => { setSubjectId(s.id); setLesson('strategy'); setFilter('all'); setPage('home') }}><span className="subject-initial">{s.shortName}</span><span>{s.shortName === 'ITP' ? 'C Programming' : s.name}<small>{s.active ? 'Your active subject' : 'Coming soon'}</small></span>{s.active && <span className="subject-check">✓</span>}</button>)}</div>
+      <div className="subject-menu">{subjects.map(s => <button type="button" key={s.id} disabled={!s.active} aria-pressed={subjectId === s.id} className={`subject-option ${s.id === subjectId ? 'selected' : ''}`} onClick={() => { setSubjectId(s.id); setLesson('strategy'); setFilter('all'); setPage('home', undefined, false, s.id) }}><span className="subject-initial">{s.shortName}</span><span>{s.shortName === 'ITP' ? 'C Programming' : s.name}<small>{s.active ? 'Your active subject' : 'Coming soon'}</small></span>{s.active && <span className="subject-check">✓</span>}</button>)}</div>
       {subjectId === 'itp' && <div className="mobile-tools"><div className="sidebar-section-label">More tools</div><nav aria-label="More tools"><StudyLink view="scratch" title="C scratchpad" className={`nav-item ${page === 'scratch' ? 'active' : ''}`} current={page === 'scratch'} onNavigate={() => setPage('scratch')}><span className="rail-symbol nav-symbol" data-nav="scratch" aria-hidden="true">{'⌘'}</span><span className="nav-copy">C scratchpad<span className="exam-live-label">Write, compile and run C</span></span></StudyLink></nav></div>}
     </Sidebar>
     {resetPrompt && <ConfirmDialog title="Clear saved progress?" action="Clear progress" onConfirm={resetProgress} onClose={() => setResetPrompt(false)}><p>This clears all attempts and the saved exam in this browser. This cannot be undone.</p></ConfirmDialog>}
@@ -193,16 +202,17 @@ function App() {
       <div className="sr-only" role="status">{announcement}</div>
       {exam?.submitted && page !== 'exam' && announcement.includes('exam') && <div className="notice">{announcement} <StudyLink view="exam" onNavigate={() => setPage('exam')}>View report</StudyLink></div>}
       {storageFailed && <div className="notice error" role="status">Browser storage is unavailable or full. You can keep practising, but changes may not survive a reload.</div>}
-      {page === 'home' && <Home subject={subject} attempts={attempts} onPractice={openPractice} onExam={() => setPage('exam')} onLearn={() => openLearn()} />}
+      {page === 'home' && (subjectId === 'dm' ? <DMHome attempts={attempts} onPractice={openPractice} onExam={() => setPage('exam')} onLearn={() => openLearn()}/> : <Home subject={subject} attempts={attempts} onPractice={openPractice} onExam={() => setPage('exam')} onLearn={() => openLearn()} />)}
       {page === 'learn' && <LessonBoundary><Suspense fallback={<div className="notes-loading" aria-busy="true"><p role="status">Opening your study notes…</p></div>}><Learn key={subjectId} subject={subjectId} selected={lesson} fromPractice={fromPractice} onBackToPractice={backToPractice} onSelect={id => { setLesson(id); setPage('learn', id) }} onPractice={openPractice} onRun={(code, title) => { setDraft({ code, stdin: '', title }); setPage('scratch') }} /></Suspense></LessonBoundary>}
-      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={topic => openLearn(topic, true)}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakeIds} record={record} override={override} runAnswers={runAnswers} onLearn={learnFromQuestion} />}</div>}
+      {practiceOpened && <div hidden={page !== 'practice'}>{subjectId === 'dm' ? <DMPractice key={`dm-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={learnFromQuestion}/> : subjectId === 'wp' ? <WPPractice key={`wp-${practiceKey}`} topic={filter} attempts={attempts} record={record} onLearn={topic => openLearn(topic, true)}/> : <Practice key={`${subjectId}-${practiceKey}`} subject={subject} initialFilter={filter} attempts={attempts} mistakes={mistakeIds} record={record} override={override} runAnswers={runAnswers} onLearn={learnFromQuestion} />}</div>}
       {page === 'exam' && subjectId === 'itp' && <Exams freshResult={examFeedback?.id === exam?.startedAt && !!examFeedback} subject={subject} session={exam} update={setExam} finish={finishExam} attempts={attempts} override={override} onLearn={openLearn} />}
       <WPExams visible={page === 'exam' && subjectId === 'wp'} record={record} onLearn={openLearn} resetKey={practiceKey}/>
+      <DMExams visible={page === 'exam' && subjectId === 'dm'} record={record} onLearn={openLearn} resetKey={practiceKey} onLiveChange={setDMExamLive}/>
       <div hidden={page !== 'scratch' || subjectId !== 'itp'}><Scratchpad draft={draft} onChange={setDraft} /></div>
-      <footer className="page-footer"><span>{subjectId === 'wp' ? 'One clear sentence at a time.' : 'One blank at a time.'}</span><span>BITS · Exam practice</span></footer>
+      <footer className="page-footer"><span>{subjectId === 'dm' ? 'One justified step at a time.' : subjectId === 'wp' ? 'One clear sentence at a time.' : 'One blank at a time.'}</span><span>BITS · Exam practice</span></footer>
     </main></div>
-    <TabBar page={page} examLive={!!exam && !exam.submitted} onNavigate={id => { if (id === page) { scrollToY(0); setMenuOpen(false); return } if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}/>
-  </div>
+    <TabBar page={page} examLive={subjectExamLive} onNavigate={id => { if (id === page) { scrollToY(0); setMenuOpen(false); return } if (id === 'practice') setPracticeOpened(true); setPage(id, undefined, id === 'practice') }}/>
+  </div></StudySubject.Provider>
 }
 
 function Home({ subject, attempts, onPractice, onExam, onLearn }: { subject: Subject; attempts: Attempt[]; onPractice: (topic?: string) => void; onExam: () => void; onLearn: () => void }) {

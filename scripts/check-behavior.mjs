@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import './check-dm-behavior.mjs'
 import { mark, normalizeCode, normalizeOutput, filledCode } from '../src/lib/grading.ts'
 import { blankState, markPractice, readExplainCode, storeExplainCode, EXPLAIN_KEY } from '../src/lib/practice.ts'
 import { accuracy, latestMistakes, loadProgress, readSaved, save, remove, PROGRESS_KEY } from '../src/lib/storage.ts'

@@ -10,7 +10,7 @@ Schema version: **1**. Canonical TypeScript definitions: `src/data/dm/types.ts`.
 | `src/data/dm/{topic}.json` | `Question[]` for that topic; includes originals and past-paper parts |
 | `src/data/dm/mocks.json` | `MockPaper[]`; nested fresh questions; never merge into the practice pool |
 | `src/data/dm/types.ts` | Discriminated unions and structured mathematical models |
-| `content/dm/concepts/*.md` | 13 notes; first line title, then Topic ID; includes strategy and cheatsheet |
+| `content/dm/concepts/*.md` | 14 notes; first line title, then Topic ID; includes strategy and cheatsheet |
 | `content/dm/00-exam-analysis.md` | All 64 past-paper parts, frequencies, priorities and provenance caveats |
 | `content/dm/00-exam-format.md` | Authoritative guidance and typing conventions |
 | `content/dm/question-bank.md` | Every practice question with collapsible solutions; excludes mocks |
@@ -26,7 +26,7 @@ Topic IDs are `strategy`, `logic`, `proofs`, `induction`, `relations`, `posets`,
 
 ## Common question fields
 
-All questions have `id`, `subject: "dm"`, `topic`, `title`, `source` (`Original` or `Past paper N Qm`), `priority` (`core`, `past`, `extra`), `difficulty` (`foundation`, `standard`, `exam`), integer positive `marks`, `prompt`, `solution`, and `conceptNote`.
+All questions have `id`, `subject: "dm"`, `topic`, `title`, `source` (`Original`, `Past paper N Qm`, or `Slot 1 exam pattern`), `priority` (`core`, `past`, `extra`), `difficulty` (`foundation`, `standard`, `exam`), integer positive `marks`, `prompt`, `solution`, and `conceptNote`.
 
 `solution` is an ordered array of `{step: 1, text: "..."}` objects, numbered consecutively. Render the text with preserved newlines and accessible monospace for tables. Most text omits a literal Step prefix, since `step` supplies the label. MST additions already include the professor's literal `Step 1: add edge ...` wording: avoid adding a duplicate visible prefix. The final MST step includes the algorithm and total sum.
 
@@ -98,3 +98,22 @@ The build overwrites topic JSON, mocks, manifest, analysis, counts and question-
 ## Source limitations
 
 The supplied text files and five local past PDFs are the source corpus. Extracted mathematical symbols were not trusted blindly. PyMuPDF was unavailable under isolated Python and network installation was blocked; native viewer access was also denied. Exact embedded RGB images and masks were recovered with standard-library zlib/PNG code and visually inspected. This recovers the original graphs and image formulas, but is not a full-page PDF rendering. The three superscript reconstructions remain visibly flagged for review. The upcoming format comes from the user's professor guidance, not historical exam covers.
+
+## Slot 1 pattern extension (26 November 2026)
+
+`slot1-pattern.json` is an explicitly registered, mixed-topic practice file. Its questions retain the existing topic IDs and response types. It adds 39 core questions: 5 truth tables, 6 full induction proofs, 5 sets tasks, 7 posets, 6 equivalence/class tasks, 5 recurrences and 5 Kruskal traces. Each family includes the reported method and at least four variants. Constructed Q2a sets, bound pairs and Q5 graph are explicitly labelled because those exact data were not supplied.
+
+`slot1` is a **note-only** Topic ID for `concepts/12-slot1-pattern.md`; it is not a new question topic or response type. The same worked guide is available at `content/dm/slot1-pattern.md`. Load notes independently of the question-topic union, as with strategy/cheatsheet.
+
+Mocks 4 and 5 each contain exactly seven main items with marks `[5,5,2,8,10,10,10]`, ordered Q1a,Q1b,Q2a,Q2b,Q3,Q4,Q5. Their 14 main items and 56 checkpoints are excluded from the practice pool. The new practice items contain 171 checkpoints. Checkpoints are included in the parent's marks: never sum them into a paper total. Induction always uses `steps` as the main answer. Proof rubrics cover statement/domain+basis, hypothesis, algebra, successor/integer factor, conclusion. Existing valid induction proofs have also been expanded to this standard; the invalid-proof critique remains a critique.
+
+The only TypeScript extension is a backward-compatible member of the already optional `verification` union:
+
+```text
+{kind: 'set-operation', left: string[], right: string[],
+ operation: 'union' | 'intersection' | 'difference' | 'product'}
+```
+
+This mathematical input was missing: existing finite-relation and arithmetic models cannot truthfully describe a general set union/difference/Cartesian product. There are no new question types or response fields, and no previously required field changes. The renderer can ignore verification metadata; set-operation checkpoints use the existing `set-answer` UI.
+
+`scripts/verify-dm-slot1.mjs` owns authoring fixtures, full proofs, rational coefficient matching, graph traces and the worked guide. The existing rebuild imports it before writing data, exports and counts, so rebuilding preserves the additions. Its read-only semantic check reconstructs set operations, divisibility/subset posets, symmetry orbits and recurrence coefficients from mathematical input. The ordinary verifier recomputes every auto-key, checks truth-table model rows and exhaustive MST optimality. Extra checks use exact BigInt divisibility through 20, independent symmetry permutations, recurrence iteration through 15, alternative valid tied-edge traces and deliberately corrupted keys. `verify-dm-math.mjs` also runs explicit helper checks when invoked directly.

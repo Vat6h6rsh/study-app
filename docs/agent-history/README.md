@@ -20,4 +20,5 @@ Every delegated job's prompt, in order, so the reasoning behind each feature is 
 | 21 Nov | `itp-reveal-ui.md` | Concept fold-out, revealed answers fill the program, Reveal all | |
 | 21 Nov | `dm-content.md` | DM content: notes, auto-gradable question types, mocks, maths verifiers | DM exam 28 Nov; UI integration is a follow-up |
 | 21 Nov | `itp-mobile-inline.md` + `itp-code-no-scroll.md` | Phones: answer inline in the code with a keyboard toolbar; decluttered practice page; desktop Side panel/Inline toggle; stutter fixed (line-level memoisation); program in page flow with soft-wrap, no inner scroll | Codex hit its limit before starting; done by a Sonnet subagent (commit 54ea1b4) |
-| 21 Nov | `dm-ui.md` | (pending) DM UI integration spec | To be run by Codex after its usage resets |
+| 26 Nov | `dm-ui.md` + `dm-ui-integration-2026-11-26.md` | DM UI integration spec and completed implementation handoff | All nine editors, manifest-driven Slot 1 route, five mocks, mobile checks; supervisor owns GCC verification and commit |
+| 26 Nov | `dm-slot1-content.md` | DM Slot 1 pattern: reported questions + variants (39 core), full typed induction proofs with 5-part rubrics, Mocks 4-5 in the exact Slot 1 layout, slot1-pattern.md + Learn note, verify-dm-slot1 | Recurrence answer cross-checked independently by the manager |

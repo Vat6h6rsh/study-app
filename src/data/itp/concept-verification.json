@@ -1,5 +1,5 @@
 {
-  "compiler": "Local GCC runner (http://127.0.0.1:5173)",
+  "compiler": "C:\\Users\\hashj\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\\mingw64\\bin\\gcc.exe",
   "examples": 21,
   "verified": 21,
   "failures": [],
@@ -7,6 +7,7 @@
     {
       "id": "00-how-to-attack-blanks.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "6\r\n",
       "stderr": "",
@@ -16,6 +17,7 @@
     {
       "id": "01-basics-operators.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "33.333333\r\n",
       "stderr": "",
@@ -25,6 +27,7 @@
     {
       "id": "01-basics-operators.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "5 7 7\r\n",
       "stderr": "",
@@ -34,6 +37,7 @@
     {
       "id": "02-loops-digits.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "15\r\n",
       "stderr": "",
@@ -43,6 +47,7 @@
     {
       "id": "02-loops-digits.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "match\r\n",
       "stderr": "",
@@ -52,6 +57,7 @@
     {
       "id": "03-arrays-1d-search-sort.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "1\r\n",
       "stderr": "",
@@ -61,6 +67,7 @@
     {
       "id": "03-arrays-1d-search-sort.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "1 3 4\r\n",
       "stderr": "",
@@ -70,6 +77,7 @@
     {
       "id": "04-2d-arrays.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "1 4\r\n2 5\r\n3 6\r\n",
       "stderr": "",
@@ -79,6 +87,7 @@
     {
       "id": "04-2d-arrays.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "2 -1\r\n",
       "stderr": "",
@@ -88,6 +97,7 @@
     {
       "id": "05-strings.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "PoLiCe\r\n",
       "stderr": "",
@@ -97,6 +107,7 @@
     {
       "id": "05-strings.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "bakemonogatari 14\r\n",
       "stderr": "",
@@ -106,6 +117,7 @@
     {
       "id": "06-functions-recursion.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "9\r\n",
       "stderr": "",
@@ -115,6 +127,7 @@
     {
       "id": "06-functions-recursion.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "1 24\r\n",
       "stderr": "",
@@ -124,6 +137,7 @@
     {
       "id": "07-pointers.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "10 5\r\n",
       "stderr": "",
@@ -133,6 +147,7 @@
     {
       "id": "07-pointers.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "25 30\r\n",
       "stderr": "",
@@ -142,6 +157,7 @@
     {
       "id": "08-structs-typedef.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "1 Jack Hobbes\r\n",
       "stderr": "",
@@ -151,6 +167,7 @@
     {
       "id": "08-structs-typedef.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "7 4\r\n",
       "stderr": "",
@@ -160,6 +177,7 @@
     {
       "id": "09-dynamic-memory.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "8 90.0\r\n",
       "stderr": "",
@@ -169,6 +187,7 @@
     {
       "id": "09-dynamic-memory.md example 2",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "11\r\n",
       "stderr": "",
@@ -178,6 +197,7 @@
     {
       "id": "10-file-handling.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "8\r\n7\r\n",
       "stderr": "",
@@ -187,6 +207,7 @@
     {
       "id": "11-scope-storage.md example 1",
       "passed": true,
+      "phase": "run",
       "compileOutput": "",
       "stdout": "10 30 20\r\n10 40 21\r\n22\r\n",
       "stderr": "",

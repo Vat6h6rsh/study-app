@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent, ReactNode } from 'react'
-import { concepts as itpConcepts, wpConcepts } from '../data/concepts'
+import { concepts as itpConcepts, wpConcepts, dmConcepts } from '../data/concepts'
 import { conceptExamples } from '../lib/concepts'
 import { StudyLink } from './StudyLink'
 import { topicTone } from '../topicColors'
@@ -95,7 +95,7 @@ interface Props {
   onBackToPractice?: () => void
 }
 
-const generalNotes = ['strategy', 'idioms', 'phrases', 'cheatsheet']
+const generalNotes = ['strategy', 'idioms', 'phrases', 'cheatsheet', 'examweek']
 
 export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun, fromPractice = false, onBackToPractice }: Props) {
   const [query, setQuery] = useState('')
@@ -104,7 +104,7 @@ export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun, 
   const [showTop, setShowTop] = useState(false)
   const mobile = useIsMobile()
   const article = useRef<HTMLElement>(null)
-  const concepts = subject === 'wp' ? wpConcepts : itpConcepts
+  const concepts = subject === 'dm' ? dmConcepts : subject === 'wp' ? wpConcepts : itpConcepts
   const note = concepts.find(c => c.id === selected) || concepts[0]
   const index = concepts.indexOf(note)
   const matches = concepts.filter(c => `${c.title}\n${c.markdown}`.toLowerCase().includes(query.trim().toLowerCase()))
@@ -138,7 +138,7 @@ export function Learn({ subject = 'itp', selected, onSelect, onPractice, onRun, 
   }
   const noteLinks = (close: boolean) => matches.map(c => <StudyLink key={c.id} view="learn" topic={c.id} data-tone={topicTone(c.id)} current={note.id === c.id} className={note.id === c.id ? 'selected' : ''} onNavigate={() => { if (close) setPickerOpen(false); choose(c.id) }}><i className="topic-dot" aria-hidden="true"/><span>{c.fileName.slice(0, 2)}</span>{c.title}</StudyLink>)
   return <>
-    <div className="page-heading"><div><h1>Learn</h1><p className="muted">Read a note, try the examples, then practise the same pattern.</p></div><span className="tag">{subject === 'wp' ? 'Exam-order study route' : '2-day study route'}</span></div>
+    <div className="page-heading"><div><h1>Learn</h1><p className="muted">Read a note, try the examples, then practise the same pattern.</p></div><span className="tag">{subject === 'dm' ? 'DM · Exam 28 Nov · Typed steps' : subject === 'wp' ? 'Exam-order study route' : '2-day study route'}</span></div>
     <div className="learn-bar" data-tone={topicTone(note.id)}>
       <button type="button" className="button secondary learn-bar-notes" aria-haspopup="dialog" onClick={() => setPickerOpen(true)}><span aria-hidden="true">☰</span> Notes</button>
       <div className="learn-bar-title"><span className="small muted">Study {index + 1} of {concepts.length}</span><strong>{note.title}</strong></div>

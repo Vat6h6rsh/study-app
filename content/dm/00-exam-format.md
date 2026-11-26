@@ -1,10 +1,10 @@
 # Exam format and typed mathematics
 
-BCS ZC219 Discrete Mathematics (DM), Examdesk. Exam date: **28 November 2026**. The exam is **50 marks**, completely typing based, with **unknown question pattern**. Do not infer a current blueprint, duration, open-book status or allowed aids from an old cover page. These mocks use 120–150 minutes as practice budgets only.
+BCS ZC219 Discrete Mathematics (DM), Examdesk. Exam date: **28 November 2026**. The exam is **50 marks**, completely typing based, with **Slot 2 questions still unknown**. Do not infer a current blueprint, duration, open-book status or allowed aids from an old cover page. These mocks use 120–150 minutes as practice budgets only.
 
 The professor says at least 50% will come from these seven groups: truth tables; mathematical induction; relations and equivalence classes; POSETs including Hasse diagrams, LUB/GLB, extrema and lattices; homogeneous and non-homogeneous recurrences; graphs; MST using Kruskal and Prim. This does not promise a separate question or equal marks for each group.
 
-**Every answer needs step-by-step working.** A correct final formula, checked box or MST total in the app is a checkpoint; it is not a substitute for a typed exam answer. For proofs, identify assumptions and the conclusion. For a counterexample, verify the hypothesis and explain the failed conclusion. For induction, write basis, inductive hypothesis, inductive step and conclusion.
+**Every answer needs step-by-step working.** A correct final formula, checked box or MST total in the app is a checkpoint; it is not a substitute for a typed exam answer. For proofs, identify assumptions and the conclusion. For a counterexample, verify the hypothesis and explain the failed conclusion. For induction, write P(n) and its domain, the computed basis, an explicit inductive hypothesis, the full algebraic step with an integer factor for divisibility, and a quantified conclusion citing induction. Checkpoints never replace this proof.
 
 | Meaning | Consistent typed form | Example |
 | --- | --- | --- |
@@ -51,3 +51,7 @@ Trap: Old papers use either 150 or 50 total printed marks. Their course weightag
 Remember: Read the actual exam instructions before choosing timing or assuming permitted resources.
 
 Note: Models and rubrics in this bank are practice guidance, not an official marking scheme.
+
+## Earlier Slot 1 evidence (26 November update)
+
+Students openly reported the 5-question, 50-mark Slot 1 pattern described in [Slot 1 practice and fully worked typed solutions](slot1-pattern.md). It guides practice and Mocks 4?5; Slot 2 may differ. Q1a 5 + Q1b 5; Q2a 2 + Q2b 8; Q3 10; Q4 10; Q5 10. These are reported allocations, not an official Slot 2 blueprint.

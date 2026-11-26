@@ -59,3 +59,23 @@ Trap: Antisymmetric does not mean every reversed pair is forbidden; loops are al
 Remember: Partial order requires reflexive, antisymmetric, transitive. Equivalence replaces antisymmetric with symmetric.
 
 Note: The app stores finite relations explicitly, allowing every property and class in those exercises to be recomputed.
+
+## Equivalence from symmetry: colourings are whole labelled words
+
+For a triangle, write the colours at the three labelled vertices clockwise as a word, for example RGB. There are `3^3=27` words over R,G,B. A 120-degree rotation sends RGB to GBR, then BRG, then RGB. These three words form one class. RBG rotates to BGR and GRB, so it is a different class when reflections are forbidden.
+
+```text
+Reflexive: rotating by 0 degrees takes every word to itself.
+Symmetric: the inverse of an allowed rotation is an allowed rotation.
+Transitive: composing two allowed rotations gives an allowed rotation.
+Thus being related by a rotation is an equivalence relation.
+
+Monochromatic words RRR, GGG, BBB each form a singleton class.
+Every other word has orbit size 3 (it is not fixed by a 120-degree turn).
+The remaining 24 words form 24/3=8 classes.
+Total classes = 3+8=11.
+```
+
+List each orbit once, not once for every representative. If reflections are also allowed, RGB and RBG merge; the full triangle symmetry group gives 10 classes instead. A square under rotations uses 0,90,180,270 degrees; some words have orbit size 2, so never divide the total number of words by the group size without checking fixed words.
+
+For equal-length strings the invariant is length. For `(a,b)~(c,d)` iff `a+d=b+c`, rewrite as `a-b=c-d`; the invariant is the difference. In a finite universe list only its elements. On all integer pairs the class is `{(c,d):c-d=a-b}`.

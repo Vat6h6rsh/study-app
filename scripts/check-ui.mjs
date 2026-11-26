@@ -1,4 +1,6 @@
 import { checkWPUI } from './check-wp-ui.mjs'
+import { checkDMUI } from './check-dm-ui.mjs'
+import { checkDMBrowser } from './check-dm-browser.mjs'
 import { checkTwoPaneBrowser } from './check-two-pane-browser.mjs'
 import { checkInlineBrowser } from './check-inline-browser.mjs'
 import assert from 'node:assert/strict'
@@ -294,6 +296,7 @@ try {
   const report = renderToString(createElement(Report, { question:q, attempt:{ id:'test', answers:{}, results:failed, overrides:[] }, onOverride(){} }))
   assert(report.includes('Mark blank 1 as equivalent'))
   await checkWPUI(server, app, themes, contrast)
+  await checkDMUI(server, app, themes, contrast)
   console.log('UI checks passed: ' + rows.length + ' CSS contrast pairs across Paper/Sky/Midnight/Ember plus gradient samples; topic colours, briefs/fallbacks, escaped note tables/callouts, feedback states, score rings and guarded streak storage; startup preferences, labelled theme/sidebar controls; all screens, mock states, timer warnings, missing reports, confirmations, runner results, verdict semantics and unique IDs. Headless interaction/reflow checks follow; physical-device keyboard, animation feel and assistive technology still need device testing.')
 } finally {
   globalThis.window = oldWindow; globalThis.localStorage = oldStorage
@@ -301,3 +304,4 @@ try {
 }
 await checkTwoPaneBrowser()
 await checkInlineBrowser()
+await checkDMBrowser()

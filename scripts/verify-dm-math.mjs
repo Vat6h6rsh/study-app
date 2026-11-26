@@ -1,4 +1,29 @@
 // Pure, dependency-free DM checking helpers. No eval, Function or external code.
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+
+/** Exact integer grammar for divisibility; avoids rounding huge powers. */
+export function integerExpression(source,n=0) {
+  const tokens=source.match(/\d+|n|[()+*^\-]/g)||[];
+  assert.equal(tokens.join(''),source.replace(/\s/g,''),'unsafe integer expression');
+  let i=0;
+  const atom=()=>{const x=tokens[i++];if(x==='n')return BigInt(n);if(/^\d+$/.test(x||''))return BigInt(x);if(x==='('){const v=sum();assert.equal(tokens[i++],')');return v;}throw Error('Expected integer atom');};
+  const power=()=>{let v=atom();if(tokens[i]==='^'){i++;const exponent=unary();assert.ok(exponent>=0n,'negative integer exponent');v=v**exponent;}return v;};
+  const unary=()=>tokens[i]==='-'?(i++,-unary()):power();
+  const product=()=>{let v=unary();while(tokens[i]==='*'){i++;v*=unary();}return v;};
+  const sum=()=>{let v=product();while(tokens[i]==='+'||tokens[i]==='-'){const op=tokens[i++],b=product();v=op==='+'?v+b:v-b;}return v;};
+  const v=sum();assert.equal(i,tokens.length,'unparsed integer expression');return v;
+}
+
+/** Enumerate colourings and group actions by position permutations. */
+export function symmetryClasses(alphabet,size,reflections=false) {
+  const words=Array.from({length:alphabet.length**size},(_,index)=>{let k=index;const a=Array(size);for(let j=size-1;j>=0;j--){a[j]=alphabet[k%alphabet.length];k=Math.floor(k/alphabet.length);}return a.join('');});
+  const classes=new Map();
+  for(const word of words){const images=[];for(let shift=0;shift<size;shift++)for(const sign of reflections?[1,-1]:[1])images.push(Array.from({length:size},(_,j)=>word[((sign*j+shift)%size+size)%size]).join(''));const key=[...new Set(images)].sort().join('|');if(!classes.has(key))classes.set(key,[]);classes.get(key).push(word);}
+  return [...classes.values()];
+}
+
 export function arithmetic(source, n=0) {
   const tokens=source.match(/\d+|n|[()+*/^\-]/g)||[];
   if(tokens.join('')!==source.replace(/\s/g,'')) throw Error(`Unsafe arithmetic: ${source}`);
@@ -73,4 +98,17 @@ export function count(v,n=0) {
   if(v.operation==='stringsUpTo'){let s=v.plusOne?1n:0n;for(let i=1;i<=v.maxLength;i++)s+=BigInt(v.alphabet)**BigInt(i);return s;}
   if(v.operation==='bitstrings'){let s=0n;for(let i=0;i<2**v.length;i++){const x=i.toString(2).padStart(v.length,'0'),p=x.startsWith(v.prefix??''),q=x.endsWith(v.suffix??'');if(v.mode==='or'?(p||q):(p&&q))s++;}return s;}
   throw Error('Unknown counting operation');
+}
+
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
+  assert.equal(integerExpression('7^(n+2)+8^(2*n+1)',0),57n);
+  for(let n=0;n<=20;n++)assert.equal(integerExpression('7^(n+2)+8^(2*n+1)',n)%57n,0n);
+  assert.equal(integerExpression('-2^2'),-4n);
+  for(const s of ['1/2','n;1','2**3','2^-1'])assert.throws(()=>integerExpression(s,2));
+  assert.equal(symmetryClasses(['R','G','B'],3).length,11);
+  assert.equal(symmetryClasses(['R','G','B'],3,true).length,10);
+  assert.equal(symmetryClasses(['0','1'],4).length,6);
+  assert.equal(arithmetic('2^3^2'),512);
+  assert.deepEqual(truth(['p','q'],['p -> q']),[[true],[false],[true],[true]]);
+  console.log('PASS: exact divisibility, symmetry enumeration, arithmetic and logic helpers');
 }

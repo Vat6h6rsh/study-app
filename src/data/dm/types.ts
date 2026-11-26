@@ -22,6 +22,7 @@ export type Verification =
   | { kind: 'counting'; operation: 'stringsUpTo'; alphabet: number; maxLength: number; plusOne: boolean }
   | { kind: 'knights'; people: string[]; statements: string[]; spies?: boolean }
   | { kind: 'arithmetic'; expression: string }
+  | { kind: 'set-operation'; left: string[]; right: string[]; operation: 'union' | 'intersection' | 'difference' | 'product' }
   | { kind: 'complement'; edges: number; complementEdges: number }
   | { kind: 'resonance'; coefficients: number[]; forcingBase: number }
   | { kind: 'logic-false-rows'; variables: string[]; expression: string }

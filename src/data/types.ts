@@ -99,7 +99,7 @@ export interface MatchQuestion extends QuestionBase {
   items: { id: string; text: string; answer: string; explanation: string }[]
 }
 export type WPQuestion = WritingQuestion | AbstractQuestion | GrammarQuestion | McqQuestion | MatchQuestion
-export type Question = CodeQuestion | WPQuestion
+export type Question = CodeQuestion | WPQuestion | import('./dm').DMQuestion
 export interface QuestionBrief {
   /** One or two short sentences: what the finished program does. */
   goal: string

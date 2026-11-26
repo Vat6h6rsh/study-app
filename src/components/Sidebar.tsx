@@ -37,7 +37,7 @@ export function Sidebar({ children, onHome, onReset, menuOpen, setMenuOpen, barT
     if (event.key === 'Escape' && menuOpen) { setMenuOpen(false); menuToggle.current?.focus() }
   }}>
     <div className="sidebar-header">
-      <StudyLink view="home" className="brand" title="Examdesk overview" onNavigate={() => { setMenuOpen(false); onHome() }}><span className="brand-mark" aria-hidden="true">{'{ }'}</span><span className="brand-copy">exam<span className="brand-light">desk</span><small>C programming practice</small></span><span className="sr-only"> overview</span></StudyLink>
+      <StudyLink view="home" className="brand" title="Examdesk overview" onNavigate={() => { setMenuOpen(false); onHome() }}><span className="brand-mark" aria-hidden="true">{'{ }'}</span><span className="brand-copy">exam<span className="brand-light">desk</span><small>BITS exam practice</small></span><span className="sr-only"> overview</span></StudyLink>
       <span className="bar-title" aria-hidden="true">{barTitle}</span>
       <button type="button" ref={collapseToggle} className="sidebar-toggle collapse-toggle" aria-expanded={!collapsed} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-controls="sidebar-menu" title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} onClick={() => {
         setCollapsed(!collapsed); persistPreference(SIDEBAR_KEY, String(!collapsed))

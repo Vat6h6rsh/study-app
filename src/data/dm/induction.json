@@ -12,7 +12,7 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1: 1=1*2/2."
+        "text": "Let P(n) be the assertion: 1+2+...+n = n*(n+1)/2 for n >= 1. Induction is on this integer index in the stated domain. Basis n=1: 1=1*2/2."
       },
       {
         "step": 2,
@@ -20,11 +20,15 @@
       },
       {
         "step": 3,
-        "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2."
+        "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2.\nThus the statement holds at k+1. By induction it holds for every n>=1."
       },
       {
         "step": 4,
-        "text": "Thus the statement holds at k+1. By induction it holds for every n>=1."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+2+...+n = n*(n+1)/2 for n >= 1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -32,22 +36,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1: 1=1*2/2.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Inductive hypothesis: for an arbitrary k>=1, 1+...+k=k*(k+1)/2.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Thus the statement holds at k+1. By induction it holds for every n>=1.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ],
@@ -65,7 +74,7 @@
         "solution": [
           {
             "step": 1,
-            "text": "Basis n=1: 1=1*2/2."
+            "text": "Let P(n) be the assertion: 1+2+...+n = n*(n+1)/2 for n >= 1. Induction is on this integer index in the stated domain. Basis n=1: 1=1*2/2."
           },
           {
             "step": 2,
@@ -73,11 +82,15 @@
           },
           {
             "step": 3,
-            "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2."
+            "text": "Add k+1: 1+...+k+(k+1)=k*(k+1)/2+(k+1)=(k+1)*(k+2)/2.\nThus the statement holds at k+1. By induction it holds for every n>=1."
           },
           {
             "step": 4,
-            "text": "Thus the statement holds at k+1. By induction it holds for every n>=1."
+            "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+          },
+          {
+            "step": 5,
+            "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+2+...+n = n*(n+1)/2 for n >= 1."
           }
         ],
         "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -129,19 +142,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1: 1=1^2."
+        "text": "Let P(n) be the assertion: 1+3+...+(2*n-1)=n^2 for n>=1. Induction is on this integer index in the stated domain. Basis n=1: 1=1^2."
       },
       {
         "step": 2,
-        "text": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
+        "text": "Inductive hypothesis: Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
       },
       {
         "step": 3,
-        "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2."
+        "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2.\nTherefore the formula holds for every n>=1 by induction."
       },
       {
         "step": 4,
-        "text": "Therefore the formula holds for every n>=1 by induction."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+3+...+(2*n-1)=n^2 for n>=1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -149,22 +166,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1: 1=1^2.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Therefore the formula holds for every n>=1 by induction.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ],
@@ -182,19 +204,23 @@
         "solution": [
           {
             "step": 1,
-            "text": "Basis n=1: 1=1^2."
+            "text": "Let P(n) be the assertion: 1+3+...+(2*n-1)=n^2 for n>=1. Induction is on this integer index in the stated domain. Basis n=1: 1=1^2."
           },
           {
             "step": 2,
-            "text": "Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
+            "text": "Inductive hypothesis: Assume 1+3+...+(2*k-1)=k^2 for an arbitrary k>=1."
           },
           {
             "step": 3,
-            "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2."
+            "text": "The next term is 2*(k+1)-1=2*k+1. The new sum is k^2+2*k+1=(k+1)^2.\nTherefore the formula holds for every n>=1 by induction."
           },
           {
             "step": 4,
-            "text": "Therefore the formula holds for every n>=1 by induction."
+            "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+          },
+          {
+            "step": 5,
+            "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+3+...+(2*n-1)=n^2 for n>=1."
           }
         ],
         "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -246,19 +272,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=0: 1=2^1-1."
+        "text": "Let P(n) be the assertion: 1+2+...+2^n=2^(n+1)-1 for n>=0. Induction is on this integer index in the stated domain. Basis n=0: 1=2^1-1."
       },
       {
         "step": 2,
-        "text": "Assume sum_(i=0)^k 2^i=2^(k+1)-1."
+        "text": "Inductive hypothesis: for an arbitrary integer k>=0, assume sum_(i=0)^k 2^i=2^(k+1)-1."
       },
       {
         "step": 3,
-        "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1."
+        "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1.\nThe basis and step prove the formula for all n>=0."
       },
       {
         "step": 4,
-        "text": "The basis and step prove the formula for all n>=0."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+2+...+2^n=2^(n+1)-1 for n>=0."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -266,22 +296,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=0: 1=2^1-1.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume sum_(i=0)^k 2^i=2^(k+1)-1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "The basis and step prove the formula for all n>=0.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ],
@@ -299,19 +334,23 @@
         "solution": [
           {
             "step": 1,
-            "text": "Basis n=0: 1=2^1-1."
+            "text": "Let P(n) be the assertion: 1+2+...+2^n=2^(n+1)-1 for n>=0. Induction is on this integer index in the stated domain. Basis n=0: 1=2^1-1."
           },
           {
             "step": 2,
-            "text": "Assume sum_(i=0)^k 2^i=2^(k+1)-1."
+            "text": "Inductive hypothesis: for an arbitrary integer k>=0, assume sum_(i=0)^k 2^i=2^(k+1)-1."
           },
           {
             "step": 3,
-            "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1."
+            "text": "Add 2^(k+1): the sum through k+1 is 2*(2^(k+1))-1=2^(k+2)-1.\nThe basis and step prove the formula for all n>=0."
           },
           {
             "step": 4,
-            "text": "The basis and step prove the formula for all n>=0."
+            "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+          },
+          {
+            "step": 5,
+            "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 1+2+...+2^n=2^(n+1)-1 for n>=0."
           }
         ],
         "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -363,23 +402,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1 gives 1=1*2*3/6."
+        "text": "Let P(n) be the assertion: sum_(i=1)^n i^2=n*(n+1)*(2*n+1)/6 for n>=1. Induction is on this integer index in the stated domain. Basis n=1 gives 1=1*2*3/6."
       },
       {
         "step": 2,
-        "text": "Assume the formula holds at k>=1."
+        "text": "Inductive hypothesis: for an arbitrary integer k>=1, assume sum_(i=1)^k i^2=k*(k+1)*(2*k+1)/6."
       },
       {
         "step": 3,
-        "text": "Add (k+1)^2: the new sum equals (k+1)*[k*(2*k+1)+6*(k+1)]/6."
+        "text": "Add (k+1)^2: the new sum equals (k+1)*[k*(2*k+1)+6*(k+1)]/6.\nThe bracket is 2*k^2+7*k+6=(k+2)*(2*k+3), giving (k+1)*(k+2)*(2*k+3)/6.\nBy induction, the formula holds for every n>=1."
       },
       {
         "step": 4,
-        "text": "The bracket is 2*k^2+7*k+6=(k+2)*(2*k+3), giving (k+1)*(k+2)*(2*k+3)/6."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
       },
       {
         "step": 5,
-        "text": "By induction, the formula holds for every n>=1."
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, sum_(i=1)^n i^2=n*(n+1)*(2*n+1)/6 for n>=1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -387,27 +426,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1 gives 1=1*2*3/6.",
+        "criterion": "Statement/domain and computed basis",
         "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume the formula holds at k>=1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Add (k+1)^2: the new sum equals (k+1)*[k*(2*k+1)+6*(k+1)]/6.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "The bracket is 2*k^2+7*k+6=(k+2)*(2*k+3), giving (k+1)*(k+2)*(2*k+3)/6.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
         "marks": 1
       },
       {
         "step": 5,
-        "criterion": "By induction, the formula holds for every n>=1.",
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -425,19 +464,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=0: 4^0-1=0 is divisible by 3."
+        "text": "Let P(n) assert that 3 divides 4^n-1 for every integer n>=0. Basis: 4^0-1=0=3*0, so P(0) holds."
       },
       {
         "step": 2,
-        "text": "Assume 4^k-1=3*t for an integer t."
+        "text": "Inductive hypothesis: let k>=0 be arbitrary and assume 4^k-1=3*m for some integer m."
       },
       {
         "step": 3,
-        "text": "4^(k+1)-1=4*(4^k-1)+3=3*(4*t+1)."
+        "text": "For P(k+1), 4^(k+1)-1=4*(4^k-1)+3. This exposes the hypothesis."
       },
       {
         "step": 4,
-        "text": "Since 4*t+1 is an integer, divisibility holds at k+1 and hence for all n>=0."
+        "text": "Substituting gives 4^(k+1)-1=4*(3*m)+3=3*(4*m+1). Let t=4*m+1; t is an integer, so P(k+1) holds."
+      },
+      {
+        "step": 5,
+        "text": "By the principle of mathematical induction, 3 divides 4^n-1 for every integer n>=0."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -445,22 +488,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=0: 4^0-1=0 is divisible by 3.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 4^k-1=3*t for an integer t.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "4^(k+1)-1=4*(4^k-1)+3=3*(4*t+1).",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Since 4*t+1 is an integer, divisibility holds at k+1 and hence for all n>=0.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -478,23 +526,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1 gives 0, divisible by 6."
+        "text": "Let P(n) assert that 6 divides n^3-n for every integer n>=1. Basis: 1^3-1=0=6*0, so P(1) holds."
       },
       {
         "step": 2,
-        "text": "Assume 6 divides k^3-k."
+        "text": "Inductive hypothesis: let k>=1 be arbitrary and assume k^3-k=6*m for some integer m."
       },
       {
         "step": 3,
-        "text": "(k+1)^3-(k+1)=(k^3-k)+3*k*(k+1)."
+        "text": "For P(k+1), (k+1)^3-(k+1)=(k^3-k)+3*k*(k+1)."
       },
       {
         "step": 4,
-        "text": "One of consecutive integers k,k+1 is even, so 3*k*(k+1) is divisible by 6. The whole expression is divisible by 6."
+        "text": "Since k and k+1 are consecutive, k*(k+1)=2*u for some integer u. Substituting the hypothesis gives (k+1)^3-(k+1)=6*m+6*u=6*(m+u). Let t=m+u, an integer. Thus P(k+1) holds."
       },
       {
         "step": 5,
-        "text": "The result follows for all n>=1."
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 6 divides n^3-n for n>=1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -502,27 +550,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1 gives 0, divisible by 6.",
+        "criterion": "Statement/domain and computed basis",
         "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 6 divides k^3-k.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "(k+1)^3-(k+1)=(k^3-k)+3*k*(k+1).",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "One of consecutive integers k,k+1 is even, so 3*k*(k+1) is divisible by 6. The whole expression is divisible by 6.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
         "marks": 1
       },
       {
         "step": 5,
-        "criterion": "The result follows for all n>=1.",
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -540,19 +588,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=0: 1>=1."
+        "text": "Let P(n) be the assertion: 2^n >= n+1 for n>=0. Induction is on this integer index in the stated domain. Basis n=0: 1>=1."
       },
       {
         "step": 2,
-        "text": "Assume 2^k>=k+1 for k>=0."
+        "text": "Inductive hypothesis: Assume 2^k>=k+1 for k>=0."
       },
       {
         "step": 3,
-        "text": "2^(k+1)=2*2^k>=2*k+2>=k+2 because k>=0."
+        "text": "2^(k+1)=2*2^k>=2*k+2>=k+2 because k>=0.\nThus the result holds for all n>=0."
       },
       {
         "step": 4,
-        "text": "Thus the result holds for all n>=0."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 2^n >= n+1 for n>=0."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -560,22 +612,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=0: 1>=1.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 2^k>=k+1 for k>=0.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "2^(k+1)=2*2^k>=2*k+2>=k+2 because k>=0.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Thus the result holds for all n>=0.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -593,19 +650,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1: 1!=1=2^0."
+        "text": "Let P(n) be the assertion: n! >= 2^(n-1) for n>=1. Induction is on this integer index in the stated domain. Basis n=1: 1!=1=2^0."
       },
       {
         "step": 2,
-        "text": "Assume k!>=2^(k-1), k>=1."
+        "text": "Inductive hypothesis: Assume k!>=2^(k-1), k>=1."
       },
       {
         "step": 3,
-        "text": "(k+1)!=(k+1)*k!>=2*2^(k-1)=2^k because k+1>=2."
+        "text": "(k+1)!=(k+1)*k!>=2*2^(k-1)=2^k because k+1>=2.\nHence the inequality holds for every n>=1."
       },
       {
         "step": 4,
-        "text": "Hence the inequality holds for every n>=1."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, n! >= 2^(n-1) for n>=1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -613,22 +674,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1: 1!=1=2^0.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume k!>=2^(k-1), k>=1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "(k+1)!=(k+1)*k!>=2*2^(k-1)=2^k because k+1>=2.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Hence the inequality holds for every n>=1.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -646,19 +712,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=4: 16=4^2."
+        "text": "Let P(n) be the assertion: 2^n>=n^2 for n>=4. Induction is on this integer index in the stated domain. Basis n=4: 16=4^2."
       },
       {
         "step": 2,
-        "text": "Assume 2^k>=k^2 for k>=4."
+        "text": "Inductive hypothesis: Assume 2^k>=k^2 for k>=4."
       },
       {
         "step": 3,
-        "text": "2^(k+1)>=2*k^2. Also 2*k^2-(k+1)^2=k^2-2*k-1>=7>0 for k>=4."
+        "text": "2^(k+1)>=2*k^2. Also 2*k^2-(k+1)^2=k^2-2*k-1>=7>0 for k>=4.\nTherefore 2^(k+1)>=(k+1)^2. By induction the claim holds for n>=4."
       },
       {
         "step": 4,
-        "text": "Therefore 2^(k+1)>=(k+1)^2. By induction the claim holds for n>=4."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 2^n>=n^2 for n>=4."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -666,22 +736,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=4: 16=4^2.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 2^k>=k^2 for k>=4.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "2^(k+1)>=2*k^2. Also 2*k^2-(k+1)^2=k^2-2*k-1>=7>0 for k>=4.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Therefore 2^(k+1)>=(k+1)^2. By induction the claim holds for n>=4.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -699,7 +774,7 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis: 12=3*4, 13=2*4+5, 14=4+2*5, 15=3*5."
+        "text": "Let P(n) be the assertion: every integer n>=12 equals 4*a+5*b for some nonnegative integers a,b. Induction is on this integer index in the stated domain. Basis: 12=3*4, 13=2*4+5, 14=4+2*5, 15=3*5."
       },
       {
         "step": 2,
@@ -707,11 +782,15 @@
       },
       {
         "step": 3,
-        "text": "For k+1, we have 12<=k-3<=k. By the hypothesis k-3=4*a+5*b."
+        "text": "For k+1, we have 12<=k-3<=k. By the hypothesis k-3=4*a+5*b.\nThen k+1=4*(a+1)+5*b, with nonnegative coefficients. Hence all n>=12 are representable."
       },
       {
         "step": 4,
-        "text": "Then k+1=4*(a+1)+5*b, with nonnegative coefficients. Hence all n>=12 are representable."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of strong mathematical induction, every integer n>=12 equals 4*a+5*b for some nonnegative integers a,b."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -719,22 +798,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis: 12=3*4, 13=2*4+5, 14=4+2*5, 15=3*5.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Strong hypothesis: assume every integer from 12 through k is representable, where k>=15.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "For k+1, we have 12<=k-3<=k. By the hypothesis k-3=4*a+5*b.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Then k+1=4*(a+1)+5*b, with nonnegative coefficients. Hence all n>=12 are representable.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -752,19 +836,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=2 is itself prime."
+        "text": "Let P(n) be the assertion: every integer n>=2 is a product of primes. Induction is on this integer index in the stated domain. Basis n=2 is itself prime."
       },
       {
         "step": 2,
-        "text": "Assume each integer from 2 through k is a product of primes."
+        "text": "Strong inductive hypothesis: for an arbitrary integer k>=2, assume every integer j with 2<=j<=k is a product of primes."
       },
       {
         "step": 3,
-        "text": "If k+1 is prime, it is a one-factor product. Otherwise k+1=a*b with 2<=a,b<=k."
+        "text": "If k+1 is prime, it is a one-factor product. Otherwise k+1=a*b with 2<=a,b<=k.\nBoth a and b are products of primes by the strong hypothesis, so their product is too. The result follows."
       },
       {
         "step": 4,
-        "text": "Both a and b are products of primes by the strong hypothesis, so their product is too. The result follows."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of strong mathematical induction, every integer n>=2 is a product of primes."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -772,22 +860,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=2 is itself prime.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume each integer from 2 through k is a product of primes.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "If k+1 is prime, it is a one-factor product. Otherwise k+1=a*b with 2<=a,b<=k.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Both a and b are products of primes by the strong hypothesis, so their product is too. The result follows.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -805,7 +898,7 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis: the empty string has length 0 and zero of both symbols."
+        "text": "Let P be the stated property of each recursively generated object: length(s)=number_of_0s(s)+number_of_1s(s). Basis: the empty string has length 0 and zero of both symbols."
       },
       {
         "step": 2,
@@ -813,11 +906,15 @@
       },
       {
         "step": 3,
-        "text": "Appending 0 increases length and number of 0s by 1, leaving number of 1s unchanged. Appending 1 increases length and number of 1s by 1."
+        "text": "Appending 0 increases length and number of 0s by 1, leaving number of 1s unchanged. Appending 1 increases length and number of 1s by 1.\nEach constructor preserves the equality. Thus it holds for every generated binary string."
       },
       {
         "step": 4,
-        "text": "Each constructor preserves the equality. Thus it holds for every generated binary string."
+        "text": "The property has been proved for every allowed constructor, using only the property of its previously generated inputs."
+      },
+      {
+        "step": 5,
+        "text": "Each constructor preserves the asserted property. By structural induction it holds for every generated object in the stated domain."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -825,22 +922,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis: the empty string has length 0 and zero of both symbols.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Structural hypothesis: assume the equality holds for a constructed string s.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Appending 0 increases length and number of 0s by 1, leaving number of 1s unchanged. Appending 1 increases length and number of 1s by 1.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Each constructor preserves the equality. Thus it holds for every generated binary string.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -858,19 +960,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis: a single leaf has L=1 and I=0."
+        "text": "Let P be the stated property of each recursively generated object: a full binary tree has leaves = internal vertices + 1. Basis: a single leaf has L=1 and I=0."
       },
       {
         "step": 2,
-        "text": "A non-leaf full binary tree consists of a root and two smaller full binary trees. Assume L1=I1+1 and L2=I2+1."
+        "text": "Inductive hypothesis: A non-leaf full binary tree consists of a root and two smaller full binary trees. Assume L1=I1+1 and L2=I2+1."
       },
       {
         "step": 3,
-        "text": "The combined tree has L=L1+L2=I1+I2+2 and I=1+I1+I2. Therefore L=I+1."
+        "text": "The combined tree has L=L1+L2=I1+I2+2 and I=1+I1+I2. Therefore L=I+1.\nBy structural induction the identity holds for all full binary trees."
       },
       {
         "step": 4,
-        "text": "By structural induction the identity holds for all full binary trees."
+        "text": "The property has been proved for every allowed constructor, using only the property of its previously generated inputs."
+      },
+      {
+        "step": 5,
+        "text": "Each constructor preserves the asserted property. By structural induction it holds for every generated object in the stated domain."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -878,22 +984,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis: a single leaf has L=1 and I=0.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "A non-leaf full binary tree consists of a root and two smaller full binary trees. Assume L1=I1+1 and L2=I2+1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "The combined tree has L=L1+L2=I1+I2+2 and I=1+I1+I2. Therefore L=I+1.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "By structural induction the identity holds for all full binary trees.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -911,19 +1022,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis: F_1=1<=1 and F_2=1<=2."
+        "text": "Let P(n) be the assertion: F_n<=2^(n-1) for n>=1. Induction is on this integer index in the stated domain. Basis: F_1=1<=1 and F_2=1<=2."
       },
       {
         "step": 2,
-        "text": "Assume the inequality holds for every integer from 1 through k, where k>=2."
+        "text": "Strong inductive hypothesis: for an arbitrary integer k>=2, assume F_j<=2^(j-1) for every integer j with 1<=j<=k."
       },
       {
         "step": 3,
-        "text": "F_(k+1)=F_k+F_(k-1)<=2^(k-1)+2^(k-2)=3*2^(k-2)<=4*2^(k-2)=2^k."
+        "text": "F_(k+1)=F_k+F_(k-1)<=2^(k-1)+2^(k-2)=3*2^(k-2)<=4*2^(k-2)=2^k.\nThus strong induction establishes the bound for all n>=1."
       },
       {
         "step": 4,
-        "text": "Thus strong induction establishes the bound for all n>=1."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of strong mathematical induction, F_n<=2^(n-1) for n>=1."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -931,22 +1046,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis: F_1=1<=1 and F_2=1<=2.",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume the inequality holds for every integer from 1 through k, where k>=2.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "F_(k+1)=F_k+F_(k-1)<=2^(k-1)+2^(k-2)=3*2^(k-2)<=4*2^(k-2)=2^k.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Thus strong induction establishes the bound for all n>=1.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ]
@@ -1017,7 +1137,7 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis h=0: the tree contains one root, and 1=4^0."
+        "text": "Let P(h) be the assertion: a ternary tree of height h has at most 4^h nodes. Induction is on this integer index in the stated domain. Basis h=0: the tree contains one root, and 1=4^0."
       },
       {
         "step": 2,
@@ -1025,15 +1145,15 @@
       },
       {
         "step": 3,
-        "text": "A tree of height k+1 consists of its root and at most three subtrees, each of height at most k. Each has at most 4^k nodes."
+        "text": "A tree of height k+1 consists of its root and at most three subtrees, each of height at most k. Each has at most 4^k nodes.\nThus total nodes <=1+3*4^k<=4^k+3*4^k=4^(k+1), because 4^k>=1.\nBy strong induction the bound holds for all h>=0."
       },
       {
         "step": 4,
-        "text": "Thus total nodes <=1+3*4^k<=4^k+3*4^k=4^(k+1), because 4^k>=1."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
       },
       {
         "step": 5,
-        "text": "By strong induction the bound holds for all h>=0."
+        "text": "The computed basis and inductive step prove the claim. By the principle of strong mathematical induction, a ternary tree of height h has at most 4^h nodes."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -1041,27 +1161,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis h=0: the tree contains one root, and 1=4^0.",
+        "criterion": "Statement/domain and computed basis",
         "marks": 4
       },
       {
         "step": 2,
-        "criterion": "Strong hypothesis: every ternary tree of height j<=k has at most 4^j nodes.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 4
       },
       {
         "step": 3,
-        "criterion": "A tree of height k+1 consists of its root and at most three subtrees, each of height at most k. Each has at most 4^k nodes.",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 4
       },
       {
         "step": 4,
-        "criterion": "Thus total nodes <=1+3*4^k<=4^k+3*4^k=4^(k+1), because 4^k>=1.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
         "marks": 4
       },
       {
         "step": 5,
-        "criterion": "By strong induction the bound holds for all h>=0.",
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 4
       }
     ],
@@ -1087,19 +1207,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=4: 2^4=16=4+12."
+        "text": "Let P(n) be the assertion: 2^n >= n+12 for all natural numbers n>=4. Induction is on this integer index in the stated domain. Basis n=4: 2^4=16=4+12."
       },
       {
         "step": 2,
-        "text": "Assume 2^k>=k+12 for an arbitrary k>=4."
+        "text": "Inductive hypothesis: Assume 2^k>=k+12 for an arbitrary k>=4."
       },
       {
         "step": 3,
-        "text": "2^(k+1)=2*2^k>=2*k+24. Also 2*k+24-(k+13)=k+11>=0."
+        "text": "2^(k+1)=2*2^k>=2*k+24. Also 2*k+24-(k+13)=k+11>=0.\nHence 2^(k+1)>=k+13=(k+1)+12. By induction the inequality holds for all n>=4."
       },
       {
         "step": 4,
-        "text": "Hence 2^(k+1)>=k+13=(k+1)+12. By induction the inequality holds for all n>=4."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
+      },
+      {
+        "step": 5,
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 2^n >= n+12 for all natural numbers n>=4."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -1107,22 +1231,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=4: 2^4=16=4+12.",
-        "marks": 4
+        "criterion": "Statement/domain and computed basis",
+        "marks": 3
       },
       {
         "step": 2,
-        "criterion": "Assume 2^k>=k+12 for an arbitrary k>=4.",
-        "marks": 4
+        "criterion": "Explicit inductive hypothesis",
+        "marks": 3
       },
       {
         "step": 3,
-        "criterion": "2^(k+1)=2*2^k>=2*k+24. Also 2*k+24-(k+13)=k+11>=0.",
-        "marks": 4
+        "criterion": "Algebra exposing the hypothesis",
+        "marks": 3
       },
       {
         "step": 4,
-        "criterion": "Hence 2^(k+1)>=k+13=(k+1)+12. By induction the inequality holds for all n>=4.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 3
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 3
       }
     ],
@@ -1148,7 +1277,7 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis: 1=1 (mod 4)."
+        "text": "Let P be the stated property of each recursively generated object: every n in S is congruent to 1 modulo 4. Basis: 1=1 (mod 4)."
       },
       {
         "step": 2,
@@ -1156,11 +1285,15 @@
       },
       {
         "step": 3,
-        "text": "Then 3*n+2=3*1+2=5=1 (mod 4), and n^2=1^2=1 (mod 4)."
+        "text": "Then 3*n+2=3*1+2=5=1 (mod 4), and n^2=1^2=1 (mod 4).\nBoth constructors preserve the property. Hence by structural induction every element of S is congruent to 1 modulo 4."
       },
       {
         "step": 4,
-        "text": "Both constructors preserve the property. Hence by structural induction every element of S is congruent to 1 modulo 4."
+        "text": "The property has been proved for every allowed constructor, using only the property of its previously generated inputs."
+      },
+      {
+        "step": 5,
+        "text": "Each constructor preserves the asserted property. By structural induction it holds for every generated object in the stated domain."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -1168,22 +1301,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis: 1=1 (mod 4).",
-        "marks": 2
+        "criterion": "Statement/domain and computed basis",
+        "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Structural hypothesis: take a generated n with n=1 (mod 4).",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Then 3*n+2=3*1+2=5=1 (mod 4), and n^2=1^2=1 (mod 4).",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Both constructors preserve the property. Hence by structural induction every element of S is congruent to 1 modulo 4.",
+        "criterion": "Successor justification (named integer factor for divisibility)",
+        "marks": 1
+      },
+      {
+        "step": 5,
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ],
@@ -1207,23 +1345,23 @@
     "solution": [
       {
         "step": 1,
-        "text": "Basis n=1: 2^2=4<1+2*2=5."
+        "text": "Let P(n) be the assertion: 2^(n+1) < 1+(n+1)*2^n for every positive integer n, using induction. Induction is on this integer index in the stated domain. Basis n=1: 2^2=4<1+2*2=5."
       },
       {
         "step": 2,
-        "text": "Assume 2^(k+1)<1+(k+1)*2^k for an arbitrary k>=1."
+        "text": "Inductive hypothesis: Assume 2^(k+1)<1+(k+1)*2^k for an arbitrary k>=1."
       },
       {
         "step": 3,
-        "text": "Multiply by 2: 2^(k+2)<2+(k+1)*2^(k+1)."
+        "text": "Multiply by 2: 2^(k+2)<2+(k+1)*2^(k+1).\nSince 1<=2^(k+1), we have 2+(k+1)*2^(k+1)<=1+(k+2)*2^(k+1).\nHence 2^(k+2)<1+(k+2)*2^(k+1), proving the step and the claim."
       },
       {
         "step": 4,
-        "text": "Since 1<=2^(k+1), we have 2+(k+1)*2^(k+1)<=1+(k+2)*2^(k+1)."
+        "text": "The displayed derivation establishes P at the successor index using the hypothesis at established earlier indices."
       },
       {
         "step": 5,
-        "text": "Hence 2^(k+2)<1+(k+2)*2^(k+1), proving the step and the claim."
+        "text": "The computed basis and inductive step prove the claim. By the principle of mathematical induction, 2^(n+1) < 1+(n+1)*2^n for every positive integer n, using induction."
       }
     ],
     "conceptNote": "Establish the correct basis, state a hypothesis for arbitrary earlier indices, and justify every transition to the next case.",
@@ -1231,27 +1369,27 @@
     "rubric": [
       {
         "step": 1,
-        "criterion": "Basis n=1: 2^2=4<1+2*2=5.",
+        "criterion": "Statement/domain and computed basis",
         "marks": 1
       },
       {
         "step": 2,
-        "criterion": "Assume 2^(k+1)<1+(k+1)*2^k for an arbitrary k>=1.",
+        "criterion": "Explicit inductive hypothesis",
         "marks": 1
       },
       {
         "step": 3,
-        "criterion": "Multiply by 2: 2^(k+2)<2+(k+1)*2^(k+1).",
+        "criterion": "Algebra exposing the hypothesis",
         "marks": 1
       },
       {
         "step": 4,
-        "criterion": "Since 1<=2^(k+1), we have 2+(k+1)*2^(k+1)<=1+(k+2)*2^(k+1).",
+        "criterion": "Successor justification (named integer factor for divisibility)",
         "marks": 1
       },
       {
         "step": 5,
-        "criterion": "Hence 2^(k+2)<1+(k+2)*2^(k+1), proving the step and the claim.",
+        "criterion": "Conclusion citing the appropriate induction principle",
         "marks": 1
       }
     ],

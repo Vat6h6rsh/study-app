@@ -2,13 +2,14 @@ import type { Question, Subject } from '../data/types'
 import type { Attempt } from './storage'
 
 export type PriorityFilter = 'all' | 'core' | 'extra'
-const difficulty = { Foundation: 0, Exam: 1, Challenge: 2 }
+const difficulty = { Foundation: 0, Exam: 1, Challenge: 2, foundation: 0, standard: 1, exam: 2 }
+const priority = { core: 0, past: 1, extra: 2 }
 const bank = { past: 0, original: 1, mock: 2 }
 export function sortPractice<T extends Question>(pool: T[]) {
   return [...pool].sort((a, b) =>
     // WP opens with the historical full task; its type filter still offers Foundation drills.
     (a.subject === 'wp' && b.subject === 'wp' ? bank[a.pool] - bank[b.pool] : 0) ||
-    ('priority' in a && 'priority' in b ? Number(a.priority === 'extra') - Number(b.priority === 'extra') : 0) ||
+    ('priority' in a && 'priority' in b ? priority[a.priority] - priority[b.priority] : 0) ||
     difficulty[a.difficulty] - difficulty[b.difficulty] || bank[a.pool] - bank[b.pool])
 }
 export function topicGroups<T extends Question>(pool: T[], topics: Subject['topics']) {

@@ -19,38 +19,39 @@ Practice only (mocks excluded):
     "proofs.json",
     "counting.json",
     "sets.json",
-    "groups.json"
+    "groups.json",
+    "slot1-pattern.json"
   ],
   "mockFile": "mocks.json",
-  "practiceCount": 217,
+  "practiceCount": 256,
   "pastPaperCount": 64,
   "counts": {
     "topic": {
       "counting": 10,
       "graphs": 34,
       "groups": 10,
-      "induction": 19,
-      "logic": 27,
-      "mst": 23,
-      "posets": 31,
+      "induction": 25,
+      "logic": 32,
+      "mst": 28,
+      "posets": 38,
       "proofs": 9,
-      "recurrences": 22,
-      "relations": 16,
-      "sets": 16
+      "recurrences": 27,
+      "relations": 22,
+      "sets": 21
     },
     "type": {
       "formula": 25,
       "mcq": 5,
-      "mst": 23,
+      "mst": 28,
       "numeric": 18,
       "partition": 4,
       "properties": 12,
       "set-answer": 30,
-      "steps": 83,
-      "truth-table": 17
+      "steps": 112,
+      "truth-table": 22
     },
     "priority": {
-      "core": 163,
+      "core": 202,
       "extra": 1,
       "past": 53
     }
@@ -70,6 +71,16 @@ Practice only (mocks excluded):
       "id": "dm-mock-3",
       "marks": 50,
       "coreMarks": 35
+    },
+    {
+      "id": "dm-mock-4",
+      "marks": 50,
+      "coreMarks": 50
+    },
+    {
+      "id": "dm-mock-5",
+      "marks": 50,
+      "coreMarks": 50
     }
   ],
   "reconstructed": [
@@ -126,3 +137,7 @@ Practice only (mocks excluded):
   ]
 }
 ```
+
+## Slot 1 extension
+
+39 core practice questions with 171 optional checkpoints; 2 fresh 50-mark mocks with 14 main items and 56 checkpoints. Total: 256 practice questions, 5 mocks, 14 Learn notes. Checkpoint marks are included in parent marks. Full induction proofs are required.

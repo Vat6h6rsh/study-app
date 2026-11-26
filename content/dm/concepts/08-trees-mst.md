@@ -65,3 +65,19 @@ Trap: n-1 edges without connectedness need not form a spanning tree. “Pick the
 Remember: The professor requires numbered additions and the total weight. No diagram is required for an MST answer.
 
 Note: Source graph PNGs are stored in public/dm/source-images; the same graphs are also transcribed into vertices and weighted edges for SVG drawing and verification.
+
+## Typed rejection lines and tie choices
+
+When two eligible edges tie, state a tie rule (for example displayed order) and follow it consistently. A tie may produce another MST edge set; either is valid if each choice is lightest among the edges currently joining distinct components. Re-check connectivity after the first tied edge: a second tied edge can become a cycle.
+
+```text
+Sorted candidates: AB(1), BC(1), AC(2), CD(3).
+Tie rule: use displayed order.
+Step 1: add edge AB (weight 1). Components: {A,B}; {C}; {D}.
+Step 2: add edge BC (weight 1). Components: {A,B,C}; {D}.
+Reject edge AC (weight 2): A and C are already connected, so it forms a cycle.
+Step 3: add edge CD (weight 3). All four vertices are connected.
+Stop at 4-1=3 accepted edges. The MST total weight is 1+1+3=5.
+```
+
+The response builder records accepted edges; put rejected candidates in the typed explanation. Edges after the spanning tree is complete need not be examined: write that you stopped. The Slot 1 worked graph includes seven vertices, a tie, cycle rejections and the complete total.

@@ -850,3 +850,17 @@ Feedback: the two-pane ITP UI stuttered on phones, typing into a separate answer
 
 **Not covered.** Physical iOS/Android keyboards (accessory bar position with a real keyboard), screen readers and real-device scroll feel are still to be tested by hand.
 
+
+
+
+## 26 November 2026 · DM integration
+
+DM follows the existing shell, four themes, mobile sheets and Learn order. The dashboard leads with the reported Slot 1 Q1–Q5 route and highlights the professor's seven core groups. The manifest discovers practice files; mock questions remain exclusive. Subject-aware links preserve DM in new tabs, history and subject switches.
+
+All nine response types have labelled editors and typed working. Truth tables use 44px T/F cells, sticky column headers, per-cell verdict text and an internally scrollable table. Formula inputs require explicit multiplication and use a bounded parser; wrong answers show values at every test point. Sets preserve nested labels and ordered pairs; partitions require unique universe membership. MST graphs use SVG weights, selected-edge styling, keyboard-accessible edge buttons, text entry, undo, a running weight, tie-aware greedy validation and original figures when supplied. Written proofs reveal their model and editorial rubric after submission. Checkpoints add no marks. Revealed practice parts earn zero, including after reload.
+
+Mocks use paper durations and a persisted wall-clock deadline. Running papers have no reveal or live verdicts. Submission locks working, marks auto-checked parts and opens proof self-assessment; pending criteria keep the total explicitly provisional. Deadlines continue across navigation and subject switches. Expiry records each part once.
+
+New verification in the normal checks: `check-dm-behavior.mjs` verifies 533 questions/checkpoints, parser precedence/security, nested sets/pairs, partitions, large integers, per-cell marking, reveal penalties, rubric scoring and Prim/Kruskal ties. `check-dm-ui.mjs` renders all 300 main questions and reports, 15 notes and every mock state. `check-dm-browser.mjs` checks every editor/report at 390px, 44px truth cells, theme samples, draft reloads, reveal penalties, subject links, MST selection/undo, neutral mocks, saved navigation and expiry deduplication. DM palette aliases reuse AA-tested tokens and are checked in all four themes. Existing reduced-motion rules disable new error shakes and shared confetti. Physical phone keyboards and assistive-technology testing remain outstanding.
+
+DM data/content stayed read-only. The week plan is `content/dm-exam-week-plan.md`, bundled into Learn, because the parallel author owns `content/dm/**`. Generator `--check` compares generated content without writing. `npm run verify:content` passed structural/WP checks with existing ITP brief-leak warnings; GCC was unavailable, so no fresh compilation was claimed and previous compiler evidence was preserved. `verify-concepts.mjs` passed structure but exited 1 because C examples could not compile. No DM content errors were found. The build warns about the approximately 2.7 MB main chunk; subject-level code splitting remains a backlog item.

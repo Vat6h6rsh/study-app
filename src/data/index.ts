@@ -8,6 +8,8 @@ import wpPast from './wp/past.json'
 import wpOriginal from './wp/original.json'
 import wpMocks from './wp/mocks.json'
 import wpPapers from './wp/papers.json'
+import { dmQuestions, dmCoreTopics } from './dm'
+import { dmConcepts } from './concepts'
 
 export const subjects: Subject[] = [
   { id: 'itp', shortName: 'ITP', name: 'Introduction to Programming', code: 'BCS ZC313', active: true, topics: [
@@ -23,7 +25,7 @@ export const subjects: Subject[] = [
     { id: 'operators', name: 'Operators & conversions', priority: 'Medium' },
     { id: 'scope', name: 'Scope & storage', priority: 'Medium' },
   ] },
-  { id: 'dm', shortName: 'DM', name: 'Discrete Mathematics', active: false, topics: [] },
+  { id: 'dm', shortName: 'DM', name: 'Discrete Mathematics', code: 'BCS ZC219', active: true, topics: dmConcepts.filter(n => dmQuestions.some(q => q.topic === n.id)).map(n => ({ id: n.id, name: n.title, priority: dmCoreTopics.has(n.id) ? 'High' as const : 'Medium' as const })) },
   { id: 'wp', shortName: 'WP', name: 'Writing Practice', code: 'BCS ZC239', active: true, topics: [
     { id: 'essay', name: 'Q1A · Argumentative essay', priority: 'High' },
     { id: 'paraphrase', name: 'Q1B · Paraphrasing', priority: 'High' },
@@ -40,7 +42,7 @@ export const subjects: Subject[] = [
 export const codeQuestions = [...past, ...original, ...mocks] as CodeQuestion[]
 export const codeQuestionById = new Map(codeQuestions.map(q => [q.id, q]))
 export const codePracticeQuestions = codeQuestions.filter(q => q.pool !== 'mock')
-export const questions = [...codeQuestions, ...wpPast, ...wpOriginal, ...wpMocks] as Question[]
+export const questions = [...codeQuestions, ...wpPast, ...wpOriginal, ...wpMocks, ...dmQuestions] as Question[]
 export const mockPapers = [...papers, ...wpPapers] as MockPaper[]
 export const practiceQuestions = questions.filter(q => q.pool !== 'mock')
 export const questionById = new Map(questions.map(q => [q.id, q]))

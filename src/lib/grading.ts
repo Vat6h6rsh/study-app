@@ -1,10 +1,12 @@
 import type { CodeQuestion, Question } from '../data/types'
 import { markWP } from './wp.ts'
+import { markDM } from './dm.ts'
 export const normalizeCode = (value: string) => value.replace(/\s/g, '').replace(/;+$/, '')
 // Line breaks and leading whitespace matter; CRLF is equivalent to LF.
 export const normalizeOutput = (value: string) => value.replace(/\r\n/g, '\n').split('\n').map(line => line.replace(/[\t ]+$/, '')).join('\n')
 export function mark(question: Question, answers: Record<string, string>): Record<string, boolean> {
   if ('partLabel' in question) return markWP(question, answers)
+  if ('conceptNote' in question) return markDM(question, answers)
   if (question.type === 'output') return { output: normalizeOutput(answers.output || '') === normalizeOutput(question.expectedOutput || '') }
   return Object.fromEntries(question.blanks.map(blank => [blank.id, blank.accepted.some(answer => normalizeCode(answer) === normalizeCode(answers[blank.id] || ''))]))
 }

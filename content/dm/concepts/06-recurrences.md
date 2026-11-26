@@ -70,4 +70,24 @@ Trap: Applying initial conditions to only the homogeneous part produces the wron
 
 Remember: Check the first order-many terms and substitute into the recurrence; a plausible-looking formula is not enough.
 
-Note: The verifier independently iterates every stored recurrence through index 12; this finite check supplements the written algebra.
+Note: The verifier independently iterates every stored recurrence through index 15; this finite check supplements the written algebra.
+
+## Polynomial forcing and repeated-root resonance, fully worked
+
+For the reported third-order recurrence, `r^3-7*r^2+16*r-12=(r-2)^2*(r-3)`. Thus the homogeneous part is `(C1+C2*n)*2^n+C3*3^n`. Because 1 is not a root, forcing `n^4` needs the full trial `A*n^4+B*n^3+C*n^2+D*n+E`, with no extra n factor. Substituting and equating coefficients gives A=-1/2, B=-11, C=-105, D=-1033/2, E=-1099. Applying a_0=-2,a_1=0,a_2=5 to the **total** solution gives C1=984,C2=-575/2,C3=113. The Slot 1 note shows each coefficient equation and the initial-condition system.
+
+```text
+Solve a_n=4*a_(n-1)-4*a_(n-2)+2^n, a_0=1,a_1=4.
+The characteristic polynomial is (r-2)^2.
+Homogeneous part: (A+B*n)*2^n.
+Since the forcing base 2 is a double root, try p_n=C*n^2*2^n.
+Substitution and division by 2^n give:
+C*[n^2-2*(n-1)^2+(n-2)^2]=1.
+The bracket is 2, hence C=1/2.
+Therefore a_n=(A+B*n+n^2/2)*2^n.
+At n=0, A=1. At n=1, 2*(1+B+1/2)=4, so B=1/2.
+Hence a_n=(1+n/2+n^2/2)*2^n.
+Check a_0=1, a_1=4 and a_2=16 from both recurrence and formula.
+```
+
+If forcing is `n` and root 1 is repeated twice, multiply the entire linear polynomial trial by n^2: `p_n=n^2*(A*n+B)`, not merely `A*n^2`. If forcing is `2^n` and 2 is a simple root, try `C*n*2^n`. Multiplicity is measured in the characteristic polynomial of the homogeneous recurrence, before choosing the trial.

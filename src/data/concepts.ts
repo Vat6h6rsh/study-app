@@ -28,3 +28,15 @@ export const wpConcepts: Concept[] = Object.entries(wpNotes).sort(([a],[b]) => a
   if (!id || !title) throw new Error(`Missing WP concept metadata: ${path}`)
   return { id,title,fileName:path.split('/').at(-1)!,markdown }
 })
+
+const dmNotes = import.meta.glob('../../content/dm/concepts/*.md', {
+  query: '?raw', import: 'default', eager: true,
+}) as Record<string, string>
+// The content agent owns content/dm/**. Keep the UI-authored plan outside that tree.
+import dmExamWeek from '../../content/dm-exam-week-plan.md?raw'
+export const dmConcepts: Concept[] = [...Object.entries(dmNotes).sort(([a], [b]) => a.localeCompare(b)), ['../../content/dm-exam-week-plan.md', dmExamWeek] as [string, string]].map(([path, markdown]) => {
+  const id = /^Topic ID: `([a-z0-9-]+)`$/m.exec(markdown)?.[1]
+  const title = /^# (.+)$/m.exec(markdown)?.[1]
+  if (!id || !title) throw new Error(`Missing DM concept metadata: ${path}`)
+  return { id, title, fileName: path.split('/').at(-1)!, markdown }
+})

@@ -15,8 +15,8 @@ export async function checkWPUI(server,app,themes,contrast){
  const savedSubject={ [SUBJECT_KEY]:'"wp"' }
  const home=app('home',savedSubject)
  assert(home.includes('BCS ZC239')&&home.includes('Practise writing for the exam')&&home.includes('158 in your practice bank'))
- assert(!home.includes('title="C scratchpad"'));assert(home.includes('Coming soon'));assert(home.includes('WP / Writing Practice'))
- assert(app('home',{[SUBJECT_KEY]:'"dm"'}).includes('Practise C programming'),'Inactive subject cannot be restored')
+ assert(!home.includes('title="C scratchpad"'));assert(!home.includes('Coming soon'));assert(home.includes('WP / Writing Practice'))
+ assert(app('home',{[SUBJECT_KEY]:'"dm"'}).includes('Slot 1 exam pattern'),'DM is active and can be restored')
  assert(app('home',{[SUBJECT_KEY]:'{broken'}).includes('Practise C programming'))
  for(const topic of subjects.find(s=>s.id==='wp').topics){assert(topicTones[topic.id]);assert(wpConcepts.some(c=>c.id===topic.id))}
  assert.equal(wpConcepts.length,13)

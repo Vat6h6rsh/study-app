@@ -1,20 +1,20 @@
 import { memo, useEffect, useMemo, useState } from 'react'
 import type { Question, Subject } from '../data/types'
-import { concepts, wpConcepts } from '../data/concepts'
+import { concepts, wpConcepts, dmConcepts } from '../data/concepts'
 import type { Attempt } from '../lib/storage'
 import { questionProgress, topicGroups } from '../lib/practiceNavigation'
 import { topicTone } from '../topicColors'
 import { StudyLink } from './StudyLink'
 
 export function studyTopics(subject: Subject) {
-  const notes = subject.id === 'wp' ? wpConcepts : concepts
+  const notes = subject.id === 'dm' ? dmConcepts : subject.id === 'wp' ? wpConcepts : concepts
   return notes.flatMap(note => {
     const topic = subject.topics.find(t => t.id === note.id)
     return topic ? [{ ...topic, name: note.title }] : []
   })
 }
-export function PriorityChip({ priority }: { priority: 'core' | 'extra' }) {
-  return <span className={`tag priority-chip priority-${priority}`}>{priority === 'core' ? 'Core' : 'Extra'}</span>
+export function PriorityChip({ priority }: { priority: 'core' | 'past' | 'extra' }) {
+  return <span className={`tag priority-chip priority-${priority}`}>{priority === 'core' ? 'Core' : priority === 'past' ? 'Past' : 'Extra'}</span>
 }
 export const TopicPicker = memo(function TopicPicker({ subject, pool, current, attempts, onSelect, onLearn }: {
   subject: Subject; pool: Question[]; current?: Question; attempts: Attempt[]
@@ -30,7 +30,7 @@ export const TopicPicker = memo(function TopicPicker({ subject, pool, current, a
       const open = e.currentTarget.open
       setExpanded(state => state[group.id] === open ? state : { ...state, [group.id]: open })
     }}>
-      <summary><span className="topic-dot" aria-hidden="true"/><span><strong>{group.name}</strong><span className="topic-group-progress">{subject.id === 'itp' && <b>Core {progress.coreDone}/{progress.coreCount} done · </b>}{group.questions.length} questions<span className="small muted">{progress.done} done · {progress.correct} correct · {progress.revisit} revisit</span></span></span></summary>
+      <summary><span className="topic-dot" aria-hidden="true"/><span><strong>{group.name}</strong><span className="topic-group-progress">{subject.id !== 'wp' && <b>Core {progress.coreDone}/{progress.coreCount} done · </b>}{group.questions.length} questions<span className="small muted">{progress.done} done · {progress.correct} correct · {progress.revisit} revisit</span></span></span></summary>
       <StudyLink view="learn" topic={group.id} className="text-button read-topic-note" onNavigate={() => onLearn(group.id)}>Read the note</StudyLink>
       <div className="question-list">{group.questions.map((q, i) => {
         const attempt = latest.get(q.id), status = questionProgress([q], attempts)
