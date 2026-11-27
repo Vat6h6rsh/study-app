@@ -6,6 +6,7 @@ import { checkpointAnswers, dmCellKey, dmCheckpointPrefix, dmModelAnswers, dmSco
 import { AnswerFeedback } from './Delight'
 import { PriorityChip } from './TopicPicker'
 import { StudyLink } from './StudyLink'
+import { Markdown } from './Learn'
 
 export const dmTypeNames: Record<Question['type'], string> = { 'truth-table': 'Truth table', formula: 'Formula', numeric: 'Number', 'set-answer': 'Set', partition: 'Equivalence classes', properties: 'Properties', mcq: 'Multiple choice', mst: 'MST edge sequence', steps: 'Step-by-step proof' }
 export const dmScoreText = (score: number) => Number(score.toFixed(2)).toString()
@@ -19,6 +20,12 @@ export function DMConcept({ question, onLearn }: { question: Question; onLearn: 
   return <details className="concept-note"><summary>Concept: {note?.title || question.topic}</summary><div className="concept-note-body"><p>{question.conceptNote}</p><StudyLink view="learn" topic={question.topic} className="concept-lesson-link" onNavigate={() => onLearn(question.topic)}>Read the lesson →</StudyLink></div></details>
 }
 
+/** Teacher-style lesson rendered with the Learn Markdown renderer. Renders nothing when the question has no lesson. */
+export function DMLesson({ question, open = false, summary = 'Lesson: how this was solved', className = '' }: { question: Question; open?: boolean; summary?: string; className?: string }) {
+  const id = useId()
+  if (!question.lesson?.trim()) return null
+  return <details className={`dm-lesson ${className}`.trim()} open={open} data-dm-lesson={question.id}><summary id={`${id}-lesson`}><span>{summary}</span><span className="dm-lesson-chevron" aria-hidden="true">›</span></summary><div className="learn-prose dm-lesson-body" role="region" aria-labelledby={`${id}-lesson`}><Markdown text={question.lesson} idPrefix={`lesson-${question.id}`}/></div></details>
+}
 export function DMGraph({ graph, chosen = [], onEdge, locked = false, weighted = true }: { graph: Graph; chosen?: string[]; onEdge?: (id: string) => void; locked?: boolean; weighted?: boolean }) {
   const id = useId()
   const points = Object.fromEntries(graph.vertices.map((v, i) => [v, graph.layout?.[v] || { x: 150 + 110 * Math.cos(i * 2 * Math.PI / graph.vertices.length - Math.PI / 2), y: 150 + 110 * Math.sin(i * 2 * Math.PI / graph.vertices.length - Math.PI / 2) }]))
@@ -115,7 +122,7 @@ export function DMFields(props: FieldsProps) {
   </div>
 }
 
-export function DMFeedback({ question: q, answers, revealed = [], onAssess, onLearn, celebrate = false, burst = q.id }: { question: Question; answers: DMAnswers; revealed?: string[]; onAssess: (answers: DMAnswers) => void; onLearn: (topic: string) => void; celebrate?: boolean; burst?: string }) {
+export function DMFeedback({ question: q, answers, revealed = [], onAssess, onLearn, celebrate = false, burst = q.id, lessonOpen = true }: { question: Question; answers: DMAnswers; revealed?: string[]; onAssess: (answers: DMAnswers) => void; onLearn: (topic: string) => void; celebrate?: boolean; burst?: string; lessonOpen?: boolean }) {
   const score = dmScore(q, answers, revealed), results = markDM(q, answers, revealed)
   const completed = Object.values(results).filter(Boolean).length
   const id = useId()
@@ -129,6 +136,7 @@ export function DMFeedback({ question: q, answers, revealed = [], onAssess, onLe
     {q.type !== 'steps' && <p className="dm-model-answer"><strong>Model final answer: </strong><code>{Object.entries(dmModelAnswers(q as AutoQuestion)).filter(([key]) => !key.startsWith('cell:') && key !== 'propertiesConfirmed').map(([key, value]) => q.type === 'mcq' ? q.options[Number(value)] : q.type === 'properties' ? `${key.slice(9)}: ${value}` : `${q.type === 'mst' ? `${key}: ` : ''}${value}`).join(' · ') || 'See the completed truth table in the model steps below.'}</code></p>}
     {q.type === 'steps' && <fieldset className="dm-rubric"><legend>Self-mark each step</legend>{q.rubric.map(r => <label key={r.step}><input type="checkbox" checked={answers[`rubric:${r.step}`] === 'true'} disabled={!answers.working?.trim()} onChange={e => onAssess({ ...answers, [`rubric:${r.step}`]: String(e.target.checked) })}/><span><strong>Step {r.step} · {r.marks} {r.marks === 1 ? 'mark' : 'marks'}</strong>{r.criterion}</span></label>)}{!answers.working?.trim() && <p className="small muted">A blank written answer earns no rubric marks. Try again and type your reasoning.</p>}<label><input type="checkbox" checked={answers.rubricReviewed === 'true'} onChange={e => onAssess({ ...answers, rubricReviewed: String(e.target.checked) })}/><span>I have reviewed every criterion. Unchecked steps earn zero marks.</span></label></fieldset>}
     <details className="dm-model" open><summary id={`${id}-model`}>Step-by-step model solution</summary><ol aria-labelledby={`${id}-model`}>{q.solution.map(step => <li key={step.step}><span className="dm-solution-step">{/^Step \d+:/.test(step.text) ? step.text : `Step ${step.step}: ${step.text}`}</span></li>)}</ol></details>
+    <DMLesson key={q.id} question={q} open={lessonOpen}/>
     {q.type === 'steps' && q.checkpoints?.map(cp => <section key={cp.id} className="dm-checkpoint-report"><h4>Checkpoint feedback · {cp.title}</h4><DMFeedback question={cp} answers={checkpointAnswers(answers, cp.id)} onAssess={() => {}} onLearn={onLearn}/></section>)}
     {q.provenance?.marksNote && <p className="small muted">{q.provenance.marksNote}</p>}
     <DMConcept question={q} onLearn={onLearn}/>

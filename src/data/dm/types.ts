@@ -31,6 +31,8 @@ export interface BaseQuestion {
   id: string; subject: 'dm'; topic: Topic; title: string; source: string;
   priority: Priority; difficulty: 'foundation' | 'standard' | 'exam'; marks: number;
   prompt: string; solution: SolutionStep[]; conceptNote: string;
+  /** Optional teacher-style Markdown lesson (same subset as Learn notes). Attached at load time from lessons.json. */
+  lesson?: string;
   tags?: string[]; reconstructed?: boolean; reconstructionNote?: string;
   provenance?: { paper: number; question: string; printedMarks: number; marksNote?: string; page: number; image?: string; recoveredFromImage?: string[]; sourceIssue?: string };
   verification?: Verification;

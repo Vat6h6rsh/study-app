@@ -45,6 +45,21 @@ export async function checkDMUI(server,app,themes,contrast) {
    if(q.type==='steps')assert(report.includes('Self-mark each step')&&/self-assessed/i.test(report))
    const ids=[...marked.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,q.id+': unique ids')
  }
+ {
+   const {DMLesson}=await server.ssrLoadModule('/src/components/DMQuestion.tsx')
+   const base=dmQuestions.find(q=>q.type==='mst'),lesson='### What it asks\n\n1. First **step** with `code`\n- bullet\n\n| a | b |\n| --- | --- |\n| 1 | 2 |\n\n```text\nKruskal template\n```',answers=dmModelAnswers(base)
+   const props={answers,onAssess(){},onLearn(){}}
+   const none=render(DMFeedback,{...props,question:{...base,lesson:undefined}});assert(!none.includes('dm-lesson')&&!none.includes('Lesson: how this was solved'),'no lesson, nothing rendered')
+   const open=render(DMFeedback,{...props,question:{...base,lesson}})
+   assert(open.includes('Lesson: how this was solved')&&/<details class="dm-lesson[^"]*" open=""/.test(open),'lesson open by default after checking')
+   assert(open.indexOf('Step-by-step model solution')<open.indexOf('Lesson: how this was solved'),'lesson sits after the model solution')
+   for(const piece of ['<h4','<ol>','<ul>','<table>','learn-code','Kruskal template','<strong>step</strong>','<code>code</code>'])assert(open.includes(piece),'lesson markdown: '+piece)
+   const closed=render(DMFeedback,{...props,question:{...base,lesson},lessonOpen:false});assert(/<details class="dm-lesson[^"]*" data-dm-lesson/.test(closed)&&!/<details class="dm-lesson[^"]*" open/.test(closed),'mock report lesson collapsed')
+   const preview=render(DMLesson,{question:{...base,lesson},summary:'Show lesson',className:'dm-lesson-preview'});assert(preview.includes('Show lesson')&&!/ open=""/.test(preview),'pre-check lesson closed')
+   assert(!render(DMLesson,{question:{...base,lesson:'  '}}),'blank lesson renders nothing')
+   for(const html of [open,closed]){const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,'lesson ids unique')}
+   for(const q of dmQuestions.filter(q=>q.lesson))assert(render(DMFeedback,{question:q,answers:{},onAssess(){},onLearn(){}}).includes('Lesson: how this was solved'),q.id+': lesson renders')
+ }
  for(const paper of dmMockPapers){
    const start=Date.now(),session={paperId:paper.id,startedAt:start,deadline:start+(paper.durationMinutes||150)*60000,index:0,answers:{},submitted:false}
    const running=app('exam',{...saved,[DM_EXAM_KEY]:session})

@@ -135,7 +135,7 @@ function selfTests(){
 export function verifyData(){
  selfTests();const data=path.join(root,'src/data/dm'),manifest=JSON.parse(fs.readFileSync(path.join(data,'manifest.json'),'utf8'));
  equal(manifest.schemaVersion,1);equal(manifest.examDate,'2026-11-28');ok(manifest.practiceFiles.every(f=>/^[a-z0-9-]+\.json$/.test(f))&&unique(manifest.practiceFiles),'manifest paths');
- equal(fs.readdirSync(data).filter(f=>f.endsWith('.json')).sort(),[...manifest.practiceFiles,'manifest.json','mocks.json'].sort(),'uncatalogued JSON');
+ equal(fs.readdirSync(data).filter(f=>f.endsWith('.json')).sort(),[...manifest.practiceFiles,'manifest.json','mocks.json','lessons.json'].sort(),'uncatalogued JSON');
  const practice=manifest.practiceFiles.flatMap(f=>{const qs=JSON.parse(fs.readFileSync(path.join(data,f),'utf8'));ok(Array.isArray(qs),'practice JSON must be array');ok(qs.every(q=>f==='slot1-pattern.json'?q.tags?.includes('slot1-pattern')&&q.source==='Slot 1 exam pattern':`${q.topic}.json`===f),'question in wrong topic file');return qs;});
  const mocks=JSON.parse(fs.readFileSync(path.join(data,'mocks.json'),'utf8')),seen=new Set(),errors=[];
  const check=q=>{try{verifyQuestion(q,seen);}catch(e){errors.push(`${q.id}: ${e.message}`);}};
@@ -149,9 +149,9 @@ export function verifyData(){
  equal(mocks.length,5,'five mocks');ok(unique(mocks.map(m=>m.id)),'mock ids');const practicePrompts=new Set(practice.map(q=>q.prompt));
  for(const m of mocks){ok(m.subject==='dm'&&text(m.title)&&m.totalMarks===50&&m.durationMinutes>=120&&m.durationMinutes<=150&&m.instructions.every(text),'mock metadata');equal(m.questions.reduce((s,q)=>s+q.marks,0),50,'mock marks');const coreMarks=m.questions.filter(q=>q.priority==='core').reduce((s,q)=>s+q.marks,0);ok(coreMarks>=30,'mock needs >=60% core');for(const q of m.questions){ok(!practicePrompts.has(q.prompt),'mock duplicates practice prompt');check(q);}}
  equal(manifest.mocks,mocks.map(m=>({id:m.id,marks:m.questions.reduce((s,q)=>s+q.marks,0),coreMarks:m.questions.filter(q=>q.priority==='core').reduce((s,q)=>s+q.marks,0)})),'manifest mock summaries');
- const noteDir=path.join(root,'content/dm/concepts'),notes=fs.readdirSync(noteDir).filter(f=>f.endsWith('.md'));equal(notes.length,14,'14 concept notes');const noteTopics=[];
+ const noteDir=path.join(root,'content/dm/concepts'),notes=fs.readdirSync(noteDir).filter(f=>f.endsWith('.md'));equal(notes.length,15,'15 concept notes');const noteTopics=[];
  for(const f of notes){const md=fs.readFileSync(path.join(noteDir,f),'utf8');ok(/^# [^\n]+\n/.test(md),`${f}: title first`);const match=md.match(/^Topic ID: `([a-z0-9]+)`$/m);ok(match,`${f}: Topic ID`);noteTopics.push(match[1]);for(const callout of ['Tip','Trap','Remember','Note'])ok(new RegExp(`^${callout}: .+`,'m').test(md),`${f}: ${callout} callout`);ok(md.includes('```text'),`${f}: typed template`);}
- equal(noteTopics.sort(),[...topics,'slot1'].sort(),'note topic coverage');
+ equal(noteTopics.sort(),[...topics,'slot1','slot1lessons'].sort(),'note topic coverage');
  const workedGuide=slot1Guide(practice.filter(q=>q.tags?.includes('slot1-pattern')));
  for(const f of ['content/dm/slot1-pattern.md','content/dm/concepts/12-slot1-pattern.md'])equal(fs.readFileSync(path.join(root,f),'utf8'),workedGuide,'worked guide must match verified model solutions');
  const exportMd=fs.readFileSync(path.join(root,'content/dm/question-bank.md'),'utf8');equal((exportMd.match(/<details>/g)||[]).length,practice.length,'readable export count');for(const q of practice)ok(exportMd.includes(`### ${q.id}:`),`export missing ${q.id}`);

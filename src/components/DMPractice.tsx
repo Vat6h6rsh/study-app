@@ -8,7 +8,7 @@ import { readSaved, save } from '../lib/storage'
 import { topicGroups } from '../lib/practiceNavigation'
 import { useIsMobile } from '../lib/viewport'
 import { loadStreak, storeStreak } from '../streak'
-import { DMConcept, DMFeedback, DMFields, DMHeading, dmTypeNames } from './DMQuestion'
+import { DMConcept, DMFeedback, DMFields, DMHeading, DMLesson, dmTypeNames } from './DMQuestion'
 import { Sheet } from './Sheet'
 import { TopicPicker, studyTopics } from './TopicPicker'
 
@@ -54,7 +54,7 @@ function PracticeQuestion({ question: q, attempts, record, onLearn }: { question
       <span className="small muted">{q.type === 'steps' ? 'Proof marks are self-assessed.' : `${streak} fully correct in a row`}</span>
     </div>
     <p role="status" className="small dm-status">{announcement}</p>
-    {submitted ? <div className={`dm-practice-report${fresh && q.type !== 'steps' && Object.values(attempt.results).some(v => !v) ? ' wrong-shake' : ''}`} tabIndex={-1}><DMFeedback question={q} answers={draft.answers} revealed={draft.revealed} onAssess={assess} onLearn={onLearn} celebrate={fresh} burst={attempt.id}/></div> : <DMConcept question={q} onLearn={onLearn}/>}
+    {submitted ? <div className={`dm-practice-report${fresh && q.type !== 'steps' && Object.values(attempt.results).some(v => !v) ? ' wrong-shake' : ''}`} tabIndex={-1}><DMFeedback question={q} answers={draft.answers} revealed={draft.revealed} onAssess={assess} onLearn={onLearn} celebrate={fresh} burst={attempt.id}/></div> : <><DMLesson key={q.id} question={q} summary="Show lesson" className="dm-lesson-preview"/><DMConcept question={q} onLearn={onLearn}/></>}
   </section>
 }
 

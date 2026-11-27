@@ -17,7 +17,8 @@ function inline(text: string): ReactNode[] {
 
 const headingId = (title: string) => `note-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')}`
 
-export function Markdown({ text }: { text: string }) {
+/** `idPrefix` keeps heading ids unique when several documents share one page (e.g. DM lessons). */
+export function Markdown({ text, idPrefix = '' }: { text: string; idPrefix?: string }) {
   const lines = text.replace(/\r\n/g, '\n').split('\n')
   const blocks: ReactNode[] = []
   let i = 0
@@ -55,13 +56,13 @@ export function Markdown({ text }: { text: string }) {
     if (line.startsWith('Answers:')) {
       const answer: string[] = []
       while (i < lines.length && !/^#{1,3} /.test(lines[i])) answer.push(lines[i++])
-      blocks.push(<details className="learn-solution" key={blockKey}><summary>Reveal answers and reasoning</summary><Markdown text={answer.join('\n').replace(/^Answers:/, '**Answers:**')}/></details>)
+      blocks.push(<details className="learn-solution" key={blockKey}><summary>Reveal answers and reasoning</summary><Markdown idPrefix={idPrefix} text={answer.join('\n').replace(/^Answers:/, '**Answers:**')}/></details>)
       continue
     }
     const heading = /^(#{1,3}) (.+)$/.exec(line)
     if (heading) {
       const title = inline(heading[2])
-      const id = headingId(heading[2])
+      const id = idPrefix ? `${idPrefix}-${headingId(heading[2])}` : headingId(heading[2])
       blocks.push(heading[1].length === 1 ? <h2 tabIndex={-1} key={blockKey} id={id}>{title}</h2> : heading[1].length === 2 ? <h3 tabIndex={-1} key={blockKey} id={id}>{title}</h3> : <h4 tabIndex={-1} key={blockKey} id={id}>{title}</h4>)
       i++; continue
     }
