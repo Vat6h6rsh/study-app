@@ -21,10 +21,37 @@ export function DMConcept({ question, onLearn }: { question: Question; onLearn: 
 }
 
 /** Teacher-style lesson rendered with the Learn Markdown renderer. Renders nothing when the question has no lesson. */
+// Lessons are stored as six "### " sections. Show the most useful first, each as its own block.
+const LESSON_SECTIONS: { key: string; match: RegExp; label: string; icon: string; collapsed?: boolean }[] = [
+  { key: 'asks', match: /question is asking/i, label: 'What is being asked', icon: '🎯' },
+  { key: 'exam', match: /write it in the exam/i, label: 'What to write in the exam', icon: '✍️' },
+  { key: 'steps', match: /step by step/i, label: 'How it is solved, step by step', icon: '🪜' },
+  { key: 'concept', match: /need to know first/i, label: 'Concept refresher', icon: '📘', collapsed: true },
+  { key: 'mistakes', match: /common mistakes/i, label: 'Common mistakes', icon: '⚠️' },
+  { key: 'check', match: /check yourself/i, label: 'Check yourself', icon: '✅', collapsed: true },
+]
+export function splitLesson(md: string) {
+  const parts = md.split(/^### /m)
+  const intro = parts.shift()?.trim() || ''
+  const sections = parts.map(p => { const nl = p.indexOf('\n'); return { title: (nl < 0 ? p : p.slice(0, nl)).trim(), body: nl < 0 ? '' : p.slice(nl + 1).trim() } })
+  const ordered = LESSON_SECTIONS.flatMap(def => sections.filter(s => def.match.test(s.title)).map(s => ({ ...s, def })))
+  const rest = sections.filter(s => !LESSON_SECTIONS.some(def => def.match.test(s.title))).map(s => ({ ...s, def: undefined }))
+  return { intro, sections: [...ordered, ...rest] }
+}
 export function DMLesson({ question, open = false, summary = 'Lesson: how this was solved', className = '' }: { question: Question; open?: boolean; summary?: string; className?: string }) {
   const id = useId()
   if (!question.lesson?.trim()) return null
-  return <details className={`dm-lesson ${className}`.trim()} open={open} data-dm-lesson={question.id}><summary id={`${id}-lesson`}><span>{summary}</span><span className="dm-lesson-chevron" aria-hidden="true">›</span></summary><div className="learn-prose dm-lesson-body" role="region" aria-labelledby={`${id}-lesson`}><Markdown text={question.lesson} idPrefix={`lesson-${question.id}`}/></div></details>
+  const { intro, sections } = splitLesson(question.lesson)
+  return <details className={`dm-lesson ${className}`.trim()} open={open} data-dm-lesson={question.id}><summary id={`${id}-lesson`}><span>📖 {summary}</span><span className="dm-lesson-chevron" aria-hidden="true">›</span></summary><div className="learn-prose dm-lesson-body" role="region" aria-labelledby={`${id}-lesson`}>
+    {intro && <Markdown text={intro} idPrefix={`lesson-${question.id}-intro`}/>}
+    {sections.map((s, i) => {
+      const label = s.def ? s.def.label : s.title, icon = s.def?.icon || '•', key = s.def?.key || 'other'
+      const body = <div className="lesson-sec-body"><Markdown text={s.body} idPrefix={`lesson-${question.id}-${i}`}/></div>
+      return s.def?.collapsed
+        ? <details key={i} className={`lesson-sec lesson-${key}`}><summary className="lesson-sec-title"><span aria-hidden="true">{icon}</span>{label}</summary>{body}</details>
+        : <section key={i} className={`lesson-sec lesson-${key}`}><h4 className="lesson-sec-title"><span aria-hidden="true">{icon}</span>{label}</h4>{body}</section>
+    })}
+  </div></details>
 }
 export function DMGraph({ graph, chosen = [], onEdge, locked = false, weighted = true }: { graph: Graph; chosen?: string[]; onEdge?: (id: string) => void; locked?: boolean; weighted?: boolean }) {
   const id = useId()
